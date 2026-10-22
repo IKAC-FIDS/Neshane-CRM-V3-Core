@@ -1,0 +1,8 @@
+Backend/
+Frontend/
+.idea/
+.vscode/
+*.log
+.env
+.env.*
+!.env.example
