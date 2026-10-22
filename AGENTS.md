@@ -4,6 +4,8 @@
 
 - Implement only the explicitly requested Task ID. If no Task ID is supplied, stop and request one before changing files.
 - Follow approved Neshane V3 ADRs and the standards under `architecture/standards/`. A legacy repository is read-only evidence, never authority for V3.
+- The Root Workspace owns cross-repository architecture and review policy. `Backend/` and `Frontend/` are independent Git repositories and are not submodules or tracked by a Root Git history.
+- Follow `architecture/governance-synchronization.md` when shared guidance changes. The current synchronization reference is `NESHANE-V3-GOV-P00-000A`.
 - Do not silently introduce an architectural decision. Record unresolved choices as proposed and request architecture approval.
 - Do not modify unrelated files. Preserve existing user changes and reconcile existing instructions before editing them.
 
@@ -43,7 +45,7 @@ Read only the standards and repository skill(s) relevant to the task. Skills liv
 
 ## Completion report
 
-At the end of every coding task, respond in Persian and include:
+At the end of every implementation task, respond in Persian and include:
 
 1. What was implemented.
 2. Files created or modified.
@@ -52,4 +54,7 @@ At the end of every coding task, respond in Persian and include:
 5. Exact manual run or deployment instructions.
 6. Simple verification commands for the user.
 7. Known limitations and unverified assumptions.
+
+For documentation-only tasks, do not invent build, run, or deployment commands. Report changed documentation, decisions requiring approval, files needing manual review, missing or conflicting instructions, and the next authorized task instead.
+
 
