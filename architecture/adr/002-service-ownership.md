@@ -3,7 +3,9 @@
 - Status: Accepted
 - Date: 2026-10-23
 - Decision: DEC-002
-- Approval: Project-owner approval recorded by Task R0-001
+- Decision approval: Explicit project-owner decision recorded in Task R0-001
+- Documentation formalization: Codex under Task R0-001
+- Independent reviewer sign-off: Not recorded
 - Architecture revision: `NESHANE-V3-ARCH-P00-002`
 
 ## Context

@@ -10,7 +10,7 @@ This directory is the authoritative catalog for formal V3 ADRs. ADR IDs use `ADR
 - **Superseded**: replaced by a named later ADR; retained historically.
 - **Deprecated**: retained for history but no longer recommended; no silent deletion.
 
-An ADR status changes only through explicit approval. Project-owner approval for the twelve initial V3 ADRs is recorded by Task R0-001 on 2026-10-23.
+An ADR status changes only through explicit approval. Task R0-001 records the project owner's explicit decisions for the twelve initial V3 ADRs on 2026-10-23. Codex documented and formalized those decisions under R0-001; no independent reviewer identity, signature or separate approval evidence is recorded.
 
 ## Catalog
 

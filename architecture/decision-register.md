@@ -2,6 +2,8 @@
 
 Architecture version: `NESHANE-V3-ARCH-P00-002`. Every entry below is **Accepted** through project-owner approval recorded in Task R0-001 on 2026-10-23. Acceptance is architectural authority, not evidence of implementation or production readiness.
 
+Approval provenance: the project owner supplied the explicit R0 decisions recorded in R0-001; Codex converted them into DEC/ADR documentation under R0-001. No independent reviewer identity or signature is recorded.
+
 | ID | Title | Decision | Rationale | Consequences | Dependencies | Related ADRs | Approval provenance |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | DEC-001 | Backend architecture | Java/Spring Boot independent microservices with DDD/Hexagonal structure and independent build, test, version, artifact and deployment; one service release cannot require rebuilding other Business Services. | Preserve business autonomy and replaceable infrastructure. | More contract/operational boundaries; exact versions/build remain open. | OD-002–OD-004 | [ADR-V3-001](adr/001-backend-architecture.md) | V3-001 §4.1 refined and owner-approved by R0-001 decision 1, 2026-10-23 |

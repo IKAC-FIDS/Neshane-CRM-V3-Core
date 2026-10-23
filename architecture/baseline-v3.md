@@ -173,9 +173,15 @@ No binding V3 governance rule contradicts this baseline. Two earlier Root standa
 
 All unresolved choices are tracked in [open-decisions.md](open-decisions.md), OD-001 through OD-023. An existing naming convention, legacy decision, or example does not close an item. Material decisions require an approved V3 ADR and decision-register update.
 
-## Explicit non-goals of V3-001
+## Permanent architecture exclusions
 
-No Java or Frontend code, microservice, migration, authentication, plugin runtime, CI/CD, deployment automation, Docker/Kubernetes configuration, V2 data migration, production testing, publishing, or release work is included. This task does not select unresolved tools, create application/infrastructure files, or start V3-002.
+The approved architecture excludes cross-service private database access or implementation coupling; shared business ownership through common libraries; topology-derived tenant identity; treating authentication, membership or entitlement as final authorization; implicit Central administration of Sovereign deployments; in-process plugins or plugin access to private databases; Frontend/Gateway-only authorization; and any claim that architecture approval proves implementation or production readiness. Reversing one of these exclusions requires an explicit superseding ADR.
+
+Unselected technologies in [open-decisions.md](open-decisions.md) are not permanent non-goals: they remain alternatives until an authorized decision closes the relevant `OD-*`.
+
+## Historical task non-goals: V3-001
+
+V3-001 was documentation-only. It excluded Java or Frontend code, microservice creation, migrations, authentication implementation, Plugin Runtime implementation, CI/CD, deployment automation, Docker/Kubernetes configuration, V2 data migration, production testing, publishing and release work. Those historical task limits describe what V3-001 did not perform; they are not a permanent prohibition on later authorized implementation.
 
 ## Architecture acceptance principles
 
