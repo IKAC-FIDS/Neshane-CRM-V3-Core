@@ -23,14 +23,14 @@
 4. Update only affected local instructions, standards, and skills; record the applicable governance and architecture references in each repository's `architecture/governance-baseline.md`.
 5. Review local differences for consistency before implementation resumes. Propagation is complete only when each affected repository records the same current reference.
 
-## Pending local propagation from R0-001
+## Completed local propagation under R0-003
 
-Backend and Frontend were intentionally not modified by R0-001. A future authorized alignment task must record architecture revision `NESHANE-V3-ARCH-P00-002` locally and reconcile only affected guidance:
+R0-003 propagated architecture revision `NESHANE-V3-ARCH-P00-002` and governance reference `NESHANE-V3-GOV-P00-000A` to the affected repository-local instructions, standards, skills, and governance baselines without changing approved ADRs:
 
-- Backend: independent build/test/version/release boundaries; domain-owned authorization with shared policy governance; contract coexistence/deprecation; controlled co-deployment; profile-specific readiness evidence.
-- Frontend: modular feature-oriented architecture; shared Design System; no initial Micro-Frontend requirement; controlled contract compatibility; evidence-based readiness terminology.
+- Backend synchronization: commit `6a7afc5`; independent build/test/version/release boundaries, domain-owned authorization with shared policy governance, contract coexistence/deprecation, controlled co-deployment, and profile-specific readiness evidence were reconciled.
+- Frontend synchronization: commit `f3d138f`; modular feature-oriented architecture, shared Design System ownership, no initial Micro-Frontend requirement, controlled contract compatibility, and evidence-based readiness terminology were reconciled.
 
-Until propagation is authorized, Root ADRs are authoritative and the mismatch must be reported before architecture-sensitive implementation.
+Both local governance baselines now record the current architecture and governance references. This completion records documentary propagation only; it does not establish implementation or production readiness, or independent R0 reviewer approval. Future architecture or governance revisions continue to follow the propagation process above.
 
 ## Missing, stale, or conflicting guidance
 

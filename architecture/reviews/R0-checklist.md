@@ -21,9 +21,9 @@ This approval evidence establishes architectural authority only. Reviewer identi
 ## Governance alignment
 
 - [x] Governance reference remains `NESHANE-V3-GOV-P00-000A`; architecture revision is distinct.
-- [x] Root remains authoritative; Backend/Frontend local guidance is compatible with the approved principles, and its missing P00-002 refinements are explicitly recorded for future synchronization. Evidence: [governance synchronization — Ownership and Pending local propagation](../governance-synchronization.md#ownership), `Backend/architecture/governance-baseline.md`, and `Frontend/architecture/governance-baseline.md` (read-only inspection in R0-002).
+- [x] Root remains authoritative; Backend/Frontend local guidance records architecture revision `NESHANE-V3-ARCH-P00-002`, governance reference `NESHANE-V3-GOV-P00-000A`, and the applicable approved refinements. Evidence: governance synchronization [Ownership](../governance-synchronization.md#ownership) and [Completed local propagation](../governance-synchronization.md#completed-local-propagation-under-r0-003), Backend commit `6a7afc5`, and Frontend commit `f3d138f` (R0-003).
 - [x] Backend/Frontend repositories and Git metadata were not changed by R0-001 or R0-002 (read-only status inspection in each task).
-- [x] Future Backend/Frontend propagation needs are recorded in `architecture/governance-synchronization.md`.
+- [x] R0-003 Backend/Frontend propagation completion and repository commit evidence are recorded in `architecture/governance-synchronization.md`; its propagation policy remains applicable to future revisions.
 
 ## Boundaries and isolation
 
@@ -68,12 +68,12 @@ This approval evidence establishes architectural authority only. Reviewer identi
 - [x] Directly observed V2 documentation is distinguished from source-review claims not independently reproduced in V3-001. Evidence: [legacy reference — Scope and provenance](../legacy-v2-reference.md#scope-and-provenance) and [Reported V2 risks](../legacy-v2-reference.md#reported-v2-risks-requiring-v3-002-verification).
 - [x] Reusable concepts are separated from independently approved V3 decisions. Evidence: [legacy reference — Concepts that may be reused](../legacy-v2-reference.md#concepts-that-may-be-reused).
 - [x] V2 stack choices not carried into V3 remain historical and are not rewritten. Evidence: [legacy reference — V2 choices not carried into the V3 baseline](../legacy-v2-reference.md#v2-choices-not-carried-into-the-v3-baseline) and [ADR catalog](../adr/README.md#catalog).
-- [x] V3-002 verification needs, Open Decisions and pending Backend/Frontend synchronization are explicit. Evidence: [legacy reference — V3-002 verification](../legacy-v2-reference.md#reported-v2-risks-requiring-v3-002-verification), [open decisions](../open-decisions.md), and [governance synchronization](../governance-synchronization.md#pending-local-propagation-from-r0-001).
+- [x] V3-002 verification needs and Open Decisions remain explicit, and Backend/Frontend synchronization is recorded as completed. Evidence: [legacy reference — V3-002 verification](../legacy-v2-reference.md#reported-v2-risks-requiring-v3-002-verification), [open decisions](../open-decisions.md), and [governance synchronization](../governance-synchronization.md#completed-local-propagation-under-r0-003).
 
 ## Pending evidence and actions
 
 - [ ] Independent architecture reviewer identity and sign-off are not recorded. This does not invalidate the owner's decision approval, but prevents an unconditional reviewer-approved R0 closure record.
-- [ ] Backend and Frontend must record `NESHANE-V3-ARCH-P00-002` and apply the listed local refinements in a separately authorized synchronization task.
+- [x] Backend and Frontend record `NESHANE-V3-ARCH-P00-002` and `NESHANE-V3-GOV-P00-000A`; R0-003 synchronization evidence is Backend commit `6a7afc5` and Frontend commit `f3d138f`.
 - [ ] Implementation, runtime security and per-profile operational evidence belong to later readiness gates and are intentionally unavailable; they are not blockers to architecture documentation readiness.
 
 ## Review record
@@ -84,8 +84,8 @@ This approval evidence establishes architectural authority only. Reviewer identi
 - Reviewer signature: _Not recorded_
 - Decision outcome: DEC-001–DEC-012 ratified and formalized
 - Documentation outcome: **Architecture documentation review complete — owner-ratified decisions; independent reviewer sign-off pending**
-- Overall R0 closure: _Not unconditional; independent reviewer sign-off and separately authorized repository synchronization remain pending_
-- Remaining documentary blockers: none within the Core architecture set reviewed by R0-002
-- Required actions: record independent reviewer identity/sign-off; synchronize affected Backend/Frontend governance under a separate authorized task; collect implementation/runtime/profile evidence only in later readiness gates
+- Overall R0 closure: _Not unconditional; independent reviewer sign-off remains pending. Repository synchronization was completed under R0-003._
+- Remaining documentary blockers: independent architecture reviewer identity and sign-off are not recorded
+- Required actions: record independent reviewer identity/sign-off; collect implementation/runtime/profile evidence only in later readiness gates
 - Approved architecture revision: `NESHANE-V3-ARCH-P00-002`
 
