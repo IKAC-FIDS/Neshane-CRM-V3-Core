@@ -14,6 +14,12 @@
 | Runtime evidence | None. No source, build, test, migration, container, database, service, CI, or validator was executed |
 | Outcome | **Inventory Complete — Owner Disposition Review Complete** |
 | V3-002A historical-source outcome | **Historical Source Verified — Inventory Reconciled**; owner dispositions are complete; see [historical evidence recovery](v2-historical-evidence.md) |
+| Task closure status | **Closed** |
+| Closure basis | All documented acceptance criteria satisfied |
+| Closure evidence reference | Core commit `cf2740a` (`docs(migration): complete V2 legacy asset disposition review`) |
+| Owner disposition | 46/46 Final — RETAIN 20, REWRITE 23, RETIRE 3, NEEDS_REVIEW 0 |
+| Closure type | Documentation / Historical Assessment |
+| Closure approval provenance | Explicit `V3-002 — Formal Task Closure` instruction dated 2026-10-23; no approver name or signature is inferred |
 
 This inventory assesses the accessible V2 workspace and its related historical evidence. It does not migrate source, approve a V3 implementation, validate runtime behavior, or make V2 architecture authoritative. `RETAIN` means retain semantics, evidence, a contract idea, or a regression scenario where useful; it never authorizes copying source into V3.
 
@@ -456,8 +462,23 @@ The roadmap phrase `Clean build + automated negative tests + CI logs + contract 
 
 **Outcome: Inventory Complete — Owner Disposition Review Complete.**
 
+### Formal V3-002 closure record
+
+| Field | Recorded value |
+| --- | --- |
+| Task ID | `V3-002` |
+| Closure Status | **Closed** |
+| Closure Basis | All documented acceptance criteria satisfied |
+| Evidence Reference | Core commit `cf2740a` |
+| Owner Disposition | 46/46 Final — RETAIN 20, REWRITE 23, RETIRE 3, NEEDS_REVIEW 0 |
+| Closure Type | Documentation / Historical Assessment |
+| Approval evidence | Explicit project-owner/architect-directed `V3-002 — Formal Task Closure` instruction dated 2026-10-23; the approver's personal identity and signature are not independently recorded |
+| Closure boundary | Concept Reconciliation, OD-001–OD-023, independent R0 reviewer sign-off, detailed architecture/implementation design, runtime/security validation and production readiness remain separate and Pending |
+
+This closure records completion of the V3-002 documentation and historical-assessment scope only. It approves no architecture change, Open Decision, implementation, runtime/security result, readiness Gate or production claim, and it starts no subsequent Task.
+
 **V3-002A outcome: Historical Source Verified — Inventory Reconciled.** The original inventory contained 46 Asset Groups with proposed totals of RETAIN 13, REWRITE 19, RETIRE 3 and NEEDS_REVIEW 11. Following the completed V3-002B Owner Disposition Review, the final owner-approved totals are RETAIN 20, REWRITE 23, RETIRE 3 and NEEDS_REVIEW 0.
 
 The accessible V2 workspace and exact pinned historical backend tree have complete bounded asset-group coverage, every indexed historical file is hash-verified, and every inventory group has a proposed disposition. Completion means documentation-level inventory coverage only. Production data, authoritative provider contracts, operational profiles, runtime results, Frontend and plugin implementation remain unavailable or outside scope.
 
-No migration, salvage implementation, V3 foundation work, runtime security verification or production-readiness claim has started. Owner review of Asset dispositions is complete; Concept Reconciliation, Open Decisions, independent architecture review and any implementation require separately authorized work.
+No migration, salvage implementation, V3 foundation work, runtime security verification or production-readiness claim has started. V3-002 is formally Closed within its documentation/historical-assessment scope. Concept Reconciliation, Open Decisions, independent architecture review and any implementation remain separate and require independently authorized work.
