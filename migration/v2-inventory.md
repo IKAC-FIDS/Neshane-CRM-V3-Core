@@ -13,6 +13,7 @@
 | Disposition authority | All dispositions are Codex proposals; none is owner-approved unless explicitly recorded later |
 | Runtime evidence | None. No source, build, test, migration, container, database, service, CI, or validator was executed |
 | Outcome | **Inventory Partial — Coverage Gaps Recorded** |
+| V3-002A historical-source outcome | **Historical Source Access Blocked**; see [historical evidence recovery](v2-historical-evidence.md) |
 
 This inventory assesses the accessible V2 workspace and its related historical evidence. It does not migrate source, approve a V3 implementation, validate runtime behavior, or make V2 architecture authoritative. `RETAIN` means retain semantics, evidence, a contract idea, or a regression scenario where useful; it never authorizes copying source into V3.
 
@@ -25,6 +26,8 @@ The strongest salvage opportunities are behavioral rather than source-level: tra
 The implementation stack and several historical choices are not portable as V3 decisions: NestJS/TypeScript, pnpm/Turborepo, Prisma, GraphQL BFF as the principal API, and Docker Compose as the deployment answer are either replaced by V3 or remain open under OD-002–OD-008, OD-013–OD-015, and OD-020. The local signed-context mechanism is explicitly a non-production fixture and does not implement V3 identity, workload trust, membership, entitlement, or domain authorization.
 
 The workspace also contains a metadata index for 106 files from an older repository, `IKAC-FIDS/iam-crm-backend` at commit `9b918ba8972812c129c8b073e1ac4991023ccbbb`. Those source bodies are not present locally; only paths, hashes, and a prior narrative review are accessible. Therefore Identity, Notification, CRM, Linka, Customer Request, Audit, Quota/Entitlement, Passkey/SSO, and AI observations based on that repository remain documentation-reported and cannot receive confirmed source-level dispositions here.
+
+V3-002A performed bounded local discovery for the pinned historical revision. No authorized checkout or snapshot was found, no network acquisition was performed, and all 106 indexed entries remain source-inaccessible and hash-unverifiable. The per-entry accounting and exact blocker are recorded in [Historical V2 source evidence recovery](v2-historical-evidence.md). No disposition or confidence level changed.
 
 ### Asset and disposition totals
 
@@ -76,7 +79,7 @@ The workspace also contains a metadata index for 106 files from an older reposit
 
 - No runtime behavior, build success, test result, migration behavior, RLS enforcement, broker behavior, cache behavior, or CI outcome was verified.
 - No database, production configuration, secrets store, data volume, provider contract, traffic profile, backup, restore, deployment, or operational environment was available.
-- The historical 106-file source set is represented only by `docs/skill-audit/legacy-evidence.json` paths/hashes and `docs/architecture/legacy-review.md`; source bodies were not accessible and the network was not used.
+- The historical 106-file source set is represented only by `docs/skill-audit/legacy-evidence.json` paths/hashes and `docs/architecture/legacy-review.md`; V3-002A confirmed that source bodies are not locally accessible and recorded all entries as unverifiable without using the network.
 - Minified one-line source reduces line granularity in a few files; the cited line still identifies the complete relevant implementation.
 - No V2 frontend application, plugin runtime, plugin contract, Sovereign control plane, Dedicated Managed implementation, or Dedicated Sovereign implementation was found.
 
@@ -137,6 +140,7 @@ No first-party source root found in the accessible workspace was silently omitte
 - Indexed paths: 106
 - Locally available evidence: path and SHA-256 metadata in `docs/skill-audit/legacy-evidence.json`; summarized observations in `docs/architecture/legacy-review.md`.
 - Missing evidence: actual source bodies and runtime/CI results. No attempt was made to fetch them.
+- V3-002A verification result: 0 available bodies, 0 hash matches, 0 hash mismatches, 0 paths confirmed missing in the pinned revision, and 106 inaccessible/unverifiable entries. See [the complete matrix](v2-historical-evidence.md#5-106-entry-coverage-and-hash-verification-matrix).
 
 ### Archives
 
@@ -177,7 +181,7 @@ All Approval values below are **Proposed**. Owner approval must be recorded sepa
 | V2-AST-027 | Documentation | `docs/engineering/*` | Patterns, quality gates and staged roadmap | V2 stack and V2 ADRs | Candidate acceptance scenarios and evidence vocabulary | NEEDS_REVIEW | Gates contain valuable tests but also stack/product assumptions | `quality-gates.md:1-60`; roadmap `:1-21` | Confirmed as documents | ADR-012; OD-020, OD-023 | Extract scenarios per later authorized task | Proposed |
 | V2-AST-028 | Governance/skills | `.agents/skills/*` | Sixteen V2/NestJS-specific agent workflows | V2 AGENTS and stack | None as executable V3 governance | RETIRE | V3 has synchronized local skills; importing V2 instructions would reintroduce obsolete authority | `.agents/skills/*/SKILL.md`; `AGENTS.md:11-34` | Confirmed | Governance baseline | Keep only as historical evidence | Proposed |
 | V2-AST-029 | Evidence | `docs/skill-audit/*` excluding legacy evidence | Skill inventory, coverage, dry runs, provenance and validation reports | V2 governance pack | Historical audit provenance | RETAIN | Useful to explain what V2 claimed and did not prove; not runtime evidence | `validation-report.md:1-25`; `coverage-matrix.md` | Confirmed as documents | ADR-012 | Preserve provenance, not pass statuses | Proposed |
-| V2-AST-030 | Evidence | `docs/skill-audit/legacy-evidence.json` | Paths and SHA-256 hashes for 106 files in older repository | Missing external source bodies | Bounded historical coverage index | RETAIN | Establishes exactly what prior review sampled; cannot prove content now | JSON properties `repository`, `commit`, `downloadedForInspection` | Confirmed metadata only | ADR-012 | Owner may authorize later source acquisition/review | Proposed |
+| V2-AST-030 | Evidence | `docs/skill-audit/legacy-evidence.json` | Paths and SHA-256 hashes for 106 files in older repository | Missing external source bodies | Bounded historical coverage index | RETAIN | Establishes exactly what prior review sampled; cannot prove content now | JSON properties `repository`, `commit`, `downloadedForInspection`; [V3-002A matrix](v2-historical-evidence.md#5-106-entry-coverage-and-hash-verification-matrix) | Confirmed metadata only; content unverifiable | ADR-012 | Owner provides an exact pinned read-only snapshot or separately authorizes acquisition | Proposed |
 | V2-AST-031 | Capability candidate | V2 Identity/session/SSO/passkey documentation and historical index | Credentials, sessions, refresh rotation, federation and service identities | Historical source unavailable | Platform Core Identity Trust candidate | NEEDS_REVIEW | No local implementation body; production identity choices remain open | `legacy-review.md:12-14`; legacy index paths under `src/auth/` | Unverified source | ADR-004, ADR-005; OD-009–OD-012 | Obtain source/specs and owner requirements; security review | Proposed |
 | V2-AST-032 | Capability candidate | Notification ADR/roadmap/historical index | Templates, rules, delivery ledger, provider dispatch, retry/dedup | Historical source unavailable | Notification logical Business capability | NEEDS_REVIEW | Business semantics may be valuable; only secondary evidence is accessible | ADR-008; `legacy-review.md:17-18`; indexed `src/notification-core/` | Unverified source | ADR-002, ADR-007, ADR-008, ADR-011 | Review actual state machine/contracts and provider ambiguity | Proposed |
 | V2-AST-033 | Capability candidate | Provider/Linka documentation and historical index | Normalize company-registration lookup into reviewed draft/provenance | Historical source/provider unavailable | External integration adapter owned by appropriate V3 capability | NEEDS_REVIEW | No live/provider contract or source body available; do not approve automatic persistence | ADR-009; `legacy-review.md:16` | Unverified source | ADR-002, ADR-008; OD-020 | Obtain sanitized contract and retention/ownership decision | Proposed |
@@ -316,7 +320,7 @@ Owner/architecture review is required for the GraphQL BFF, Redis use case, gover
 | V2-FND-006 | Architecture / High migration priority | V2 uses NestJS/TypeScript/Prisma/pnpm/Turbo and GraphQL BFF (`package.json`; `apps/bff/src/module.ts:9-11`). | Backend stack conflicts with ADR-001; BFF strategy remains open | ADR-001, ADR-008; OD-002–OD-008, OD-013, OD-014 | Rewrite; retain only approved semantics | Confirmed | Yes for open decisions |
 | V2-FND-007 | Service autonomy / Medium | One root build/image copies and builds the whole workspace (`Dockerfile:5-13`; `package.json:17-20`). | Does not demonstrate independent V3 service build/version/artifact/release | ADR-001, ADR-011 | Establish independent boundaries in later V3 foundation work | Confirmed | No new decision beyond open build layout |
 | V2-FND-008 | Evidence / High | 17 test cases exist, but no tests/builds/CI were run in this task. V2 reports do not establish runtime results. | Cannot claim isolation, security, reliability or readiness | ADR-012 | Treat as future test specifications only | Confirmed | No |
-| V2-FND-009 | Coverage / High | Historical repository has 106 indexed files but no local source bodies (`legacy-evidence.json`; `legacy-review.md:3-5`). | Major business/security dispositions remain unverified | ADR-012 | Owner decides whether to provide/authorize exact pinned source later | Confirmed gap | Yes |
+| V2-FND-009 | Coverage / High | Historical repository has 106 indexed files but no local source bodies (`legacy-evidence.json`; `legacy-review.md:3-5`). V3-002A accounted for 106/106 entries as inaccessible/hash-unverifiable and performed no network acquisition. | Major business/security dispositions remain unverified | ADR-012 | Owner provides an exact pinned read-only snapshot or separately authorizes acquisition | Confirmed gap | Yes |
 | V2-FND-010 | Operations / High | No production profiles, backup/restore, Sovereign authority, plugin platform or Frontend implementation found. | V2 cannot evidence V3 operational/profile/plugin/frontend readiness | ADR-004, ADR-006, ADR-009, ADR-010, ADR-012; OD-001, OD-015–OD-023 | Address only in later authorized architecture/implementation tasks | Confirmed absence in accessible roots | Yes where ODs apply |
 
 These are migration/architecture findings, not penetration-test results. No exploitability claim is made from static absence alone.
@@ -354,7 +358,7 @@ This is a proposed knowledge sequence, not authorization to implement:
 
 ## 16. Open questions and approval requirements
 
-1. Does the owner want the inaccessible historical repository at the pinned commit supplied for a separate read-only source assessment?
+1. Will the owner provide an explicitly authorized read-only snapshot of the historical repository at the pinned commit, or separately authorize external acquisition? Until then V3-002A is blocked.
 2. Which V2 capability candidates are in V3 product scope: Notification, Linka/external integration, AI, Customer Requests, Audit, Quota/Entitlement, Content/File, Technical Knowledge, Work/Collaboration?
 3. Which business rules, contracts, and user-visible workflows are authoritative outside source code?
 4. Is any production-neutral database schema/data dictionary available, and what tenant/record volumes, retention and legal constraints apply?
@@ -403,6 +407,7 @@ The roadmap phrase `Clean build + automated negative tests + CI logs + contract 
 
 - `docs/architecture/legacy-review.md` reports a focused review of the older repository.
 - `docs/skill-audit/legacy-evidence.json` records repository, pinned commit, and 106 path/hash entries.
+- `migration/v2-historical-evidence.md` records V3-002A access discovery, the exact blocker, and the 106-entry unverifiable coverage matrix.
 - Because source bodies are absent, evidence for those paths is not independently reproduced here.
 
 ### V3 authority
@@ -429,10 +434,13 @@ The roadmap phrase `Clean build + automated negative tests + CI logs + contract 
 | Future checks separated from performed checks | Met | No executable verification claimed; section 17 lists future evidence |
 | Remaining owner approvals listed | Met | Sections 6 and 16 |
 | Roadmap: every accessible asset has disposition; no blind source port | Met for accessible workspace | Historical source set remains a recorded coverage gap; no source copied |
+| V3-002A historical-source recovery | Blocked | No authorized local checkout/snapshot; 106/106 indexed entries remain inaccessible and hash-unverifiable |
 
 ## 20. Inventory Review outcome and limitations
 
 **Outcome: Inventory Partial — Coverage Gaps Recorded.**
+
+**V3-002A outcome: Historical Source Access Blocked.** The access attempt changed neither the 36 asset groups nor their proposed totals: RETAIN 11, REWRITE 10, RETIRE 3, and NEEDS_REVIEW 12.
 
 The accessible V2 workspace has complete bounded asset-group coverage and every inventoried asset has a proposed disposition. The assessment remains partial because the historical 106-file source set referenced by V2 is not locally available, and major business capabilities are therefore supported only by secondary documentation. Production data, contracts, provider behavior, operational profiles, runtime results, Frontend and plugin implementation are also unavailable.
 
