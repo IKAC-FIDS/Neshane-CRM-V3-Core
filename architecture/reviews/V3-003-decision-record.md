@@ -1883,3 +1883,196 @@ Previously approved decisions and Customer Business Criticality assessments reta
 This decision establishes Durable Deferred Audit as the Owner-selected conditional direction for the subsequent design and approval of CUS-CREATE and CUS-UPDATE Audit failure policies.
 
 It does not complete those policies or authorize implementation of unverified deferred-delivery behavior.
+
+## V3-003-DEC-014 — Customer Core Durable Deferred Audit: Eligibility and Safety Gates
+
+**Decision Status:** APPROVED — OWNER  
+**Decision Authority:** Project Owner  
+**Approval Scope:** Foundational Eligibility and Safety Gates Only  
+**Related Task:** V3-003 — NFR and Threat Assumptions  
+**Related Decisions:** V3-003-DEC-009, V3-003-DEC-010, V3-003-DEC-011, V3-003-DEC-012, V3-003-DEC-013  
+**Affected Operations:** CUS-CREATE, CUS-UPDATE  
+**Related Security Candidates:** SR-CAND-019, SR-CAND-020 — PROPOSED — NOT APPROVED  
+**Independent Security Review:** NOT_SIGNED_OFF  
+**Repository Recording:** PENDING VERIFICATION
+
+### 1. Decision Scope
+
+The Project Owner approves five foundational eligibility and safety principles for the conditional Durable Deferred Audit direction previously selected under V3-003-DEC-013.
+
+These principles apply exclusively to the mandatory Audit publication obligations associated with successful authoritative CUS-CREATE and CUS-UPDATE mutations covered by V3-003-DEC-012.
+
+The decision establishes minimum architectural conditions for future operation-specific deferred-delivery policies.
+
+It does not approve an executable DURABLE_DEFER policy, unconditional continuation during Audit outages, or implementation readiness.
+
+### 2. Approved Principles
+
+#### Principle 1 — Durable Deferred Audit Eligibility Gate
+
+CUS-CREATE or CUS-UPDATE may be considered eligible for successful completion without synchronous Audit Domain ingestion only when:
+
+- Customer Domain Authorization has been successfully validated.
+- Tenant Context is valid and authoritative.
+- The authoritative Customer mutation and its mandatory Audit publication obligation have been consistently and durably recorded within the applicable Customer-owned consistency boundary.
+
+An obligation existing only in memory, a partially committed mutation, or an unverified publication record does not satisfy this eligibility condition.
+
+This principle does not itself authorize deferred execution. All additional recovery, observability, integrity and operation-specific policy requirements must also be satisfied.
+
+#### Principle 2 — Evidence-State Separation
+
+Evidence of obligation creation, durable obligation recording, publication attempts, broker delivery and authoritative Audit Domain ingestion shall remain conceptually distinct.
+
+Only valid evidence of an appropriately coordinated, durably recorded publication obligation may establish the foundational durability prerequisite for deferred eligibility.
+
+The following shall not independently prove this prerequisite or establish authoritative Audit ingestion:
+
+- An in-memory or merely created obligation.
+- An attempted publication.
+- A broker acknowledgement without valid proof of the underlying durable obligation.
+- A delivery status unsupported by the required evidence.
+
+Authoritative Audit ingestion confirmation requires evidence from the Audit Domain according to a separately established ingestion and acknowledgement contract.
+
+No final obligation state machine, acknowledgement protocol or message contract is approved.
+
+#### Principle 3 — Recoverability and Observability Gate
+
+Continued use of a future approved deferred Audit path shall require demonstrable:
+
+- Recoverability of outstanding publication obligations.
+- Identification of pending, failed and unresolved obligations.
+- Valid visibility into relevant backlog and recovery status.
+- Explicit ownership of monitoring, recovery and escalation.
+- Ability to reconcile publication obligations against authoritative Audit ingestion evidence without prohibited duplicate effects.
+
+If backlog observability or recovery status becomes indeterminate or cannot be trusted, eligibility for the deferred Audit path shall be suspended until valid conditions are restored.
+
+Suspending deferred eligibility does not automatically suspend all Customer operations.
+
+Any alternative execution path must independently satisfy the approved mandatory Audit obligations and its own applicable operation-specific authorization, consistency and failure policies.
+
+This principle does not approve unlimited backlog growth, indefinite deferred delivery, a particular monitoring implementation or numeric operational thresholds.
+
+#### Principle 4 — Integrity, Provenance and Recovery Safety Gate
+
+An Audit publication obligation shall not qualify for deferred delivery when its provenance, authoritative Tenant scope, integrity or required recovery evidence is invalid, inconsistent or indeterminate.
+
+Such conditions shall suspend eligibility for the deferred Audit path and initiate escalation through the applicable authorized operational or security process.
+
+Invalid or cross-tenant obligation evidence shall not be accepted or reconciled as authoritative evidence for another Tenant.
+
+This suspension applies to the deferred-delivery pathway, not automatically to every Customer operation or to already committed mutations.
+
+Previously committed effects remain subject to separately approved reconciliation, incident response, correction and recovery policies.
+
+This principle does not establish automatic rollback of already committed Customer mutations or authorize an unapproved emergency bypass.
+
+#### Principle 5 — Dedicated Sovereign Local Eligibility Gate
+
+For Dedicated Sovereign deployments, Central disconnection alone shall not invalidate legitimate locally authoritative Customer operations.
+
+Deferred Audit eligibility must remain grounded in locally valid:
+
+- Durable publication obligations.
+- Backlog and recovery visibility.
+- Integrity and provenance evidence.
+- Authorized operational control.
+- Recovery and reconciliation authority.
+
+Loss or invalidity of required local durability, visibility, integrity evidence or recovery authority shall suspend local deferred Audit eligibility until the applicable requirements are restored.
+
+Central availability, Central acknowledgement or Central recovery authority shall not be substituted for the required Sovereign-local evidence or final authority.
+
+Suspension of deferred eligibility does not automatically prohibit every locally authorized Customer operation where an independently valid alternative execution path exists.
+
+This principle does not approve Full Air-Gap support, specific disconnected-operation durations, local infrastructure technologies or numeric recovery targets.
+
+### 3. Decision Boundaries
+
+The five approved principles establish qualitative architectural gates for evaluating future deferred Audit delivery.
+
+They do not demonstrate that these gates are currently implemented or satisfied.
+
+Before an operation-specific DURABLE_DEFER policy may become executable, the following remain necessary:
+
+1. Customer Domain design evidence for transaction and durable-obligation boundaries.
+2. Audit Domain design evidence for authoritative durable ingestion confirmation.
+3. Obligation identity, lifecycle, ownership and provenance contracts.
+4. Operations evidence for backlog visibility, recovery, reconciliation and escalation.
+5. Security validation of integrity, authorization, Tenant isolation and failure conditions.
+6. Dedicated Sovereign Operations validation of local control and recovery.
+7. Explicit approval of operation-specific failure conditions and acceptance criteria.
+
+No implementation readiness or security acceptance is inferred from Owner approval of these foundational principles.
+
+### 4. Explicit Non-Approvals
+
+This decision does not approve:
+
+1. An executable or unconditional DURABLE_DEFER policy.
+2. A universal Audit failure-handling policy.
+3. Automatic suspension of all Customer operations whenever deferred eligibility is lost.
+4. An unapproved alternative execution path or emergency bypass.
+5. A final Audit Obligation State Machine.
+6. Exact Outbox, Inbox, broker, storage, monitoring, API or acknowledgement technologies.
+7. Specific event schemas, publication contracts or reconciliation algorithms.
+8. Numeric backlog capacity, retry limits, timeouts or acceptable deferral durations.
+9. Numeric SLO, RTO, RPO, latency, availability or recovery objectives.
+10. Automatic rollback or compensation for previously committed mutations.
+11. A complete Mandatory Audit Event Catalog.
+12. Customer read-only disclosure Audit failure semantics.
+13. Bulk, partial-success, Customer merge, deletion or correction workflows.
+14. Full Air-Gap support or Central-dependent Sovereign recovery.
+15. New Business Criticality, Security Criticality, Data Classification, Recovery Priority or Risk Rating assignments.
+16. Final approval of SR-CAND-019, SR-CAND-020 or other Security Requirement candidates.
+17. Executed Negative Tests or verified implementation controls.
+18. Independent Security Review sign-off, risk acceptance or Production Readiness.
+
+### 5. Architecture Preservation
+
+This decision preserves:
+
+- Customer Domain ownership of Customer Master and originating mutations.
+- Audit Domain ownership of authoritative Audit evidence.
+- Domain-Owned Authorization and validated Tenant Context.
+- Service-owned persistence and transactional boundaries.
+- At-least-once delivery and idempotent consumer effects.
+- No cross-service database transaction requirement.
+- No end-to-end exactly-once delivery guarantee.
+- Separation of producer obligation durability and Audit Domain ingestion.
+- Sensitive-data minimization and Tenant Isolation.
+- Dedicated Sovereign local final authority.
+
+Existing Customer Business Criticality assessments retain their exact approved scope:
+
+- CUS-BC-001 — BC-3, limited Customer Create scenario.
+- CUS-BC-002 — BC-2, limited Customer Search scenario.
+- CUS-BC-003 — BC-2, limited Customer Get scenario.
+
+All other unassessed Customer scenarios remain NOT_ASSESSED where applicable.
+
+### 6. Governance Preservation
+
+The following statuses remain unchanged:
+
+- V3-003 = IN PROGRESS.
+- OD-001 through OD-023 = OPEN.
+- SR-CAND-001 through SR-CAND-024 = PROPOSED — NOT APPROVED.
+- THREAT_ASSUMPTION_VALIDATION_STATUS = PENDING SECURITY REVIEW.
+- SECURITY_REVIEW_STATUS = NOT_SIGNED_OFF.
+- IMPLEMENTATION_EVIDENCE_STATUS = NOT_VERIFIED.
+- NEGATIVE_TEST_EXECUTION_STATUS = NOT_EXECUTED.
+
+All previous V3-003 decisions, normative annexes, architectural ADRs and standards remain unchanged.
+
+### 7. Decision Effect
+
+This decision establishes the Owner-approved foundational eligibility and safety gates governing the conditional Durable Deferred Audit direction for CUS-CREATE and CUS-UPDATE.
+
+The next authorized work is evidence-based design of the Customer/Audit consistency and ingestion contracts, followed by operational recovery and security validation planning.
+
+No executable deferred Audit policy or runtime control is approved by this decision.
+
+Repository recording and Git versioning require separate verification.
