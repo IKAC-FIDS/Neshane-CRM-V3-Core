@@ -1484,3 +1484,402 @@ Approval does not close any Open Decision, finalize any Security Requirement or 
 The normative scope of this decision is restricted to these ten principles and their explicit non-approvals.
 
 Repository recording shall be verified separately. No immutable Git revision may be claimed until the content has been committed.
+
+## V3-003-DEC-011 — Mandatory Audit Coverage and Durable Evidence: Foundational Principles
+
+**Decision Status:** APPROVED — OWNER  
+**Decision Authority:** Project Owner  
+**Related Task:** V3-003 — NFR and Threat Assumptions  
+**Related Decisions:** V3-003-DEC-006, V3-003-DEC-007, V3-003-DEC-009, V3-003-DEC-010  
+**Related Candidates:** SR-CAND-019, SR-CAND-020 — PROPOSED — NOT APPROVED  
+**Independent Security Review:** NOT_SIGNED_OFF  
+**Repository Recording:** PENDING VERIFICATION
+
+### 1. Decision Scope
+
+The Project Owner approves three bounded foundational principles governing mandatory Audit coverage for supported privileged operations, sensitive Audit access and lifecycle actions, and the durable recording of mandatory Audit publication obligations.
+
+This decision establishes limited architectural obligations. It does not approve a complete Mandatory Audit Event Catalog, operation-specific Audit failure policies, implementation mechanisms or final Security Requirements.
+
+### 2. Approved Principles
+
+#### Principle 1 — Mandatory Audit Evidence for Supported Privileged Operations
+
+Every supported FIRST_RELEASE privileged operation within the approved `FR-SO-004` scope shall produce mandatory Audit evidence for its execution request and material execution outcome.
+
+Applicable outcomes include successful execution, authorization denial and execution failure.
+
+The evidence shall preserve sufficient validated actor, Tenant/Platform scope, action, target, outcome and correlation context to support authorized accountability and investigation, subject to approved sensitive-data protection requirements.
+
+Operator, Platform or infrastructure privileges do not replace authorization by the resource-owning Domain.
+
+This principle does not approve a privileged-action catalog, administrator-role model, emergency-access workflow, event schema or detailed failure-handling policy.
+
+It does not imply that every attempted privileged action will successfully produce evidence under all failure conditions; such conditions require explicit detection, recovery and operation-specific failure policies.
+
+#### Principle 2 — Mandatory Evidence for Sensitive Audit Access and Audit Lifecycle Actions
+
+Sensitive access to authoritative Audit records, including applicable authorized access, authorization denial and material access failure, shall be subject to mandatory Audit evidence obligations.
+
+Supported operations that affect authoritative Audit evidence, integrity or lifecycle — including applicable correction, supplementation, maintenance, recovery and retention actions — shall themselves produce traceable Audit evidence of their initiation and material outcome.
+
+These obligations shall preserve Audit Domain-owned authorization, explicit Tenant/Platform scope, validated purpose where applicable, and the prohibition of implicit Administrator or Operator authority.
+
+The exact catalog of sensitive Audit operations, the point at which evidence is considered durably recorded, and the handling of audit-of-audit recursion remain subject to later policy and design decisions.
+
+This principle does not create unrestricted Audit access, approve legal deletion or redaction procedures, or require a separate event for every internal read, query, processing step or implementation detail.
+
+#### Principle 3 — Durable Publication Obligation for Mandatory Audit Events
+
+For a cataloged mandatory Audit event arising from a service-owned durable business or security-state mutation, successful operation completion shall require a consistently recorded durable Audit publication obligation coordinated with the corresponding originating effect.
+
+Where the originating effect and Audit obligation are within the same service-owned transactional resource, they shall preserve an appropriate atomic consistency boundary.
+
+Where this is not applicable, an independently approved equivalent consistency, recovery and reconciliation guarantee is required.
+
+The originating service shall not treat successful publication, an Outbox record or broker acknowledgement as proof that the Audit Domain has durably ingested the Audit record.
+
+Downstream Audit unavailability may be handled through durable deferral only where the relevant operation-specific policy permits it, silent loss is prevented, and recovery and reconciliation obligations are established.
+
+This principle does not mandate cross-service distributed transactions, a universal Outbox implementation, synchronous Audit ingestion, a particular acknowledgement protocol or a universal `BLOCK` / `DURABLE_DEFER` policy.
+
+The separate Audit failure semantics of read-only or disclosure operations remain unresolved.
+
+### 3. Relationship to Existing Architecture
+
+This decision preserves:
+
+- Audit Core within FIRST_RELEASE.
+- Audit Domain ownership of authoritative system-wide Audit evidence.
+- Producing Domain ownership of Business Facts and originating operations.
+- Domain-Owned Authorization.
+- Validated Tenant Context and Tenant Isolation.
+- Separation of Tenant-scoped and Platform-scoped Audit evidence.
+- Service-owned persistence and transaction boundaries.
+- At-least-once messaging and idempotent processing.
+- Transactional Outbox and durable Inbox where applicable.
+- Append-oriented, integrity-protected Audit evidence.
+- Sensitive-data minimization.
+- Dedicated Sovereign local final authority.
+
+### 4. Explicit Non-Approvals
+
+This decision does not approve:
+
+1. The complete Mandatory Audit Event Catalog.
+2. All `AEC-CAND-001..026` entries as mandatory requirements.
+3. Final mandatory event classifications for Identity, MFA, Plugin, Customer, Sales, Request, Work, File or Reporting operations.
+4. FIRST_RELEASE product scope for unconfirmed Identity, MFA or Plugin operations.
+5. Privileged-action, Audit-viewer, Administrator or break-glass role catalogs.
+6. Universal Audit coverage of every business mutation or read.
+7. Exact Audit Event/API schemas, payload formats or Event Contracts.
+8. Any universal `BLOCK`, `DURABLE_DEFER`, `CONTROLLED_DEGRADED` or `REJECT_OR_ESCALATE` policy.
+9. Operation-specific Audit failure semantics.
+10. Detailed Outbox, Inbox, broker, acknowledgement or recovery mechanisms.
+11. Audit-of-Audit recursion handling.
+12. Retention duration, Legal Hold, lawful deletion or redaction procedures.
+13. Cryptographic integrity, archival or storage technologies.
+14. Numeric NFRs, including RTO, RPO and SLO.
+15. Risk ratings, risk acceptance or security exceptions.
+16. Final approval of SR-CAND-019, SR-CAND-020 or any other Security Requirement.
+17. Executed Negative Tests or verified implementation controls.
+18. Independent Security Review sign-off or Production Readiness.
+
+### 5. Governance Preservation
+
+The following statuses remain unchanged:
+
+- `V3-003 = IN PROGRESS`
+- `OD-001..OD-023 = OPEN`
+- `SR-CAND-001..024 = PROPOSED — NOT APPROVED`
+- `THREAT_ASSUMPTION_VALIDATION_STATUS = PENDING SECURITY REVIEW`
+- `SECURITY_REVIEW_STATUS = NOT_SIGNED_OFF`
+- `IMPLEMENTATION_EVIDENCE_STATUS = NOT_VERIFIED`
+- `NEGATIVE_TEST_EXECUTION_STATUS = NOT_EXECUTED`
+
+Previously approved V3-003 decisions, normative annexes, architectural ADRs, FIRST_RELEASE inventory decisions and approved Customer Core Business Criticality assessments remain unchanged.
+
+### 6. Decision Effect
+
+These three principles become the Owner-approved foundational basis for subsequent Privileged Operation Audit Catalog, Audit Access/Lifecycle Event Catalog and operation-specific Durable Audit Obligation design.
+
+They do not finalize the full Audit Catalog or determine Audit failure behavior for individual operations.
+
+Repository recording and Git versioning must be verified separately.
+
+## V3-003-DEC-012 — Customer Core Mandatory Audit and Failure Boundaries
+
+**Decision Status:** APPROVED — OWNER  
+**Decision Authority:** Project Owner  
+**Related Task:** V3-003 — NFR and Threat Assumptions  
+**Related Decisions:** V3-003-DEC-003, V3-003-DEC-004, V3-003-DEC-006, V3-003-DEC-007, V3-003-DEC-009, V3-003-DEC-010, V3-003-DEC-011  
+**Related Candidates:** AEC-CAND-013, AEC-CAND-014, AEC-CAND-015, AEC-CAND-016 — ANALYTICAL, NON-NORMATIVE REFERENCES  
+**Related Security Requirement Candidates:** SR-CAND-019, SR-CAND-020 — PROPOSED — NOT APPROVED  
+**Independent Security Review:** NOT_SIGNED_OFF  
+**Repository Recording:** PENDING VERIFICATION
+
+### 1. Decision Scope
+
+The Project Owner approves four bounded principles governing Mandatory Audit obligations and failure boundaries for selected FIRST_RELEASE Customer Core operations.
+
+The decision applies to:
+
+- CUS-CREATE — successful durable Customer Master creation.
+- CUS-UPDATE — successful durable authoritative Customer Master changes.
+- CUS-GET, CUS-GET-FOR-UPDATE and CUS-SEARCH — explicit Customer Domain authorization denials.
+- Audit publication obligations associated with the approved mandatory Customer mutation events.
+
+This approval does not establish a complete Customer Audit Event Catalog, a universal Audit failure policy or a final implementation design.
+
+### 2. Approved Principles
+
+#### Principle 1 — Mandatory Customer Creation Audit
+
+Every CUS-CREATE operation that successfully and durably creates an authoritative Customer Master shall incur a Mandatory Audit publication obligation.
+
+The originating Customer Domain shall coordinate the durable Customer creation effect and the corresponding Audit publication obligation within an appropriate service-owned consistency boundary.
+
+The operation shall not be reported as successfully completed if that mandatory durable publication obligation has not been consistently recorded.
+
+Audit evidence shall identify the relevant validated Actor, Tenant, operation, safe Customer reference, outcome and correlation context, subject to data-minimization requirements.
+
+This principle does not approve separate mandatory Audit events for validation rejection, authorization denial, incomplete submissions or unsuccessful creation attempts.
+
+#### Principle 2 — Mandatory Customer Update Audit
+
+Every CUS-UPDATE operation that successfully and durably changes the authoritative Customer Master shall incur a Mandatory Audit publication obligation.
+
+This obligation applies to authoritative durable changes generally and is not restricted to a future sensitive-field list.
+
+The Customer Domain shall coordinate the durable mutation and its Audit publication obligation within an appropriate service-owned consistency boundary.
+
+Conceptual evidence shall preserve the validated Actor, Tenant, Customer reference, action, successful outcome, correlation and a relevant change-category reference.
+
+The decision does not require recording full Customer snapshots or automatically capturing old/new sensitive field values.
+
+Field classification, exact change categories, bulk and partial-success semantics, correction workflows and payload schema remain unresolved.
+
+#### Principle 3 — Mandatory Evidence for Explicit Customer Disclosure Denial
+
+An explicit authorization denial issued by the Customer Domain for CUS-GET, CUS-GET-FOR-UPDATE or CUS-SEARCH shall incur a Mandatory Audit evidence obligation.
+
+The obligation shall preserve applicable Actor, validated Tenant scope, action, safe target or query category, denial outcome and correlation information, without disclosing Customer existence, protected resource details, sensitive search criteria or permission-sensitive information.
+
+The following shall not automatically be classified as Customer Domain authorization denials under this principle:
+
+- A search returning zero results.
+- Internal result filtering or suppression of unauthorized records.
+- Validation failures unrelated to authorization denial.
+- A denial issued before the request reaches the Customer Domain, including invalid Tenant Context rejected at an upstream enforcement boundary.
+
+For denials originating upstream, the producing and auditing responsibility remains with the actual applicable enforcement boundary, subject to separately approved Audit policies.
+
+This principle approves the Audit obligation and its disclosure-safe objective, not the concrete logging mechanism, persistence timing, retry policy, failure recovery or Security Review acceptance criteria.
+
+An Audit failure shall never convert a denied Customer operation into an allowed operation.
+
+#### Principle 4 — Customer Mutation Audit Failure Boundary
+
+For CUS-CREATE and CUS-UPDATE operations covered by Principles 1 and 2, the originating Customer Domain shall not report successful durable mutation unless the corresponding Mandatory Audit publication obligation has been consistently and durably recorded.
+
+Where the mutation and publication obligation share an applicable service-owned transactional resource, they shall preserve atomic consistency.
+
+If the durable publication obligation cannot be established, the originating operation must not commit and report a successful authoritative mutation as though the Audit obligation had been satisfied.
+
+When downstream Audit ingestion or storage is unavailable after the obligation has been durably established, any continuation or durable deferral remains subject to an explicitly approved operation-specific failure policy, recovery and reconciliation obligations, and prevention of silent evidence loss.
+
+The existence of an Outbox record, successful broker publication or broker acknowledgement does not constitute proof of durable Audit Domain ingestion.
+
+This principle does not establish universal BLOCK, DURABLE_DEFER, CONTROLLED_DEGRADED or REJECT_OR_ESCALATE behavior.
+
+Read-only Customer disclosure failure semantics remain separately unresolved.
+
+### 3. Architecture and Ownership Preservation
+
+This decision preserves:
+
+- Customer Domain ownership of authoritative Customer Master data and originating business mutations.
+- Audit Domain ownership of authoritative system-wide Audit records.
+- Domain-Owned Authorization for Customer resources and actions.
+- Validated Tenant Context and Tenant Isolation.
+- Service-owned persistence and transactional boundaries.
+- Transactional Outbox and idempotent consumer processing where applicable.
+- At-least-once messaging without end-to-end exactly-once guarantees.
+- Separation of durable Audit publication obligation from downstream durable Audit ingestion.
+- Append-oriented, integrity-protected Audit evidence.
+- Safe-denial semantics and sensitive-data minimization.
+- Dedicated Sovereign local final authority.
+
+### 4. Business Criticality Preservation
+
+Existing Customer Business Criticality decisions retain their exact scope:
+
+- CUS-BC-001 — BC-3, limited approved Customer Create scenario.
+- CUS-BC-002 — BC-2, limited search-first blocking scenario.
+- CUS-BC-003 — BC-2, limited outdated Customer data scenario.
+
+No approved Business Criticality is generalized to all Customer Create, Get or Search behavior.
+
+CUS-UPDATE, CUS-VALIDATE, CUS-GET-FOR-UPDATE and other unassessed operations remain NOT_ASSESSED where applicable.
+
+No new BC, SC, DC, RP, Risk Rating or numeric recovery target is established.
+
+### 5. Explicit Non-Approvals
+
+This decision does not approve:
+
+1. The complete Mandatory Audit Event Catalog or final disposition of all AEC-CAND entries.
+2. AEC-CAND-016 as generally Mandatory for successful Customer retrieval or search.
+3. A separately mandatory event for every CUS-VALIDATE execution.
+4. Universal Audit coverage for every Customer read, query, result row or field disclosure.
+5. Mandatory denial/failure Audit outcomes for CUS-CREATE or CUS-UPDATE.
+6. Mandatory events for incomplete Customer submissions or unsuccessful mutations.
+7. A final Audit Event/API schema or payload format.
+8. Customer field allowlists, change-category taxonomies or storage of old/new sensitive values.
+9. Bulk, partial-success, correction, merge or deletion behavior.
+10. A universal Audit failure-handling policy.
+11. Automatic eligibility for DURABLE_DEFER whenever an Outbox obligation exists.
+12. Read-only Customer disclosure failure semantics.
+13. Specific Outbox, Inbox, broker, acknowledgement, retry, replay or reconciliation mechanisms.
+14. Cross-service database transactions or end-to-end exactly-once delivery guarantees.
+15. Retention periods, Legal Hold, deletion, redaction or cryptographic integrity mechanisms.
+16. Numeric NFRs, including SLO, RTO, RPO, latency and capacity.
+17. New Business Criticality, Security Criticality, Data Classification, Recovery Priority or Risk Rating assignments.
+18. Final approval of SR-CAND-019, SR-CAND-020 or any other Security Requirement.
+19. Executed Negative Tests, verified implementation controls or Independent Security Review sign-off.
+20. Production Readiness or authorization to implement an unapproved detailed Audit policy.
+
+### 6. Governance Preservation
+
+The following statuses remain unchanged:
+
+- V3-003 = IN PROGRESS.
+- OD-001 through OD-023 = OPEN.
+- SR-CAND-001 through SR-CAND-024 = PROPOSED — NOT APPROVED.
+- THREAT_ASSUMPTION_VALIDATION_STATUS = PENDING SECURITY REVIEW.
+- SECURITY_REVIEW_STATUS = NOT_SIGNED_OFF.
+- IMPLEMENTATION_EVIDENCE_STATUS = NOT_VERIFIED.
+- NEGATIVE_TEST_EXECUTION_STATUS = NOT_EXECUTED.
+
+All earlier Owner-approved V3-003 decisions, normative annexes, architectural ADRs and standards remain unchanged.
+
+### 7. Decision Effect
+
+These four principles establish the bounded Owner-approved Customer Core Audit obligations for successful authoritative Customer creation, successful authoritative Customer updates and explicit Customer Domain disclosure denials.
+
+They also establish the consistency boundary for the mandatory publication obligations associated with approved Customer mutations.
+
+This decision does not finalize Customer read/disclosure Audit policies, approve downstream Audit failure handling, or complete V3-003.
+
+Repository recording and Git versioning must be verified independently.
+
+## V3-003-DEC-013 — Customer Core Durable Deferred Audit: Conditional Policy Direction
+
+**Decision Status:** APPROVED — OWNER  
+**Decision Authority:** Project Owner  
+**Approval Scope:** Conditional Policy Direction Only  
+**Related Decisions:** V3-003-DEC-009, V3-003-DEC-010, V3-003-DEC-011, V3-003-DEC-012  
+**Affected Operations:** CUS-CREATE, CUS-UPDATE  
+**Related Security Candidates:** SR-CAND-019, SR-CAND-020 — PROPOSED — NOT APPROVED  
+**Independent Security Review:** NOT_SIGNED_OFF  
+**Repository Recording:** PENDING VERIFICATION
+
+### 1. Decision
+
+The Project Owner selects **Durable Deferred Audit** as the preferred conditional policy direction for successful authoritative Customer Core mutations.
+
+This direction applies only to CUS-CREATE and CUS-UPDATE operations covered by V3-003-DEC-012.
+
+The decision does not authorize unconditional deferred Audit delivery, finalize operation-specific failure policies, or establish runtime readiness.
+
+### 2. Approved Direction
+
+#### Principle 1 — Durable Audit Obligation Before Successful Mutation
+
+A successful authoritative CUS-CREATE or CUS-UPDATE mutation shall require a durable Audit publication obligation consistently coordinated with the originating business effect.
+
+If that obligation cannot be established within the applicable approved consistency boundary, the operation must not commit and report a successful authoritative mutation as though its mandatory Audit obligation were satisfied.
+
+#### Principle 2 — No Mandatory Synchronous Audit Ingestion Dependency
+
+Subject to an approved operation-specific failure policy and validated safeguards, Customer mutation completion may be independent of synchronous durable ingestion by the Audit Domain.
+
+The preferred direction is to allow asynchronous delivery of an already durable Audit obligation.
+
+This principle does not establish that an Outbox record, broker acknowledgement, or publication attempt proves durable Audit ingestion.
+
+#### Principle 3 — Controlled Deferred Delivery Eligibility
+
+Deferred Audit delivery may be permitted only when the applicable future policy establishes sufficient evidence and guarantees for:
+
+- Durable and recoverable publication obligations.
+- Identification of pending, failed, and unresolved obligations.
+- Retry and reconciliation without prohibited duplicate effects.
+- Explicit operational ownership and escalation.
+- Tenant isolation, event provenance, and integrity protection.
+- Profile-appropriate recovery and Sovereign-local authority.
+
+These are policy prerequisites requiring subsequent design, evidence, and validation. Their implementation is not considered verified by this decision.
+
+#### Principle 4 — Explicit Handling of Indeterminate or Unrecoverable Conditions
+
+The future operation-specific policy must define the circumstances under which deferred delivery remains permissible and the circumstances requiring rejection, suspension, escalation, or other controlled handling.
+
+Unknown obligation validity, unavailable recovery evidence, or unresolved integrity concerns shall not automatically authorize continued operation.
+
+No numerical backlog threshold, freshness interval, timeout, retry limit, or availability target is established.
+
+#### Principle 5 — Dedicated Sovereign Locality
+
+For Dedicated Sovereign deployments, mandatory Audit publication obligations, deferred-delivery governance, recovery, and reconciliation must preserve Sovereign-local final authority.
+
+Central Audit ingestion or Central availability shall not become a mandatory synchronous dependency for critical locally authoritative operations.
+
+### 3. Approval Boundary
+
+The Project Owner approves the architectural and policy direction, not its final operational eligibility.
+
+Before Durable Deferred Audit can be adopted as an executable operation-specific policy, the following remain required:
+
+1. Customer Domain Owner confirmation of transaction and business-effect boundaries.
+2. Audit Domain Owner definition of durable-ingestion evidence and reconciliation responsibilities.
+3. Operations evidence for backlog detection, recovery, and escalation.
+4. Security validation of integrity, provenance, Tenant isolation, and failure paths.
+5. Dedicated Sovereign Operations confirmation of local continuity.
+6. Explicit approval of operation-specific acceptance and failure conditions.
+
+### 4. Explicit Non-Approvals
+
+This decision does not approve:
+
+1. Unconditional DURABLE_DEFER.
+2. A universal Audit failure policy.
+3. A specific Outbox, Inbox, broker, storage, API, or reconciliation mechanism.
+4. An automatic right to continue operations during arbitrary Audit failures.
+5. Numeric backlog, retry, retention, timeout, RTO, RPO, or SLO targets.
+6. Customer read-only disclosure Audit failure semantics.
+7. Final Audit Event Catalog contents beyond existing approved obligations.
+8. Bulk, partial-success, compensation, or correction workflows.
+9. Final SR-CAND-019 or SR-CAND-020 approval.
+10. Executed Negative Tests, verified runtime controls, or Security Review sign-off.
+11. Risk acceptance or Production Readiness.
+
+### 5. Governance Preservation
+
+The following statuses remain unchanged:
+
+- V3-003 = IN PROGRESS.
+- OD-001 through OD-023 = OPEN.
+- SR-CAND-001 through SR-CAND-024 = PROPOSED — NOT APPROVED.
+- THREAT_ASSUMPTION_VALIDATION_STATUS = PENDING SECURITY REVIEW.
+- SECURITY_REVIEW_STATUS = NOT_SIGNED_OFF.
+- IMPLEMENTATION_EVIDENCE_STATUS = NOT_VERIFIED.
+- NEGATIVE_TEST_EXECUTION_STATUS = NOT_EXECUTED.
+
+Previously approved decisions and Customer Business Criticality assessments retain their exact scopes.
+
+### 6. Decision Effect
+
+This decision establishes Durable Deferred Audit as the Owner-selected conditional direction for the subsequent design and approval of CUS-CREATE and CUS-UPDATE Audit failure policies.
+
+It does not complete those policies or authorize implementation of unverified deferred-delivery behavior.
