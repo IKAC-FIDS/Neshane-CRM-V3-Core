@@ -4,20 +4,22 @@
 
 | Field | Value |
 | --- | --- |
-| Status | **DRAFT — NOT APPROVED** |
+| Status | **DRAFT — CROSS-DOMAIN REVIEW REQUIRED** |
 | Task | V3-003 — NFR and Threat Assumptions |
 | Scope | CUS-CREATE / CUS-UPDATE |
 | Applicable Owner-approved decisions | V3-003-DEC-009 through V3-003-DEC-014 |
 | Architecture baseline | NESHANE-V3-ARCH-P00-002 |
-| Customer Domain Owner approval | **PENDING** |
-| Audit Domain Owner approval | **PENDING** |
+| Customer C1–C5 design baseline | **PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW** |
+| Customer bounded business-semantics principles | **APPROVED — CUSTOMER DOMAIN OWNER, BOUNDED PRINCIPLES ONLY** |
+| Complete Customer technical contract approval | **PENDING** |
+| Audit Domain agreement | **PENDING** |
 | Messaging/Operations Owner approval | **PENDING** |
 | Security Review | **NOT_SIGNED_OFF** |
 | Executable DURABLE_DEFER | **NOT APPROVED** |
 | Implementation Evidence | **NOT_VERIFIED** |
 | Negative Test Execution | **NOT_EXECUTED** |
 
-This document materializes a proposed technical contract for review. Owner-approved architectural invariants are stated normatively only where V3-003-DEC-009 through V3-003-DEC-014 or the approved architecture already require them. Every new field, state, response rule, confirmation form and reconciliation behavior in this document is **PROPOSED — PENDING APPROVAL** unless explicitly identified as an approved invariant.
+This document materializes a proposed technical contract for review. Owner-approved architectural invariants are stated normatively only where V3-003-DEC-009 through V3-003-DEC-014 or the approved architecture already require them. The six Customer-owned business-semantics principles recorded in L.1 are separately **APPROVED — CUSTOMER DOMAIN OWNER, BOUNDED PRINCIPLES ONLY**. Every other new field, state, response rule, confirmation form and reconciliation behavior remains **PROPOSED — PENDING APPROVAL** unless explicitly identified as an approved invariant.
 
 The document does not allocate a new V3-003 decision identifier, approve an executable operation-specific DURABLE_DEFER policy, or authorize implementation.
 
@@ -56,13 +58,43 @@ The tuple, rather than ObligationId alone, is the uniqueness and lookup scope. I
 
 | Identity | Meaning | Owner | Stability and use | Approval status |
 | --- | --- | --- | --- | --- |
-| Command identity | One client-visible submission/retry intent for CUS-CREATE or CUS-UPDATE. | Customer Domain contract | Stable for retries of the same submitted command; reuse for a different intent is invalid. Exact client contract is unresolved. | **PROPOSED; Customer approval required** |
-| Business mutation identity | One accepted authoritative Customer state transition. | Customer Domain | Stable for the committed transition; independent concurrent updates require distinct identities. | **PROPOSED; Customer approval required** |
-| Audit obligation identity | One mandatory Audit publication obligation arising from one covered successful mutation. | Customer Domain | Generated once before durable recording; stable across publication retries, re-drive, process recovery and reconciliation. | **PROPOSED; Customer and Audit approval required** |
+| Command identity | One submission/retry intent identified within **CustomerAuthority + TenantScope + CommandId**. Actor, Operation and semantic intent are bound to the original command but are not inferred from payload equality. | Customer Domain contract | Stable for retries of the same submitted command. A retry resolves the original authoritative outcome before any new mutation is accepted. Reuse for a different Tenant, Actor, Operation or semantic intent fails closed unless a separately approved delegation rule applies. | **PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW; Customer approval required** |
+| Business mutation identity | One accepted, domain-significant authoritative Customer state transition, distinct from CommandId, CustomerId and ObligationId. | Customer Domain | For the current scope, one accepted command yields zero or one successful mutation. Independent updates retain distinct identities. A stale or conflicting write must not be silently overwritten. | **PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW; Customer approval required** |
+| Audit obligation identity | One stable mandatory obligation for the mutation-success Audit event arising from one covered successful mutation. This does not prohibit additional independently required Audit events. | Customer Domain | Assigned after the mutation is accepted for commit and before the Customer-owned consistency boundary commits; stable across retries, re-drive, process recovery and reconciliation. | **PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW; Customer and Audit approval required** |
 | Transport attempt identity | One delivery attempt of an existing obligation. | Publication component / transport adapter | May change for every attempt and must not alter obligation meaning. | **PROPOSED; Messaging/Operations approval required** |
 | Audit record identity | One authoritative Audit-owned record or accepted representation. | Audit Domain | Assigned and governed by Audit; returned only through Audit-owned evidence. | **PROPOSED; Audit approval required** |
 
-### C.2 Candidate identity invariants
+### C.2 Customer C1–C3 proposed design baseline
+
+**C1 — Command Identity: PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW**
+
+- Command identity is scoped by CustomerAuthority, validated TenantScope and CommandId.
+- The validated initiating Actor, OperationType and semantic intent are bound to the original command.
+- Matching Customer payloads do not prove that two submissions are the same command.
+- A retry with the same identity must resolve the original outcome before Customer accepts new work.
+- Customer Principles 1, 2 and 5 in L.1 approve only the bounded duplicate and unknown-outcome rules that rely on CommandIdentity.
+- The complete CommandIdentity contract, delegation, identity retention and client-visible duplicate responses remain pending further approval and applicable Security Review.
+
+**C2 — Mutation Identity: PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW**
+
+- MutationId is distinct from CommandId, CustomerId and ObligationId.
+- Within the current CUS-CREATE/CUS-UPDATE scope, an accepted command results in zero or one successful authoritative mutation.
+- Independent update commands use distinct Mutation identities even when their submitted data appears equivalent.
+- Customer Principle 3 in L.1 approves the prohibition of silent lost updates and requires explicit Customer concurrency evaluation before mutation acceptance. The mechanism, conflict resolution, merge and ordering remain pending.
+- Customer Principle 4 in L.1 approves that a no-op does not create the DEC-012 successful-mutation obligation. Exact normalization and no-op classification rules remain pending.
+
+**C3 — Mandatory Audit Obligation: PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW**
+
+- Each successful authoritative CUS-CREATE or CUS-UPDATE mutation has one stable obligation for its required mutation-success Audit event.
+- The one-obligation rule does not prohibit other independently required Audit events.
+- ObligationId is assigned before commit and the mutation and obligation are durably coordinated within the Customer-owned consistency boundary.
+- Retry, recovery and re-drive of the same mutation reuse the existing obligation identity.
+- Failed and no-op mutations do not create a successful-mutation obligation.
+- Customer retains recovery custody of its producer-side obligation evidence until reconciliation with valid Audit-owned evidence.
+- Customer Principle 4 in L.1 supplies bounded Customer approval for the no-op part of this rule only.
+- Cross-domain contract agreement and Security validation remain pending.
+
+### C.3 Candidate identity invariants
 
 1. Customer generates ObligationId and records it with the obligation before the obligation is eligible for publication.
 2. The complete semantic key remains stable across retries, redrive and confirmation recovery.
@@ -76,20 +108,31 @@ The tuple, rather than ObligationId alone, is the uniqueness and lookup scope. I
 
 The following are three separate boundaries. None establishes end-to-end exactly-once execution.
 
+The Customer-side portions of C1 and C2 remain **PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW** as complete technical contracts. The six bounded Customer principles recorded once in L.1 are approved independently and do not approve all C1/C2 details.
+
 | Boundary | Protected effect | Identity | Owner | Retry behavior | Unresolved decision |
 | --- | --- | --- | --- | --- | --- |
 | Customer Command Idempotency | Prevents one retried submission from being interpreted as multiple independent commands. | Command identity | Customer Domain | A retry with the same identity must resolve against the original command outcome before creating another mutation. | Retention, duplicate response, conflict response and ambiguous-outcome behavior. |
 | Customer Business Mutation Consistency | Prevents duplicate authoritative state transitions and coordinates the covered mutation with its durable obligation. | Business mutation identity plus Customer aggregate/version rules | Customer Domain | The same accepted transition must not create multiple Customer effects or multiple semantic obligations. | Create uniqueness, optimistic/concurrent update rules, no-op definition and correction behavior. |
 | Audit Obligation Ingestion Idempotency | Prevents duplicate delivery from creating duplicate authoritative Audit effects. | ProducerAuthority + TenantScope + ObligationId | Audit Domain | Same-key/same-content redelivery returns or reconstructs the same successful ingestion evidence after durable handling. | Exact Inbox/equivalent design, semantic comparison, retention and conflict disposition. |
 
-### D.1 Scenario rules
+### D.1 Customer retry and mutation rules
+
+1. A command retry is identified by Command identity, not by equality of Customer payload.
+2. The same Command identity must be resolved against its previous authoritative outcome before it can cause another mutation.
+3. A single accepted in-scope command produces zero or one successful MutationIdentity.
+4. Independent update commands remain independent even when they target the same Customer.
+5. Customer Principle 3 prohibits silent lost updates. Concurrent or stale-write attempts require explicit Customer concurrency evaluation; mechanism, merge, ordering and conflict-response details remain pending.
+6. Customer Principle 4 excludes a normalized no-op from the DEC-012 successful-mutation obligation; exact normalization and classification rules remain pending.
+
+### D.2 Scenario rules
 
 | Scenario | Proposed contract treatment | Approval boundary |
 | --- | --- | --- |
-| Duplicate CUS-CREATE command | Resolve by Command identity before creating another Customer Master. If the original result is known, return the approved representation of that result; if identity is reused with different intent, reject as a conflict. | Final duplicate response, Customer uniqueness semantics and retention are **unresolved Customer decisions**. |
-| Duplicate CUS-UPDATE command | A retry of the same command must not apply the same intended transition twice. | Final version/conflict semantics are **unresolved Customer decisions**. |
-| Independent concurrent CUS-UPDATE operations | Treat independently submitted updates as distinct commands and candidate mutations, then apply Customer-owned concurrency and authorization rules. | Merge, rejection and ordering policy are **unresolved Customer decisions**. |
-| No-op CUS-UPDATE | DEC-012 mandates an obligation for a successful durable authoritative change. A proposed no-op produces no successful-mutation obligation. | The definition of no-op and whether a separate attempt/decision event is required remain **unresolved**. |
+| Duplicate CUS-CREATE command | Customer Principle 1 requires a retry of the same valid CommandIdentity not to create a second authoritative Customer mutation. Resolve the original authoritative outcome or safely report it as indeterminate. Equivalent payload alone is not duplication proof. | **APPROVED — CUSTOMER DOMAIN OWNER, BOUNDED PRINCIPLE**; exact duplicate response and retention remain unresolved. |
+| Duplicate CUS-UPDATE command | Customer Principle 2 requires a retry of the same CommandIdentity not to create a second authoritative update. An independently authorized update remains a separate command even for the same Customer. | **APPROVED — CUSTOMER DOMAIN OWNER, BOUNDED PRINCIPLE**; exact response semantics remain unresolved. |
+| Independent concurrent CUS-UPDATE operations | Treat independently submitted updates as distinct commands. Customer Principle 3 prohibits silent lost updates and requires explicit concurrency evaluation before accepting a mutation. | **APPROVED — CUSTOMER DOMAIN OWNER, BOUNDED PRINCIPLE**; mechanism, merge, rejection and ordering remain unresolved. |
+| No-op CUS-UPDATE | Customer Principle 4 excludes a CUS-UPDATE with no authoritative domain-significant durable change after applicable normalization from the DEC-012 successful-mutation obligation. | **APPROVED — CUSTOMER DOMAIN OWNER, BOUNDED PRINCIPLE**; normalization, classification and any separate Audit event remain unresolved. |
 | Failed mutation | No successful-mutation obligation is created. Failure or denial Audit coverage is not generalized by DEC-012. | Any separate failure/denial catalog entry requires later approval. |
 | Audit redelivery | Use Audit obligation identity, not Command identity, to deduplicate. Same-key/same-content must not create a duplicate authoritative Audit effect. | Audit durable processing design is **pending Audit approval**. |
 | ACK loss after durable Audit commit | Audit remains authoritative. Producer or publisher retrieves or receives confirmation using the stable ObligationKey; redelivery must resolve idempotently. | Confirmation retrieval and transport mechanism remain **proposed**. |
@@ -97,6 +140,29 @@ The following are three separate boundaries. None establishes end-to-end exactly
 ## E. Producer Contract
 
 This is a conceptual contract, not a schema or an approved Event Contract. Field names are stable draft labels only.
+
+### E.1 C5 — Minimum Customer-owned producer evidence
+
+**PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW**
+
+Customer-owned durable producer evidence must preserve the minimum conceptual information needed for:
+
+| Evidence purpose | Minimum conceptual evidence | Boundary |
+| --- | --- | --- |
+| Durable mutation/obligation consistency | Full ObligationKey, MutationId, CommandIdentityRef, OperationType and durable mutation/obligation outcome evidence | Customer-owned; no schema or persistence mechanism is selected |
+| Pending-obligation discovery | Stable obligation identity plus enough producer-owned lifecycle/reconciliation evidence to distinguish pending, confirmed and unresolved work | Exact lifecycle and retention remain pending |
+| Re-drive and recovery | Immutable semantic obligation content, ContractType/Version and producer recovery custody | Transport attempts remain separate and may vary |
+| Tenant and Actor provenance | Validated TenantScope, safe ActorRef and producing authority | Client-provided tenant or actor data is not authority |
+| Business traceability | SafeCustomerRef, Outcome, applicable ChangeCategoryRef, OccurredAt, CorrelationRef and applicable CausationRef | Exact safe-reference and change-category vocabularies remain pending |
+| Semantic conflict detection | SemanticContentVersion and the immutable content required by the future approved comparison contract | Canonicalization and integrity mechanisms require Security Review |
+
+Credentials, tokens, complete Customer snapshots and unnecessary sensitive old/new field values are excluded. Customer evidence must be sufficient to reproduce the immutable obligation after recovery without reconstructing its historical meaning from mutable current Customer state.
+
+CommandIdentityRef is Customer-owned producer evidence. Its inclusion in the cross-domain Audit payload is not approved automatically and remains subject to minimization and Audit/Security agreement.
+
+Customer Principle 6 in L.1 approves the bounded requirement to use safe, minimal Customer and change-category references and to exclude unnecessary Customer data, credentials, tokens, sensitive old/new values and complete Customer snapshots. It does not approve SafeCustomerRef representation, ChangeCategoryRef taxonomy, field classification, retention or the final cross-domain payload.
+
+### E.2 Candidate cross-domain field semantics
 
 | Candidate field | Purpose | Semantic owner | Validation responsibility | Status | Privacy and security constraints |
 | --- | --- | --- | --- | --- | --- |
@@ -220,14 +286,21 @@ Direct cross-service database access, cross-service SQL and shared persistence a
 
 No row below approves an executable Customer response policy.
 
-| Condition | Approved boundary | Proposed contract treatment | Remaining approval |
+**C4 — PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW**
+
+The four named outcomes below are conceptual distinctions, not approved API statuses, response codes or an executable failure policy.
+
+| Conceptual outcome or condition | Approved boundary | Proposed contract treatment | Remaining approval |
 | --- | --- | --- | --- |
-| Failed Customer commit | A successful authoritative mutation cannot be reported when mutation and mandatory obligation were not durably established. | Return a non-success outcome under the future Customer API contract; no successful-mutation Audit obligation is claimed. | Customer error/response contract. |
-| Unknown commit outcome | Success cannot be guessed and duplicate mutation must be prevented. | Preserve the Command identity; resolve authoritative command/mutation/obligation evidence before accepting a retry as new work. | Customer ambiguous-outcome and lookup policy. |
-| Committed mutation with pending Audit ingestion | Durable Customer mutation plus obligation satisfies only the foundational durability prerequisite, not executable deferred authorization. | Mark producer evidence pending. A success response is permitted only if an approved operation-specific policy is active and every DEC-014 eligibility gate is currently satisfied. | Project/Domain policy approval, Operations evidence and Security Review. |
-| Confirmed Audit ingestion | Only valid Audit-owned evidence can establish confirmation. | Validate and record reconciliation completion; duplicate confirmation has no additional business effect. | Customer/Audit confirmation contract approval. |
+| **COMMIT_FAILED** | A successful authoritative mutation cannot be reported when mutation and mandatory obligation were not durably established. | Treat the transaction as not committed and return only a future approved non-success outcome; no successful-mutation Audit obligation is claimed. | Customer error/response contract. |
+| **COMMIT_OUTCOME_UNKNOWN** | Success or failure cannot be guessed and duplicate mutation must be prevented. | Preserve the original Command identity and resolve authoritative command/mutation/obligation evidence before accepting a retry as new work. | Customer outcome-recovery, retention and client-response policy. |
+| **COMMITTED_AUDIT_PENDING** | Durable Customer mutation plus obligation satisfies only the foundational durability prerequisite, not executable deferred authorization. | Preserve the committed mutation and mark producer evidence pending. This condition does not independently authorize a successful client response; an approved operation-specific executable policy and all DEC-014 gates are required. | Project/Domain policy approval, Operations evidence and Security Review. |
+| **AUDIT_INGESTION_CONFIRMED** | Only valid Audit-owned evidence can establish confirmation. | Validate the Audit evidence binding and record Customer-side reconciliation completion; duplicate confirmation has no additional business effect. | Customer/Audit confirmation contract approval. |
 | Deferred eligibility suspended after commit | DEC-014 does not authorize rollback or automatic shutdown of all Customer operations. | Preserve the already committed Customer mutation and obligation; suspend use of the deferred pathway; escalate and reconcile. Do not claim post-commit rollback. | Operation-specific recovery, response and incident policy. |
 | Retried command after ambiguous client response | Retries must not create prohibited duplicate effects. | Reuse the original Command identity, resolve the prior outcome, and return the approved representation or an indeterminate/conflict outcome. | Customer command idempotency and retention policy. |
+| Confirmation after caller disconnect | Caller connectivity does not alter durable Customer or Audit evidence. | Continue authorized delivery and reconciliation; record valid confirmation without creating another Customer mutation. | Client notification or later-result retrieval behavior remains unapproved. |
+
+Customer Principle 5 approves the bounded rule that COMMIT_OUTCOME_UNKNOWN is neither confirmed failure nor confirmed rollback, and that a retry with the same CommandIdentity must resolve the previous authoritative outcome before a new mutation is accepted. Client-visible status, lookup contract and retention remain pending.
 
 Candidate successful deferred sequence:
 
@@ -293,12 +366,66 @@ Candidate negative tests include duplicate delivery, conflicting content, missin
 
 No signature or approval is implied by this register.
 
+### L.1 Customer Domain Owner bounded approval record
+
+| Field | Recorded value |
+| --- | --- |
+| Approval authority | User acting as Project Owner and Customer Domain Owner |
+| Approval evidence | Explicit instruction authorizing repository recording of the six bounded Customer Domain principles below |
+| Approval scope | **APPROVED — CUSTOMER DOMAIN OWNER, BOUNDED PRINCIPLES ONLY** |
+| Approval date | Not recorded |
+| Customer technical contract sign-off | Not granted |
+| Audit, Operations or Security approval | Not granted |
+
+| Principle | Approved bounded Customer Domain rule | Unresolved boundary | Status |
+| --- | --- | --- | --- |
+| 1 — Duplicate CUS-CREATE | A retry of the same valid CommandIdentity shall not create a second authoritative Customer mutation. The original authoritative outcome shall be resolved or safely reported as indeterminate. Equivalent business payload alone does not establish command duplication. | Exact duplicate response semantics and retention remain pending. | **APPROVED — CUSTOMER DOMAIN OWNER** |
+| 2 — Duplicate CUS-UPDATE | A retry of the same CommandIdentity shall not create a second authoritative update mutation. An independently authorized update shall be evaluated as a separate command even when it targets the same Customer. | Exact response semantics remain pending. | **APPROVED — CUSTOMER DOMAIN OWNER** |
+| 3 — Concurrent Update | Silent lost updates are prohibited. Concurrent or stale-write attempts shall be evaluated against explicit Customer Domain concurrency rules before an authoritative mutation is accepted. | Version/precondition control is only a preferred candidate; mechanism, conflict resolution, merge and ordering remain unresolved. | **APPROVED — CUSTOMER DOMAIN OWNER** |
+| 4 — No-op Update | A CUS-UPDATE producing no authoritative, domain-significant durable state change after applicable business normalization shall not create a successful Customer mutation Audit obligation under DEC-012. | Normalization and no-op classification remain pending; separately required security or administrative Audit events are not prohibited. | **APPROVED — CUSTOMER DOMAIN OWNER** |
+| 5 — Unknown Commit Outcome | An indeterminate commit result shall not be represented as confirmed failure or confirmed rollback. A retry with the same CommandIdentity must resolve the previous authoritative outcome before a new mutation is accepted. | Client-visible status, outcome lookup contract and retention remain pending. | **APPROVED — CUSTOMER DOMAIN OWNER** |
+| 6 — Safe Customer and Change References | Customer Audit producer evidence shall use safe, minimal Customer and change-category references without unnecessary Customer data, credentials, tokens, sensitive old/new field values or complete Customer snapshots. | SafeCustomerRef representation, ChangeCategoryRef taxonomy, field classification and retention remain pending Customer/Audit/Security review. | **APPROVED — CUSTOMER DOMAIN OWNER** |
+
+### L.2 C1–C5 cross-domain design-baseline status
+
+| Topic | Status | Approval boundary |
+| --- | --- | --- |
+| C1 — Command Identity | **PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW** | Bounded duplicate/unknown-outcome principles approved by Customer; complete identity contract, delegation, retention and client-visible behavior remain pending |
+| C2 — Mutation Identity | **PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW** | Silent-loss and no-op boundaries approved by Customer; full identity, concurrency, normalization and conflict semantics remain pending |
+| C3 — Mandatory Audit Obligation | **PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW** | Customer no-op boundary approved; complete Customer technical approval, Audit Domain agreement and Security Review remain pending |
+| C4 — Commit and Response Semantics | **PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW** | Unknown-outcome principle approved by Customer; executable response policy, API semantics, Audit agreement and Operations/Security evidence remain pending |
+| C5 — Producer Evidence | **PROPOSED — DESIGN BASELINE ACCEPTED FOR REVIEW** | Customer minimization principle approved; complete field contract, Audit Domain agreement and Security Review remain pending |
+
+### L.3 Independent approval dimensions
+
+| Dimension | Status |
+| --- | --- |
+| CUSTOMER_DOMAIN_BOUNDED_PRINCIPLES | **APPROVED — CUSTOMER DOMAIN OWNER** |
+| COMPLETE_CUSTOMER_TECHNICAL_CONTRACT_APPROVAL | **PENDING** |
+| AUDIT_DOMAIN_AGREEMENT | **PENDING** |
+| MESSAGING_OPERATIONS_OWNER_APPROVAL | **PENDING** |
+| SECURITY_REVIEW | **NOT_SIGNED_OFF** |
+| EXECUTABLE_DURABLE_DEFER | **NOT APPROVED** |
+| IMPLEMENTATION_EVIDENCE | **NOT_VERIFIED** |
+| NEGATIVE_TEST_EXECUTION | **NOT_EXECUTED** |
+
+### L.4 Approval responsibilities
+
 | Approver | Exact clauses requiring approval | Required design evidence | Status |
 | --- | --- | --- | --- |
-| Customer Domain Owner | C identity generation and uniqueness; D command/mutation/no-op semantics; E producer fields; I commit, ambiguous outcome and response boundaries; Customer-owned parts of H and J. | Customer transaction-boundary design; command and mutation identity lifecycle; concurrency/no-op rules; safe reference and change-category policy; recovery evidence. | **PENDING APPROVAL** |
-| Audit Domain Owner | F durable ingestion and confirmation; same-key behavior in G; Audit-owned parts of H and J; Audit fields and dispositions. | Audit durable consistency boundary; idempotency evidence lifecycle; confirmation authority/retrieval; invalid/quarantine semantics; minimized Audit record mapping. | **PENDING APPROVAL** |
+| Customer Domain Owner | Remaining C1–C5 Customer-owned details beyond the six bounded principles; C identity generation and uniqueness; D detailed command/mutation behavior; E field representation; I API/response semantics; Customer-owned parts of H and J. | Complete transaction-boundary design; identity lifecycle/retention; concurrency/no-op rules; safe-reference/change-category definitions; recovery evidence. | **BOUNDED PRINCIPLES APPROVED; COMPLETE CUSTOMER TECHNICAL CONTRACT APPROVAL = PENDING** |
+| Audit Domain Owner | C3/C5 cross-domain agreement; F durable ingestion and confirmation; same-key behavior in G; Audit-owned parts of H and J; Audit fields and dispositions. | Audit durable consistency boundary; idempotency evidence lifecycle; confirmation authority/retrieval; invalid/quarantine semantics; minimized Audit record mapping. | **AUDIT_DOMAIN_AGREEMENT = PENDING** |
 | Messaging/Operations Owner | Publication and transport parts of B, G, H and J; backlog discovery, monitoring, re-drive, escalation and profile operation. | Failure detection; authorized re-drive; backlog completeness and recovery evidence; confirmation exchange operations; Dedicated Sovereign local operation plan. No numeric threshold is requested by this draft. | **PENDING APPROVAL** |
-| Independent Security Reviewer | Tenant/producer provenance; ObligationKey binding; semantic comparison; confirmation authenticity; conflict/quarantine; reconciliation authorization; negative-test sufficiency. | Threat-boundary review; data minimization; fail-closed paths; cross-tenant denial; integrity/authenticity design; evidence limitations and explicit sign-off scope. | **NOT_SIGNED_OFF** |
+| Independent Security Reviewer | Tenant/Actor/producer provenance; Command and Obligation binding; semantic comparison; confirmation authenticity; conflict/quarantine; reconciliation authorization; negative-test sufficiency. | Threat-boundary review; data minimization; fail-closed paths; cross-tenant denial; integrity/authenticity design; evidence limitations and explicit sign-off scope. | **SECURITY_REVIEW = NOT_SIGNED_OFF** |
+
+### L.5 Outstanding Customer business decisions
+
+1. Exact duplicate CUS-CREATE and CUS-UPDATE client-response semantics.
+2. Concurrency mechanism plus conflict resolution, merge and update ordering.
+3. Exact business normalization and no-op classification rules.
+4. Command identity retention and authoritative outcome-lookup contract.
+5. Client-visible status and response semantics for COMMIT_OUTCOME_UNKNOWN.
+6. SafeCustomerRef representation, ChangeCategoryRef taxonomy, field classification and retention.
 
 ### Pending policy and Open Decision dependencies
 
