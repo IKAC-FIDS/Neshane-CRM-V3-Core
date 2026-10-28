@@ -13,9 +13,11 @@
 | Customer bounded business-semantics principles | **APPROVED — CUSTOMER DOMAIN OWNER, BOUNDED PRINCIPLES ONLY** |
 | Audit technical review recommendations | **RECORDED AS ANALYTICAL BASIS FOR THE BOUNDED DISPOSITIONS BELOW** |
 | Bounded Audit technical dispositions | **APPROVED — AUDIT DOMAIN OWNER, C3/C5/F/G-H BOUNDED SCOPE ONLY** |
+| Messaging/Operations safety review recommendations | **RECORDED AS ANALYTICAL BASIS FOR THE BOUNDED DISPOSITIONS BELOW** |
+| Bounded Messaging/Operations dispositions | **APPROVED — MESSAGING/OPERATIONS OWNER, O1-O5 BOUNDED SCOPE ONLY** |
 | Complete Customer technical contract approval | **PENDING** |
 | Remaining Audit Domain contract mechanics | **PENDING** |
-| Messaging/Operations Owner approval | **PENDING** |
+| Final operational policy approval | **PENDING** |
 | Security Review | **NOT_SIGNED_OFF** |
 | Executable DURABLE_DEFER | **NOT APPROVED** |
 | Implementation Evidence | **NOT_VERIFIED** |
@@ -301,6 +303,86 @@ TenantScope or ProducerAuthority mismatch fails closed, cannot be reconciled aut
 | Dedicated Managed | Physical dedication does not remove service ownership, workload authentication, Domain authorization, tenant binding, idempotency or confirmation requirements. |
 | Dedicated Sovereign | Customer obligation custody, Audit ingestion, confirmation, backlog visibility, reconciliation, recovery authorization and escalation remain locally authoritative. Central availability or acknowledgement is not required for legitimate local evidence. Full Air-Gap and disconnected-duration targets remain unapproved. |
 
+### H.4 O1 — Backlog observability
+
+**APPROVED WITH BOUNDARIES — MESSAGING/OPERATIONS OWNER**
+
+1. Customer-owned durable obligation evidence is authoritative for pending, failed and unresolved producer obligations.
+2. Audit-owned durable ingestion evidence is authoritative for confirmed ingestion and Audit-owned dispositions.
+3. Operational monitoring is a derived projection. It must not replace, overwrite or fabricate either Domain's authoritative evidence.
+4. Monitoring must expose collection health, source coverage, source provenance, freshness status, unresolved conditions and evidence of collection failure while preserving Tenant-scoped visibility.
+5. Unknown, corrupted, incomplete or untrustworthy monitoring must not be interpreted as an empty or healthy backlog.
+6. Loss of trustworthy visibility suspends eligibility of the demonstrably affected deferred path until the applicable DEC-014 evidence gates are re-established. It does not automatically require shutdown of every Customer operation.
+
+No numeric age, growth, freshness or backlog threshold is approved. The final monitoring implementation, aggregation scope, escalation route and blast-radius policy remain pending.
+
+### H.5 O2 — Publication, retry and re-drive
+
+**APPROVED WITH BOUNDARIES — MESSAGING/OPERATIONS OWNER**
+
+1. Only a durably committed Customer-owned obligation may become eligible for publication.
+2. Retry and re-drive preserve the complete ObligationKey and immutable semantic content. Each transport attempt has a distinct attempt identity and may vary only in transport metadata.
+3. Automated publication requires validated workload authority and authoritative Tenant provenance.
+4. Manual re-drive requires an explicitly authorized operator identity, Tenant scope, affected ObligationKey, reason, correlation and durable operational Audit evidence.
+5. Before re-drive, the initiating component validates Customer-owned pending evidence, contract support, provenance, authorization and the absence of an authoritative matching confirmation or unresolved conflict that prohibits automatic re-drive.
+6. Concurrent publisher, retry or re-drive attempts must not create a second Customer mutation, producer obligation or authoritative Audit effect.
+7. Crash and broker-outage recovery rely on producer-owned durable evidence rather than process memory or transport state.
+8. Operations may coordinate and execute an authorized recovery action but cannot create Customer mutations or obligations, fabricate Audit confirmation or become the source of either Domain's truth.
+
+No broker topology, scheduler, claiming/leasing mechanism, retry algorithm, count, delay or dead-letter policy is approved.
+
+### H.6 O3 — Confirmation exchange
+
+**APPROVED WITH BOUNDARIES — MESSAGING/OPERATIONS OWNER**
+
+1. Audit Domain remains the sole authority for durable ingestion confirmation.
+2. A lost confirmation is recovered only through an authenticated and authorized Audit-owned evidence exchange bound to AuditAuthority, the complete ObligationKey and authoritative Audit evidence.
+3. Publisher success, broker acknowledgement and transport disposition are not Audit ingestion confirmation. Producer reconciliation completion consumes confirmation but does not create it.
+4. Operations must not fabricate, modify or overwrite an Audit-owned confirmation or disposition.
+5. Duplicate matching confirmations are consumed idempotently. Producer/Audit evidence mismatch remains unresolved and is escalated; Operations does not select an authoritative winner.
+6. Confirmation age alone does not invalidate the underlying durable-ingestion fact. Retrieval freshness, authenticity, lookup authorization and any conflicting or superseding Audit disposition remain independently relevant.
+7. After a temporary partition, recovery uses authorized lookup or safe redelivery and the normal idempotency path; it does not infer ingestion from transport history.
+
+Exact lookup API, transport, freshness policy, retention, authenticity mechanism and superseding-disposition lifecycle remain pending.
+
+### H.7 O4 — Recovery, suspension and escalation amendments
+
+**APPROVED WITH AMENDMENTS — MESSAGING/OPERATIONS OWNER**
+
+#### O4-A — Suspension scope
+
+- Prefer the smallest demonstrably affected and reliably isolatable scope.
+- Obligation-level, Tenant-level, service-level or profile-level isolation must not be assumed implemented or approved.
+- If the affected scope cannot be established reliably, escalation is mandatory and deferred eligibility must not be assumed valid.
+- Suspension applies to the affected deferred pathway under the future approved policy; it does not automatically shut down every Customer operation or roll back an already committed mutation.
+- No final blast-radius policy is approved.
+
+#### O4-B — Escalation authority
+
+- Operations coordinates incident response and authorized recovery.
+- Customer Domain remains authoritative for producer obligation and recovery evidence.
+- Audit Domain remains authoritative for ingestion, confirmation, invalid/quarantine disposition and conflict evidence.
+- Security owns review of integrity, provenance and relevant authorization incidents.
+- No actor may unilaterally fabricate authoritative evidence, overwrite another Domain's evidence or resolve a cross-domain semantic conflict.
+
+#### O4-C — Recovery exit criteria
+
+Eligibility restoration requires valid evidence that every applicable DEC-014 gate has been re-established, including obligation durability, trustworthy backlog visibility, recovery capability, appropriate authorization, integrity and provenance, required reconciliation evidence and Sovereign-local authority where applicable.
+
+Restoration is not automatic. No numeric threshold, timeout or universal exit sequence is approved.
+
+#### O4-D — Quarantine and invalid disposition
+
+Quarantine and invalid-event disposition remain distinct from successful Audit ingestion. Release, correction or re-drive requires approved authorization, valid provenance, applicable conflict checks and durable traceability. No final quarantine lifecycle, correction authority, automated release or conflict-resolution mechanism is approved.
+
+### H.8 O5 — Dedicated Sovereign operations
+
+**APPROVED WITH BOUNDARIES — MESSAGING/OPERATIONS OWNER**
+
+Dedicated Sovereign requires locally authoritative obligation custody, publication and recovery, Audit ingestion and confirmation, backlog observability, reconciliation, authorized operator intervention, integrity validation, identity and recovery authority. Valid local operations must not acquire a mandatory synchronous Central dependency. Central reconnection must not automatically overwrite locally authoritative Customer, Audit or reconciliation evidence.
+
+Central disconnection alone does not invalidate otherwise valid local evidence. Loss of required local durability, visibility, integrity, authorization or recovery authority suspends affected local deferred eligibility according to a future approved policy. Full Air-Gap support, disconnected-operation duration, recovery objectives, local infrastructure technology and final restoration runbook remain unapproved.
+
 ## I. Customer Commit and Response Semantics
 
 No row below approves an executable Customer response policy.
@@ -378,6 +460,22 @@ All criteria are **NOT APPROVED as final Security Requirements** and **NOT_EXECU
 | TC-AC-016 | Loss of deferred eligibility after commit preserves the committed mutation and obligation, suspends the deferred path and triggers authorized escalation without claiming automatic rollback. | I, J | NOT_APPROVED / NOT_EXECUTED |
 | TC-AC-017 | Variation only in transport-attempt metadata is not a semantic conflict, while same-key/different-semantic-content is durably exposed as a conflict and never confirmed as successful ingestion. | G, H | NOT_APPROVED / NOT_EXECUTED |
 | TC-AC-018 | A durable rejection or quarantine disposition is distinguishable from, and never reported as, successful authoritative Audit ingestion. | F, H | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-001 | A committed pending obligation remains discoverable from Customer-owned evidence after publisher process loss. | H.4, H.5, J | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-002 | Monitoring failure, incomplete coverage or unknown collection state is not represented as an empty backlog. | H.4, J | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-003 | A derived monitoring projection cannot overwrite Customer obligation evidence or Audit ingestion evidence. | B, H.4 | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-004 | Publication retry and re-drive preserve the full ObligationKey and immutable semantic content while using a distinct attempt identity. | G, H.5 | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-005 | Concurrent publication or re-drive attempts do not create a second Customer mutation, producer obligation or authoritative Audit effect. | H.5, J | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-006 | Manual re-drive without authorized operator identity, Tenant scope, reason, correlation and valid pending evidence fails closed. | H.5 | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-007 | Publisher success, broker acknowledgement and transport disposition cannot establish Audit ingestion confirmation. | F, H.6 | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-008 | A lost confirmation can be recovered through an authorized Audit-owned lookup without creating a second Audit effect. | F, H.6, J | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-009 | Forged, unauthorized or wrong-Tenant confirmation evidence fails closed and cannot complete reconciliation. | H.6, J | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-010 | Loss of trustworthy backlog or recovery visibility suspends affected deferred eligibility without fabricating success or requiring universal Customer shutdown. | H.4, H.7, J | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-011 | Suspension after Customer commit neither rolls back the mutation automatically nor discards the durable obligation. | H.7, I, J | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-012 | Same-key/different-semantic-content evidence produces durable conflict visibility and no successful ingestion confirmation. | G, H.7, J | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-013 | Operations cannot fabricate Domain evidence, choose an automatic cross-domain conflict winner or overwrite an authoritative confirmation. | B, H.6, H.7 | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-014 | Dedicated Sovereign retains local obligation, confirmation, observability, reconciliation and recovery authority during Central disconnection. | H.8, J | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-015 | Central reconnection does not automatically overwrite locally authoritative Customer or Audit evidence. | H.8 | NOT_APPROVED / NOT_EXECUTED |
+| OPS-AC-016 | Monitoring, recovery and reconciliation operate through authorized contracts without cross-service private-database access. | B, H.4-H.8 | NOT_APPROVED / NOT_EXECUTED |
 
 Candidate negative tests include duplicate delivery, conflicting content, missing or cross-tenant provenance, unsupported version, crash after Customer commit, broker outage, Audit commit followed by ACK loss, forged confirmation, unauthorized reconciliation lookup, unknown backlog, local Sovereign Audit outage and Central disconnection. Their exact fixtures, tools and expected transport responses remain unapproved.
 
@@ -423,7 +521,8 @@ No signature or approval is implied by this register.
 | COMPLETE_CUSTOMER_TECHNICAL_CONTRACT_APPROVAL | **PENDING** |
 | AUDIT_DOMAIN_OWNER_BOUNDED_DISPOSITIONS_C3_C5_F_GH | **APPROVED — AUDIT DOMAIN OWNER** |
 | REMAINING_AUDIT_DOMAIN_CONTRACT_MECHANICS | **PENDING** |
-| MESSAGING_OPERATIONS_OWNER_APPROVAL | **PENDING** |
+| MESSAGING_OPERATIONS_OWNER_BOUNDED_DISPOSITIONS_O1_O5 | **APPROVED — MESSAGING/OPERATIONS OWNER** |
+| FINAL_OPERATIONAL_POLICY_APPROVAL | **PENDING** |
 | SECURITY_REVIEW | **NOT_SIGNED_OFF** |
 | EXECUTABLE_DURABLE_DEFER | **NOT APPROVED** |
 | IMPLEMENTATION_EVIDENCE | **NOT_VERIFIED** |
@@ -435,7 +534,7 @@ No signature or approval is implied by this register.
 | --- | --- | --- | --- |
 | Customer Domain Owner | Remaining C1–C5 Customer-owned details beyond the six bounded principles; C identity generation and uniqueness; D detailed command/mutation behavior; E field representation; I API/response semantics; Customer-owned parts of H and J. | Complete transaction-boundary design; identity lifecycle/retention; concurrency/no-op rules; safe-reference/change-category definitions; recovery evidence. | **BOUNDED PRINCIPLES APPROVED; COMPLETE CUSTOMER TECHNICAL CONTRACT APPROVAL = PENDING** |
 | Audit Domain Owner | C3 obligation identity; C5 evidence minimization; F durable ingestion confirmation; G/H duplicate, conflict and reconciliation boundaries. Remaining Audit-owned mechanics include final field/schema representation, persistence design, disposition lifecycle, quarantine and recovery protocols. | Audit durable consistency boundary; idempotency evidence lifecycle; confirmation implementation/retrieval design; invalid/quarantine mechanics; minimized Audit record mapping. | **C3/C5/F/G-H BOUNDED DISPOSITIONS APPROVED; REMAINING AUDIT DOMAIN CONTRACT MECHANICS = PENDING** |
-| Messaging/Operations Owner | Publication and transport parts of B, G, H and J; backlog discovery, monitoring, re-drive, escalation and profile operation. | Failure detection; authorized re-drive; backlog completeness and recovery evidence; confirmation exchange operations; Dedicated Sovereign local operation plan. No numeric threshold is requested by this draft. | **PENDING APPROVAL** |
+| Messaging/Operations Owner | O1 backlog observability; O2 publication/retry/re-drive; O3 confirmation exchange; O4 recovery/suspension/escalation amendments; O5 Dedicated Sovereign operational authority. Remaining mechanics include final monitoring platform, retry/claiming technology, blast-radius policy, runbooks, thresholds and executable failure policy. | Failure detection; authorized re-drive; backlog completeness and recovery evidence; confirmation exchange operations; Dedicated Sovereign local operation plan. | **O1-O5 BOUNDED DISPOSITIONS APPROVED; FINAL OPERATIONAL POLICY APPROVAL = PENDING** |
 | Independent Security Reviewer | Tenant/Actor/producer provenance; Command and Obligation binding; semantic comparison; confirmation authenticity; conflict/quarantine; reconciliation authorization; negative-test sufficiency. | Threat-boundary review; data minimization; fail-closed paths; cross-tenant denial; integrity/authenticity design; evidence limitations and explicit sign-off scope. | **SECURITY_REVIEW = NOT_SIGNED_OFF** |
 
 ### L.5 Audit Domain Owner bounded disposition record
@@ -460,7 +559,30 @@ The recorded dispositions approve only the stated bounded principles. They do no
 
 The four dispositions were recorded exactly once. Approval does not extend to identifier algorithms, canonicalization, integrity or cryptographic technology, final schemas/APIs/protocols, data classification, retention, detailed state transitions, quarantine mechanics, recovery protocols, executable DURABLE_DEFER, Operations approval or Independent Security sign-off.
 
-### L.6 Outstanding Customer business decisions
+### L.6 Messaging/Operations Owner bounded disposition record
+
+| Field | Recorded value |
+| --- | --- |
+| Approval authority | User explicitly confirmed authority to act as Messaging/Operations Owner |
+| Approval evidence | Explicit instruction authorizing repository recording of the five bounded dispositions below |
+| Approval scope | **APPROVED — MESSAGING/OPERATIONS OWNER, O1-O5 BOUNDED SCOPE ONLY** |
+| Approval date | Not recorded |
+| Final operational policy sign-off | Not granted |
+| Independent Security approval | Not granted |
+
+The dispositions below approve only the stated bounded operational principles and O4 amendments. They do not approve implementation, runtime evidence, final runbooks, numeric thresholds or executable DURABLE_DEFER.
+
+| Area | Recorded recommendation | Approval boundary | Actual Messaging/Operations Owner disposition |
+| --- | --- | --- | --- |
+| O1 — Backlog Observability | **RECOMMEND_APPROVE_WITH_BOUNDARIES** | Domain evidence remains authoritative; monitoring is derived; visibility loss suspends the demonstrably affected deferred path without establishing universal shutdown. | **APPROVED WITH BOUNDARIES — MESSAGING/OPERATIONS OWNER** |
+| O2 — Publication, Retry and Re-drive | **RECOMMEND_APPROVE_WITH_BOUNDARIES** | Stable ObligationKey, immutable semantics, distinct attempt identity, authorized automation/manual re-drive and no Operations ownership of Domain facts. | **APPROVED WITH BOUNDARIES — MESSAGING/OPERATIONS OWNER** |
+| O3 — Confirmation Exchange | **RECOMMEND_APPROVE_WITH_BOUNDARIES** | Audit-only confirmation authority, authorized recovery, signal separation and no Operations fabrication or overwrite. | **APPROVED WITH BOUNDARIES — MESSAGING/OPERATIONS OWNER** |
+| O4 — Recovery, Suspension and Escalation | **RECOMMEND_AMEND** | O4-A through O4-D approve bounded scope selection, authority separation, evidence-based restoration and quarantine/invalid-disposition separation; final blast radius, runbooks and lifecycle mechanics remain pending. | **APPROVED WITH AMENDMENTS — MESSAGING/OPERATIONS OWNER** |
+| O5 — Dedicated Sovereign Operations | **RECOMMEND_APPROVE_WITH_BOUNDARIES** | Local custody, observability, confirmation, reconciliation and recovery authority without mandatory synchronous Central dependency. | **APPROVED WITH BOUNDARIES — MESSAGING/OPERATIONS OWNER** |
+
+The five dispositions were recorded exactly once. `FINAL_OPERATIONAL_POLICY_APPROVAL` remains **PENDING**. These approvals do not authorize executable DURABLE_DEFER, a final blast-radius policy, automatic restoration, a final quarantine lifecycle, final runbooks, numeric thresholds, infrastructure technology or runtime-readiness claims.
+
+### L.7 Outstanding Customer business decisions
 
 1. Exact duplicate CUS-CREATE and CUS-UPDATE client-response semantics.
 2. Concurrency mechanism plus conflict resolution, merge and update ordering.
