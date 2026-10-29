@@ -6,14 +6,34 @@
 
 ```text
 IDENTITY_PLATFORM_SECURITY_AUTHORITY = UNASSIGNED
-APPOINTING_AUTHORITY = NOT_VERIFIED
+CPO_APPOINTING_AUTHORITY = DECLARED — EVIDENCE VERIFICATION PENDING
+APPOINTING_AUTHORITY_SUPPORTING_EVIDENCE = NOT_VERIFIED
 FORMAL_DELEGATION = NOT_ISSUED
 IDENTITY_PLATFORM_SECURITY_APPROVAL = PENDING
+REVIEW_COORDINATION = NOT_SUBMITTED
 ```
 
-هیچ فرد، تیم یا سازمانی در این سند نامزد یا منصوب نمی‌شود. نقش Project Owner، Domain Owner، Coordinator، Operator یا Independent Security Reviewer به‌صورت خودکار اختیار انتصاب یا اختیار Identity/Platform Security ایجاد نمی‌کند.
+سازمان اعلام کرده است که CPO، تحت ساختار اختیار موجود شرکت، مجاز به انتصاب Specialist Security Authority برای محصولات است. این اعلام با طبقه‌بندی زیر ثبت می‌شود:
 
-### A.1 کنترل سند و خط مبنا
+`ORGANIZATIONAL_AUTHORITY_DECLARED — SUPPORTING_EVIDENCE_PENDING_VERIFICATION`
+
+این Declaration هنوز با سند سازمانی authenticated تطبیق داده نشده است و به‌تنهایی یک Authority verification record، Appointment، Delegation یا Security Approval ایجاد نمی‌کند. هیچ فرد، تیم یا سازمانی در این سند به‌عنوان Identity/Platform Security Authority نامزد یا منصوب نمی‌شود. نقش Project Owner، Domain Owner، Coordinator، Operator یا Independent Security Reviewer نیز به‌صورت خودکار اختیار CPO یا اختیار Identity/Platform Security ایجاد نمی‌کند.
+
+### A.1 منشأ و محدودیت Declaration
+
+| فیلد | مقدار ثبت‌شده |
+| --- | --- |
+| Declared appointing role | CPO |
+| Declaration | CPO تحت ساختار اختیار موجود شرکت مجاز به انتصاب Specialist Security Authority برای محصولات است |
+| Classification | `ORGANIZATIONAL_AUTHORITY_DECLARED — SUPPORTING_EVIDENCE_PENDING_VERIFICATION` |
+| Declaration source | Organizational declaration supplied by the user |
+| Declaration/approval date | `NOT_SUPPLIED` |
+| Supporting organizational document | `NOT_PROVIDED` |
+| Evidence verification | `PENDING` |
+| Appointment effect | None |
+| Delegation effect | None |
+
+### A.2 کنترل سند و خط مبنا
 
 | فیلد | مقدار تأییدشده |
 | --- | --- |
@@ -39,6 +59,7 @@ IDENTITY_PLATFORM_SECURITY_APPROVAL = PENDING
 | نقش یا اختیار | وضعیت تأییدشده | مرز |
 | --- | --- | --- |
 | Project Owner | تصمیم‌های Project Owner ثبت شده‌اند | هیچ شاهدی برای اختیار انتصاب Security Authority وجود ندارد |
+| CPO appointing role | `DECLARED — EVIDENCE VERIFICATION PENDING` | اعلام سازمانی ثبت شده؛ سند اختیار، نسخه، effective date، identity evidence و authenticated approval هنوز احراز نشده‌اند |
 | Customer/Audit/Messaging-Operations Owners | Bounded dispositions ثبت شده‌اند | Specialist Security Approval ایجاد نمی‌کنند |
 | Identity/Platform Security Authority | `UNASSIGNED / PENDING` | فقط پس از Appointment و Delegation معتبر می‌تواند disposition محدود صادر کند |
 | Security Architecture | `PENDING` | جایگزین Identity/Platform، Tenant، Contract یا Independent Review نیست |
@@ -52,7 +73,7 @@ IDENTITY_PLATFORM_SECURITY_APPROVAL = PENDING
 
 تمایزهای زیر الزامی‌اند:
 
-- **Organizational appointing authority:** اختیار حقوقی/سازمانی برای ایجاد یا تفویض نقش؛ فعلاً `NOT_VERIFIED`.
+- **Organizational appointing authority:** CPO به‌عنوان دارنده اعلام‌شده این اختیار ثبت شده است؛ supporting evidence همچنان `NOT_VERIFIED` است.
 - **Technical competence:** توانایی تخصصی؛ به‌تنهایی Authority ایجاد نمی‌کند.
 - **Security decision authority:** محدوده تصمیم فنی که فقط از Appointment معتبر ناشی می‌شود.
 - **Project coordination:** گردآوری و ارسال بسته؛ فاقد اختیار Approval.
@@ -62,19 +83,22 @@ IDENTITY_PLATFORM_SECURITY_APPROVAL = PENDING
 
 ## C. الزامات احراز Appointing Authority
 
-پیش از انتخاب هر مدل، سازمان باید مرجعی را که مجاز به انتصاب است با شواهد authenticated احراز کند. این Proposal چنین مرجعی را تعیین نمی‌کند.
+سازمان CPO را به‌عنوان Appointing Authority اعلام کرده است. پیش از استفاده مؤثر از این اختیار، Declaration باید با شواهد authenticated زیر احراز شود. این Proposal CPO را به Identity/Platform Security Authority تبدیل نمی‌کند و هیچ Appointment را فعال نمی‌سازد.
 
 | الزام | شاهد پیشنهادی لازم | وضعیت فعلی |
 | --- | --- | --- |
-| هویت مرجع انتصاب | Organizational identity یا authenticated reference | `UNASSIGNED` |
-| مبنای اختیار | Charter، corporate resolution، policy، contract یا delegation معتبر | `NOT_VERIFIED` |
+| هویت مرجع انتصاب | CPO organizational appointment/identity evidence | `DECLARED / NOT_VERIFIED` |
+| مبنای اختیار | Organizational authority document یا delegation matrix معتبر | `NOT_PROVIDED` |
+| نسخه و تاریخ اثر سند | Applicable document version و effective date | `NOT_PROVIDED` |
+| محدوده صریح | عبارت دقیق پوشش‌دهنده انتصاب Product Specialist Security Authorities | `NOT_VERIFIED` |
+| مالک سند و Approval | Document owner و authenticated approval reference | `NOT_PROVIDED` |
 | محدوده جغرافیایی/سازمانی | Entity، business unit و Deployment Profile تحت پوشش | `NOT_VERIFIED` |
 | اختیار تفویض Security decision | عبارت صریح درباره انتصاب یا delegation | `NOT_VERIFIED` |
 | محدودیت‌ها | Conflict rules، duration، revocation و non-delegable powers | `NOT_VERIFIED` |
 | تمامیت شاهد | Immutable reference، custodian و retention rule | `NOT_VERIFIED` |
 | سازگاری با Governance پروژه | عدم تعارض با ADRها، Domain ownership و Independent Review | `NOT_VERIFIED` |
 
-تا زمان احراز همه موارد لازم، هیچ Nomination نباید به `APPOINTED_EVIDENCE_VERIFIED` تبدیل شود. Project Owner فقط در صورتی می‌تواند Appointing Authority باشد که اختیار سازمانی او برای این کار با شاهد مستقل و صریح احراز شود.
+تا زمان احراز همه موارد لازم، Declaration نباید به `VERIFIED` ارتقا یابد و هیچ Nomination نباید به `APPOINTED_EVIDENCE_VERIFIED` تبدیل شود. این Declaration درباره نقش CPO است؛ Project Owner یا هر نقش دیگر فقط با شاهد سازمانی مستقل و صریح می‌تواند همان اختیار را داشته باشد.
 
 ## D. گزینه‌های پیشنهادی مدل انتصاب
 
@@ -174,8 +198,8 @@ Identity/Platform Security Authority مجاز نیست صرفاً به اتکا�
 | فیلد لازم | مقدار فعلی |
 | --- | --- |
 | Appointment reference | `UNASSIGNED` |
-| Appointing authority identity | `UNASSIGNED` |
-| Evidence of appointing authority | `NOT_VERIFIED` |
+| Appointing authority identity | CPO role declared؛ authenticated identity reference `UNASSIGNED` |
+| Evidence of appointing authority | CPO declared؛ `SUPPORTING_EVIDENCE_PENDING_VERIFICATION` |
 | Candidate identity reference | `UNASSIGNED` |
 | Technical competence and experience evidence | `NOT_VERIFIED` |
 | Organizational role or external contract | `NOT_VERIFIED` |
@@ -263,6 +287,7 @@ Appointment به‌تنهایی Specialist Approval نیست. پاسخ Track-lev
 
 ```text
 COORDINATION_STATUS = NOT_SUBMITTED
+REVIEW_COORDINATION = NOT_SUBMITTED
 ASSIGNED_REVIEWER_IDENTITY = UNASSIGNED
 VERIFIED_AUTHORITY_EVIDENCE = NOT_VERIFIED
 REVIEWER_DISPOSITION = <intentionally empty>
@@ -328,9 +353,11 @@ V3-003 = IN PROGRESS
 OD-001..023 = OPEN
 SR-CAND-001..024 = PROPOSED — NOT APPROVED
 IDENTITY_PLATFORM_SECURITY_AUTHORITY = UNASSIGNED
-APPOINTING_AUTHORITY = NOT_VERIFIED
+CPO_APPOINTING_AUTHORITY = DECLARED — EVIDENCE VERIFICATION PENDING
+APPOINTING_AUTHORITY_SUPPORTING_EVIDENCE = NOT_VERIFIED
 FORMAL_DELEGATION = NOT_ISSUED
 IDENTITY_PLATFORM_SECURITY_APPROVAL = PENDING
+REVIEW_COORDINATION = NOT_SUBMITTED
 SECURITY_REVIEW_STATUS = NOT_SIGNED_OFF
 IMPLEMENTATION_EVIDENCE_STATUS = NOT_VERIFIED
 NEGATIVE_TEST_EXECUTION_STATUS = NOT_EXECUTED
@@ -339,4 +366,4 @@ ELIGIBILITY_POLICY_AUTHORITY = NOT_YET_ASSIGNED
 ELIGIBILITY_POLICY_AUTHORITY_ASSIGNMENT = DEFERRED
 ```
 
-تصمیم سازمانی بعدی باید ابتدا Appointing Authority را با شاهد معتبر احراز و سپس مدل Appointment، delegation policy، competence floor، conflict rules، duration/review condition، suspension/revocation authority و evidence retention را صریحاً تصویب کند. تا آن زمان Track در وضعیت `UNASSIGNED / NOT_SUBMITTED` باقی می‌ماند.
+اقدام سازمانی بعدی باید Declaration اختیار CPO را با سند سازمانی یا delegation matrix، نسخه و effective date، CPO identity/appointment evidence، scope صریح، document owner و authenticated approval reference احراز کند. پس از آن، مدل Appointment، delegation policy، competence floor، conflict rules، duration/review condition، suspension/revocation authority و evidence retention باید صریحاً تصویب شوند. تا آن زمان Track در وضعیت `UNASSIGNED / NOT_SUBMITTED` باقی می‌ماند.
