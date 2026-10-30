@@ -10,6 +10,8 @@
 | Scope | Project-level development, documentation, architecture, security-decision and production-release approval routing |
 | Governance baseline label | `NESHANE-V3-GOV-P00-000A` unchanged; no new label was authorized by this task |
 | Narrow amendment | `V3-004` CPO direction: documentation-only R0 Design Consistency Acceptance route |
+| Level 2 protocol amendment | `ACCEPTED — V3-006 R0`; CPO/Technical Architecture Owner direction: general project architecture ownership and proportionate decision workflow |
+| V3-006 task status | `CLOSED — ADR AND CONTRACT CHANGE GOVERNANCE BASELINE` |
 
 ## Authority basis and evidence boundary
 
@@ -35,6 +37,33 @@ A separate corporate identity certificate, delegation matrix or organizational d
 ### LEVEL 2 — ARCHITECTURE DECISION
 
 Material architecture decisions require approval by the designated architecture authority under the existing ADR and Open Decision process. A Level 1 task acceptance cannot approve or close an ADR or Open Decision unless that architecture process is expressly completed.
+
+#### Project Technical Architecture Owner designation
+
+Under `V3-006`, the user explicitly declares the following project roles:
+
+```text
+TECHNICAL_ARCHITECTURE_OWNER = CPO (dual project role)
+DESIGNATION_SCOPE = Neshane V3 project architecture and Level 2 architecture decisions
+DESIGNATION_SOURCE = Explicit CPO and Technical Architecture Owner declaration in V3-006
+```
+
+The existing project governance contains no separation-of-duties rule that prohibits this dual role for Level 2 architecture decisions. The designation is therefore valid as a project authority record; it is not a corporate credential, legal appointment, independent review or security sign-off.
+
+Within Level 2, the Technical Architecture Owner is the final architecture approval authority for Java/build toolchains, Backend and Frontend engineering conventions, service and module architecture, API and event architecture, and data architecture. Affected domain, engineering, operations, developer-experience and product owners provide evidence and consequences proportional to impact. When an existing decision or security control explicitly requires another approval, specialist review or separation of duties, that requirement remains in force.
+
+This designation does not authorize Independent Security Sign-off, security-critical risk acceptance, privileged-operation exceptions, executable `DURABLE_DEFER`, verification of runtime controls or Production Release. Those decisions remain at Level 3 or Level 4 as applicable.
+
+#### Proportionate Level 2 workflow
+
+1. Identify the decision, affected scope, owner and related `DEC-*`, `OD-*`, ADR, contract and Task IDs.
+2. Record the context, viable alternatives, rationale, consequences, compatibility impact, and migration/rollback needs in proportion to the decision's impact.
+3. Obtain an explicit disposition from the Technical Architecture Owner and every additional authority explicitly required by an existing decision or higher-level gate.
+4. Create or update the ADR, update the Open Decision and decision registers, and preserve rejected or superseded history.
+5. Validate internal references and affected API, event, persistence, SDK and integration contracts using the [contract change protocol](contract-change-protocol.md).
+6. Commit the decision and its registry updates as one traceable Git change before treating it as effective.
+
+The ADR lifecycle and required record fields are defined in the [ADR catalog](adr/README.md). Conversation analysis, a Task definition, implementation code or a Git commit alone does not approve an architecture decision. Corporate certificates and external signatures are not required for ordinary Level 2 decisions unless an independently authoritative policy, contract, regulation or an explicit higher-level gate requires them.
 
 ### LEVEL 3 — SECURITY-CRITICAL DECISION
 
