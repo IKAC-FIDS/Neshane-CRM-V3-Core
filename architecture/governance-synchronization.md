@@ -34,9 +34,11 @@ Both local governance baselines now record the current architecture and governan
 
 ## V3-005 propagation state
 
-Architecture revision `NESHANE-V3-ARCH-P00-003` changes the Backend foundation baseline only. The authorized V3-005 working change updates the Backend local governance reference and relevant engineering guidance to ADR-V3-013; traceable propagation is complete only after the independent Backend change is committed. Frontend is unaffected by the toolchain decision.
+Architecture revision `NESHANE-V3-ARCH-P00-003` changes the Backend foundation baseline only. Backend commit `8f1cfaca40c0471a03418831aacfbe2689417cad` records the synchronized local governance reference, ADR-V3-013 engineering guidance, complete Gradle foundation and bounded R0 acceptance. Traceable Backend propagation is complete. Frontend is unaffected by the toolchain decision.
 
-The V3-005 CPO/Technical Architecture Owner direction also replaces the project blanket build/test prohibition with controlled, Task-scoped local execution. Root and Backend instructions plus their project-owned `neshane-review` skills carry the same permission and restrictions. Frontend remains unchanged. This policy amendment does not itself execute validation, authorize dependency downloads, or establish Implementation, Security or Production Readiness.
+The V3-005 CPO/Technical Architecture Owner direction also replaces the project blanket build/test prohibition with controlled, Task-scoped local execution. Root commit `c65c97d746c804e0569ff50701d1f4eaedae7312` and Backend commit `8f1cfaca40c0471a03418831aacfbe2689417cad` record the shared and local policies. Offline build, formatting, module-boundary, dependency-report and reproducibility evidence is recorded in the Backend baseline; Gradle test tasks were `NO-SOURCE`, so no Unit Test coverage or passing Unit Test suite is claimed.
+
+`V3-005` is `CLOSED — ENGINEERING FOUNDATION R0 BASELINE`. Closure establishes the engineering foundation only; it does not establish Spring Boot application/runtime verification, Security Sign-off, CI evidence, deployment-profile assurance, publishing, release authorization or Production Readiness.
 
 ## Missing, stale, or conflicting guidance
 

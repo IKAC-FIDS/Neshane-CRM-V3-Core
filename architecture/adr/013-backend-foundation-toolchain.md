@@ -2,7 +2,7 @@
 
 - Status: ACCEPTED
 - Authoring task: V3-005
-- Authoring task status: IN PROGRESS — FOUNDATION IMPLEMENTATION PENDING
+- Authoring task status: CLOSED — ENGINEERING FOUNDATION R0 BASELINE; Backend commit `8f1cfaca40c0471a03418831aacfbe2689417cad`
 - Related decision/open decision: DEC-013; OD-002, OD-003, OD-004
 - Decision owner: Technical Architecture Owner / CPO
 - Required approval authority: Technical Architecture Owner under the accepted Level 2 protocol
