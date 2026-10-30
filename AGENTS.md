@@ -3,6 +3,7 @@
 ## Scope and authority
 
 - Implement only the explicitly requested Task ID. If no Task ID is supplied, stop and request one before changing files.
+- Apply the proportionate approval levels in `architecture/task-governance.md`. Ordinary development/documentation task acceptance is distinct from architecture approval, security authorization, and production release authorization.
 - Follow approved Neshane V3 ADRs and the standards under `architecture/standards/`. A legacy repository is read-only evidence, never authority for V3.
 - The Root Workspace owns cross-repository architecture and review policy. `Backend/` and `Frontend/` are independent Git repositories and are not submodules or tracked by a Root Git history.
 - Follow `architecture/governance-synchronization.md` when shared guidance changes. The current synchronization reference is `NESHANE-V3-GOV-P00-000A`.

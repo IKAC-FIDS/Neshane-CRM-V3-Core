@@ -1,6 +1,6 @@
 # Neshane CRM V3 — CPO Analytical Closure Decision Declaration
 
-**Document Status:** `CPO DECISION DECLARED — AUTHENTICATION AND AUTHORITY EVIDENCE PENDING`
+**Document Status:** `CLOSED — ANALYTICAL SCOPE ONLY` under `CDR-V3-003-2026-1030`
 **Related Task:** `V3-003 — NFR and Threat Assumptions`
 **Decision Scope:** `ANALYTICAL / DOCUMENTATION CLOSURE ONLY`
 
@@ -242,3 +242,29 @@ The following future actions require separate authorization and authenticated ev
 8. Preserve every independent Security، specialist، implementation، runtime and Production gate after Analytical Closure.
 
 Until these actions are completed، this record remains a declaration-evidence artifact and `V3-003` remains `IN PROGRESS`.
+
+## 11. Controlling closure registration under proportionate task governance
+
+This section supersedes the pre-simplification Closure status and organizational-authentication blockers recorded in sections 1 through 10 while retaining them as historical evidence of the earlier process.
+
+The CPO has approved `architecture/task-governance.md`, which classifies Analytical / Documentation Closure of `V3-003` as `LEVEL 1 — DEVELOPMENT / DOCUMENTATION TASK`. Repository inspection found no independently authoritative corporate policy, contract or external requirement mandating a separate corporate identity certificate, delegation matrix or organizational digital signature for this task closure.
+
+The following controlling disposition is therefore recorded:
+
+```text
+CLOSURE_DECISION_ID = CDR-V3-003-2026-1030
+CPO_ANALYTICAL_ACCEPTANCE = APPROVED
+V3-003 = CLOSED — ANALYTICAL SCOPE ONLY
+V3-003-AC-P-01..12 = SATISFIED FOR ANALYTICAL CLOSURE
+V3-003-AC-P-12 = VERIFIED UNDER LEVEL 1 GOVERNANCE
+CORPORATE_AUTHORITY_CERTIFICATE = NOT_REQUIRED_BY_DEFAULT_FOR_LEVEL_1
+SECURITY_REVIEW_STATUS = NOT_SIGNED_OFF
+IMPLEMENTATION_EVIDENCE_STATUS = NOT_VERIFIED
+NEGATIVE_TEST_EXECUTION_STATUS = NOT_EXECUTED
+EXECUTABLE_DURABLE_DEFER = NOT APPROVED
+PRODUCTION_READINESS = NOT ESTABLISHED
+```
+
+Evidence for `AC-P-12` is the explicit CPO direction under `TASK_ID = V3-003`, the accepted A-through-H analytical boundaries already recorded in this document, the authoritative status entry in `V3-003-decision-record.md`, the updated Evidence Matrix and the traceable Git diff produced by this task.
+
+The historical corporate-evidence identifiers supplied during preparation are not relied upon or represented as independently verified. All 23 Open Decisions, 24 Security Requirement Candidates and 36 specialist disposition records retain their prior status and future gates. DEC-014 remains unchanged.

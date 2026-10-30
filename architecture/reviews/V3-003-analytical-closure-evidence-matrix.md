@@ -1,6 +1,6 @@
 # V3-003 — Analytical Closure Evidence Matrix
 
-**Document Status:** `DRAFT — CLOSURE EVIDENCE — NOT APPROVED`
+**Document Status:** `APPROVED CLOSURE EVIDENCE — ANALYTICAL SCOPE ONLY`
 **Related Task:** `V3-003 — NFR and Threat Assumptions`
 **Evidence Scope:** Technical/documentary verification and organizational closure preparation only
 
@@ -118,6 +118,37 @@ Verification count after controlled refresh:
 | `BLOCKED` | 1 |
 | `NOT_APPLICABLE_WITH_JUSTIFICATION` | 0 |
 | **Total** | **12** |
+
+### C.1 Controlling closure reconciliation
+
+The matrix above is retained as the historical pre-simplification assessment. The controlling closure assessment under `architecture/task-governance.md` is:
+
+| State | Count |
+| --- | ---: |
+| `VERIFIED` | 12 |
+| `PARTIALLY_VERIFIED` | 0 |
+| `NOT_VERIFIED` | 0 |
+| `BLOCKED` | 0 |
+| `NOT_APPLICABLE_WITH_JUSTIFICATION` | 0 |
+| **Total** | **12** |
+
+`V3-003-AC-P-09` is verified against committed pre-closure baseline `c146a9b1771df575353059f27c64ca6e1a0f25d7`, the source hashes recorded in the CPO declaration, and the exact working-tree diff created by the authorized closure task. This record does not claim an immutable post-change commit before the user commits it.
+
+`V3-003-AC-P-12` is verified under the approved Level 1 task-governance rule: explicit CPO direction under `TASK_ID = V3-003`, bounded analytical scope, accepted criteria and carry-forward boundaries, authoritative repository acknowledgment, and a traceable Git change. The earlier corporate-certificate requirement was project-level closure preparation rather than an independently mandated corporate, contractual or external rule.
+
+```text
+CLOSURE_DECISION_ID = CDR-V3-003-2026-1030
+V3-003 = CLOSED — ANALYTICAL SCOPE ONLY
+OD-001..023 = OPEN
+SR-CAND-001..024 = PROPOSED — NOT APPROVED
+SPECIALIST_DISPOSITIONS = 36 PENDING; 0 AUTHENTICATED
+SECURITY_REVIEW_STATUS = NOT_SIGNED_OFF
+IMPLEMENTATION_EVIDENCE_STATUS = NOT_VERIFIED
+NEGATIVE_TEST_EXECUTION_STATUS = NOT_EXECUTED
+EXECUTABLE_DURABLE_DEFER = NOT APPROVED
+ELIGIBILITY_POLICY_AUTHORITY = NOT_YET_ASSIGNED
+PRODUCTION_READINESS = NOT ESTABLISHED
+```
 
 ## D. NFR Classification Audit
 
@@ -247,7 +278,7 @@ Threat Draft از Stable ID جدید استفاده نمی‌کند. New scenari
 ```text
 OD-023 = OPEN
 MILESTONE = BEFORE PRODUCTION ARCHITECTURE SIGN-OFF
-BOUNDED_DEFERRAL_FOR_ANALYTICAL_CLOSURE = PROPOSED — NOT APPROVED
+BOUNDED_DEFERRAL_FOR_ANALYTICAL_CLOSURE = ACCEPTED — OD-023 REMAINS OPEN
 ```
 
 | Quantitative family | Draft status | Audit result |
@@ -259,7 +290,7 @@ BOUNDED_DEFERRAL_FOR_ANALYTICAL_CLOSURE = PROPOSED — NOT APPROVED
 | Event throughput/processing/queue delay/backlog | `UNRESOLVED` | No invented/approved number |
 | Sovereign disconnected duration/capacity | `UNRESOLVED` | No invented/approved number |
 
-Technical documentation is consistent with OD-023. Only a verified Closure Authority may decide whether this bounded deferral is acceptable for Analytical Closure; such acceptance would not close OD-023 or establish Production Architecture Sign-off.
+Technical documentation is consistent with OD-023. The CPO accepts this bounded deferral for Analytical Closure under `architecture/task-governance.md`; this acceptance does not close OD-023 or establish Production Architecture Sign-off.
 
 ## H. Specialist Review and Governance Dependencies
 
@@ -286,7 +317,7 @@ AUTHENTICATED_REVIEW_RECORD = NOT_RECEIVED
 | Operational Policy `OP-01..05` | 5 | Operational Policy/Operations Standard gate |
 | Security Architecture `SA-01..06` | 6 | End-to-end Security Architecture conclusion |
 
-### H.2 Governance blockers
+### H.2 Historical pre-simplification governance blockers
 
 ```text
 V3_003_CLOSURE_AUTHORITY = NOT_ESTABLISHED
@@ -299,6 +330,8 @@ INDEPENDENT_SECURITY_REVIEW = NOT_SIGNED_OFF
 
 CPO declaration درباره اختیار انتصاب Product Specialist Security Authorities، اختیار Analytical Closure را اثبات نمی‌کند. Standalone Operations Standard نیز موجود نیست. این دو مورد جدا از ۳۶ Specialist disposition و جدا از Closure Authority هستند.
 
+The block above records the historical pre-simplification assessment. It is superseded for Level 1 task closure by section C.1 and `architecture/task-governance.md`; specialist and Security gates remain pending exactly as recorded.
+
 ## I. Cross-document Findings
 
 | Finding | Classification | Evidence | Impact / required correction |
@@ -309,7 +342,7 @@ CPO declaration درباره اختیار انتصاب Product Specialist Securi
 | `F-004` — Old baseline metadata in drafts/proposal | `HISTORICAL_METADATA` | Draft/proposal control sections reference earlier HEAD/worktree creation context; current commit is pinned here | No normative contradiction; use this Matrix/current hashes for closure review, or update only under separate authorization |
 | `F-005` — DEC-010..014 repository-recording note | `HISTORICAL_METADATA` | Decision sections retain `Repository Recording: PENDING VERIFICATION` although tracked | Documentary metadata only; no authority change |
 | `F-006` — Numeric and specialist choices | `UNRESOLVED_DESIGN` | OD-001..023، SR-CANDs، SEC/Manifest/Tracking | Carry forward only with explicit analytical-boundary acceptance |
-| `F-007` — Closure authority and contract | `MISSING_GOVERNANCE_APPROVAL` | No verified authority or authenticated decision | Blocks legitimate Closure |
+| `F-007` — Closure authority and contract | `RESOLVED BY PROPORTIONATE GOVERNANCE TRANSITION` | Explicit CPO direction؛ `architecture/task-governance.md`؛ authoritative closure entry in `V3-003-decision-record.md` | Level 1 analytical closure permitted؛ no higher-level gate affected |
 
 No `NORMATIVE_CONTRADICTION` was found between DEC-001..014، ADRs، Technical Contract bounded scopes، SEC-01..05، NFR/Threat drafts and the proposed Closure Contract. سه Classification mismatch تاریخی با correction صریح در NFR و focused source verification اصلاح شده‌اند؛ این Matrix تاریخچه Finding، Source و Candidate boundary هر سه را حفظ می‌کند و هیچ extension پیشنهادی را مصوب تلقی نمی‌کند.
 
@@ -325,33 +358,33 @@ No `NORMATIVE_CONTRADICTION` was found between DEC-001..014، ADRs، Technical C
 | Threat inventory/coverage | `VERIFIED` | 12/6/21/25، AB/NT، S1–S8 and DEC-014 complete |
 | Quantitative boundary | `VERIFIED` | OD-023 remains Open; no numeric approval |
 | OD/SR/Specialist carry-forward traceability | `VERIFIED` | All items and gates recorded; deferral not approved |
-| Closure Contract | `NOT_VERIFIED` as governing policy | Proposal exists but is not approved |
-| Closure Authority | `BLOCKED` | Authority not established; CPO candidate not verified |
-| Authenticated Closure Decision | `BLOCKED` | No decision exists |
+| Closure Contract | `ACCEPTED FOR V3-003 ANALYTICAL CLOSURE` | CPO accepts the twelve criteria under the Level 1 transition |
+| Closure Authority | `VERIFIED FOR LEVEL 1` | Explicit CPO task direction and Root project-governance authority |
+| Closure Decision | `RECORDED` | `CDR-V3-003-2026-1030` is recorded in the authoritative task-local Decision Record |
 | Security/Implementation/Production evidence | `NOT_VERIFIED` | Explicitly outside analytical evidence and absent |
 
 ### J.2 Required corrections and organizational actions
 
 1. `COMPLETED — DOCUMENTARY CORRECTION ONLY`: `NFR-SEC-001`, `NFR-TEN-001` and `NFR-DAT-003` corrected؛ current hash recorded؛ affected classification audit repeated successfully.
-2. Organizational Governance must verify a Closure Authority with explicit `V3-003 Analytical Closure` scope.
-3. The verified Authority must approve, amend or reject the proposed Closure Contract and acceptance criteria.
-4. The verified Authority must explicitly dispose the proposed bounded carry-forward of OD-001..023، SR-CAND-001..024 and all 36 Specialist records; silence is not acceptance.
-5. The final Closure Record must pin the corrected NFR، Threat Draft، Closure Contract and this Matrix at a committed Git revision.
-6. Specialist/Security/Runtime obligations must remain assigned to their later gates; Analytical Closure must not claim their completion.
+2. `COMPLETED — GOVERNANCE`: the CPO approved the proportionate Level 1 policy and the bounded V3-003 transition.
+3. `COMPLETED — ANALYTICAL CLOSURE`: the CPO accepted the Closure Contract and all twelve criteria.
+4. `COMPLETED — BOUNDED CARRY-FORWARD`: OD-001..023، SR-CAND-001..024 and all 36 Specialist records retain their owners، statuses and future gates.
+5. `RECORDED — COMMIT PENDING`: the Closure Record pins the committed pre-closure baseline and current source hashes; no immutable post-change commit is claimed until the user commits this working-tree change.
+6. `PRESERVED`: Specialist/Security/Runtime obligations remain assigned to their later gates and are not completed by Analytical Closure.
 
 Current outcome:
 
 ```text
 ANALYTICAL_BASELINE_TECHNICAL_AUDIT = VERIFIED
-ANALYTICAL_CLOSURE_READINESS = BLOCKED
-V3-003 = IN PROGRESS
+ANALYTICAL_CLOSURE = COMPLETE — ANALYTICAL SCOPE ONLY
+V3-003 = CLOSED — ANALYTICAL SCOPE ONLY
 ```
 
 ## K. Explicit Non-Approvals
 
 این Matrix موارد زیر را تصویب یا ایجاد نمی‌کند:
 
-- Closure Contract، Closure Authority، bounded deferral یا V3-003 Closure؛
+- any corporate authority certificate، organizational signature or independently authenticated corporate record;
 - Candidate extensionهای جداشده از سه NFR، شامل generalized receiving-boundary validation، per-boundary Tenant revalidation mechanics یا cross-Domain authoritative-truth policy؛
 - بستن یا تغییر `OD-001..023`؛
 - Approval/Reject/Risk acceptance برای `SR-CAND-001..024`؛
@@ -364,10 +397,10 @@ V3-003 = IN PROGRESS
 وضعیت‌های حفظ‌شده:
 
 ```text
-V3_003_CLOSURE_AUTHORITY = NOT_ESTABLISHED
-CPO_CLOSURE_AUTHORITY = CANDIDATE — NOT VERIFIED
-CLOSURE_CONTRACT = PROPOSED — NOT APPROVED
-V3-003 = IN PROGRESS
+CLOSURE_DECISION_ID = CDR-V3-003-2026-1030
+CPO_LEVEL_1_CLOSURE_AUTHORITY = VERIFIED UNDER PROJECT GOVERNANCE
+CLOSURE_CONTRACT = ACCEPTED FOR ANALYTICAL SCOPE
+V3-003 = CLOSED — ANALYTICAL SCOPE ONLY
 OD-001..023 = OPEN
 SR-CAND-001..024 = PROPOSED — NOT APPROVED
 SECURITY_REVIEW_STATUS = NOT_SIGNED_OFF
