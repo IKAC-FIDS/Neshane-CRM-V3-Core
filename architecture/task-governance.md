@@ -9,6 +9,7 @@
 | Requesting authority | `CPO` |
 | Scope | Project-level development, documentation, architecture, security-decision and production-release approval routing |
 | Governance baseline label | `NESHANE-V3-GOV-P00-000A` unchanged; no new label was authorized by this task |
+| Narrow amendment | `V3-004` CPO direction: documentation-only R0 Design Consistency Acceptance route |
 
 ## Authority basis and evidence boundary
 
@@ -39,6 +40,36 @@ Material architecture decisions require approval by the designated architecture 
 
 Security-critical decisions require the designated or independent security review and documented authorization required by the applicable security control, decision record or review gate. Level 1 closure does not constitute Security Sign-off, risk acceptance or verification of a runtime control.
 
+### Documentation-only R0 Design Consistency Acceptance
+
+A documentation-only R0 baseline may use a proportionate Design Consistency Acceptance route when it records existing approved architecture and product scope without creating a security-critical decision, risk acceptance, security exception or production claim.
+
+This route requires all of the following:
+
+1. explicit CPO Product acceptance of the bounded scope;
+2. actual approval by an identifiable, project-designated Technical Architecture Owner that the exact baseline is consistent with accepted ADRs, standards and security invariants;
+3. evidence references, evaluated acceptance criteria and a traceable Git change;
+4. explicit carry-forward of unresolved Open Decisions, proposed Security Requirements, specialist reviews and implementation evidence; and
+5. clear separation from Security Sign-off, runtime assurance and Production Readiness.
+
+Codex-assisted security consistency analysis may be retained as supporting evidence only. It cannot appoint the Technical Architecture Owner, issue the required approval or replace a human decision. The Technical Architecture Owner need not be an independent Security Reviewer for this bounded route, but the identity, project designation, reviewed revision, scope and disposition must be recorded. This route does not assign or satisfy `AUTH-IP`, `AUTH-TS`, `AUTH-SS`, `AUTH-SA`, `AUTH-ISR` or another specialist authority.
+
+The route is unavailable for approval of security-critical authorization, risk acceptance, privileged-operation policy, executable `DURABLE_DEFER`, a Security Requirement, a security exception, Independent Security Review, runtime control effectiveness or production release. A material architecture change still follows Level 2; a security-critical decision still follows Level 3; production authorization still follows Level 4.
+
+The CPO authorizes `V3-004` to use this route for its documentation-only Support Matrix. This authorization does not itself supply the required Technical Architecture Owner approval or close `V3-004`.
+
+#### V3-004 project role designation
+
+For the bounded `V3-004` documentation-only R0 baseline, the user explicitly declares the following project roles:
+
+```text
+TECHNICAL_ARCHITECTURE_OWNER = CPO (dual role)
+DESIGNATION_SCOPE = Neshane V3 project architecture and V3-004 R0 design baseline
+DESIGNATION_SOURCE = Explicit project-owner declaration in conversation
+```
+
+The declaration is accepted as a project-role designation under this route. It does not claim a legal identity, corporate credential, signature, appointment certificate or independent review. No separation-of-duties rule in the current project governance prohibits the combined role for documentation-only Design Consistency Acceptance. This combined role is not valid for the Level 3 or Level 4 exclusions listed above and does not appoint or satisfy any specialist or Independent Security authority.
+
 ### LEVEL 4 — PRODUCTION RELEASE
 
 Production release requires executable validation, all required Security Sign-off, operational evidence and explicit release authorization. Documentation acceptance, architecture approval and implementation completion do not establish Production Readiness.
@@ -63,3 +94,5 @@ This transition does not authenticate or validate previously asserted corporate 
 ## Repository propagation
 
 This change alters Root task-acceptance routing only. Backend and Frontend continue to require explicit Task IDs and retain their existing architecture, security and execution restrictions. No repository-local rule conflicts with this policy, so no local governance file is changed by `V3-003`.
+
+The `V3-004` narrow amendment also remains Root-only. It creates no Backend/Frontend acceptance, Security Sign-off or production authorization and requires no repository-local governance change.
