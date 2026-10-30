@@ -1,8 +1,8 @@
 # Neshane CRM V3 — Non-Functional Requirements Analytical Baseline
 
-**Document Status:** `DRAFT — ANALYTICAL BASELINE — NOT APPROVED`  
-**Related Task:** `V3-003 — NFR and Threat Assumptions`  
-**Architecture Revision:** `NESHANE-V3-ARCH-P00-002`  
+**Document Status:** `DRAFT — ANALYTICAL BASELINE — NOT APPROVED`
+**Related Task:** `V3-003 — NFR and Threat Assumptions`
+**Architecture Revision:** `NESHANE-V3-ARCH-P00-002`
 **Governance Baseline:** `NESHANE-V3-GOV-P00-000A`
 
 ## 1. Purpose and approval boundary

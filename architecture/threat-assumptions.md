@@ -1,8 +1,8 @@
 # Neshane CRM V3 — Threat and Trust-Boundary Analytical Baseline
 
-**Document Status:** `DRAFT — ANALYTICAL BASELINE — NOT APPROVED`  
-**Related Task:** `V3-003 — NFR and Threat Assumptions`  
-**Threat Assumption Validation:** `PENDING SECURITY REVIEW`  
+**Document Status:** `DRAFT — ANALYTICAL BASELINE — NOT APPROVED`
+**Related Task:** `V3-003 — NFR and Threat Assumptions`
+**Threat Assumption Validation:** `PENDING SECURITY REVIEW`
 **Architecture Revision:** `NESHANE-V3-ARCH-P00-002`
 
 ## 1. Purpose, scope and non-approval boundary
