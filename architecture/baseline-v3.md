@@ -1,9 +1,9 @@
 # Neshane V3 architecture baseline
 
-- Architecture version: `NESHANE-V3-ARCH-P00-002`
+- Architecture version: `NESHANE-V3-ARCH-P00-003` upon traceable commit of the V3-005 decision package
 - Governance reference: `NESHANE-V3-GOV-P00-000A` (unchanged)
 - Status: approved architecture revision; project-owner decision ratification recorded by R0-001; implementation and operational evidence remain pending
-- Authority: ADR-V3-001 through ADR-V3-012 and future approved V3 ADRs
+- Authority: ADR-V3-001 through ADR-V3-013 and future approved V3 ADRs
 - Scope: intended target architecture; no implementation, security control, deployment, or readiness is implied
 
 ## Version history
@@ -11,7 +11,8 @@
 | Revision | Status | Date | Record |
 | --- | --- | --- | --- |
 | `NESHANE-V3-ARCH-P00-001` | Superseded candidate | 2026-10-23 | V3-001 documented DEC-001–DEC-012 as pending R0 and OD-001–OD-023 as Open. |
-| `NESHANE-V3-ARCH-P00-002` | Current approved architecture revision | 2026-10-23 | R0-001 recorded project-owner approval, formalized ADR-V3-001–ADR-V3-012 and refined the decisions without closing any Open Decision. |
+| `NESHANE-V3-ARCH-P00-002` | Superseded approved architecture revision upon V3-005 decision-package commit | 2026-10-23 | R0-001 recorded project-owner approval, formalized ADR-V3-001–ADR-V3-012 and refined the decisions without closing any Open Decision. |
+| `NESHANE-V3-ARCH-P00-003` | Accepted; effective upon traceable V3-005 decision-package commit | 2026-10-30 | DEC-013/ADR-V3-013 resolves OD-002–OD-004 as Java 21 LTS, Spring Boot 4.1.2 and Gradle multi-project with Groovy DSL and Gradle Wrapper. Tool artifact verification and implementation evidence remain pending. |
 
 Supersession preserves the historical status of P00-001; it does not imply that P00-001 already contained the R0 refinements.
 
@@ -39,7 +40,7 @@ Architecture readiness, implementation readiness, and production readiness are s
 
 | Area | Binding baseline | Unresolved detail |
 | --- | --- | --- |
-| Backend | Java, Spring Boot, independent microservices, DDD/Hexagonal Architecture and independent build/test/version/release boundaries | Exact versions, Gradle/Maven and project layout ([OD-002–OD-004](open-decisions.md)) |
+| Backend | Java 21 LTS, Spring Boot 4.1.2, Gradle multi-project with Groovy DSL/Wrapper, independent microservices, DDD/Hexagonal Architecture and independent build/test/version/release boundaries | Exact Gradle Wrapper distribution/checksum and implementation evidence ([ADR-V3-013](adr/013-backend-foundation-toolchain.md)) |
 | Relational data | PostgreSQL; service-owned persistence; RLS for shared tenant-aware tables | Migration tool and Java/RLS integration ([OD-013–OD-014](open-decisions.md)) |
 | Messaging | RabbitMQ; transactional outbox and idempotent inbox where reliable events are required | Topology and detailed contract/version rules ([OD-008](open-decisions.md)) |
 | Cache | Redis is permitted only when justified with tenant-safe keys, authorization, freshness, and safe failure behavior | Per-use-case adoption and numeric policies |
@@ -65,6 +66,7 @@ GraphQL BFF, object storage, search, scheduling, contract tools, and specific pr
 | Verifiable profile-specific operations | DEC-010; [ADR-V3-010](adr/010-operational-profiles.md) |
 | Logical boundaries with controlled co-deployment | DEC-011; [ADR-V3-011](adr/011-logical-boundaries-co-deployment.md) |
 | Evidence-based architecture/implementation/production gates | DEC-012; [ADR-V3-012](adr/012-evidence-based-readiness.md) |
+| Backend Java/Spring Boot/Gradle foundation | DEC-013; [ADR-V3-013](adr/013-backend-foundation-toolchain.md) |
 
 Full rationale, consequences, dependencies, provenance and R0 status are in the [decision register](decision-register.md).
 
@@ -167,11 +169,11 @@ Sovereign must locally perform critical administration, trust/credential lifecyc
 
 ## Existing guidance reconciliation
 
-No binding V3 governance rule contradicts this baseline. Two earlier Root standards contain explicit proposals rather than approvals: `architecture/standards/api-design.md` discusses versioned REST resources and proposes `/api/v1`, while `architecture/standards/repository-structure.md` proposes `ir.neshane.<service>` and leaves build layout open. They remain non-binding under OD-007/OD-008 and OD-004 respectively. After R0 and the relevant ADR, an authorized governance-alignment task must either adopt or revise those proposals and propagate the new reference. V2's GraphQL BFF, Compose, NestJS/TypeScript, Prisma and object-storage choices are historical conflicts/non-selections documented in [legacy-v2-reference.md](legacy-v2-reference.md); their V2 records are not modified.
+No binding V3 governance rule contradicts this baseline. `architecture/standards/api-design.md` still proposes `/api/v1` pending OD-007/OD-008. `architecture/standards/repository-structure.md` still proposes `ir.neshane.<service>`, while its build-layout guidance is now aligned to ADR-V3-013. Backend local guidance must receive the P00-003 reference before architecture-sensitive implementation. V2's GraphQL BFF, Compose, NestJS/TypeScript, Prisma and object-storage choices are historical conflicts/non-selections documented in [legacy-v2-reference.md](legacy-v2-reference.md); their V2 records are not modified.
 
 ## Open decisions
 
-All unresolved choices are tracked in [open-decisions.md](open-decisions.md), OD-001 through OD-023. An existing naming convention, legacy decision, or example does not close an item. Material decisions require an approved V3 ADR and decision-register update.
+All unresolved choices are tracked in [open-decisions.md](open-decisions.md). OD-002 through OD-004 are resolved by DEC-013/ADR-V3-013 upon traceable commit; OD-001 and OD-005 through OD-023 remain Open. An existing naming convention, legacy decision, or example does not close an item. Material decisions require an approved V3 ADR and decision-register update.
 
 ## Permanent architecture exclusions
 

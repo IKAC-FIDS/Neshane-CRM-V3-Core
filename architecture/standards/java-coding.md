@@ -20,5 +20,5 @@
 
 ## Proposed choices requiring approval
 
-- Java version, Spring Boot version, formatting tool, compiler warning policy, and nullability annotation library must be approved by the first foundation ADR/build task.
+- ADR-V3-013 approves Java 21 LTS and Spring Boot 4.1.2 for the Backend foundation. Formatting tool, compiler warning policy, nullability annotation library, and authoritative tool/distribution integrity evidence remain to be selected or verified by an authorized task.
 

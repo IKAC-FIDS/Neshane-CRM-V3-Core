@@ -1,13 +1,10 @@
 # Neshane V3 open decisions
 
-Status: Open. None of the alternatives below is approved. Milestones are latest responsible decision points, not implementation authorization.
+Status: OD-001 and OD-005 through OD-023 remain Open. OD-002 through OD-004 are resolved by DEC-013/ADR-V3-013 upon traceable commit of the V3-005 decision package. Milestones are latest responsible decision points, not implementation authorization.
 
 | ID | Decision and alternatives | Trade-offs / affected boundaries | Milestone | Proposed owner | Cost of postponement |
 | --- | --- | --- | --- | --- | --- |
 | OD-001 | Full Air-Gapped support: offline-capable only; import/export bridge; fully isolated release channel | Sovereign, Operations, Identity, Plugins; isolation versus update/support complexity | Before an Air-Gapped commitment | Architecture + Sovereign Operations + Security | Cannot claim Air-Gapped support or finalize release/trust flows |
-| OD-002 | Java version: supported LTS candidates | Backend compatibility, performance, support lifetime | Before Backend build initialization | Backend Architecture | Blocks compiler/toolchain baseline |
-| OD-003 | Spring Boot version: supported stable line candidates | Ecosystem/security support versus dependency compatibility | Before Backend build initialization | Backend Architecture | Blocks dependency and runtime baseline |
-| OD-004 | Gradle vs Maven; single/multi-project structure | Build ergonomics, boundaries, caching and team familiarity | Before Backend build initialization | Backend Architecture + Developer Experience | Blocks reproducible build layout |
 | OD-005 | Frontend framework/rendering: React/Angular/Vue/other; SPA/SSR variants | UX, deployment, skills, accessibility and operations | Before first Frontend source | Frontend Architecture + Product UX | Blocks frontend implementation |
 | OD-006 | State/server-cache/UI libraries: library or framework-native approaches | Consistency/productivity versus lock-in and bundle complexity | Before first affected feature/design system | Frontend Architecture + UX | Risks incompatible local patterns if delayed past coding |
 | OD-007 | Public API and GraphQL BFF: REST-first, GraphQL BFF, hybrid, or per-client boundary | Composition, compatibility, security, performance and ownership | Before first public contract | API Architecture + Backend/Frontend owners | Blocks stable client/service contracts |
@@ -28,11 +25,21 @@ Status: Open. None of the alternatives below is approved. Milestones are latest 
 | OD-022 | Tenant migration automation: offline transfer, dual-run, event replication, cell-native workflow | Downtime, consistency, complexity and rollback | Before tenant placement migration is supported | Cell Management + Data + Security | Placement changes remain manual/high-risk |
 | OD-023 | SLO/RTO/RPO/capacity: per-profile/service objectives and measurement | Cost versus availability/recovery/security freshness | Before production architecture sign-off | Product + Operations + Security + service owners | Production readiness and sizing cannot be assessed |
 
+## Resolved decisions
+
+The original decision scope and ownership are preserved below for history. Resolution records an architecture choice, not implementation or runtime verification.
+
+| ID | Original decision scope | Selected option | Authority and record | Effective boundary |
+| --- | --- | --- | --- | --- |
+| OD-002 | Java version: supported LTS candidates | Java 21 LTS | Technical Architecture Owner/CPO; DEC-013; ADR-V3-013; V3-005 | Effective upon traceable commit; installed toolchain remains unverified |
+| OD-003 | Spring Boot version: supported stable line candidates | Spring Boot 4.1.2 | Technical Architecture Owner/CPO; DEC-013; ADR-V3-013; V3-005 | Effective upon traceable commit; authoritative artifact/BOM compatibility remains unverified |
+| OD-004 | Gradle vs Maven; single/multi-project structure | Gradle multi-project, Groovy DSL, Gradle Wrapper | Technical Architecture Owner/CPO; DEC-013; ADR-V3-013; V3-005 | Effective upon traceable commit; exact Wrapper distribution/checksum remains pending implementation evidence |
+
 Decisions require documented evidence, consequences, owner approval, a V3 ADR where material, and updates to the [decision register](decision-register.md), [baseline](baseline-v3.md), and affected repository baseline references.
 
 ## Status and dependency map
 
-Every item is currently **Open**.
+The map retains resolved entries for dependency and historical traceability. OD-001 and OD-005 through OD-023 are **Open**; OD-002 through OD-004 are **Resolved upon traceable commit**.
 
 | ID | Dependencies |
 | --- | --- |

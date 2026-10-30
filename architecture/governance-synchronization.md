@@ -5,7 +5,7 @@
 - Current reference: `NESHANE-V3-GOV-P00-000A`.
 - Scope: the Root `AGENTS.md`, Root engineering standards, and this synchronization policy.
 - This reference is a governance revision label, not an ADR. It does not approve choices explicitly marked proposed or unresolved.
-- Current approved architecture revision: `NESHANE-V3-ARCH-P00-002`, formalized by ADR-V3-001 through ADR-V3-012 under R0-001.
+- Current approved architecture revision: `NESHANE-V3-ARCH-P00-003` upon traceable commit of the V3-005 decision package; ADR-V3-001 through ADR-V3-012 were formalized under R0-001 and ADR-V3-013 records the Backend foundation toolchain selection.
 - Architecture revisions do not silently rename this governance reference. A V3 ADR is authoritative after explicit approval and storage in the Root architecture area.
 
 ## Ownership
@@ -31,6 +31,10 @@ R0-003 propagated architecture revision `NESHANE-V3-ARCH-P00-002` and governance
 - Frontend synchronization: commit `f3d138f`; modular feature-oriented architecture, shared Design System ownership, no initial Micro-Frontend requirement, controlled contract compatibility, and evidence-based readiness terminology were reconciled.
 
 Both local governance baselines now record the current architecture and governance references. This completion records documentary propagation only; it does not establish implementation or production readiness, or independent R0 reviewer approval. Future architecture or governance revisions continue to follow the propagation process above.
+
+## Pending local propagation for V3-005
+
+Architecture revision `NESHANE-V3-ARCH-P00-003` changes the Backend foundation baseline only. Backend still records `NESHANE-V3-ARCH-P00-002`; Frontend is unaffected by the toolchain decision and must not be changed by this decision task. Before Backend architecture-sensitive implementation begins, an authorized V3-005 action must update the Backend local governance reference and relevant engineering guidance to ADR-V3-013. This pending propagation is documentary alignment, not toolchain implementation or verification.
 
 ## Missing, stale, or conflicting guidance
 

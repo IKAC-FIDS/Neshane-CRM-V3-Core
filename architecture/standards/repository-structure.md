@@ -2,7 +2,7 @@
 
 ## Rules
 
-- Keep deployable Business Services under `Backend/` and user-facing applications under `Frontend/`; the exact module layout is proposed until a V3 ADR approves it.
+- Keep deployable Business Services under `Backend/` and user-facing applications under `Frontend/`. ADR-V3-013 approves a Gradle multi-project Backend foundation with Groovy DSL and the Gradle Wrapper.
 - Each service must have its own build boundary, configuration, migrations, tests, and deployment artifact.
 - Do not import another service's implementation, domain model, persistence entity, repository, or database client.
 - Shared modules may contain only versioned transport contracts or narrow, domain-neutral technical primitives. Shared business logic is forbidden.
@@ -49,5 +49,5 @@ This is a canonical template, not a requirement to create every directory. Featu
 ## Proposed choices requiring approval
 
 - Java base-package prefix: proposed `ir.neshane.<service>`; approve before the first service is created.
-- Exact multi-module build layout and shared-contract publication mechanism require a V3 ADR.
+- Shared-contract publication mechanism requires a V3 ADR. The approved multi-project build must keep each defined Business Service independently buildable, versioned, packaged and releasable; root aggregation must not create cross-service implementation dependencies.
 

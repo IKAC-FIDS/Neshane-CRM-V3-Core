@@ -92,4 +92,4 @@ Documentation approval is not runtime compatibility evidence. Unexecuted tests, 
 
 ## V3-006 boundaries
 
-`OD-002`, `OD-003` and `OD-004` remain Open. The Level 2 workflow created by `V3-006` provides their future decision route but does not select or approve Java, Spring Boot, Gradle/Maven, DSL or repository layout choices.
+`OD-002`, `OD-003` and `OD-004` were subsequently resolved under the Level 2 workflow by DEC-013/ADR-V3-013 in V3-005. That decision selects the Backend foundation architecture but does not itself verify downloaded tooling, Wrapper integrity, build execution or Production Readiness.

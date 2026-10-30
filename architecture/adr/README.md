@@ -89,6 +89,7 @@ V2 ADR-001 through ADR-011 remain historical V2 records and are not imported or 
 | [ADR-V3-010](010-operational-profiles.md) | Verifiable profile-specific operations | Accepted | — | DEC-010; R0-001 |
 | [ADR-V3-011](011-logical-boundaries-co-deployment.md) | Logical boundaries first with controlled co-deployment | Accepted | — | DEC-011; R0-001 |
 | [ADR-V3-012](012-evidence-based-readiness.md) | Evidence-based readiness gates | Accepted | — | DEC-012; R0-001 |
+| [ADR-V3-013](013-backend-foundation-toolchain.md) | Backend foundation toolchain and build layout | Accepted | — | DEC-013; OD-002–OD-004; V3-005 |
 
-These ADRs form approved architecture revision `NESHANE-V3-ARCH-P00-002`. Historical records are never rewritten to disguise a conflict. The lifecycle and template added by `V3-006` were accepted at R0 by the CPO/Technical Architecture Owner as governance revision `V3-006-R0-001`; they do not change the status or content of ADR-V3-001 through ADR-V3-012. `V3-006` is closed only as the ADR and Contract Change Governance Baseline.
+ADR-V3-001 through ADR-V3-012 form approved architecture revision `NESHANE-V3-ARCH-P00-002`. ADR-V3-013 adds the accepted Backend foundation refinement in `NESHANE-V3-ARCH-P00-003`, effective when the V3-005 decision package is committed. Historical records are never rewritten to disguise a conflict. The lifecycle and template added by `V3-006` were accepted at R0 by the CPO/Technical Architecture Owner as governance revision `V3-006-R0-001`; they do not change the status or content of ADR-V3-001 through ADR-V3-012.
 
