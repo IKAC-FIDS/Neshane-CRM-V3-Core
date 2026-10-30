@@ -32,9 +32,11 @@ R0-003 propagated architecture revision `NESHANE-V3-ARCH-P00-002` and governance
 
 Both local governance baselines now record the current architecture and governance references. This completion records documentary propagation only; it does not establish implementation or production readiness, or independent R0 reviewer approval. Future architecture or governance revisions continue to follow the propagation process above.
 
-## Pending local propagation for V3-005
+## V3-005 propagation state
 
-Architecture revision `NESHANE-V3-ARCH-P00-003` changes the Backend foundation baseline only. Backend still records `NESHANE-V3-ARCH-P00-002`; Frontend is unaffected by the toolchain decision and must not be changed by this decision task. Before Backend architecture-sensitive implementation begins, an authorized V3-005 action must update the Backend local governance reference and relevant engineering guidance to ADR-V3-013. This pending propagation is documentary alignment, not toolchain implementation or verification.
+Architecture revision `NESHANE-V3-ARCH-P00-003` changes the Backend foundation baseline only. The authorized V3-005 working change updates the Backend local governance reference and relevant engineering guidance to ADR-V3-013; traceable propagation is complete only after the independent Backend change is committed. Frontend is unaffected by the toolchain decision.
+
+The V3-005 CPO/Technical Architecture Owner direction also replaces the project blanket build/test prohibition with controlled, Task-scoped local execution. Root and Backend instructions plus their project-owned `neshane-review` skills carry the same permission and restrictions. Frontend remains unchanged. This policy amendment does not itself execute validation, authorize dependency downloads, or establish Implementation, Security or Production Readiness.
 
 ## Missing, stale, or conflicting guidance
 

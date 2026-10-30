@@ -11,6 +11,7 @@
 | Governance baseline label | `NESHANE-V3-GOV-P00-000A` unchanged; no new label was authorized by this task |
 | Narrow amendment | `V3-004` CPO direction: documentation-only R0 Design Consistency Acceptance route |
 | Level 2 protocol amendment | `ACCEPTED — V3-006 R0`; CPO/Technical Architecture Owner direction: general project architecture ownership and proportionate decision workflow |
+| Development execution amendment | `ACCEPTED — V3-005`; controlled local build/test execution under explicit Task scope |
 | V3-006 task status | `CLOSED — ADR AND CONTRACT CHANGE GOVERNANCE BASELINE` |
 
 ## Authority basis and evidence boundary
@@ -33,6 +34,23 @@ The designated Task Owner or CPO may accept and close an ordinary development or
 6. explicit preservation of every higher-level gate that remains applicable.
 
 A separate corporate identity certificate, delegation matrix or organizational digital signature is not required by default. A task-specific rule, independently authoritative corporate policy, contract, regulatory requirement or higher-level gate may still require stronger evidence.
+
+#### Controlled local development execution
+
+The CPO/Technical Architecture Owner authorizes a prospective replacement of the project's blanket local build/test prohibition with controlled, task-scoped development execution. This is project governance for implementation evidence; it is not a security exception, production authorization, dependency-acquisition approval or deployment permission.
+
+Codex may run local builds, unit tests, formatting checks, architecture/dependency checks, static analysis, offline dependency inspection, and local integration tests when all of the following hold:
+
+1. the current Task ID explicitly requests the exact bounded category of execution;
+2. the work uses local, isolated, non-production resources and contains no live customer data or real credentials;
+3. network access, dependency downloads and installation remain disabled unless separately and explicitly authorized;
+4. destructive database operations, skipped/disabled tests, weakened checks and bypassed failures remain prohibited;
+5. exact commands, results, failures, skipped checks and resource assumptions are recorded; and
+6. the evidence is not represented as Security Sign-off, Production Readiness, deployment-profile assurance or release authorization.
+
+Deployments, publishing, Git push, CI/CD execution, production access and unrestricted network or installation activity remain separately authorized actions. Docker, containers and application services require explicit task scope plus isolated non-production configuration; they are not implied by ordinary build/test permission.
+
+For `V3-005`, the present authorization is limited to offline Gradle `clean`, `build`, `check`, dependency reporting, formatting verification and architecture-boundary verification in the independent Backend repository. It does not authorize dependency download, business runtime execution or changes to accepted architecture.
 
 ### LEVEL 2 — ARCHITECTURE DECISION
 
@@ -125,3 +143,5 @@ This transition does not authenticate or validate previously asserted corporate 
 This change alters Root task-acceptance routing only. Backend and Frontend continue to require explicit Task IDs and retain their existing architecture, security and execution restrictions. No repository-local rule conflicts with this policy, so no local governance file is changed by `V3-003`.
 
 The `V3-004` narrow amendment also remains Root-only. It creates no Backend/Frontend acceptance, Security Sign-off or production authorization and requires no repository-local governance change.
+
+The prospective `V3-005` controlled-execution amendment updates the Root and Backend execution instructions and their project-owned `neshane-review` skills. Frontend is unaffected. Repository-local execution still requires an explicit Task ID and remains subject to the restrictions above.

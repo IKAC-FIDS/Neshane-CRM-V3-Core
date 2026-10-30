@@ -34,15 +34,15 @@ Read only the standards and repository skill(s) relevant to the task. Skills liv
 - `neshane-plugin`: plugin manifests, installation, grants, gateway, events, and hooks.
 - `neshane-review`: architecture compliance review and completion evidence.
 
-## Execution restrictions
+## Controlled local execution policy
 
-- Do not execute builds or tests. Test code may be written when explicitly required, but never run it.
-- Do not run Docker, containers, application services, or deployment tooling.
-- Do not install dependencies.
-- Do not browse the web, access the network, or fetch remote resources.
-- Do not publish, deploy, push, open pull requests, or execute CI/CD.
-- Do not perform resource-intensive repository scans. Use narrowly scoped, read-only inspection commands only when necessary.
-- Do not claim a build, test, deployment, or runtime verification succeeded without evidence supplied by the user or produced under a later task that explicitly changes these restrictions.
+- Codex may execute local builds, unit tests, formatting checks, architecture/dependency checks, static analysis, offline dependency inspection, and local integration tests only when the current Task ID explicitly requires them and the commands remain within that task's bounded development scope.
+- Local integration tests must use isolated non-production resources. Never access production systems, live customer data, real credentials, or shared environments whose state is not dedicated to the task.
+- Prefer offline execution when requested by the task. Dependency installation, remote repository access, network downloads, and other external fetches require separate explicit authorization; an authorized build/test task does not grant them implicitly.
+- Do not perform destructive database operations, disable tests, suppress meaningful failures, weaken architecture/security checks, or bypass failed controls to obtain a passing result.
+- Do not run deployments or production services, publish artifacts, push, open pull requests, or execute CI/CD without separate explicit authorization. Docker, containers, or local application services require explicit task scope and isolated non-production configuration.
+- Do not perform expensive or unrelated validation. Record the exact commands, results, failures, skipped checks, resource assumptions, and any network or dependency activity.
+- Never treat local execution as Security Sign-off, Production Readiness, release authorization, or proof for an untested deployment profile.
 
 ## Completion report
 
@@ -51,8 +51,8 @@ At the end of every implementation task, respond in Persian and include:
 1. What was implemented.
 2. Files created or modified.
 3. Required configuration.
-4. Exact manual build commands.
-5. Exact manual run or deployment instructions.
+4. Build/test commands actually executed and their results, plus exact manual commands for anything not executed.
+5. Exact manual run or deployment instructions when applicable and authorized.
 6. Simple verification commands for the user.
 7. Known limitations and unverified assumptions.
 
