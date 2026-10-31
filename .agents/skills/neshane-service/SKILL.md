@@ -14,5 +14,5 @@ Apply when a task creates or changes service domain, application, adapter, or co
 5. Add only packages required by the feature; do not scaffold unused layers or create a shared business framework.
 6. Select the API, security, persistence, or messaging skill when those boundaries change.
 
-Deliver the smallest implementation, relevant unexecuted test code when required, configuration notes, contract/ADR impacts, and the Persian completion report required by `AGENTS.md`. Never run builds, tests, services, containers, deployments, or dependency installation.
+Deliver the smallest implementation, relevant executable tests, configuration notes, contract/ADR impacts, and the Persian completion report required by `AGENTS.md`. Follow its development-first policy: run task-relevant builds/tests, resolve controlled dependencies, and use isolated local services/containers when useful. Production access, deployment, publishing, push and security exceptions remain separately authorized.
 

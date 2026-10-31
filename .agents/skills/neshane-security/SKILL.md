@@ -9,5 +9,5 @@ Apply to authentication, Tenant Context, authorization, service identity, secret
 
 Read the root `AGENTS.md` plus `architecture/standards/security.md` and every changed boundary's standard. Identify the trust boundary, identity, tenant provenance, owning-service authorization, denial behavior, and sensitive data before editing. Fail closed on missing or conflicting context. Never treat a client tenant header, gateway decision, or internal network as authority. Preserve context through calls/messages/transactions, use least privilege, and redact logs and errors. Do not invent token, session, cryptographic, or retention policy; mark missing choices for architecture/security approval.
 
-Deliver the security path, denial cases, relevant unexecuted tests, configuration requirements without secret values, and unresolved threat assumptions. Never run builds, tests, services, containers, or deployments.
+Deliver the security path, denial cases, relevant executable negative tests, configuration requirements without secret values, and unresolved threat assumptions. Follow `AGENTS.md` for isolated task-relevant execution. Local evidence does not approve a security design, risk acceptance, production access, deployment or Security Sign-off.
 

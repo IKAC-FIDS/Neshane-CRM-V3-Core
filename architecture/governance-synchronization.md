@@ -40,6 +40,14 @@ The V3-005 CPO/Technical Architecture Owner direction also replaces the project 
 
 `V3-005` is `CLOSED — ENGINEERING FOUNDATION R0 BASELINE`. Closure establishes the engineering foundation only; it does not establish Spring Boot application/runtime verification, Security Sign-off, CI evidence, deployment-profile assurance, publishing, release authorization or Production Readiness.
 
+## V3-010 development-first propagation state
+
+The CPO/Technical Architecture Owner authorizes a prospective development-first policy for ordinary Tasks. Root, Backend and Frontend may implement, resolve pinned dependencies from approved official registries, build, test, debug, and use isolated Task-owned local services/containers without repeated per-command approvals. The explicit Task ID and affected component boundaries remain mandatory.
+
+This propagation removes project-owned blanket execution prohibitions from repository instructions, testing standards and mandatory skills. It does not alter an ADR, security invariant, production gate or architecture revision. Governance reference `NESHANE-V3-GOV-P00-000A` remains unchanged because V3-010 did not authorize a new label.
+
+The synchronized guardrails prohibit production/customer data and credentials, untrusted registries, disabled integrity checks, privileged/host-network containers, sensitive host or Docker-socket mounts, unrelated resource deletion, publishing, push, remote mutation and deployment without their required authorization. Security-critical decisions, risk acceptance, executable `DURABLE_DEFER`, production migrations and releases retain their existing approval gates.
+
 ## Missing, stale, or conflicting guidance
 
 - A repository remains usable without the Root checkout because its local baseline records the required invariants.

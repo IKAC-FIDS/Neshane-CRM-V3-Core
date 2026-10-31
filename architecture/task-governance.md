@@ -12,6 +12,7 @@
 | Narrow amendment | `V3-004` CPO direction: documentation-only R0 Design Consistency Acceptance route |
 | Level 2 protocol amendment | `ACCEPTED — V3-006 R0`; CPO/Technical Architecture Owner direction: general project architecture ownership and proportionate decision workflow |
 | Development execution amendment | `ACCEPTED — V3-005`; controlled local build/test execution under explicit Task scope |
+| Development-first amendment | `APPROVED — V3-010`; routine local implementation, trusted dependency resolution and isolated Docker development no longer require repeated approval |
 | V3-006 task status | `CLOSED — ADR AND CONTRACT CHANGE GOVERNANCE BASELINE` |
 
 ## Authority basis and evidence boundary
@@ -35,22 +36,32 @@ The designated Task Owner or CPO may accept and close an ordinary development or
 
 A separate corporate identity certificate, delegation matrix or organizational digital signature is not required by default. A task-specific rule, independently authoritative corporate policy, contract, regulatory requirement or higher-level gate may still require stronger evidence.
 
-#### Controlled local development execution
+#### Development-first local execution
 
-The CPO/Technical Architecture Owner authorizes a prospective replacement of the project's blanket local build/test prohibition with controlled, task-scoped development execution. This is project governance for implementation evidence; it is not a security exception, production authorization, dependency-acquisition approval or deployment permission.
+The CPO/Technical Architecture Owner approves a prospective development-first workflow for explicitly identified development Tasks. Routine implementation evidence is produced through bounded local execution and does not require a new approval for each build, test, trusted dependency resolution, local service run, Docker smoke test, debugging cycle or defect fix.
 
-Codex may run local builds, unit tests, formatting checks, architecture/dependency checks, static analysis, offline dependency inspection, and local integration tests when all of the following hold:
+The ordinary workflow is:
 
-1. the current Task ID explicitly requests the exact bounded category of execution;
-2. the work uses local, isolated, non-production resources and contains no live customer data or real credentials;
-3. network access, dependency downloads and installation remain disabled unless separately and explicitly authorized;
-4. destructive database operations, skipped/disabled tests, weakened checks and bypassed failures remain prohibited;
-5. exact commands, results, failures, skipped checks and resource assumptions are recorded; and
-6. the evidence is not represented as Security Sign-off, Production Readiness, deployment-profile assurance or release authorization.
+```text
+TASK ASSIGNED -> IMPLEMENT -> BUILD AND TEST -> FIX FAILURES -> REVIEW EVIDENCE -> COMMIT -> CLOSE
+```
 
-Deployments, publishing, Git push, CI/CD execution, production access and unrestricted network or installation activity remain separately authorized actions. Docker, containers and application services require explicit task scope plus isolated non-production configuration; they are not implied by ordinary build/test permission.
+R0 or R1 remains a distinct step only when the Task's actual acceptance criteria require it. A local commit is made only when the Task explicitly authorizes committing; push, publishing, deployment and release remain separate actions.
 
-For `V3-005`, the present authorization is limited to offline Gradle `clean`, `build`, `check`, dependency reporting, formatting verification and architecture-boundary verification in the independent Backend repository. It does not authorize dependency download, business runtime execution or changes to accepted architecture.
+For an explicitly identified development Task, Codex may by default:
+
+1. create and edit in-scope code, tests, configuration, build files, templates and development documentation;
+2. run the repository's Java, Gradle, Node.js and other approved local development tooling;
+3. run and repeat unit, integration, architecture, contract, formatting, static-analysis and smoke tests;
+4. debug and fix implementation defects discovered by those checks;
+5. resolve pinned or controlled dependencies and plugins from repository-declared approved official registries; and
+6. build, run and stop Task-owned local services, Docker images/containers and disposable test infrastructure.
+
+Dependency acquisition uses HTTPS with normal certificate validation, controlled versions, and dependency verification/locking where supported. Maven Central and the Gradle Plugin Portal are approved for the accepted Backend toolchain. Other official registries must be explicitly declared in repository configuration or an approved Task/toolchain decision. Untrusted mirrors, arbitrary executable installation scripts, disabled integrity checks and unrelated software installation remain prohibited. Material dependency changes are recorded and reviewed.
+
+Local Docker and service execution uses development-only resources: trusted base images with approved provenance/integrity controls, localhost port binding by default, non-root containers where practical, no production credentials/customer data, no privileged mode or host networking by default, no sensitive host/Docker-socket mounts, bounded resource use, and cleanup limited to disposable resources created by the Task. Local databases, brokers, caches and fixtures follow the same isolation rules.
+
+This policy does not authorize destructive operations against non-disposable resources, remote infrastructure mutation, production access, publishing, CI/CD, Git push, deployment or release. It never establishes Security Sign-off, risk acceptance, runtime assurance for another profile or Production Readiness.
 
 ### LEVEL 2 — ARCHITECTURE DECISION
 
@@ -144,4 +155,4 @@ This change alters Root task-acceptance routing only. Backend and Frontend conti
 
 The `V3-004` narrow amendment also remains Root-only. It creates no Backend/Frontend acceptance, Security Sign-off or production authorization and requires no repository-local governance change.
 
-The prospective `V3-005` controlled-execution amendment updates the Root and Backend execution instructions and their project-owned `neshane-review` skills. Frontend is unaffected. Repository-local execution still requires an explicit Task ID and remains subject to the restrictions above.
+The `V3-005` controlled-execution amendment updated Root and Backend build/test permissions. `V3-010` supersedes its repeated-approval restrictions prospectively with the development-first policy above and propagates compatible execution guidance to Root, Backend and Frontend. Repository-local work still requires an explicit Task ID and remains subject to architecture, security and production boundaries.

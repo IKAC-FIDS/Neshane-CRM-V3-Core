@@ -34,15 +34,16 @@ Read only the standards and repository skill(s) relevant to the task. Skills liv
 - `neshane-plugin`: plugin manifests, installation, grants, gateway, events, and hooks.
 - `neshane-review`: architecture compliance review and completion evidence.
 
-## Controlled local execution policy
+## Development-first local execution policy
 
-- Codex may execute local builds, unit tests, formatting checks, architecture/dependency checks, static analysis, offline dependency inspection, and local integration tests only when the current Task ID explicitly requires them and the commands remain within that task's bounded development scope.
-- Local integration tests must use isolated non-production resources. Never access production systems, live customer data, real credentials, or shared environments whose state is not dedicated to the task.
-- Prefer offline execution when requested by the task. Dependency installation, remote repository access, network downloads, and other external fetches require separate explicit authorization; an authorized build/test task does not grant them implicitly.
-- Do not perform destructive database operations, disable tests, suppress meaningful failures, weaken architecture/security checks, or bypass failed controls to obtain a passing result.
-- Do not run deployments or production services, publish artifacts, push, open pull requests, or execute CI/CD without separate explicit authorization. Docker, containers, or local application services require explicit task scope and isolated non-production configuration.
-- Do not perform expensive or unrelated validation. Record the exact commands, results, failures, skipped checks, resource assumptions, and any network or dependency activity.
-- Never treat local execution as Security Sign-off, Production Readiness, release authorization, or proof for an untested deployment profile.
+- An explicitly identified development Task authorizes ordinary in-scope implementation work without per-command approval: edit code/tests/configuration/build files, run relevant local tooling, build and test, resolve defects, and repeat validation until evidence is established.
+- Task-relevant unit, integration, architecture, contract, formatting and static-analysis checks may run by default. Integration resources must be isolated, disposable and non-production; never use live customer data, real credentials or shared mutable environments.
+- Pinned or controlled dependencies and plugins may be resolved from repository-declared approved official registries over HTTPS with normal certificate validation. Preserve dependency verification and locking where supported; do not use untrusted mirrors, arbitrary executable installers or disabled integrity checks, and record material dependency changes.
+- A development Task may build, run and stop its own local services and Docker containers for isolated smoke/integration testing. Use trusted base images with approved provenance/integrity controls; bind exposed ports to localhost by default; use non-root containers where practical; prohibit privileged mode, host networking, sensitive host mounts and Docker-socket mounts unless separately approved; limit resources and clean up only disposable resources created by the Task.
+- Disposable local databases, brokers, caches and test fixtures are allowed when required by the Task and isolated from production. Never perform destructive operations against unrelated or non-disposable resources.
+- Do not disable tests, suppress meaningful failures, weaken architecture/security checks, or bypass failed controls to obtain a passing result.
+- A local commit is allowed only when the Task explicitly authorizes it. Pushes, pull requests, publishing, CI/CD execution, remote infrastructure mutation, production access, deployments and releases always require separate explicit authorization.
+- Record commands, material dependency/network activity, results, failures, skipped checks and resource assumptions. Local evidence is never Security Sign-off, risk acceptance, Production Readiness or release authorization.
 
 ## Completion report
 

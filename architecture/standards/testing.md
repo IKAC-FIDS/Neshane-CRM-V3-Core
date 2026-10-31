@@ -15,7 +15,7 @@
 - Tests are deterministic, isolated, readable, and assert observable behavior rather than implementation detail.
 - Do not use production credentials or depend on shared mutable environments.
 - A skipped or unexecuted test is not evidence of success. Report exactly what was and was not run.
-- Under the root `AGENTS.md`, Codex may write required tests but must never execute tests, builds, containers, or services.
+- Under the root `AGENTS.md`, an explicitly identified development Task may execute and repeat its relevant builds, tests, isolated local services and disposable test containers. Preserve the Task boundary and report exact evidence; execution is not Security Sign-off or Production Readiness.
 
 ## Proposed choices requiring approval
 

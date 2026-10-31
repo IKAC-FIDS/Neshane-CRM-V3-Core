@@ -9,5 +9,5 @@ Apply when a task changes database models, repositories, transactions, PostgreSQ
 
 Read the root `AGENTS.md` plus `architecture/standards/persistence.md`, `security.md`, and `service-architecture.md`. Confirm the owning service and schema. Keep persistence entities inside the outbound adapter, map them to domain types, and prohibit cross-service SQL or shared migrations. For tenant data, carry explicit tenant keys, tenant-scoped constraints, ordinary non-bypass runtime roles, RLS read/write policies, and transaction-local validated context. Keep transactions within one service; coordinate emitted facts through the messaging standard.
 
-Deliver mappings/repository/migration code only when the Task ID requests it, relevant unexecuted isolation and migration tests, recovery/configuration notes, and open database decisions. Never execute migrations, builds, tests, databases, containers, or deployments.
+Deliver mappings/repository/migration code only when the Task ID requests it, relevant executable isolation and migration tests, recovery/configuration notes, and open database decisions. Follow `AGENTS.md` for task-owned disposable databases/containers and local migration validation. Never run destructive operations against shared/non-disposable data or infer production migration/deployment approval.
 

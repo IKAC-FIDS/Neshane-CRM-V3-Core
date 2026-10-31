@@ -9,5 +9,5 @@ Apply when a task changes event contracts, publication, consumption, RabbitMQ to
 
 Read the root `AGENTS.md` plus `architecture/standards/messaging.md`, `service-architecture.md`, and `security.md`; also read `persistence.md` for outbox/inbox work. Confirm producer ownership, event meaning/version, tenant provenance, delivery assumptions, and consumer failure behavior. Use atomic outbox publication for owned state changes and durable inbox/effect handling before acknowledgment. Assume duplicates and possible reordering; use bounded retry and explicit dead-letter/re-drive handling. Do not share producer implementation types or claim exactly-once delivery.
 
-Deliver contracts/adapters, relevant unexecuted failure and idempotency tests, topology/configuration notes, and compatibility assumptions. Never run brokers, builds, tests, containers, services, or deployments.
+Deliver contracts/adapters, relevant executable failure and idempotency tests, topology/configuration notes, and compatibility assumptions. Follow `AGENTS.md` for task-owned disposable brokers/containers and isolated local service validation. Do not infer production topology, deployment, publishing, risk acceptance or Security Sign-off.
 
