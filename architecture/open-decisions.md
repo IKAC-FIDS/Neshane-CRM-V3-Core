@@ -1,6 +1,6 @@
 # Neshane V3 open decisions
 
-Status: OD-001 and OD-005 through OD-023 remain Open. OD-002 through OD-004 are resolved by DEC-013/ADR-V3-013 upon traceable commit of the V3-005 decision package. Milestones are latest responsible decision points, not implementation authorization.
+Status: OD-001, OD-005 through OD-007 and OD-009 through OD-023 remain Open. OD-002 through OD-004 are resolved by DEC-013/ADR-V3-013; OD-008 is closed by DEC-014/ADR-V3-014, effective upon traceable commit of its decision package. Milestones are latest responsible decision points, not implementation authorization.
 
 | ID | Decision and alternatives | Trade-offs / affected boundaries | Milestone | Proposed owner | Cost of postponement |
 | --- | --- | --- | --- | --- | --- |
@@ -8,7 +8,6 @@ Status: OD-001 and OD-005 through OD-023 remain Open. OD-002 through OD-004 are 
 | OD-005 | Frontend framework/rendering: React/Angular/Vue/other; SPA/SSR variants | UX, deployment, skills, accessibility and operations | Before first Frontend source | Frontend Architecture + Product UX | Blocks frontend implementation |
 | OD-006 | State/server-cache/UI libraries: library or framework-native approaches | Consistency/productivity versus lock-in and bundle complexity | Before first affected feature/design system | Frontend Architecture + UX | Risks incompatible local patterns if delayed past coding |
 | OD-007 | Public API and GraphQL BFF: REST-first, GraphQL BFF, hybrid, or per-client boundary | Composition, compatibility, security, performance and ownership | Before first public contract | API Architecture + Backend/Frontend owners | Blocks stable client/service contracts |
-| OD-008 | API/event versioning: URI/header/media type; schema/envelope evolution rules | Clarity and compatibility versus operational complexity | Before first published contract/event | API + Event Architecture | Creates irreversible incompatible contracts if late |
 | OD-009 | IdP integrations: generic OIDC first versus named enterprise providers/federation | Reach and conformance versus implementation/support breadth | Before production authentication | Identity + Security + Product | Blocks production trust onboarding |
 | OD-010 | Session lifecycle/revocation: stateless short-lived, stateful sessions, refresh families, hybrid | UX, revocation speed, compromise recovery and Sovereign operation | Before production session implementation | Identity + Security | Blocks safe session semantics and frontend credential design |
 | OD-011 | Workload identity: platform-issued credentials, mTLS PKI, SPIFFE/SPIRE, hybrid | Portability/automation versus operational complexity | Before production service-to-service trust | Security + Platform Operations | Blocks durable trust-domain and rotation design |
@@ -34,12 +33,13 @@ The original decision scope and ownership are preserved below for history. Resol
 | OD-002 | Java version: supported LTS candidates | Java 21 LTS | Technical Architecture Owner/CPO; DEC-013; ADR-V3-013; V3-005 | Effective upon traceable commit; installed toolchain remains unverified |
 | OD-003 | Spring Boot version: supported stable line candidates | Spring Boot 4.1.2 | Technical Architecture Owner/CPO; DEC-013; ADR-V3-013; V3-005 | Effective upon traceable commit; authoritative artifact/BOM compatibility remains unverified |
 | OD-004 | Gradle vs Maven; single/multi-project structure | Gradle multi-project, Groovy DSL, Gradle Wrapper | Technical Architecture Owner/CPO; DEC-013; ADR-V3-013; V3-005 | Effective upon traceable commit; exact Wrapper distribution/checksum remains pending implementation evidence |
+| OD-008 | API/event versioning: URI/header/media type; schema/envelope evolution rules | Public REST URI major versioning; CloudEvents 1.0-compatible envelope with independent event type, payload and immutable schema versions; governed major-version coexistence and retirement | Technical Architecture Owner/CPO; DEC-014; ADR-V3-014; OD-008 formal-closure task | Closed and approved; effective upon traceable commit. GraphQL versioning remains deferred to OD-007; implementation/release evidence remains separate |
 
 Decisions require documented evidence, consequences, owner approval, a V3 ADR where material, and updates to the [decision register](decision-register.md), [baseline](baseline-v3.md), and affected repository baseline references.
 
 ## Status and dependency map
 
-The map retains resolved entries for dependency and historical traceability. OD-001 and OD-005 through OD-023 are **Open**; OD-002 through OD-004 are **Resolved upon traceable commit**.
+The map retains resolved entries for dependency and historical traceability. OD-001, OD-005 through OD-007 and OD-009 through OD-023 are **Open**; OD-002 through OD-004 are **Resolved** and OD-008 is **Closed and approved, effective upon traceable commit**.
 
 | ID | Dependencies |
 | --- | --- |

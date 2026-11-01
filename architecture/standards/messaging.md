@@ -3,8 +3,8 @@
 ## Event contracts
 
 - Publish facts owned by the producing service; do not publish commands disguised as events.
-- Event contracts are namespaced and versioned. Proposed form: `<bounded-context>.<aggregate>.<event>.v<major>`; approve before the first contract.
-- Every envelope carries event ID, type/version, occurred-at time, producer, correlation/causation identifiers, and validated tenant provenance when tenant-scoped.
+- Event contracts are stable, namespaced and versioned. Event type ends in `.v<major>`; the CloudEvents `specversion`, business-event major, semantic `payloadversion` and immutable schema identity are independent version dimensions under ADR-V3-014.
+- Published events use CloudEvents 1.0-compatible envelopes. Every envelope carries event ID, type/version, occurred-at time, producer, correlation/causation identifiers, and validated tenant provenance when tenant-scoped.
 - Minimize payloads and exclude secrets and unnecessary personal data.
 
 ## Delivery guarantees
@@ -18,6 +18,7 @@
 ## Ownership and evolution
 
 - Consumers must not depend on producer implementation classes.
-- Additive compatible changes are preferred. Breaking semantic or structural changes require a new major contract version and a migration plan.
+- Additive compatible changes are preferred. Breaking semantic or structural changes require a new major contract version, coexistence, consumer inventory, an accountable migration owner, deprecation/removal criteria and evidence before retirement.
+- Unknown or unsupported event/payload versions fail closed. Tenant or producer metadata is provenance, not authentication, membership, entitlement or resource authorization.
 - Queue/exchange naming, retry budgets, ordering needs, retention, schema format, and compatibility tooling require approval per integration.
 

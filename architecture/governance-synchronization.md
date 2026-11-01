@@ -5,7 +5,7 @@
 - Current reference: `NESHANE-V3-GOV-P00-000A`.
 - Scope: the Root `AGENTS.md`, Root engineering standards, and this synchronization policy.
 - This reference is a governance revision label, not an ADR. It does not approve choices explicitly marked proposed or unresolved.
-- Current approved architecture revision: `NESHANE-V3-ARCH-P00-003` upon traceable commit of the V3-005 decision package; ADR-V3-001 through ADR-V3-012 were formalized under R0-001 and ADR-V3-013 records the Backend foundation toolchain selection.
+- Current approved architecture revision: `NESHANE-V3-ARCH-P00-004` upon traceable commit of the OD-008 decision package; ADR-V3-001 through ADR-V3-012 were formalized under R0-001, ADR-V3-013 records the Backend foundation toolchain selection and ADR-V3-014 records REST/event versioning.
 - Architecture revisions do not silently rename this governance reference. A V3 ADR is authoritative after explicit approval and storage in the Root architecture area.
 
 ## Ownership
@@ -47,6 +47,12 @@ The CPO/Technical Architecture Owner authorizes a prospective development-first 
 This propagation removes project-owned blanket execution prohibitions from repository instructions, testing standards and mandatory skills. It does not alter an ADR, security invariant, production gate or architecture revision. Governance reference `NESHANE-V3-GOV-P00-000A` remains unchanged because V3-010 did not authorize a new label.
 
 The synchronized guardrails prohibit production/customer data and credentials, untrusted registries, disabled integrity checks, privileged/host-network containers, sensitive host or Docker-socket mounts, unrelated resource deletion, publishing, push, remote mutation and deployment without their required authorization. Security-critical decisions, risk acceptance, executable `DURABLE_DEFER`, production migrations and releases retain their existing approval gates.
+
+## OD-008 propagation state
+
+Architecture revision `NESHANE-V3-ARCH-P00-004` closes OD-008 through DEC-014/ADR-V3-014 upon a traceable Root commit. The accepted Backend V3-011 and V3-012 engineering baselines already implement conforming bounded conventions for public REST URI-major versioning, CloudEvents 1.0-compatible envelopes, independent event/payload/schema versions, immutable baselines and fail-closed compatibility analysis. This governance-only task does not modify those implementations.
+
+Backend still records architecture reference `NESHANE-V3-ARCH-P00-003` and describes OD-008 as Open. A separate authorized synchronization change must update only those local governance references after the Root decision package is committed. Frontend requires no immediate content change; OD-007 still controls the future public REST/GraphQL/hybrid boundary and any GraphQL versioning addendum.
 
 ## Missing, stale, or conflicting guidance
 

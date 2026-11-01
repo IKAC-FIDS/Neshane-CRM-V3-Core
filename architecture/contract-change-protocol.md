@@ -12,9 +12,9 @@
 | Acceptance authority | CPO / Technical Architecture Owner, explicit bounded acceptance under `V3-006` |
 | Scope | REST/OpenAPI, event/message, persistence migration, published SDK and integration contracts |
 | Authority | Technical Architecture Owner under the Level 2 process; additional domain/security/operations authorities where explicitly required |
-| Architecture basis | ADR-V3-002, ADR-V3-007, ADR-V3-008 and ADR-V3-012 |
+| Architecture basis | ADR-V3-002, ADR-V3-007, ADR-V3-008, ADR-V3-012 and ADR-V3-014 |
 
-This protocol governs contract change preparation and review. It does not select a protocol, schema registry, compatibility tool, migration product or version-number format, and it does not close `OD-007`, `OD-008`, `OD-013`, `OD-020` or another Open Decision.
+This protocol governs contract change preparation and review. ADR-V3-014 now selects the bounded REST/event versioning mechanics described below. This protocol still does not select the public REST/GraphQL strategy, schema registry, compatibility tool or migration product, and it does not close `OD-007`, `OD-013`, `OD-020` or another Open Decision.
 
 ## Ownership and contract inventory
 
@@ -50,7 +50,7 @@ A change is breaking when it removes or renames required data, narrows accepted 
 - Removing or renaming fields/operations, making optional input mandatory, changing validation/defaults, changing status/error semantics, changing authorization meaning or reusing a field for a different concept is breaking.
 - A breaking public API change requires a new contract version unless an explicit Level 2 decision approves another compatibility and migration mechanism.
 - Server implementation types and persistence entities are never public contract types.
-- Exact URI/header/media-type versioning remains governed by `OD-007` and `OD-008`.
+- Public REST contracts use `/api/v<major>/...` by default under ADR-V3-014; minor/patch history remains contract metadata. Header-only and media-type versioning are outside the initial baseline. REST/GraphQL/hybrid public API selection and any GraphQL versioning addendum remain governed by `OD-007`.
 
 ## Events and messages
 
@@ -58,7 +58,7 @@ A change is breaking when it removes or renames required data, narrows accepted 
 - Additive fields are compatible only when consumers are required and shown to tolerate them and defaults do not change semantic truth.
 - Changing event meaning, identity, partition/order expectations, required fields, tenant provenance, delivery semantics or enum interpretation is breaking.
 - Breaking changes require a new major contract version, coexistence, producer/consumer migration ordering, replay/re-drive treatment and retirement criteria.
-- A transport retry or re-drive cannot rewrite original semantic evidence. Exact envelope/versioning mechanics remain governed by `OD-008`.
+- A transport retry or re-drive cannot rewrite original semantic evidence. Under ADR-V3-014, events use CloudEvents 1.0-compatible envelopes, independent `specversion`, `.v<major>` event types, semantic `payloadversion` and immutable versioned schema identity.
 
 ## Persistence and data migration
 
@@ -93,3 +93,5 @@ Documentation approval is not runtime compatibility evidence. Unexecuted tests, 
 ## V3-006 boundaries
 
 `OD-002`, `OD-003` and `OD-004` were subsequently resolved under the Level 2 workflow by DEC-013/ADR-V3-013 in V3-005. That decision selects the Backend foundation architecture but does not itself verify downloaded tooling, Wrapper integrity, build execution or Production Readiness.
+
+`OD-008` was subsequently closed under the Level 2 workflow by DEC-014/ADR-V3-014. That decision selects bounded REST/event versioning and evolution rules; it does not close OD-007 or OD-020, prove runtime enforcement or authorize contract release.
