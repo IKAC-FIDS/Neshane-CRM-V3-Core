@@ -247,7 +247,7 @@ No Air Gap support commitment, implementation or readiness claim is created by V
 | `OD-017` | Object storage | Data + Operations + Security | Before File/Content capability implementation | File Core scope does not select storage |
 | `OD-018` | Search/indexing | Data Architecture + owning Domains | Before search-dependent feature | Customer business search does not select an engine |
 | `OD-019` | Durable scheduling/recovery mechanics | Backend Architecture + Operations | Before durable scheduled workflows | No scheduler or recovery technology approved |
-| `OD-020` | Contract testing | API/Event Architecture + Quality | Before first released contract | Compatibility evidence mechanism pending |
+| `OD-020` | Contract testing | Technical Architecture Owner + scoped interim Quality Authority | Before first released contract | Resolved by DEC-015/ADR-V3-015; effective upon traceable Root commit; CI/runtime evidence remains pending |
 | `OD-022` | Tenant placement migration | Cell Management + Data + Security | Before tenant placement migration is supported | Migration automation/support remains pending |
 | `OD-023` | SLO/RTO/RPO/capacity and measurement | Product + Operations + Security + Service owners | Before Production Architecture Sign-off | No numeric support guarantee |
 

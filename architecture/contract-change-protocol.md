@@ -12,9 +12,9 @@
 | Acceptance authority | CPO / Technical Architecture Owner, explicit bounded acceptance under `V3-006` |
 | Scope | REST/OpenAPI, event/message, persistence migration, published SDK and integration contracts |
 | Authority | Technical Architecture Owner under the Level 2 process; additional domain/security/operations authorities where explicitly required |
-| Architecture basis | ADR-V3-002, ADR-V3-007, ADR-V3-008, ADR-V3-012 and ADR-V3-014 |
+| Architecture basis | ADR-V3-002, ADR-V3-007, ADR-V3-008, ADR-V3-012, ADR-V3-014 and ADR-V3-015 |
 
-This protocol governs contract change preparation and review. ADR-V3-014 now selects the bounded REST/event versioning mechanics described below. This protocol still does not select the public REST/GraphQL strategy, schema registry, compatibility tool or migration product, and it does not close `OD-007`, `OD-013`, `OD-020` or another Open Decision.
+This protocol governs contract change preparation and review. ADR-V3-014 selects the bounded REST/event versioning mechanics, and ADR-V3-015 selects the risk-based Contract Testing and evidence-gate strategy. This protocol still does not select the public REST/GraphQL strategy, schema registry, testing product, CI provider or migration product, and it does not close `OD-007`, `OD-013` or another Open Decision.
 
 ## Ownership and contract inventory
 
@@ -86,7 +86,7 @@ Superseded specifications and schemas remain traceable and read-only. Removal re
 - Technical Architecture Owner: Level 2 compatibility and architecture disposition.
 - Security authority: changes to trust, identity, authorization, tenant isolation, sensitive data, cryptography or privileged operations when the applicable Level 3 gate requires it.
 - Operations/profile owners: rollout, recovery and coexistence evidence where deployment profiles are affected.
-- Quality authority: compatibility/conformance evidence once `OD-020` selects the required testing approach.
+- Quality authority: risk classification, critical-path inventory, compatibility/conformance evidence, mandatory re-execution criteria and limited Quality exceptions under ADR-V3-015. The scoped interim dual-role designation does not replace Security Authority or implementation evidence.
 
 Documentation approval is not runtime compatibility evidence. Unexecuted tests, proposed tooling and future migration plans must not be reported as verified implementation or Production Readiness.
 
@@ -94,4 +94,6 @@ Documentation approval is not runtime compatibility evidence. Unexecuted tests, 
 
 `OD-002`, `OD-003` and `OD-004` were subsequently resolved under the Level 2 workflow by DEC-013/ADR-V3-013 in V3-005. That decision selects the Backend foundation architecture but does not itself verify downloaded tooling, Wrapper integrity, build execution or Production Readiness.
 
-`OD-008` was subsequently closed under the Level 2 workflow by DEC-014/ADR-V3-014. That decision selects bounded REST/event versioning and evolution rules; it does not close OD-007 or OD-020, prove runtime enforcement or authorize contract release.
+`OD-008` was subsequently closed under the Level 2 workflow by DEC-014/ADR-V3-014. That decision selects bounded REST/event versioning and evolution rules; it does not close OD-007, prove runtime enforcement or authorize contract release.
+
+`OD-020` is closed as approved under DEC-015/ADR-V3-015 and becomes effective upon its traceable Level 2 commit. It selects the architecture testing strategy and blocking evidence obligations; it does not prove that CI, Provider, Consumer or Real Integration tests have executed and does not authorize Production Release.

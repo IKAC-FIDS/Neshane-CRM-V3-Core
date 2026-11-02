@@ -9,6 +9,8 @@
 - Validate syntax and shape at the API boundary; enforce business invariants in the domain.
 - Use consistent HTTP semantics, idempotency rules, pagination bounds, and content types.
 - Breaking contract changes require a new major version, bounded coexistence, consumer inventory and migration ownership, explicit deprecation/removal criteria and evidence before retirement.
+- Contract changes follow ADR-V3-015: schema/specification, compatibility and negative-regression controls are blocking; Provider Conformance is required before Merge and Release; Consumer-driven and Real Integration Testing apply by approved risk classification; unsupported constructs require recorded Manual Review.
+- The Service Owner owns the accepted baseline and Audit Trail. A baseline is never rewritten merely to make an incompatible candidate pass, and a limited exception never converts failed evidence to PASS.
 
 ## Security and operations
 
@@ -19,5 +21,5 @@
 
 ## Choices still requiring approval
 
-- Public REST/GraphQL/hybrid strategy under `OD-007`, GraphQL versioning if selected, pagination format, idempotency-key contract, and compatibility tooling under `OD-020`.
+- Public REST/GraphQL/hybrid strategy under `OD-007`, GraphQL versioning if selected, pagination format, idempotency-key contract, and specific compatibility/testing product selection.
 

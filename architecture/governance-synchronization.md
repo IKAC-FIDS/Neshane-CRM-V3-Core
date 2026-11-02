@@ -5,7 +5,7 @@
 - Current reference: `NESHANE-V3-GOV-P00-000A`.
 - Scope: the Root `AGENTS.md`, Root engineering standards, and this synchronization policy.
 - This reference is a governance revision label, not an ADR. It does not approve choices explicitly marked proposed or unresolved.
-- Current approved architecture revision: `NESHANE-V3-ARCH-P00-004` upon traceable commit of the OD-008 decision package; ADR-V3-001 through ADR-V3-012 were formalized under R0-001, ADR-V3-013 records the Backend foundation toolchain selection and ADR-V3-014 records REST/event versioning.
+- Current approved architecture revision: `NESHANE-V3-ARCH-P00-005` upon traceable commit of the OD-020 decision package; ADR-V3-001 through ADR-V3-012 were formalized under R0-001, ADR-V3-013 records the Backend foundation toolchain selection, ADR-V3-014 records REST/event versioning and ADR-V3-015 records risk-based Contract Testing governance.
 - Architecture revisions do not silently rename this governance reference. A V3 ADR is authoritative after explicit approval and storage in the Root architecture area.
 
 ## Ownership
@@ -52,7 +52,21 @@ The synchronized guardrails prohibit production/customer data and credentials, u
 
 Architecture revision `NESHANE-V3-ARCH-P00-004` closes OD-008 through DEC-014/ADR-V3-014 upon a traceable Root commit. The accepted Backend V3-011 and V3-012 engineering baselines already implement conforming bounded conventions for public REST URI-major versioning, CloudEvents 1.0-compatible envelopes, independent event/payload/schema versions, immutable baselines and fail-closed compatibility analysis. This governance-only task does not modify those implementations.
 
-Backend still records architecture reference `NESHANE-V3-ARCH-P00-003` and describes OD-008 as Open. A separate authorized synchronization change must update only those local governance references after the Root decision package is committed. Frontend requires no immediate content change; OD-007 still controls the future public REST/GraphQL/hybrid boundary and any GraphQL versioning addendum.
+Backend synchronization commit `03987f4cf7ffab377742e5f8799bccd16f5851eb` records architecture reference `NESHANE-V3-ARCH-P00-004`, DEC-014/ADR-V3-014 and the historical-versus-current OD-008 distinction without changing executable contracts. Frontend requires no immediate OD-008 content change; OD-007 still controls the future public REST/GraphQL/hybrid boundary and any GraphQL versioning addendum.
+
+## OD-020 propagation state
+
+Architecture revision `NESHANE-V3-ARCH-P00-005` closes OD-020 as approved through
+DEC-015/ADR-V3-015 and becomes effective upon a traceable Root decision-package commit. V3-011 and
+V3-012 already provide bounded local HTTP/Event validation and compatibility evidence, but do not
+provide CI, Provider Conformance, Consumer-driven or Real Integration execution evidence.
+
+After the Root commit, Backend requires a separately authorized synchronization of its local
+architecture reference and contract-governance wording. That propagation must not alter executable
+contracts merely to satisfy the new reference. Frontend requires synchronization only when its
+owned Consumer expectations or public contract workflow becomes affected. OD-007 and OD-019 remain
+open. No repository may claim CI approval, Security Sign-off or Production Readiness from the Root
+governance decision alone.
 
 ## Missing, stale, or conflicting guidance
 

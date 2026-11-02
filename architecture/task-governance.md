@@ -83,6 +83,37 @@ Within Level 2, the Technical Architecture Owner is the final architecture appro
 
 This designation does not authorize Independent Security Sign-off, security-critical risk acceptance, privileged-operation exceptions, executable `DURABLE_DEFER`, verification of runtime controls or Production Release. Those decisions remain at Level 3 or Level 4 as applicable.
 
+#### OD-020 interim Quality Authority designation
+
+For the current Neshane V3 development stage, the CPO explicitly designates the existing Technical
+Architecture Owner role holder to also serve as the interim Quality Authority for OD-020 contract
+testing policy and related development-stage quality governance:
+
+```text
+DESIGNATING_AUTHORITY = CPO
+QUALITY_AUTHORITY = EXISTING_TECHNICAL_ARCHITECTURE_OWNER_ROLE_HOLDER
+DESIGNATION_SCOPE = NESHANE_V3_CURRENT_DEVELOPMENT_STAGE_AND_OD_020
+DESIGNATION_SOURCE = EXPLICIT_CPO_AND_TECHNICAL_ARCHITECTURE_OWNER_OD_020_FINALIZATION_DIRECTION
+DESIGNATION_EFFECTIVE = EXPLICIT_CPO_DECLARATION_IN_OD_020_FINALIZATION_TASK
+REPOSITORY_EFFECT = UPON_TRACEABLE_LEVEL_2_COMMIT
+DURATION = UNTIL_SUPERSEDED_BY_FORMAL_ORGANIZATIONAL_DESIGNATION
+```
+
+The dual role is permitted for this bounded Level 2 development-stage decision because current
+project governance contains no prohibition or independently authoritative separation-of-duties
+rule for Quality Authority assignment. Architecture and Quality dispositions remain logically
+separate and must be recorded separately against the exact reviewed revision. The Quality role
+owns testing policy, evidence requirements, risk classification, Quality exceptions and
+release-quality governance; it does not gain Security Authority, risk-acceptance, runtime-control
+verification or Production Release authority.
+
+The role holder must disclose the dual capacity. A material Architecture/Quality conflict must be
+recorded rather than silently resolved; if it affects a Level 3/4 gate or cannot be resolved within
+the approved policy, it is escalated to the applicable independent Security, Release or later
+formally designated Quality authority. Failed evidence remains failed, and this designation cannot
+convert it to PASS or waive a non-waivable control. The designation is project-scoped, temporary
+and does not generalize to another project or organizational appointment.
+
 #### Proportionate Level 2 workflow
 
 1. Identify the decision, affected scope, owner and related `DEC-*`, `OD-*`, ADR, contract and Task IDs.

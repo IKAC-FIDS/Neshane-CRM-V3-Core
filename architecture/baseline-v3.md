@@ -1,9 +1,9 @@
 # Neshane V3 architecture baseline
 
-- Architecture version: `NESHANE-V3-ARCH-P00-004` upon traceable commit of the OD-008 decision package
+- Architecture version: `NESHANE-V3-ARCH-P00-005` upon traceable commit of the OD-020 decision package
 - Governance reference: `NESHANE-V3-GOV-P00-000A` (unchanged)
 - Status: approved architecture revision; project-owner decision ratification recorded by R0-001; implementation and operational evidence remain pending
-- Authority: ADR-V3-001 through ADR-V3-014 and future approved V3 ADRs
+- Authority: ADR-V3-001 through ADR-V3-015 and future approved V3 ADRs
 - Scope: intended target architecture; no implementation, security control, deployment, or readiness is implied
 
 ## Version history
@@ -13,7 +13,8 @@
 | `NESHANE-V3-ARCH-P00-001` | Superseded candidate | 2026-10-23 | V3-001 documented DEC-001–DEC-012 as pending R0 and OD-001–OD-023 as Open. |
 | `NESHANE-V3-ARCH-P00-002` | Superseded approved architecture revision upon V3-005 decision-package commit | 2026-10-23 | R0-001 recorded project-owner approval, formalized ADR-V3-001–ADR-V3-012 and refined the decisions without closing any Open Decision. |
 | `NESHANE-V3-ARCH-P00-003` | Accepted; effective upon traceable V3-005 decision-package commit | 2026-10-30 | DEC-013/ADR-V3-013 resolves OD-002–OD-004 as Java 21 LTS, Spring Boot 4.1.2 and Gradle multi-project with Groovy DSL and Gradle Wrapper. Tool artifact verification and implementation evidence remain pending. |
-| `NESHANE-V3-ARCH-P00-004` | Accepted; effective upon traceable OD-008 decision-package commit | Not assigned | DEC-014/ADR-V3-014 resolves OD-008 with public REST URI-major versioning, CloudEvents 1.0-compatible envelopes and independently governed event type, payload and immutable schema versions. GraphQL remains OD-007; implementation, CI, security and release evidence remain separate. |
+| `NESHANE-V3-ARCH-P00-004` | Accepted; superseded by P00-005 upon traceable OD-020 decision-package commit | Not assigned | DEC-014/ADR-V3-014 resolves OD-008 with public REST URI-major versioning, CloudEvents 1.0-compatible envelopes and independently governed event type, payload and immutable schema versions. GraphQL remains OD-007; implementation, CI, security and release evidence remain separate. |
+| `NESHANE-V3-ARCH-P00-005` | Accepted; effective upon traceable OD-020 decision-package commit | Not assigned | DEC-015/ADR-V3-015 resolves OD-020 with layered blocking contract controls, Provider Conformance, risk-based Consumer/real-integration testing, Service Owner baseline Audit Trail and limited time-bound exceptions. CI/runtime evidence, Security Sign-off and Production Readiness remain separate. |
 
 Supersession preserves the historical status of P00-001; it does not imply that P00-001 already contained the R0 refinements.
 
@@ -43,7 +44,7 @@ Architecture readiness, implementation readiness, and production readiness are s
 | --- | --- | --- |
 | Backend | Java 21 LTS, Spring Boot 4.1.2, Gradle multi-project with Groovy DSL/Wrapper, independent microservices, DDD/Hexagonal Architecture and independent build/test/version/release boundaries | Exact Gradle Wrapper distribution/checksum and implementation evidence ([ADR-V3-013](adr/013-backend-foundation-toolchain.md)) |
 | Relational data | PostgreSQL; service-owned persistence; RLS for shared tenant-aware tables | Migration tool and Java/RLS integration ([OD-013–OD-014](open-decisions.md)) |
-| Messaging | RabbitMQ; transactional outbox and idempotent inbox where reliable events are required; CloudEvents 1.0-compatible envelope and versioned event contracts per [ADR-V3-014](adr/014-api-event-versioning.md) | Broker topology and runtime delivery policy; durable scheduling where applicable ([OD-019](open-decisions.md)); contract-testing gates ([OD-020](open-decisions.md)) |
+| Messaging | RabbitMQ; transactional outbox and idempotent inbox where reliable events are required; CloudEvents 1.0-compatible envelope and versioned event contracts per [ADR-V3-014](adr/014-api-event-versioning.md); risk-based Contract Testing gates per [ADR-V3-015](adr/015-contract-testing-strategy.md) | Broker topology and runtime delivery policy; durable scheduling where applicable ([OD-019](open-decisions.md)); testing/CI product selection remains implementation-specific |
 | Cache | Redis is permitted only when justified with tenant-safe keys, authorization, freshness, and safe failure behavior | Per-use-case adoption and numeric policies |
 | Identity | Standards-based independent IdPs; OIDC/OAuth 2.0 where appropriate; Neshane-owned trust/principal mapping | Providers, sessions, workload identity and secrets tooling ([OD-009–OD-012](open-decisions.md)) |
 | Frontend | Independent modular feature-oriented boundary with shared Design System; Persian/RTL and accessibility; no initial Micro-Frontend requirement | Framework, state and UI libraries ([OD-005–OD-006](open-decisions.md)) |
@@ -68,6 +69,8 @@ GraphQL BFF, object storage, search, scheduling, contract tools, and specific pr
 | Logical boundaries with controlled co-deployment | DEC-011; [ADR-V3-011](adr/011-logical-boundaries-co-deployment.md) |
 | Evidence-based architecture/implementation/production gates | DEC-012; [ADR-V3-012](adr/012-evidence-based-readiness.md) |
 | Backend Java/Spring Boot/Gradle foundation | DEC-013; [ADR-V3-013](adr/013-backend-foundation-toolchain.md) |
+| REST and Event versioning | DEC-014; [ADR-V3-014](adr/014-api-event-versioning.md) |
+| Risk-based Contract Testing and evidence gates | DEC-015; [ADR-V3-015](adr/015-contract-testing-strategy.md) |
 
 Full rationale, consequences, dependencies, provenance and R0 status are in the [decision register](decision-register.md).
 
@@ -135,6 +138,8 @@ Schema evolution must preserve tenant isolation and compatibility. Cross-service
 
 Public and internal contracts are designed contract-first, versioned and owned. Backward-compatible evolution is preferred. Breaking changes require a new major contract version, controlled coexistence, explicit deprecation, consumer inventory/migration planning and evidence-backed removal criteria. Public REST uses `/api/v<major>/...`; events use CloudEvents 1.0-compatible envelopes with independent `specversion`, `.v<major>` event type, semantic `payloadversion` and immutable schema identity. The REST/GraphQL BFF/hybrid choice and any GraphQL versioning addendum remain OD-007. Gateways may compose or route but never own final authorization or access service databases.
 
+Contract changes use layered schema/specification validation, static compatibility and negative-regression controls, Provider Conformance before Merge/Release, risk-based Consumer-driven and Real Integration Testing, immutable Service Owner baselines with Audit Trail, recorded Manual Review and limited time-bound exceptions under ADR-V3-015. Applicable gates are blocking, but architecture acceptance is not CI/runtime evidence.
+
 RabbitMQ is the baseline asynchronous transport. State changes that require reliable domain-event publication use a transactional outbox; consumers persist inbox/idempotency state before acknowledging durable effects. Designs account for duplicates, reordering, bounded retries, dead-letter/re-drive, reconciliation, tenant provenance, producer identity, and minimized payloads. Exactly-once external effects are not assumed.
 
 ## Frontend integration
@@ -170,11 +175,11 @@ Sovereign must locally perform critical administration, trust/credential lifecyc
 
 ## Existing guidance reconciliation
 
-No binding V3 governance rule contradicts this baseline. `architecture/standards/api-design.md` is aligned to ADR-V3-014 while public REST/GraphQL/hybrid selection remains OD-007. `architecture/standards/repository-structure.md` still proposes `ir.neshane.<service>`, while its build-layout guidance is aligned to ADR-V3-013. Backend V3-011/V3-012 content already conforms to ADR-V3-014, but its local architecture reference must receive P00-004 through a separate traceable synchronization change. V2's GraphQL BFF, Compose, NestJS/TypeScript, Prisma and object-storage choices are historical conflicts/non-selections documented in [legacy-v2-reference.md](legacy-v2-reference.md); their V2 records are not modified.
+No binding V3 governance rule contradicts this baseline. `architecture/standards/api-design.md` and `architecture/standards/messaging.md` are aligned to ADR-V3-014 and ADR-V3-015 while public REST/GraphQL/hybrid selection remains OD-007. `architecture/standards/repository-structure.md` still proposes `ir.neshane.<service>`, while its build-layout guidance is aligned to ADR-V3-013. Backend V3-011/V3-012 content supplies bounded local evidence compatible with ADR-V3-015, but local P00-005 governance-reference propagation remains a separate traceable task after the Root decision commit. V2's GraphQL BFF, Compose, NestJS/TypeScript, Prisma and object-storage choices are historical conflicts/non-selections documented in [legacy-v2-reference.md](legacy-v2-reference.md); their V2 records are not modified.
 
 ## Open decisions
 
-All unresolved choices are tracked in [open-decisions.md](open-decisions.md). OD-002 through OD-004 are resolved by DEC-013/ADR-V3-013; OD-008 is closed by DEC-014/ADR-V3-014 effective upon traceable commit. OD-001, OD-005 through OD-007 and OD-009 through OD-023 remain Open. An existing naming convention, legacy decision, or example does not close an item. Material decisions require an approved V3 ADR and decision-register update.
+All unresolved choices are tracked in [open-decisions.md](open-decisions.md). OD-002 through OD-004 are resolved by DEC-013/ADR-V3-013; OD-008 is closed by DEC-014/ADR-V3-014; OD-020 is closed as approved by DEC-015/ADR-V3-015 and becomes effective upon traceable commit. OD-001, OD-005 through OD-007, OD-009 through OD-019 and OD-021 through OD-023 remain Open. An existing naming convention, legacy decision, or example does not close an item. Material decisions require an approved V3 ADR and decision-register update.
 
 ## Permanent architecture exclusions
 

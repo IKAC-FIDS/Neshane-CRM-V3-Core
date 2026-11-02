@@ -20,5 +20,6 @@
 - Consumers must not depend on producer implementation classes.
 - Additive compatible changes are preferred. Breaking semantic or structural changes require a new major contract version, coexistence, consumer inventory, an accountable migration owner, deprecation/removal criteria and evidence before retirement.
 - Unknown or unsupported event/payload versions fail closed. Tenant or producer metadata is provenance, not authentication, membership, entitlement or resource authorization.
-- Queue/exchange naming, retry budgets, ordering needs, retention, schema format, and compatibility tooling require approval per integration.
+- Event contract changes follow ADR-V3-015 layered blocking validation, Provider Conformance, risk-based Consumer-driven/Real Integration Testing, immutable Service Owner baselines, Manual Review and limited time-bound exception rules.
+- Queue/exchange naming, retry budgets, ordering needs, retention, production schema-registry use, and specific compatibility/testing products require approval per integration.
 

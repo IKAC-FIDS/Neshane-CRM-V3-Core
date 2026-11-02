@@ -1,6 +1,6 @@
 # Neshane V3 open decisions
 
-Status: OD-001, OD-005 through OD-007 and OD-009 through OD-023 remain Open. OD-002 through OD-004 are resolved by DEC-013/ADR-V3-013; OD-008 is closed by DEC-014/ADR-V3-014, effective upon traceable commit of its decision package. Milestones are latest responsible decision points, not implementation authorization.
+Status: OD-001, OD-005 through OD-007, OD-009 through OD-019 and OD-021 through OD-023 remain Open. OD-002 through OD-004 are resolved by DEC-013/ADR-V3-013; OD-008 is closed by DEC-014/ADR-V3-014; OD-020 is closed as approved by DEC-015/ADR-V3-015 and becomes effective upon traceable commit of its decision package. Milestones are latest responsible decision points, not implementation authorization.
 
 | ID | Decision and alternatives | Trade-offs / affected boundaries | Milestone | Proposed owner | Cost of postponement |
 | --- | --- | --- | --- | --- | --- |
@@ -19,7 +19,7 @@ Status: OD-001, OD-005 through OD-007 and OD-009 through OD-023 remain Open. OD-
 | OD-017 | Object storage: S3-compatible, cloud-specific, filesystem appliance, hybrid | Portability, sovereignty, lifecycle and authorization | Before file/content capability | Data + Operations + Security | Blocks durable object and retention design |
 | OD-018 | Search/indexing: PostgreSQL search, external engine, hybrid projections | Capability/cost/consistency and Sovereign footprint | Before search-dependent feature | Data Architecture + owning domains | Risks premature engine coupling or inadequate search |
 | OD-019 | Background scheduling: in-service scheduler, DB-coordinated jobs, workflow engine, broker scheduling | Simplicity versus durability, ownership and operations | Before durable scheduled workflows | Backend Architecture + Operations | Risks duplicate/lost work and unclear ownership |
-| OD-020 | Contract testing: schema diff, consumer-driven, provider conformance, combination | Coverage and independence versus maintenance cost | Before first released contract | API/Event Architecture + Quality | Compatibility cannot be objectively gated |
+| OD-020 | Contract testing strategy: risk-based Consumer-driven Testing; Provider Conformance before Merge/Release; risk-based Real Integration Testing; Service Owner baseline ownership with Audit Trail; limited time-bound exceptions; blocking layered gates, Manual Review and preserved Security boundaries. | Layered compatibility evidence and independent delivery versus test/environment maintenance cost. Architecture/Quality approval remains distinct from CI/runtime evidence. | Before first released contract | Technical Architecture Owner + scoped interim Quality Authority | CLOSED — APPROVED by DEC-015/ADR-V3-015; EFFECTIVE UPON TRACEABLE COMMIT; no CI/runtime evidence or Production Readiness implied |
 | OD-021 | Marketplace/Developer Portal: internal catalog, partner portal, public marketplace | Governance/revenue/ecosystem versus security/support scope | Before external developer onboarding | Product + Plugin Platform + Legal/Security | External ecosystem scope and obligations remain unknown |
 | OD-022 | Tenant migration automation: offline transfer, dual-run, event replication, cell-native workflow | Downtime, consistency, complexity and rollback | Before tenant placement migration is supported | Cell Management + Data + Security | Placement changes remain manual/high-risk |
 | OD-023 | SLO/RTO/RPO/capacity: per-profile/service objectives and measurement | Cost versus availability/recovery/security freshness | Before production architecture sign-off | Product + Operations + Security + service owners | Production readiness and sizing cannot be assessed |
@@ -62,7 +62,7 @@ The map retains resolved entries for dependency and historical traceability. OD-
 | OD-017 | DEC-002, DEC-003, DEC-010, OD-015 |
 | OD-018 | DEC-002, DEC-003, OD-015, OD-023 |
 | OD-019 | DEC-002, DEC-007, OD-015, OD-023 |
-| OD-020 | DEC-008, DEC-012, OD-007, OD-008 |
+| OD-020 | DEC-008, DEC-012, DEC-014, DEC-015, OD-007, OD-019 |
 | OD-021 | DEC-006, OD-016 |
 | OD-022 | DEC-003, DEC-004, DEC-007, OD-015, OD-023 |
 | OD-023 | DEC-003, DEC-004, DEC-010, DEC-012 |
