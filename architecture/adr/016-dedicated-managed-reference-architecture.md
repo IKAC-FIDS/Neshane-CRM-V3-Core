@@ -1,23 +1,27 @@
 # ADR-V3-016: Consolidated Dedicated Managed reference architecture
 
 - Status: ACCEPTED
-- Document reconciliation state: LOCAL COMMIT CANDIDATE RETAINED — FORMAL EFFECTIVENESS PENDING
+- Document reconciliation state: COMMITTED CANDIDATE; FINAL REGISTRATION METADATA UNSTAGED — FORMAL EFFECTIVENESS PENDING
 - Status qualification: ACCEPTED is the authorized intended Root lifecycle, not an effective repository transition.
-- Root main adoption: NOT PERFORMED; ADR-V3-016 is absent from the pinned effective Root main baseline.
+- Root main adoption: NOT AUTHORIZED / NOT PERFORMED; ADR-V3-016 is absent from the pinned effective Root main baseline.
 - Authoring task: V3-024 / R2 — Controlled Root Architecture Decision Document Authoring
 - Related decision: DEC-016
 - Related Open Decisions: OD-009, OD-010, OD-011, OD-012, OD-013, OD-014, OD-015, OD-019, OD-022, OD-023; all remain OPEN.
 - Decision owner / required architecture approval authority: project Technical Architecture Owner under V3-006.
 - Approved architecture disposition: CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY.
-- Approval provenance: explicit Technical Architecture Owner approval in the project conversation of the corrected P01–P05 disposition, six directions, 47 conditions, lifecycle mapping and consolidated Root record; the current task authorizes retention for reconciliation and unstaged metadata corrections only.
+- Approval provenance: explicit Technical Architecture Owner approval in the project conversation of the corrected P01–P05 disposition, six directions, 47 conditions, lifecycle mapping and consolidated Root record; subsequent Option A disposition approves prospective registration through controlled Root main adoption. This task authorizes final metadata authoring only.
 - Decision date: NOT RECORDED; no drafting date is substituted.
-- Effective date: NOT RECORDED; a separately authorized formal-registration decision and verification remain required.
+- Effective date: NOT RECORDED; for this registration, effectiveness requires separately authorized and verified adoption of the completed registration package into authoritative Root main.
 - Actual original local candidate commit: `fd1e1703afc4fe730ae6e86f1ef72573106082f8`; parent `c3926e6a8c9847281d49987abdbafbbced562dbb`.
-- COMMIT_EXECUTION_AUTHORIZATION_AT_TIME_OF_COMMIT: NOT GRANTED
+- Authorized metadata correction commit: `3d6fffea83a7a2fc4c10300ccf5792224edabeba`; parent `fd1e1703afc4fe730ae6e86f1ef72573106082f8`.
+- ORIGINAL COMMIT EXECUTION AUTHORIZATION: NOT GRANTED AT TIME OF EXECUTION
 - Subsequent commit retention: AUTHORIZED FOR RECONCILIATION ONLY by the Technical Architecture Owner's explicit direction in the project conversation; not retroactive execution authorization.
-- FORMAL LEVEL 2 REGISTRATION: NOT YET CONFIRMED AS EFFECTIVE
-- Metadata reconciliation: AUTHORIZED — UNSTAGED / UNCOMMITTED; these corrections are not part of the retained commit.
-- Whitespace exception: STG-01 covers only original ADR blob `46a46d5a75b0e5349015b0fb36bc5825a6c09ecc`; renewed blob-scoped approval is required before staging or committing this reconciliation.
+- GOVERNANCE DIRECTION: APPROVED — OPTION A
+- EXISTING COMMIT CHAIN: ACCEPTED AS PROSPECTIVE REGISTRATION BASIS
+- FORMAL LEVEL 2 REGISTRATION: NOT YET EFFECTIVE
+- Previous metadata reconciliation: COMMITTED in the separately authorized metadata correction commit above; final registration metadata remains UNSTAGED / UNCOMMITTED and is authorized for authoring only.
+- Historical STG-01 approvals: original ADR blob `46a46d5a75b0e5349015b0fb36bc5825a6c09ecc`, lines 174–182; explicitly approved renewed scope for corrected blob `a86082729e4ddd676497c37ede2c23e233d92a10`, lines 186–194. Each covers exactly nine two-ASCII-space hard breaks in approved artifact lines 3–11.
+- Prospective STG-01 scope: neither approved blob scope extends to a new ADR blob. Before future staging or commit, separately assess the new identity and line locations and obtain explicit renewed authorization where necessary; none is granted by this authoring task.
 - Prepared architecture revision: NESHANE-V3-ARCH-P00-006 — LOCAL CANDIDATE; NOT EFFECTIVE.
 - Current effective Root main architecture revision: NESHANE-V3-ARCH-P00-005.
 - Governance reference: NESHANE-V3-GOV-P00-000A — unchanged.
@@ -31,15 +35,25 @@
 
 This is one consolidated Root ADR with six independently traceable sub-decisions.
 The proposed ACCEPTED lifecycle and conditional approval disposition are separate.
-Neither the locally committed candidate nor these unstaged metadata corrections establish
+Neither the committed two-commit candidate nor this unstaged final metadata reconciliation establish
 effective registration, close the overall R2 gate, authorize implementation or accept
 security risk. Existing Backend task-scoped ADR statuses remain unchanged until
 separately authorized synchronization after effective Root registration.
 
-The Technical Architecture Owner authorized retention of the existing local commit
-for governance reconciliation and possible future authorized registration only.
-Original commit execution was not separately authorized; retention is not retroactive
-authorization or effective Level 2 registration. Root main and Backend remain unchanged.
+The Technical Architecture Owner previously authorized retention of the original commit
+for reconciliation only and now approves Option A — Explicit Governance Reconciliation
+and Controlled Root Adoption. The original commit followed by the separately authorized
+metadata correction commit is accepted as the basis for prospective formal Level 2
+registration. Original execution was unauthorized; neither retention nor acceptance of
+the chain constitutes retroactive authorization. Root main and Backend remain unchanged.
+
+For this registration only, formal effectiveness requires separately authorized and
+verified adoption of the completed package into authoritative Root main. This is the
+owner-selected boundary, not a universal Level 2 main-branch rule. The isolated branch
+and its commits do not establish effectiveness. Option A authorizes the governance
+direction only; this task authorizes metadata authoring, not adoption or any Git mutation.
+Record the actual adoption commit or equivalent verified Git evidence and applicable
+effective event/date only when available; none is recorded or invented here.
 
 | Source / artifact | Exact identity |
 | --- | --- |
@@ -51,6 +65,7 @@ authorization or effective Level 2 registration. Root main and Backend remain un
 | Canonical representation | UTF-8 without BOM; LF; exactly one final LF; internal text/whitespace unchanged |
 | Artifact source | Exact English section D of the corrected prior Codex response, approved by the Technical Architecture Owner; not the earlier uncorrected draft or a reconstructed proposal |
 | Actual signature, external approval ID or submission | NOT RECORDED; none is invented or required here as a substitute for project authority |
+| Root main adoption evidence | NOT RECORDED; adoption NOT AUTHORIZED / NOT PERFORMED |
 | Backend synchronization commit | NOT RECORDED; propagation NOT PERFORMED |
 
 The artifact body below is embedded verbatim. Its DRAFT labels, reserved fields,
@@ -58,9 +73,9 @@ proposed mapping alternatives and NOT RECORDED statements remain historical sour
 text. They describe that approved source artifact, not a newly fabricated submission
 or registration. The intended mapping has subsequently been explicitly selected:
 CONDITIONALLY ACCEPTED disposition maps to ACCEPTED lifecycle for bounded design.
-This wrapper records the original authoring and subsequent reconciliation context
-without editing the artifact. The actual local commit is recorded above; a procedurally
-authorized formal registration is not established by its existence.
+This wrapper records the original authoring, committed metadata correction and current
+Option A reconciliation without editing the artifact. The actual two-commit chain is
+recorded above; its existence does not establish effective formal registration.
 
 ## Context, decision and independently traceable sub-decisions
 
@@ -140,7 +155,7 @@ restoration, automatic reconciliation winner, migration or executable DURABLE_DE
 is authorized. Future schema recovery uses owned forward-fix/reviewed restoration,
 not unsafe automatic downgrade. No rollback or runtime procedure is executed here.
 
-For the current unstaged metadata reconciliation, corrections remain reviewable within the authorized
+For this final registration metadata authoring, corrections remain unstaged and reviewable within the authorized
 allowlist; do not erase unrelated user work. After effective registration, an
 editorial correction must remain traceable; a material change to a sub-decision
 requires the existing Root ADR revision/supersession process, identifying the exact
@@ -150,8 +165,11 @@ one sub-decision through a mutable source link.
 
 ## Governance restrictions and propagation
 
-- `GOVERNANCE METADATA RECONCILIATION: AUTHORIZED — UNSTAGED / UNCOMMITTED`
+- `GOVERNANCE DIRECTION: APPROVED — OPTION A`
+- `FINAL REGISTRATION METADATA: AUTHORIZED FOR AUTHORING ONLY`
+- `FINAL REGISTRATION METADATA: UNSTAGED / UNCOMMITTED`
 - `FORMAL DECISION REGISTRATION: NOT EFFECTIVE`
+- `ROOT MAIN ADOPTION: NOT AUTHORIZED`
 - `R2 ARCHITECTURE ACCEPTANCE: PENDING`
 - `INDEPENDENT SECURITY REVIEW: PENDING`
 - `V3-024 IMPLEMENTATION: BLOCKED — NOT AUTHORIZED`
@@ -163,10 +181,11 @@ one sub-decision through a mutable source link.
 - `CONTRACT PUBLICATION: NOT AUTHORIZED`
 - `PRODUCTION PROMOTION: NOT AUTHORIZED`
 
-Separate authorization is required for staging/committing these metadata corrections,
-confirming formal registration, Backend synchronization, merge/publication and any
-implementation. Retention does not authorize those actions. Root and Backend commits
-will be independently traceable; no cross-repository atomicity is claimed.
+Separate authorization is required for staging/committing this final metadata reconciliation,
+Root main adoption, Backend synchronization, merge/publication and any implementation.
+Option A and this authoring task do not authorize those actions or any Governance Gate
+transition. Formal effectiveness follows only the required verified Root main adoption.
+Root and Backend commits remain independently traceable; no cross-repository atomicity is claimed.
 No Frontend synchronization is performed. Required later propagation is documented
 in [Governance Synchronization](../governance-synchronization.md#v3-024-r2-proposed-registration-and-pending-propagation).
 

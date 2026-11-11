@@ -93,11 +93,20 @@ governance decision alone.
   47 binding architecture conditions; intended ACCEPTED lifecycle is not a claim
   of implementation, independent security approval or effective registration.
 - Actual original local Root candidate commit: `fd1e1703afc4fe730ae6e86f1ef72573106082f8`.
-- `COMMIT_EXECUTION_AUTHORIZATION_AT_TIME_OF_COMMIT: NOT GRANTED`.
+- Separately authorized metadata correction commit: `3d6fffea83a7a2fc4c10300ccf5792224edabeba`,
+  whose parent is the original candidate commit above.
+- `ORIGINAL COMMIT EXECUTION AUTHORIZATION: NOT GRANTED AT TIME OF EXECUTION`.
 - Technical Architecture Owner authorized retention for reconciliation and possible
   future authorized registration only; not retroactive execution authorization.
-- Formal Level 2 registration: NOT YET CONFIRMED AS EFFECTIVE. Root main adoption
-  of P00-006: NOT PERFORMED. Remote publication status: NOT VERIFIED.
+- `GOVERNANCE DIRECTION: APPROVED — OPTION A`: explicit Technical Architecture Owner
+  disposition accepts this chain as the basis for prospective formal registration,
+  without retroactive execution authorization. Final metadata authoring is authorized only.
+- Formal Level 2 registration: NOT YET EFFECTIVE. For this registration only, effectiveness
+  requires separately authorized and verified adoption of the completed package into
+  authoritative Root main; the isolated local branch and commits do not suffice.
+  Root main adoption of P00-006: NOT AUTHORIZED / NOT PERFORMED. Actual adoption commit
+  or equivalent verified Git evidence and effective event/date: NOT RECORDED.
+  Remote publication status: NOT VERIFIED; publication requires separate authorization.
 - Backend synchronization commit: NOT RECORDED. Root and Backend commits must
   remain independently traceable; the local Root candidate is not propagation evidence.
 - Backend propagation: PENDING — NOT PERFORMED. Only after separately authorized
@@ -112,6 +121,11 @@ governance decision alone.
   V3-022 Stage B2, merge, contract publication and production promotion remain
   NOT AUTHORIZED. All applicable Open Decisions remain OPEN.
 
-This entry prepares propagation metadata; it does not authorize editing Backend,
-staging/committing the Root package, runtime operations or release activity.
+The approved sequence is: final metadata reconciliation; separately authorized staging
+and commit; separately authorized and verified Root main adoption; formal effectiveness
+under this registration-specific boundary; separately authorized Backend governance
+synchronization; separate publication, security and implementation activities as applicable.
+Only metadata authoring is authorized here. This sequence does not report the future
+steps as completed, make publication a prerequisite for local Root effectiveness, or
+authorize staging/commit, adoption, Backend editing, runtime operations or any Gate transition.
 

@@ -8,7 +8,9 @@
 
 - Proposed registration package: `NESHANE-V3-ARCH-P00-006` through DEC-016/ADR-V3-016;
   `LOCALLY COMMITTED RECONCILIATION CANDIDATE — NOT EFFECTIVE`, not the current effective baseline.
-  P00-005 remains the effective Root main reference; Backend propagation is pending.
+  `GOVERNANCE DIRECTION: APPROVED — OPTION A`; Backend propagation is pending.
+- `CURRENT EFFECTIVE ROOT MAIN BASELINE: NESHANE-V3-ARCH-P00-005`
+- `P00-006: NON-EFFECTIVE CANDIDATE`
 
 ## Version history
 
@@ -26,7 +28,7 @@ Supersession preserves the historical status of P00-001; it does not imply that 
 
 | Revision | Status | Date | Record |
 | --- | --- | --- | --- |
-| `NESHANE-V3-ARCH-P00-006` | Owner-approved content in local candidate commit `fd1e1703afc4fe730ae6e86f1ef72573106082f8`; NOT EFFECTIVE; Root main remains on P00-005 | Not recorded | [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective) / [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md): conditional design-only acceptance of database/service/Cell, disposable Compose, scoped Controller/Agent, scoped credentials/controlled rotation, validated placement/fail-closed routing and bounded valid local state. Six traceable sub-decisions retain 47 binding architecture conditions and detailed source requirements. |
+| `NESHANE-V3-ARCH-P00-006` | Owner-approved content in existing chain `fd1e1703afc4fe730ae6e86f1ef72573106082f8` then `3d6fffea83a7a2fc4c10300ccf5792224edabeba`; Option A approved for prospective registration; NON-EFFECTIVE CANDIDATE; Root main remains on P00-005 | Not recorded | [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective) / [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md): conditional design-only acceptance of database/service/Cell, disposable Compose, scoped Controller/Agent, scoped credentials/controlled rotation, validated placement/fail-closed routing and bounded valid local state. Six traceable sub-decisions retain 47 binding architecture conditions and detailed source requirements. |
 
 The proposed addition is limited to disposable Dedicated Managed Reference Architecture
 for V3-024. It neither rewrites previous baseline decisions nor selects production
@@ -38,9 +40,15 @@ remain NOT AUTHORIZED. No runtime/security condition is marked fulfilled.
 
 The local candidate commit's original execution was not separately authorized.
 The Technical Architecture Owner subsequently authorized retention for reconciliation
-only, not retroactive execution authorization or effectiveness. A separate authorized
-formal-registration decision and verification remain required. Root main has not
-adopted P00-006; Backend synchronization is not performed. The governance reference remains
+only, not retroactive execution authorization or effectiveness. The owner has now
+approved Option A: the existing chain is accepted as a prospective registration basis.
+For this registration only, formal effectiveness requires separately authorized and
+verified adoption of the completed package into authoritative Root main; the local
+branch and its commits do not suffice. Option A authorizes governance direction only;
+this task authors final metadata only, without staging, commit or adoption permission.
+Actual adoption evidence and the effective event/date must be recorded when available;
+none is invented. Root main adoption remains NOT AUTHORIZED / NOT PERFORMED;
+Backend synchronization is not performed. The governance reference remains
 `NESHANE-V3-GOV-P00-000A`; this package changes no general governance rule.
 
 ## Goals and quality attributes

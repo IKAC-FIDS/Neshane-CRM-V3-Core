@@ -50,8 +50,12 @@ recorded by this cross-reference or by the intended conditional design approval.
 OD-019 remains Background scheduling. OD-023 retains SLO/RTO/RPO/capacity objectives
 and measurement; operation-specific freshness, clock and revocation-exposure
 policies require separate explicit dispositions, not a replacement OD definition.
-The proposed P00-006 registration is not effective and does not authorize deployment,
-migration, credentials, offline continuation or V3-022 Stage B2.
+Option A governance direction is approved: the existing two-commit chain identified in
+ADR-V3-016 is accepted as the prospective registration basis, not retroactive execution
+authorization. For this registration, P00-006 remains non-effective until separately
+authorized and verified adoption of the completed package into authoritative Root main.
+Adoption remains NOT AUTHORIZED / NOT PERFORMED. No deployment, migration, credentials,
+offline continuation or V3-022 Stage B2 is authorized; no Open Decision is resolved.
 
 ## Status and dependency map
 
