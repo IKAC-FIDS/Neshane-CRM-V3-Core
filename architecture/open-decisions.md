@@ -37,6 +37,22 @@ The original decision scope and ownership are preserved below for history. Resol
 
 Decisions require documented evidence, consequences, owner approval, a V3 ADR where material, and updates to the [decision register](decision-register.md), [baseline](baseline-v3.md), and affected repository baseline references.
 
+## V3-024 reference-design cross-reference — no decision resolution
+
+The uncommitted [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md)
+/ [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective)
+registration package references OD-009, OD-010, OD-011, OD-012, OD-013, OD-014,
+OD-015, OD-019, OD-022 and OD-023 as unresolved dependencies. Every one remains
+OPEN with its original subject, proposed owner, milestone, constraints and history
+in the tables above and below. No closure, partial resolution or new authority is
+recorded by this cross-reference or by the intended conditional design approval.
+
+OD-019 remains Background scheduling. OD-023 retains SLO/RTO/RPO/capacity objectives
+and measurement; operation-specific freshness, clock and revocation-exposure
+policies require separate explicit dispositions, not a replacement OD definition.
+The proposed P00-006 registration is not effective and does not authorize deployment,
+migration, credentials, offline continuation or V3-022 Stage B2.
+
 ## Status and dependency map
 
 The map retains resolved entries for dependency and historical traceability. OD-001, OD-005 through OD-007 and OD-009 through OD-023 are **Open**; OD-002 through OD-004 are **Resolved** and OD-008 is **Closed and approved, effective upon traceable commit**.

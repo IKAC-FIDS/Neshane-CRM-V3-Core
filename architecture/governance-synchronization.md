@@ -76,3 +76,36 @@ governance decision alone.
 - If local guidance conflicts with an approved Root ADR or standard, the Root decision wins, but Codex must report the conflict and update local guidance only under an authorized Task ID.
 - Do not describe a nonexistent or proposed document as approved.
 
+## V3-024 R2 proposed registration and pending propagation
+
+- Authoritative owner: Root Workspace, under the existing Level 2 process.
+- Intended records: [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md)
+  / [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective).
+- Intended architecture revision: `NESHANE-V3-ARCH-P00-006`;
+  `UNCOMMITTED — PENDING FORMAL REGISTRATION`, NOT EFFECTIVE.
+- Current effective committed architecture reference: `NESHANE-V3-ARCH-P00-005`.
+  Governance reference: `NESHANE-V3-GOV-P00-000A`, unchanged.
+- Root source: `c3926e6a8c9847281d49987abdbafbbced562dbb`.
+- Backend source: `938b9e7e3a0feaed4f3c09056f70365313dabb7e`.
+- Approved corrected artifact SHA-256:
+  `aa651e4e45355fb4bc80adf40cf6cd0fc125a702afb686891c28de4535bf0040`.
+- Acceptance scope: six conditional DESIGN_ONLY / REFERENCE_ONLY directions,
+  47 binding architecture conditions; intended ACCEPTED lifecycle is not a claim
+  of implementation, independent security approval or effective registration.
+- Root registration commit: NOT RECORDED. Backend synchronization commit:
+  NOT RECORDED. Root and Backend commits must remain independently traceable.
+- Backend propagation: PENDING — NOT PERFORMED. Only after separately authorized
+  effective Root registration may a separately authorized Backend task update its
+  six task-scoped ADR references/status metadata, current decision summary and
+  governance baseline. Any other current instruction/reference change needs its
+  own explicit scope. Preserve historical proposals, review evidence and
+  prepared-but-not-submitted records; do not fabricate submission or signoff.
+- Frontend: no change performed or authorized; no blanket synchronization claim.
+- Overall V3-024 R2, independent security, V3-017 Formal R1, V3-023 Formal B1 and
+  final Tenant Isolation Acceptance remain PENDING. V3-024 implementation,
+  V3-022 Stage B2, merge, contract publication and production promotion remain
+  NOT AUTHORIZED. All applicable Open Decisions remain OPEN.
+
+This entry prepares propagation metadata; it does not authorize editing Backend,
+staging/committing the Root package, runtime operations or release activity.
+

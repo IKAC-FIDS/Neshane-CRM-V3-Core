@@ -75,6 +75,13 @@ Every new ADR contains:
 
 V2 ADR-001 through ADR-011 remain historical V2 records and are not imported or renumbered as V3 ADRs.
 
+V3-024 authoring qualification: the ADR-V3-016 row below belongs to an
+`UNCOMMITTED — PENDING FORMAL REGISTRATION` package. Its authorized intended
+lifecycle is `ACCEPTED`, with `CONDITIONALLY ACCEPTED` design-only disposition;
+it is not an effective committed catalog addition. The current committed catalog
+and architecture baseline remain unchanged until separately authorized Level 2
+registration. No lifecycle vocabulary, existing ADR status or overall R2 gate changes.
+
 | ADR ID | Title | Status | Replaces | Related decisions/tasks |
 | --- | --- | --- | --- | --- |
 | [ADR-V3-001](001-backend-architecture.md) | Java/Spring Boot independent microservices | Accepted | — | DEC-001; R0-001 |
@@ -92,6 +99,12 @@ V2 ADR-001 through ADR-011 remain historical V2 records and are not imported or 
 | [ADR-V3-013](013-backend-foundation-toolchain.md) | Backend foundation toolchain and build layout | Accepted | — | DEC-013; OD-002–OD-004; V3-005 |
 | [ADR-V3-014](014-api-event-versioning.md) | REST and event contract versioning | Accepted; effective upon traceable commit | — | DEC-014; OD-008 |
 | [ADR-V3-015](015-contract-testing-strategy.md) | Risk-based contract testing strategy | Accepted; effective upon traceable commit | — | DEC-015; OD-020 |
+| [ADR-V3-016](016-dedicated-managed-reference-architecture.md) | Consolidated V3-024 R2 Dedicated Managed Reference Architecture; six traceable sub-decisions | ACCEPTED — intended lifecycle; CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY; UNCOMMITTED, NOT EFFECTIVE | — | DEC-016; V3-024; DB-001/RT-002/OA-003/CL-004/RTR-005/OF-006; 47 conditions |
+
+ADR-V3-016 prepares `NESHANE-V3-ARCH-P00-006` for future registration only.
+P00-005 remains the current effective committed architecture reference. The overall
+V3-024 R2 gate and independent security review remain PENDING; implementation,
+V3-022 Stage B2, merge, contract publication and production promotion remain unauthorized.
 
 ADR-V3-001 through ADR-V3-012 form approved architecture revision `NESHANE-V3-ARCH-P00-002`. ADR-V3-013 adds the accepted Backend foundation refinement in `NESHANE-V3-ARCH-P00-003`. ADR-V3-014 adds the accepted REST and event versioning decision in `NESHANE-V3-ARCH-P00-004`. ADR-V3-015 adds the accepted risk-based Contract Testing strategy in `NESHANE-V3-ARCH-P00-005`; each later revision becomes effective through its traceable decision-package commit. Historical records are never rewritten to disguise a conflict. The lifecycle and template added by `V3-006` were accepted at R0 by the CPO/Technical Architecture Owner as governance revision `V3-006-R0-001`; they do not change the status or content of ADR-V3-001 through ADR-V3-012.
 

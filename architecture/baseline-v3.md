@@ -6,6 +6,10 @@
 - Authority: ADR-V3-001 through ADR-V3-015 and future approved V3 ADRs
 - Scope: intended target architecture; no implementation, security control, deployment, or readiness is implied
 
+- Proposed registration package: `NESHANE-V3-ARCH-P00-006` through DEC-016/ADR-V3-016;
+  `UNCOMMITTED — PENDING FORMAL REGISTRATION`, not the current effective baseline.
+  P00-005 remains the effective committed reference; Backend propagation is pending.
+
 ## Version history
 
 | Revision | Status | Date | Record |
@@ -17,6 +21,25 @@
 | `NESHANE-V3-ARCH-P00-005` | Accepted; effective upon traceable OD-020 decision-package commit | Not assigned | DEC-015/ADR-V3-015 resolves OD-020 with layered blocking contract controls, Provider Conformance, risk-based Consumer/real-integration testing, Service Owner baseline Audit Trail and limited time-bound exceptions. CI/runtime evidence, Security Sign-off and Production Readiness remain separate. |
 
 Supersession preserves the historical status of P00-001; it does not imply that P00-001 already contained the R0 refinements.
+
+### V3-024 proposed revision — not effective
+
+| Revision | Status | Date | Record |
+| --- | --- | --- | --- |
+| `NESHANE-V3-ARCH-P00-006` | Proposed registration of owner-approved content; UNCOMMITTED — NOT EFFECTIVE; prior P00-005 remains current | Not recorded | [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective) / [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md): conditional design-only acceptance of database/service/Cell, disposable Compose, scoped Controller/Agent, scoped credentials/controlled rotation, validated placement/fail-closed routing and bounded valid local state. Six traceable sub-decisions retain 47 binding architecture conditions and detailed source requirements. |
+
+The proposed addition is limited to disposable Dedicated Managed Reference Architecture
+for V3-024. It neither rewrites previous baseline decisions nor selects production
+topology, orchestration, security products, numeric freshness objectives or recovery
+guarantees. The overall V3-024 R2 Architecture Acceptance Gate remains PENDING;
+independent security review and final Tenant Isolation Acceptance remain PENDING.
+Implementation, V3-022 Stage B2, merge, contract publication and production promotion
+remain NOT AUTHORIZED. No runtime/security condition is marked fulfilled.
+
+The proposed lifecycle mapping and content require a separately authorized, verified
+Level 2 registration commit before effectiveness. No such commit or subsequent
+Backend synchronization is recorded here. The governance reference remains
+`NESHANE-V3-GOV-P00-000A`; this package changes no general governance rule.
 
 ## Goals and quality attributes
 
