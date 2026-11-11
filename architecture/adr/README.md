@@ -75,11 +75,15 @@ Every new ADR contains:
 
 V2 ADR-001 through ADR-011 remain historical V2 records and are not imported or renumbered as V3 ADRs.
 
-V3-024 authoring qualification: the ADR-V3-016 row below belongs to an
-`UNCOMMITTED — PENDING FORMAL REGISTRATION` package. Its authorized intended
+V3-024 registration qualification: the ADR-V3-016 row below belongs to a
+`LOCALLY COMMITTED RECONCILIATION CANDIDATE — NOT EFFECTIVE` package at
+`fd1e1703afc4fe730ae6e86f1ef72573106082f8`. Original commit execution was not
+separately authorized. The Technical Architecture Owner subsequently authorized
+retention for reconciliation only, not retroactive authorization or formal effectiveness.
+Its authorized intended
 lifecycle is `ACCEPTED`, with `CONDITIONALLY ACCEPTED` design-only disposition;
-it is not an effective committed catalog addition. The current committed catalog
-and architecture baseline remain unchanged until separately authorized Level 2
+it is not an effective catalog addition. The catalog and effective P00-005 architecture
+baseline on Root main remain unchanged until separately authorized Level 2
 registration. No lifecycle vocabulary, existing ADR status or overall R2 gate changes.
 
 | ADR ID | Title | Status | Replaces | Related decisions/tasks |
@@ -99,10 +103,10 @@ registration. No lifecycle vocabulary, existing ADR status or overall R2 gate ch
 | [ADR-V3-013](013-backend-foundation-toolchain.md) | Backend foundation toolchain and build layout | Accepted | — | DEC-013; OD-002–OD-004; V3-005 |
 | [ADR-V3-014](014-api-event-versioning.md) | REST and event contract versioning | Accepted; effective upon traceable commit | — | DEC-014; OD-008 |
 | [ADR-V3-015](015-contract-testing-strategy.md) | Risk-based contract testing strategy | Accepted; effective upon traceable commit | — | DEC-015; OD-020 |
-| [ADR-V3-016](016-dedicated-managed-reference-architecture.md) | Consolidated V3-024 R2 Dedicated Managed Reference Architecture; six traceable sub-decisions | ACCEPTED — intended lifecycle; CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY; UNCOMMITTED, NOT EFFECTIVE | — | DEC-016; V3-024; DB-001/RT-002/OA-003/CL-004/RTR-005/OF-006; 47 conditions |
+| [ADR-V3-016](016-dedicated-managed-reference-architecture.md) | Consolidated V3-024 R2 Dedicated Managed Reference Architecture; six traceable sub-decisions | ACCEPTED — intended lifecycle; CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY; LOCALLY COMMITTED RECONCILIATION CANDIDATE, NOT EFFECTIVE | — | DEC-016; V3-024; DB-001/RT-002/OA-003/CL-004/RTR-005/OF-006; 47 conditions |
 
 ADR-V3-016 prepares `NESHANE-V3-ARCH-P00-006` for future registration only.
-P00-005 remains the current effective committed architecture reference. The overall
+P00-005 remains the current effective Root main architecture reference. The overall
 V3-024 R2 gate and independent security review remain PENDING; implementation,
 V3-022 Stage B2, merge, contract publication and production promotion remain unauthorized.
 

@@ -82,8 +82,8 @@ governance decision alone.
 - Intended records: [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md)
   / [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective).
 - Intended architecture revision: `NESHANE-V3-ARCH-P00-006`;
-  `UNCOMMITTED — PENDING FORMAL REGISTRATION`, NOT EFFECTIVE.
-- Current effective committed architecture reference: `NESHANE-V3-ARCH-P00-005`.
+  `LOCALLY COMMITTED RECONCILIATION CANDIDATE`, NOT EFFECTIVE.
+- Current effective Root main architecture reference: `NESHANE-V3-ARCH-P00-005`.
   Governance reference: `NESHANE-V3-GOV-P00-000A`, unchanged.
 - Root source: `c3926e6a8c9847281d49987abdbafbbced562dbb`.
 - Backend source: `938b9e7e3a0feaed4f3c09056f70365313dabb7e`.
@@ -92,8 +92,14 @@ governance decision alone.
 - Acceptance scope: six conditional DESIGN_ONLY / REFERENCE_ONLY directions,
   47 binding architecture conditions; intended ACCEPTED lifecycle is not a claim
   of implementation, independent security approval or effective registration.
-- Root registration commit: NOT RECORDED. Backend synchronization commit:
-  NOT RECORDED. Root and Backend commits must remain independently traceable.
+- Actual original local Root candidate commit: `fd1e1703afc4fe730ae6e86f1ef72573106082f8`.
+- `COMMIT_EXECUTION_AUTHORIZATION_AT_TIME_OF_COMMIT: NOT GRANTED`.
+- Technical Architecture Owner authorized retention for reconciliation and possible
+  future authorized registration only; not retroactive execution authorization.
+- Formal Level 2 registration: NOT YET CONFIRMED AS EFFECTIVE. Root main adoption
+  of P00-006: NOT PERFORMED. Remote publication status: NOT VERIFIED.
+- Backend synchronization commit: NOT RECORDED. Root and Backend commits must
+  remain independently traceable; the local Root candidate is not propagation evidence.
 - Backend propagation: PENDING — NOT PERFORMED. Only after separately authorized
   effective Root registration may a separately authorized Backend task update its
   six task-scoped ADR references/status metadata, current decision summary and

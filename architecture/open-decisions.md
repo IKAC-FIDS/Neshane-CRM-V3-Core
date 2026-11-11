@@ -39,7 +39,7 @@ Decisions require documented evidence, consequences, owner approval, a V3 ADR wh
 
 ## V3-024 reference-design cross-reference — no decision resolution
 
-The uncommitted [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md)
+The locally committed reconciliation candidate [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md)
 / [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective)
 registration package references OD-009, OD-010, OD-011, OD-012, OD-013, OD-014,
 OD-015, OD-019, OD-022 and OD-023 as unresolved dependencies. Every one remains
