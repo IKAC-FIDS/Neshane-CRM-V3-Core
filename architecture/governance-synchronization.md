@@ -111,9 +111,20 @@ governance decision alone.
   original Root HEAD reattachment, Main Adoption Worktree creation and main fast-forward
   constitute a second independent procedural deviation, separate from original commit execution.
   Neither deviation is retroactively authorized; reflog wording is not authorization evidence.
-- Formal Level 2 effectiveness: NOT ESTABLISHED. A separately recorded and validated
-  reconciliation disposition and completion of applicable registration evidence are required.
-  Post-adoption metadata: AUTHORED — UNSTAGED / UNCOMMITTED; repository recording PENDING COMMIT.
+- Post-adoption reconciliation: separately authorized authoring, independent review, exact-blob
+  STG-01 renewal, staging and commit completed; authorized commit `39787784980380271753bad8e4a8c164d881fe51`
+  (parent `a6558556df6c81d04a4e610ae7698e51071ab2ee`) was separately authorized and verified as
+  recorded into local Root main; tree `2754bc717e8005f24be8430f08a53242d6a8fcd2`.
+  Earlier UNSTAGED / UNCOMMITTED wording describes the prior authoring stage, not its current recording state.
+- `PROCEDURAL RECONCILIATION PREREQUISITE: RESOLVED PROSPECTIVELY — OWNER DISPOSITION`.
+  `DISPOSITION PROVENANCE: EXPLICIT OWNER DECLARATION IN CONVERSATION`.
+  Completed corrective actions are sufficient prospectively for proceeding to a separate Formal
+  Level 2 Effectiveness Determination; neither historical deviation is retrospectively authorized.
+- New disposition metadata: AUTHORED — UNSTAGED / UNCOMMITTED.
+  `DISPOSITION REPOSITORY RECORDING: PENDING`.
+- Formal Level 2 effectiveness: NOT ESTABLISHED. Disposition recording/verification,
+  applicable registration evidence and a separately authorized, recorded and verified effectiveness
+  decision remain required; P00-005 stays effective and P00-006 remains a non-effective candidate.
   Remote publication status: NOT VERIFIED; publication requires separate authorization.
 - Backend synchronization commit: NOT RECORDED. Root and Backend commits must
   remain independently traceable; the local Root candidate is not propagation evidence.
@@ -132,9 +143,13 @@ governance decision alone.
 The actual sequence is: original commit without separate execution authorization;
 authorized correction commit; authorized final metadata commit; technically verified
 fast-forward adoption without separate execution authorization; subsequent owner-approved
-retention for reconciliation only; pending reconciliation evidence and formal effectiveness
-determination. Retention does not authorize reversal or repetition of adoption.
-Only limited post-adoption metadata authoring is authorized here. Future staging, commit,
+retention for reconciliation only; separately authorized post-adoption authoring, independent review,
+exact-blob STG-01 renewal, staging and reconciliation commit; separately authorized one-commit
+recording in local main at `39787784980380271753bad8e4a8c164d881fe51`; read-only effectiveness
+readiness assessment; subsequent owner conversation disposition prospectively resolving the
+procedural reconciliation prerequisite. The new disposition remains pending repository recording;
+formal effectiveness is not established. Retention does not authorize reversal or repetition of adoption.
+Only limited prospective disposition metadata authoring is authorized here. Future staging, commit,
 any Git operation, Backend synchronization, publication, security and implementation
 activities require their own authorization. This record does not declare effectiveness,
 make publication a prerequisite for local effectiveness, or authorize any Gate transition.

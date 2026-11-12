@@ -88,9 +88,16 @@ retention for reconciliation only, not retroactive authorization of either devia
 Its authorized intended lifecycle is `ACCEPTED`, with `CONDITIONALLY ACCEPTED`
 design-only disposition. P00-005 remains the last confirmed effective governance
 baseline; P00-006 is technically present in main as a non-effective candidate.
-Formal effectiveness requires a separately recorded and validated governance
-reconciliation disposition and completion of applicable registration-evidence requirements.
-Current authoring is unstaged/uncommitted and authorizes no Git mutation or Gate transition.
+Subsequently authorized post-adoption authoring, independent review, exact-blob STG-01 renewal,
+staging and reconciliation commit were completed and separately recorded in local main at
+`39787784980380271753bad8e4a8c164d881fe51`. Earlier unstaged/uncommitted wording was a historical snapshot.
+The Technical Architecture Owner's subsequent explicit conversation disposition resolves the
+procedural reconciliation prerequisite prospectively, without retrospective authorization.
+See [ADR-V3-016 registration boundary](016-dedicated-managed-reference-architecture.md#registration-boundary-and-source-control).
+The new disposition metadata is authored — unstaged/uncommitted; its repository recording is PENDING.
+Formal effectiveness remains NOT ESTABLISHED pending disposition recording/verification,
+applicable registration evidence and a separately authorized, recorded and verified Formal Level 2
+Effectiveness Determination. Current authoring authorizes no Git mutation or Gate transition.
 No lifecycle vocabulary, existing ADR status or overall R2 gate changes.
 
 | ADR ID | Title | Status | Replaces | Related decisions/tasks |

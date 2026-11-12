@@ -55,9 +55,15 @@ ADR-V3-016 is technically present in Root main at `a6558556df6c81d04a4e610ae7698
 (main reflog `2026-11-11T23:48:51+03:30`, Fast-forward). Original commit execution and
 adoption operations independently lacked separate authorization at execution. Subsequent
 owner retention is for reconciliation only, not retroactive authorization of either.
+The separately authorized post-adoption reconciliation commit and local main recording
+were completed at `39787784980380271753bad8e4a8c164d881fe51`. The subsequent explicit owner
+conversation disposition resolves the procedural reconciliation prerequisite prospectively,
+without retrospective authorization; see [ADR-V3-016 registration boundary](adr/016-dedicated-managed-reference-architecture.md#registration-boundary-and-source-control).
+The new disposition is authored — unstaged/uncommitted; repository recording remains PENDING.
 P00-005 remains the last confirmed effective governance baseline. P00-006 remains
-non-effective pending a separately recorded and validated reconciliation disposition
-and applicable registration evidence. Current authoring authorizes no Git mutation
+non-effective pending disposition recording/verification, applicable registration evidence
+and a separately authorized, recorded and verified Formal Level 2 Effectiveness Determination.
+Current authoring authorizes no Git mutation
 or Gate transition. No deployment, migration, credentials, offline continuation or
 V3-022 Stage B2 is authorized; no Open Decision is resolved.
 
