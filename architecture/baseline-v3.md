@@ -7,10 +7,10 @@
 - Scope: intended target architecture; no implementation, security control, deployment, or readiness is implied
 
 - Proposed registration package: `NESHANE-V3-ARCH-P00-006` through DEC-016/ADR-V3-016;
-  `LOCALLY COMMITTED RECONCILIATION CANDIDATE — NOT EFFECTIVE`, not the current effective baseline.
+  `PRESENT IN ROOT MAIN — NON-EFFECTIVE GOVERNANCE CANDIDATE`, not the effective baseline.
   `GOVERNANCE DIRECTION: APPROVED — OPTION A`; Backend propagation is pending.
-- `CURRENT EFFECTIVE ROOT MAIN BASELINE: NESHANE-V3-ARCH-P00-005`
-- `P00-006: NON-EFFECTIVE CANDIDATE`
+- `LAST CONFIRMED EFFECTIVE GOVERNANCE BASELINE: NESHANE-V3-ARCH-P00-005`
+- `P00-006: PRESENT IN ROOT MAIN — NON-EFFECTIVE GOVERNANCE CANDIDATE`
 
 ## Version history
 
@@ -28,7 +28,7 @@ Supersession preserves the historical status of P00-001; it does not imply that 
 
 | Revision | Status | Date | Record |
 | --- | --- | --- | --- |
-| `NESHANE-V3-ARCH-P00-006` | Owner-approved content in existing chain `fd1e1703afc4fe730ae6e86f1ef72573106082f8` then `3d6fffea83a7a2fc4c10300ccf5792224edabeba`; Option A approved for prospective registration; NON-EFFECTIVE CANDIDATE; Root main remains on P00-005 | Not recorded | [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective) / [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md): conditional design-only acceptance of database/service/Cell, disposable Compose, scoped Controller/Agent, scoped credentials/controlled rotation, validated placement/fail-closed routing and bounded valid local state. Six traceable sub-decisions retain 47 binding architecture conditions and detailed source requirements. |
+| `NESHANE-V3-ARCH-P00-006` | Owner-approved content in chain `fd1e1703afc4fe730ae6e86f1ef72573106082f8` then `3d6fffea83a7a2fc4c10300ccf5792224edabeba` then `a6558556df6c81d04a4e610ae7698e51071ab2ee`; technically present in Root main; NON-EFFECTIVE GOVERNANCE CANDIDATE; P00-005 remains last confirmed effective governance baseline | Not recorded | [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective) / [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md): conditional design-only acceptance of database/service/Cell, disposable Compose, scoped Controller/Agent, scoped credentials/controlled rotation, validated placement/fail-closed routing and bounded valid local state. Six traceable sub-decisions retain 47 binding architecture conditions and detailed source requirements. |
 
 The proposed addition is limited to disposable Dedicated Managed Reference Architecture
 for V3-024. It neither rewrites previous baseline decisions nor selects production
@@ -38,16 +38,20 @@ independent security review and final Tenant Isolation Acceptance remain PENDING
 Implementation, V3-022 Stage B2, merge, contract publication and production promotion
 remain NOT AUTHORIZED. No runtime/security condition is marked fulfilled.
 
-The local candidate commit's original execution was not separately authorized.
-The Technical Architecture Owner subsequently authorized retention for reconciliation
-only, not retroactive execution authorization or effectiveness. The owner has now
-approved Option A: the existing chain is accepted as a prospective registration basis.
-For this registration only, formal effectiveness requires separately authorized and
-verified adoption of the completed package into authoritative Root main; the local
-branch and its commits do not suffice. Option A authorizes governance direction only;
-this task authors final metadata only, without staging, commit or adoption permission.
-Actual adoption evidence and the effective event/date must be recorded when available;
-none is invented. Root main adoption remains NOT AUTHORIZED / NOT PERFORMED;
+The original commit execution lacked separate authorization. Correction `3d6fffea83a7a2fc4c10300ccf5792224edabeba`
+and final metadata commit `a6558556df6c81d04a4e610ae7698e51071ab2ee` were separately authorized.
+Root main was technically fast-forwarded to the latter commit; its reflog records
+`2026-11-11T23:48:51+03:30`. Adoption operations lacked separate execution authorization,
+a second independent procedural deviation. Under Option A and the subsequent owner
+disposition, the existing Git state is retained for reconciliation only. Neither
+historical execution is retroactively authorized.
+
+Formal Level 2 effectiveness is NOT ESTABLISHED. It requires a separately recorded
+and validated governance reconciliation disposition and completion of applicable
+registration-evidence requirements; technical presence in main is insufficient.
+The adoption timestamp is not an effective date. Current reconciliation metadata is
+unstaged/uncommitted; repository recording remains pending commit. This task authorizes
+only limited authoring, not Git mutations or any Governance Gate transition.
 Backend synchronization is not performed. The governance reference remains
 `NESHANE-V3-GOV-P00-000A`; this package changes no general governance rule.
 

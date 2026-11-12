@@ -82,8 +82,8 @@ governance decision alone.
 - Intended records: [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md)
   / [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective).
 - Intended architecture revision: `NESHANE-V3-ARCH-P00-006`;
-  `LOCALLY COMMITTED RECONCILIATION CANDIDATE`, NOT EFFECTIVE.
-- Current effective Root main architecture reference: `NESHANE-V3-ARCH-P00-005`.
+  `PRESENT IN ROOT MAIN — NON-EFFECTIVE GOVERNANCE CANDIDATE`.
+- Last confirmed effective governance baseline: `NESHANE-V3-ARCH-P00-005`.
   Governance reference: `NESHANE-V3-GOV-P00-000A`, unchanged.
 - Root source: `c3926e6a8c9847281d49987abdbafbbced562dbb`.
 - Backend source: `938b9e7e3a0feaed4f3c09056f70365313dabb7e`.
@@ -95,17 +95,25 @@ governance decision alone.
 - Actual original local Root candidate commit: `fd1e1703afc4fe730ae6e86f1ef72573106082f8`.
 - Separately authorized metadata correction commit: `3d6fffea83a7a2fc4c10300ccf5792224edabeba`,
   whose parent is the original candidate commit above.
+- Authorized final metadata commit: `a6558556df6c81d04a4e610ae7698e51071ab2ee`,
+  whose parent is the metadata correction commit above.
 - `ORIGINAL COMMIT EXECUTION AUTHORIZATION: NOT GRANTED AT TIME OF EXECUTION`.
 - Technical Architecture Owner authorized retention for reconciliation and possible
   future authorized registration only; not retroactive execution authorization.
 - `GOVERNANCE DIRECTION: APPROVED — OPTION A`: explicit Technical Architecture Owner
   disposition accepts this chain as the basis for prospective formal registration,
-  without retroactive execution authorization. Final metadata authoring is authorized only.
-- Formal Level 2 registration: NOT YET EFFECTIVE. For this registration only, effectiveness
-  requires separately authorized and verified adoption of the completed package into
-  authoritative Root main; the isolated local branch and commits do not suffice.
-  Root main adoption of P00-006: NOT AUTHORIZED / NOT PERFORMED. Actual adoption commit
-  or equivalent verified Git evidence and effective event/date: NOT RECORDED.
+  without retroactive execution authorization. The subsequent owner disposition approves
+  retention of the technically adopted Git state for reconciliation only.
+- Technical Root main adoption: VERIFIED — `a6558556df6c81d04a4e610ae7698e51071ab2ee`;
+  tree `9e38354343ae8587f815b35929ff52d8b874fbff`; main reflog
+  `2026-11-11T23:48:51+03:30`, Fast-forward. This is not an effective date.
+- Adoption execution authorization at time: NOT GRANTED. Preservation branch creation,
+  original Root HEAD reattachment, Main Adoption Worktree creation and main fast-forward
+  constitute a second independent procedural deviation, separate from original commit execution.
+  Neither deviation is retroactively authorized; reflog wording is not authorization evidence.
+- Formal Level 2 effectiveness: NOT ESTABLISHED. A separately recorded and validated
+  reconciliation disposition and completion of applicable registration evidence are required.
+  Post-adoption metadata: AUTHORED — UNSTAGED / UNCOMMITTED; repository recording PENDING COMMIT.
   Remote publication status: NOT VERIFIED; publication requires separate authorization.
 - Backend synchronization commit: NOT RECORDED. Root and Backend commits must
   remain independently traceable; the local Root candidate is not propagation evidence.
@@ -121,11 +129,13 @@ governance decision alone.
   V3-022 Stage B2, merge, contract publication and production promotion remain
   NOT AUTHORIZED. All applicable Open Decisions remain OPEN.
 
-The approved sequence is: final metadata reconciliation; separately authorized staging
-and commit; separately authorized and verified Root main adoption; formal effectiveness
-under this registration-specific boundary; separately authorized Backend governance
-synchronization; separate publication, security and implementation activities as applicable.
-Only metadata authoring is authorized here. This sequence does not report the future
-steps as completed, make publication a prerequisite for local Root effectiveness, or
-authorize staging/commit, adoption, Backend editing, runtime operations or any Gate transition.
+The actual sequence is: original commit without separate execution authorization;
+authorized correction commit; authorized final metadata commit; technically verified
+fast-forward adoption without separate execution authorization; subsequent owner-approved
+retention for reconciliation only; pending reconciliation evidence and formal effectiveness
+determination. Retention does not authorize reversal or repetition of adoption.
+Only limited post-adoption metadata authoring is authorized here. Future staging, commit,
+any Git operation, Backend synchronization, publication, security and implementation
+activities require their own authorization. This record does not declare effectiveness,
+make publication a prerequisite for local effectiveness, or authorize any Gate transition.
 

@@ -4,23 +4,23 @@ Architecture version: `NESHANE-V3-ARCH-P00-005` upon traceable commit of the OD-
 
 Approval provenance: the project owner supplied the explicit R0 decisions recorded in R0-001; Codex converted them into DEC/ADR documentation under R0-001. The Technical Architecture Owner/CPO explicitly supplied the V3-005 OD-002 through OD-004 selections recorded as DEC-013/ADR-V3-013, the OD-008 API/event versioning selection recorded as DEC-014/ADR-V3-014 and the complete OD-020 disposition recorded as DEC-015/ADR-V3-015. DEC-015 includes a separate scoped interim Quality Authority review with the same role holder and disclosed dual capacity. No independent Security, organizational Quality, Operations or Developer Experience approval is claimed.
 
-V3-024 proposed registration: DEC-016 below is a LOCALLY COMMITTED RECONCILIATION
-CANDIDATE comprising `fd1e1703afc4fe730ae6e86f1ef72573106082f8` followed by separately
-authorized metadata correction `3d6fffea83a7a2fc4c10300ccf5792224edabeba`; formal
-effectiveness remains pending. `ORIGINAL COMMIT EXECUTION AUTHORIZATION: NOT GRANTED AT TIME OF EXECUTION`.
-The Technical Architecture Owner subsequently authorized retention for reconciliation
-and possible future authorized registration only, not retroactive execution approval.
-The Technical Architecture Owner explicitly approved the
-corrected P01–P05 artifact, six reference directions, 47 conditions and the mapping
-of conditional disposition to intended ACCEPTED lifecycle in the project conversation.
-`GOVERNANCE DIRECTION: APPROVED — OPTION A`: the Technical Architecture Owner accepts
-this existing chain as the basis for prospective formal registration, not retroactive
-execution authorization. For this registration, effectiveness requires separately
-authorized and verified adoption of the completed package into authoritative Root main.
-The isolated branch and its commits are not effective registration; adoption is neither
-authorized nor performed. Final metadata authoring does not authorize staging or commit.
-No effective date, adoption evidence, signature, submission or independent security
-approval is invented; Root main remains on P00-005.
+V3-024 proposed registration: DEC-016 is technically present in Root main through
+the chain `fd1e1703afc4fe730ae6e86f1ef72573106082f8`, separately authorized metadata
+correction `3d6fffea83a7a2fc4c10300ccf5792224edabeba` and authorized final metadata
+commit `a6558556df6c81d04a4e610ae7698e51071ab2ee`; formal effectiveness is NOT ESTABLISHED.
+The original commit execution lacked separate authorization. The main adoption operations
+also lacked separate authorization at execution: a second, independent procedural deviation.
+Main's reflog records `2026-11-11T23:48:51+03:30`, Fast-forward to `a6558556df6c81d04a4e610ae7698e51071ab2ee`.
+The Technical Architecture Owner approved the corrected P01–P05 artifact, six reference
+directions, 47 conditions and intended ACCEPTED lifecycle mapping.
+`GOVERNANCE DIRECTION: APPROVED — OPTION A`; subsequent owner-approved retention of
+the adopted Git state is for reconciliation only, not retroactive authorization.
+P00-005 remains the last confirmed effective governance baseline; P00-006 is a
+non-effective candidate technically present in main. Formal effectiveness requires a
+separately recorded and validated reconciliation disposition and completion of applicable
+registration-evidence requirements. Current post-adoption metadata remains unstaged/
+uncommitted; repository recording is pending commit. No Git mutation, effective date,
+signature, submission or independent security approval is implied by this authoring.
 
 | ID | Title | Decision | Rationale | Consequences | Dependencies | Related ADRs | Approval provenance |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -44,10 +44,10 @@ R0-001 ratified DEC-001 through DEC-012 and formalized them as ADR-V3-001 throug
 
 ## V3-024 proposed consolidated registration — not effective
 
-The following single entry is part of the same locally committed reconciliation candidate,
+The following single entry is part of the technically adopted, non-effective governance candidate,
 not a completed formal registration. Existing DEC-001 through DEC-015 are unchanged.
 
 | ID | Title | Decision | Rationale | Consequences | Dependencies | Related ADRs | Approval provenance |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| DEC-016 | Dedicated Managed disposable reference architecture | CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY; intended ADR lifecycle ACCEPTED; LOCALLY COMMITTED RECONCILIATION CANDIDATE — NOT EFFECTIVE. DB-001 A database/service/Cell (7); RT-002 A disposable Compose (6); OA-003 B scoped Controller/Agent (8); CL-004 B scoped credentials/rotation (8); RTR-005 B validated placement/fail-closed routing (8); OF-006 B bounded valid local state (10). All 47 conditions and detailed source obligations remain binding architectural requirements, not verified controls. | Reproducible reference design with explicit service, Cell, Tenant and authority boundaries without production-mechanism selection. | Shared host/cluster administration, real identity/trust, credential custody/revocation, durable execution, adapter privilege, freshness and recovery remain unresolved. Overall R2 and independent security PENDING; implementation, B2, merge, publication and production promotion NOT AUTHORIZED. Proposed P00-006 is not effective or propagated. | OD-009/010/011/012/013/014/015/019/022/023 remain OPEN; V3-016 governance, V3-017 Formal R1 and V3-023 Formal B1 remain pending; V3-022 B2 not authorized. | [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md), V3-024; sub-decisions [DB-001](adr/016-dedicated-managed-reference-architecture.md#db-001), [RT-002](adr/016-dedicated-managed-reference-architecture.md#rt-002), [OA-003](adr/016-dedicated-managed-reference-architecture.md#oa-003), [CL-004](adr/016-dedicated-managed-reference-architecture.md#cl-004), [RTR-005](adr/016-dedicated-managed-reference-architecture.md#rtr-005), [OF-006](adr/016-dedicated-managed-reference-architecture.md#of-006). | Explicit Technical Architecture Owner approval of corrected artifact SHA-256 `aa651e4e45355fb4bc80adf40cf6cd0fc125a702afb686891c28de4535bf0040` and controlled six-file authoring in the project conversation; Backend source `938b9e7e3a0feaed4f3c09056f70365313dabb7e`; Root source `c3926e6a8c9847281d49987abdbafbbced562dbb`. Actual original local candidate commit `fd1e1703afc4fe730ae6e86f1ef72573106082f8`; original execution authorization NOT GRANTED; subsequent retention authorized for reconciliation only, not retroactive authorization. Separately authorized metadata correction `3d6fffea83a7a2fc4c10300ccf5792224edabeba` follows it. Option A approves the chain as a prospective registration basis only; formal effectiveness requires separately authorized and verified Root main adoption, not yet authorized or performed. |
+| DEC-016 | Dedicated Managed disposable reference architecture | CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY; intended ADR lifecycle ACCEPTED; TECHNICALLY PRESENT IN ROOT MAIN — FORMAL LEVEL 2 EFFECTIVENESS NOT ESTABLISHED. DB-001 A database/service/Cell (7); RT-002 A disposable Compose (6); OA-003 B scoped Controller/Agent (8); CL-004 B scoped credentials/rotation (8); RTR-005 B validated placement/fail-closed routing (8); OF-006 B bounded valid local state (10). All 47 conditions and detailed source obligations remain binding architectural requirements, not verified controls. | Reproducible reference design with explicit service, Cell, Tenant and authority boundaries without production-mechanism selection. | Shared host/cluster administration, real identity/trust, credential custody/revocation, durable execution, adapter privilege, freshness and recovery remain unresolved. Overall R2 and independent security PENDING; implementation, B2, merge, publication and production promotion NOT AUTHORIZED. Proposed P00-006 is not effective or propagated. | OD-009/010/011/012/013/014/015/019/022/023 remain OPEN; V3-016 governance, V3-017 Formal R1 and V3-023 Formal B1 remain pending; V3-022 B2 not authorized. | [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md), V3-024; sub-decisions [DB-001](adr/016-dedicated-managed-reference-architecture.md#db-001), [RT-002](adr/016-dedicated-managed-reference-architecture.md#rt-002), [OA-003](adr/016-dedicated-managed-reference-architecture.md#oa-003), [CL-004](adr/016-dedicated-managed-reference-architecture.md#cl-004), [RTR-005](adr/016-dedicated-managed-reference-architecture.md#rtr-005), [OF-006](adr/016-dedicated-managed-reference-architecture.md#of-006). | Explicit Technical Architecture Owner approval of corrected artifact SHA-256 `aa651e4e45355fb4bc80adf40cf6cd0fc125a702afb686891c28de4535bf0040` and controlled six-file authoring in the project conversation; Backend source `938b9e7e3a0feaed4f3c09056f70365313dabb7e`; Root source `c3926e6a8c9847281d49987abdbafbbced562dbb`. Actual original local candidate commit `fd1e1703afc4fe730ae6e86f1ef72573106082f8`; original execution authorization NOT GRANTED; subsequent retention authorized for reconciliation only, not retroactive authorization. Separately authorized correction `3d6fffea83a7a2fc4c10300ccf5792224edabeba` and authorized final metadata commit `a6558556df6c81d04a4e610ae7698e51071ab2ee` follow it. Option A approves the prospective registration basis. Main's reflog records Fast-forward to `a6558556df6c81d04a4e610ae7698e51071ab2ee` at `2026-11-11T23:48:51+03:30`; adoption execution authorization at time NOT GRANTED, a separate procedural deviation. Subsequent owner retention is for reconciliation only; neither deviation is retroactively authorized. Formal effectiveness remains NOT ESTABLISHED pending a separately recorded and validated reconciliation disposition and applicable registration evidence. |
 

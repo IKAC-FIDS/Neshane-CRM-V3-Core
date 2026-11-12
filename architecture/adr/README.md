@@ -75,20 +75,22 @@ Every new ADR contains:
 
 V2 ADR-001 through ADR-011 remain historical V2 records and are not imported or renumbered as V3 ADRs.
 
-V3-024 registration qualification: the ADR-V3-016 row below belongs to a
-`LOCALLY COMMITTED RECONCILIATION CANDIDATE — NOT EFFECTIVE` package at
-`fd1e1703afc4fe730ae6e86f1ef72573106082f8` followed by separately authorized metadata
-correction `3d6fffea83a7a2fc4c10300ccf5792224edabeba`. Original commit execution was not
-separately authorized; subsequent retention for reconciliation was not retroactive approval.
-`GOVERNANCE DIRECTION: APPROVED — OPTION A`: the Technical Architecture Owner accepts
-this chain as the prospective registration basis, without retroactively authorizing execution.
-Its authorized intended
-lifecycle is `ACCEPTED`, with `CONDITIONALLY ACCEPTED` design-only disposition;
-it is not an effective catalog addition. The catalog and effective P00-005 architecture
-baseline on Root main remain unchanged. For this registration only, effectiveness requires
-separately authorized and verified adoption of the completed package into Root main;
-neither the local branch nor its commits suffice. Adoption remains unauthorized and
-unperformed. Final metadata authoring is authorized, not staging, commit or adoption.
+V3-024 registration qualification: ADR-V3-016 is TECHNICALLY PRESENT IN ROOT MAIN,
+not FORMALLY EFFECTIVE LEVEL 2 REGISTRATION. The chain is
+`fd1e1703afc4fe730ae6e86f1ef72573106082f8`, separately authorized correction
+`3d6fffea83a7a2fc4c10300ccf5792224edabeba`, then authorized final metadata commit
+`a6558556df6c81d04a4e610ae7698e51071ab2ee`.
+Original commit execution lacked separate authorization. The technical main adoption
+also lacked separate authorization at execution and is a second procedural deviation.
+The main reflog records `2026-11-11T23:48:51+03:30`, Fast-forward to `a6558556df6c81d04a4e610ae7698e51071ab2ee`.
+`GOVERNANCE DIRECTION: APPROVED — OPTION A`; the subsequent owner disposition approves
+retention for reconciliation only, not retroactive authorization of either deviation.
+Its authorized intended lifecycle is `ACCEPTED`, with `CONDITIONALLY ACCEPTED`
+design-only disposition. P00-005 remains the last confirmed effective governance
+baseline; P00-006 is technically present in main as a non-effective candidate.
+Formal effectiveness requires a separately recorded and validated governance
+reconciliation disposition and completion of applicable registration-evidence requirements.
+Current authoring is unstaged/uncommitted and authorizes no Git mutation or Gate transition.
 No lifecycle vocabulary, existing ADR status or overall R2 gate changes.
 
 | ADR ID | Title | Status | Replaces | Related decisions/tasks |
@@ -108,10 +110,10 @@ No lifecycle vocabulary, existing ADR status or overall R2 gate changes.
 | [ADR-V3-013](013-backend-foundation-toolchain.md) | Backend foundation toolchain and build layout | Accepted | — | DEC-013; OD-002–OD-004; V3-005 |
 | [ADR-V3-014](014-api-event-versioning.md) | REST and event contract versioning | Accepted; effective upon traceable commit | — | DEC-014; OD-008 |
 | [ADR-V3-015](015-contract-testing-strategy.md) | Risk-based contract testing strategy | Accepted; effective upon traceable commit | — | DEC-015; OD-020 |
-| [ADR-V3-016](016-dedicated-managed-reference-architecture.md) | Consolidated V3-024 R2 Dedicated Managed Reference Architecture; six traceable sub-decisions | ACCEPTED — intended lifecycle; CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY; LOCALLY COMMITTED RECONCILIATION CANDIDATE, NOT EFFECTIVE; OPTION A APPROVED, ROOT MAIN ADOPTION REQUIRED AND NOT AUTHORIZED | — | DEC-016; V3-024; DB-001/RT-002/OA-003/CL-004/RTR-005/OF-006; 47 conditions |
+| [ADR-V3-016](016-dedicated-managed-reference-architecture.md) | Consolidated V3-024 R2 Dedicated Managed Reference Architecture; six traceable sub-decisions | ACCEPTED — intended lifecycle; CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY; TECHNICALLY PRESENT IN ROOT MAIN; FORMAL LEVEL 2 EFFECTIVENESS NOT ESTABLISHED; RETAINED FOR RECONCILIATION ONLY | — | DEC-016; V3-024; DB-001/RT-002/OA-003/CL-004/RTR-005/OF-006; 47 conditions |
 
-ADR-V3-016 prepares `NESHANE-V3-ARCH-P00-006` for future registration only.
-P00-005 remains the current effective Root main architecture reference. The overall
+ADR-V3-016 is technically present in Root main as `NESHANE-V3-ARCH-P00-006`,
+a non-effective governance candidate. P00-005 remains the last confirmed effective governance baseline. The overall
 V3-024 R2 gate and independent security review remain PENDING; implementation,
 V3-022 Stage B2, merge, contract publication and production promotion remain unauthorized.
 

@@ -39,7 +39,7 @@ Decisions require documented evidence, consequences, owner approval, a V3 ADR wh
 
 ## V3-024 reference-design cross-reference — no decision resolution
 
-The locally committed reconciliation candidate [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md)
+The technically adopted, non-effective governance candidate [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md)
 / [DEC-016](decision-register.md#v3-024-proposed-consolidated-registration--not-effective)
 registration package references OD-009, OD-010, OD-011, OD-012, OD-013, OD-014,
 OD-015, OD-019, OD-022 and OD-023 as unresolved dependencies. Every one remains
@@ -50,12 +50,16 @@ recorded by this cross-reference or by the intended conditional design approval.
 OD-019 remains Background scheduling. OD-023 retains SLO/RTO/RPO/capacity objectives
 and measurement; operation-specific freshness, clock and revocation-exposure
 policies require separate explicit dispositions, not a replacement OD definition.
-Option A governance direction is approved: the existing two-commit chain identified in
-ADR-V3-016 is accepted as the prospective registration basis, not retroactive execution
-authorization. For this registration, P00-006 remains non-effective until separately
-authorized and verified adoption of the completed package into authoritative Root main.
-Adoption remains NOT AUTHORIZED / NOT PERFORMED. No deployment, migration, credentials,
-offline continuation or V3-022 Stage B2 is authorized; no Open Decision is resolved.
+Option A governance direction is approved: the three-commit chain identified in
+ADR-V3-016 is technically present in Root main at `a6558556df6c81d04a4e610ae7698e51071ab2ee`
+(main reflog `2026-11-11T23:48:51+03:30`, Fast-forward). Original commit execution and
+adoption operations independently lacked separate authorization at execution. Subsequent
+owner retention is for reconciliation only, not retroactive authorization of either.
+P00-005 remains the last confirmed effective governance baseline. P00-006 remains
+non-effective pending a separately recorded and validated reconciliation disposition
+and applicable registration evidence. Current authoring authorizes no Git mutation
+or Gate transition. No deployment, migration, credentials, offline continuation or
+V3-022 Stage B2 is authorized; no Open Decision is resolved.
 
 ## Status and dependency map
 
