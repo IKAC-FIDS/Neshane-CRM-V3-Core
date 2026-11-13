@@ -8,6 +8,16 @@ effective baseline. The older P00-005/current-candidate and PENDING wording belo
 the pre-E4 snapshot, not the current effectivity conclusion. E5 adds no effectiveness event or
 implementation authority; this administrative package's Root main recording requires separate authorization.
 
+<a id="v3-024-final-g-r2-closure"></a>
+V3-024 final disposition (`2026-11-13`, `V3-024-G-R2-FINAL-ACCEPTANCE-AND-CLOSURE`):
+the TAO accepts G-R2 only as `ACCEPTED — LIMITED DESIGN_ONLY / REFERENCE_ONLY`,
+dispositions F-R2-01 as `CLOSED — PROCEDURALLY SATISFIED`, and closes the architecture
+design stage, subject to the [formal recording and verification boundary](governance-synchronization.md#v3-024-final-g-r2-closure).
+This is not a new architecture revision: P00-006, ADR-V3-016/DEC-016, all 47 conditions
+and effectivity at `2026-11-13T14:21:48+03:30` remain unchanged. Security, final Tenant
+Isolation, Backend synchronization, implementation and production remain separately gated.
+Earlier overall G-R2 PENDING/HOLD wording is preserved history, not a current Gate decision.
+
 - Architecture version: `NESHANE-V3-ARCH-P00-005` upon traceable commit of the OD-020 decision package
 - Governance reference: `NESHANE-V3-GOV-P00-000A` (unchanged)
 - Status: approved architecture revision; project-owner decision ratification recorded by R0-001; implementation and operational evidence remain pending

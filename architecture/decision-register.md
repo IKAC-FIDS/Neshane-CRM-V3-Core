@@ -61,6 +61,22 @@ submission, independent security approval or authorization for future Git operat
 
 R0-001 ratified DEC-001 through DEC-012 and formalized them as ADR-V3-001 through ADR-V3-012. V3-005 resolves OD-002 through OD-004 through DEC-013/ADR-V3-013. The OD-008 formal-closure task resolves API/event versioning through DEC-014/ADR-V3-014. The OD-020 finalization task resolves contract-testing governance through DEC-015/ADR-V3-015, effective upon its traceable Level 2 commit. Any material change requires a traceable superseding/deprecating ADR rather than silent edits. OD-001, OD-005 through OD-007, OD-009 through OD-019 and OD-021 through OD-023 remain Open.
 
+<a id="v3-024-final-g-r2-closure"></a>
+## V3-024 — Formal limited G-R2 closure, 2026-11-13
+
+Under `V3-024-G-R2-FINAL-ACCEPTANCE-AND-CLOSURE`, the TAO explicitly decides
+`V3-024 / G-R2: ACCEPTED — LIMITED DESIGN_ONLY / REFERENCE_ONLY`,
+`F-R2-01: CLOSED — PROCEDURALLY SATISFIED` on independent Assessment A, and
+`V3-024 ARCHITECTURE DESIGN STAGE: CLOSED`. See the
+[full dated decision, evidence, restrictions and recording boundary](governance-synchronization.md#v3-024-final-g-r2-closure).
+Repository closure requires this task's verified Registration commit, authoritative
+Main recording and postflight; owner issuance alone is not completed recording.
+Existing `ADR-V3-016 / DEC-016 / P00-006`, the historical effectiveness timestamp,
+all 47 conditions and the 41/1/5 review classifications remain unchanged.
+F-R2-02 through F-R2-06, all Open Decisions, independent Security/Tenant Isolation,
+Backend propagation and implementation/production restrictions remain in force.
+This new Gate/finding disposition neither replaces the ADR nor rewrites the history below.
+
 <a id="v3-024-r2-applicability-registration"></a>
 ## V3-024 R2 applicability registration — separate from Gate acceptance
 

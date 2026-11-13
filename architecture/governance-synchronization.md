@@ -408,3 +408,134 @@ Formal G-R2 acceptance requires its own subsequent explicit TAO decision. Regist
 does not supply Independent Security Sign-off, Final Tenant Isolation Acceptance,
 risk acceptance, Backend synchronization, implementation, V3-017 reuse, V3-022 B2,
 merge, contract publication, deployment, release or production promotion authority.
+
+<a id="v3-024-final-g-r2-closure"></a>
+## V3-024 — Formal limited G-R2 acceptance and architecture design-stage closure
+
+### Decision identity, date and authority
+
+- Task: `V3-024-G-R2-FINAL-ACCEPTANCE-AND-CLOSURE`.
+- Recording event date: `2026-11-13`, from the local system clock (+03:30).
+  This is a new closure recording event, not a backdated architecture-effectiveness event.
+- Decision authority: project Technical Architecture Owner (TAO), under
+  [Task Governance, Level 2](task-governance.md#level-2--architecture-decision).
+- Approval provenance: the TAO's explicit current-task decision, sections 1–3 of
+  the project conversation: `ACCEPT — LIMITED DESIGN_ONLY / REFERENCE_ONLY` and
+  authorization to formally disposition F-R2-01. No separate signature, decision
+  number or absolute owner-issuance timestamp is invented. Commit and recording
+  times are distinct from owner approval and are reported after actual execution.
+- Reviewed architecture: `NESHANE-V3-ARCH-P00-006`,
+  [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md) / `DEC-016`.
+- Pinned pre-closure authoritative Root Main:
+  `16791afd488b5136b70a6fdc7ec5748b54b6549c`;
+  tree: `2e1374ee47d99f74b23a845b37719cad44df2902`.
+- Supporting Backend evidence: `938b9e7e3a0feaed4f3c09056f70365313dabb7e`,
+  reference evidence only; no Backend synchronization or runtime acceptance.
+- Architecture effectiveness remains `2026-11-13T14:21:48+03:30`, solely for
+  `DESIGN_ONLY / REFERENCE_ONLY`; ADR lifecycle remains `ACCEPTED`.
+  No architecture baseline, ADR condition or historical date changes.
+
+### Context, evidence and rationale
+
+The independent architecture review
+`V3-024-G-R2-INDEPENDENT-ARCHITECTURE-ACCEPTANCE-READONLY` returned
+`Recommendation B — CONDITIONAL / REMEDIATION REQUIRED`; its overall recommendation
+blocker was the missing approved applicability/exit allocation, F-R2-01.
+The [approved applicability decision](governance-synchronization.md#v3-024-r2-applicability-exit-boundary)
+was registered in commit `16791afd488b5136b70a6fdc7ec5748b54b6549c` and recorded on
+authoritative local Main by the authorized rerun at `2026-11-13T20:47:09+03:30`.
+Its durable evidence is at
+`E:\Neshane-V3-024-G-R2-Applicability-Main-Recording-Rerun-Evidence`;
+final manifest SHA-256:
+`ab13cf25dbe21ed7719a326e2fd20d6dbb4ef8e9cf959738acbf75f99c0aec51`.
+
+The independent task `V3-024-G-R2-FR2-01-PROCEDURAL-VERIFICATION` subsequently
+returned Assessment A in the project conversation:
+`F-R2-01: PROCEDURALLY SATISFIED — READY FOR FORMAL TAO DISPOSITION` and
+`READY FOR FORMAL TAO G-R2 DECISION`. That assessment did not itself close the finding
+or accept the Gate. The TAO now expressly supplies those limited formal dispositions.
+
+The selected outcome is acceptance of architectural design adequacy, not deployed
+behavior. Continuing the former applicability HOLD is no longer warranted by the
+verified procedural evidence; broader implementation/runtime/production acceptance
+is outside the authorized scope. Earlier HOLD, PENDING and recommendation records
+remain historical snapshots, not retroactively accepted decisions.
+
+### Formal TAO disposition and preserved acceptance boundary
+
+```text
+V3-024 / G-R2: ACCEPTED — LIMITED DESIGN_ONLY / REFERENCE_ONLY
+F-R2-01: CLOSED — PROCEDURALLY SATISFIED
+V3-024 ARCHITECTURE DESIGN STAGE: CLOSED
+```
+
+The TAO accepts V3-024 architectural design adequacy only within
+`DESIGN_ONLY / REFERENCE_ONLY`. F-R2-01 closure is limited to its applicability and
+exit-boundary procedural finding, supported by the independent Assessment A above.
+It is not an Open Decision closure or acceptance of another finding's obligations.
+
+All 47 approved conditions and detailed source requirements remain binding. Preserve
+the independent review classifications: 41 `DESIGN SATISFIED`, one `DESIGN PARTIAL`,
+and five `IMPLEMENTATION EVIDENCE REQUIRED`. These are review classifications,
+not newly completed controls. The five real verification obligations remain mandatory:
+`DB-001 / condition 6`, `RT-002 / condition 6`, `OA-003 / condition 8`,
+`CL-004 / condition 8`, and `RTR-005 / condition 8`, at their applicable implementation,
+runtime, Security and Tenant Isolation acceptance boundaries. Their precise allocation
+in the preceding applicability record remains unchanged. Implementation prerequisites
+must be satisfied before the applicable authorization milestones, not deferred beyond them.
+
+`OF-006 / condition 10: DESIGN PARTIAL` remains unchanged.
+Actual offline continuation without a separately approved operation-specific policy
+and all applicable authority/verification approvals remains `NOT AUTHORIZED`.
+
+All [Open Decisions](open-decisions.md), their statuses, owners and milestones remain
+unchanged, including OD-009/010/011/012/013/014/015/019/022/023. No unresolved
+production implementation mechanism, topology or numeric policy is selected.
+V3-016 Governance limitations, V3-017 pending Formal R1 and separate scoped reuse
+validation/authorization, V3-022 Stage B2 restrictions, V3-023 pending Formal B1,
+and Shared/Dedicated evidence boundaries remain intact. Independent Security Review,
+Final Tenant Isolation Acceptance and profile-specific recovery evidence remain required.
+
+| Finding retained | Obligation not closed by this decision |
+| --- | --- |
+| F-R2-02 | Real implementation/runtime verification remains mandatory; no synthetic or documentary substitute. |
+| F-R2-03 | Operation-specific continuation policy is still missing; no actual continuation approval. |
+| F-R2-04 | V3-017 reuse requires its own scoped disposition and authorization. |
+| F-R2-05 | Historical limited Control A qualification remains; Control B is not independently proven. |
+| F-R2-06 | Backend Governance propagation remains separately scoped and unauthorized. |
+
+```text
+INDEPENDENT SECURITY REVIEW: PENDING
+FINAL TENANT ISOLATION ACCEPTANCE: PENDING
+V3-024 IMPLEMENTATION: NOT AUTHORIZED
+BACKEND SYNCHRONIZATION: NOT AUTHORIZED
+V3-022 STAGE B2: NOT AUTHORIZED
+PRODUCTION READINESS: NOT ACCEPTED
+```
+
+This decision grants no Frontend/Backend implementation, contract publication,
+deployment, production promotion, security-risk acceptance or retrospective authorization.
+It does not establish real database/RLS, routing, execution, workload-trust, credential
+lifecycle or backup/recovery behavior. No downstream Security, Tenant, implementation
+or production Gate is transitioned. Existing merge/release restrictions remain binding;
+the only Main update authorized here is this task's local Governance fast-forward.
+
+### Contract impact and controlled recording boundary
+
+This is a formal Governance disposition against an unchanged architecture, not a
+substantive ADR amendment. Under the [Contract Change Protocol](contract-change-protocol.md),
+no service ownership, API, event, schema, migration, SDK, integration contract or
+compatibility guarantee changes. No publication, consumer migration or runtime rollback
+is triggered; no contract test, Security test or runtime verification is claimed.
+ADR-V3-016, the ADR catalog and Open Decision register are not rewritten; the
+[Decision Register](decision-register.md#v3-024-final-g-r2-closure) and
+[baseline qualification](baseline-v3.md#v3-024-final-g-r2-closure) link this distinct event.
+
+The repository effect of the dispositions above requires the authorized single
+Registration commit, its verified recording on authoritative local Main, and complete
+postflight/evidence-integrity verification in this same task. Until those succeed,
+owner issuance and prepared documentation alone do not establish completed closure.
+The actual commit/parent/tree, Main recording time, verification completion and result
+are captured after execution in
+`E:\Neshane-V3-024-G-R2-Final-Closure-Evidence` and the task completion report, not
+prepopulated here. No extra decision or review cycle is introduced by this boundary.
