@@ -1,5 +1,18 @@
 # Neshane V3 architecture baseline
 
+<a id="v3-024-g-security-limited-closure"></a>
+V3-024 Security disposition (`V3-024-G-SECURITY-LIMITED-ACCEPTANCE-AND-CLOSURE`):
+the Product Decision Owner / TAO explicitly accepts G-Security only as
+`ACCEPTED — LIMITED SECURITY DESIGN / REFERENCE ONLY` and closes only its design
+scope, subject to the [single-commit/Main-recording and verified completion boundary](governance-synchronization.md#v3-024-g-security-limited-closure).
+The [decision record](decision-register.md#v3-024-g-security-limited-closure) and
+GS-01–GS-07 allocation preserve all runtime/future obligations. No independent
+specialist Sign-off, runtime enforcement, risk waiver, implementation or production
+acceptance is established. P00-006, ADR-V3-016/DEC-016, all 47 conditions, the 41/1/5
+classifications and architecture effectivity at `2026-11-13T14:21:48+03:30` are
+unchanged. Earlier Security PENDING/HOLD assessments remain historical inputs;
+Final Tenant Isolation and other downstream acceptance remain separate and pending.
+
 E5 administrative qualification (`V3-024-R2-E5-ADMINISTRATIVE-GOVERNANCE-RECORDING`):
 `NESHANE-V3-ARCH-P00-006: EFFECTIVE FOR DESIGN_ONLY / REFERENCE_ONLY FROM 2026-11-13T14:21:48+03:30`.
 The [administrative effectiveness record](governance-synchronization.md#v3-024-r2-administrative-effectiveness-record)

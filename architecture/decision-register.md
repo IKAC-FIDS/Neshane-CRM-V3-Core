@@ -1,5 +1,35 @@
 # Neshane V3 decision register
 
+<a id="v3-024-g-security-limited-closure"></a>
+## V3-024 — Owner limited G-Security design acceptance and closure
+
+- Task: `V3-024-G-SECURITY-LIMITED-ACCEPTANCE-AND-CLOSURE`; Stage 09.
+- Decision authority/source: the Product Decision Owner / TAO's explicit current
+  project-conversation decision, sections 5–7, under the
+  [effective unified internal authority rule](task-governance.md#unified-final-internal-decision-authority)
+  recorded by `d75dd6f54a09b70dfa8d4103df642a85a646edd8`.
+- Exact issued decision: `ACCEPT — LIMITED SECURITY DESIGN / REFERENCE ONLY`.
+  This accepts documented architectural security requirements, control boundaries
+  and reference design, not actual enforcement or unverified real-world risk.
+- Limited outcome on verified completion:
+  `V3-024 / G-Security: ACCEPTED — LIMITED SECURITY DESIGN / REFERENCE ONLY`;
+  `V3-024 / G-Security Design Scope: CLOSED`.
+- Scope allocation: GS-01–GS-03 limited design dispositions with runtime enforcement
+  excluded; GS-04–GS-06 future obligations preserved; GS-07 internal owner authority
+  satisfied only, with no independent specialist Sign-off claimed. The
+  [full dispositions, milestones, non-waivers and recording boundary](governance-synchronization.md#v3-024-g-security-limited-closure)
+  are part of this decision.
+- Task authorization-evidence recording timestamp:
+  `2026-11-14T00:03:03.175178+03:30`, from the local system clock. This is not an
+  invented owner-issuance timestamp or the final Main recording time.
+- Reviewed Root HEAD: `d75dd6f54a09b70dfa8d4103df642a85a646edd8`; tree:
+  `104df396d7749262a6c133d7ca2b2e35a022c81a`. Backend supporting evidence remains
+  `938b9e7e3a0feaed4f3c09056f70365313dabb7e`, unchanged and unsynchronized.
+- This new event neither backdates acceptance nor rewrites earlier PENDING/HOLD
+  assessments or appoints AUTH-SA/AUTH-ISR. Repository completion requires the
+  authorized single Registration commit, controlled Main fast-forward and full
+  postflight/integrity verification. No new ADR or architecture baseline is created.
+
 <a id="unified-internal-authority"></a>
 ## Prospective governance decision — unified internal product authority
 

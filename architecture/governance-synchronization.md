@@ -1,5 +1,161 @@
 # Cross-repository governance synchronization
 
+<a id="v3-024-g-security-limited-closure"></a>
+## V3-024 — Limited Security design/reference acceptance and closure
+
+### Decision, authority and baseline
+
+- Task: `V3-024-G-SECURITY-LIMITED-ACCEPTANCE-AND-CLOSURE`; Stage 09 / G-Security.
+- Source: explicit Product Decision Owner / TAO decision in the current project
+  conversation, sections 5–7; controlled recording authorized by sections 8–11.
+- Exact owner decision: `ACCEPT — LIMITED SECURITY DESIGN / REFERENCE ONLY`.
+- Authority: [unified final internal decision authority](task-governance.md#unified-final-internal-decision-authority),
+  effectively recorded by `d75dd6f54a09b70dfa8d4103df642a85a646edd8`, local Main
+  fast-forward at `2026-11-13T23:49:35+03:30` and verified postflight. No separate
+  appointment/delegation artifact is needed solely for this owner's internal decision.
+- Task authorization-evidence recording timestamp:
+  `2026-11-14T00:03:03.175178+03:30`, local system clock. Owner issuance, Git commit,
+  Main recording and final verification are distinct events; no missing issuance
+  time, specialist signature or retrospective authorization is invented.
+- Reviewed Root Main and Registration HEAD:
+  `d75dd6f54a09b70dfa8d4103df642a85a646edd8`; tree
+  `104df396d7749262a6c133d7ca2b2e35a022c81a`.
+- Supporting independent Backend HEAD:
+  `938b9e7e3a0feaed4f3c09056f70365313dabb7e`; tree
+  `675a9d6ed59fcd7f61a19f11baa4931ac88521a1`, unchanged and not synchronized.
+- Architecture remains `NESHANE-V3-ARCH-P00-006 / ADR-V3-016 / DEC-016`, effective
+  only for design/reference from `2026-11-13T14:21:48+03:30`. ADR-V3-016 is untouched.
+  G-R2 limited acceptance, F-R2-01 procedural closure and architecture design-stage
+  closure remain unchanged. Governance reference `NESHANE-V3-GOV-P00-000A` is unchanged.
+
+The previous `V3-024-G-SECURITY-INDEPENDENT-REVIEW` (B — conditional/evidence required)
+and `V3-024-G-SECURITY-FINAL-DISPOSITION` (C — hold/specified blockers), retained in
+the project conversation, are supporting technical assessments, not this owner
+decision. Their historical conclusions are not rewritten. No proven CRITICAL
+design defect was identified there; absence of such a defect is not runtime assurance.
+This task performs no threat-model, negative-case, 47-condition or E1–E5 reassessment.
+
+### Owner-approved consolidated GS dispositions
+
+**GS-01 — HIGH — Shared host and administrator trust**
+
+`ACCEPTED FOR LIMITED DESIGN SCOPE — RUNTIME HOST/ADMIN ISOLATION NOT ACCEPTED`
+
+The documented boundary and requirement for explicit host/operator trust assumptions
+are accepted for design/reference only. Resistance to compromise of a shared host,
+hypervisor or privileged administrator is not accepted. Before authorizing dependent
+implementation, require the relevant host/operator capability model, selected topology
+and independently applicable Security controls. Container boundaries alone do not prove
+host-level security. Unresolved technical requirements remain binding.
+
+**GS-02 — HIGH — Workload trust and credential lifecycle**
+
+`ACCEPTED FOR LIMITED DESIGN SCOPE — REAL TRUST BOOTSTRAP AND CREDENTIAL ENFORCEMENT EXCLUDED`
+
+Reference design requirements are accepted. Real identity issuance/bootstrap, credential
+custody/delivery/renewal/revocation, session termination and recovery remain unverified.
+Before dependent implementation authorization, require an approved concrete trust and
+secret-delivery model; before runtime enforcement acceptance, require real lifecycle
+and revocation verification. Applicable Open Decisions and milestones remain unchanged.
+
+**GS-03 — HIGH — Adapter privileges, replay and TOCTOU**
+
+`ACCEPTED FOR LIMITED DESIGN SCOPE — EXECUTOR AND DURABLE SAFETY ENFORCEMENT EXCLUDED`
+
+Architectural privilege and command-authorization requirements are accepted for reference
+purposes. No actual executor, adapter privilege boundary, command enforcement, durable
+replay protection, concurrency safety or crash reconciliation is accepted. Require
+privilege-boundary and execution-model decisions before adapter/executor implementation
+authorization, and actual replay/revocation/concurrency/crash/recovery evidence before
+runtime acceptance. No unrestricted shell, socket or command execution is authorized.
+
+**GS-04 — HIGH — Supply-chain enforcement**
+
+`FUTURE ENFORCEMENT OBLIGATION PRESERVED — MANAGED PROMOTION EXCLUDED`
+
+Design/CI policy documentation does not prove effective hosted enforcement. Satisfy
+applicable supply-chain prerequisites before authorizing implementation that relies on
+them. Before the relevant merge, promotion, deployment or release, require applicable
+hosted protection, artifact/image provenance, verified digest binding and vulnerability
+policy enforcement evidence. JAR attestation is not Managed container-image assurance.
+No production supply-chain acceptance is issued. `OWNER ASSIGNMENT REQUIRED`: an
+accountable owner must be assigned before the dependent milestone.
+
+**GS-05 — MEDIUM — Offline continuation and freshness**
+
+`ACTUAL OFFLINE CONTINUATION EXCLUDED — PROHIBITION PRESERVED`
+
+`OF-006 / condition 10: DESIGN PARTIAL` is unchanged. Actual offline continuation is
+prohibited until a separately approved operation-specific policy and all applicable
+controls/approvals exist. No fallback authorization is implied. Freshness, clock,
+revocation, anti-rollback and recovery obligations remain binding before any dependent
+authorization and at the applicable verification milestones.
+
+**GS-06 — MEDIUM — Runtime verification obligations**
+
+`FIVE IMPLEMENTATION VERIFICATION OBLIGATIONS PRESERVED`
+
+`DB-001 / condition 6`, `RT-002 / condition 6`, `OA-003 / condition 8`,
+`CL-004 / condition 8` and `RTR-005 / condition 8` remain mandatory with their existing
+allocation. Prerequisites required before scoped implementation authorization cannot
+be deferred beyond it. Real isolation/enforcement tests remain required at their
+applicable runtime/Security/G-Tenant acceptance milestones. No unexecuted negative
+case is marked PASS; documentary/synthetic evidence does not replace real verification.
+
+**GS-07 — MEDIUM — Internal decision authority**
+
+`INTERNAL DECISION-AUTHORITY REQUIREMENT SATISFIED UNDER UNIFIED GOVERNANCE POLICY`
+
+Only the internal final-owner authority component is satisfied by the effective unified
+policy and this explicit scoped owner decision. Independent specialist Sign-off is
+not claimed or completed by this event; AUTH-SA/AUTH-ISR appointment/review records
+remain unchanged. No specifically applicable independent external approval requirement
+was identified in the relevant governing records for this limited internal decision.
+Any actually applicable legal/regulatory/contractual or higher-priority independent
+approval requirement remains mandatory; this closure cannot satisfy or waive it.
+
+### Limited outcome, non-waivers and recording boundary
+
+The owner accepts the documented security requirements, architectural control boundaries
+and reference security design only. Actual implementation, deployment, independent
+specialist approval/testing and operational verification are not established. No risk
+arising from unverified real-world enforcement is accepted or waived.
+
+On completion of all authorized recording and verification steps:
+
+```text
+V3-024 / G-Security: ACCEPTED — LIMITED SECURITY DESIGN / REFERENCE ONLY
+V3-024 / G-Security Design Scope: CLOSED
+GS-01..GS-03: LIMITED DESIGN DISPOSITION RECORDED; RUNTIME ENFORCEMENT NOT ACCEPTED
+GS-04..GS-06: FUTURE OBLIGATIONS PRESERVED
+GS-07: INTERNAL OWNER AUTHORITY SATISFIED; INDEPENDENT SPECIALIST SIGN-OFF NOT CLAIMED
+```
+
+This new limited owner disposition supersedes earlier overall G-Security PENDING/HOLD
+only for that design/reference scope, without changing historical assessments, actual
+specialist-review statuses or future technical obligations. No implementation package
+is authorized and no IMPLEMENTATION READY claim is made. All 47 binding architecture
+conditions and inherited 41 DESIGN SATISFIED / 1 DESIGN PARTIAL / 5 IMPLEMENTATION
+EVIDENCE REQUIRED classifications remain unchanged. F-R2-02 through F-R2-06, all
+Open Decisions/owners/milestones, V3-017 reuse restrictions, V3-022 B2 restrictions,
+V3-023 pending formal dependencies and independent Final Tenant Isolation evidence
+and acceptance remain binding. No other Gate is accepted.
+
+Implementation, Backend synchronization, contract publication, offline continuation,
+deployment, release/promotion and production acceptance remain unauthorized. Production
+Readiness remains NOT ACCEPTED. Full deployed-control Security, real Tenant/Cell/RLS
+isolation, workload/credential enforcement, executor safety and supply-chain release
+assurance are outside this closure.
+
+Repository completion requires exactly one authorized Registration governance commit,
+verified exact diff/parent/tree and protections, one controlled local Main fast-forward,
+separate observational postflight verification and a verified integrity manifest. Until
+then, owner issuance and prepared documentation alone do not establish completed
+recording/closure. Actual commit/tree, Main recording time and verification result
+are captured after execution in the new task-specific external evidence directory
+`C:\Users\user\AppData\Local\Temp\opencode\v3-024-g-security-limited-acceptance`
+and final report; no completion timestamp or success is prepopulated here.
+
 <a id="unified-internal-authority"></a>
 ## Current prospective authority amendment — V3-GOV-UNIFIED-DECISION-AUTHORITY
 
