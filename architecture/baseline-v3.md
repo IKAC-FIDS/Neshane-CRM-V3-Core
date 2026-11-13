@@ -1,5 +1,13 @@
 # Neshane V3 architecture baseline
 
+E5 administrative qualification (`V3-024-R2-E5-ADMINISTRATIVE-GOVERNANCE-RECORDING`):
+`NESHANE-V3-ARCH-P00-006: EFFECTIVE FOR DESIGN_ONLY / REFERENCE_ONLY FROM 2026-11-13T14:21:48+03:30`.
+The [administrative effectiveness record](governance-synchronization.md#v3-024-r2-administrative-effectiveness-record)
+records completed E1–E4 and final independent E4 Outcome A. P00-005 remains the historical prior
+effective baseline. The older P00-005/current-candidate and PENDING wording below is preserved as
+the pre-E4 snapshot, not the current effectivity conclusion. E5 adds no effectiveness event or
+implementation authority; this administrative package's Root main recording requires separate authorization.
+
 - Architecture version: `NESHANE-V3-ARCH-P00-005` upon traceable commit of the OD-020 decision package
 - Governance reference: `NESHANE-V3-GOV-P00-000A` (unchanged)
 - Status: approved architecture revision; project-owner decision ratification recorded by R0-001; implementation and operational evidence remain pending

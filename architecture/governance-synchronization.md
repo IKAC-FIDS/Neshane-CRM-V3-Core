@@ -1,5 +1,9 @@
 # Cross-repository governance synchronization
 
+V3-024 temporal qualification: the P00-006 non-effective and Events 2–4 PENDING statements below
+are preserved pre-E4 snapshots. For the completed boundary and current design/reference effectivity,
+see the [E5 administrative record](#v3-024-r2-administrative-effectiveness-record).
+
 ## Baseline
 
 - Current reference: `NESHANE-V3-GOV-P00-000A`.
@@ -165,3 +169,75 @@ Root main recording, post-recording verification, Backend synchronization, publi
 activities require their own authorization. This record does not activate effectiveness,
 make publication a prerequisite for local effectiveness, or authorize any Gate transition.
 
+<a id="v3-024-r2-administrative-effectiveness-record"></a>
+## V3-024 R2 — Administrative Record of Level 2 Effectiveness
+
+- Administrative task: `V3-024-R2-E5-ADMINISTRATIVE-GOVERNANCE-RECORDING`.
+- Authority and evidence provenance: explicit TAO E5 authorization and the completed independent E4
+  report in the project conversation; this record documents their outcome, not a new TAO decision.
+- Source determination: `ADR-V3-016 / DEC-016 / NESHANE-V3-ARCH-P00-006`.
+- `FORMAL LEVEL 2 DETERMINATION: ISSUED — CONDITIONAL`.
+- `NESHANE-V3-ARCH-P00-006: EFFECTIVE FOR DESIGN_ONLY / REFERENCE_ONLY FROM 2026-11-13T14:21:48+03:30`.
+- Prior effective design/reference baseline: `NESHANE-V3-ARCH-P00-005`; its history remains intact.
+- ADR lifecycle: `ACCEPTED`; effectiveness is a qualification, not a new lifecycle status.
+
+| Historical event | Recorded outcome |
+| --- | --- |
+| E1 — TAO issuance | COMPLETED — explicit owner declaration |
+| E2 — Registration commit | COMPLETED — `f2c8b34045f797439bb182e890637c5260542cac`; parent `8b14ca208a0d3ba14052e0d00ce90fc907ea80fb`; tree `8059a315efe883d50cf7a8355c6a22d8bb8660e4` |
+| E3 — Root main recording | COMPLETED — `refs/heads/main` fast-forwarded from that parent to that commit at `2026-11-13T12:04:15+03:30` |
+| E4 — Independent verification | PASSED — task `V3-024-R2-EG01-REVERIFY-FINAL-INDEPENDENT`; actual completion `2026-11-13T14:21:48+03:30` |
+
+`FINAL E4 INDEPENDENT REASSESSMENT: PASSED`;
+`EVENT 4: COMPLETED — INDEPENDENTLY VERIFIED`;
+`FOUR-EVENT BOUNDARY: SATISFIED`.
+The completion time was captured from the Windows local system clock, Iran Standard Time (+03:30),
+at second precision after the final verification checks. E5 is administrative documentation only:
+it is not a fifth effectiveness event, does not establish a new effective date and does not make
+P00-006 effective before the exact E4 timestamp. E2/E3 timestamps and any E5 commit time are not substitutes.
+
+### Evidence sufficiency and preserved historical limitations
+
+`EVIDENCE-GAP-01: RESOLVED UNDER APPROVED LIMITED EVIDENTIARY STANDARD — CONTROL A`.
+The TAO explicitly approved Control A: comparison of Git refs immediately before and after E3.
+The contemporaneous endpoint audit reported only `refs/heads/main` changed; reflogs and review of
+the audit procedure corroborated the result. Evidence package: EG01-E01/E02/E03/E06/E08/E09.
+The independent reassessment validated the limited disposition against applicable governance;
+no mandatory non-waivable control was found bypassed, and no separate amendment was required.
+The helper logic, execution assertion and derived E3 report are not independent observations.
+
+- `COMPLETE RAW HISTORICAL REF INVENTORIES: NOT RECOVERED`.
+- `CONTROL B: NOT INDEPENDENTLY PROVEN` — absence of every transient ref movement at any instant
+  is not claimed. No positive evidence of unauthorized ref movement was found in the reviewed evidence.
+- Earlier E4 Outcome B (`V3-024-R2-CONDITIONAL-LEVEL2-INDEPENDENT-POST-RECORDING-VERIFICATION`)
+  and EG01 Assessment B (`V3-024-R2-E4-EVIDENCE-GAP-01-READONLY-ASSESSMENT`) remain audit history.
+  Final E4 Outcome A supersedes their pending operational status, not their historical evidence limitations.
+- Both original registration and original preservation/adoption authorization deviations remain preserved;
+  `RETROACTIVE AUTHORIZATION: NOT GRANTED`. Prospective reconciliation does not rewrite those events.
+
+### Administrative recording and unchanged downstream boundaries
+
+This E5 package is prepared for the separately authorized single Registration-branch documentation
+commit. Its actual commit identity and completion are reported after execution, not prepopulated here.
+`E5 AUTHORITATIVE ROOT MAIN RECORDING: PENDING SEPARATE AUTHORIZATION`.
+The determination is already on local main at the E2 commit; this new administrative package is not.
+The approved ADR and embedded/external artifact remain unchanged historical records; their pre-E4
+status wording is not rewritten. All 47 conditions, P01–P05 and existing Open Decision statuses remain intact.
+
+```text
+R2 ARCHITECTURE ACCEPTANCE: PENDING
+INDEPENDENT SECURITY REVIEW: PENDING
+V3-017 FORMAL R1: PENDING
+V3-023 FORMAL B1: PENDING
+FINAL TENANT ISOLATION ACCEPTANCE: PENDING
+V3-024 IMPLEMENTATION: BLOCKED — NOT AUTHORIZED
+V3-022 STAGE B2: NOT AUTHORIZED
+BACKEND SYNCHRONIZATION: NOT PERFORMED
+CONTRACT PUBLICATION: NOT AUTHORIZED
+PRODUCTION PROMOTION: NOT AUTHORIZED
+RETROACTIVE AUTHORIZATION: NOT GRANTED
+```
+
+Design/reference effectivity is not deployment acceptance, security approval, Tenant Isolation
+acceptance or operational/production readiness. It grants no implementation authority, including
+Frontend, Backend or V3-025, and no contract publication, synchronization or downstream Gate transition.

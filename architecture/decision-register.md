@@ -1,5 +1,13 @@
 # Neshane V3 decision register
 
+E5 administrative qualification (`V3-024-R2-E5-ADMINISTRATIVE-GOVERNANCE-RECORDING`):
+DEC-016 / ADR-V3-016 / P00-006 are effective in `DESIGN_ONLY / REFERENCE_ONLY` scope from
+`2026-11-13T14:21:48+03:30`, following final independent E4 Outcome A and satisfaction of E1–E4.
+See the [administrative effectiveness record](governance-synchronization.md#v3-024-r2-administrative-effectiveness-record)
+for Control A sufficiency, unrecovered raw inventories, unproven Control B and unchanged restrictions.
+Earlier non-effective/PENDING wording below is retained pre-E4 history. The ADR lifecycle remains
+`ACCEPTED`; P00-005 history is preserved. E5 is not a new effectiveness decision or implementation authorization.
+
 Architecture version: `NESHANE-V3-ARCH-P00-005` upon traceable commit of the OD-020 decision package. DEC-001 through DEC-012 were accepted through project-owner approval recorded in Task R0-001 on 2026-10-23; DEC-013 was accepted by the Technical Architecture Owner under the V3-006 Level 2 protocol on 2026-10-30; DEC-014 was explicitly approved by the CPO/Technical Architecture Owner through the OD-008 formal-closure task; DEC-015 is accepted by the Technical Architecture Owner and scoped interim Quality Authority through the OD-020 finalization task. Acceptance is architectural authority, not evidence of implementation or production readiness.
 
 Approval provenance: the project owner supplied the explicit R0 decisions recorded in R0-001; Codex converted them into DEC/ADR documentation under R0-001. The Technical Architecture Owner/CPO explicitly supplied the V3-005 OD-002 through OD-004 selections recorded as DEC-013/ADR-V3-013, the OD-008 API/event versioning selection recorded as DEC-014/ADR-V3-014 and the complete OD-020 disposition recorded as DEC-015/ADR-V3-015. DEC-015 includes a separate scoped interim Quality Authority review with the same role holder and disclosed dual capacity. No independent Security, organizational Quality, Operations or Developer Experience approval is claimed.
