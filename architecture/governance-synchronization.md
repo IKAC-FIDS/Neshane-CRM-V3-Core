@@ -241,3 +241,170 @@ RETROACTIVE AUTHORIZATION: NOT GRANTED
 Design/reference effectivity is not deployment acceptance, security approval, Tenant Isolation
 acceptance or operational/production readiness. It grants no implementation authority, including
 Frontend, Backend or V3-025, and no contract publication, synchronization or downstream Gate transition.
+
+<a id="v3-024-r2-applicability-exit-boundary"></a>
+## V3-024 R2 — Architecture Acceptance Applicability & Exit Boundary
+
+### Identity, authority and provenance
+
+- Registration task: `V3-024-G-R2-APPLICABILITY-FORMAL-REGISTRATION`.
+- Related task / Gate / finding: `V3-024 / G-R2 — Architecture Acceptance / F-R2-01`.
+- Decision authority: project Technical Architecture Owner (TAO), under
+  [Task Governance, Level 2](task-governance.md#level-2--architecture-decision).
+- Approval provenance: explicit TAO approval of the applicability content and the exact
+  decision text in the current project conversation; registration-only authorization in
+  the named task. No separate signature, meeting or absolute historical approval timestamp
+  is supplied or invented. The Registration commit time is not the TAO approval time.
+- Approved baseline: `NESHANE-V3-ARCH-P00-006`; related records:
+  [ADR-V3-016](adr/016-dedicated-managed-reference-architecture.md) / `DEC-016` in the
+  [Decision Register](decision-register.md#v3-024-r2-applicability-registration).
+- Reviewed Root commit: `f46b14cded107589eccdaf1d6671599d18f6a010`;
+  tree: `4955da856db632d3b970a3890a0383fceb4a1955`.
+- Referenced Backend evidence commit: `938b9e7e3a0feaed4f3c09056f70365313dabb7e`;
+  pinned reference evidence only, not synchronization or acceptance through this task.
+- Architecture scope: `DESIGN_ONLY / REFERENCE_ONLY`. P00-006's existing effectiveness
+  remains `2026-11-13T14:21:48+03:30`; this record changes neither that time nor the
+  substantive architecture, ADR lifecycle, governance label or architecture revision.
+
+### Context, alternatives and rationale
+
+The independent review `V3-024-G-R2-INDEPENDENT-ARCHITECTURE-ACCEPTANCE-READONLY`
+returned `Recommendation B — CONDITIONAL / REMEDIATION REQUIRED`. Its sole blocker
+to an unconditional overall G-R2 recommendation was `F-R2-01`: missing approved
+applicability / exit criteria allocation. The subsequent validation
+`V3-024-G-R2-APPLICABILITY-VALIDATION-READONLY` found TAO authority and compatible
+content, but returned `G-R2 APPLICABILITY VALIDATION: CONDITIONAL` and
+`F-R2-01: CONDITIONALLY RESOLVED — FORMAL RECORDING OR OTHER PREREQUISITE REQUIRED`.
+
+The 47 conditions include design obligations and later real implementation/runtime
+verification. The TAO selected a bounded design-only exit allocation, rather than
+requiring all future runtime evidence at this design Gate or treating design approval
+as proof of deployed behavior. This preserves mandatory later obligations without
+changing a condition. The present traceable recording is intended to remedy the
+source-controlled registration deficiency under Task Governance, Level 2 steps 1–6.
+Neither prior review's HOLD/PENDING history is rewritten as retrospective acceptance.
+
+### TAO-approved decision
+
+For V3-024 R2, the applicability and exit boundary of G-R2 Architecture Acceptance is limited to architectural design adequacy within:
+
+`DESIGN_ONLY / REFERENCE_ONLY`.
+
+All 47 conditions approved under ADR-V3-016 remain binding.
+
+Implementation verification, independent Security Review, real runtime Tenant Isolation verification, and Production Readiness are allocated to their respective later Governance Gates.
+
+These obligations are not waived, completed, accepted or converted into design-only proofs.
+
+For:
+
+`OF-006 / condition 10`
+
+actual continuation of operations during loss of Central connectivity is prohibited unless an operation-specific continuation policy has been independently approved under the applicable authority and verification process.
+
+All existing Open Decisions retain their current statuses, owners and milestone requirements.
+
+This includes:
+
+- `OD-009`
+- `OD-010`
+- `OD-011`
+- `OD-012`
+- `OD-013`
+- `OD-014`
+- `OD-015`
+- `OD-019`
+- `OD-022`
+- `OD-023`
+
+The decision does not automatically close any Open Decision or select an unresolved production implementation mechanism.
+
+Reuse of V3-017 engineering evidence or mechanisms in V3-024 requires separate scoped validation and authorization.
+
+V3-022 Stage B2 remains unauthorized.
+
+Backend synchronization remains unauthorized.
+
+Frontend and Backend implementation remain unauthorized.
+
+This applicability decision is separate from formal acceptance of G-R2 itself.
+
+It does not constitute:
+
+- Formal G-R2 acceptance.
+- Independent Security Sign-off.
+- Runtime Tenant Isolation acceptance.
+- Acceptance of any previously unapproved security risk.
+- Approval of real offline continuation.
+- Approval of deployment or production topology.
+- Contract publication authorization.
+- Merge or production promotion authorization.
+- Authorization of implementation.
+- Retrospective approval of historical activity.
+
+### Binding condition allocation and dependencies
+
+The prior independent review classified 41 conditions as `DESIGN SATISFIED`, one as
+`DESIGN PARTIAL`, and five as `IMPLEMENTATION EVIDENCE REQUIRED` (47 total). These
+are review classifications, not rewritten approval statuses or completed controls.
+All detailed source obligations incorporated by ADR-V3-016, embedded §3, remain binding.
+
+| Required verification | Preserved later evidence boundary |
+| --- | --- |
+| DB-001 / condition 6 | Real PostgreSQL roles, read/write RLS, Connection Pool and unauthorized cross-service/Cell access verification before Runtime Isolation acceptance; DB-001 §§7–7.1. |
+| RT-002 / condition 6 | Separately authorized Network Isolation, Readiness, Service Lifecycle, Recovery and owned-resource cleanup verification before accepting the corresponding runtime behavior; RT-002 §§8–10. |
+| OA-003 / condition 8 | Separately authorized real Identity, Trust, Execution, Adapter Isolation and Recovery verification for the corresponding implementation/runtime and Security acceptance; OA-003 §11. |
+| CL-004 / condition 8 | Separately authorized real database and Credential Lifecycle verification before Runtime acceptance, including session/pool and failure/recovery behavior; CL-004 §12. |
+| RTR-005 / condition 8 | Separately authorized positive/negative Routing, Trust and Forwarding verification for the corresponding runtime/Security/Tenant Isolation acceptance; RTR-005 §11. |
+
+No test above is recorded as executed or passed. Prerequisites required before
+authorization of an implementation activity are not deferred until after that activity:
+ADR-V3-016, embedded §5, still requires scoped OD/dependency disposition, an explicit
+component/file boundary, a real verification plan, applicable independent Security
+requirements and separate traceable implementation authorization.
+
+`OF-006 / condition 10: DESIGN PARTIAL` remains the review classification.
+`ACTUAL CONTINUATION WITHOUT A SEPARATELY APPROVED OPERATION-SPECIFIC POLICY: NOT AUTHORIZED`.
+Policy approval alone does not waive the other continuation conditions or execution gates.
+
+The [Open Decision Register](open-decisions.md) retains every status, proposed owner
+and milestone; OD-023's SLO/RTO/RPO/capacity scope is not replaced by an outage policy.
+V3-016 hosted-governance/independent-review limitations, V3-017 pending Formal R1 and
+scoped reuse requirements, V3-022 B2 restrictions, and V3-023 pending Formal B1,
+Security and final isolation remain as documented in ADR-V3-016, embedded §5.
+Shared-profile evidence is not Dedicated Managed acceptance; contract design is not
+contract publication. Backend propagation remains pending under a separate authorized
+task; independent Security Review, Final Tenant Isolation Acceptance, implementation
+and production approval requirements remain intact. F-R2-02 through F-R2-06 and their
+underlying obligations are not closed by this applicability record.
+
+### Contract impact, consequences and recording boundary
+
+Under the [Contract Change Protocol](contract-change-protocol.md), §§Change classification,
+Change workflow and Review and evidence gates, this is bounded Governance recording:
+no API/OpenAPI, event, schema, persistence migration, SDK, integration contract, service
+ownership boundary or compatibility guarantee changes. No contract revision, publication,
+consumer migration or runtime rollback is triggered. ADR-V3-016's conditions and explicit
+exclusions remain unchanged; no new global ADR/DEC, OD resolution or substantive
+architecture replacement is introduced. Administrative cross-references are confined to
+this record and the Decision Register. Reference/content validation is documentary only,
+not a contract-testing, Security or runtime PASS.
+
+`F-R2-01: TAO APPLICABILITY CONTENT APPROVED — FORMAL REGISTRATION IN PROGRESS`.
+This is the pre-commit recording state. The resulting Registration commit identity,
+parent, tree, actual timestamp and postflight results are reported after execution,
+not prepopulated or substituted for historical approval evidence. Successful Registration
+commit verification is distinct from authoritative Main recording and formal Gate use;
+no full F-R2-01 resolution or new applicability-effectiveness timestamp is asserted here.
+Authoritative Main recording and applicable procedural verification remain pending,
+requiring separate authorization. No historical E1–E5 event or EG01 outcome is reopened.
+
+```text
+AUTHORITATIVE MAIN RECORDING: NOT AUTHORIZED — PENDING
+V3-024 / G-R2: PENDING
+```
+
+Formal G-R2 acceptance requires its own subsequent explicit TAO decision. Registration
+does not supply Independent Security Sign-off, Final Tenant Isolation Acceptance,
+risk acceptance, Backend synchronization, implementation, V3-017 reuse, V3-022 B2,
+merge, contract publication, deployment, release or production promotion authority.

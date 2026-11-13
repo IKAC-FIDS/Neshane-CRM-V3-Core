@@ -61,6 +61,21 @@ submission, independent security approval or authorization for future Git operat
 
 R0-001 ratified DEC-001 through DEC-012 and formalized them as ADR-V3-001 through ADR-V3-012. V3-005 resolves OD-002 through OD-004 through DEC-013/ADR-V3-013. The OD-008 formal-closure task resolves API/event versioning through DEC-014/ADR-V3-014. The OD-020 finalization task resolves contract-testing governance through DEC-015/ADR-V3-015, effective upon its traceable Level 2 commit. Any material change requires a traceable superseding/deprecating ADR rather than silent edits. OD-001, OD-005 through OD-007, OD-009 through OD-019 and OD-021 through OD-023 remain Open.
 
+<a id="v3-024-r2-applicability-registration"></a>
+## V3-024 R2 applicability registration — separate from Gate acceptance
+
+The TAO approved **V3-024 R2 — Architecture Acceptance Applicability & Exit Boundary**
+in the current project conversation. Task `V3-024-G-R2-APPLICABILITY-FORMAL-REGISTRATION`
+records that limited decision under existing `ADR-V3-016 / DEC-016 / P00-006`, not a
+new global decision or substantive ADR amendment. See the
+[full decision, rationale, condition allocation, contract impact and recording boundary](governance-synchronization.md#v3-024-r2-applicability-exit-boundary).
+All 47 conditions, existing Open Decisions and later mandatory verification remain binding.
+`F-R2-01: TAO APPLICABILITY CONTENT APPROVED — FORMAL REGISTRATION IN PROGRESS` is the
+pre-commit record; Registration verification and authoritative Main recording are distinct.
+Main recording is `NOT AUTHORIZED — PENDING`; `V3-024 / G-R2: PENDING`.
+No implementation, synchronization, Security/isolation acceptance or publication is authorized.
+The historical records below and P00-006 effectivity at `2026-11-13T14:21:48+03:30` are unchanged.
+
 ## V3-024 proposed consolidated registration — not effective
 
 The following single entry is part of the technically adopted, non-effective governance candidate,
