@@ -94,10 +94,16 @@ staging and reconciliation commit were completed and separately recorded in loca
 The Technical Architecture Owner's subsequent explicit conversation disposition resolves the
 procedural reconciliation prerequisite prospectively, without retrospective authorization.
 See [ADR-V3-016 registration boundary](016-dedicated-managed-reference-architecture.md#registration-boundary-and-source-control).
-The new disposition metadata is authored — unstaged/uncommitted; its repository recording is PENDING.
-Formal effectiveness remains NOT ESTABLISHED pending disposition recording/verification,
-applicable registration evidence and a separately authorized, recorded and verified Formal Level 2
-Effectiveness Determination. Current authoring authorizes no Git mutation or Gate transition.
+The prospective disposition is recorded in local Root main at
+`8b14ca208a0d3ba14052e0d00ce90fc907ea80fb`, tree `a4684e446cf1b190b073fc44e6bf7b90a5cedfcf`.
+`FORMAL LEVEL 2 DETERMINATION: ISSUED — CONDITIONAL`; the TAO explicitly issued it for
+ADR-V3-016, DEC-016 and P00-006 in DESIGN_ONLY / REFERENCE_ONLY scope.
+See the [conditional determination and approved four-event boundary](016-dedicated-managed-reference-architecture.md#conditional-level2-determination).
+Only owner issuance (Event 1) is completed. Determination Git recording, local Root main recording
+and independent post-recording verification (Events 2–4) remain PENDING; formal effectiveness is
+NOT ESTABLISHED. Its effective date is the documented actual completion time of the last required
+event unless the TAO explicitly approves a later prospective date; no actual timestamp is assigned.
+Each future execution step requires separate authorization; current authoring grants no Gate transition.
 No lifecycle vocabulary, existing ADR status or overall R2 gate changes.
 
 | ADR ID | Title | Status | Replaces | Related decisions/tasks |
@@ -117,7 +123,7 @@ No lifecycle vocabulary, existing ADR status or overall R2 gate changes.
 | [ADR-V3-013](013-backend-foundation-toolchain.md) | Backend foundation toolchain and build layout | Accepted | — | DEC-013; OD-002–OD-004; V3-005 |
 | [ADR-V3-014](014-api-event-versioning.md) | REST and event contract versioning | Accepted; effective upon traceable commit | — | DEC-014; OD-008 |
 | [ADR-V3-015](015-contract-testing-strategy.md) | Risk-based contract testing strategy | Accepted; effective upon traceable commit | — | DEC-015; OD-020 |
-| [ADR-V3-016](016-dedicated-managed-reference-architecture.md) | Consolidated V3-024 R2 Dedicated Managed Reference Architecture; six traceable sub-decisions | ACCEPTED — intended lifecycle; CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY; TECHNICALLY PRESENT IN ROOT MAIN; FORMAL LEVEL 2 EFFECTIVENESS NOT ESTABLISHED; RETAINED FOR RECONCILIATION ONLY | — | DEC-016; V3-024; DB-001/RT-002/OA-003/CL-004/RTR-005/OF-006; 47 conditions |
+| [ADR-V3-016](016-dedicated-managed-reference-architecture.md) | Consolidated V3-024 R2 Dedicated Managed Reference Architecture; six traceable sub-decisions | ACCEPTED — intended lifecycle; CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY; FORMAL LEVEL 2 DETERMINATION ISSUED — CONDITIONAL; EFFECTIVENESS NOT ESTABLISHED pending the approved four-event boundary; existing technical main content retained for reconciliation only | — | DEC-016; V3-024; DB-001/RT-002/OA-003/CL-004/RTR-005/OF-006; 47 conditions |
 
 ADR-V3-016 is technically present in Root main as `NESHANE-V3-ARCH-P00-006`,
 a non-effective governance candidate. P00-005 remains the last confirmed effective governance baseline. The overall

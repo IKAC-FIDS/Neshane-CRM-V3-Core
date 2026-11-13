@@ -1,7 +1,7 @@
 # ADR-V3-016: Consolidated Dedicated Managed reference architecture
 
 - Status: ACCEPTED
-- Document reconciliation state: PROSPECTIVE DISPOSITION METADATA AUTHORED — UNSTAGED / UNCOMMITTED; FORMAL LEVEL 2 EFFECTIVENESS NOT ESTABLISHED
+- Document reconciliation state: PROSPECTIVE DISPOSITION RECORDED — LOCAL MAIN; FORMAL LEVEL 2 DETERMINATION ISSUED — CONDITIONAL; FORMAL LEVEL 2 EFFECTIVENESS NOT ESTABLISHED
 - Status qualification: ACCEPTED is the authorized intended Root lifecycle, not an effective repository transition.
 - Technical Root main adoption: VERIFIED — `a6558556df6c81d04a4e610ae7698e51071ab2ee`; technical presence does not establish formal effectiveness.
 - Authoring task: V3-024 / R2 — Controlled Root Architecture Decision Document Authoring
@@ -9,9 +9,9 @@
 - Related Open Decisions: OD-009, OD-010, OD-011, OD-012, OD-013, OD-014, OD-015, OD-019, OD-022, OD-023; all remain OPEN.
 - Decision owner / required architecture approval authority: project Technical Architecture Owner under V3-006.
 - Approved architecture disposition: CONDITIONALLY ACCEPTED — DESIGN_ONLY / REFERENCE_ONLY.
-- Approval provenance: explicit Technical Architecture Owner approval in the project conversation of the corrected P01–P05 disposition, six directions, 47 conditions, lifecycle mapping and consolidated Root record; Option A approved prospective registration, and the post-adoption disposition retained the actual Git state for reconciliation only. The subsequent prospective disposition resolves the procedural reconciliation prerequisite only; this task authorizes its limited metadata authoring, not formal effectiveness.
-- Decision date: NOT RECORDED; no drafting date is substituted.
-- Effective date: NOT RECORDED; formal effectiveness requires repository recording and verification of the new owner disposition, applicable registration-evidence verification and a separately authorized, recorded and verified Formal Level 2 Effectiveness Determination. Neither technical adoption nor prospective procedural resolution is an effective date.
+- Approval provenance: explicit Technical Architecture Owner approval in the project conversation of the corrected P01–P05 disposition, six directions, 47 conditions, lifecycle mapping and consolidated Root record; Option A approved prospective registration, and the post-adoption disposition retained the actual Git state for reconciliation only. The prospective procedural disposition is recorded in local Root main. The TAO has subsequently issued the conditional determination below; its Git recording, Root main recording and independent post-recording verification remain PENDING.
+- Decision date: Absolute issuance timestamp NOT RECORDED; conditional issuance is attributable to the explicit TAO declaration in conversation, not a fabricated drafting date.
+- Effective date: PENDING — the documented actual completion time of the last required event in the owner-approved four-event boundary below, unless the TAO explicitly approves a later prospective date. No actual effectiveness timestamp is assigned.
 - Actual original local candidate commit: `fd1e1703afc4fe730ae6e86f1ef72573106082f8`; parent `c3926e6a8c9847281d49987abdbafbbced562dbb`.
 - Authorized metadata correction commit: `3d6fffea83a7a2fc4c10300ccf5792224edabeba`; parent `fd1e1703afc4fe730ae6e86f1ef72573106082f8`.
 - Authorized final metadata commit: `a6558556df6c81d04a4e610ae7698e51071ab2ee`; parent `3d6fffea83a7a2fc4c10300ccf5792224edabeba`.
@@ -27,10 +27,9 @@
 - POST-ADOPTION RECONCILIATION RECORDING: COMPLETED — LOCAL MAIN; HEAD `39787784980380271753bad8e4a8c164d881fe51`, tree `2754bc717e8005f24be8430f08a53242d6a8fcd2`.
 - PROCEDURAL RECONCILIATION PREREQUISITE: RESOLVED PROSPECTIVELY — OWNER DISPOSITION
 - DISPOSITION PROVENANCE: EXPLICIT OWNER DECLARATION IN CONVERSATION
-- DISPOSITION METADATA: AUTHORED — UNSTAGED / UNCOMMITTED
-- DISPOSITION REPOSITORY RECORDING: PENDING
+- PROSPECTIVE DISPOSITION ROOT MAIN RECORDING: COMPLETED — LOCAL MAIN; commit `8b14ca208a0d3ba14052e0d00ce90fc907ea80fb`, tree `a4684e446cf1b190b073fc44e6bf7b90a5cedfcf`.
 - Historical STG-01 approvals: original ADR blob `46a46d5a75b0e5349015b0fb36bc5825a6c09ecc`, lines 174–182; explicitly approved renewed scope for corrected blob `a86082729e4ddd676497c37ede2c23e233d92a10`, lines 186–194; final registration scope blob `97160d238b99867e0f31c14fbd0731f0947e517e`, lines 205–213; post-adoption reconciliation scope blob `e1f33321c1fad8f097c1bd108c40f22286aadaba`, lines 224–232. Each historical scope covers exactly nine two-ASCII-space hard breaks in approved artifact lines 3–11.
-- Prospective STG-01 scope: no historical approved blob scope extends to a new ADR blob. Before future staging or commit, separately assess the new identity and line locations and obtain explicit renewed authorization where necessary; none is granted by this authoring task.
+- Prospective disposition STG-01 approval: exact blob `fbf30e21358bc7be5fa70d4da09f32c2cf20ccdb`, lines 243–251, covers nine two-ASCII-space hard breaks in artifact lines 3–11. That approval does not transfer to this changed ADR. NEW ADR STG-01 AUTHORIZATION: NOT YET GRANTED; its prospective blob and line mapping require separate owner review before separately authorized staging.
 - Prepared architecture revision: NESHANE-V3-ARCH-P00-006 — PRESENT IN ROOT MAIN; NON-EFFECTIVE GOVERNANCE CANDIDATE.
 - LAST CONFIRMED EFFECTIVE GOVERNANCE BASELINE: NESHANE-V3-ARCH-P00-005.
 - Governance reference: NESHANE-V3-GOV-P00-000A — unchanged.
@@ -44,7 +43,7 @@
 
 This is one consolidated Root ADR with six independently traceable sub-decisions.
 The proposed ACCEPTED lifecycle and conditional approval disposition are separate.
-Neither the technically adopted registration package nor this unstaged prospective disposition establishes
+Neither the technically adopted registration package nor the issued conditional determination establishes present
 effective registration, closes the overall R2 gate, authorizes implementation or accepts
 security risk. Existing Backend task-scoped ADR statuses remain unchanged until
 separately authorized synchronization after effective Root registration.
@@ -68,13 +67,14 @@ assessment, the Technical Architecture Owner explicitly determined in conversati
 those completed actions are sufficient prospectively to resolve the procedural reconciliation
 prerequisite for proceeding to a separate Formal Level 2 Effectiveness Determination.
 Both historical deviations remain recorded; no retrospective authorization is granted.
-The new disposition is drafted here only; its repository recording remains PENDING.
-Formal Level 2 effectiveness is NOT ESTABLISHED. It still requires recording and verification
-of this disposition, applicable registration evidence and a separately authorized, recorded
-and verified effectiveness decision. Technical main content
+The prospective disposition was recorded in local Root main at
+`8b14ca208a0d3ba14052e0d00ce90fc907ea80fb`, tree `a4684e446cf1b190b073fc44e6bf7b90a5cedfcf`.
+The subsequent TAO determination is ISSUED — CONDITIONAL, not an additional prospective disposition.
+Formal Level 2 effectiveness is NOT ESTABLISHED; the determination's separately authorized Git recording,
+Root main recording and independent post-recording verification remain PENDING. Technical main content
 is distinct from the last confirmed effective governance baseline P00-005.
 This registration-specific boundary changes no general Level 2 rule. Current permission
-covers metadata authoring only, not Git mutations or a Governance Gate transition.
+covers Working Tree metadata edits only, not staging, commit, Main recording or a Governance Gate transition.
 
 | Source / artifact | Exact identity |
 | --- | --- |
@@ -88,6 +88,7 @@ covers metadata authoring only, not Git mutations or a Governance Gate transitio
 | Actual signature, external approval ID or submission | NOT RECORDED; none is invented or required here as a substitute for project authority |
 | Root main adoption evidence | VERIFIED: `a6558556df6c81d04a4e610ae7698e51071ab2ee`; tree `9e38354343ae8587f815b35929ff52d8b874fbff`; main reflog `2026-11-11T23:48:51+03:30`, Fast-forward; execution authorization at time NOT GRANTED |
 | Authorized post-adoption reconciliation recording | COMPLETED — LOCAL MAIN: `39787784980380271753bad8e4a8c164d881fe51`; tree `2754bc717e8005f24be8430f08a53242d6a8fcd2`; separately authorized commit and verified one-commit main recording |
+| Prospective disposition recording | COMPLETED — LOCAL MAIN: `8b14ca208a0d3ba14052e0d00ce90fc907ea80fb`; tree `a4684e446cf1b190b073fc44e6bf7b90a5cedfcf`; this is not an effectiveness commit |
 | Backend synchronization commit | NOT RECORDED; propagation NOT PERFORMED |
 
 The artifact body below is embedded verbatim. Its DRAFT labels, reserved fields,
@@ -96,8 +97,8 @@ text. They describe that approved source artifact, not a newly fabricated submis
 or registration. The intended mapping has subsequently been explicitly selected:
 CONDITIONALLY ACCEPTED disposition maps to ACCEPTED lifecycle for bounded design.
 This wrapper records original authoring, committed metadata revisions, technical
-adoption, post-adoption retention, authorized reconciliation recording and the new prospective
-owner disposition without editing the artifact. The actual four-commit chain is
+adoption, post-adoption retention, authorized reconciliation recording, recorded prospective
+owner disposition and subsequent conditional determination without editing the artifact. The five-commit chain is
 recorded above; its existence does not establish effective formal registration.
 
 ## Context, decision and independently traceable sub-decisions
@@ -178,7 +179,7 @@ restoration, automatic reconciliation winner, migration or executable DURABLE_DE
 is authorized. Future schema recovery uses owned forward-fix/reviewed restoration,
 not unsafe automatic downgrade. No rollback or runtime procedure is executed here.
 
-For this prospective disposition metadata authoring, corrections remain unstaged and reviewable within the authorized
+For this conditional determination controlled authoring, corrections remain unstaged and reviewable within the authorized
 allowlist; do not erase unrelated user work. After effective registration, an
 editorial correction must remain traceable; a material change to a sub-decision
 requires the existing Root ADR revision/supersession process, identifying the exact
@@ -191,11 +192,11 @@ one sub-decision through a mutable source link.
 - `GOVERNANCE DIRECTION: APPROVED — OPTION A`
 - `POST-ADOPTION RETENTION: APPROVED FOR RECONCILIATION ONLY`
 - `POST-ADOPTION RECONCILIATION RECORDING: COMPLETED — LOCAL MAIN`
-- `ROOT MAIN HEAD: 39787784980380271753bad8e4a8c164d881fe51`
+- `HISTORICAL POST-ADOPTION RECONCILIATION ROOT MAIN HEAD: 39787784980380271753bad8e4a8c164d881fe51`
 - `PROCEDURAL RECONCILIATION PREREQUISITE: RESOLVED PROSPECTIVELY — OWNER DISPOSITION`
 - `DISPOSITION PROVENANCE: EXPLICIT OWNER DECLARATION IN CONVERSATION`
-- `DISPOSITION METADATA: AUTHORED — UNSTAGED / UNCOMMITTED`
-- `DISPOSITION REPOSITORY RECORDING: PENDING`
+- `PROSPECTIVE DISPOSITION ROOT MAIN RECORDING: COMPLETED — LOCAL MAIN`
+- `FORMAL LEVEL 2 DETERMINATION: ISSUED — CONDITIONAL`
 - `FORMAL LEVEL 2 EFFECTIVENESS: NOT ESTABLISHED`
 - `ADR-V3-016 FORMAL LEVEL 2 EFFECTIVENESS: PENDING`
 - `DEC-016 FORMAL LEVEL 2 EFFECTIVENESS: PENDING`
@@ -217,12 +218,11 @@ one sub-decision through a mutable source link.
 - `CONTRACT PUBLICATION: NOT AUTHORIZED`
 - `PRODUCTION PROMOTION: NOT AUTHORIZED`
 
-Separate authorization is required for staging/committing this prospective disposition metadata,
-any further Git operation, Backend synchronization, merge/publication and implementation.
-Retention does not authorize repeating or reversing adoption. This authoring task authorizes
-no Governance Gate transition or effectiveness declaration. Formal effectiveness remains
-pending repository recording and verification of this owner disposition, applicable registration-evidence
-validation and a separately authorized, recorded and verified Formal Level 2 Effectiveness Determination.
+Separate authorization is required for staging/committing this conditional determination metadata,
+Root main recording, independent post-recording verification, Backend synchronization,
+merge/publication and implementation. Retention does not authorize repeating or reversing adoption.
+This authoring task authorizes no Governance Gate transition or effectiveness activation.
+Formal effectiveness remains subject to the owner-approved four-event boundary below.
 Root and Backend commits remain independently traceable; no cross-repository atomicity is claimed.
 No Frontend synchronization is performed. Required later propagation is documented
 in [Governance Synchronization](../governance-synchronization.md#v3-024-r2-proposed-registration-and-pending-propagation).
@@ -230,6 +230,74 @@ in [Governance Synchronization](../governance-synchronization.md#v3-024-r2-propo
 Applicable rules remain [Root task governance](../task-governance.md#level-2--architecture-decision),
 [ADR lifecycle](README.md), ADR-V3-003/005/007/010/011/012 and ADR-V3-014/015.
 No general governance rule is amended by this bounded authoring.
+
+<a id="conditional-level2-determination"></a>
+## Conditional Formal Level 2 determination — issued, not effective
+
+- Authoring task: `V3-024-R2-CONDITIONAL-LEVEL2-DETERMINATION-CONTROLLED-AUTHORING`.
+- Decision authority: Technical Architecture Owner under the existing Level 2 process.
+- `FORMAL DETERMINATION AUTHORITY: EXPLICIT TAO DECLARATION IN CONVERSATION`.
+- `FORMAL LEVEL 2 DETERMINATION: ISSUED — CONDITIONAL`.
+- Covered identifiers: `ADR-V3-016`, `DEC-016`, `NESHANE-V3-ARCH-P00-006`.
+- Scope: `DESIGN_ONLY / REFERENCE_ONLY` architecture governance for the disposable Dedicated Managed reference architecture.
+- `FORMAL LEVEL 2 EFFECTIVENESS: NOT ESTABLISHED`.
+
+The owner has explicitly issued this conditional determination and approved its prospective,
+event-based boundary. The issuing authority is the TAO declaration, not the earlier Codex draft
+or this authoring operation. No additional approval event, decision identifier, signature,
+absolute issuance timestamp or actual effectiveness timestamp is created here.
+
+Its design-content scope is the immutable approved artifact SHA-256
+`aa651e4e45355fb4bc80adf40cf6cd0fc125a702afb686891c28de4535bf0040`, embedded below and identified
+in the source table. DB-001 A (7), RT-002 A (6), OA-003 B (8), CL-004 B (8), RTR-005 B (8)
+and OF-006 B (10) retain all 47 binding conditions, P01–P05, stable architecture anchors,
+detailed pinned requirements, dependencies and risk qualifications. They are neither reapproved,
+modified nor waived by this determination; no implementation or operational fulfillment is claimed.
+
+The procedural reconciliation prerequisite is already resolved prospectively and its disposition
+recorded at `8b14ca208a0d3ba14052e0d00ce90fc907ea80fb`; it is not reopened or reissued.
+Both historical deviations in the registration boundary above remain independent historical facts.
+`RETROACTIVE AUTHORIZATION: NOT GRANTED` applies to both.
+
+### Owner-approved prospective effectiveness boundary
+
+Formal Level 2 design-governance effectiveness begins only after all four events have occurred:
+
+| Event | Required event | Current completion status |
+| --- | --- | --- |
+| 1 | Explicit TAO issuance of the conditional determination, including its approved scope and effectiveness boundary | COMPLETED — EXPLICIT TAO DECLARATION IN CONVERSATION |
+| 2 | Recording of the exact issued determination and associated governance metadata in a separately authorized, traceable Git commit | PENDING |
+| 3 | Recording of that determination commit in authoritative local Root `main` through a separately authorized operation | PENDING |
+| 4 | Separately authorized independent read-only post-recording verification of the exact determination, commit/tree, approved artifact, six decisions, all 47 conditions, P01–P05, governance metadata, historical authorization boundaries, Original Root/Local-Infra and Backend protection, Open Decisions and downstream Gates | PENDING |
+
+The effective time is the documented actual completion time of the last required event,
+unless the TAO explicitly approves a later prospective effective date. Backdating is prohibited.
+Earlier approval, registration, adoption and disposition Git events, drafting and authoring are
+not the effectiveness date. Events 2–4 are not completed by authoring; the future commit's own
+identity, tree and later verification timestamp must not be prepopulated. Actual identities and
+verification evidence may be reported only after execution and independent verification.
+
+- `DETERMINATION GIT RECORDING: PENDING`.
+- `DETERMINATION ROOT MAIN RECORDING: PENDING`.
+- `DETERMINATION POST-RECORDING VERIFICATION: PENDING`.
+- `LAST CONFIRMED EFFECTIVE GOVERNANCE BASELINE: NESHANE-V3-ARCH-P00-005`.
+- `NESHANE-V3-ARCH-P00-006: NON-EFFECTIVE GOVERNANCE CANDIDATE`.
+
+Only after the full boundary is verified may `ADR-V3-016: LEVEL 2 EFFECTIVE`,
+`DEC-016: LEVEL 2 EFFECTIVE` and
+`NESHANE-V3-ARCH-P00-006: EFFECTIVE DESIGN-GOVERNANCE BASELINE` be recognized.
+These are future conditional outcomes, not current status. LEVEL 2 EFFECTIVE is an effectiveness
+qualification, not a new ADR lifecycle; ACCEPTED and the official vocabulary remain unchanged.
+P00-005 remains effective until that boundary, with its historical effectiveness preserved.
+Governance reference `NESHANE-V3-GOV-P00-000A` is unchanged.
+
+R2 Architecture Acceptance, Independent Security Review, V3-017 Formal R1, V3-023 Formal B1,
+final Tenant Isolation Acceptance and all Open Decisions retain the restrictions above.
+Runtime validation, operational compliance, implementation, production architecture acceptance,
+Backend synchronization, contract publication and production promotion are excluded.
+Design effectiveness neither satisfies technical conditions nor authorizes those activities.
+None of authoring, staging, commit creation, Main recording or verification is self-authorizing;
+each applicable execution step requires its own explicit authorization.
 
 ## Approved disposition artifact — verbatim
 

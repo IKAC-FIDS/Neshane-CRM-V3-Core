@@ -53,13 +53,20 @@ Earlier unstaged/uncommitted wording describes that historical authoring stage.
 The Technical Architecture Owner has now explicitly approved in conversation that these actions
 resolve the procedural reconciliation prerequisite prospectively for proceeding to a separate
 Formal Level 2 Effectiveness Determination; no retrospective authorization is granted.
-The new disposition metadata is AUTHORED — UNSTAGED / UNCOMMITTED; its repository recording is PENDING.
-Formal Level 2 effectiveness is NOT ESTABLISHED. Disposition recording and verification,
-applicable registration evidence and a separately authorized, recorded and verified effectiveness
-decision remain required; technical main presence and procedural resolution are insufficient.
-No effective date is assigned. P00-005 remains the last confirmed effective governance baseline;
-P00-006 remains a non-effective candidate. This task authorizes only limited authoring,
-not Git mutations or any Governance Gate transition.
+The prospective disposition is recorded in local Root main at
+`8b14ca208a0d3ba14052e0d00ce90fc907ea80fb`, tree `a4684e446cf1b190b073fc44e6bf7b90a5cedfcf`.
+`FORMAL LEVEL 2 DETERMINATION: ISSUED — CONDITIONAL` covers ADR-V3-016, DEC-016 and P00-006
+in DESIGN_ONLY / REFERENCE_ONLY scope, by explicit TAO declaration in conversation.
+The [owner-approved four-event effectiveness boundary](adr/016-dedicated-managed-reference-architecture.md#conditional-level2-determination)
+has only Event 1 (owner issuance) completed. Determination Git recording, authoritative local Root main
+recording and independent post-recording verification (Events 2–4) remain PENDING.
+`FORMAL LEVEL 2 EFFECTIVENESS: NOT ESTABLISHED`. The effective time is the documented actual
+completion time of the last required event, unless the TAO explicitly approves a later prospective date;
+no actual timestamp is assigned or backdated. Only after that boundary is verified may ADR-V3-016
+and DEC-016 be recognized as LEVEL 2 EFFECTIVE and P00-006 as the EFFECTIVE DESIGN-GOVERNANCE BASELINE.
+These are conditional future outcomes, not current status. P00-005 remains effective until that boundary
+and its chronological history remains unchanged. P00-006 remains a non-effective governance candidate.
+Authoring does not authorize staging, committing, Main recording, Backend synchronization or Gate transitions.
 Backend synchronization is not performed. The governance reference remains
 `NESHANE-V3-GOV-P00-000A`; this package changes no general governance rule.
 

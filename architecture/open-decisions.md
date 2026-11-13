@@ -59,12 +59,15 @@ The separately authorized post-adoption reconciliation commit and local main rec
 were completed at `39787784980380271753bad8e4a8c164d881fe51`. The subsequent explicit owner
 conversation disposition resolves the procedural reconciliation prerequisite prospectively,
 without retrospective authorization; see [ADR-V3-016 registration boundary](adr/016-dedicated-managed-reference-architecture.md#registration-boundary-and-source-control).
-The new disposition is authored — unstaged/uncommitted; repository recording remains PENDING.
-P00-005 remains the last confirmed effective governance baseline. P00-006 remains
-non-effective pending disposition recording/verification, applicable registration evidence
-and a separately authorized, recorded and verified Formal Level 2 Effectiveness Determination.
-Current authoring authorizes no Git mutation
-or Gate transition. No deployment, migration, credentials, offline continuation or
+The prospective disposition is recorded in local Root main at
+`8b14ca208a0d3ba14052e0d00ce90fc907ea80fb`, tree `a4684e446cf1b190b073fc44e6bf7b90a5cedfcf`.
+The TAO has issued the conditional determination for ADR-V3-016, DEC-016 and P00-006 in
+DESIGN_ONLY / REFERENCE_ONLY scope; see the [approved four-event effectiveness boundary](adr/016-dedicated-managed-reference-architecture.md#conditional-level2-determination).
+Only owner issuance (Event 1) is completed. Determination Git recording, Root main recording and
+independent post-recording verification (Events 2–4) remain PENDING; effectiveness is NOT ESTABLISHED.
+P00-005 remains the last confirmed effective governance baseline; P00-006 remains non-effective.
+Authoring authorizes no staging, commit, Root main recording or Gate transition.
+No deployment, migration, credentials, offline continuation or
 V3-022 Stage B2 is authorized; no Open Decision is resolved.
 
 ## Status and dependency map

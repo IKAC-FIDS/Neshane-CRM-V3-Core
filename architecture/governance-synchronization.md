@@ -120,11 +120,19 @@ governance decision alone.
   `DISPOSITION PROVENANCE: EXPLICIT OWNER DECLARATION IN CONVERSATION`.
   Completed corrective actions are sufficient prospectively for proceeding to a separate Formal
   Level 2 Effectiveness Determination; neither historical deviation is retrospectively authorized.
-- New disposition metadata: AUTHORED — UNSTAGED / UNCOMMITTED.
-  `DISPOSITION REPOSITORY RECORDING: PENDING`.
-- Formal Level 2 effectiveness: NOT ESTABLISHED. Disposition recording/verification,
-  applicable registration evidence and a separately authorized, recorded and verified effectiveness
-  decision remain required; P00-005 stays effective and P00-006 remains a non-effective candidate.
+- Prospective disposition: COMPLETED — RECORDED IN LOCAL ROOT MAIN at
+  `8b14ca208a0d3ba14052e0d00ce90fc907ea80fb`, tree `a4684e446cf1b190b073fc44e6bf7b90a5cedfcf`.
+- `FORMAL LEVEL 2 DETERMINATION: ISSUED — CONDITIONAL`, by explicit TAO declaration in conversation,
+  for ADR-V3-016, DEC-016 and P00-006 in DESIGN_ONLY / REFERENCE_ONLY scope. See the
+  [full determination and approved four-event boundary](adr/016-dedicated-managed-reference-architecture.md#conditional-level2-determination).
+  Owner issuance (Event 1) is completed. Controlled authoring is separately authorized; authoring is
+  not Git recording and makes no claim of future recording or verification completion.
+- `DETERMINATION GIT RECORDING: PENDING` (Event 2).
+- `DETERMINATION ROOT MAIN RECORDING: PENDING` (Event 3).
+- `DETERMINATION POST-RECORDING VERIFICATION: PENDING` (Event 4).
+- `FORMAL LEVEL 2 EFFECTIVENESS: NOT ESTABLISHED`. The effective time is the documented actual
+  completion time of the last required event unless the TAO explicitly approves a later prospective date.
+  No actual timestamp is assigned or backdated. P00-005 stays effective; P00-006 remains a non-effective candidate.
   Remote publication status: NOT VERIFIED; publication requires separate authorization.
 - Backend synchronization commit: NOT RECORDED. Root and Backend commits must
   remain independently traceable; the local Root candidate is not propagation evidence.
@@ -147,10 +155,13 @@ retention for reconciliation only; separately authorized post-adoption authoring
 exact-blob STG-01 renewal, staging and reconciliation commit; separately authorized one-commit
 recording in local main at `39787784980380271753bad8e4a8c164d881fe51`; read-only effectiveness
 readiness assessment; subsequent owner conversation disposition prospectively resolving the
-procedural reconciliation prerequisite. The new disposition remains pending repository recording;
-formal effectiveness is not established. Retention does not authorize reversal or repetition of adoption.
-Only limited prospective disposition metadata authoring is authorized here. Future staging, commit,
-any Git operation, Backend synchronization, publication, security and implementation
-activities require their own authorization. This record does not declare effectiveness,
+procedural reconciliation prerequisite; separately authorized disposition recording in local main at
+`8b14ca208a0d3ba14052e0d00ce90fc907ea80fb`; completed readiness assessment; subsequent explicit TAO
+issuance of the conditional determination and approval of its event-based boundary.
+The determination's Git recording, Root main recording and independent post-recording verification
+remain PENDING; formal effectiveness is not established. Retention does not authorize reversal or repetition of adoption.
+Only limited conditional determination metadata authoring is authorized here. Future staging, commit,
+Root main recording, post-recording verification, Backend synchronization, publication, security and implementation
+activities require their own authorization. This record does not activate effectiveness,
 make publication a prerequisite for local effectiveness, or authorize any Gate transition.
 
