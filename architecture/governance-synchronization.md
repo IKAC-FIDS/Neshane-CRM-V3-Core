@@ -1,5 +1,50 @@
 # Cross-repository governance synchronization
 
+<a id="unified-internal-authority"></a>
+## Current prospective authority amendment — V3-GOV-UNIFIED-DECISION-AUTHORITY
+
+The Product Decision Owner / TAO explicitly authorizes the
+[unified final internal authority rule](task-governance.md#unified-final-internal-decision-authority)
+and its [traceable decision record](decision-register.md#unified-internal-authority).
+Task authorization-evidence recording time is `2026-11-13T23:44:56.704754+03:30`;
+this is not a reconstructed owner-issuance time or historical approval timestamp.
+Effectivity requires the one authorized Registration commit, exact patch/parent/tree
+verification, one controlled local Main fast-forward and successful postflight.
+
+This is an approval-routing amendment, not an architecture or technical-control
+change. Architecture `NESHANE-V3-ARCH-P00-006` and governance label
+`NESHANE-V3-GOV-P00-000A` remain unchanged; no new label was requested.
+The unified rule controls conflicting older project-internal approval-routing
+wording prospectively. Existing snapshots below are not rewritten or retroactively
+authorized. Independent reviews remain actual evidence with their actual status;
+final internal decisions belong to the owner. Independently binding legal,
+regulatory, contractual or higher-priority approval requirements remain exceptions.
+No such independently binding source requiring a separate appointment of this
+internal owner was identified in the relevant records inspected for this task;
+this is not a legal compliance determination for future scopes.
+
+Root instructions and the two relevant specialist/appointment registry notices
+are aligned in this amendment. Backend and Frontend repositories, local baselines,
+skills and CI authority/exception registries are not synchronized or modified.
+Backend remains at `938b9e7e3a0feaed4f3c09056f70365313dabb7e`; local conflicts must be
+reported and affected repository-local alignment requires separate authorization.
+Do not assert completed cross-repository propagation or silently relax CI controls.
+
+For V3-024, effectivity removes only the missing final internal decision-owner
+authority prerequisite. It neither assigns an independent reviewer nor completes
+GS-07 as a finding or accepts G-Security. The owner must explicitly disposition
+GS-01 through GS-07, including the bounded design/exclusion choices for GS-01–03.
+The previous independent review and consolidated assessment are supporting inputs,
+not owner acceptance decisions. No threat-model, negative-matrix or G-R2 re-review
+is authorized here.
+
+Preserve all 47 binding conditions and 41/1/5 classifications, F-R2-02–F-R2-06,
+Open Decisions/milestones, the offline-continuation prohibition, V3-017 reuse
+restrictions, V3-022 B2 restrictions, V3-023 pending formal dependencies and
+separate Final Tenant Isolation evidence/decision. Implementation and Backend
+synchronization remain NOT AUTHORIZED; Production Readiness remains NOT ACCEPTED.
+This amendment authorizes no downstream Gate, risk waiver, implementation or release.
+
 V3-024 temporal qualification: the P00-006 non-effective and Events 2–4 PENDING statements below
 are preserved pre-E4 snapshots. For the completed boundary and current design/reference effectivity,
 see the [E5 administrative record](#v3-024-r2-administrative-effectiveness-record).

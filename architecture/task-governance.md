@@ -14,12 +14,63 @@
 | Development execution amendment | `ACCEPTED — V3-005`; controlled local build/test execution under explicit Task scope |
 | Development-first amendment | `APPROVED — V3-010`; routine local implementation, trusted dependency resolution and isolated Docker development no longer require repeated approval |
 | V3-006 task status | `CLOSED — ADR AND CONTRACT CHANGE GOVERNANCE BASELINE` |
+| Unified authority amendment | `V3-GOV-UNIFIED-DECISION-AUTHORITY`; prospective internal decision ownership across Levels 1–4, effective after verified local Main recording |
 
 ## Authority basis and evidence boundary
 
 The Root Workspace owns cross-repository architecture and review policy. Existing Root records accept explicit Project Owner decisions as project authority and do not require a corporate identity certificate, delegation matrix, organizational digital signature or independent reviewer signature for ordinary task acceptance. No independently authoritative corporate policy, contract or external requirement imposing those artifacts on development/documentation task closure is present in this repository.
 
 The CPO direction recorded under `TASK_ID = V3-003` therefore authorizes this narrow project-governance change. It does not create, replace or override corporate policy and must not be cited as evidence of a corporate appointment, delegation or signature.
+
+## Unified final internal decision authority
+
+Task `V3-GOV-UNIFIED-DECISION-AUTHORITY` records the explicit decision of the user
+issuing that task, the Product Decision Owner / Technical Architecture Owner (TAO):
+
+- That owner is the single final internal decision authority for Neshane product
+  scope/priorities, architecture/ADRs, Security design and risk dispositions,
+  Security and Tenant Isolation Gates, engineering/implementation authorization,
+  standards and eligible exceptions, release readiness, findings/closure and
+  cross-team dependency/acceptance decisions. These remain distinct decisions
+  with their own scope, evidence and prerequisites; one role does not merge Gates.
+- An explicit decision by this owner in the project conversation is sufficient
+  evidence of internal owner authorization. Do not require an appointment
+  certificate, delegation letter, corporate authorization artifact or another
+  internal approver solely to establish that owner's internal authority. The
+  conversational role attribution is not a claim of verified legal identity,
+  corporate appointment or external delegation. Codex cannot issue owner decisions.
+- Record the Task ID, source conversation/task section, exact decision, affected
+  scope, reviewed baseline and actual recording timestamp with time zone. Record
+  issuance time only when supplied; never substitute a recording/commit time for
+  an unknown owner-issuance time. Preserve the applicable traceable Git workflow.
+- Independent expert/specialist review is advisory input to the final internal
+  decision, not a separate internal approval authority. Preserve the actual
+  reviewer, scope, independence, findings and evidence status when such a review
+  is requested or claimed. An owner decision is not an independent review or
+  specialist approval; unassigned reviewers remain unassigned. Required technical
+  assessments/checks remain required evidence, even when their reviewers do not
+  hold final decision authority.
+- Binding exception: legal, regulatory, contractual or otherwise independently
+  authoritative higher-priority obligations requiring an independent approver,
+  separation of duties or stronger authorization evidence remain mandatory.
+  Identify the exact governing source, clause and affected scope; do not invent
+  an external obligation or use superseded project-internal appointment rules as
+  its source. An actual unresolved binding conflict stops only the affected action.
+- This rule supersedes conflicting project-owned approval-routing and separate
+  owner-appointment requirements prospectively, including older Level 2/3/4,
+  ADR/Gate and specialist-registry wording. It does not change technical security
+  conditions, runtime Domain/profile authority, non-waivable controls, evidence
+  thresholds, implementation prerequisites or independently binding obligations.
+  Failed/unexecuted checks never become PASS through an owner decision.
+- Historical decisions, approval timestamps, Gate outcomes, reviewer records and
+  earlier authority-gap findings remain historical evidence. No retrospective
+  authorization, pending-Gate acceptance, risk acceptance, implementation,
+  deployment or production release is granted by this policy amendment.
+
+The Level 1–4 classifications below still distinguish decision types and evidence,
+not separate mandatory internal final approvers. Historical role limitations below
+describe their original grants; current internal final authority derives from this
+section. A future Gate/risk/release decision must still be explicit and scoped.
 
 ## Approval levels
 
@@ -34,7 +85,7 @@ The designated Task Owner or CPO may accept and close an ordinary development or
 5. a traceable Git change recording the decision and status;
 6. explicit preservation of every higher-level gate that remains applicable.
 
-A separate corporate identity certificate, delegation matrix or organizational digital signature is not required by default. A task-specific rule, independently authoritative corporate policy, contract, regulatory requirement or higher-level gate may still require stronger evidence.
+A separate corporate identity certificate, delegation matrix or organizational digital signature is not required by default. Stronger owner-authorization evidence or an additional mandatory approver requires the binding exception defined in the unified authority rule; task/Gate-specific technical evidence remains mandatory.
 
 #### Development-first local execution
 
@@ -79,9 +130,9 @@ DESIGNATION_SOURCE = Explicit CPO and Technical Architecture Owner declaration i
 
 The existing project governance contains no separation-of-duties rule that prohibits this dual role for Level 2 architecture decisions. The designation is therefore valid as a project authority record; it is not a corporate credential, legal appointment, independent review or security sign-off.
 
-Within Level 2, the Technical Architecture Owner is the final architecture approval authority for Java/build toolchains, Backend and Frontend engineering conventions, service and module architecture, API and event architecture, and data architecture. Affected domain, engineering, operations, developer-experience and product owners provide evidence and consequences proportional to impact. When an existing decision or security control explicitly requires another approval, specialist review or separation of duties, that requirement remains in force.
+Within Level 2, the Technical Architecture Owner is the final architecture approval authority for Java/build toolchains, Backend and Frontend engineering conventions, service and module architecture, API and event architecture, and data architecture. Affected domain, engineering, operations, developer-experience and product owners provide evidence and consequences proportional to impact. Additional mandatory approval or separation of duties follows the unified authority binding exception; required technical review/evidence is preserved.
 
-This designation does not authorize Independent Security Sign-off, security-critical risk acceptance, privileged-operation exceptions, executable `DURABLE_DEFER`, verification of runtime controls or Production Release. Those decisions remain at Level 3 or Level 4 as applicable.
+The V3-006 designation alone did not grant Level 3/4 decisions. Current final internal authority for those decisions follows the unified rule above, not a new specialist appointment. Independent assessment and verification of runtime controls remain evidence, not powers conferred by a role; executable `DURABLE_DEFER` and privileged operations still require their unchanged technical prerequisites and explicit scoped decisions.
 
 #### OD-020 interim Quality Authority designation
 
@@ -118,7 +169,7 @@ and does not generalize to another project or organizational appointment.
 
 1. Identify the decision, affected scope, owner and related `DEC-*`, `OD-*`, ADR, contract and Task IDs.
 2. Record the context, viable alternatives, rationale, consequences, compatibility impact, and migration/rollback needs in proportion to the decision's impact.
-3. Obtain an explicit disposition from the Technical Architecture Owner and every additional authority explicitly required by an existing decision or higher-level gate.
+3. Obtain an explicit disposition from the unified owner in the relevant decision capacity, required technical review evidence and any additional approval required by the binding exception above.
 4. Create or update the ADR, update the Open Decision and decision registers, and preserve rejected or superseded history.
 5. Validate internal references and affected API, event, persistence, SDK and integration contracts using the [contract change protocol](contract-change-protocol.md).
 6. Commit the decision and its registry updates as one traceable Git change before treating it as effective.
@@ -127,7 +178,7 @@ The ADR lifecycle and required record fields are defined in the [ADR catalog](ad
 
 ### LEVEL 3 — SECURITY-CRITICAL DECISION
 
-Security-critical decisions require the designated or independent security review and documented authorization required by the applicable security control, decision record or review gate. Level 1 closure does not constitute Security Sign-off, risk acceptance or verification of a runtime control.
+Security-critical decisions, Security/Tenant Gate decisions and eligible risk/exception dispositions require an explicit, traceable decision by the unified internal owner against the applicable scope and evidence. Independent technical assessment is advisory to that final decision unless the binding exception above requires independent approval. Technical security conditions, required verification and non-waivable controls remain blocking. Level 1 closure alone is not Security acceptance, risk acceptance or runtime verification; the owner must explicitly issue the distinct Level 3 decision. Do not label an owner decision as independent Security Sign-off.
 
 ### Documentation-only R0 Design Consistency Acceptance
 
@@ -161,7 +212,7 @@ The declaration is accepted as a project-role designation under this route. It d
 
 ### LEVEL 4 — PRODUCTION RELEASE
 
-Production release requires executable validation, all required Security Sign-off, operational evidence and explicit release authorization. Documentation acceptance, architecture approval and implementation completion do not establish Production Readiness.
+Production release requires executable validation, the applicable explicit Security/Gate decisions, operational evidence, approvals required by the binding exception and explicit release authorization from the unified internal owner. Readiness approval and permission to execute a release/deployment remain separately scoped. Documentation acceptance, architecture approval and implementation completion do not establish Production Readiness.
 
 ## Classification and escalation
 

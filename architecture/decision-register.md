@@ -1,5 +1,36 @@
 # Neshane V3 decision register
 
+<a id="unified-internal-authority"></a>
+## Prospective governance decision — unified internal product authority
+
+- Task: `V3-GOV-UNIFIED-DECISION-AUTHORITY`.
+- Source: explicit Product Decision Owner / TAO instruction in the project
+  conversation, sections 1–5; the user issuing that instruction is the owner.
+- Decision: establish that owner as final internal decision authority across
+  Product, Architecture, Security/risk/Gates, Tenant Isolation, Engineering,
+  standards/eligible exceptions, Release readiness and Governance closure.
+  Explicit scoped conversation decisions suffice for internal authorization;
+  separate owner-appointment/delegation evidence is not a prerequisite.
+- Governing rule and safeguards:
+  [Unified authority](task-governance.md#unified-final-internal-decision-authority).
+  Independent assessment is not fabricated or converted to owner-independent
+  approval; binding external/higher-priority obligations and technical evidence
+  remain mandatory. No risk/exception/Gate decision is issued by this amendment.
+- Task authorization-evidence recording timestamp:
+  `2026-11-13T23:44:56.704754+03:30`, local system clock;
+  not an asserted owner-issuance timestamp or final Main recording time.
+- Baselines: Root `03ab284319b29bc263f869fcb019bfeb4bb3fc18`, tree
+  `ab8f5a49d3e4ef2cb4495dcfaf23c83339b5cd23`; independent Backend
+  `938b9e7e3a0feaed4f3c09056f70365313dabb7e` remains untouched.
+- Effectivity: prospective after the authorized single Registration commit is
+  verified and recorded by one controlled local Main fast-forward with postflight
+  verification. Actual commit/tree and Main recording time are execution evidence,
+  not prepopulated approvals. No new architecture/governance revision label.
+- Consequence: only the V3-024 G-Security internal final-owner authority blocker
+  is removed on effectivity. The owner must still explicitly disposition
+  GS-01 through GS-07 within evidence limits; G-Security remains pending.
+  Earlier decisions, timestamps and findings below are preserved history.
+
 E5 administrative qualification (`V3-024-R2-E5-ADMINISTRATIVE-GOVERNANCE-RECORDING`):
 DEC-016 / ADR-V3-016 / P00-006 are effective in `DESIGN_ONLY / REFERENCE_ONLY` scope from
 `2026-11-13T14:21:48+03:30`, following final independent E4 Outcome A and satisfaction of E1–E4.

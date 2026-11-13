@@ -1,5 +1,18 @@
 # V3-003 — پیشنهاد حاکمیت انتصاب Identity/Platform Security Authority
 
+## Prospective qualification — V3-GOV-UNIFIED-DECISION-AUTHORITY
+
+After verified local Main recording, the
+[unified internal authority rule](../task-governance.md#unified-final-internal-decision-authority)
+supersedes any reading of this historical proposal as a prerequisite to the
+user/Product Decision Owner/TAO's final internal authorization. No appointment
+certificate, delegation letter or corporate authority artifact is required solely
+for that owner's internal decisions. This proposal does not become an approved
+appointment standard or evidence of an appointed specialist. Historical UNASSIGNED,
+NOT_VERIFIED and PENDING fields remain unchanged; claimed independent reviews still
+need real attributable evidence. Binding external/higher-priority obligations and
+all technical evidence/prerequisites remain in force. No pending Gate is accepted.
+
 ## A. هدف، محدوده و شکاف حاکمیتی فعلی
 
 این سند یک **Governance Proposal** مستنداتی برای تعریف روش نامزدی، احراز، انتصاب، تفویض، بازبینی، تعلیق، انقضا و لغو `Identity/Platform Security Authority` است. این سند Governance Standard نهایی، Appointment Record یا Delegation مؤثر نیست.

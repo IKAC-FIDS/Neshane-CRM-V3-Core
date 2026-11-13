@@ -1,5 +1,18 @@
 # V3-003 — Consolidated Specialist Review Tracking Register
 
+## Prospective authority qualification — V3-GOV-UNIFIED-DECISION-AUTHORITY
+
+On verified local Main recording of the
+[unified internal authority amendment](../task-governance.md#unified-final-internal-decision-authority),
+the user/Product Decision Owner/TAO is the final internal decision owner; this
+register's historical specialist appointment/delegation workflow is not an
+additional owner-authorization prerequisite. Independent assessments are advisory
+unless an identified higher-priority binding obligation requires independent approval.
+Internal owner decisions and actual specialist/independent review evidence remain
+separate: none of the UNASSIGNED/NOT_VERIFIED/PENDING reviewer or disposition
+fields below is changed or deemed completed. Required technical evidence and
+non-waivable controls remain mandatory. No earlier finding or Gate is closed.
+
 ## A. خط مبنای تأییدشده و کنترل سند (Verified Baseline and Document Control)
 
 | فیلد | مقدار تأییدشده |
