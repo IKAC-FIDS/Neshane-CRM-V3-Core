@@ -1,5 +1,20 @@
 # Neshane V3 architecture baseline
 
+<a id="v3-024-g-tenant-limited-design-recording"></a>
+V3-024 Tenant disposition (`V3-024-G-TENANT-LIMITED-DESIGN-ACCEPTANCE-AND-RECORDING`):
+the Product Decision Owner / TAO accepts only documented Tenant Isolation design
+requirements and reference boundaries. On [verified controlled recording](governance-synchronization.md#v3-024-g-tenant-limited-design-recording),
+`V3-024 / G-Tenant — Limited Design Scope: ACCEPTED — DESIGN / REFERENCE ONLY`;
+`V3-024 / G-Tenant — Design Scope: CLOSED`;
+`V3-024 / G-Tenant — Final Runtime Isolation Acceptance: PENDING — REAL EVIDENCE REQUIRED`.
+TI-01–TI-13 are accepted only as design requirements; TI-14 remains DESIGN PARTIAL
+and actual continuation prohibited. All 12 negative cases remain TEST REQUIRED.
+The [owner decision and scope allocation](decision-register.md#v3-024-g-tenant-limited-design-recording)
+create no runtime isolation, implementation, risk-waiver or production acceptance.
+The entire Stage 10 final runtime Gate is not closed. P00-006, ADR-V3-016/DEC-016,
+all 47 conditions, 41/1/5 classifications and effectivity at
+`2026-11-13T14:21:48+03:30` remain unchanged; earlier assessments are preserved.
+
 <a id="v3-024-g-security-limited-closure"></a>
 V3-024 Security disposition (`V3-024-G-SECURITY-LIMITED-ACCEPTANCE-AND-CLOSURE`):
 the Product Decision Owner / TAO explicitly accepts G-Security only as

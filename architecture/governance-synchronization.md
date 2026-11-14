@@ -1,5 +1,164 @@
 # Cross-repository governance synchronization
 
+<a id="v3-024-g-tenant-limited-design-recording"></a>
+## V3-024 — Limited Tenant Isolation design acceptance and controlled recording
+
+### New owner decision and scope
+
+- Task: `V3-024-G-TENANT-LIMITED-DESIGN-ACCEPTANCE-AND-RECORDING`; Stage 10 / G-Tenant.
+- Authority/source: Product Decision Owner / TAO's explicit current project-conversation
+  decision, sections 4–9; controlled recording authorized by sections 10–15.
+- Exact decision: `ACCEPT — LIMITED TENANT ISOLATION DESIGN / REFERENCE ONLY`.
+- Governing rule: [unified final internal decision authority](task-governance.md#unified-final-internal-decision-authority),
+  effectively recorded by `d75dd6f54a09b70dfa8d4103df642a85a646edd8`. This owner's scoped
+  conversation decision is sufficient internal authorization; no separate appointment
+  certificate is needed solely for that authority. No specifically applicable binding
+  external approval conflict was identified in the relevant records; actual legal,
+  regulatory, contractual and higher-priority independent-approval obligations remain
+  mandatory. No independent specialist approval or reviewer appointment is fabricated.
+- Task authorization-evidence recording timestamp: `2026-11-14T00:23:21.212036+03:30`,
+  local system clock. This is a new recording event, not a backdated approval, unknown
+  owner-issuance time, Git commit time or final Main recording time.
+- Reviewed Main/Registration HEAD: `4858f1f437c428f8d661b1003ce8ae6ae4345c24`;
+  tree: `c5e1bee33c5fdfb1d48eeb048c6313c08ec8d589`.
+- Independent Backend supporting evidence: HEAD
+  `938b9e7e3a0feaed4f3c09056f70365313dabb7e`, tree
+  `675a9d6ed59fcd7f61a19f11baa4931ac88521a1`; unchanged, not synchronized.
+- Architecture remains `NESHANE-V3-ARCH-P00-006 / ADR-V3-016 / DEC-016`, effective
+  for design/reference from `2026-11-13T14:21:48+03:30`. ADR-V3-016 is unchanged.
+  G-R2 and G-Security limited acceptances remain effective in their exact scopes.
+
+The completed read-only assessment `V3-024-G-TENANT-CONSOLIDATED-DISPOSITION` in the
+project conversation concluded B — LIMITED TENANT ISOLATION DESIGN ACCEPTANCE READY.
+That recommendation, its 14-control matrix and all 12 negative obligations are reused
+without another technical review. Earlier PENDING/HOLD assessments remain history;
+this explicit owner decision is a new limited acceptance, not a rewritten assessment.
+
+### TI-01–TI-14 owner-approved allocation
+
+The following statuses accept requirements only, not the corresponding real controls.
+Every runtime enforcement claim below remains unverified; none is RUNTIME VERIFIED.
+
+| Control | Exact disposition | Actual enforcement not accepted / still unverified |
+| --- | --- | --- |
+| TI-01 — Tenant Context and object authorization | ACCEPTED — DESIGN REQUIREMENTS ONLY | Context enforcement, object-level authorization and cross-Tenant denial. |
+| TI-02 — Tenant-to-Cell placement | ACCEPTED — DESIGN REQUIREMENTS ONLY | Placement authority, provenance, generation and activation enforcement. |
+| TI-03 — Cross-Cell routing and destination fencing | ACCEPTED — DESIGN REQUIREMENTS ONLY | Routing integrity, destination binding, atomic fencing and race prevention. |
+| TI-04 — Database and connection isolation | ACCEPTED — DESIGN REQUIREMENTS ONLY | Database separation, connection authorization, grants and cross-boundary denial. |
+| TI-05 — Runtime versus migration roles | ACCEPTED — DESIGN REQUIREMENTS ONLY | PostgreSQL memberships, privilege separation, ownership, escalation prevention and default-grant restrictions. |
+| TI-06 — PostgreSQL RLS and bypass prevention | ACCEPTED — DESIGN REQUIREMENTS ONLY | Real read/write RLS enforcement and bypass prevention using actual runtime roles. |
+| TI-07 — Connection pool isolation | ACCEPTED — DESIGN REQUIREMENTS ONLY | Context reset, commit/rollback/error paths and isolation of subsequent borrowers. |
+| TI-08 — Credential and secret isolation | ACCEPTED — DESIGN REQUIREMENTS ONLY | Per-service/Cell credentials, scoped secret delivery and Agent secret-access restrictions. |
+| TI-09 — Workload identity and service trust | ACCEPTED — DESIGN REQUIREMENTS ONLY | Issuance, bootstrap, audience validation, expiry, revocation and service authorization. |
+| TI-10 — Command and adapter boundaries | ACCEPTED — DESIGN REQUIREMENTS ONLY | Executor privileges, command allowlisting and zero unauthorized side effects. |
+| TI-11 — Revocation, session termination and replay | ACCEPTED — DESIGN REQUIREMENTS ONLY | Revocation enforcement, session/pool termination, replay prevention, concurrency and crash recovery. |
+| TI-12 — Recovery, rollback and restoration | ACCEPTED — DESIGN REQUIREMENTS ONLY | Restore isolation, anti-rollback, reconciliation and rejection of stale credential/placement restoration. |
+| TI-13 — Fail-closed behavior | ACCEPTED — DESIGN REQUIREMENTS ONLY | Actual denial on missing trust/placement, stale or ambiguous state and routing failure. |
+| TI-14 — Offline continuation | DESIGN PARTIAL — ACTUAL CONTINUATION PROHIBITED | Not fully satisfied or accepted; OF-006 / condition 10 remains DESIGN PARTIAL. |
+
+Actual offline continuation requires a separately approved operation-specific policy
+and all applicable technical/operational approvals and controls. No offline fallback,
+bypass or continuation authorization is created. Design-scope closure does not close
+TI-14's partial obligation.
+
+### Twelve negative-case obligations — no runtime evidence created
+
+| Existing assessment case | Status retained for V3-024 |
+| --- | --- |
+| Cross-Tenant reads and writes | TEST REQUIRED |
+| Tenant Context or trusted-header spoofing | TEST REQUIRED |
+| Cross-Cell forwarding | TEST REQUIRED |
+| Incorrect or stale placement assignments | TEST REQUIRED |
+| RLS bypass through privileged roles | TEST REQUIRED |
+| Pool reuse across Tenant/Cell boundaries | TEST REQUIRED |
+| Credential reuse across service/Cell boundaries | TEST REQUIRED |
+| Expired or revoked workload identity | TEST REQUIRED |
+| Unauthorized command/adapter execution | TEST REQUIRED |
+| Replay after revocation or crash | TEST REQUIRED |
+| Fail-open routing or fallback | TEST REQUIRED |
+| Incorrect recovery or restoration into another Cell | TEST REQUIRED |
+
+No case is VERIFIED BY REAL TEST by this recording. No runtime/negative test is run
+or marked PASS. Existing V3-021/022 deterministic and V3-023 synthetic/reference
+evidence is not relabeled as real V3-024 Dedicated Managed isolation evidence.
+
+### Binding milestones and non-waivers
+
+All 47 architectural conditions retain their inherited classifications:
+41 DESIGN SATISFIED / 1 DESIGN PARTIAL / 5 IMPLEMENTATION EVIDENCE REQUIRED.
+The five mandatory obligations remain `DB-001 / condition 6`, `RT-002 / condition 6`,
+`OA-003 / condition 8`, `CL-004 / condition 8` and `RTR-005 / condition 8` with their
+existing allocation. Prerequisites required before implementation authorization
+cannot be deferred beyond that authorization. Applicable real isolation, negative
+tests, positive controls and observable zero-prohibited-effect evidence remain
+required before the corresponding runtime/final Tenant acceptance.
+
+The prior assessment's pre-authorization prerequisites are carried forward:
+
+1. Define the exact components/files/tests, dependency treatment, permitted simulations
+   and scoped test trust model. Preserve V3-017 reuse restrictions and V3-016/022/023
+   dependencies. A complete management-path increment needs Controller and Agent;
+   a narrower component test cannot claim that complete path.
+2. For real persistence, identify the owning service/capability or authorized isolation
+   probe; V3-017 has no persistence implementation. Resolve applicable OD-013 before
+   migration and OD-014 before a tenant-aware repository. Define actual role/grant,
+   transaction-local Context and pool boundaries before dependent authorization.
+3. Before reliance on shared-host isolation, approve the host/operator capability
+   model and topology. Before real workload/credential reliance, approve the concrete
+   trust/bootstrap and scoped secret-delivery/lifecycle model. Before adapter/executor
+   implementation, approve its privilege boundary and execution model.
+4. Before real routing/fencing reliance, resolve Activation Scope mapping, integrity,
+   destination trust, anti-rollback and atomic effect/fence semantics. V3-022 B2
+   needs separate authorization; this recording supplies none.
+5. Resolve durable replay/concurrency/crash/recovery, session/pool revocation and
+   operation-specific freshness/clock requirements before authorizing dependent
+   mechanisms. Actual offline continuation remains prohibited without its separate
+   policy/approvals. This does not select numeric policies or redefine an Open Decision.
+6. Establish the real verification plan and applicable supply-chain prerequisites,
+   including GS-04 owner assignment before its dependent milestone, then obtain a
+   separately scoped implementation authorization. No package is authorized now.
+
+These are dependency-specific decision points, not a blanket demand to finalize all
+production choices for a synthetic increment. None permits a required pre-authorization
+decision to be treated merely as a future runtime test.
+
+All GS-01 through GS-07 limitations, F-R2-02 through F-R2-06, Open Decisions and their
+owner/milestone relationships, V3-017 reuse restrictions, V3-022 Stage B2 restrictions,
+V3-023 Formal B1 dependencies, independent runtime verification and contract publication
+restrictions remain binding. No Open Decision, technical finding's future obligation
+or non-waivable control is closed by this limited acceptance.
+
+### Distinct statuses and controlled recording boundary
+
+On successful authorized recording and postflight only:
+
+```text
+V3-024 / G-Tenant — Limited Design Scope: ACCEPTED — DESIGN / REFERENCE ONLY
+V3-024 / G-Tenant — Design Scope: CLOSED
+V3-024 / G-Tenant — Final Runtime Isolation Acceptance: PENDING — REAL EVIDENCE REQUIRED
+```
+
+The entire Stage 10 final runtime Gate is not closed. This is not full Final Tenant
+Isolation Acceptance, actual Tenant/DB/RLS/role/grant/pool isolation, effective routing
+or destination fencing, workload identity, credential issuance/delivery/revocation,
+command/adapter execution safety, durable replay/crash safety, shared-host/privileged
+administrator resistance, real recovery/rollback or operational fail-closed acceptance.
+No Security risk beyond the approved limited scope is accepted; no risk waiver,
+independent specialist approval, implementation readiness or Production Readiness is
+established. Backend synchronization, implementation, publication, deployment and
+release remain NOT AUTHORIZED; Production Readiness remains NOT ACCEPTED.
+
+Repository completion requires one authorized Registration governance commit, exact
+diff/parent/tree/subject checks, one controlled local Main fast-forward and separate
+observational postflight plus verified integrity manifest. Before that completion,
+owner issuance and prepared documentation do not establish recorded acceptance.
+Actual commit/parent/tree, raw fast-forward outcome, Main recording time, ref deltas
+and completion evidence are captured after execution, without prepopulated success,
+in the fresh external directory
+`C:\Users\user\AppData\Local\Temp\opencode\v3-024-g-tenant-limited-design-recording`
+and final report. No historical decision or architecture timestamp is rewritten;
+no new ADR, architecture revision or governance label is introduced.
+
 <a id="v3-024-g-security-limited-closure"></a>
 ## V3-024 — Limited Security design/reference acceptance and closure
 

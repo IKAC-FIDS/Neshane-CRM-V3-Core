@@ -1,5 +1,35 @@
 # Neshane V3 decision register
 
+<a id="v3-024-g-tenant-limited-design-recording"></a>
+## V3-024 — Owner limited Tenant Isolation design acceptance
+
+- Task: `V3-024-G-TENANT-LIMITED-DESIGN-ACCEPTANCE-AND-RECORDING`; Stage 10 / G-Tenant.
+- Authority/source: Product Decision Owner / TAO's explicit current project-conversation
+  decision, sections 4–9, under the [effective unified internal authority policy](task-governance.md#unified-final-internal-decision-authority),
+  recorded in `d75dd6f54a09b70dfa8d4103df642a85a646edd8`.
+- Exact owner decision: `ACCEPT — LIMITED TENANT ISOLATION DESIGN / REFERENCE ONLY`.
+  It accepts documented design requirements and reference boundaries, not actual
+  enforcement, final runtime isolation, implementation readiness or additional risk.
+- Prior input: completed conversation assessment `V3-024-G-TENANT-CONSOLIDATED-DISPOSITION`,
+  Outcome B — LIMITED TENANT ISOLATION DESIGN ACCEPTANCE READY. Its 14 controls and
+  12 TEST REQUIRED cases are reused, not reassessed or converted into passing tests.
+- Reviewed Root Main/Registration HEAD: `4858f1f437c428f8d661b1003ce8ae6ae4345c24`;
+  tree: `c5e1bee33c5fdfb1d48eeb048c6313c08ec8d589`. Supporting independent Backend:
+  `938b9e7e3a0feaed4f3c09056f70365313dabb7e`, unchanged and not synchronized.
+- Task authorization-evidence recording timestamp: `2026-11-14T00:23:21.212036+03:30`,
+  local system clock; not an invented owner-issuance time or final Main recording time.
+- [Full TI-01–TI-14 dispositions, exclusions, negative obligations and milestones](governance-synchronization.md#v3-024-g-tenant-limited-design-recording)
+  form part of this decision. TI-01–TI-13: ACCEPTED — DESIGN REQUIREMENTS ONLY;
+  TI-14: DESIGN PARTIAL — ACTUAL CONTINUATION PROHIBITED.
+- On successful single Registration commit, one controlled Main fast-forward,
+  separate postflight and manifest verification: Limited Design Scope is
+  `ACCEPTED — DESIGN / REFERENCE ONLY`; Design Scope is `CLOSED`; Final Runtime
+  Isolation Acceptance remains `PENDING — REAL EVIDENCE REQUIRED`.
+- No entire Stage 10 closure, full Tenant Isolation acceptance, independent specialist
+  Sign-off, runtime verification, implementation or production authorization is issued.
+  Historical PENDING/HOLD decisions and timestamps remain unchanged. Actual new commit,
+  parent/tree, Main recording outcome and completion time are post-execution evidence.
+
 <a id="v3-024-g-security-limited-closure"></a>
 ## V3-024 — Owner limited G-Security design acceptance and closure
 
