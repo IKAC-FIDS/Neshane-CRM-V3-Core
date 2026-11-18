@@ -1,0 +1,24 @@
+{
+  "version": "1.2.0",
+  "files": {
+    "README.md": "1b67bca73f60fe75a97fb6d29b3fef107ec21bf7c728623816f06b8402690962",
+    "acceptance-criteria.md": "229f52f25458be242f570f47b61078bf1e95e6e395e25feeb70d67798859a412",
+    "actor-resource-policy-matrix.md": "5abbfb62daa22f1a6691fbf8a132ba28842a604786f3bb256806cd8851723a1a",
+    "cm1-acceptance-criteria-addendum.md": "00b8bed3963e88c742e579ddcabfc096b7c43e1f5fb2674e96d2311bdd43eada",
+    "customer-business-rules.md": "d463f9eb11f8adf5fbac1ac148f4f7c734885a10d12396ca888dc1673ccffbbe",
+    "customer-failure-scenarios.md": "cfb2bbafc59dd73039004e509064b6f0900ef45a0db68677ef129de4c13cdfd9",
+    "customer-field-and-verification-addendum.md": "7e8cf8e6fdaffa8ffe8b08180c95a803dde7a19ffdd800dce9034de98c738d79",
+    "customer-field-dictionary.json": "4f502469b47f65149c592b95c27abaa0719d8c4993b4472ddc0d147e752131dc",
+    "customer-field-dictionary.md": "fb07639aa19ba7af98910ee77fcbabd9d0a2ddc3c9117f37c522cc6c5891f3e4",
+    "customer-lifecycle.md": "bbc0486b78b15a742f2304b93e2dd7f8e5d4cc40844f11c12be0423bf3beeb03",
+    "customer-master-product-decision-record.json": "2d603b9ca037eea46ebffaba336b377a341fea394e72440f343a0aee42537095",
+    "customer-master-product-decision-record.md": "791c9ae903029c7f07b4260a13cccc7e9d8fa112a29c699843364831cfb2e3f8",
+    "customer-master-requirements.md": "e9eee14a7558ed67c146319160c397c4c724c76aed498ee06522516201f81247",
+    "customer-operation-catalog.md": "edef5b1b527e5690bcc2a6703fc1ad07c5915c20fe0403a718d34208c3491cc0",
+    "deployment-profile-scenarios.md": "9f2282a223123280a78ba16003355a38cd253518521f7f02f6e91102fab9e98a",
+    "open-product-decisions.md": "dcc9d054cf092de7596a04d5b0fdacbaccbbec1792cb9f7a1ab1149cde86b18d",
+    "sha256-manifest.json": "8a55a2a9e68bf3170fdbfbf420250926e582c98648d666b0d23d4c374b3c838f",
+    "source-traceability.json": "0598f69848f1a85385a64b09e58368c4f38273719a7960a650349abc2835db1f",
+    "validation-report.md": "c71badfa08426d7d30a100acb4ddb8284ac80b9bc9e5aa0436591f340996e578"
+  }
+}

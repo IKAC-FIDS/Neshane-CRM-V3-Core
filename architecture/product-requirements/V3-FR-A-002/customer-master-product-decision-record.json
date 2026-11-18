@@ -1,0 +1,442 @@
+{
+  "recordId": "V3-FR-A-002-PDR-001",
+  "version": "1.2.0",
+  "date": "2026-11-18",
+  "scope": [
+    "FR-BJ-001",
+    "V3-FR-A-002",
+    "CM-1"
+  ],
+  "status": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_REPOSITORY_ACCEPTANCE_PENDING",
+  "provenance": "user-confirmed conversation decisions; compared with supplied V3-FR-A-002 ZIP; extended with user decisions on fields and formal identity verification through 2026-11-18",
+  "decisions": [
+    {
+      "id": "CM1-PD-001",
+      "topic": "Customer taxonomy",
+      "rule": "Company and Person are independent customer types; Branch is a Company subordinate, with its own facts, not an independent customer."
+    },
+    {
+      "id": "CM1-PD-002",
+      "topic": "Branch attribution",
+      "rule": "CRM activities may reference Branch as an attribution target, while Company remains the parent; activity-specific authorization and scope remain separate."
+    },
+    {
+      "id": "CM1-PD-003",
+      "topic": "Person multiplicity",
+      "rule": "One Person may have multiple concurrent relationships with Companies and Branches in the same authorized Tenant scope; relationships do not duplicate identity."
+    },
+    {
+      "id": "CM1-PD-004",
+      "topic": "Contact persons",
+      "rule": "A corporate contact is represented by Person, even without individual active commercial engagement; Contact stores communication channels, Relationship stores affiliation."
+    },
+    {
+      "id": "CM1-PD-005",
+      "topic": "Duplicate warning",
+      "rule": "Potential matches generate an access-controlled warning and existing-record suggestion; authorized new records are allowed with a mandatory reason."
+    },
+    {
+      "id": "CM1-PD-006",
+      "topic": "Duplicate exception authorization",
+      "rule": "A user authorized for CUS-CREATE may override a probabilistic duplicate warning with a required reason and Audit obligation; no supervisor approval is required."
+    },
+    {
+      "id": "CM1-PD-007",
+      "topic": "Verified identity conflicts",
+      "rule": "Ordinary duplicate override must not bypass a collision with a validated authoritative unique identifier; the identifier registry/scope and conflict resolution remain OPEN."
+    },
+    {
+      "id": "CM1-PD-008",
+      "topic": "Record/business status separation",
+      "rule": "Record lifecycle is separate from commercial engagement/classification; commercial taxonomy is not fixed here."
+    },
+    {
+      "id": "CM1-PD-009",
+      "topic": "Lifecycle states and initial status",
+      "rule": "Record states are ACTIVE, INACTIVE, ARCHIVED; after successful authorized creation and validation, initial state is ACTIVE."
+    },
+    {
+      "id": "CM1-PD-010",
+      "topic": "Deactivation",
+      "rule": "ACTIVE -> INACTIVE may occur with ongoing activities preserved; initiating new activities is restricted by activity-specific policy."
+    },
+    {
+      "id": "CM1-PD-011",
+      "topic": "Archive guard",
+      "rule": "ACTIVE/INACTIVE -> ARCHIVED is blocked until every applicable open activity/dependency is disposed of; unknown dependency outcome cannot be treated as clear."
+    },
+    {
+      "id": "CM1-PD-012",
+      "topic": "Restore",
+      "rule": "ARCHIVED -> INACTIVE is the only restore transition; INACTIVE -> ACTIVE requires revalidation. Direct ARCHIVED -> ACTIVE is forbidden."
+    },
+    {
+      "id": "CM1-PD-013",
+      "topic": "Identity edit authorization",
+      "rule": "CUS-UPDATE permits authorized users to edit identity facts, including sensitive business identifiers, with revalidation and Audit; no separate supervisor approval."
+    },
+    {
+      "id": "CM1-PD-014",
+      "topic": "Optimistic concurrency",
+      "rule": "CUS-UPDATE requires a record version; stale-version writes are rejected fully. No automatic merge or last-write-wins."
+    },
+    {
+      "id": "CM1-PD-015",
+      "topic": "Mandatory edit reasons",
+      "rule": "An edit reason is mandatory only for changes to sensitive identity identifiers and exceptional changes; routine edits do not require a reason. All durable updates retain Audit obligations."
+    },
+    {
+      "id": "CM1-PD-016",
+      "topic": "Minimal identification",
+      "rule": "Company legal/display name and Person given/family names are required for initial registration; system-issued stable identity and ACTIVE initial record status. Structured name parts and normalization rules require field-dictionary review."
+    },
+    {
+      "id": "CM1-PD-017",
+      "topic": "Official identifiers optional at onboarding",
+      "rule": "Official Person and Company identifiers are optional at initial create; workflows requiring formal identity verification may require the identifier and qualifying verification. Neither phone nor email is mandatory at initial registration."
+    },
+    {
+      "id": "CM1-PD-018",
+      "topic": "Verified identifier collision",
+      "rule": "A sufficiently verified official identifier must be unique within its approved identity/issuer/Tenant scope; confirmed conflicts block create/update or confirmation and cannot be bypassed with probabilistic-match exception. Identifier namespace and technical unique key remain OPEN."
+    },
+    {
+      "id": "CM1-PD-019",
+      "topic": "Verification lifecycle separation",
+      "rule": "Formal identity verification is distinct from record lifecycle and commercial status. Its states are NOT_VERIFIED, VERIFIED, REQUIRES_REVERIFICATION; initial creation is NOT_VERIFIED unless a separate trusted verification occurs."
+    },
+    {
+      "id": "CM1-PD-020",
+      "topic": "Verification routes",
+      "rule": "Both trusted external/system verification and evidence-backed manual verification by separately authorized actor are permitted; both produce attributable evidence/history and coordinated Audit obligations. Customer Domain remains final authoritative state writer."
+    },
+    {
+      "id": "CM1-PD-021",
+      "topic": "Manual verification and separation of duties",
+      "rule": "An actor who created the customer may manually verify that customer if independently permitted in normal processes; sensitive processes require a different verifying actor. Sensitive-process catalog and permission grants remain OPEN."
+    },
+    {
+      "id": "CM1-PD-022",
+      "topic": "No blanket verification expiry",
+      "rule": "No universal time-based identity verification expiry. Effective validity depends on underlying required evidence, material identity changes, trusted revocation, and evidence validity rules. Age alone does not invalidate VERIFIED."
+    },
+    {
+      "id": "CM1-PD-023",
+      "topic": "Reverification trigger",
+      "rule": "Expiry/loss of validity of evidence necessary to substantiate an otherwise valid earlier verification, or a material change to identity facts supporting it, moves VERIFIED to REQUIRES_REVERIFICATION; successful new trusted verification returns VERIFIED."
+    },
+    {
+      "id": "CM1-PD-024",
+      "topic": "Fundamental verification invalidation",
+      "rule": "If prior verification is proven fundamentally invalid (false/misattributed/invalid from outset), effective status becomes NOT_VERIFIED, including from REQUIRES_REVERIFICATION. Requires an independent new trusted verification for VERIFIED; never erase historical evidence."
+    },
+    {
+      "id": "CM1-PD-025",
+      "topic": "Verification evidence provenance",
+      "rule": "Verification decisions preserve method (SYSTEM/MANUAL), source/issuer, verified actor/service, decision time, relevant identity revision, controlled evidence reference, reason and correlation. Protect sensitive evidence and retain histories subject to unresolved retention and disclosure rules."
+    },
+    {
+      "id": "CM1-PD-026",
+      "topic": "Verification authorization and consistency",
+      "rule": "Generic CUS-UPDATE must not directly set VERIFIED; trusted verification workflow authorizes and verifies actor or provider result, identity revision, duplicate collision, evidence and required durable Audit. Stale or ambiguous responses do not confer VERIFIED."
+    },
+    {
+      "id": "CM1-PD-027",
+      "topic": "Operational use of verification",
+      "rule": "NOT_VERIFIED and REQUIRES_REVERIFICATION can coexist with ACTIVE Customer; any consuming operation requiring verified identity must check effective evidence validity before relying on VERIFIED, not assume status flag alone suffices."
+    },
+    {
+      "id": "CM1-PD-028",
+      "topic": "Revocation history and safe failure",
+      "rule": "Verification expiry/revocation preserves Customer ID, historical relationships and an auditable, provenance-bound record. Trusted fundamental invalidation cannot silently be ignored by sensitive consumers when persistence is temporarily unavailable; precise fail/recovery contract remains OPEN."
+    },
+    {
+      "id": "CM1-PD-029",
+      "topic": "Relationship multiplicity",
+      "rule": "Each Person may have multiple concurrent Relationships with Company and/or Branch. Each independent role is represented by a distinct Relationship; roles/affiliations belong to Relationship, not to duplicate Person records."
+    },
+    {
+      "id": "CM1-PD-030",
+      "topic": "Relationship conceptual fields",
+      "rule": "Recommended conceptual Relationship fields: relationshipId, personId, targetType (COMPANY|BRANCH), targetId, roleCode, roleTitle, status, startDate, endDate, recordVersion, createdAt, updatedAt, endedReason, optional source/evidence reference. These are conceptual, not an approved schema or API."
+    },
+    {
+      "id": "CM1-PD-031",
+      "topic": "Relationship lifecycle",
+      "rule": "Relationship lifecycle states are ACTIVE and ENDED (proposed for formal review). An ENDED historical Relationship is not reopened; a later recurrence of the same role is a separate Relationship."
+    },
+    {
+      "id": "CM1-PD-032",
+      "topic": "Relationship temporal interval convention",
+      "rule": "Use the conceptual half-open interval [startDate, endDate): start inclusive, end exclusive, null end means open-ended, empty or backwards intervals are invalid. Effective usability considers status, interval, Person status, target status and permissions."
+    },
+    {
+      "id": "CM1-PD-033",
+      "topic": "Relationship overlap — controlled exception (LATEST/authoritative)",
+      "rule": "For the same Person, TargetType, TargetId and RoleCode, overlapping Relationship intervals are allowed only through a controlled exception with a warning, valid authority, mandatory reason and Audit."
+    },
+    {
+      "id": "CM1-PD-034",
+      "topic": "Overlap — free cases",
+      "rule": "Distinct role codes may overlap freely; the same role may overlap across different companies/targets; the same role in Company vs its Branch concerns different targets (different TargetId)."
+    },
+    {
+      "id": "CM1-PD-035",
+      "topic": "Overlap — warning and reuse-or-exception",
+      "rule": "Same Person + same target + same role + overlapping intervals produces a warning. The user may select/use an existing Relationship instead of creating a new one. An authorized user may intentionally create/update an overlapping Relationship with a mandatory exception reason; no separate supervisor approval is required."
+    },
+    {
+      "id": "CM1-PD-036",
+      "topic": "Overlap — reason scope",
+      "rule": "A reason is required for each newly authorized overlap decision; old reasons do not authorize all future changes automatically."
+    },
+    {
+      "id": "CM1-PD-037",
+      "topic": "Overlap — historical participation",
+      "rule": "Even ENDED Relationship intervals participate in historical overlap detection."
+    },
+    {
+      "id": "CM1-PD-038",
+      "topic": "Overlap — concurrency",
+      "rule": "Two cases are distinguished: (1) updating the same Relationship rejects stale record versions; (2) creating separate overlapping Relationships concurrently uses a consistent, authoritative overlap assessment. If the relevant conflict set changed after the user reviewed a warning, require re-evaluation before finalizing."
+    },
+    {
+      "id": "CM1-PD-039",
+      "topic": "Overlap — idempotency and intent",
+      "rule": "Idempotent retries must not produce unintended additional Relationship records. An intentional, approved overlap exception and an accidental duplicate request are distinct cases."
+    },
+    {
+      "id": "CM1-PD-040",
+      "topic": "Overlap — invariants preserved",
+      "rule": "Overlap exception authorization does not bypass stale-version checks, Tenant isolation, input validation, or disclosure control. Avoid disclosing non-visible Relationship details through warning output."
+    },
+    {
+      "id": "CM1-PD-041",
+      "topic": "Overlap — supersession of absolute prohibition",
+      "rule": "The controlled-exception overlap policy SUPERSEDES any prior rule prohibiting all overlapping Relationships (same Person+target+role). No active absolute-overlap-prohibition rule remains; historical absolute-denial expectations, if imported later, are superseded."
+    },
+    {
+      "id": "CM1-PD-042",
+      "topic": "Branch record states",
+      "rule": "Branch has only two independent record states: ACTIVE and INACTIVE. Branch does not have an independently managed ARCHIVED state. Effective operational availability depends on its own status, its parent Company lifecycle status, and applicable resource/action policy."
+    },
+    {
+      "id": "CM1-PD-043",
+      "topic": "Branch/Company deactivation independence",
+      "rule": "Deactivating Company does not automatically change stored Branch statuses. Deactivating Branch does not automatically modify Company or Person. Existing open activities remain available for permitted continuation; creating new activities is restricted if Branch or parent Company is effectively inactive."
+    },
+    {
+      "id": "CM1-PD-044",
+      "topic": "Branch parent immutability",
+      "rule": "Direct Branch reparenting is prohibited. branchId and companyId are immutable after creation."
+    },
+    {
+      "id": "CM1-PD-045",
+      "topic": "Branch transfer",
+      "rule": "When a Branch is genuinely transferred, create a new Branch under the target Company with a new Branch ID and deactivate the original. Do not transfer historical activities or Person Relationships automatically; historical activities remain attributed to the original Company/Branch. New Relationships and activity assignments use their own authorized operations. An optional succession reference between old and new branches may be proposed but must not transfer ownership/permissions."
+    },
+    {
+      "id": "CM1-PD-046",
+      "topic": "Branch lifecycle dependency rules",
+      "rule": "Archiving Company requires resolution of applicable open dependencies across Company and Branches. Branch records and historical associations remain intact after Company archiving. Restoring Company does not automatically activate inactive Branches."
+    },
+    {
+      "id": "CM1-PD-047",
+      "topic": "Branch identity and relationships",
+      "rule": "Branch is subordinate to Company (not an independent Customer), has its own stable ID and independently maintained data, and has exactly one Company parent whose ID is immutable after creation. Branches can have Person Relationships. Company/Branch references respect Tenant isolation."
+    },
+    {
+      "id": "CM1-PD-048",
+      "topic": "Audit obligations for durable and proposed operations",
+      "rule": "Customer durable mutations honor existing coordinated persistent Audit obligations. Proposed independent Branch, Relationship and Verification operations require an auditability product requirement, with the precise operational contract still requiring formal approval."
+    },
+    {
+      "id": "CM1-PD-049",
+      "topic": "Audit — no assumed mandatory events",
+      "rule": "Rejected validations, warnings, or read-only queries do not carry an assumed mandatory Audit rule unless supported by existing authoritative sources."
+    },
+    {
+      "id": "CM1-PD-050",
+      "topic": "Audit — controlled evidence references",
+      "rule": "Prefer controlled references to sensitive evidence over copying entire identity documents or private identifiers into Audit logs."
+    },
+    {
+      "id": "CM1-PD-051",
+      "topic": "Audit — safe failure and concurrency",
+      "rule": "A mandatory coordinated Audit failure must not result in a successful mutation being reported. Broker ACK or outbox publication alone is not authoritative Audit ingestion. Preserve version/concurrency safety and prevent stale provider results from silently overwriting newer verification states."
+    },
+    {
+      "id": "CM1-PD-052",
+      "topic": "Duplicate signals non-conclusive",
+      "rule": "Similar names, shared phone numbers, or shared emails alone are not conclusive identity matches. Automatic merging of Customer records is not authorized. Distinguish an intentional duplicate-warning override from an accidental duplicate caused by retrying the same request. Avoid unauthorized disclosure of other customers/Tenant data through duplicate detection."
+    },
+    {
+      "id": "CM1-PD-053",
+      "topic": "Minimum fields consolidation",
+      "rule": "Address and Latin name are optional unless a specific consuming workflow requires them. Official identification may be required later by a workflow requiring formal identity verification. A structurally valid identifier is not automatically verified. Verified official identifiers must be unique within the formally defined identity scope; conclusive conflicts block the conflicting create/update. No silent assumption of global cross-Tenant identity deduplication."
+    },
+    {
+      "id": "CM1-PD-054",
+      "topic": "Lifecycle consolidation",
+      "rule": "Deactivation is allowed even with open activities; existing open activities and historical data remain intact. Starting new activities for INACTIVE customers is restricted per owning-module policy. Archiving must not delete Customer data, relationships, or audit history. Restoring an archived Customer must not automatically reopen historical activities/relationships."
+    },
+    {
+      "id": "CM1-PD-055",
+      "topic": "CUS-UPDATE consolidation",
+      "rule": "Updating Company must not silently reparent Branches; updating Person must not silently alter unrelated Relationships. Converting Company into Person or vice versa is not supported as a normal CM-1 update. Routine edits of ARCHIVED records are not allowed (use authorized recovery). INACTIVE records may be corrected without automatically becoming ACTIVE."
+    },
+    {
+      "id": "CM1-PD-056",
+      "topic": "Verification independent of authorization",
+      "rule": "A record can be ACTIVE and NOT_VERIFIED, and can be VERIFIED without automatically receiving access or operational authorization. Verification state never substitutes for resource authorization or membership."
+    },
+    {
+      "id": "CM1-PD-057",
+      "topic": "Verification time semantics and open items",
+      "rule": "Effective time and recording time are recorded distinctly when relevant. The specific evidence-retention period, trusted-provider catalog, revocation dispute process, and detailed failure/recovery mechanism remain open."
+    }
+  ],
+  "openQuestionTraceability": {
+    "PDQ-002-07": [
+      "CM1-PD-001",
+      "CM1-PD-003",
+      "CM1-PD-004",
+      "CM1-PD-029",
+      "CM1-PD-047"
+    ],
+    "PDQ-002-03": [
+      "CM1-PD-005",
+      "CM1-PD-006",
+      "CM1-PD-007",
+      "CM1-PD-011",
+      "CM1-PD-052"
+    ],
+    "PDQ-002-02": [
+      "CM1-PD-008",
+      "CM1-PD-009",
+      "CM1-PD-010",
+      "CM1-PD-011",
+      "CM1-PD-012",
+      "CM1-PD-042",
+      "CM1-PD-043",
+      "CM1-PD-046"
+    ],
+    "PDQ-002-04": [
+      "CM1-PD-013",
+      "CM1-PD-014",
+      "CM1-PD-015",
+      "CM1-PD-038",
+      "CM1-PD-039",
+      "CM1-PD-055"
+    ],
+    "PDQ-002-01": [
+      "CM1-PD-001",
+      "CM1-PD-007",
+      "CM1-PD-015",
+      "CM1-PD-016",
+      "CM1-PD-017",
+      "CM1-PD-053"
+    ],
+    "PDQ-A001-002": [
+      "CM1-PD-006",
+      "CM1-PD-013"
+    ],
+    "PDQ-A001-003": [
+      "CM1-PD-001",
+      "CM1-PD-005",
+      "CM1-PD-009",
+      "CM1-PD-014"
+    ],
+    "PDQ-A001-052": [
+      "CM1-PD-002",
+      "CM1-PD-011"
+    ]
+  },
+  "currentOpenQuestionCount": 19,
+  "openQuestionsRemainOpen": true,
+  "unresolved": [
+    "Named accountable Business Owner (PDQ-A001-001)",
+    "Actual actor/permission grants and disclosure requirements (PDQ-A001-002)",
+    "Exact field definitions, mandatory conditions, validation and national-ID rules (PDQ-002-01, PDQ-002-07)",
+    "Exact match/normalization algorithm and verified-identifier registry or scope (PDQ-002-03)",
+    "Merge, irreversible deletion, retention and legal hold (PDQ-002-03, PDQ-A001-050)",
+    "Full dependency catalog, activity-specific restriction policy and race-safe semantics (PDQ-002-02, PDQ-A001-052)",
+    "Reason code catalog, sensitive-identifier field list and authorized exception classification (PDQ-002-01, PDQ-002-04)",
+    "Operation-specific Audit failure/recovery owner and policy (PDQ-002-06, PDQ-A001-049)",
+    "Pending Submission CM-1 inclusion (PDQ-002-05)",
+    "External actor/profile integrations and exact deployment-profile acceptance (PDQ-A001-053, PDQ-A001-052)",
+    "Implementation authorization, IAM bindings, G-RUNTIME and FE-BE gates",
+    "Official identifier namespace/uniqueness scope and identity verification provider trust rubric",
+    "Approved specific identity fields, data normalization, national/legal identifier validators",
+    "Evidence sufficiency, manual verifier permissions, sensitive process catalog and separation-of-duties applicability",
+    "Verification expiration/revocation source of truth, notification semantics, recovery and evidence retention",
+    "Exact Relationship role catalog (roleCode/roleTitle taxonomy) and date/time representation?",
+    "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?",
+    "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?",
+    "Sensitive-process catalog and SoD actor mapping for manual verification?",
+    "Overlap conflict-set token/snapshot/locking/transactional implementation (technical design, not an API contract)?",
+    "Exact Relationship role catalog (roleCode/roleTitle taxonomy) and date/time representation?",
+    "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?",
+    "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?",
+    "Sensitive-process catalog and SoD actor mapping for manual verification?",
+    "Overlap conflict-set token/snapshot/locking/transactional implementation (technical design, not an API contract)?"
+  ],
+  "governance": {
+    "gRuntime": "BLOCKED",
+    "feBe": "PENDING",
+    "authIam": "PENDING",
+    "offline": "PROHIBITED",
+    "production": "NOT_AUTHORIZED"
+  },
+  "doesNotApprove": [
+    "implementation",
+    "RBAC/IAM",
+    "database schema",
+    "API",
+    "deployment",
+    "runtime gate",
+    "closure of other OPEN decisions"
+  ],
+  "supersessions": [
+    {
+      "supersedes": "Any prior rule prohibiting ALL overlapping Relationships for same Person+TargetType+TargetId+RoleCode",
+      "supersededBy": "CM1-PD-041 / CM1-PD-033..040",
+      "scope": "FR-BJ-001 Relationship overlap",
+      "historicalNote": "No active absolute-overlap-denial rule or CM1-REL-21..40 criterion exists in the current working tree; this supersession is prospective and prevents reactivation of contradictory absolute-denial expectations."
+    }
+  ],
+  "newOpenQuestions": [
+    {
+      "questionId": "PDQ-002-08",
+      "affectedCapability": "FR-BJ-001",
+      "category": "PRODUCT",
+      "missingDecision": "Exact Relationship role catalog (roleCode/roleTitle taxonomy) and date/time representation?"
+    },
+    {
+      "questionId": "PDQ-002-09",
+      "affectedCapability": "FR-BJ-001",
+      "category": "PRODUCT",
+      "missingDecision": "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?"
+    },
+    {
+      "questionId": "PDQ-002-10",
+      "affectedCapability": "FR-BJ-001",
+      "category": "SECURITY",
+      "missingDecision": "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?"
+    },
+    {
+      "questionId": "PDQ-002-11",
+      "affectedCapability": "FR-BJ-001",
+      "category": "SECURITY",
+      "missingDecision": "Sensitive-process catalog and SoD actor mapping for manual verification?"
+    },
+    {
+      "questionId": "PDQ-002-12",
+      "affectedCapability": "FR-BJ-001",
+      "category": "TECHNICAL",
+      "missingDecision": "Overlap conflict-set token/snapshot/locking/transactional implementation (technical design, not an API contract)?"
+    }
+  ],
+  "relationshipOverlapPolicyStatus": "LATEST_USER_DECISION_AUTHORITATIVE_CONTROLLED_EXCEPTION",
+  "branchReparentingStatus": "DIRECT_REPARENTING_PROHIBITED; TRANSFER_BY_NEW_BRANCH"
+}
