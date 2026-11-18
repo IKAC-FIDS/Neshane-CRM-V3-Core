@@ -1,6 +1,64 @@
 # Requirements-engineering validation report — V3-FR-A-002
 
-## Current supplement — v1.3.0 Role Catalog (proposed package; formal acceptance PENDING)
+## Current supplement — v1.4.0 vocabulary and Tenant selectability
+
+**PROPOSED DOCUMENTATION PACKAGE; formal requirements acceptance PENDING.** This supplement supersedes only current inventory/residual statements of earlier reports, not historical decision semantics or source provenance. Historical reports below are not renewed execution evidence.
+
+### Baseline and authority
+
+- Task: V3-FR-A-002, Customer Master v1.4.0. Root `E:/Neshane-CRM-V3-V3-024-main-adoption`; origin `https://github.com/IKAC-FIDS/Neshane-CRM-V3-Core.git`; branch `codex/v3-fr-a-002`; HEAD `41a0620ba8216cc86afcccfccbb849ee5e33782e`. Verified against the requested values before editing; initial worktree and index clean.
+- Authority: user task sections CM1-PD-066/067 are USER-CONFIRMED PRODUCT DIRECTION; proposed supplementary governance rules are not confirmed decisions. Exact wording/data, reviewed baseline, actual UTC recording time and unknown owner issuance time are recorded in PDR JSON vocabularySelectabilityAuthority/decisions. Historical authority records retained.
+- Documentation only: no executable code, schemas, migrations, application tests, IAM configuration, Backend/Frontend, deployment or unrelated roadmap edit; no implementation/architecture/runtime authorization inferred. No stage, commit, push or other branch mutation.
+
+### Changes and coverage
+
+- CM1-PD-066 records initial System Role Vocabulary v1.0: exactly 12 codes/Persian titles/scopes in PDR JSON catalogEntries and RC-009. Data is documentation, not a DB seed/schema/migration; no fixed roleId/English title assumed. No exclusive PRIMARY_CONTACT, implicit IAM or verified legal authority.
+- CM1-PD-067 / RC-010/011 adds Tenant-local assignment restriction and effective eligibility, not global Role editing/deactivation. Customer Domain enforcement includes direct API attempts and invalid effective-state rejection during concurrent hide/finalization. Preserve global identity/status/scope, other Tenants, existing ACTIVE/ENDED Relationships and otherwise authorized history. Restore selectability cannot reactivate a global INACTIVE Role or reopen ENDED.
+- 67 unique decisions; original CM1-PD-001..065 JSON object substrings byte-identical to the Git baseline and parsed objects unchanged. Existing overlap policy, management authority for incompatible scope changes, roleCode conceptual key, Branch and verification/lifecycle boundaries retained. No new physical deletion or mandatory hide/unhide reason rule.
+- Coverage: FULL=3, PARTIAL=57, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2. Both new decisions have explicit criterion/field/operation/OPEN links and residual gaps. No earlier coverage class promoted. Values and product policy are answered; executable contracts are not approved.
+- Actual criterion definitions: baseline 5 canonical + 99 detailed = 104; current 5 + 112 = 117, all unique. Only new IDs CM1-ROL-17..29 (13); five canonical definitions and all 99 earlier detailed definition lines unchanged, including CM1-ROL-01..16. New scenarios remain PROPOSED / NOT TESTED; executable cases explicitly BLOCKED pending relevant contracts.
+- PDQ-002-08 remains OPEN / PARTIALLY ANSWERED; vocabulary v1.0 and Tenant-selectability product policy answered. All 19 OPEN IDs preserved. Remaining contracts: future catalog/publication, defaults for new Tenants/later roles, exact configuration/schema/reference/persistence, normalization/length/namespaces/custom collisions, operation/IAM/Audit names, ordinary hide/unhide reason policy, concurrency/dependency consistency, history/display, Audit failure/recovery, temporal/API compatibility. RC-PROPOSED does not choose any default/namespace/event/reason rule.
+- Source inventory/evidence, historical SHA values, approved source invariants and governance fields preserved. Current manifest covers exact bytes of every other package file, excluding itself under the existing convention; consistency is not authentication of the manifest.
+- Scoped manual review: new policy does not confer security/legal authority, Tenant override of global lifecycle/scope, exclusive primary contact or roleId-based overlap design. Ordinary authorized overlap still has no extra supervisor approval; incompatible scope changes retain their distinct management/reason requirements.
+
+### Commands actually executed / validation boundary
+
+```powershell
+git --no-optional-locks status --short --branch --untracked-files=all
+git --no-optional-locks rev-parse HEAD
+git --no-optional-locks rev-parse --show-toplevel
+git --no-optional-locks diff --cached --stat
+git --no-optional-locks remote get-url origin
+python -X utf8 C:/Users/user/AppData/Local/Temp/opencode/a002-role-140-validate.py
+python -X utf8 C:/Users/user/AppData/Local/Temp/opencode/a002-role-140-validate.py --manifest
+git --no-optional-locks diff --check
+git --no-optional-locks diff --stat
+git --no-optional-locks status --short --untracked-files=all
+```
+
+The task-local validator is outside the repository; its read-only Git baseline comparisons check decisions, criterion definition lines, field IDs, source inventory, governance, scope and unchanged adjacent documentation. It independently compares the exact 12-entry table, including Persian ZWNJ, resolves introduced file/anchor references and computes counts from definition lines, not citations. Manifest mode verifies completeness/exclusion and all current SHA-256 values.
+
+- Structural/documentation run: **34/34 PASS**; manifest-mode run: **36/36 PASS**, including complete inventory/self-exclusion and exact current SHA-256 checks. No software-test PASS is claimed. Manifest is regenerated after this report update and the final check repeated.
+- First combined patch was rejected by context verification; no files were changed by that rejected patch. Re-read actual compact JSON mappings and applied smaller patches. No checks disabled or expected counts reduced.
+- `git diff --check`: **PASS**, no whitespace errors; only LF-to-CRLF working-copy warnings. The validator also passes package-wide trailing-whitespace checks.
+- Application/build/integration/runtime tests: **NOT EXECUTED** (documentation-only). No network/dependency resolution, service or Docker resources used. Exhaustive re-review of all earlier product policies, historical recovery claims, production readiness and independent specialist assessment: **NOT VERIFIED**.
+- Manual review required: exact RC-009 vocabulary, RC-010/011 effective eligibility/history/authority, RC-PROPOSED residuals, PDR new decisions, CM1-ROL-17..29 blocked scenarios and coverage gaps. Next action is user review; contract disposition, formal acceptance and Git operations require separate authorization.
+
+### Governance — unchanged
+
+- G-RUNTIME: BLOCKED
+- FE-BE: PENDING
+- AUTH/IAM: PENDING
+- Offline: PROHIBITED
+- Local-Infra: ACCEPTED — DEVELOPMENT-ONLY
+- Production: NOT AUTHORIZED
+- Formal requirements acceptance: PENDING
+
+Pending Submission remains PERMITTED NOT REQUIRED and non-authoritative. Existing coordinated durable Audit obligations are preserved; no executable API/IAM/DB/persistence/offline/deployment contract is approved.
+
+## Historical v1.3.0 supplement (not renewed v1.4.0 evidence)
+
+### v1.3.0 Role Catalog (proposed package; formal acceptance PENDING)
 
 The older sections below are historical reports, not renewed evidence for this task. In particular, this update does not revalidate recovery-investigation claims, historical Backend/Frontend HEADs, or earlier broad semantic-consistency claims. Current evidence is limited to the changes and checks listed here.
 

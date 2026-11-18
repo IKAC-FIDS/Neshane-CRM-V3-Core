@@ -51,3 +51,9 @@ These are product-direction proposals; the four documented operation concepts (C
 Create/manage Role title/applicability, deactivate/reactivate, and validate new Relationship assignments against ACTIVE status and current applicability (CM1-PD-058..065). Physical deletion and identity/code mutation are unsupported. Scope changes preserve existing Relationships; incompatible changes require management authority, impact evaluation, disclosure-safe warning, mandatory reason and auditability. System/Tenant management boundaries: `customer-role-catalog.md#rc-007--authority-and-tenant-boundaries`.
 
 These are logical capabilities only, not new approved CUS operation IDs or CUS-UPDATE permission reuse. Exact management operation/IAM/API/persistence, concurrent scope-dependency evaluation and operation-specific Audit failure/recovery remain OPEN under PDQ-002-08/10/12. CUS-CREATE does not confer catalog management authority.
+
+## Tenant System Role selectability (v1.4.0 logical capability)
+
+CM1-PD-067 permits authorized Tenant-local hide/unhide for new assignments of System Roles (including the initial vocabulary, CM1-PD-066). It is neither global Role deactivation nor System definition editing. Customer Domain enforces RC-010/011 eligibility including direct API attempts and concurrent hide/finalization safety. Existing Relationships and authorized historical references remain intact; no reactivation, other-Tenant change or disclosure is permitted. Validated Tenant context and management authority are necessary; CUS-CREATE alone is insufficient.
+
+No new approved operation ID, request/response schema, permission or Audit event name is introduced. Exact defaults/configuration, ordinary hide/unhide reason requirement, concurrency enforcement and Audit failure/recovery are OPEN. The incompatible scope-change mandatory-reason rule is not imported here.

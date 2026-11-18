@@ -1,7 +1,7 @@
 # Customer Master — Product Decision Record
 
 **Record ID:** `V3-FR-A-002-PDR-001`
-**Version:** `1.3.0` (proposed package; formal acceptance pending)
+**Version:** `1.4.0` (proposed package; formal acceptance pending)
 **Date:** 2026-11-18
 **Scope:** `FR-BJ-001` / `V3-FR-A-002` / `CM-1`
 **Disposition:** `USER-CONFIRMED PRODUCT DIRECTION — FORMAL REPOSITORY ACCEPTANCE PENDING`
@@ -90,7 +90,18 @@ Source/authority, recording timestamp, reviewed baseline and exact decision word
 | CM1-PD-064 | Catalog authority | System authority governs System Roles; Tenant users cannot modify them. Tenant roles managed only by authorized owning-Tenant actors; no cross-Tenant access/reference absent a separate governing contract. CUS-CREATE alone is insufficient. |
 | CM1-PD-065 | History / overlap | Preserve identity/history through title/status/scope changes; no bypass of version, overlap authorization, Tenant or mandatory Audit checks; exact reference and overlap key remain unapproved. |
 
-These eight decisions partially answer PDQ-002-08; all 19 questions stay OPEN. No earlier decision is removed or rewritten. Current total: 65 user-confirmed decisions. The historical v1.2.1 counts below describe that earlier package only.
+These eight decisions partially answer PDQ-002-08; all 19 questions stay OPEN. No earlier decision is removed or rewritten. The v1.3.0 total was 65 user-confirmed decisions; current v1.4.0 total is 67. The historical v1.2.1 counts below describe that earlier package only.
+
+## Vocabulary and Tenant selectability — v1.4.0 (CM1-PD-066/067)
+
+Authority: USER-CONFIRMED PRODUCT DIRECTION; formal requirements acceptance PENDING. Exact text/data and reviewed baseline/recording timestamp are in JSON `decisions` and `vocabularySelectabilityAuthority`. Earlier 65 decision objects remain unchanged.
+
+| Decision ID | Topic | Confirmed product rule |
+| --- | --- | --- |
+| CM1-PD-066 | Initial System Role Vocabulary v1.0 | Exact 12 codes, Persian titles and scopes: [RC-009](customer-role-catalog.md#rc-009--initial-system-role-vocabulary-v10), mirrored in JSON decision catalogEntries. Initial, not exhaustive future vocabulary; no exclusive PRIMARY_CONTACT, IAM grant or verified legal/automatic CEO/BOARD_MEMBER authority. Preserve identity/no deletion. No English titles, global roleIds, seed or deployment contract assumed. |
+| CM1-PD-067 | Tenant-specific System Role selectability | Authorized Tenant management may hide/unhide an otherwise eligible System Role for new assignments in that Tenant only. Customer Domain enforces effective global ACTIVE + applicability + Tenant selectability + operation authority and existing guards. Preserve global definition, other Tenants, existing Relationships and authorized history. No lifecycle/scope override; concurrent finalization must not accept invalid effective state; exact enforcement OPEN. |
+
+Hide/unhide is not global deactivation or incompatible scope change: no mandatory reason is inferred from CM1-PD-063. Supplementary default/code/collision/publication/configuration/IAM/Audit/reason rules are proposals under [RC-PROPOSED](customer-role-catalog.md#rc-proposed--supplementary-governance-proposals-not-confirmed-rules), not additional confirmed decisions. PDQ-002-08 stays OPEN / PARTIALLY ANSWERED; 19 OPEN questions unchanged.
 
 ## 3. Supersession
 

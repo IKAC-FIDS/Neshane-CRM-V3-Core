@@ -1,20 +1,46 @@
 {
   "taskId": "V3-FR-A-002",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "coverageClassificationLegend": {
     "FULL": "has directly testable acceptance criterion/coverage",
     "PARTIAL": "some testable criteria; residual OPEN technical/contract gaps remain",
     "DOCUMENTED_ONLY": "recorded but lacks independently testable acceptance coverage",
     "BLOCKED_BY_OPEN_DECISION": "depends on an unresolved technical/contract decision"
   },
-  "decisionCount": 65,
+  "decisionCount": 67,
   "coverageCounts": {
-    "PARTIAL": 55,
+    "PARTIAL": 57,
     "DOCUMENTED_ONLY": 5,
     "FULL": 3,
     "BLOCKED_BY_OPEN_DECISION": 2
   },
   "decisions": [
+    {
+      "decisionId": "CM1-PD-066",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Exact initial 12-entry System Role Vocabulary v1.0; organizational meaning only, no exclusivity or legal/IAM authority.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-009--initial-system-role-vocabulary-v10",
+      "relatedBusinessRule": "RC-009",
+      "fieldIds": ["REL-002-03", "REL-002-05", "REL-002-06"],
+      "operationConcepts": ["System Role catalog consumption / Relationship assignment (logical capabilities; executable contracts OPEN)"],
+      "acceptanceCriterionIds": ["CM1-ROL-17", "CM1-ROL-18", "CM1-ROL-26", "CM1-ROL-29"],
+      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "coverageGap": "Initial vocabulary values are answered and directly comparable; schema/reference, namespace/custom collisions and executable publication/assignment contracts remain OPEN. No seed or fixed roleId chosen."
+    },
+    {
+      "decisionId": "CM1-PD-067",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Tenant-local System Role assignment selectability; authoritative effective eligibility, preservation and no global/Tenant/lifecycle bypass.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-010--tenant-specific-system-role-selectability",
+      "relatedBusinessRule": "RC-010 / RC-011",
+      "fieldIds": ["REL-002-03", "REL-002-05", "REL-002-07", "REL-002-10"],
+      "operationConcepts": ["Tenant System Role hide/unhide management", "Authoritative effective assignment validation (logical capabilities; no new operation ID)"],
+      "acceptanceCriterionIds": ["CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29"],
+      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10", "PDQ-002-12"],
+      "coverageGap": "Software scenarios BLOCKED pending defaults/configuration, management/permission/API, consistency, historical display and Audit failure/recovery design. Ordinary hide/unhide reason policy remains OPEN."
+    },
     {
       "decisionId": "CM1-PD-058",
       "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
@@ -26,7 +52,7 @@
       "operationConcepts": ["Role Catalog management (logical capability; operation contract OPEN)"],
       "acceptanceCriterionIds": ["CM1-ROL-01", "CM1-ROL-13", "CM1-ROL-14"],
       "relatedOpenPqdIds": ["PDQ-002-08"],
-      "coverageGap": "Initial System vocabulary/codes, namespace, schema and operation/permission contracts remain OPEN."
+      "coverageGap": "Initial System vocabulary v1.0 is answered by CM1-PD-066; future catalog/publication, namespace/custom collisions, schema and operation/permission contracts remain OPEN."
     },
     {
       "decisionId": "CM1-PD-059",

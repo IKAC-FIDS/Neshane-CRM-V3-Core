@@ -1,15 +1,17 @@
-# V3-FR-A-002 — Customer Master Product Decision Package v1.3.0 (PROPOSED)
+# V3-FR-A-002 — Customer Master Product Decision Package v1.4.0 (PROPOSED)
 
 ## Included
 - Reconciled requirements, business rules, field dictionary, lifecycle (explicit source-baseline vs user-confirmed target), operation catalog, actor policy, failure/deployment scenarios, acceptance criteria, open decisions, source traceability.
-- `customer-master-product-decision-record.md` / `.json`: 65 user-confirmed decisions (CM1-PD-001..065) plus supersession record; formal acceptance PENDING.
-- `customer-role-catalog.md`: CM1-PD-058..065 policy and exact residual contracts; Role Definitions are organizational responsibilities, not IAM/RBAC grants.
-- `customer-decision-coverage-matrix.md` / `.json`: coverage map of all 65 decisions (FULL=3, PARTIAL=55, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2). Eight Role decisions are PARTIAL because executable contracts remain OPEN.
+- `customer-master-product-decision-record.md` / `.json`: 67 user-confirmed decisions (CM1-PD-001..067) plus supersession record; formal acceptance PENDING. Original 65 decision objects preserved.
+- `customer-role-catalog.md`: CM1-PD-058..067 policy and residual contracts; RC-009 holds the exact 12-entry initial System Role Vocabulary v1.0, mirrored in PDR JSON catalogEntries. Roles describe organizational responsibilities, not IAM/RBAC grants or verified legal representation.
+- `customer-decision-coverage-matrix.md` / `.json`: all 67 decisions (FULL=3, PARTIAL=57, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2). Two new decisions PARTIAL because executable/governance contracts remain OPEN, not because initial vocabulary/selectability policy is unanswered.
 - `cm1-acceptance-criteria-addendum.md`: detailed CM1 acceptance criteria (all PROPOSED / NOT TESTED).
-- Inventory: 5 canonical + 99 detailed = 104 unique criteria; 16 new CM1-ROL-01..16 scenarios, none executed.
+- Inventory: 5 canonical + 112 detailed = 117 unique criteria. Added CM1-ROL-17..29; five canonical and CM1-ROL-01..16 unchanged. All new criteria PROPOSED / NOT TESTED; contract-dependent execution BLOCKED pending design.
 - `sha256-manifest.json`: integrity manifest (self-reference omitted by convention).
 
 ## Key policy (user-confirmed, authoritative)
+- Tenant System Role hide/unhide restricts new assignments locally; it does not edit/deactivate global Roles, alter other Tenants, mutate existing Relationships or hide otherwise authorized history. Customer Domain enforces global ACTIVE + scope + Tenant selectability + Relationship authority and existing guards, including concurrency. No Tenant override of global lifecycle/scope.
+- Initial vocabulary is not exhaustive; no exclusive PRIMARY_CONTACT, automatic CEO/BOARD_MEMBER authority, English title, global roleId or seed/migration choice is inferred. Ordinary hide/unhide reason policy and default selectability remain OPEN, not inherited from incompatible scope changes.
 - Relationship overlap: same Person+TargetType+TargetId+RoleCode overlapping intervals allowed only via controlled exception. Distinct roles/targets/Company-vs-Branch overlap freely. Supersedes any absolute-overlap prohibition.
 - Branch: subordinate to Company, immutable companyId (Required/Immutable parent reference), no direct reparenting, only ACTIVE/INACTIVE.
 - Identity verification: NOT_VERIFIED/VERIFIED/REQUIRES_REVERIFICATION, independent of record lifecycle; no universal expiry; no implicit access.

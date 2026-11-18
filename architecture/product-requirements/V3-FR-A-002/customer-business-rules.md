@@ -31,6 +31,8 @@ Classification legend: **APPROVED SOURCE INVARIANT** (baseline architecture/audi
 
 Role Catalog product policy is user-confirmed in CM1-PD-058..065, not wholly undecided. [customer-role-catalog.md](customer-role-catalog.md) RC-001..008 is the detailed rule catalog: hybrid system/Tenant roles, applicability, lifecycle, immutable identity/no deletion, preservation, controlled scope changes, Tenant/system authority and overlap/history. Formal acceptance remains pending; exact executable contracts remain OPEN.
 
+**Initial vocabulary / Tenant selectability:** CM1-PD-066/067 / RC-009..011 confirm the exact 12-entry initial System vocabulary and locally managed assignment restriction. Global ACTIVE, target applicability, Tenant selectability, Relationship authority and existing guards are jointly necessary, enforced by Customer Domain. Hide/unhide cannot modify global definitions, other Tenants or existing Relationships/history, grant permissions/legal authority, or bypass global INACTIVE. It has no inferred mandatory-reason rule and does not replace RC-006 management authority for incompatible scope changes. Preserve ordinary authorized overlap's no-extra-supervisor rule and conceptual roleCode key; technical reference/key remains OPEN.
+
 ## PROPOSED IMPLEMENTATION/CONTRACT
 
 - Persistence/API schema for fields, relationships, and verification state (all unapproved).
@@ -39,6 +41,6 @@ Role Catalog product policy is user-confirmed in CM1-PD-058..065, not wholly und
 
 ## OPEN DECISION
 
-- Exact field validation/uniqueness/normalization; initial Role vocabulary/codes, namespace, schema/reference, IAM/operation, consistency, history, Audit and temporal/API contracts (PDQ-002-08); identifier namespace/scope.
+- Exact field validation/uniqueness/normalization; Role namespace/custom collisions, future catalog/publication, defaults, configuration/schema/reference, IAM/operation, hide/unhide reason policy, consistency, history, Audit and temporal/API contracts (PDQ-002-08); initial vocabulary v1.0 and Tenant-selectability product policy are answered, not these executable contracts. Identifier namespace/scope remains OPEN.
 - Merge/deletion/retention/legal-hold; operation-specific Audit failure/recovery owner and policy.
 - Sensitive-process catalog and SoD actor mapping; trusted provider catalog; evidence acceptance/retention.

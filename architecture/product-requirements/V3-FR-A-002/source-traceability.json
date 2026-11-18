@@ -943,7 +943,23 @@
       "requiredDecisionAuthority": "Product Decision Owner / TAO"
     }
   ],
-  "version": "1.3.0",
+  "version": "1.4.0",
+  "vocabularySelectabilityReconciliation": {
+    "taskId": "V3-FR-A-002",
+    "baseline": "41a0620ba8216cc86afcccfccbb849ee5e33782e",
+    "recordedAt": "2026-11-18T22:09:06.916567+00:00",
+    "source": "User task: Codex Task — V3-FR-A-002 / Customer Master v1.4.0; CM1-PD-066/067 and Proposed supplementary governance rules",
+    "authority": "USER-CONFIRMED PRODUCT DIRECTION",
+    "formalAcceptance": "PENDING",
+    "policyArtifact": "customer-role-catalog.md#rc-009--initial-system-role-vocabulary-v10",
+    "selectabilityArtifact": "customer-role-catalog.md#rc-010--tenant-specific-system-role-selectability",
+    "catalogData": "customer-master-product-decision-record.json decisions CM1-PD-066 catalogEntries",
+    "vocabularyVersion": "1.0",
+    "catalogEntryCount": 12,
+    "historicalProvenancePreserved": true,
+    "notSourceApprovedRepositoryEvidence": true,
+    "supplementaryProposalReference": "customer-role-catalog.md#rc-proposed--supplementary-governance-proposals-not-confirmed-rules"
+  },
   "roleCatalogReconciliation": {
     "taskId": "V3-FR-A-002",
     "baseline": "5d9c2f491e24a5afdc8349fd067be982e1e64365",
@@ -959,8 +975,8 @@
   "productDecisionRegister": {
     "path": "customer-master-product-decision-record.json",
     "recordId": "V3-FR-A-002-PDR-001",
-    "version": "1.3.0",
-    "decisionCount": 65,
+    "version": "1.4.0",
+    "decisionCount": 67,
     "decisionIds": [
       "CM1-PD-001",
       "CM1-PD-002",
@@ -1026,7 +1042,9 @@
       "CM1-PD-062",
       "CM1-PD-063",
       "CM1-PD-064",
-      "CM1-PD-065"
+      "CM1-PD-065",
+      "CM1-PD-066",
+      "CM1-PD-067"
     ],
     "supersessions": [
       {
@@ -1042,10 +1060,10 @@
   "fieldDictionaryFieldCount": 31,
   "decisionCoverageMatrix": {
     "path": "customer-decision-coverage-matrix.json",
-    "version": "1.3.0",
-    "decisionCount": 65,
+    "version": "1.4.0",
+    "decisionCount": 67,
     "coverageCounts": {
-      "PARTIAL": 55,
+      "PARTIAL": 57,
       "DOCUMENTED_ONLY": 5,
       "FULL": 3,
       "BLOCKED_BY_OPEN_DECISION": 2
@@ -1053,9 +1071,12 @@
   },
   "acceptanceInventory": {
     "canonicalCriteria": 5,
-    "detailedCriteria": 99,
-    "totalUnique": 104,
-    "addedIds": ["CM1-ROL-01", "CM1-ROL-02", "CM1-ROL-03", "CM1-ROL-04", "CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-07", "CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11", "CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14", "CM1-ROL-15", "CM1-ROL-16"],
+    "detailedCriteria": 112,
+    "totalUnique": 117,
+    "previousInventory": {"version": "1.3.0", "canonicalCriteria": 5, "detailedCriteria": 99, "totalUnique": 104},
+    "previousAddedIds": ["CM1-ROL-01", "CM1-ROL-02", "CM1-ROL-03", "CM1-ROL-04", "CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-07", "CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11", "CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14", "CM1-ROL-15", "CM1-ROL-16"],
+    "addedIds": ["CM1-ROL-17", "CM1-ROL-18", "CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29"],
+    "softwareExecution": "BLOCKED pending relevant executable design; NOT EXECUTED",
     "newCriteriaStatus": "PROPOSED / NOT TESTED"
   },
   "partialResolutionLedger": [
@@ -1063,19 +1084,20 @@
       "pdqId": "PDQ-002-08",
       "disposition": "OPEN / PARTIALLY ANSWERED",
       "formalAcceptance": "PENDING",
-      "confirmedAnswer": "Hybrid System/Tenant catalog; COMPANY/BRANCH/BOTH scope; ACTIVE/INACTIVE lifecycle; immutable identity/no physical deletion; Relationship preservation; controlled scope changes; system/Tenant authority; historical/overlap safeguards.",
+      "confirmedAnswer": "Hybrid System/Tenant catalog; COMPANY/BRANCH/BOTH scope; ACTIVE/INACTIVE lifecycle; immutable identity/no physical deletion; Relationship preservation; controlled scope changes; system/Tenant authority; historical/overlap safeguards. CM1-PD-066 answers the exact initial 12-entry System vocabulary v1.0; CM1-PD-067 answers Tenant-specific selectability and effective-assignment product policy, not executable contracts.",
       "remaining": [
-        "Initial standard System Role vocabulary and exact roleCode values",
-        "Role code normalization and namespace enforcement",
-        "Exact Role Definition field schema and persistence contract",
-        "Role management operation and IAM permission contracts",
-        "Concurrent updates and scope-change dependency consistency mechanism",
+        "Future catalog additions/release/version publication mechanics (initial vocabulary v1.0 answered)",
+        "Role code normalization/length/reserved namespaces and custom collisions with present/future System codes",
+        "Exact Role Definition and Tenant-selectability configuration field/schema/persistence/reference contracts",
+        "Role/selectability management operation, IAM permissions, Audit event names and ordinary hide/unhide reason policy",
+        "Concurrent scope changes and selectability/assignment-finalization dependency consistency mechanism",
         "Role history representation and historical display contract",
         "Operation-specific Audit failure and recovery behavior",
-        "Relationship temporal representation and API compatibility"
+        "Relationship temporal representation and API compatibility",
+        "Default selectability for new Tenants and System Roles added in later catalog versions"
       ],
-      "dependentDecisionIds": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065"],
-      "dependentAcceptanceCriterionIds": ["CM1-ROL-01", "CM1-ROL-02", "CM1-ROL-03", "CM1-ROL-04", "CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-07", "CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11", "CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14", "CM1-ROL-15", "CM1-ROL-16"],
+      "dependentDecisionIds": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067"],
+      "dependentAcceptanceCriterionIds": ["CM1-ROL-01", "CM1-ROL-02", "CM1-ROL-03", "CM1-ROL-04", "CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-07", "CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11", "CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14", "CM1-ROL-15", "CM1-ROL-16", "CM1-ROL-17", "CM1-ROL-18", "CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29"],
       "relatedOpenQuestionIds": ["PDQ-002-10", "PDQ-002-12"],
       "policyReference": "customer-role-catalog.md#rc-open--remaining-open-contracts",
       "affectedExecutableDesign": "BLOCKED until remaining contracts are separately dispositioned"
@@ -1103,7 +1125,7 @@
     {
       "pdqId": "PDQ-002-07",
       "confirmedAnswer": "Company/Person independent; relationship model and verification states (CM1-PD-001/003/004/029/047)",
-      "remaining": "role catalog, identifier/national-ID policy, taxonomy"
+      "remaining": "Role executable/governance contracts under PDQ-002-08 (initial vocabulary and Tenant-selectability policy answered), identifier/national-ID policy, taxonomy"
     },
     {
       "pdqId": "PDQ-A001-003",

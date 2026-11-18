@@ -45,8 +45,8 @@ Sensitivity uses candidate DC notation, not an approved classification model.
 | REL-002-02 | personId | reference | Required | Reference integrity |
 | REL-002-03 | targetType | enum | Required | One of COMPANY/BRANCH |
 | REL-002-04 | targetId | reference | Required | Reference integrity + Tenant isolation |
-| REL-002-05 | roleCode | enum (candidate; schema OPEN) | Required | Hybrid catalog confirmed; new assignments require ACTIVE role, current applicability and authorized Tenant/system reference; exact reference/namespace OPEN (PDQ-002-08) |
-| REL-002-06 | roleTitle | text | Optional | Title changes preserve identity/history; historical display/reference representation OPEN (PDQ-002-08) |
+| REL-002-05 | roleCode | enum (candidate; schema OPEN) | Required | Hybrid catalog and exact initial System codes confirmed (CM1-PD-066); System assignments require global ACTIVE, applicability, Tenant selectability, Relationship authority and existing guards, enforced by Customer Domain (CM1-PD-067). Exact reference/namespace/configuration/defaults/schema OPEN (PDQ-002-08) |
+| REL-002-06 | roleTitle | text | Optional | Initial System titleFa values exact in CM1-PD-066 catalogEntries; no confirmed English-title field or legal authority. Title changes/hide/unhide preserve identity/history; historical display/reference representation OPEN (PDQ-002-08) |
 | REL-002-07 | status | enum | Required | ACTIVE/ENDED |
 | REL-002-08 | startDate | date/time | Required | Half-open [start,end) |
 | REL-002-09 | endDate | date/time | Optional | null allowed; not before start |
@@ -63,6 +63,8 @@ Sensitivity uses candidate DC notation, not an approved classification model.
 ## Role reference — product policy vs schema
 
 Role Definition identity/code immutability (CM1-PD-061) is distinct from an existing Relationship's conceptual roleCode field. No Role schema, Relationship reference shape or change-of-role editing contract is selected. See `customer-role-catalog.md` RC-004/008. Existing field IDs are preserved; no executable Role schema or new approved source entity is added.
+
+System vocabulary v1.0 is the exact 12-entry documentation catalog in PDR JSON CM1-PD-066 and `customer-role-catalog.md` RC-009; it does not select fixed roleIds or a database seed. Tenant selectability (RC-010/011) is a conceptual Tenant-local assignment restriction, not a new global lifecycle field. No configuration field names, missing-setting defaults, persistence representation, roleId-based overlap key or new field ID is approved here. Global identity/status/scope and existing Relationships/history remain unchanged; RC-PROPOSED retains configuration/reason/default contracts as OPEN.
 
 ## Branch parent reference — user-confirmed vs schema
 

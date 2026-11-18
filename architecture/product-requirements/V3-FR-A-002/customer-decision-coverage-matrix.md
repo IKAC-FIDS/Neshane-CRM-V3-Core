@@ -1,11 +1,13 @@
-# Customer Master — Decision Coverage Matrix (v1.3.0 proposed package)
+# Customer Master — Decision Coverage Matrix (v1.4.0 proposed package)
 
-Maps all 65 user-confirmed product decisions (CM1-PD-001..065) to requirements, rules, fields, operations, acceptance criteria and OPEN questions. Coverage classification: FULL / PARTIAL / DOCUMENTED_ONLY / BLOCKED_BY_OPEN_DECISION. Coverage is documentation/scenario coverage, never executed test evidence or formal acceptance.
+Maps all 67 user-confirmed product decisions (CM1-PD-001..067) to requirements, rules, fields, operations, acceptance criteria and OPEN questions. Coverage classification: FULL / PARTIAL / DOCUMENTED_ONLY / BLOCKED_BY_OPEN_DECISION. Coverage is documentation/scenario coverage, never executed test evidence or formal acceptance. CM1-PD-066 initial values are answered, but executable contracts remain OPEN; CM1-PD-067 contract-dependent scenarios are BLOCKED pending design. Each new JSON row identifies its residual gap; no earlier coverage class is promoted.
 
-**Coverage counts:** BLOCKED_BY_OPEN_DECISION=2, DOCUMENTED_ONLY=5, FULL=3, PARTIAL=55
+**Coverage counts:** BLOCKED_BY_OPEN_DECISION=2, DOCUMENTED_ONLY=5, FULL=3, PARTIAL=57
 
 | Decision ID | Coverage | Summary | Fields | Acceptance criteria | Related OPEN |
 | --- | --- | --- | --- | --- | --- |
+| CM1-PD-066 | PARTIAL | RC-009 initial vocabulary v1.0 / no implicit authority | REL-002-03, REL-002-05, REL-002-06 | CM1-ROL-17, CM1-ROL-18, CM1-ROL-26, CM1-ROL-29 | PDQ-002-08 |
+| CM1-PD-067 | PARTIAL | RC-010/011 Tenant selectability / effective eligibility | REL-002-03, REL-002-05, REL-002-07, REL-002-10 | CM1-ROL-19, CM1-ROL-20, CM1-ROL-21, CM1-ROL-22, CM1-ROL-23, CM1-ROL-24, CM1-ROL-25, CM1-ROL-26, CM1-ROL-27, CM1-ROL-28, CM1-ROL-29 | PDQ-002-08, PDQ-002-10, PDQ-002-12 |
 | CM1-PD-058 | PARTIAL | RC-001 hybrid catalog; no IAM/RBAC grants | REL-002-05 | CM1-ROL-01, CM1-ROL-13, CM1-ROL-14 | PDQ-002-08 |
 | CM1-PD-059 | PARTIAL | RC-002 applicability / new assignments | REL-002-03, REL-002-05 | CM1-ROL-02, CM1-ROL-08, CM1-ROL-09 | PDQ-002-08 |
 | CM1-PD-060 | PARTIAL | RC-003 lifecycle and authorized transitions | — | CM1-ROL-03, CM1-ROL-04 | PDQ-002-08 |

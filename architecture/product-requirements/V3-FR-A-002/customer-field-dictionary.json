@@ -337,7 +337,7 @@
       "logicalType": "enum",
       "requiredStatus": "Required",
       "uniqueness": "OPEN",
-      "validationConstraints": "Hybrid Role Catalog policy confirmed (CM1-PD-058..065); new assignments require ACTIVE role, current applicability and authorized Tenant/system reference. Exact Role reference, namespace and schema OPEN (PDQ-002-08).",
+      "validationConstraints": "Hybrid catalog and initial System vocabulary v1.0 confirmed (CM1-PD-058..066); System Role assignments require global ACTIVE, target applicability, current Tenant selectability, Relationship authority and existing Tenant/validation/concurrency/overlap guards (CM1-PD-067), enforced by Customer Domain. Exact reference, namespace/custom collisions, configuration/defaults and schema OPEN (PDQ-002-08).",
       "sensitivity": "Tenant Confidential",
       "mutability": "Controlled",
       "decisionStatus": "PROPOSED (CM1-PD-030)"
@@ -345,7 +345,7 @@
     {
       "fieldId": "REL-002-06",
       "businessName": "roleTitle",
-      "description": "Human-readable role label; Role title changes preserve identity and historical references (CM1-PD-065); historical display/reference representation OPEN (PDQ-002-08)",
+      "description": "Human-readable role label; initial System titleFa values are exact CM1-PD-066 catalogEntries; not a confirmed English-title field or legal authority. Preserve identity/history through title changes and Tenant hide/unhide (CM1-PD-065/067); historical display/reference representation OPEN (PDQ-002-08)",
       "applicableCustomerType": "Relationship",
       "logicalType": "text",
       "requiredStatus": "Optional",

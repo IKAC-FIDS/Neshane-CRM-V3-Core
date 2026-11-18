@@ -1,6 +1,18 @@
 {
   "recordId": "V3-FR-A-002-PDR-001",
-  "version": "1.3.0",
+  "version": "1.4.0",
+  "vocabularySelectabilityAuthority": {
+    "taskId": "V3-FR-A-002",
+    "scope": "Customer Master / System Role Vocabulary v1.0 / Tenant selectability / PDQ-002-08",
+    "source": "User task: Codex Task — V3-FR-A-002 / Customer Master v1.4.0; CM1-PD-066/067 and Proposed supplementary governance rules",
+    "authority": "USER-CONFIRMED PRODUCT DIRECTION",
+    "formalAcceptance": "PENDING",
+    "reviewedBaseline": "41a0620ba8216cc86afcccfccbb849ee5e33782e",
+    "recordedAt": "2026-11-18T22:09:06.916567+00:00",
+    "issuedAt": null,
+    "exactDecisionLocation": "decisions CM1-PD-066/067; CM1-PD-066 catalogEntries",
+    "supplementaryProposals": "customer-role-catalog.md#rc-proposed--supplementary-governance-proposals-not-confirmed-rules"
+  },
   "packageVersionStatus": "PROPOSED; FORMAL ACCEPTANCE PENDING",
   "roleCatalogAuthority": {
     "taskId": "V3-FR-A-002",
@@ -347,10 +359,35 @@
       "id": "CM1-PD-065",
       "topic": "Historical Integrity and Relationship Overlap",
       "rule": "Changes to Role titles, lifecycle status, or applicability scope shall preserve Role identity and historical Relationship references.\n\nThe controlled-exception Relationship overlap policy remains authoritative.\n\nRole Catalog changes shall not bypass Relationship version checks, overlap authorization, Tenant isolation, or mandatory Audit obligations.\n\nThe exact Role reference contract and technical overlap key remain subject to formal design approval."
+    },
+    {
+      "id": "CM1-PD-066",
+      "topic": "Initial System Role Vocabulary",
+      "catalogVersion": "1.0",
+      "catalogEntries": [
+        {"roleCode": "CEO", "titleFa": "مدیرعامل", "applicableScope": "COMPANY"},
+        {"roleCode": "BOARD_MEMBER", "titleFa": "عضو هیئت‌مدیره", "applicableScope": "COMPANY"},
+        {"roleCode": "BRANCH_MANAGER", "titleFa": "مدیر شعبه", "applicableScope": "BRANCH"},
+        {"roleCode": "GENERAL_MANAGER", "titleFa": "مدیر / مسئول واحد", "applicableScope": "BOTH"},
+        {"roleCode": "PRIMARY_CONTACT", "titleFa": "رابط اصلی", "applicableScope": "BOTH"},
+        {"roleCode": "SALES_CONTACT", "titleFa": "رابط امور فروش", "applicableScope": "BOTH"},
+        {"roleCode": "TECHNICAL_CONTACT", "titleFa": "رابط فنی", "applicableScope": "BOTH"},
+        {"roleCode": "SUPPORT_CONTACT", "titleFa": "رابط پشتیبانی", "applicableScope": "BOTH"},
+        {"roleCode": "PROCUREMENT_CONTACT", "titleFa": "مسئول خرید و تدارکات", "applicableScope": "BOTH"},
+        {"roleCode": "CONTRACT_CONTACT", "titleFa": "مسئول امور قراردادها", "applicableScope": "BOTH"},
+        {"roleCode": "TENDER_CONTACT", "titleFa": "مسئول امور مناقصات", "applicableScope": "BOTH"},
+        {"roleCode": "LEGAL_CONTACT", "titleFa": "رابط حقوقی", "applicableScope": "BOTH"}
+      ],
+      "rule": "These 12 entries constitute the user-confirmed initial vocabulary, not a complete future role universe.\nTheir codes, Persian titles and scopes must be preserved exactly.\nThey are System Roles, available to authorized Tenants subject to effective selectability.\nThey describe organizational relationships, not security permissions or verified legal representation.\nA Person can hold multiple independent roles under the existing Relationship rules.\nDo not add an exclusive PRIMARY_CONTACT constraint or automatic authority for CEO, BOARD_MEMBER or any other role.\nExisting identity and no-physical-deletion decisions remain authoritative.\nAny proposed English titles are optional metadata, not user-confirmed values.\nDo not assume a specific database seed format, globally fixed roleId values, migration or deployment mechanism."
+    },
+    {
+      "id": "CM1-PD-067",
+      "topic": "Tenant-Specific System Role Selectability",
+      "rule": "An appropriately authorized actor within a Tenant may make an otherwise eligible System Role unavailable for new Relationship assignments in that Tenant and subsequently make it selectable again.\n\nThis Tenant-specific setting:\n- Does not modify the global System Role Definition.\n- Does not change global role status, scope, roleId or roleCode.\n- Does not affect other Tenants.\n- Does not create, modify, terminate, delete or reactivate existing Relationships.\n- Does not hide historical Relationship references from otherwise authorized historical views.\n- Does not grant any IAM/RBAC permission.\n- Must be enforced by the authoritative Customer Domain, not merely by UI filtering.\n- Requires validated Tenant context and applicable management authority; CUS-CREATE alone does not grant that authority.\n- Does not permit Tenant users to edit System Role Definitions.\n- Must not disclose another Tenant's settings or Relationships.\n\nEffective eligibility for a new Relationship assignment requires all relevant conditions, including:\n- The System Role is globally ACTIVE.\n- The Role is applicable to the target COMPANY or BRANCH.\n- The Role is selectable in the current Tenant.\n- The actor has the required Relationship-operation authority.\n- All existing Tenant, validation, concurrency and overlap guards pass.\n\nA global INACTIVE state must not be bypassed by a Tenant setting.\n\nRestoring Tenant selectability must not reactivate an INACTIVE global System Role or reopen an ENDED Relationship.\n\nIf a Role becomes non-selectable while a new assignment is being finalized, the operation must not accept an assignment against an invalid effective state. Exact concurrency enforcement remains a technical OPEN contract.\n\nImportant: Treat Tenant-specific unselectability as an assignment restriction, not as the same operation as global Role deactivation, and not as automatic deletion of role history.\n\nDo not invent a Tenant override for global System Role lifecycle or applicableScope."
     }
   ],
   "openQuestionTraceability": {
-    "PDQ-002-08": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065"],
+    "PDQ-002-08": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067"],
     "PDQ-002-07": [
       "CM1-PD-001",
       "CM1-PD-003",
@@ -424,12 +461,12 @@
     "Approved specific identity fields, data normalization, national/legal identifier validators",
     "Evidence sufficiency, manual verifier permissions, sensitive process catalog and separation-of-duties applicability",
     "Verification expiration/revocation source of truth, notification semantics, recovery and evidence retention",
-    "Role Catalog product policy confirmed by CM1-PD-058..065; exact System vocabulary/codes, namespace, schema/reference, operations/IAM, consistency, history/display, Audit and temporal/API contracts remain OPEN (PDQ-002-08).",
+    "Role Catalog policy through CM1-PD-067, including initial vocabulary v1.0 and Tenant selectability, is user-confirmed; defaults, future catalog/publication, normalization/namespaces/custom collisions, configuration/schema/reference, operations/IAM/reason policy, consistency, history/display, Audit and temporal/API contracts remain OPEN (PDQ-002-08).",
     "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?",
     "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?",
     "Sensitive-process catalog and SoD actor mapping for manual verification?",
     "Overlap conflict-set token/snapshot/locking/transactional implementation (technical design, not an API contract)?",
-    "Role Catalog product policy confirmed by CM1-PD-058..065; exact System vocabulary/codes, namespace, schema/reference, operations/IAM, consistency, history/display, Audit and temporal/API contracts remain OPEN (PDQ-002-08).",
+    "Role Catalog policy through CM1-PD-067, including initial vocabulary v1.0 and Tenant selectability, is user-confirmed; defaults, future catalog/publication, normalization/namespaces/custom collisions, configuration/schema/reference, operations/IAM/reason policy, consistency, history/display, Audit and temporal/API contracts remain OPEN (PDQ-002-08).",
     "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?",
     "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?",
     "Sensitive-process catalog and SoD actor mapping for manual verification?",
@@ -464,9 +501,9 @@
       "questionId": "PDQ-002-08",
       "affectedCapability": "FR-BJ-001",
       "category": "PRODUCT",
-      "missingDecision": "Exact System vocabulary/codes, namespace, Role schema/reference, management operation/IAM, scope-change consistency, history/display, Audit failure/recovery and Relationship temporal/API contracts.",
+      "missingDecision": "Initial vocabulary v1.0 and Tenant-selectability product policy answered by CM1-PD-066/067; defaults, future vocabulary/publication, namespaces/custom collisions, configuration/schema/reference, management operation/IAM/reason policy, consistency, history/display, Audit and temporal/API contracts remain OPEN.",
       "disposition": "OPEN / PARTIALLY ANSWERED",
-      "confirmedBy": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065"],
+      "confirmedBy": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067"],
       "remainingContractReference": "customer-role-catalog.md#rc-open--remaining-open-contracts"
     },
     {

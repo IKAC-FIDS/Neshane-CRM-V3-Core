@@ -59,6 +59,10 @@ FR-BJ-001 covers create/maintain of authoritative Customer Master. FR-BJ-002 (CU
 
 CM1-PD-058..065 add a hybrid System/Tenant catalog of organizational responsibilities, not IAM/RBAC roles. See [customer-role-catalog.md](customer-role-catalog.md) RC-001..008 for applicability COMPANY/BRANCH/BOTH, ACTIVE/INACTIVE lifecycle, immutable identity/no deletion, Relationship preservation, controlled scope changes and authority/history/overlap boundaries. Role reference schema and executable contracts remain OPEN under PDQ-002-08. The earlier source-derived entities remain unchanged; no sixth approved source entity or new service is inferred.
 
+CM1-PD-066 confirms initial System Role Vocabulary v1.0: exact 12 entries in `customer-role-catalog.md` RC-009 and PDR JSON catalogEntries. This is not an exhaustive future universe, security permission or proof of legal representation; PRIMARY_CONTACT is not exclusive and Person may hold multiple independent roles.
+
+CM1-PD-067 adds Tenant-specific assignment restriction, not System Role editing/deactivation. Appropriately authorized Tenant management can hide/unhide an otherwise eligible System Role locally; validated Tenant context and Customer Domain enforcement are required, not UI-only filtering. New assignments require global ACTIVE, applicability, current Tenant selectability, Relationship authority and existing validation/concurrency/overlap guards together. Existing Relationships/history, global identity/status/scope and other Tenants stay unchanged; re-enabling does not reactivate global INACTIVE or ENDED records. Concurrent hide/finalization must not accept invalid effective state. RC-010/011 define policy; RC-PROPOSED/RC-OPEN retain defaults, reason policy, representation, permissions/Audit and consistency contracts as OPEN. Formal acceptance remains PENDING.
+
 ## Identity verification model (user-confirmed)
 
 - Verification independent of record lifecycle and commercial status; states NOT_VERIFIED / VERIFIED / REQUIRES_REVERIFICATION (CM1-PD-019/056).
