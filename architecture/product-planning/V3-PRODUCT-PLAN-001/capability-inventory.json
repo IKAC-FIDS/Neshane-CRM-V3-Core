@@ -1,0 +1,369 @@
+{
+  "task": "V3-PRODUCT-PLAN-001",
+  "status": "PROPOSED — PLANNING ONLY",
+  "recordedAt": "2026-11-18T16:16:50.384440+00:00",
+  "repositoryBaselines": {
+    "Core": "d42002ad851d93d976ec958b85cb8c46dbff34a3",
+    "Backend": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+    "Frontend": "faa563f8f5c3bda25c3e5f40c7a8688c1bc245e7"
+  },
+  "governance": {
+    "Local-Infra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "Offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "SeaweedFS": "EXPERIMENTAL",
+    "Production authorization": "NOT GRANTED",
+    "Product implementation authorization": "NONE"
+  },
+  "authorityRule": "Capability IDs/titles/scope are approved source commitments. This artifact, derived summaries, actors marked candidate, and roadmap are proposals; inventory is not implementation availability.",
+  "capabilities": [
+    {
+      "id": "FR-BJ-001",
+      "title": "Register and Maintain Customer Master",
+      "category": "BUSINESS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Company/person/contact master maintenance; Customer owns branch and relationship facts",
+      "dataOwnership": "Customer Domain",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-BJ-002",
+      "title": "Find and Review Customer",
+      "category": "BUSINESS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Authorized retrieval and business search; disclosure belongs to Customer",
+      "dataOwnership": "Customer Domain",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-BJ-003",
+      "title": "Manage Opportunity Through the Sales Pipeline",
+      "category": "BUSINESS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Opportunity/Pipeline core and Customer contract reference; amount/currency independent of Product Catalog",
+      "dataOwnership": "Sales Domain",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-BJ-004",
+      "title": "Register and Process a Customer Request",
+      "category": "BUSINESS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Internal creation, Customer reference, view/tracking, base lifecycle, status history and assignment",
+      "dataOwnership": "Customer Request Domain",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-BJ-005",
+      "title": "Plan and Track a Work Task",
+      "category": "BUSINESS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Create/view/edit, assignment, status, due date and manual contract-based links",
+      "dataOwnership": "Work Domain",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-001",
+      "title": "Establish Trusted Tenant Access",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Approved Option B: internal authenticated Principal, active Membership, valid/revalidated Tenant Context, destination Membership validation for switching",
+      "dataOwnership": "Identity Trust and Tenant Management (distinct owners)",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-002",
+      "title": "Evaluate Feature Eligibility",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Feature Assignment and effective eligibility, traceable to Tenant/Organization and approved Plan/Subscription facts",
+      "dataOwnership": "Entitlement capability",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-003",
+      "title": "Enforce Quota-Controlled Operation",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Effective limits, Usage, atomic Reservation/Commit/Release, reconciliation and Reason/Period/Correlation",
+      "dataOwnership": "Quota capability",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-004",
+      "title": "Deliver Authorized In-App Notification",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Core + In-App: Template, base Rule/lifecycle, Delivery Ledger, deduplication, retry/Audit",
+      "dataOwnership": "Notification Domain",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-005",
+      "title": "Attach and Retrieve File for an Approved Resource",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Metadata, controlled upload/download, base lifecycle and contract-based attachments",
+      "dataOwnership": "File/Content Domain and attachment resource owner (distinct)",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-006",
+      "title": "Produce an Approved Deterministic Report",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Reporting Core: approved deterministic tenant-scoped Report Sets, execution/artifact and authorized projections",
+      "dataOwnership": "Reporting capability; source facts remain producer-owned",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-SO-001",
+      "title": "Record Security, Administrative and Privileged Audit Evidence",
+      "category": "SECURITY_OPERATIONS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Append-oriented Audit Core, Tenant/Platform separation, Actor/Action/Target/Outcome/Correlation, integrity and base retention policy obligation",
+      "dataOwnership": "Audit Domain; producing Domains retain Business Facts",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-SO-002",
+      "title": "Review Authorized Audit Evidence",
+      "category": "SECURITY_OPERATIONS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Authorized Audit Core viewing with Tenant/Platform scope and disclosure protection",
+      "dataOwnership": "Audit Domain",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-SO-003",
+      "title": "Observe Platform and Service Health",
+      "category": "SECURITY_OPERATIONS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Operational Core health/readiness, scope separation and authorized signal aggregation",
+      "dataOwnership": "Operational Platform; each service owns signals",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-SO-004",
+      "title": "Execute an Authorized Privileged Operation",
+      "category": "SECURITY_OPERATIONS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "approvedFunctionalScope": "Scoped operational request/execution with limited identity, explicit Tenant/Platform scope, destination authorization and durable Audit",
+      "dataOwnership": "Operational Platform; destination Domain; Audit Domain (distinct)",
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    }
+  ]
+}

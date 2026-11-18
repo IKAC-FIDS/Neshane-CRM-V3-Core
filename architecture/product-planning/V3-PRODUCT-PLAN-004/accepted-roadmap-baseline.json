@@ -1,0 +1,2287 @@
+{
+  "taskId": "V3-PRODUCT-PLAN-004",
+  "status": "ACCEPTED_ROADMAP_STRUCTURE_ONLY",
+  "recordingTimestamp": "2026-11-18T17:49:28.132115+00:00",
+  "expectedCoreParent": "d42002ad851d93d976ec958b85cb8c46dbff34a3",
+  "repositoryBaselines": {
+    "Core": {
+      "path": "E:\\Neshane-CRM-V3-V3-024-main-adoption",
+      "head": "d42002ad851d93d976ec958b85cb8c46dbff34a3",
+      "branch": "main",
+      "status": "?? architecture/product-planning/V3-PRODUCT-PLAN-001/architecture-dependency-matrix.json\n?? architecture/product-planning/V3-PRODUCT-PLAN-001/capability-inventory.json\n?? architecture/product-planning/V3-PRODUCT-PLAN-001/critical-path.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-001/delivery-milestones.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-001/first-release-roadmap.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-001/open-decision-dependency-matrix.json\n?? architecture/product-planning/V3-PRODUCT-PLAN-001/product-decision-questions.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-001/proposed-task-register.json\n?? architecture/product-planning/V3-PRODUCT-PLAN-001/proposed-task-register.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json\n?? architecture/product-planning/V3-PRODUCT-PLAN-001/review-report.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/complete-task-table.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/critical-path-and-parallel-workstreams.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/execution-sequence-and-milestones.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/first-customer-milestone.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/optimized-roadmap.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/optimized-task-inventory.json\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/original-task-review.json\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/required-authority-decisions.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/review-report.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/roadmap-comparison.json\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/roadmap-comparison.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/task-by-task-review.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-002/validation-results.json\n?? architecture/product-planning/V3-PRODUCT-PLAN-003/cm-1-execution-package.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.csv\n?? architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.json\n?? architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-003/roadmap-acceptance-proposal.md\n?? architecture/product-planning/V3-PRODUCT-PLAN-003/validation-report.md",
+      "trackedDiff": "",
+      "indexDiff": ""
+    },
+    "Backend": {
+      "path": "E:\\Neshane-CRM-V3\\Backend",
+      "head": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+      "branch": "codex/v3-024-dedicated-managed-design",
+      "status": "",
+      "trackedDiff": "",
+      "indexDiff": ""
+    },
+    "Frontend": {
+      "path": "E:\\Neshane-CRM-V3\\Frontend",
+      "head": "faa563f8f5c3bda25c3e5f40c7a8688c1bc245e7",
+      "branch": "main",
+      "status": "",
+      "trackedDiff": "",
+      "indexDiff": ""
+    }
+  },
+  "exactAuthorityDecision": "APPROVED AS PRODUCT EXECUTION ROADMAP.",
+  "canonicalExecutionReference": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.json",
+  "canonicalReferenceSha256": "3ad890e912f89b442a178b150ae43a576e514679188fc9bbc49b315495f98a6b",
+  "canonicalRenderingsSha256": {
+    "execution-roadmap.md": "afbad8cffb8bf8cad8d2589fe64eebc206760e84af488d90846ff3f69f3386dc",
+    "execution-roadmap.csv": "dae57c0e777c22da203bd73138db16c8aa44f69bea147449d9f4b02ccce5d23d"
+  },
+  "predecessorArtifacts": [
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/architecture-dependency-matrix.json",
+      "bytes": 75099,
+      "sha256": "92a18e52ce028f1ed13b07aa8115f127814214c05f31dd92f036c5cc01d97cd9",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "801a6ae816f22533de5b035b2cd262018b7395dc"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/capability-inventory.json",
+      "bytes": 17528,
+      "sha256": "dbd582e77fd982bb737550259e15c372e7607dd269efeb28e41856ebcd8ef16d",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "e52d4cb9d3c9aa1da0949335c9aee88975b1552b"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/critical-path.md",
+      "bytes": 3819,
+      "sha256": "6734bb897f592eb03d27c9a8e85f378cf21241b87c6b19d559c3fbd1f6facf7b",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "a1d56b8621f264df0d0562030061d0b492a7bdae"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/delivery-milestones.md",
+      "bytes": 1894,
+      "sha256": "3b57a6f12b031f1bbf1c0e17da530128174d7ce19f27a3cf8bac1aea4605a8db",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "9ded384fd77f80910c488132cf82692702595ee2"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/first-release-roadmap.md",
+      "bytes": 4724,
+      "sha256": "b762017c860ad7d045f29bd954d4c67e7862ed52ad848fd97b76af6d2460566b",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "02405fcc4afd9b6e8110e83065ecb2bf5a4ba187"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/open-decision-dependency-matrix.json",
+      "bytes": 38065,
+      "sha256": "9f9834cf7088b4a2695e43dd01903e0a8ab458072930e655c3a1ff883ab8817f",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "030f19b7d4ec81d649cf58a6e448acb5e0da27c5"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/product-decision-questions.md",
+      "bytes": 9495,
+      "sha256": "77289de5045bff8122e94e30949ce205bd45bf54069acd391fcd8eab7a7dada9",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "475ceec870fd7254f387a89c94bd4bd30c23d209"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/proposed-task-register.json",
+      "bytes": 231339,
+      "sha256": "972116e78bff8b92579b1e02a64ed88b3f8c3626395f3f5cbf2104f89ac97416",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "06fb96ca1438b536bc0d4e04fea55093771206fa"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/proposed-task-register.md",
+      "bytes": 15867,
+      "sha256": "20b71f93aea7341f2e21216a677714abf2ff61d36d2d6116d77770a12fd16920",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "c0cd2ba4fb08cd1374283ff6b911c28bf79f65bb"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json",
+      "bytes": 94793,
+      "sha256": "29fb42ba4f321924cf56119cd1f65fc400f1a9a58cfb734b64bcd393ea1b8ca3",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "f2aee7b346288646be95ac47b61bc8f68734eff5"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/review-report.md",
+      "bytes": 8192,
+      "sha256": "6678a87f9571261388b313b12fd13072fc8437d11ba16eecd4acf5ebb2898a92",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "f9ffbafe620b2c5661eeb11adf315e2d5977bc8e"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/complete-task-table.md",
+      "bytes": 130699,
+      "sha256": "ae04e925c500070dbd814d0a50ecf705fbef2fdd18103ead8808025b9bd4fefa",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "f1027dfe7c78548e33805771ffd2b7a6fea1a50d"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/critical-path-and-parallel-workstreams.md",
+      "bytes": 3783,
+      "sha256": "c2d0c628d2ec9c3a54f6f2da31cbc6eae930e5d2f90838325e7047e2e0a89c0a",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "12920bba81e85ace389f1f5c59ee5a92733805dd"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/execution-sequence-and-milestones.md",
+      "bytes": 2618,
+      "sha256": "02ca55887562fcd2c0092a10aa4dac21d8ec026379e28641182ae72a64704149",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "4db49a083a07a1738a8707e867ca7afe740798b3"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/first-customer-milestone.md",
+      "bytes": 5467,
+      "sha256": "2d88510e82e3e2736010c3fad0d2abc5c5f5462c947feb5573cb2feae27f42f0",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "d780f65e76fcd48925e7bddb0f894cd9706dec32"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/optimized-roadmap.md",
+      "bytes": 5195,
+      "sha256": "7c9cc22500ab165524b8a144c85b90767641afc86143031ed42d5bf37bbf17c3",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "d16831e9e2b5b636b1e15cb011ccbd1acf102dcf"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/optimized-task-inventory.json",
+      "bytes": 635279,
+      "sha256": "d3224f47bfa3d14d53a35cacc4ba0c65f6416a4e6faa3b71ce656aa0f1eaf78d",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "c9cb258ca36cb7b1f2cad5870fc42d966b24f57f"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/original-task-review.json",
+      "bytes": 450965,
+      "sha256": "c80a52fa8fae1be19402e0316b88598b76eb979ef9f6fb659f2f83184e89d961",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "9769f25df0e62570e5bfde9f97dbba21b98d75d1"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/required-authority-decisions.md",
+      "bytes": 3188,
+      "sha256": "fe92234706e98d585094439e81615574d1d54ba6c18e5f5d22de0111fdfcbff8",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "7bcd6e864f3863f0112e59eb6ff6f0440d92cbe1"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/review-report.md",
+      "bytes": 6314,
+      "sha256": "7ff62c216cd9b5ef849ed10bfbc24f7b0f94066bdcb97ea5c4c4756415dbe4a3",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "17f8a7c45b900023ac9e951ea0345a9dd6784164"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/roadmap-comparison.json",
+      "bytes": 47152,
+      "sha256": "60448830e82cb431e019ec7789191133114f2239a55ee2e1eb9156af0d355024",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "a9aac4de54cdf9d6ef6949ff324e333c67a6285f"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/roadmap-comparison.md",
+      "bytes": 5024,
+      "sha256": "a8055269e666250c0bb9b96fb1adce023ab95ce08edae5968bb41f06aae2ce3c",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "46953a3f942396cba70829193241f8f4b8ef18a8"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/task-by-task-review.md",
+      "bytes": 65584,
+      "sha256": "64e6a062d1eae99ed80527b92f46bb57bd0ca70481306634b386151a8589786b",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "4cf5b8cae4440043ac2eeec921c71f747e074c2c"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/validation-results.json",
+      "bytes": 3156,
+      "sha256": "d64d3c7d3372f25c4aff2dfc2671f3db5de0225994570a71ec834fdeeb7407ab",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "e5c89a069148be51703a877e274cd43324aa6fb3"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/cm-1-execution-package.md",
+      "bytes": 13265,
+      "sha256": "f8cf03ad998e3c197d450312c898a304c8f24456bc348e296dce7caceb5cf10c",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "9da6df10da3f08c94aeb51dc6d4b2dabfff69912"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.csv",
+      "bytes": 512839,
+      "sha256": "dae57c0e777c22da203bd73138db16c8aa44f69bea147449d9f4b02ccce5d23d",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "5fd18f7957b56d00149d6415d014921eb0ec1439"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.json",
+      "bytes": 929892,
+      "sha256": "3ad890e912f89b442a178b150ae43a576e514679188fc9bbc49b315495f98a6b",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "92fcd59e5d4ed8d4d374615be1f490adb4fcb5b3"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.md",
+      "bytes": 642913,
+      "sha256": "afbad8cffb8bf8cad8d2589fe64eebc206760e84af488d90846ff3f69f3386dc",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "242d92b16726512ef56f6663cb382600f59a7b6b"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/roadmap-acceptance-proposal.md",
+      "bytes": 4196,
+      "sha256": "113dc569953545f9c1905c3d616dfb21cf0ee971c9708c0582a319c04b678946",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "4ddfbbd69c5ccb9af61eb323c85f9aa47afc774b"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/validation-report.md",
+      "bytes": 8071,
+      "sha256": "1eb25650a1838895b68cfcdb9da764d01645959bb3b0b8789b0c8bcee1f397d5",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "c3b4f8328d4db47af4b0b813944a5e0437e0253f"
+    }
+  ],
+  "predecessorCounts": {
+    "V3-PRODUCT-PLAN-001": 11,
+    "V3-PRODUCT-PLAN-002": 13,
+    "V3-PRODUCT-PLAN-003": 6
+  },
+  "sourceDispositionCounts": {
+    "EXECUTION_CANDIDATE": 74,
+    "TRACKING_PARENT_NOT_EXECUTION_UNIT": 7,
+    "CONDITIONAL_EXECUTION_IF_SELECTED": 1,
+    "ROLLING_BOUNDED_INCREMENTS": 4,
+    "CONDITIONAL_BACKLOG_NOT_FIRST_SLICE": 4
+  },
+  "acceptedClassificationCounts": {
+    "PROPOSED_EXECUTABLE_TASK": 79,
+    "NON_EXECUTABLE_TRACKING_PARENT": 7,
+    "CONDITIONAL_BACKLOG": 4
+  },
+  "taskDefinitions": [
+    {
+      "taskId": "V3-FR-A-001",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 1,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-002",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 2,
+      "capabilityReferences": [
+        "FR-BJ-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 3,
+      "capabilityReferences": [
+        "FR-BJ-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-007",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 4,
+      "capabilityReferences": [
+        "FR-PF-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-013",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 5,
+      "capabilityReferences": [
+        "FR-SO-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-015",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 6,
+      "capabilityReferences": [
+        "FR-SO-003"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-017",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 7,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-024",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 8,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-D-001",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "D",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 9,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-G-001",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "G",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 10,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-I-001",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "I",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "sequence": 11,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-005",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 12,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-006",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 13,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-007",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 14,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-009",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 15,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-010",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 16,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-011",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 17,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-012",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 18,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-013",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 19,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-014",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 20,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-018",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 21,
+      "capabilityReferences": [
+        "FR-BJ-002",
+        "FR-PF-006",
+        "FR-SO-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-C-001",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "C",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 22,
+      "capabilityReferences": [
+        "FR-PF-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-000",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "E",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 23,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-F-000",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "F",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 24,
+      "capabilityReferences": [
+        "FR-BJ-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-K-001",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-F-BJ-001",
+      "workstream": "F",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 25,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-C-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-C-002",
+      "workstream": "C",
+      "milestone": "M2-CM1-CONTROL_EVIDENCE_AND_GATE",
+      "sequence": 26,
+      "capabilityReferences": [
+        "FR-PF-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-C-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-C-002",
+      "workstream": "C",
+      "milestone": "M2-CM1-CONTROL_EVIDENCE_AND_GATE",
+      "sequence": 27,
+      "capabilityReferences": [
+        "FR-PF-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-C-005",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-C-002",
+      "workstream": "C",
+      "milestone": "M2-CM1-CONTROL_EVIDENCE_AND_GATE",
+      "sequence": 28,
+      "capabilityReferences": [
+        "FR-PF-001",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-D-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-D-002",
+      "workstream": "D",
+      "milestone": "M2-CM1-CONTROL_EVIDENCE_AND_GATE",
+      "sequence": 29,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-D-005",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-D-002",
+      "workstream": "D",
+      "milestone": "M2-CM1-CONTROL_EVIDENCE_AND_GATE",
+      "sequence": 30,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-001",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-E-SO-003",
+      "workstream": "E",
+      "milestone": "CM-1-SELECTED_CUSTOMER_E2E",
+      "sequence": 31,
+      "capabilityReferences": [
+        "FR-SO-003"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-G-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-G-002",
+      "workstream": "G",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 32,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-G-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-G-002",
+      "workstream": "G",
+      "milestone": "CM-1-SELECTED_CUSTOMER_E2E",
+      "sequence": 33,
+      "capabilityReferences": [
+        "FR-PF-001",
+        "FR-BJ-001",
+        "FR-BJ-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-015",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M1-CM1-DESIGN_AND_ISOLATED_INCREMENT",
+      "sequence": 34,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-D-006",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-D-002",
+      "workstream": "D",
+      "milestone": "M2-CM1-CONTROL_EVIDENCE_AND_GATE",
+      "sequence": 35,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-D-002",
+      "classification": "NON_EXECUTABLE_TRACKING_PARENT",
+      "sourceDisposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "parentTaskId": null,
+      "workstream": "D",
+      "milestone": "M2-CM1-CONTROL_EVIDENCE_AND_GATE",
+      "sequence": 36,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-D-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "D",
+      "milestone": "M2-CM1-CONTROL_EVIDENCE_AND_GATE",
+      "sequence": 37,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-E-SO-001",
+      "workstream": "E",
+      "milestone": "CM-1-SELECTED_CUSTOMER_E2E",
+      "sequence": 38,
+      "capabilityReferences": [
+        "FR-SO-001",
+        "FR-BJ-001",
+        "FR-BJ-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-F-BJ-002",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "F",
+      "milestone": "CM-1-SELECTED_CUSTOMER_E2E",
+      "sequence": 39,
+      "capabilityReferences": [
+        "FR-BJ-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-K-002",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-E-000",
+      "workstream": "E",
+      "milestone": "CM-1-SELECTED_CUSTOMER_E2E",
+      "sequence": 40,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-SO-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-F-BJ-001",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "F",
+      "milestone": "CM-1-SELECTED_CUSTOMER_E2E",
+      "sequence": 41,
+      "capabilityReferences": [
+        "FR-BJ-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-I-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-I-002",
+      "workstream": "I",
+      "milestone": "CM-1-SELECTED_CUSTOMER_E2E",
+      "sequence": 42,
+      "capabilityReferences": [
+        "FR-PF-001",
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-H-001",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "H",
+      "milestone": "CM-1-SELECTED_CUSTOMER_E2E",
+      "sequence": 43,
+      "capabilityReferences": [
+        "FR-PF-001",
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-C-002",
+      "classification": "NON_EXECUTABLE_TRACKING_PARENT",
+      "sourceDisposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "parentTaskId": null,
+      "workstream": "C",
+      "milestone": "M4-ALL_REQUIRED_SCOPE_ROLLUP",
+      "sequence": 44,
+      "capabilityReferences": [
+        "FR-PF-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-K-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "CONDITIONAL_EXECUTION_IF_SELECTED",
+      "parentTaskId": "V3-FR-G-002",
+      "workstream": "G",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 45,
+      "capabilityReferences": [
+        "FR-PF-001",
+        "FR-BJ-001",
+        "FR-BJ-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 46,
+      "capabilityReferences": [
+        "FR-BJ-003"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-005",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 47,
+      "capabilityReferences": [
+        "FR-BJ-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-006",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 48,
+      "capabilityReferences": [
+        "FR-BJ-005"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-008",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 49,
+      "capabilityReferences": [
+        "FR-PF-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-009",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 50,
+      "capabilityReferences": [
+        "FR-PF-003"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-010",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 51,
+      "capabilityReferences": [
+        "FR-PF-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-011",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 52,
+      "capabilityReferences": [
+        "FR-PF-005"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-012",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 53,
+      "capabilityReferences": [
+        "FR-PF-006"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-014",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 54,
+      "capabilityReferences": [
+        "FR-SO-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-A-016",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "A",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 55,
+      "capabilityReferences": [
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-017",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 56,
+      "capabilityReferences": [
+        "FR-PF-005",
+        "FR-PF-006"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-019",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 57,
+      "capabilityReferences": [
+        "FR-BJ-004",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-023",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 58,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-002",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-E-SO-003",
+      "workstream": "E",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 59,
+      "capabilityReferences": [
+        "FR-SO-003"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-E-SO-001",
+      "workstream": "E",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 60,
+      "capabilityReferences": [
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-PF-002",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "E",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 61,
+      "capabilityReferences": [
+        "FR-PF-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-PF-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "E",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 62,
+      "capabilityReferences": [
+        "FR-PF-003"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-PF-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "E",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 63,
+      "capabilityReferences": [
+        "FR-PF-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-PF-005",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "E",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 64,
+      "capabilityReferences": [
+        "FR-PF-005"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-PF-006",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "E",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT / CM-1-ONLY_IF_SELECTED",
+      "sequence": 65,
+      "capabilityReferences": [
+        "FR-PF-006"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-SO-001",
+      "classification": "NON_EXECUTABLE_TRACKING_PARENT",
+      "sourceDisposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "parentTaskId": null,
+      "workstream": "E",
+      "milestone": "M4-ALL_REQUIRED_SCOPE_ROLLUP",
+      "sequence": 66,
+      "capabilityReferences": [
+        "FR-SO-001"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-SO-002",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "E",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 67,
+      "capabilityReferences": [
+        "FR-SO-002"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-SO-003",
+      "classification": "NON_EXECUTABLE_TRACKING_PARENT",
+      "sourceDisposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "parentTaskId": null,
+      "workstream": "E",
+      "milestone": "M4-ALL_REQUIRED_SCOPE_ROLLUP",
+      "sequence": 68,
+      "capabilityReferences": [
+        "FR-SO-003"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-E-SO-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "E",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 69,
+      "capabilityReferences": [
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-F-BJ-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "F",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 70,
+      "capabilityReferences": [
+        "FR-BJ-003"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-F-BJ-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "F",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 71,
+      "capabilityReferences": [
+        "FR-BJ-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-F-BJ-005",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "F",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 72,
+      "capabilityReferences": [
+        "FR-BJ-005"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-G-005",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "ROLLING_BOUNDED_INCREMENTS",
+      "parentTaskId": "V3-FR-G-002",
+      "workstream": "G",
+      "milestone": "M3-REMAINING_CAPABILITY_INCREMENT",
+      "sequence": 73,
+      "capabilityReferences": [
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-G-002",
+      "classification": "NON_EXECUTABLE_TRACKING_PARENT",
+      "sourceDisposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "parentTaskId": null,
+      "workstream": "G",
+      "milestone": "M4-ALL_REQUIRED_SCOPE_ROLLUP",
+      "sequence": 74,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-H-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "ROLLING_BOUNDED_INCREMENTS",
+      "parentTaskId": "V3-FR-H-002",
+      "workstream": "H",
+      "milestone": "M3-ROLLING_CAPABILITY_ACCEPTANCE",
+      "sequence": 75,
+      "capabilityReferences": [
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-H-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "ROLLING_BOUNDED_INCREMENTS",
+      "parentTaskId": "V3-FR-H-002",
+      "workstream": "H",
+      "milestone": "M3-ROLLING_CAPABILITY_ACCEPTANCE",
+      "sequence": 76,
+      "capabilityReferences": [
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-002",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-H-002",
+      "classification": "NON_EXECUTABLE_TRACKING_PARENT",
+      "sourceDisposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "parentTaskId": null,
+      "workstream": "H",
+      "milestone": "M4-ALL_REQUIRED_SCOPE_ROLLUP",
+      "sequence": 77,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-I-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "ROLLING_BOUNDED_INCREMENTS",
+      "parentTaskId": "V3-FR-I-002",
+      "workstream": "I",
+      "milestone": "M3-ROLLING_CAPABILITY_ACCEPTANCE",
+      "sequence": 78,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-I-002",
+      "classification": "NON_EXECUTABLE_TRACKING_PARENT",
+      "sourceDisposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "parentTaskId": null,
+      "workstream": "I",
+      "milestone": "M4-ALL_REQUIRED_SCOPE_ROLLUP",
+      "sequence": 79,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-J-005",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-J-001",
+      "workstream": "J",
+      "milestone": "M5-PROFILE_READINESS",
+      "sequence": 80,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-J-001",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "J",
+      "milestone": "M5-PROFILE_READINESS",
+      "sequence": 81,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-J-006",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-J-002",
+      "workstream": "J",
+      "milestone": "M5-PROFILE_READINESS",
+      "sequence": 82,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-J-002",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "J",
+      "milestone": "M5-PROFILE_READINESS",
+      "sequence": 83,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-J-007",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": "V3-FR-J-003",
+      "workstream": "J",
+      "milestone": "M5-PROFILE_READINESS",
+      "sequence": 84,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-J-003",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "J",
+      "milestone": "M5-PROFILE_READINESS",
+      "sequence": 85,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-J-004",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceDisposition": "EXECUTION_CANDIDATE",
+      "parentTaskId": null,
+      "workstream": "J",
+      "milestone": "M6-FIRST_RELEASE_DECISION_REQUEST",
+      "sequence": 86,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-001",
+      "classification": "CONDITIONAL_BACKLOG",
+      "sourceDisposition": "CONDITIONAL_BACKLOG_NOT_FIRST_SLICE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "FUTURE_IF_SELECTED_NOT_CM1",
+      "sequence": 87,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-016",
+      "classification": "CONDITIONAL_BACKLOG",
+      "sourceDisposition": "CONDITIONAL_BACKLOG_NOT_FIRST_SLICE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "FUTURE_IF_SELECTED_NOT_CM1",
+      "sequence": 88,
+      "capabilityReferences": [],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-021",
+      "classification": "CONDITIONAL_BACKLOG",
+      "sourceDisposition": "CONDITIONAL_BACKLOG_NOT_FIRST_SLICE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "FUTURE_IF_SELECTED_NOT_CM1",
+      "sequence": 89,
+      "capabilityReferences": [],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    },
+    {
+      "taskId": "V3-FR-B-022",
+      "classification": "CONDITIONAL_BACKLOG",
+      "sourceDisposition": "CONDITIONAL_BACKLOG_NOT_FIRST_SLICE",
+      "parentTaskId": null,
+      "workstream": "B",
+      "milestone": "FUTURE_IF_SELECTED_NOT_CM1",
+      "sequence": 90,
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "implementationPermission": "PENDING_NOT_GRANTED"
+    }
+  ],
+  "capabilityIds": [
+    "FR-BJ-001",
+    "FR-BJ-002",
+    "FR-BJ-003",
+    "FR-BJ-004",
+    "FR-BJ-005",
+    "FR-PF-001",
+    "FR-PF-002",
+    "FR-PF-003",
+    "FR-PF-004",
+    "FR-PF-005",
+    "FR-PF-006",
+    "FR-SO-001",
+    "FR-SO-002",
+    "FR-SO-003",
+    "FR-SO-004"
+  ],
+  "cm1": {
+    "firstProductDeliveryMilestone": "CM-1",
+    "coreRecordIds": [
+      "V3-FR-A-001",
+      "V3-FR-A-002",
+      "V3-FR-A-003",
+      "V3-FR-A-007",
+      "V3-FR-A-013",
+      "V3-FR-A-015",
+      "V3-FR-A-017",
+      "V3-FR-B-024",
+      "V3-FR-D-001",
+      "V3-FR-G-001",
+      "V3-FR-I-001",
+      "V3-FR-B-005",
+      "V3-FR-B-006",
+      "V3-FR-B-007",
+      "V3-FR-B-009",
+      "V3-FR-B-010",
+      "V3-FR-B-011",
+      "V3-FR-B-012",
+      "V3-FR-B-013",
+      "V3-FR-B-014",
+      "V3-FR-B-018",
+      "V3-FR-C-001",
+      "V3-FR-E-000",
+      "V3-FR-F-000",
+      "V3-FR-K-001",
+      "V3-FR-C-003",
+      "V3-FR-C-004",
+      "V3-FR-C-005",
+      "V3-FR-D-004",
+      "V3-FR-D-005",
+      "V3-FR-E-001",
+      "V3-FR-G-003",
+      "V3-FR-G-004",
+      "V3-FR-B-015",
+      "V3-FR-D-006",
+      "V3-FR-D-002",
+      "V3-FR-D-003",
+      "V3-FR-E-003",
+      "V3-FR-F-BJ-002",
+      "V3-FR-K-002",
+      "V3-FR-F-BJ-001",
+      "V3-FR-I-003",
+      "V3-FR-H-001"
+    ],
+    "coreExecutableIds": [
+      "V3-FR-A-001",
+      "V3-FR-A-002",
+      "V3-FR-A-003",
+      "V3-FR-A-007",
+      "V3-FR-A-013",
+      "V3-FR-A-015",
+      "V3-FR-A-017",
+      "V3-FR-B-024",
+      "V3-FR-D-001",
+      "V3-FR-G-001",
+      "V3-FR-I-001",
+      "V3-FR-B-005",
+      "V3-FR-B-006",
+      "V3-FR-B-007",
+      "V3-FR-B-009",
+      "V3-FR-B-010",
+      "V3-FR-B-011",
+      "V3-FR-B-012",
+      "V3-FR-B-013",
+      "V3-FR-B-014",
+      "V3-FR-B-018",
+      "V3-FR-C-001",
+      "V3-FR-E-000",
+      "V3-FR-F-000",
+      "V3-FR-K-001",
+      "V3-FR-C-003",
+      "V3-FR-C-004",
+      "V3-FR-C-005",
+      "V3-FR-D-004",
+      "V3-FR-D-005",
+      "V3-FR-E-001",
+      "V3-FR-G-003",
+      "V3-FR-G-004",
+      "V3-FR-B-015",
+      "V3-FR-D-006",
+      "V3-FR-D-003",
+      "V3-FR-E-003",
+      "V3-FR-F-BJ-002",
+      "V3-FR-K-002",
+      "V3-FR-F-BJ-001",
+      "V3-FR-I-003",
+      "V3-FR-H-001"
+    ],
+    "coreTrackingParentIds": [
+      "V3-FR-D-002"
+    ],
+    "conditionalBranches": [
+      {
+        "condition": "SELECTED_PUBLIC_GATEWAY_BFF",
+        "activationStatus": "OPEN_PENDING_EXPLICIT_SELECTION",
+        "exactAddedRecordIds": [
+          "V3-FR-K-003"
+        ],
+        "executableAddedIds": [
+          "V3-FR-K-003"
+        ]
+      },
+      {
+        "condition": "CUSTOMER_FEATURE_ELIGIBILITY",
+        "activationStatus": "OPEN_PENDING_EXPLICIT_SELECTION",
+        "exactAddedRecordIds": [
+          "V3-FR-A-008",
+          "V3-FR-E-PF-002"
+        ],
+        "executableAddedIds": [
+          "V3-FR-A-008",
+          "V3-FR-E-PF-002"
+        ]
+      },
+      {
+        "condition": "CUSTOMER_QUOTA",
+        "activationStatus": "OPEN_PENDING_EXPLICIT_SELECTION",
+        "exactAddedRecordIds": [
+          "V3-FR-A-009",
+          "V3-FR-E-PF-003"
+        ],
+        "executableAddedIds": [
+          "V3-FR-A-009",
+          "V3-FR-E-PF-003"
+        ]
+      },
+      {
+        "condition": "AUTHORIZED_OPERATIONAL_AGGREGATION",
+        "activationStatus": "OPEN_PENDING_EXPLICIT_SELECTION",
+        "exactAddedRecordIds": [
+          "V3-FR-E-002"
+        ],
+        "executableAddedIds": [
+          "V3-FR-E-002"
+        ]
+      },
+      {
+        "condition": "SELECTED_DURABLE_SCHEDULING",
+        "activationStatus": "OPEN_PENDING_EXPLICIT_SELECTION",
+        "exactAddedRecordIds": [
+          "V3-FR-B-019"
+        ],
+        "executableAddedIds": [
+          "V3-FR-B-019"
+        ]
+      },
+      {
+        "condition": "SELECTED_NUMERIC_OBJECTIVES",
+        "activationStatus": "OPEN_PENDING_EXPLICIT_SELECTION",
+        "exactAddedRecordIds": [
+          "V3-FR-B-023"
+        ],
+        "executableAddedIds": [
+          "V3-FR-B-023"
+        ]
+      },
+      {
+        "condition": "CUSTOMER_INAPP_NOTIFICATION",
+        "activationStatus": "OPEN_PENDING_EXPLICIT_SELECTION",
+        "exactAddedRecordIds": [
+          "V3-FR-A-010",
+          "V3-FR-E-PF-004"
+        ],
+        "executableAddedIds": [
+          "V3-FR-A-010",
+          "V3-FR-E-PF-004"
+        ]
+      },
+      {
+        "condition": "CUSTOMER_ATTACHMENTS",
+        "activationStatus": "OPEN_PENDING_EXPLICIT_SELECTION",
+        "exactAddedRecordIds": [
+          "V3-FR-A-011",
+          "V3-FR-B-017",
+          "V3-FR-E-PF-005"
+        ],
+        "executableAddedIds": [
+          "V3-FR-A-011",
+          "V3-FR-B-017",
+          "V3-FR-E-PF-005"
+        ]
+      },
+      {
+        "condition": "CUSTOMER_APPROVED_REPORT_SET",
+        "activationStatus": "OPEN_PENDING_EXPLICIT_SELECTION",
+        "exactAddedRecordIds": [
+          "V3-FR-A-012",
+          "V3-FR-E-PF-006"
+        ],
+        "executableAddedIds": [
+          "V3-FR-A-012",
+          "V3-FR-E-PF-006"
+        ]
+      }
+    ],
+    "acceptanceBoundary": "Approved milestone/task structure; detailed selected operation/profile rules, branch applicability and actual execution permissions still pending"
+  },
+  "gitRegistration": {
+    "expectedArtifactCount": 35,
+    "predecessorCount": 30,
+    "newAcceptanceCount": 5,
+    "exactFileManifest": [
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/architecture-dependency-matrix.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/capability-inventory.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/critical-path.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/delivery-milestones.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/first-release-roadmap.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/open-decision-dependency-matrix.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/product-decision-questions.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/proposed-task-register.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/proposed-task-register.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-001/review-report.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/complete-task-table.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/critical-path-and-parallel-workstreams.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/execution-sequence-and-milestones.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/first-customer-milestone.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/optimized-roadmap.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/optimized-task-inventory.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/original-task-review.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/required-authority-decisions.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/review-report.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/roadmap-comparison.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/roadmap-comparison.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/task-by-task-review.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-002/validation-results.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-003/cm-1-execution-package.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.csv",
+      "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-003/roadmap-acceptance-proposal.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-003/validation-report.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-004/accepted-roadmap-baseline.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-004/execution-governance.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-004/roadmap-acceptance-decision.json",
+      "architecture/product-planning/V3-PRODUCT-PLAN-004/roadmap-acceptance-decision.md",
+      "architecture/product-planning/V3-PRODUCT-PLAN-004/validation-report.md"
+    ],
+    "newArtifactNames": [
+      "roadmap-acceptance-decision.md",
+      "roadmap-acceptance-decision.json",
+      "accepted-roadmap-baseline.json",
+      "execution-governance.md",
+      "validation-report.md"
+    ],
+    "hashScope": "SHA-256 exact predecessor content, independently checked against staged/committed blobs. No recursive self-hash for these five acceptance files; their actual identities are Git blobs in the resulting verified commit."
+  },
+  "historicalProvenanceLimitations": [
+    "001/002/003 remain byte-unchanged historical planning proposals. Their PROPOSED/NOT ACCEPTED wording is a pre-approval snapshot; current roadmap approval is recorded only by 004, no historical rewriting.",
+    "The complete prior historical thirteen-file independent hash manifest for 002 was not supplied. Source 001 is linked to 002 manifest; source 001/002 current bytes linked to 003; this Task pins all thirty current predecessor bytes. This is documentary integrity, not proof of all earlier historical authenticity.",
+    "Original 002 documentary checker FAIL and corrected PASS are retained separately; no failure erased or turned PASS by authority.",
+    "Source NFR text degradation, path/section locators and missing detailed rules remain. No missing prose, business rules, state machine, provider, API choice, numeric objective or policy is reconstructed as approved.",
+    "Local-Infra remains development/synthetic only: egress not isolated for loopback-published services; Redis internal/unpublished; no hostile-host isolation, power-loss durability, full DLP or production security readiness; SeaweedFS EXPERIMENTAL/OD-017 OPEN; temporary preservation snapshots incomplete with loss cause unverified; digest identity not attestation. Runtime claims are not revalidated."
+  ],
+  "governance": {
+    "roadmap": "APPROVED AS PRODUCT EXECUTION ROADMAP",
+    "localInfra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "gRuntime": "BLOCKED",
+    "feBe": "PENDING",
+    "authIam": "PENDING",
+    "offline": "PROHIBITED",
+    "production": "NOT AUTHORIZED",
+    "implementationAuthorizations": "PENDING_NOT_GRANTED",
+    "od013_014_015_017": "OPEN",
+    "seaweedfs": "EXPERIMENTAL"
+  }
+}

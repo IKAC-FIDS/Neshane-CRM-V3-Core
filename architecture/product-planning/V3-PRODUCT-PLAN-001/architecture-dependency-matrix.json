@@ -1,0 +1,1669 @@
+{
+  "task": "V3-PRODUCT-PLAN-001",
+  "status": "PROPOSED — PLANNING ONLY",
+  "recordedAt": "2026-11-18T16:16:50.384440+00:00",
+  "repositoryBaselines": {
+    "Core": "d42002ad851d93d976ec958b85cb8c46dbff34a3",
+    "Backend": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+    "Frontend": "faa563f8f5c3bda25c3e5f40c7a8688c1bc245e7"
+  },
+  "governance": {
+    "Local-Infra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "Offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "SeaweedFS": "EXPERIMENTAL",
+    "Production authorization": "NOT GRANTED",
+    "Product implementation authorization": "NONE"
+  },
+  "classificationRule": "Mandatory obligations are conditional on actual path; optional engine/BFF/cache/plugin integrations must not become blanket prerequisites. This map grants no eligibility or execution.",
+  "capabilities": [
+    {
+      "capabilityId": "FR-BJ-001",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Customer Domain owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "CUS-CREATE/CUS-UPDATE durable obligations; no success without coordinated durable obligation; downstream failure policy OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-BJ-002",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Customer Domain owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Explicit Customer CUS-GET/CUS-GET-FOR-UPDATE/CUS-SEARCH authorization denials require safe evidence; not every empty result/read"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "MANDATORY_BUSINESS_SEARCH_DECISION",
+          "references": [
+            "OD-018"
+          ],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-BJ-003",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Sales Domain owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-BJ-004",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Customer Request Domain owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-BJ-005",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Work Domain owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-PF-001",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Identity Trust and Tenant Management (distinct owners) owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-PF-002",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Entitlement capability owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-PF-003",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Quota capability owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-PF-004",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Notification Domain owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-PF-005",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "File/Content Domain and attachment resource owner (distinct) owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "MANDATORY_OBJECT_DECISION",
+          "references": [
+            "OD-017"
+          ],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-PF-006",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Reporting capability; source facts remain producer-owned owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "CONDITIONAL_ARTIFACT_STORAGE",
+          "references": [
+            "OD-017"
+          ],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "CONDITIONAL_QUERY_REQUIREMENTS",
+          "references": [
+            "OD-018"
+          ],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-SO-001",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Audit Domain; producing Domains retain Business Facts owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Broker ACK/outbox is not Audit ingestion; DEC-011/012 mandatory boundaries and DEC-014 five safety gates apply; executable DURABLE_DEFER NOT APPROVED"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-SO-002",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Audit Domain owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Sensitive Audit access and lifecycle actions incur traceable evidence under DEC-011; no generic administrator access; advanced export/UI deferred"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "CONDITIONAL_QUERY_REQUIREMENTS",
+          "references": [
+            "OD-018"
+          ],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-SO-003",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Operational Platform; each service owns signals owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "CONDITIONAL_AUTHORIZED_OPERATIONAL_SURFACE",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    },
+    {
+      "capabilityId": "FR-SO-004",
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix",
+        "architecture/adr/003-cell-based-hybrid-tenancy.md",
+        "architecture/adr/005-domain-owned-authorization.md",
+        "architecture/adr/007-data-messaging-baseline.md",
+        "architecture/adr/009-frontend-architecture.md",
+        "architecture/adr/014-api-event-versioning.md",
+        "architecture/adr/015-contract-testing-strategy.md",
+        "Backend:deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json"
+      ],
+      "dependencies": {
+        "AUTH/IAM": {
+          "kind": "MANDATORY_FOR_PROTECTED_PATH",
+          "references": [
+            "OD-009",
+            "OD-010",
+            "OD-011",
+            "OD-012"
+          ],
+          "status": "PENDING authorization; mechanisms OPEN"
+        },
+        "Tenant Context": {
+          "kind": "MANDATORY",
+          "detail": "Authenticated/revalidated provenance; explicit Tenant/Platform scope, including operational/Audit resources"
+        },
+        "Runtime Tenant Isolation": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_RUNTIME",
+          "detail": "G-RUNTIME BLOCKED; design/pure-domain work may be independently scoped, not automatically cleared"
+        },
+        "Routing and fencing": {
+          "kind": "MANDATORY_WHERE_CELL_OR_MUTATION_PATH_APPLIES",
+          "detail": "Placement/destination trust, stale-generation denial and atomic/equivalent effect fencing; V3-022 B2 not authorized"
+        },
+        "Database ownership": {
+          "kind": "MANDATORY",
+          "detail": "Operational Platform; destination Domain; Audit Domain (distinct) owns private persistence; no cross-service SQL; OD-013 before schema migration"
+        },
+        "Java/RLS integration": {
+          "kind": "MANDATORY_FOR_TENANT_AWARE_PERSISTENCE",
+          "references": [
+            "OD-014"
+          ],
+          "detail": "Shared RLS read/write with ordinary runtime role; compatible logical isolation across dedicated profiles"
+        },
+        "Connection-pool integration": {
+          "kind": "MANDATORY_WHEN_POOLED_PERSISTENCE_USED",
+          "detail": "Actual accepted pool path, transaction-local context and cleanup/reuse/rollback/exception evidence; no inheritance from lab safe path"
+        },
+        "Event contracts": {
+          "kind": "MANDATORY_WHEN_EVENT_INTEGRATION_USED",
+          "detail": "ADR-V3-007/014/015; producer-owned facts, validated provenance, atomic Outbox and idempotent Inbox where applicable; no universal event for every read"
+        },
+        "Audit contracts": {
+          "kind": "MANDATORY_FOR_APPROVED_AUDIT_OBLIGATIONS",
+          "detail": "No universal Admin; DEC-011 mandates request/material outcome evidence (success/denial/failure); uncertain execution is not success or permission to replay"
+        },
+        "Gateway and BFF": {
+          "kind": "PUBLIC_BOUNDARY_DECISION_REQUIRED; BFF_OPTIONAL_UNTIL_OD-007",
+          "references": [
+            "OD-007"
+          ],
+          "detail": "No gateway-only authorization; API composition choice not made here"
+        },
+        "Frontend architecture": {
+          "kind": "MANDATORY_FOR_EXPOSED_CLIENT_JOURNEY",
+          "references": [
+            "OD-005",
+            "OD-006"
+          ],
+          "detail": "Modular, feature-oriented, Persian/RTL, responsive/accessibility; advanced general Admin UI deferred"
+        },
+        "Storage": {
+          "kind": "OWNED_RELATIONAL_OR_OPERATIONAL_STATE_ONLY; OBJECT_STORAGE_OPTIONAL",
+          "references": [],
+          "detail": "SeaweedFS EXPERIMENTAL is not provider selection; Audit storage/integrity decision separate"
+        },
+        "Search": {
+          "kind": "OPTIONAL_NO_EXTERNAL_ENGINE_PREREQUISITE",
+          "references": [],
+          "detail": "Customer business search does not choose an engine; source ownership/freshness/disclosure preserved"
+        },
+        "Observability": {
+          "kind": "MANDATORY",
+          "references": [
+            "FR-SO-003",
+            "OD-023"
+          ],
+          "detail": "Safe signals, authorized visibility and approved readiness; synthetic-only Local-Infra export not full product evidence"
+        },
+        "Deployment profiles": {
+          "kind": "MANDATORY_FIRST_RELEASE_TARGETS",
+          "profiles": [
+            "Shared SaaS",
+            "Dedicated Managed",
+            "Dedicated Sovereign"
+          ],
+          "references": [
+            "OD-015",
+            "OD-023"
+          ],
+          "detail": "Independent evidence and Sovereign local authority; Air Gap conditional OD-001, tenant migration conditional OD-022; offline continuation PROHIBITED"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,771 @@
+{
+  "task": "V3-PRODUCT-PLAN-001",
+  "status": "PROPOSED — PLANNING ONLY",
+  "recordedAt": "2026-11-18T16:16:50.384440+00:00",
+  "repositoryBaselines": {
+    "Core": "d42002ad851d93d976ec958b85cb8c46dbff34a3",
+    "Backend": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+    "Frontend": "faa563f8f5c3bda25c3e5f40c7a8688c1bc245e7"
+  },
+  "governance": {
+    "Local-Infra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "Offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "SeaweedFS": "EXPERIMENTAL",
+    "Production authorization": "NOT GRANTED",
+    "Product implementation authorization": "NONE"
+  },
+  "statusPrecedence": "Current register summary and resolved table plus later Core baseline annotations take precedence over retained historical blanket OPEN/PENDING wording. OD-002/003/004 resolved, OD-008 and OD-020 closed/approved; no decision changed here.",
+  "decisions": [
+    {
+      "id": "OD-001",
+      "originalSubject": "Full Air-Gapped support: offline-capable only; import/export bridge; fully isolated release channel",
+      "tradeoffs": "Sovereign, Operations, Identity, Plugins; isolation versus update/support complexity",
+      "requiredDecisionMilestone": "Before an Air-Gapped commitment",
+      "documentedProposedOwner": "Architecture + Sovereign Operations + Security",
+      "blockingEffect": "Cannot claim Air-Gapped support or finalize release/trust flows",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "CONDITIONAL — Air-Gap only; not mandatory FIRST_RELEASE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-001",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-001"
+    },
+    {
+      "id": "OD-002",
+      "originalSubject": "Java version: supported LTS candidates",
+      "selectedOption": "Java 21 LTS",
+      "sourceStatus": "RESOLVED",
+      "resolutionRecord": "Technical Architecture Owner/CPO; DEC-013; ADR-V3-013; V3-005",
+      "effectivityBoundary": "Effective upon traceable commit; installed toolchain remains unverified",
+      "affectedCapabilities": [],
+      "applicability": "RESOLVED_BASELINE — not reopened",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-002",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": null
+    },
+    {
+      "id": "OD-003",
+      "originalSubject": "Spring Boot version: supported stable line candidates",
+      "selectedOption": "Spring Boot 4.1.2",
+      "sourceStatus": "RESOLVED",
+      "resolutionRecord": "Technical Architecture Owner/CPO; DEC-013; ADR-V3-013; V3-005",
+      "effectivityBoundary": "Effective upon traceable commit; authoritative artifact/BOM compatibility remains unverified",
+      "affectedCapabilities": [],
+      "applicability": "RESOLVED_BASELINE — not reopened",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-003",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": null
+    },
+    {
+      "id": "OD-004",
+      "originalSubject": "Gradle vs Maven; single/multi-project structure",
+      "selectedOption": "Gradle multi-project, Groovy DSL, Gradle Wrapper",
+      "sourceStatus": "RESOLVED",
+      "resolutionRecord": "Technical Architecture Owner/CPO; DEC-013; ADR-V3-013; V3-005",
+      "effectivityBoundary": "Effective upon traceable commit; exact Wrapper distribution/checksum remains pending implementation evidence",
+      "affectedCapabilities": [],
+      "applicability": "RESOLVED_BASELINE — not reopened",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-004",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": null
+    },
+    {
+      "id": "OD-005",
+      "originalSubject": "Frontend framework/rendering: React/Angular/Vue/other; SPA/SSR variants",
+      "tradeoffs": "UX, deployment, skills, accessibility and operations",
+      "requiredDecisionMilestone": "Before first Frontend source",
+      "documentedProposedOwner": "Frontend Architecture + Product UX",
+      "blockingEffect": "Blocks frontend implementation",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-005",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-005"
+    },
+    {
+      "id": "OD-006",
+      "originalSubject": "State/server-cache/UI libraries: library or framework-native approaches",
+      "tradeoffs": "Consistency/productivity versus lock-in and bundle complexity",
+      "requiredDecisionMilestone": "Before first affected feature/design system",
+      "documentedProposedOwner": "Frontend Architecture + UX",
+      "blockingEffect": "Risks incompatible local patterns if delayed past coding",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-006",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-006"
+    },
+    {
+      "id": "OD-007",
+      "originalSubject": "Public API and GraphQL BFF: REST-first, GraphQL BFF, hybrid, or per-client boundary",
+      "tradeoffs": "Composition, compatibility, security, performance and ownership",
+      "requiredDecisionMilestone": "Before first public contract",
+      "documentedProposedOwner": "API Architecture + Backend/Frontend owners",
+      "blockingEffect": "Blocks stable client/service contracts",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-007",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-007"
+    },
+    {
+      "id": "OD-008",
+      "originalSubject": "API/event versioning: URI/header/media type; schema/envelope evolution rules",
+      "selectedOption": "Public REST URI major versioning; CloudEvents 1.0-compatible envelope with independent event type, payload and immutable schema versions; governed major-version coexistence and retirement",
+      "sourceStatus": "CLOSED_APPROVED",
+      "resolutionRecord": "Technical Architecture Owner/CPO; DEC-014; ADR-V3-014; OD-008 formal-closure task",
+      "effectivityBoundary": "Closed and approved; effective upon traceable commit. GraphQL versioning remains deferred to OD-007; implementation/release evidence remains separate",
+      "affectedCapabilities": [],
+      "applicability": "RESOLVED_BASELINE — not reopened",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-008",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": null
+    },
+    {
+      "id": "OD-009",
+      "originalSubject": "IdP integrations: generic OIDC first versus named enterprise providers/federation",
+      "tradeoffs": "Reach and conformance versus implementation/support breadth",
+      "requiredDecisionMilestone": "Before production authentication",
+      "documentedProposedOwner": "Identity + Security + Product",
+      "blockingEffect": "Blocks production trust onboarding",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-009",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-009"
+    },
+    {
+      "id": "OD-010",
+      "originalSubject": "Session lifecycle/revocation: stateless short-lived, stateful sessions, refresh families, hybrid",
+      "tradeoffs": "UX, revocation speed, compromise recovery and Sovereign operation",
+      "requiredDecisionMilestone": "Before production session implementation",
+      "documentedProposedOwner": "Identity + Security",
+      "blockingEffect": "Blocks safe session semantics and frontend credential design",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-010",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-010"
+    },
+    {
+      "id": "OD-011",
+      "originalSubject": "Workload identity: platform-issued credentials, mTLS PKI, SPIFFE/SPIRE, hybrid",
+      "tradeoffs": "Portability/automation versus operational complexity",
+      "requiredDecisionMilestone": "Before production service-to-service trust",
+      "documentedProposedOwner": "Security + Platform Operations",
+      "blockingEffect": "Blocks durable trust-domain and rotation design",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-011",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-011"
+    },
+    {
+      "id": "OD-012",
+      "originalSubject": "Secrets/keys: platform-native, Vault-class, cloud KMS/HSM, Sovereign-local mix",
+      "tradeoffs": "Portability, assurance, custody and offline support",
+      "requiredDecisionMilestone": "Before production credential storage/signing",
+      "documentedProposedOwner": "Security + Operations + Sovereign owner",
+      "blockingEffect": "Blocks key lifecycle and release assurance",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-012",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-012"
+    },
+    {
+      "id": "OD-013",
+      "originalSubject": "PostgreSQL migrations: Flyway, Liquibase, framework-native, other",
+      "tradeoffs": "Control/repeatability versus flexibility and tooling footprint",
+      "requiredDecisionMilestone": "Before first schema migration",
+      "documentedProposedOwner": "Data Architecture",
+      "blockingEffect": "Blocks migration ownership and recovery convention",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-013",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-013"
+    },
+    {
+      "id": "OD-014",
+      "originalSubject": "Java/RLS integration: transaction interceptor, explicit unit-of-work, connection wrapper",
+      "tradeoffs": "Safety/visibility versus framework coupling",
+      "requiredDecisionMilestone": "Before first tenant-aware repository",
+      "documentedProposedOwner": "Data + Security + Backend Architecture",
+      "blockingEffect": "Risks unsafe pooled connection context if improvised",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-014",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-014"
+    },
+    {
+      "id": "OD-015",
+      "originalSubject": "Runtime orchestration: Compose-equivalent reference, Kubernetes, Nomad, other profile-specific runtime",
+      "tradeoffs": "Portability/operations/Sovereign footprint versus complexity",
+      "requiredDecisionMilestone": "Before deployment implementation",
+      "documentedProposedOwner": "Platform Operations + Architecture",
+      "blockingEffect": "Blocks deployment, cell and recovery contracts",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-015",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-015"
+    },
+    {
+      "id": "OD-016",
+      "originalSubject": "Managed Plugin Runtime isolation: containers, microVMs, WASM, external workers, hybrid",
+      "tradeoffs": "Language support, density, isolation and operations",
+      "requiredDecisionMilestone": "Before hosted plugin execution",
+      "documentedProposedOwner": "Plugin Platform + Security + Operations",
+      "blockingEffect": "Cannot offer managed plugin execution safely",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [],
+      "applicability": "FUTURE_OPTIONAL — no mandatory plugin hosting/marketplace dependency in these 15 journeys",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-016",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-016"
+    },
+    {
+      "id": "OD-017",
+      "originalSubject": "Object storage: S3-compatible, cloud-specific, filesystem appliance, hybrid",
+      "tradeoffs": "Portability, sovereignty, lifecycle and authorization",
+      "requiredDecisionMilestone": "Before file/content capability",
+      "documentedProposedOwner": "Data + Operations + Security",
+      "blockingEffect": "Blocks durable object and retention design",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-005",
+        "FR-PF-006"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-017",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-017"
+    },
+    {
+      "id": "OD-018",
+      "originalSubject": "Search/indexing: PostgreSQL search, external engine, hybrid projections",
+      "tradeoffs": "Capability/cost/consistency and Sovereign footprint",
+      "requiredDecisionMilestone": "Before search-dependent feature",
+      "documentedProposedOwner": "Data Architecture + owning domains",
+      "blockingEffect": "Risks premature engine coupling or inadequate search",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-002",
+        "FR-PF-006",
+        "FR-SO-002"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-018",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-018"
+    },
+    {
+      "id": "OD-019",
+      "originalSubject": "Background scheduling: in-service scheduler, DB-coordinated jobs, workflow engine, broker scheduling",
+      "tradeoffs": "Simplicity versus durability, ownership and operations",
+      "requiredDecisionMilestone": "Before durable scheduled workflows",
+      "documentedProposedOwner": "Backend Architecture + Operations",
+      "blockingEffect": "Risks duplicate/lost work and unclear ownership",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-004",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-004"
+      ],
+      "applicability": "CONDITIONAL — scheduling only when selected operation needs durable jobs",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-019",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-019"
+    },
+    {
+      "id": "OD-020",
+      "originalSubject": "Contract testing strategy: risk-based Consumer-driven Testing; Provider Conformance before Merge/Release; risk-based Real Integration Testing; Service Owner baseline ownership with Audit Trail; limited time-bound exceptions; blocking layered gates, Manual Review and preserved Security boundaries.",
+      "tradeoffs": "Layered compatibility evidence and independent delivery versus test/environment maintenance cost. Architecture/Quality approval remains distinct from CI/runtime evidence.",
+      "requiredDecisionMilestone": "Before first released contract",
+      "documentedProposedOwner": "Technical Architecture Owner + scoped interim Quality Authority",
+      "blockingEffect": "CLOSED — APPROVED by DEC-015/ADR-V3-015; EFFECTIVE UPON TRACEABLE COMMIT; no CI/runtime evidence or Production Readiness implied",
+      "sourceStatus": "CLOSED_APPROVED",
+      "affectedCapabilities": [],
+      "applicability": "RESOLVED_BASELINE — not reopened",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-020",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": null
+    },
+    {
+      "id": "OD-021",
+      "originalSubject": "Marketplace/Developer Portal: internal catalog, partner portal, public marketplace",
+      "tradeoffs": "Governance/revenue/ecosystem versus security/support scope",
+      "requiredDecisionMilestone": "Before external developer onboarding",
+      "documentedProposedOwner": "Product + Plugin Platform + Legal/Security",
+      "blockingEffect": "External ecosystem scope and obligations remain unknown",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [],
+      "applicability": "FUTURE_OPTIONAL — no mandatory plugin hosting/marketplace dependency in these 15 journeys",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-021",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-021"
+    },
+    {
+      "id": "OD-022",
+      "originalSubject": "Tenant migration automation: offline transfer, dual-run, event replication, cell-native workflow",
+      "tradeoffs": "Downtime, consistency, complexity and rollback",
+      "requiredDecisionMilestone": "Before tenant placement migration is supported",
+      "documentedProposedOwner": "Cell Management + Data + Security",
+      "blockingEffect": "Placement changes remain manual/high-risk",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "CONDITIONAL — placement migration feature only; design fencing still mandatory",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-022",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-022"
+    },
+    {
+      "id": "OD-023",
+      "originalSubject": "SLO/RTO/RPO/capacity: per-profile/service objectives and measurement",
+      "tradeoffs": "Cost versus availability/recovery/security freshness",
+      "requiredDecisionMilestone": "Before production architecture sign-off",
+      "documentedProposedOwner": "Product + Operations + Security + service owners",
+      "blockingEffect": "Production readiness and sizing cannot be assessed",
+      "sourceStatus": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "applicability": "MANDATORY_AT_RECORDED_MILESTONE",
+      "decisionOwnerQualification": "Source lists proposed contributor roles, not assigned persons. Final internal decision: Product Decision Owner / TAO under unified authority; applicable binding obligations preserved.",
+      "requiredEvidence": [
+        "Source-grounded alternatives, scope and consequences",
+        "Consumer/security/profile impact; migration/rollback or forward recovery",
+        "Explicit scoped owner disposition and traceable ADR/register synchronization; executable evidence remains separate"
+      ],
+      "sourceReferences": [
+        "architecture/open-decisions.md#OD-023",
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/task-governance.md#unified-final-internal-decision-authority"
+      ],
+      "proposedDecisionTask": "V3-FR-B-023"
+    }
+  ]
+}

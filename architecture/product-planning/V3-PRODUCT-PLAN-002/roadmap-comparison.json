@@ -1,0 +1,1191 @@
+{
+  "task": "V3-PRODUCT-PLAN-002",
+  "status": "PROPOSED — REVIEW AND OPTIMIZATION ONLY",
+  "recordedAt": "2026-11-18T16:50:53.346970+00:00",
+  "governance": {
+    "Local-Infra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "Offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "SeaweedFS": "EXPERIMENTAL",
+    "Production authorization": "NOT GRANTED",
+    "Product implementation authorization": "NONE"
+  },
+  "originalCount": 67,
+  "optimizedRecordCount": 90,
+  "newProposedCount": 23,
+  "deletedOriginalIdentifiers": [],
+  "mergedOriginalIdentifiers": [],
+  "originalTasks": [
+    {
+      "taskId": "V3-FR-A-001",
+      "originalSequence": 1,
+      "optimizedSequence": 1,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "RETAIN_AND_REFINE",
+          "rationale": "Capability scope retained; reference granularity, explicit external decision predicates and operation-level acceptance clarified"
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-002",
+      "originalSequence": 2,
+      "optimizedSequence": 2,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-003",
+      "originalSequence": 3,
+      "optimizedSequence": 3,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-004",
+      "originalSequence": 4,
+      "optimizedSequence": 45,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-005",
+      "originalSequence": 5,
+      "optimizedSequence": 46,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-006",
+      "originalSequence": 6,
+      "optimizedSequence": 47,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-007",
+      "originalSequence": 7,
+      "optimizedSequence": 4,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-008",
+      "originalSequence": 8,
+      "optimizedSequence": 48,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-009",
+      "originalSequence": 9,
+      "optimizedSequence": 49,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-010",
+      "originalSequence": 10,
+      "optimizedSequence": 50,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-011",
+      "originalSequence": 11,
+      "optimizedSequence": 51,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-012",
+      "originalSequence": 12,
+      "optimizedSequence": 52,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-013",
+      "originalSequence": 13,
+      "optimizedSequence": 5,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-014",
+      "originalSequence": 14,
+      "optimizedSequence": 53,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-015",
+      "originalSequence": 15,
+      "optimizedSequence": 6,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-016",
+      "originalSequence": 16,
+      "optimizedSequence": 54,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REMOVE_ARTIFICIAL_SERIALIZATION",
+          "rationale": "Actor/owner framing can proceed concurrently; do not wait for all-capability A-001 closure before drafting this single requirement package."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-A-017",
+      "originalSequence": 17,
+      "optimizedSequence": 7,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-001 with none; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-001",
+      "originalSequence": 18,
+      "optimizedSequence": 87,
+      "disposition": "CONDITIONAL_BACKLOG_NOT_FIRST_SLICE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        },
+        {
+          "action": "REMOVE_FROM_REQUIRED_FIRST_RELEASE_QUEUE",
+          "rationale": "Air Gap, managed plugin execution, Marketplace or placement migration is not a mandatory dependency of the selected Customer journey. Preserve original ID and OPEN OD; no product scope decision is changed."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-005",
+      "originalSequence": 19,
+      "optimizedSequence": 12,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-006",
+      "originalSequence": 20,
+      "optimizedSequence": 13,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-007",
+      "originalSequence": 21,
+      "optimizedSequence": 14,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-009",
+      "originalSequence": 22,
+      "optimizedSequence": 15,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-010",
+      "originalSequence": 23,
+      "optimizedSequence": 16,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-011",
+      "originalSequence": 24,
+      "optimizedSequence": 17,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-012",
+      "originalSequence": 25,
+      "optimizedSequence": 18,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-013",
+      "originalSequence": 26,
+      "optimizedSequence": 19,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-014",
+      "originalSequence": 27,
+      "optimizedSequence": 20,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-015",
+      "originalSequence": 28,
+      "optimizedSequence": 55,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-016",
+      "originalSequence": 29,
+      "optimizedSequence": 88,
+      "disposition": "CONDITIONAL_BACKLOG_NOT_FIRST_SLICE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        },
+        {
+          "action": "REMOVE_FROM_REQUIRED_FIRST_RELEASE_QUEUE",
+          "rationale": "Air Gap, managed plugin execution, Marketplace or placement migration is not a mandatory dependency of the selected Customer journey. Preserve original ID and OPEN OD; no product scope decision is changed."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-017",
+      "originalSequence": 30,
+      "optimizedSequence": 56,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-018",
+      "originalSequence": 31,
+      "optimizedSequence": 21,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-019",
+      "originalSequence": 32,
+      "optimizedSequence": 57,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-021",
+      "originalSequence": 33,
+      "optimizedSequence": 89,
+      "disposition": "CONDITIONAL_BACKLOG_NOT_FIRST_SLICE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        },
+        {
+          "action": "REMOVE_FROM_REQUIRED_FIRST_RELEASE_QUEUE",
+          "rationale": "Air Gap, managed plugin execution, Marketplace or placement migration is not a mandatory dependency of the selected Customer journey. Preserve original ID and OPEN OD; no product scope decision is changed."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-022",
+      "originalSequence": 34,
+      "optimizedSequence": 90,
+      "disposition": "CONDITIONAL_BACKLOG_NOT_FIRST_SLICE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        },
+        {
+          "action": "REMOVE_FROM_REQUIRED_FIRST_RELEASE_QUEUE",
+          "rationale": "Air Gap, managed plugin execution, Marketplace or placement migration is not a mandatory dependency of the selected Customer journey. Preserve original ID and OPEN OD; no product scope decision is changed."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-023",
+      "originalSequence": 35,
+      "optimizedSequence": 58,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "SEPARATE_PREPARATION_FROM_DECISION",
+          "rationale": "Original acceptance required effective decision although this task only prepares alternatives; use analysis acceptance and retain explicit downstream decision predicate."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-B-024",
+      "originalSequence": 36,
+      "optimizedSequence": 8,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "RETAIN_AND_REFINE",
+          "rationale": "Capability scope retained; reference granularity, explicit external decision predicates and operation-level acceptance clarified"
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-C-001",
+      "originalSequence": 37,
+      "optimizedSequence": 22,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "RETAIN_AND_REFINE",
+          "rationale": "Capability scope retained; reference granularity, explicit external decision predicates and operation-level acceptance clarified"
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-D-001",
+      "originalSequence": 38,
+      "optimizedSequence": 9,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "RETAIN_AND_REFINE",
+          "rationale": "Capability scope retained; reference granularity, explicit external decision predicates and operation-level acceptance clarified"
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-C-002",
+      "originalSequence": 39,
+      "optimizedSequence": 29,
+      "disposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "changes": [
+        {
+          "action": "SPLIT_EXECUTION_KEEP_PARENT",
+          "rationale": "Original scope combines independently deliverable paths or all-capability batches. Keep ID as coverage/roll-up only; execute child scopes once, not parent again."
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-C-003: Internal Principal and session validation boundary"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-C-004: Membership, Tenant switching and validated Context"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-C-005: Workload trust and credential lifecycle boundaries"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-C-001, V3-FR-D-001, V3-FR-B-009, V3-FR-B-010, V3-FR-B-011, V3-FR-B-012 with V3-FR-C-003, V3-FR-C-004, V3-FR-C-005; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-D-002",
+      "originalSequence": 40,
+      "optimizedSequence": 33,
+      "disposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "changes": [
+        {
+          "action": "SPLIT_EXECUTION_KEEP_PARENT",
+          "rationale": "Original scope combines independently deliverable paths or all-capability batches. Keep ID as coverage/roll-up only; execute child scopes once, not parent again."
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-D-004: Actual Java/RLS and connection-pool isolation evidence"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-D-005: Routing, destination trust and generation fencing evidence"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-D-006: Scoped operational runtime and recovery verification"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-D-001, V3-FR-C-002, V3-FR-B-013, V3-FR-B-014 with V3-FR-D-004, V3-FR-D-005, V3-FR-D-006, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-D-003",
+      "originalSequence": 41,
+      "optimizedSequence": 34,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "RETAIN_AND_REFINE",
+          "rationale": "Capability scope retained; reference granularity, explicit external decision predicates and operation-level acceptance clarified"
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-E-000",
+      "originalSequence": 42,
+      "optimizedSequence": 23,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-K-002: Approved reliable publication and consumption path"
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-F-BJ-001",
+      "originalSequence": 43,
+      "optimizedSequence": 42,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-K-001: Customer API, disclosure and reference contract design"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-002, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-A-002, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-F-000, V3-FR-K-001, V3-FR-E-000, V3-FR-K-002; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-F-BJ-002",
+      "originalSequence": 44,
+      "optimizedSequence": 37,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-003, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000, V3-FR-F-BJ-001 with V3-FR-A-003, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-K-001, V3-FR-E-000; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        },
+        {
+          "action": "REMOVE_FULL_CREATE_DEPENDENCY",
+          "rationale": "Read/search shares Customer-owned schema/contracts, not completion of every create/update operation. Live validation needs valid authorized fixture/data and owned schema, never invented authority."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-F-BJ-003",
+      "originalSequence": 45,
+      "optimizedSequence": 70,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-004, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000, V3-FR-F-BJ-001 with V3-FR-A-004, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-K-001; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        },
+        {
+          "action": "REPLACE_FULL_PROVIDER_FINISH_WITH_CONTRACT",
+          "rationale": "Sales/Request design and isolated consumer work need approved Customer reference contract, not all Customer writes. Live path still requires actual ready authorized Customer reference provider."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-F-BJ-004",
+      "originalSequence": 46,
+      "optimizedSequence": 71,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-005, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000, V3-FR-F-BJ-001 with V3-FR-A-005, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-K-001; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        },
+        {
+          "action": "REPLACE_FULL_PROVIDER_FINISH_WITH_CONTRACT",
+          "rationale": "Sales/Request design and isolated consumer work need approved Customer reference contract, not all Customer writes. Live path still requires actual ready authorized Customer reference provider."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-F-BJ-005",
+      "originalSequence": 47,
+      "optimizedSequence": 72,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-006, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-A-006, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-E-PF-002",
+      "originalSequence": 48,
+      "optimizedSequence": 61,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-008, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-A-008, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-E-000; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-E-PF-003",
+      "originalSequence": 49,
+      "optimizedSequence": 62,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-009, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-A-009, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-E-000; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-E-PF-004",
+      "originalSequence": 50,
+      "optimizedSequence": 63,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-010, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-A-010, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-E-000; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-E-PF-005",
+      "originalSequence": 51,
+      "optimizedSequence": 64,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-011, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-A-011, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-E-000; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-E-PF-006",
+      "originalSequence": 52,
+      "optimizedSequence": 65,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-012, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-A-012, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-E-000; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-E-SO-001",
+      "originalSequence": 53,
+      "optimizedSequence": 66,
+      "disposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "changes": [
+        {
+          "action": "SPLIT_EXECUTION_KEEP_PARENT",
+          "rationale": "Original scope combines independently deliverable paths or all-capability batches. Keep ID as coverage/roll-up only; execute child scopes once, not parent again."
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-E-003: Customer slice Audit ingestion and evidence"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-E-004: Extend Audit Core to remaining approved obligations"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-013, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-E-003, V3-FR-E-004; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-E-SO-002",
+      "originalSequence": 54,
+      "optimizedSequence": 67,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-014, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-A-014, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-E-000; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-E-SO-003",
+      "originalSequence": 55,
+      "optimizedSequence": 68,
+      "disposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "changes": [
+        {
+          "action": "SPLIT_EXECUTION_KEEP_PARENT",
+          "rationale": "Original scope combines independently deliverable paths or all-capability batches. Keep ID as coverage/roll-up only; execute child scopes once, not parent again."
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-E-001: Safe service instrumentation increment"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-E-002: Authorized operational aggregation and visibility"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-015, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-E-001, V3-FR-E-002; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-E-SO-004",
+      "originalSequence": 56,
+      "optimizedSequence": 69,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-016, V3-FR-A-017, V3-FR-C-002, V3-FR-D-003, V3-FR-E-000 with V3-FR-A-016, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-D-003, V3-FR-A-017, V3-FR-E-000; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "NARROW_AND_REUSE",
+          "rationale": "Keep approved capability boundary; acceptance per named operation. Pure-domain/contract-only work may be separately scoped; adapters/live paths retain all mandatory controls."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-F-000",
+      "originalSequence": 57,
+      "optimizedSequence": 24,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "REUSE_NOT_DUPLICATE",
+          "rationale": "Early pure-domain Customer output is consumed by F-BJ-001; no second Customer model or duplicate implementation. Independent-scope permission still required."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-G-001",
+      "originalSequence": 58,
+      "optimizedSequence": 10,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-001 with none; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-G-002",
+      "originalSequence": 59,
+      "optimizedSequence": 74,
+      "disposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "changes": [
+        {
+          "action": "SPLIT_EXECUTION_KEEP_PARENT",
+          "rationale": "Original scope combines independently deliverable paths or all-capability batches. Keep ID as coverage/roll-up only; execute child scopes once, not parent again."
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-G-003: Frontend foundation and approved Design System"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-G-004: Customer Management Frontend vertical slice"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-G-005: Remaining approved capability Frontend features"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-K-003: Conditional public Gateway/BFF contract path"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-G-001, V3-FR-B-005, V3-FR-B-006, V3-FR-B-007, V3-FR-C-001 with V3-FR-G-003, V3-FR-G-004, V3-FR-G-005; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-H-001",
+      "originalSequence": 60,
+      "optimizedSequence": 43,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "OWNERSHIP_CLARIFICATION",
+          "rationale": "One lead repository; separately authorized contributor changes and evidence, no cross-repository atomic commit."
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-G-002, V3-FR-F-BJ-001, V3-FR-F-BJ-002, V3-FR-E-SO-001, V3-FR-E-SO-003 with V3-FR-G-004, V3-FR-F-BJ-001, V3-FR-F-BJ-002, V3-FR-C-003, V3-FR-C-004, V3-FR-C-005, V3-FR-E-003, V3-FR-E-001, V3-FR-D-003, V3-FR-I-001; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-H-002",
+      "originalSequence": 61,
+      "optimizedSequence": 77,
+      "disposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "changes": [
+        {
+          "action": "OWNERSHIP_CLARIFICATION",
+          "rationale": "One lead repository; separately authorized contributor changes and evidence, no cross-repository atomic commit."
+        },
+        {
+          "action": "SPLIT_EXECUTION_KEEP_PARENT",
+          "rationale": "Original scope combines independently deliverable paths or all-capability batches. Keep ID as coverage/roll-up only; execute child scopes once, not parent again."
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-H-003: Rolling Sales, Request and Work journey integration"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-H-004: Rolling platform integration and policy matrices"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-F-BJ-001, V3-FR-F-BJ-002, V3-FR-F-BJ-003, V3-FR-F-BJ-004, V3-FR-F-BJ-005, V3-FR-C-002, V3-FR-E-PF-002, V3-FR-E-PF-003, V3-FR-E-PF-004, V3-FR-E-PF-005, V3-FR-E-PF-006, V3-FR-E-SO-001, V3-FR-E-SO-002, V3-FR-E-SO-003, V3-FR-E-SO-004, V3-FR-G-002, V3-FR-H-001 with V3-FR-H-001, V3-FR-H-003, V3-FR-H-004, V3-FR-G-002, V3-FR-F-BJ-001, V3-FR-F-BJ-002, V3-FR-F-BJ-003, V3-FR-F-BJ-004, V3-FR-F-BJ-005, V3-FR-E-PF-002, V3-FR-E-PF-003, V3-FR-E-PF-004, V3-FR-E-PF-005, V3-FR-E-PF-006, V3-FR-E-SO-001, V3-FR-E-SO-002, V3-FR-E-SO-003, V3-FR-E-SO-004; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-I-001",
+      "originalSequence": 62,
+      "optimizedSequence": 11,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-A-017, V3-FR-D-001 with none; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-I-002",
+      "originalSequence": 63,
+      "optimizedSequence": 79,
+      "disposition": "TRACKING_PARENT_NOT_EXECUTION_UNIT",
+      "changes": [
+        {
+          "action": "OWNERSHIP_CLARIFICATION",
+          "rationale": "One lead repository; separately authorized contributor changes and evidence, no cross-repository atomic commit."
+        },
+        {
+          "action": "SPLIT_EXECUTION_KEEP_PARENT",
+          "rationale": "Original scope combines independently deliverable paths or all-capability batches. Keep ID as coverage/roll-up only; execute child scopes once, not parent again."
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-I-003: Customer slice security and acceptance evidence"
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-I-004: Rolling remaining security evidence and final coverage"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-H-002, V3-FR-I-001, V3-FR-D-003 with V3-FR-H-002, V3-FR-I-003, V3-FR-I-004; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-J-001",
+      "originalSequence": 64,
+      "optimizedSequence": 81,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "OWNERSHIP_CLARIFICATION",
+          "rationale": "One lead repository; separately authorized contributor changes and evidence, no cross-repository atomic commit."
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-J-005: Shared SaaS deployment/recovery implementation and evidence"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-I-002, V3-FR-B-015, V3-FR-B-023, V3-FR-B-012 with V3-FR-I-002, V3-FR-J-005; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "REMOVE_COPIED_SOVEREIGN_SCOPE",
+          "rationale": "Sovereign-specific critical-local obligation belongs to J-003/J-007, not Shared SaaS or Managed dossier; common invariants retained."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-J-002",
+      "originalSequence": 65,
+      "optimizedSequence": 83,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "OWNERSHIP_CLARIFICATION",
+          "rationale": "One lead repository; separately authorized contributor changes and evidence, no cross-repository atomic commit."
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-J-006: Dedicated Managed deployment/recovery implementation and evidence"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-I-002, V3-FR-B-015, V3-FR-B-023, V3-FR-B-012 with V3-FR-I-002, V3-FR-J-006; gate/policy predicates remain separate mandatory blockers."
+        },
+        {
+          "action": "REMOVE_COPIED_SOVEREIGN_SCOPE",
+          "rationale": "Sovereign-specific critical-local obligation belongs to J-003/J-007, not Shared SaaS or Managed dossier; common invariants retained."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-J-003",
+      "originalSequence": 66,
+      "optimizedSequence": 85,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "OWNERSHIP_CLARIFICATION",
+          "rationale": "One lead repository; separately authorized contributor changes and evidence, no cross-repository atomic commit."
+        },
+        {
+          "action": "CHILD_OR_MISSING_EXECUTION_UNIT",
+          "rationale": "V3-FR-J-007: Dedicated Sovereign deployment/recovery implementation and evidence"
+        },
+        {
+          "action": "DEPENDENCY_REFINEMENT",
+          "rationale": "Replace V3-FR-I-002, V3-FR-B-015, V3-FR-B-023, V3-FR-B-012 with V3-FR-I-002, V3-FR-J-007; gate/policy predicates remain separate mandatory blockers."
+        }
+      ]
+    },
+    {
+      "taskId": "V3-FR-J-004",
+      "originalSequence": 67,
+      "optimizedSequence": 86,
+      "disposition": "EXECUTION_CANDIDATE",
+      "changes": [
+        {
+          "action": "RETAIN_AND_REFINE",
+          "rationale": "Capability scope retained; reference granularity, explicit external decision predicates and operation-level acceptance clarified"
+        }
+      ]
+    }
+  ],
+  "additions": [
+    {
+      "taskId": "V3-FR-C-003",
+      "parent": "V3-FR-C-002",
+      "reason": "Internal Principal and session validation boundary",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-C-004",
+      "parent": "V3-FR-C-002",
+      "reason": "Membership, Tenant switching and validated Context",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-C-005",
+      "parent": "V3-FR-C-002",
+      "reason": "Workload trust and credential lifecycle boundaries",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-D-004",
+      "parent": "V3-FR-D-002",
+      "reason": "Actual Java/RLS and connection-pool isolation evidence",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-D-005",
+      "parent": "V3-FR-D-002",
+      "reason": "Routing, destination trust and generation fencing evidence",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-D-006",
+      "parent": "V3-FR-D-002",
+      "reason": "Scoped operational runtime and recovery verification",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-G-003",
+      "parent": "V3-FR-G-002",
+      "reason": "Frontend foundation and approved Design System",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-G-004",
+      "parent": "V3-FR-G-002",
+      "reason": "Customer Management Frontend vertical slice",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-G-005",
+      "parent": "V3-FR-G-002",
+      "reason": "Remaining approved capability Frontend features",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-H-003",
+      "parent": "V3-FR-H-002",
+      "reason": "Rolling Sales, Request and Work journey integration",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-H-004",
+      "parent": "V3-FR-H-002",
+      "reason": "Rolling platform integration and policy matrices",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-I-003",
+      "parent": "V3-FR-I-002",
+      "reason": "Customer slice security and acceptance evidence",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-I-004",
+      "parent": "V3-FR-I-002",
+      "reason": "Rolling remaining security evidence and final coverage",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-E-001",
+      "parent": "V3-FR-E-SO-003",
+      "reason": "Safe service instrumentation increment",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-E-002",
+      "parent": "V3-FR-E-SO-003",
+      "reason": "Authorized operational aggregation and visibility",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-E-003",
+      "parent": "V3-FR-E-SO-001",
+      "reason": "Customer slice Audit ingestion and evidence",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-E-004",
+      "parent": "V3-FR-E-SO-001",
+      "reason": "Extend Audit Core to remaining approved obligations",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-K-001",
+      "parent": "V3-FR-F-BJ-001",
+      "reason": "Customer API, disclosure and reference contract design",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-K-002",
+      "parent": "V3-FR-E-000",
+      "reason": "Approved reliable publication and consumption path",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-K-003",
+      "parent": "V3-FR-G-002",
+      "reason": "Conditional public Gateway/BFF contract path",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-J-005",
+      "parent": "V3-FR-J-001",
+      "reason": "Shared SaaS deployment/recovery implementation and evidence",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-J-006",
+      "parent": "V3-FR-J-002",
+      "reason": "Dedicated Managed deployment/recovery implementation and evidence",
+      "status": "PROPOSED"
+    },
+    {
+      "taskId": "V3-FR-J-007",
+      "parent": "V3-FR-J-003",
+      "reason": "Dedicated Sovereign deployment/recovery implementation and evidence",
+      "status": "PROPOSED"
+    }
+  ]
+}

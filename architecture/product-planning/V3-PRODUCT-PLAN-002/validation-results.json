@@ -1,0 +1,97 @@
+{
+  "task": "V3-PRODUCT-PLAN-002",
+  "status": "PROPOSED — REVIEW AND OPTIMIZATION ONLY",
+  "recordedAt": "2026-11-18T16:50:53.346970+00:00",
+  "governance": {
+    "Local-Infra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "Offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "SeaweedFS": "EXPERIMENTAL",
+    "Production authorization": "NOT GRANTED",
+    "Product implementation authorization": "NONE"
+  },
+  "originalArtifactsHashed": 11,
+  "originalArtifactsByteUnchanged": true,
+  "originalTaskReviews": 67,
+  "dimensionsPerOriginalTask": 9,
+  "originalIdsRetained": 67,
+  "proposedNewIds": 23,
+  "optimizedRecords": 90,
+  "dispositionCounts": {
+    "EXECUTION_CANDIDATE": 74,
+    "CONDITIONAL_BACKLOG_NOT_FIRST_SLICE": 4,
+    "TRACKING_PARENT_NOT_EXECUTION_UNIT": 7,
+    "ROLLING_BOUNDED_INCREMENTS": 4,
+    "CONDITIONAL_EXECUTION_IF_SELECTED": 1
+  },
+  "all15CapabilitiesPreserved": true,
+  "noUndefinedPrerequisites": true,
+  "noTaskDependencyCycles": true,
+  "topologicalDisplayOrder": true,
+  "noDecisionOrImplementationApproval": true,
+  "softwareTestsBuildsDockerRemoteExecution": false,
+  "finalDocumentaryCheck": {
+    "recordedAt": "2026-11-18T16:55:11.844102+00:00",
+    "outcome": "PASS",
+    "parsedJsonFiles": 4,
+    "humanTableRows": 90,
+    "tableColumns": 13,
+    "sourceArtifactsByteIdentical": 11,
+    "repositoryResults": {
+      "Core": {
+        "head": "d42002ad851d93d976ec958b85cb8c46dbff34a3",
+        "statusEntryCount": 24,
+        "trackedAndIndexChanges": false
+      },
+      "Backend": {
+        "head": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+        "statusEntryCount": 0,
+        "trackedAndIndexChanges": false
+      },
+      "Frontend": {
+        "head": "faa563f8f5c3bda25c3e5f40c7a8688c1bc245e7",
+        "statusEntryCount": 0,
+        "trackedAndIndexChanges": false
+      }
+    },
+    "errors": [],
+    "independentSpecialistAssessment": false,
+    "productTestsOrDocker": false
+  },
+  "documentaryCheckHistory": [
+    {
+      "recordedAt": "2026-11-18T16:53:43.968953+00:00",
+      "outcome": "FAIL",
+      "parsedJsonFiles": 4,
+      "humanTableRows": 90,
+      "tableColumns": 13,
+      "sourceArtifactsByteIdentical": 11,
+      "repositoryResults": {
+        "Core": {
+          "head": "d42002ad851d93d976ec958b85cb8c46dbff34a3",
+          "statusEntryCount": 24,
+          "trackedAndIndexChanges": false
+        },
+        "Backend": {
+          "head": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+          "statusEntryCount": 0,
+          "trackedAndIndexChanges": false
+        },
+        "Frontend": {
+          "head": "faa563f8f5c3bda25c3e5f40c7a8688c1bc245e7",
+          "statusEntryCount": 0,
+          "trackedAndIndexChanges": false
+        }
+      },
+      "errors": [
+        "table IDs"
+      ],
+      "independentSpecialistAssessment": false,
+      "productTestsOrDocker": false
+    }
+  ],
+  "checkCorrection": "First table-ID check matched prerequisite cells as if Task-ID column; corrected checker targets only the Task ID column. Initial FAIL preserved in history, not a product/runtime failure."
+}

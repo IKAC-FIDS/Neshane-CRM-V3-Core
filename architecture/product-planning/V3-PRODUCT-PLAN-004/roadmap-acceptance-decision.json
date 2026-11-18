@@ -1,0 +1,115 @@
+{
+  "taskId": "V3-PRODUCT-PLAN-004",
+  "decisionStatus": "AUTHORITY_DECISION_RECORDED",
+  "authority": "Product Decision Owner / Technical Architecture Owner (TAO), existing unified internal project role",
+  "authoritySource": "User instruction for V3-PRODUCT-PLAN-004, Authority decision and sections 2–7",
+  "exactAuthorityDecision": "APPROVED AS PRODUCT EXECUTION ROADMAP.",
+  "authorityIssuanceTimestamp": null,
+  "recordingTimestamp": "2026-11-18T17:49:28.132115+00:00",
+  "recordingTimestampMeaning": "Actual recording event in UTC, not a fabricated owner issuance time",
+  "legalIdentityOrSignatureClaim": null,
+  "reviewedCoreHead": "d42002ad851d93d976ec958b85cb8c46dbff34a3",
+  "reviewedBackendHead": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+  "reviewedFrontendHead": "faa563f8f5c3bda25c3e5f40c7a8688c1bc245e7",
+  "approvedScope": {
+    "roadmapAndTaskStructureOnly": true,
+    "recordCount": 90,
+    "executableTaskDefinitions": 79,
+    "nonExecutableTrackingParents": 7,
+    "conditionalBacklogRecords": 4,
+    "firstProductDeliveryMilestone": "CM-1",
+    "cm1ExecutableDefinitions": 42,
+    "cm1NonExecutableTrackingParent": "V3-FR-D-002"
+  },
+  "canonicalExecutionReference": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.json",
+  "acceptedArtifactReferences": [
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/cm-1-execution-package.md",
+      "bytes": 13265,
+      "sha256": "f8cf03ad998e3c197d450312c898a304c8f24456bc348e296dce7caceb5cf10c",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "9da6df10da3f08c94aeb51dc6d4b2dabfff69912"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.csv",
+      "bytes": 512839,
+      "sha256": "dae57c0e777c22da203bd73138db16c8aa44f69bea147449d9f4b02ccce5d23d",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "5fd18f7957b56d00149d6415d014921eb0ec1439"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.json",
+      "bytes": 929892,
+      "sha256": "3ad890e912f89b442a178b150ae43a576e514679188fc9bbc49b315495f98a6b",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "92fcd59e5d4ed8d4d374615be1f490adb4fcb5b3"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.md",
+      "bytes": 642913,
+      "sha256": "afbad8cffb8bf8cad8d2589fe64eebc206760e84af488d90846ff3f69f3386dc",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "242d92b16726512ef56f6663cb382600f59a7b6b"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/roadmap-acceptance-proposal.md",
+      "bytes": 4196,
+      "sha256": "113dc569953545f9c1905c3d616dfb21cf0ee971c9708c0582a319c04b678946",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "4ddfbbd69c5ccb9af61eb323c85f9aa47afc774b"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/validation-report.md",
+      "bytes": 8071,
+      "sha256": "1eb25650a1838895b68cfcdb9da764d01645959bb3b0b8789b0c8bcee1f397d5",
+      "lineEndings": "LF",
+      "gitFilteredObjectId": "c3b4f8328d4db47af4b0b813944a5e0437e0253f"
+    }
+  ],
+  "acceptedBaselineManifest": "accepted-roadmap-baseline.json",
+  "recommendedFirstTask": "V3-FR-A-001",
+  "firstTaskStarted": false,
+  "implementationAuthorizationGranted": false,
+  "unresolvedBusinessRulesApproved": false,
+  "architectureDecisionsClosed": [],
+  "governance": {
+    "roadmap": "APPROVED AS PRODUCT EXECUTION ROADMAP",
+    "localInfra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "gRuntime": "BLOCKED",
+    "feBe": "PENDING",
+    "authIam": "PENDING",
+    "offline": "PROHIBITED",
+    "production": "NOT AUTHORIZED",
+    "implementationAuthorizations": "PENDING_NOT_GRANTED",
+    "od013_014_015_017": "OPEN",
+    "seaweedfs": "EXPERIMENTAL"
+  },
+  "explicitExclusions": [
+    "Blanket implementation authorization; starting even V3-FR-A-001",
+    "Unresolved business rules, detailed case approval, numeric targets, selected conditional branches or architecture alternative resolution",
+    "AUTH/IAM or FE-BE authorization; G-RUNTIME acceptance, security sign-off, risk waiver or offline continuation",
+    "CI/publication/push, deployment, release, production access or data migration"
+  ],
+  "executionRules": [
+    "Canonical register is the execution reference, subject to current 004 scope/authority overlay",
+    "Every implementation task requires applicable prerequisites, exact scope permission and unchanged security/architecture controls",
+    "Tracking parents never execute directly; backlog stays conditional; rolling tasks require a named bounded increment",
+    "Parallel work only where actual dependencies, authorization, contract readiness and repository ownership permit",
+    "Preparing or completing a decision task is not an effective OD or favorable Gate decision"
+  ],
+  "preservedHistoricalLimitations": [
+    "001/002/003 remain byte-unchanged historical planning proposals. Their PROPOSED/NOT ACCEPTED wording is a pre-approval snapshot; current roadmap approval is recorded only by 004, no historical rewriting.",
+    "The complete prior historical thirteen-file independent hash manifest for 002 was not supplied. Source 001 is linked to 002 manifest; source 001/002 current bytes linked to 003; this Task pins all thirty current predecessor bytes. This is documentary integrity, not proof of all earlier historical authenticity.",
+    "Original 002 documentary checker FAIL and corrected PASS are retained separately; no failure erased or turned PASS by authority.",
+    "Source NFR text degradation, path/section locators and missing detailed rules remain. No missing prose, business rules, state machine, provider, API choice, numeric objective or policy is reconstructed as approved.",
+    "Local-Infra remains development/synthetic only: egress not isolated for loopback-published services; Redis internal/unpublished; no hostile-host isolation, power-loss durability, full DLP or production security readiness; SeaweedFS EXPERIMENTAL/OD-017 OPEN; temporary preservation snapshots incomplete with loss cause unverified; digest identity not attestation. Runtime claims are not revalidated."
+  ],
+  "gitRegistration": {
+    "authorizedCommitCount": 1,
+    "expectedParent": "d42002ad851d93d976ec958b85cb8c46dbff34a3",
+    "expectedArtifactCount": 35,
+    "message": "docs(product): establish approved first-release execution roadmap",
+    "pushAuthorized": false,
+    "commitIdentity": "NOT_PREPOPULATED; verify actual identity after creation"
+  }
+}

@@ -1,0 +1,1774 @@
+{
+  "task": "V3-PRODUCT-PLAN-001",
+  "status": "PROPOSED — PLANNING ONLY",
+  "recordedAt": "2026-11-18T16:16:50.384440+00:00",
+  "repositoryBaselines": {
+    "Core": "d42002ad851d93d976ec958b85cb8c46dbff34a3",
+    "Backend": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+    "Frontend": "faa563f8f5c3bda25c3e5f40c7a8688c1bc245e7"
+  },
+  "governance": {
+    "Local-Infra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "Offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "SeaweedFS": "EXPERIMENTAL",
+    "Production authorization": "NOT GRANTED",
+    "Product implementation authorization": "NONE"
+  },
+  "maturityLegend": {
+    "APPROVED": "Only source-backed scope, logical ownership and bounded invariant",
+    "OPEN": "Missing/unapproved detailed requirement, not a default implementation choice",
+    "PROPOSED": "Candidate actor/process/criteria; requires explicit disposition"
+  },
+  "capabilities": [
+    {
+      "id": "FR-BJ-001",
+      "title": "Register and Maintain Customer Master",
+      "category": "BUSINESS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Register and Maintain Customer Master",
+      "targetUsersAndActors": "Internal customer-maintenance user (PROPOSED persona)",
+      "approvedFunctionalScope": "Company/person/contact master maintenance; Customer owns branch and relationship facts",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Register, validate and maintain authoritative Customer; detailed workflow OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Company",
+          "Person",
+          "Contact",
+          "Branch",
+          "Relationship"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Pending Customer Submission is PERMITTED NOT REQUIRED and never authoritative; external recording prohibited; CUS-CREATE/CUS-UPDATE require durable coordinated Audit obligations",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Field dictionary and validation; duplicates; merge; deletion; retention; concurrent edits; correction; operation-specific Audit outage policy"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Company/person/contact master maintenance; Customer owns branch and relationship facts",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "CUS-CREATE/CUS-UPDATE durable obligations; no success without coordinated durable obligation; downstream failure policy OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Customer Domain",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Field dictionary and validation",
+        "OPEN — duplicates",
+        "OPEN — merge",
+        "OPEN — deletion",
+        "OPEN — retention",
+        "OPEN — concurrent edits",
+        "OPEN — correction",
+        "OPEN — operation-specific Audit outage policy",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-BJ-001",
+        "OPEN — Field dictionary and validation; duplicates; merge; deletion; retention; concurrent edits; correction; operation-specific Audit outage policy"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-013",
+        "OD-014"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Company/person/contact master maintenance; Customer owns branch and relationship facts",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-BJ-002",
+      "title": "Find and Review Customer",
+      "category": "BUSINESS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Find and Review Customer",
+      "targetUsersAndActors": "Internal Sales/Request user (candidate actor from approved BIA; exact roles OPEN)",
+      "approvedFunctionalScope": "Authorized retrieval and business search; disclosure belongs to Customer",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Find and retrieve authorized Customer data; query UX OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Customer reference",
+          "Search criteria/result (concepts, not new aggregates)"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "CUS-SEARCH selects no engine; explicit Customer disclosure denials incur safe Audit obligations; zero results are not authorization denials",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Filters; matching and sorting; pagination; disclosed fields; freshness; enumeration-safe responses; read/Audit failure policy"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Authorized retrieval and business search; disclosure belongs to Customer",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Explicit Customer CUS-GET/CUS-GET-FOR-UPDATE/CUS-SEARCH authorization denials require safe evidence; not every empty result/read",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Customer Domain",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Filters",
+        "OPEN — matching and sorting",
+        "OPEN — pagination",
+        "OPEN — disclosed fields",
+        "OPEN — freshness",
+        "OPEN — enumeration-safe responses",
+        "OPEN — read/Audit failure policy",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-BJ-002",
+        "OPEN — Filters; matching and sorting; pagination; disclosed fields; freshness; enumeration-safe responses; read/Audit failure policy"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-007",
+        "OD-013",
+        "OD-014",
+        "OD-018"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Authorized retrieval and business search; disclosure belongs to Customer",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-BJ-003",
+      "title": "Manage Opportunity Through the Sales Pipeline",
+      "category": "BUSINESS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Manage Opportunity Through the Sales Pipeline",
+      "targetUsersAndActors": "Internal sales user (PROPOSED persona)",
+      "approvedFunctionalScope": "Opportunity/Pipeline core and Customer contract reference; amount/currency independent of Product Catalog",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Maintain Opportunity and move through approved pipeline; exact sequence OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Opportunity",
+          "Pipeline",
+          "Stage Transition",
+          "Amount/Currency"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Product Catalog, Lead Source, Pain Point and Use Case are LATER_RELEASE; Customer facts remain Customer-owned",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Stages and transitions; currency/rounding; win/loss/completion; concurrent moves; allowed Customer association; validation"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Opportunity/Pipeline core and Customer contract reference; amount/currency independent of Product Catalog",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Sales Domain",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Stages and transitions",
+        "OPEN — currency/rounding",
+        "OPEN — win/loss/completion",
+        "OPEN — concurrent moves",
+        "OPEN — allowed Customer association",
+        "OPEN — validation",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-BJ-003",
+        "OPEN — Stages and transitions; currency/rounding; win/loss/completion; concurrent moves; allowed Customer association; validation"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-013",
+        "OD-014"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Opportunity/Pipeline core and Customer contract reference; amount/currency independent of Product Catalog",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-BJ-004",
+      "title": "Register and Process a Customer Request",
+      "category": "BUSINESS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Register and Process a Customer Request",
+      "targetUsersAndActors": "Internal request handler (PROPOSED persona)",
+      "approvedFunctionalScope": "Internal creation, Customer reference, view/tracking, base lifecycle, status history and assignment",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Internally register, triage, assign and track Request; exact sequence OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Request",
+          "Lifecycle",
+          "Status History",
+          "Triage",
+          "Assignment"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Portal and generic Workflow Engine are not prerequisites; automatic cross-domain links are deferred",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Categories; states/transitions; assignment eligibility; escalation; closure/reopen; prioritization"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Internal creation, Customer reference, view/tracking, base lifecycle, status history and assignment",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Customer Request Domain",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Categories",
+        "OPEN — states/transitions",
+        "OPEN — assignment eligibility",
+        "OPEN — escalation",
+        "OPEN — closure/reopen",
+        "OPEN — prioritization",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-BJ-004",
+        "OPEN — Categories; states/transitions; assignment eligibility; escalation; closure/reopen; prioritization"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-013",
+        "OD-014",
+        "OD-019"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Internal creation, Customer reference, view/tracking, base lifecycle, status history and assignment",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-BJ-005",
+      "title": "Plan and Track a Work Task",
+      "category": "BUSINESS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Plan and Track a Work Task",
+      "targetUsersAndActors": "Internal work assignee/coordinator (PROPOSED personas)",
+      "approvedFunctionalScope": "Create/view/edit, assignment, status, due date and manual contract-based links",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Plan, assign, update and track Task; exact lifecycle OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Task",
+          "Status",
+          "Due Date",
+          "Assignment Record",
+          "Link Metadata"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Assignment or a link grants no authority over the linked resource; advanced collaboration/automation deferred",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — State machine; reassignment; overdue/timezone; completion/reopen; link visibility; concurrent edits"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Create/view/edit, assignment, status, due date and manual contract-based links",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Work Domain",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — State machine",
+        "OPEN — reassignment",
+        "OPEN — overdue/timezone",
+        "OPEN — completion/reopen",
+        "OPEN — link visibility",
+        "OPEN — concurrent edits",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-BJ-005",
+        "OPEN — State machine; reassignment; overdue/timezone; completion/reopen; link visibility; concurrent edits"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-013",
+        "OD-014"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Create/view/edit, assignment, status, due date and manual contract-based links",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-001",
+      "title": "Establish Trusted Tenant Access",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Establish Trusted Tenant Access",
+      "targetUsersAndActors": "Internal authenticated Principal (APPROVED actor class); operator/workload identities remain distinct",
+      "approvedFunctionalScope": "Approved Option B: internal authenticated Principal, active Membership, valid/revalidated Tenant Context, destination Membership validation for switching",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Validate identity, validate active Membership, establish/revalidate context, independently authorize destination operation; no mandatory physical call sequence"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Principal",
+          "Credential/Authenticator",
+          "Session/Revocation",
+          "Tenant",
+          "Organization",
+          "Membership",
+          "Association"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Authentication, Membership, Eligibility and owning-Domain authorization never collapse into one authority; no external Portal user scope",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Principal journeys and roles; onboarding responsibility; membership policy; switching semantics; session transport/storage; revocation/freshness"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Approved Option B: internal authenticated Principal, active Membership, valid/revalidated Tenant Context, destination Membership validation for switching",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "Identity/Tenant/Domain boundaries; owned versioned contracts"
+      ],
+      "dataOwnership": "Identity Trust and Tenant Management (distinct owners)",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Principal journeys and roles",
+        "OPEN — onboarding responsibility",
+        "OPEN — membership policy",
+        "OPEN — switching semantics",
+        "OPEN — session transport/storage",
+        "OPEN — revocation/freshness",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-PF-001",
+        "OPEN — Principal journeys and roles; onboarding responsibility; membership policy; switching semantics; session transport/storage; revocation/freshness"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-009",
+        "OD-010",
+        "OD-011",
+        "OD-012",
+        "OD-014"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Approved Option B: internal authenticated Principal, active Membership, valid/revalidated Tenant Context, destination Membership validation for switching",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-002",
+      "title": "Evaluate Feature Eligibility",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Evaluate Feature Eligibility",
+      "targetUsersAndActors": "Consuming Domain/workload; entitlement steward (PROPOSED actors)",
+      "approvedFunctionalScope": "Feature Assignment and effective eligibility, traceable to Tenant/Organization and approved Plan/Subscription facts",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Evaluate assigned feature eligibility; lifecycle and evaluation contract OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Feature Assignment",
+          "Effective Entitlement",
+          "Eligibility Result"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Eligibility is neither Membership nor business authorization; Dedicated Sovereign evaluation is local; Billing/Pricing scope not inferred",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Capability mapping; Plan/Subscription fact owner; validity; freshness; revocation; unknown-state behavior"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Feature Assignment and effective eligibility, traceable to Tenant/Organization and approved Plan/Subscription facts",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Entitlement capability",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Capability mapping",
+        "OPEN — Plan/Subscription fact owner",
+        "OPEN — validity",
+        "OPEN — freshness",
+        "OPEN — revocation",
+        "OPEN — unknown-state behavior",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-PF-002",
+        "OPEN — Capability mapping; Plan/Subscription fact owner; validity; freshness; revocation; unknown-state behavior"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-013",
+        "OD-014",
+        "OD-023"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Feature Assignment and effective eligibility, traceable to Tenant/Organization and approved Plan/Subscription facts",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-003",
+      "title": "Enforce Quota-Controlled Operation",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Enforce Quota-Controlled Operation",
+      "targetUsersAndActors": "Consuming Domain/workload; quota steward (PROPOSED actors)",
+      "approvedFunctionalScope": "Effective limits, Usage, atomic Reservation/Commit/Release, reconciliation and Reason/Period/Correlation",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Reserve, commit/release and reconcile quota for separately approved consuming operation; no final state machine"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Effective Limit",
+          "Reservation Ledger",
+          "Usage/Consumption",
+          "Reconciliation",
+          "Decision Result"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Each capability-to-Quota integration requires separate approval; producing Domain still owns operation and source Usage Facts",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Each capability integration; period/reset; contention; expiration; retry identity; reconciliation and compensation; unknown result"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Reservation/Commit/Release semantics are approved concepts, not a final state machine."
+      },
+      "functionalRequirements": {
+        "approved": "Effective limits, Usage, atomic Reservation/Commit/Release, reconciliation and Reason/Period/Correlation",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Quota capability",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Each capability integration",
+        "OPEN — period/reset",
+        "OPEN — contention",
+        "OPEN — expiration",
+        "OPEN — retry identity",
+        "OPEN — reconciliation and compensation",
+        "OPEN — unknown result",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-PF-003",
+        "OPEN — Each capability integration; period/reset; contention; expiration; retry identity; reconciliation and compensation; unknown result"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-013",
+        "OD-014",
+        "OD-019",
+        "OD-023"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Effective limits, Usage, atomic Reservation/Commit/Release, reconciliation and Reason/Period/Correlation",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-004",
+      "title": "Deliver Authorized In-App Notification",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Deliver Authorized In-App Notification",
+      "targetUsersAndActors": "Internal recipient and producing Domain (candidate actors)",
+      "approvedFunctionalScope": "Core + In-App: Template, base Rule/lifecycle, Delivery Ledger, deduplication, retry/Audit",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Consume approved producer fact, determine authorized recipients, deliver/read In-App; detailed delivery policy OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Template",
+          "Rule",
+          "Notification",
+          "Delivery Ledger",
+          "Delivery Attempt",
+          "Retry State"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Email/SMS/Push are deferred; producer owns Business Fact; recipient access is Notification-owned",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Types; recipients; read/dismiss semantics; timing; deduplication; retry budget; retention; sensitive previews"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Core + In-App: Template, base Rule/lifecycle, Delivery Ledger, deduplication, retry/Audit",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Notification Domain",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Types",
+        "OPEN — recipients",
+        "OPEN — read/dismiss semantics",
+        "OPEN — timing",
+        "OPEN — deduplication",
+        "OPEN — retry budget",
+        "OPEN — retention",
+        "OPEN — sensitive previews",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-PF-004",
+        "OPEN — Types; recipients; read/dismiss semantics; timing; deduplication; retry budget; retention; sensitive previews"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-013",
+        "OD-014",
+        "OD-019"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Core + In-App: Template, base Rule/lifecycle, Delivery Ledger, deduplication, retry/Audit",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-005",
+      "title": "Attach and Retrieve File for an Approved Resource",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Attach and Retrieve File for an Approved Resource",
+      "targetUsersAndActors": "Internal uploader/reader and resource Domain (PROPOSED actors)",
+      "approvedFunctionalScope": "Metadata, controlled upload/download, base lifecycle and contract-based attachments",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Controlled upload, authorized attach and retrieve; exact lifecycle OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "File Metadata",
+          "Content/Object Lifecycle",
+          "Storage Reference",
+          "Checksum",
+          "Validation/Quarantine",
+          "Attachment relationship"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "File authorization AND resource-owner relation authorization required; deleting attachment does not alone delete object; public sharing deferred",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Resource attachment matrix; size/type limits; scanning/quarantine; retention/deletion; multi-link cleanup; interrupted uploads"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Metadata, controlled upload/download, base lifecycle and contract-based attachments",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "File/Content Domain and attachment resource owner (distinct)",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Resource attachment matrix",
+        "OPEN — size/type limits",
+        "OPEN — scanning/quarantine",
+        "OPEN — retention/deletion",
+        "OPEN — multi-link cleanup",
+        "OPEN — interrupted uploads",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-PF-005",
+        "OPEN — Resource attachment matrix; size/type limits; scanning/quarantine; retention/deletion; multi-link cleanup; interrupted uploads"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-013",
+        "OD-014",
+        "OD-017"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Metadata, controlled upload/download, base lifecycle and contract-based attachments",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-PF-006",
+      "title": "Produce an Approved Deterministic Report",
+      "category": "PLATFORM",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Produce an Approved Deterministic Report",
+      "targetUsersAndActors": "Internal report consumer and Report Set owner (PROPOSED actors)",
+      "approvedFunctionalScope": "Reporting Core: approved deterministic tenant-scoped Report Sets, execution/artifact and authorized projections",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Authorize report, obtain authorized source/projection data, execute and disclose artifact; exact pipeline OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Report Catalog/Definition Metadata",
+          "Execution State",
+          "Artifact/Snapshot",
+          "Owned Projection"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "No Report Set is yet approved; no custom report builder/advanced analytics; no cross-service SQL or required per-record synchronous checks",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Final Report Sets; Business Owners; deterministic inputs/versioning; source freshness; disclosure; retention; failure/retry/cancellation"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Reporting Core: approved deterministic tenant-scoped Report Sets, execution/artifact and authorized projections",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Reporting capability; source facts remain producer-owned",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Final Report Sets",
+        "OPEN — Business Owners",
+        "OPEN — deterministic inputs/versioning",
+        "OPEN — source freshness",
+        "OPEN — disclosure",
+        "OPEN — retention",
+        "OPEN — failure/retry/cancellation",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-PF-006",
+        "OPEN — Final Report Sets; Business Owners; deterministic inputs/versioning; source freshness; disclosure; retention; failure/retry/cancellation"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-007",
+        "OD-013",
+        "OD-014",
+        "OD-017",
+        "OD-018",
+        "OD-019"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Reporting Core: approved deterministic tenant-scoped Report Sets, execution/artifact and authorized projections",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-SO-001",
+      "title": "Record Security, Administrative and Privileged Audit Evidence",
+      "category": "SECURITY_OPERATIONS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Record Security, Administrative and Privileged Audit Evidence",
+      "targetUsersAndActors": "Producing Domain/workload and Audit operator (candidate actors)",
+      "approvedFunctionalScope": "Append-oriented Audit Core, Tenant/Platform separation, Actor/Action/Target/Outcome/Correlation, integrity and base retention policy obligation",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Producer coordinates required obligation; Audit validates provenance and records authoritative evidence; detailed state model OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Audit Record",
+          "Producer publication obligation",
+          "Ingestion evidence (distinct concepts)"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Broker ACK/outbox is not Audit ingestion; DEC-011/012 mandatory boundaries and DEC-014 five safety gates apply; executable DURABLE_DEFER NOT APPROVED",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Mandatory event catalog; ingestion evidence contract; integrity mechanism; retention/legal hold; failure policy; audit-of-audit recursion; reconciliation"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Append-oriented Audit Core, Tenant/Platform separation, Actor/Action/Target/Outcome/Correlation, integrity and base retention policy obligation",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Broker ACK/outbox is not Audit ingestion; DEC-011/012 mandatory boundaries and DEC-014 five safety gates apply; executable DURABLE_DEFER NOT APPROVED",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "Identity/Tenant/Domain boundaries; owned versioned contracts"
+      ],
+      "dataOwnership": "Audit Domain; producing Domains retain Business Facts",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Mandatory event catalog",
+        "OPEN — ingestion evidence contract",
+        "OPEN — integrity mechanism",
+        "OPEN — retention/legal hold",
+        "OPEN — failure policy",
+        "OPEN — audit-of-audit recursion",
+        "OPEN — reconciliation",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-SO-001",
+        "OPEN — Mandatory event catalog; ingestion evidence contract; integrity mechanism; retention/legal hold; failure policy; audit-of-audit recursion; reconciliation"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-011",
+        "OD-012",
+        "OD-013",
+        "OD-014",
+        "OD-019",
+        "OD-023"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Append-oriented Audit Core, Tenant/Platform separation, Actor/Action/Target/Outcome/Correlation, integrity and base retention policy obligation",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-SO-002",
+      "title": "Review Authorized Audit Evidence",
+      "category": "SECURITY_OPERATIONS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Review Authorized Audit Evidence",
+      "targetUsersAndActors": "Authorized Audit reviewer (class only; detailed policy OPEN)",
+      "approvedFunctionalScope": "Authorized Audit Core viewing with Tenant/Platform scope and disclosure protection",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Authorize purpose/scope, search and review evidence; exact query flow OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Audit Record",
+          "Authorized Audit Projection",
+          "Access evidence"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Sensitive Audit access and lifecycle actions incur traceable evidence under DEC-011; no generic administrator access; advanced export/UI deferred",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Viewer roles and purposes; search/filter/export boundary; sensitive fields; evidence completeness; incident deadlines; recursion and access failure"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Authorized Audit Core viewing with Tenant/Platform scope and disclosure protection",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Sensitive Audit access and lifecycle actions incur traceable evidence under DEC-011; no generic administrator access; advanced export/UI deferred",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Audit Domain",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Viewer roles and purposes",
+        "OPEN — search/filter/export boundary",
+        "OPEN — sensitive fields",
+        "OPEN — evidence completeness",
+        "OPEN — incident deadlines",
+        "OPEN — recursion and access failure",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-SO-002",
+        "OPEN — Viewer roles and purposes; search/filter/export boundary; sensitive fields; evidence completeness; incident deadlines; recursion and access failure"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-007",
+        "OD-013",
+        "OD-014",
+        "OD-018",
+        "OD-023"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Authorized Audit Core viewing with Tenant/Platform scope and disclosure protection",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-SO-003",
+      "title": "Observe Platform and Service Health",
+      "category": "SECURITY_OPERATIONS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Observe Platform and Service Health",
+      "targetUsersAndActors": "Service operator and service owner (candidate actors)",
+      "approvedFunctionalScope": "Operational Core health/readiness, scope separation and authorized signal aggregation",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Service emits safe signals; platform aggregates authorized views; exact readiness/alert policies OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Source Signal",
+          "Health/Readiness Aggregation",
+          "Visibility Projection"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "Telemetry is not Audit or authority; synthetic-only Local-Infra filters are not a drop-in general product telemetry collector",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Signal catalog; ready/degraded/unknown meanings; audience; alerts; cardinality/redaction; sampling/retention; escalation; numeric targets"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Operational Core health/readiness, scope separation and authorized signal aggregation",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "Security-sensitive changes require safe Audit; full per-operation mandatory catalog OPEN",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "Identity/Tenant/Domain boundaries; owned versioned contracts"
+      ],
+      "dataOwnership": "Operational Platform; each service owns signals",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability; V3-013 provides accepted observability library foundation only"
+      },
+      "missingRequirements": [
+        "OPEN — Signal catalog",
+        "OPEN — ready/degraded/unknown meanings",
+        "OPEN — audience",
+        "OPEN — alerts",
+        "OPEN — cardinality/redaction",
+        "OPEN — sampling/retention",
+        "OPEN — escalation",
+        "OPEN — numeric targets",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-SO-003",
+        "OPEN — Signal catalog; ready/degraded/unknown meanings; audience; alerts; cardinality/redaction; sampling/retention; escalation; numeric targets"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-015",
+        "OD-023"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Operational Core health/readiness, scope separation and authorized signal aggregation",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    },
+    {
+      "id": "FR-SO-004",
+      "title": "Execute an Authorized Privileged Operation",
+      "category": "SECURITY_OPERATIONS",
+      "releaseScope": "FIRST_RELEASE — APPROVED",
+      "scopeApproval": "APPROVED_TARGET_ONLY",
+      "businessObjective": "Execute an Authorized Privileged Operation",
+      "targetUsersAndActors": "Scoped Operator (approved class; role catalog OPEN)",
+      "approvedFunctionalScope": "Scoped operational request/execution with limited identity, explicit Tenant/Platform scope, destination authorization and durable Audit",
+      "businessProcesses": {
+        "status": "PARTIAL_HIGH_LEVEL_ONLY",
+        "description": "Authorize request, revalidate before effect, execute scoped operation and record outcome; exact workflow OPEN"
+      },
+      "requiredDomainEntities": {
+        "status": "APPROVED_LOGICAL_CONCEPTS_ONLY_NOT_AGGREGATE_OR_SCHEMA_DESIGN",
+        "concepts": [
+          "Privileged Request",
+          "Execution State",
+          "Authorization Evidence",
+          "Audit Record"
+        ]
+      },
+      "businessRules": {
+        "approvedBoundaries": [
+          "No universal Admin; DEC-011 mandates request/material outcome evidence (success/denial/failure); uncertain execution is not success or permission to replay",
+          "Resource-owning Domain authorizes its resources; no authority inferred from identity, Membership, eligibility, assignment or links"
+        ],
+        "detailedRules": "OPEN — Role/action catalog; approvals/break glass; exact command binding; in-flight revocation; conflict/crash/recovery; indeterminate outcomes"
+      },
+      "stateTransitions": {
+        "status": "OPEN",
+        "detail": "No complete approved state/transition matrix located. Lifecycle concepts above do not select states or transitions."
+      },
+      "functionalRequirements": {
+        "approved": "Scoped operational request/execution with limited identity, explicit Tenant/Platform scope, destination authorization and durable Audit",
+        "detailStatus": "OPEN — operation catalog, edge cases and testable detailed rules incomplete"
+      },
+      "nonFunctionalRequirements": {
+        "approvedInvariants": [
+          "Service autonomy and owned persistence",
+          "Safe data minimization, compatibility and recoverability",
+          "Persian/RTL, responsive and accessible client where applicable"
+        ],
+        "numericTargets": "OPEN — OD-023; no invented SLO/RTO/RPO/latency/capacity/freshness"
+      },
+      "authorizationRequirements": {
+        "approved": "Final resource/action decision in owning Domain; distinct limited user/workload/operator identities",
+        "policyMatrix": "OPEN — operation/role/object/disclosure matrix"
+      },
+      "tenantIsolationRequirements": {
+        "approved": "Validated/revalidated Tenant Context, tenant constraints and ordinary non-bypass runtime roles with applicable RLS; Tenant/Platform scope explicit",
+        "runtimeStatus": "G-RUNTIME BLOCKED; Context/Java-RLS/actual-pool integration not accepted"
+      },
+      "auditRequirements": {
+        "approved": "No universal Admin; DEC-011 mandates request/material outcome evidence (success/denial/failure); uncertain execution is not success or permission to replay",
+        "details": "OPEN — catalog/failure/retention/ingestion policy; never assume all reads/mutations are covered"
+      },
+      "integrationDependencies": [
+        "FR-PF-001",
+        "FR-SO-001",
+        "FR-SO-003"
+      ],
+      "dataOwnership": "Operational Platform; destination Domain; Audit Domain (distinct)",
+      "failureAndRecoverySemantics": {
+        "approved": "Invalid identity/context/authority fails closed; preserve producer/consumer facts and idempotency where applicable; no automatic cross-service rollback or offline continuation",
+        "open": "Operation-specific timeout, retry, partial success, recovery, reconciliation, unknown outcomes and failure policy OPEN"
+      },
+      "deploymentProfileApplicability": {
+        "profiles": [
+          "Shared SaaS",
+          "Dedicated Managed",
+          "Dedicated Sovereign"
+        ],
+        "boundary": "Compatible semantics; independent evidence each profile; Sovereign local authority; no client offline support or automatic Central-disconnected permission"
+      },
+      "existingImplementationStatus": {
+        "productCapability": "NOT IMPLEMENTED IN REVIEWED SOURCE TREE / NOT VERIFIED END-TO-END",
+        "boundedEvidence": "Reference services, contracts and laboratories do not implement this product capability"
+      },
+      "missingRequirements": [
+        "OPEN — Role/action catalog",
+        "OPEN — approvals/break glass",
+        "OPEN — exact command binding",
+        "OPEN — in-flight revocation",
+        "OPEN — conflict/crash/recovery",
+        "OPEN — indeterminate outcomes",
+        "OPEN — accountable Business Owner and complete actor catalog",
+        "OPEN — operation/profile-specific acceptance and failure scenarios"
+      ],
+      "requiredProductDecisions": [
+        "OPEN — approve detailed requirements and policy for FR-SO-004",
+        "OPEN — Role/action catalog; approvals/break glass; exact command binding; in-flight revocation; conflict/crash/recovery; indeterminate outcomes"
+      ],
+      "requiredArchitectureDecisions": [
+        "OD-011",
+        "OD-012",
+        "OD-013",
+        "OD-014",
+        "OD-015",
+        "OD-019",
+        "OD-023"
+      ],
+      "proposedAcceptanceCriteria": {
+        "status": "PROPOSED — NOT APPROVED",
+        "criteria": [
+          "Approved operation catalog demonstrates: Scoped operational request/execution with limited identity, explicit Tenant/Platform scope, destination authorization and durable Audit",
+          "Positive and negative role/Tenant/object cases enforce owning-Domain boundaries",
+          "Approved lifecycle/concurrency and failure/recovery scenarios have observable outcomes",
+          "Applicable safe Audit and contract evidence trace to approved operation policy",
+          "Each claimed deployment profile has its own evidence; missing numeric targets stay OPEN"
+        ]
+      },
+      "sourceReferences": [
+        "deployment/support-matrix.md#5-first_release-capability-coverage",
+        "architecture/reviews/V3-003-decision-record.md#v3-003-dec-002",
+        "migration/v2-owner-review.md#4-capability-scope-matrix",
+        "migration/v2-owner-review.md#5-logical-domain-and-data-ownership-matrix"
+      ]
+    }
+  ]
+}
