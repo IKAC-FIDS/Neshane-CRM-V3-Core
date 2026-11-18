@@ -1,0 +1,82 @@
+# Synthetic metrics/traces ONLY. No logs pipeline, debug exporter or real data.
+extensions:
+  health_check:
+    endpoint: 0.0.0.0:13133
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  memory_limiter:
+    check_interval: 1s
+    limit_mib: 256
+    spike_limit_mib: 64
+  filter/synthetic:
+    error_mode: propagate
+    # Advanced OTTL style only: every entry is an object; no mixed Basic strings.
+    trace_conditions:
+      - conditions:
+          - 'resource.attributes["neshane.synthetic"] != true'
+      - context: spanevent
+        conditions: ['true']
+    metric_conditions:
+      - conditions:
+          - 'resource.attributes["neshane.synthetic"] != true'
+          - 'metric.name != "neshane.synthetic.probe"'
+  transform/minimize:
+    error_mode: propagate
+    trace_statements:
+      - 'keep_keys(resource.attributes, ["neshane.synthetic"])'
+      - 'set(resource.attributes["service.name"], "neshane-synthetic")'
+      - 'keep_keys(scope.attributes, [])'
+      - 'set(scope.name, "synthetic")'
+      - 'set(scope.version, "")'
+      - 'keep_keys(span.attributes, [])'
+      - 'set(span.name, "synthetic-span")'
+      - 'set(span.status.message, "")'
+    metric_statements:
+      - 'keep_keys(resource.attributes, ["neshane.synthetic"])'
+      - 'set(resource.attributes["service.name"], "neshane-synthetic")'
+      - 'keep_keys(scope.attributes, [])'
+      - 'set(scope.name, "synthetic")'
+      - 'set(scope.version, "")'
+      - 'set(metric.description, "")'
+      - 'keep_keys(datapoint.attributes, [])'
+  batch:
+    timeout: 1s
+    send_batch_size: 512
+    send_batch_max_size: 1024
+
+exporters:
+  prometheus:
+    endpoint: 0.0.0.0:8889
+  otlp/tempo:
+    endpoint: tempo:4317
+    timeout: 5s
+    tls:
+      insecure: true
+    sending_queue:
+      enabled: true
+      queue_size: 256
+    retry_on_failure:
+      enabled: true
+      initial_interval: 1s
+      max_interval: 5s
+      max_elapsed_time: 30s
+
+service:
+  extensions: [health_check]
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      processors: [memory_limiter, filter/synthetic, transform/minimize, batch]
+      exporters: [prometheus]
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, filter/synthetic, transform/minimize, batch]
+      exporters: [otlp/tempo]

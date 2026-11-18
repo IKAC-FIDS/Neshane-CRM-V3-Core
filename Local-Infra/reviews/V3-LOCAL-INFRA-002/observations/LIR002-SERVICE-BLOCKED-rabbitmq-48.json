@@ -1,0 +1,6 @@
+{
+  "observedAt": "2026-11-18T11:54:37.378481+00:00",
+  "actual": {
+    "exception": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+  }
+}

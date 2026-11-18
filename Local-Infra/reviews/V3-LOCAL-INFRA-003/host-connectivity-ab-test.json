@@ -1,0 +1,17 @@
+{
+  "internalPort": 6408,
+  "defaultPort": 6409,
+  "internalContainerPorts": {
+    "6379/tcp": []
+  },
+  "defaultContainerPorts": {
+    "6379/tcp": [
+      {
+        "HostIp": "127.0.0.1",
+        "HostPort": "6409"
+      }
+    ]
+  },
+  "internalHostReachable": false,
+  "defaultHostReachable": true
+}

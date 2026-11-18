@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-11-18T11:41:30.390110+00:00",
+  "actual": {
+    "service": "redis",
+    "reference": "redis:7.4.12@sha256:2e3eb11462c4e3759e6972678dd051d150ff54b1e60714b3c33b701260172a90",
+    "actual": {
+      "id": "sha256:3a17a97bb6c7d9a7ee1bd3d5ecf7c6d02adf4bfd9fe73a974b3767b442dfbfaa",
+      "repoTags": [],
+      "repoDigests": [
+        "redis@sha256:2e3eb11462c4e3759e6972678dd051d150ff54b1e60714b3c33b701260172a90"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "pullRequired": true,
+    "newImageID": true,
+    "status": "PASS"
+  }
+}

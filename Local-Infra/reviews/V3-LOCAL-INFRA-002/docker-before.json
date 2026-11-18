@@ -1,0 +1,1564 @@
+{
+  "containers": [
+    {
+      "id": "6848c622faa09be80b2ae6ab1b08c2a590bb223b48bdec980532829400170d9b",
+      "name": "/neshane-v3-024-isolation-probe",
+      "imageID": "sha256:431b070f8300b219ab7e6597e7ebb158df31767739896f53a936cfc749d8437a",
+      "imageReference": "docker.io/library/postgres@sha256:99d1a998c76487d3abb48b141505bda5dcf8089c0c4cd7be40f75de314fa32f0",
+      "project": null,
+      "service": null,
+      "status": "exited",
+      "running": false,
+      "startedAt": "2026-11-15T11:35:03.975053654Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {},
+      "networks": {
+        "none": {
+          "Aliases": null,
+          "DNSNames": null,
+          "DriverOpts": null,
+          "EndpointID": "",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "",
+          "IPPrefixLen": 0,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "",
+          "NetworkID": "972e57a544aa920946365245e2c9712aca0d91468ac2b8156e7635d579197401"
+        }
+      },
+      "mounts": [],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "none",
+      "securityOpt": null,
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    {
+      "id": "ad7d9ab966698c83f2862aa490e16747c43407b4e312aa0a274e5521fff3d920",
+      "name": "/neshane-v3-023-routing-reference-reference-gateway-1",
+      "imageID": "sha256:61eeb02a78bc63ba4196aaa2cfb508b430816a96ee704239cfff236d8c5d1e98",
+      "imageReference": "neshane-v3-023-reference-runtime:local",
+      "project": "neshane-v3-023-routing-reference",
+      "service": "reference-gateway",
+      "status": "exited",
+      "running": false,
+      "startedAt": "2026-11-06T18:44:06.479596758Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "8080/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18080"
+          }
+        ]
+      },
+      "networks": {
+        "neshane-v3-023-routing-reference_cell-a-network": {
+          "Aliases": [
+            "neshane-v3-023-routing-reference-reference-gateway-1",
+            "reference-gateway"
+          ],
+          "DNSNames": [
+            "neshane-v3-023-routing-reference-reference-gateway-1",
+            "reference-gateway",
+            "ad7d9ab96669"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "",
+          "IPPrefixLen": 0,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "",
+          "NetworkID": "8650c6399ca6e29110be26e3853b88ff07f3d1681243182243cf386a1752d9b7"
+        },
+        "neshane-v3-023-routing-reference_cell-b-network": {
+          "Aliases": [
+            "neshane-v3-023-routing-reference-reference-gateway-1",
+            "reference-gateway"
+          ],
+          "DNSNames": [
+            "neshane-v3-023-routing-reference-reference-gateway-1",
+            "reference-gateway",
+            "ad7d9ab96669"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "",
+          "IPPrefixLen": 0,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "",
+          "NetworkID": "0b48d77d04f24561974d7cd0fa327a09bce5b90ad8254b9ba67abada67f2da59"
+        },
+        "neshane-v3-023-routing-reference_ingress-network": {
+          "Aliases": [
+            "neshane-v3-023-routing-reference-reference-gateway-1",
+            "reference-gateway"
+          ],
+          "DNSNames": [
+            "neshane-v3-023-routing-reference-reference-gateway-1",
+            "reference-gateway",
+            "ad7d9ab96669"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "",
+          "IPPrefixLen": 0,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "",
+          "NetworkID": "b4cd55fdfee6f4fd88300d6e72f763a27c7ad26bb73f5a0806768f06202ec597"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/opt/reference/contracts",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3\\Backend\\contracts\\routing",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/opt/reference/fixtures",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3\\Backend\\deployment\\shared\\fixtures\\v1",
+          "Type": "bind"
+        }
+      ],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-v3-023-routing-reference_cell-a-network",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    {
+      "id": "59bf1b7c8acbf0391549b0642fe10ed87b3e9b6e2681f13d02bb2bf5da5dd5da",
+      "name": "/neshane-v3-023-routing-reference-cell-a-peer-1",
+      "imageID": "sha256:61eeb02a78bc63ba4196aaa2cfb508b430816a96ee704239cfff236d8c5d1e98",
+      "imageReference": "neshane-v3-023-reference-runtime:local",
+      "project": "neshane-v3-023-routing-reference",
+      "service": "cell-a-peer",
+      "status": "exited",
+      "running": false,
+      "startedAt": "2026-11-06T18:44:06.156096031Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {},
+      "networks": {
+        "neshane-v3-023-routing-reference_cell-a-network": {
+          "Aliases": [
+            "neshane-v3-023-routing-reference-cell-a-peer-1",
+            "cell-a-peer"
+          ],
+          "DNSNames": [
+            "neshane-v3-023-routing-reference-cell-a-peer-1",
+            "cell-a-peer",
+            "59bf1b7c8acb"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "",
+          "IPPrefixLen": 0,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "",
+          "NetworkID": "8650c6399ca6e29110be26e3853b88ff07f3d1681243182243cf386a1752d9b7"
+        }
+      },
+      "mounts": [],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-v3-023-routing-reference_cell-a-network",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    {
+      "id": "8a2d5758beea10819763cbddd757f0c9c82ced58b026e4364a7fefd6301edba3",
+      "name": "/neshane-v3-023-routing-reference-cell-b-peer-1",
+      "imageID": "sha256:61eeb02a78bc63ba4196aaa2cfb508b430816a96ee704239cfff236d8c5d1e98",
+      "imageReference": "neshane-v3-023-reference-runtime:local",
+      "project": "neshane-v3-023-routing-reference",
+      "service": "cell-b-peer",
+      "status": "exited",
+      "running": false,
+      "startedAt": "2026-11-06T18:44:06.142540236Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {},
+      "networks": {
+        "neshane-v3-023-routing-reference_cell-b-network": {
+          "Aliases": [
+            "neshane-v3-023-routing-reference-cell-b-peer-1",
+            "cell-b-peer"
+          ],
+          "DNSNames": [
+            "neshane-v3-023-routing-reference-cell-b-peer-1",
+            "cell-b-peer",
+            "8a2d5758beea"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "",
+          "IPPrefixLen": 0,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "",
+          "NetworkID": "0b48d77d04f24561974d7cd0fa327a09bce5b90ad8254b9ba67abada67f2da59"
+        }
+      },
+      "mounts": [],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-v3-023-routing-reference_cell-b-network",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    {
+      "id": "86e9458bae85c9eb3da6b1e7540da38145492cbc760f6400f39501e4e6736d10",
+      "name": "/neshane-grafana",
+      "imageID": "sha256:8400f365c39767b0d0df30e3aeb0796f873c3acf89b28089745bfafd88d83c7c",
+      "imageReference": "grafana/grafana:13.2.1",
+      "project": "neshane-local",
+      "service": "grafana",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-16T18:29:31.122569924Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "13000"
+          }
+        ]
+      },
+      "networks": {
+        "neshane-local_default": {
+          "Aliases": [
+            "neshane-grafana",
+            "grafana"
+          ],
+          "DNSNames": [
+            "neshane-grafana",
+            "grafana",
+            "86e9458bae85"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "62ca91e8c052fd4e5769155f93d97cb5951ded09441e943262c2e47bf443b181",
+          "Gateway": "172.30.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.0.9",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "9a:e6:b9:98:ea:69",
+          "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/etc/grafana/provisioning/datasources/datasources.yaml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "/run/desktop/mnt/host/e/Neshane-CRM-V3/Local-Infra/observability/grafana-datasources.yaml",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/var/lib/grafana",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "neshane-local_grafana_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/neshane-local_grafana_data/_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-local_default",
+      "securityOpt": null,
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      }
+    },
+    {
+      "id": "ffe6c5bb7dd1fc4995f921beaa155519fee110e3ea496f5dcd6dc97b87a8e821",
+      "name": "/neshane-otel-collector",
+      "imageID": "sha256:28ebddf51f59e38ac800c9f91120726cfb312af377da8908807e0b566a82b017",
+      "imageReference": "otel/opentelemetry-collector-contrib:0.164.0",
+      "project": "neshane-local",
+      "service": "otel-collector",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-16T18:29:31.106333886Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "4317/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14317"
+          }
+        ],
+        "4318/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14318"
+          }
+        ]
+      },
+      "networks": {
+        "neshane-local_default": {
+          "Aliases": [
+            "neshane-otel-collector",
+            "otel-collector"
+          ],
+          "DNSNames": [
+            "neshane-otel-collector",
+            "otel-collector",
+            "ffe6c5bb7dd1"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "4eb5174bd0dff03b508ee0f9b62c8840a2559f36a47d51bc61a3627d71c8e6d5",
+          "Gateway": "172.30.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.0.7",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "7e:c6:74:b0:48:ea",
+          "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/etc/otelcol-contrib/config.yaml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3\\Local-Infra\\observability\\otel-collector.yaml",
+          "Type": "bind"
+        }
+      ],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-local_default",
+      "securityOpt": null,
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      }
+    },
+    {
+      "id": "cf8c221e922dd5b04ae583ddaa593f7251d815ea1dc47d63eded414449cd3021",
+      "name": "/neshane-tempo",
+      "imageID": "sha256:d1b47a86637121283f8bb3d9342ee2c77bd2bb92b1cb2dfb35f2b13629498961",
+      "imageReference": "grafana/tempo:3.1.1",
+      "project": "neshane-local",
+      "service": "tempo",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-16T18:29:31.132658411Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "3200/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "13200"
+          }
+        ]
+      },
+      "networks": {
+        "neshane-local_default": {
+          "Aliases": [
+            "neshane-tempo",
+            "tempo"
+          ],
+          "DNSNames": [
+            "neshane-tempo",
+            "tempo",
+            "cf8c221e922d"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "1bd17f7167c5c7b76c425ae46b595c38ba8c056d7ccc04afd1ecd3af5bb94673",
+          "Gateway": "172.30.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.0.3",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "66:a8:88:14:ae:cb",
+          "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/var/tempo",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "neshane-local_tempo_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/neshane-local_tempo_data/_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/etc/tempo.yaml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3\\Local-Infra\\observability\\tempo.yaml",
+          "Type": "bind"
+        }
+      ],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-local_default",
+      "securityOpt": null,
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      }
+    },
+    {
+      "id": "adf02fe038159fefdaf11dad5a08746f826116a06fc4bc1a78f73b23116f0d32",
+      "name": "/neshane-prometheus",
+      "imageID": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+      "imageReference": "prom/prometheus:v3.7.3",
+      "project": "neshane-local",
+      "service": "prometheus",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-16T18:29:31.111495429Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "19090"
+          }
+        ]
+      },
+      "networks": {
+        "neshane-local_default": {
+          "Aliases": [
+            "neshane-prometheus",
+            "prometheus"
+          ],
+          "DNSNames": [
+            "neshane-prometheus",
+            "prometheus",
+            "adf02fe03815"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "267390d94cdd75526a623686ed022661afdd9288a50a3faa85f9ee6a85b7a1f7",
+          "Gateway": "172.30.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.0.6",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "a2:a4:74:e3:d4:d8",
+          "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/prometheus",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "neshane-local_prometheus_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/neshane-local_prometheus_data/_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/etc/prometheus/prometheus.yml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3\\Local-Infra\\observability\\prometheus.yml",
+          "Type": "bind"
+        }
+      ],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-local_default",
+      "securityOpt": null,
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      }
+    },
+    {
+      "id": "165e661f846d664e6b1dd4157f1347388e66d3aa72ca23533bb40454b1eaf4bc",
+      "name": "/neshane-mailpit",
+      "imageID": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+      "imageReference": "axllent/mailpit:latest",
+      "project": "neshane-local",
+      "service": "mailpit",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-16T18:29:31.097624322Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "1025/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "11025"
+          }
+        ],
+        "8025/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18025"
+          }
+        ]
+      },
+      "networks": {
+        "neshane-local_default": {
+          "Aliases": [
+            "neshane-mailpit",
+            "mailpit"
+          ],
+          "DNSNames": [
+            "neshane-mailpit",
+            "mailpit",
+            "165e661f846d"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "c24d2d245a542a240d8288b10e9c1d2d13d4d07acb87809b99047205994a4b3a",
+          "Gateway": "172.30.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.0.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "0e:97:24:60:8b:fd",
+          "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "neshane-local_mailpit_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/neshane-local_mailpit_data/_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-local_default",
+      "securityOpt": null,
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      }
+    },
+    {
+      "id": "f365048f8803dfdbba00ff573a506bdea2bfda6cb8acf31451267d3423de9cda",
+      "name": "/neshane-seaweedfs",
+      "imageID": "sha256:17804fb097257c8c8ca9d57338ff756ee1f4312f40e1e521d62c1a1f8614b203",
+      "imageReference": "chrislusf/seaweedfs@sha256:c2658820e763294a9e9de7b36c81e59b879e3459148351aee4e31a126ca64860",
+      "project": "neshane-local",
+      "service": "seaweedfs",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-16T18:29:31.124636805Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "12535/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "22535"
+          }
+        ],
+        "8333/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "18333"
+          }
+        ]
+      },
+      "networks": {
+        "neshane-local_default": {
+          "Aliases": [
+            "neshane-seaweedfs",
+            "seaweedfs"
+          ],
+          "DNSNames": [
+            "neshane-seaweedfs",
+            "seaweedfs",
+            "f365048f8803"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "6e88d0e30075f522be29e6cfac4c6632bf4d6bd47820068b6699fb5186324cba",
+          "Gateway": "172.30.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.0.4",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "56:98:3b:a7:9d:16",
+          "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "neshane-local_seaweedfs_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/neshane-local_seaweedfs_data/_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-local_default",
+      "securityOpt": null,
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      }
+    },
+    {
+      "id": "c684eba5dda00d66b7a3c42d06cf8f92228ffc7a4f3535f25ba2d99f1a433006",
+      "name": "/neshane-rabbitmq",
+      "imageID": "sha256:6fdb07f6c488549f0ead4e0624664bbb63fcee9f1a2a79f7f21e23c08f6355cd",
+      "imageReference": "rabbitmq:4.2-management",
+      "project": "neshane-local",
+      "service": "rabbitmq",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-16T18:29:31.129195886Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "15672/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "25672"
+          }
+        ],
+        "5672/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "15673"
+          }
+        ]
+      },
+      "networks": {
+        "neshane-local_default": {
+          "Aliases": [
+            "neshane-rabbitmq",
+            "rabbitmq"
+          ],
+          "DNSNames": [
+            "neshane-rabbitmq",
+            "rabbitmq",
+            "c684eba5dda0"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "452f802810af9b18dcd528da2d5e2c4a5aca29974e4a96b585b66959cddb45b3",
+          "Gateway": "172.30.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.0.8",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "c2:c9:ec:07:3e:e0",
+          "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/rabbitmq",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "neshane-local_rabbitmq_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/neshane-local_rabbitmq_data/_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-local_default",
+      "securityOpt": null,
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      }
+    },
+    {
+      "id": "73f72ed261bd8a96bd1cf68d84d82bffb8adf305c22b0cbd99770737d0876920",
+      "name": "/neshane-redis",
+      "imageID": "sha256:9823645c452a9a994f575ed238e1a4f67365acbf8e842db769060820fab06449",
+      "imageReference": "redis:7.4",
+      "project": "neshane-local",
+      "service": "redis",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-16T18:29:31.095863604Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "6379/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "16379"
+          }
+        ]
+      },
+      "networks": {
+        "neshane-local_default": {
+          "Aliases": [
+            "neshane-redis",
+            "redis"
+          ],
+          "DNSNames": [
+            "neshane-redis",
+            "redis",
+            "73f72ed261bd"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "396873cda460ef793ba89d6d76ff1bc61ff741fbf56cd2548a04ebd5b4c5cdd4",
+          "Gateway": "172.30.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.0.5",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "fe:34:9c:0e:4b:a2",
+          "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "neshane-local_redis_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/neshane-local_redis_data/_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-local_default",
+      "securityOpt": null,
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      }
+    },
+    {
+      "id": "9067bf4606ffb8ea0486b3d85eb140163953b7945f8d3f1075d6ab2aa7fbee65",
+      "name": "/neshane-postgres",
+      "imageID": "sha256:81edcaa5ff2923f7be9c1f43d3e5076f29c6c9c216c86964b5fd038959404429",
+      "imageReference": "postgres:17",
+      "project": "neshane-local",
+      "service": "postgres",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-16T18:29:31.126566004Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "15432"
+          }
+        ]
+      },
+      "networks": {
+        "neshane-local_default": {
+          "Aliases": [
+            "neshane-postgres",
+            "postgres"
+          ],
+          "DNSNames": [
+            "neshane-postgres",
+            "postgres",
+            "9067bf4606ff"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "7edfb3ed5a337a17858b7cc8be2589da483787f433f2956c85f0e396b38fd479",
+          "Gateway": "172.30.0.1",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.0.10",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "d6:c2:f4:d7:40:08",
+          "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "neshane-local_postgres_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "/var/lib/docker/volumes/neshane-local_postgres_data/_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 0,
+      "nanoCPUs": 0,
+      "pidsLimit": null,
+      "privileged": false,
+      "networkMode": "neshane-local_default",
+      "securityOpt": null,
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "5",
+          "max-size": "10m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "unless-stopped"
+      }
+    }
+  ],
+  "networks": [
+    {
+      "id": "047235e632a4b37811a036f06917f1a85b299aeedbc635b84bf1c9f7fac943d4",
+      "name": "bridge",
+      "driver": "bridge",
+      "internal": false,
+      "project": null,
+      "ipam": {
+        "Config": [
+          {
+            "Gateway": "172.17.0.1",
+            "Subnet": "172.17.0.0/16"
+          }
+        ],
+        "Driver": "default",
+        "Options": null
+      },
+      "containers": {},
+      "options": {
+        "com.docker.network.bridge.default_bridge": "true",
+        "com.docker.network.bridge.enable_icc": "true",
+        "com.docker.network.bridge.enable_ip_masquerade": "true",
+        "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+        "com.docker.network.bridge.name": "docker0",
+        "com.docker.network.driver.mtu": "1500"
+      }
+    },
+    {
+      "id": "448154e3d2e830e127ffb3d6f43b9e065c55b7ff63fcd95a86be706ff905d0eb",
+      "name": "host",
+      "driver": "host",
+      "internal": false,
+      "project": null,
+      "ipam": {
+        "Config": null,
+        "Driver": "default",
+        "Options": null
+      },
+      "containers": {},
+      "options": {}
+    },
+    {
+      "id": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c",
+      "name": "neshane-local_default",
+      "driver": "bridge",
+      "internal": false,
+      "project": "neshane-local",
+      "ipam": {
+        "Config": [
+          {
+            "Gateway": "172.30.0.1",
+            "Subnet": "172.30.0.0/24"
+          }
+        ],
+        "Driver": "default",
+        "Options": null
+      },
+      "containers": {
+        "165e661f846d664e6b1dd4157f1347388e66d3aa72ca23533bb40454b1eaf4bc": {
+          "EndpointID": "c24d2d245a542a240d8288b10e9c1d2d13d4d07acb87809b99047205994a4b3a",
+          "IPv4Address": "172.30.0.2/24",
+          "IPv6Address": "",
+          "MacAddress": "0e:97:24:60:8b:fd",
+          "Name": "neshane-mailpit"
+        },
+        "73f72ed261bd8a96bd1cf68d84d82bffb8adf305c22b0cbd99770737d0876920": {
+          "EndpointID": "396873cda460ef793ba89d6d76ff1bc61ff741fbf56cd2548a04ebd5b4c5cdd4",
+          "IPv4Address": "172.30.0.5/24",
+          "IPv6Address": "",
+          "MacAddress": "fe:34:9c:0e:4b:a2",
+          "Name": "neshane-redis"
+        },
+        "86e9458bae85c9eb3da6b1e7540da38145492cbc760f6400f39501e4e6736d10": {
+          "EndpointID": "62ca91e8c052fd4e5769155f93d97cb5951ded09441e943262c2e47bf443b181",
+          "IPv4Address": "172.30.0.9/24",
+          "IPv6Address": "",
+          "MacAddress": "9a:e6:b9:98:ea:69",
+          "Name": "neshane-grafana"
+        },
+        "9067bf4606ffb8ea0486b3d85eb140163953b7945f8d3f1075d6ab2aa7fbee65": {
+          "EndpointID": "7edfb3ed5a337a17858b7cc8be2589da483787f433f2956c85f0e396b38fd479",
+          "IPv4Address": "172.30.0.10/24",
+          "IPv6Address": "",
+          "MacAddress": "d6:c2:f4:d7:40:08",
+          "Name": "neshane-postgres"
+        },
+        "adf02fe038159fefdaf11dad5a08746f826116a06fc4bc1a78f73b23116f0d32": {
+          "EndpointID": "267390d94cdd75526a623686ed022661afdd9288a50a3faa85f9ee6a85b7a1f7",
+          "IPv4Address": "172.30.0.6/24",
+          "IPv6Address": "",
+          "MacAddress": "a2:a4:74:e3:d4:d8",
+          "Name": "neshane-prometheus"
+        },
+        "c684eba5dda00d66b7a3c42d06cf8f92228ffc7a4f3535f25ba2d99f1a433006": {
+          "EndpointID": "452f802810af9b18dcd528da2d5e2c4a5aca29974e4a96b585b66959cddb45b3",
+          "IPv4Address": "172.30.0.8/24",
+          "IPv6Address": "",
+          "MacAddress": "c2:c9:ec:07:3e:e0",
+          "Name": "neshane-rabbitmq"
+        },
+        "cf8c221e922dd5b04ae583ddaa593f7251d815ea1dc47d63eded414449cd3021": {
+          "EndpointID": "1bd17f7167c5c7b76c425ae46b595c38ba8c056d7ccc04afd1ecd3af5bb94673",
+          "IPv4Address": "172.30.0.3/24",
+          "IPv6Address": "",
+          "MacAddress": "66:a8:88:14:ae:cb",
+          "Name": "neshane-tempo"
+        },
+        "f365048f8803dfdbba00ff573a506bdea2bfda6cb8acf31451267d3423de9cda": {
+          "EndpointID": "6e88d0e30075f522be29e6cfac4c6632bf4d6bd47820068b6699fb5186324cba",
+          "IPv4Address": "172.30.0.4/24",
+          "IPv6Address": "",
+          "MacAddress": "56:98:3b:a7:9d:16",
+          "Name": "neshane-seaweedfs"
+        },
+        "ffe6c5bb7dd1fc4995f921beaa155519fee110e3ea496f5dcd6dc97b87a8e821": {
+          "EndpointID": "4eb5174bd0dff03b508ee0f9b62c8840a2559f36a47d51bc61a3627d71c8e6d5",
+          "IPv4Address": "172.30.0.7/24",
+          "IPv6Address": "",
+          "MacAddress": "7e:c6:74:b0:48:ea",
+          "Name": "neshane-otel-collector"
+        }
+      },
+      "options": {
+        "com.docker.network.enable_ipv4": "true",
+        "com.docker.network.enable_ipv6": "false"
+      }
+    },
+    {
+      "id": "8650c6399ca6e29110be26e3853b88ff07f3d1681243182243cf386a1752d9b7",
+      "name": "neshane-v3-023-routing-reference_cell-a-network",
+      "driver": "bridge",
+      "internal": true,
+      "project": "neshane-v3-023-routing-reference",
+      "ipam": {
+        "Config": [
+          {
+            "Gateway": "172.30.1.1",
+            "Subnet": "172.30.1.0/24"
+          }
+        ],
+        "Driver": "default",
+        "Options": null
+      },
+      "containers": {},
+      "options": {
+        "com.docker.network.enable_ipv4": "true",
+        "com.docker.network.enable_ipv6": "false"
+      }
+    },
+    {
+      "id": "0b48d77d04f24561974d7cd0fa327a09bce5b90ad8254b9ba67abada67f2da59",
+      "name": "neshane-v3-023-routing-reference_cell-b-network",
+      "driver": "bridge",
+      "internal": true,
+      "project": "neshane-v3-023-routing-reference",
+      "ipam": {
+        "Config": [
+          {
+            "Gateway": "172.30.2.1",
+            "Subnet": "172.30.2.0/24"
+          }
+        ],
+        "Driver": "default",
+        "Options": null
+      },
+      "containers": {},
+      "options": {
+        "com.docker.network.enable_ipv4": "true",
+        "com.docker.network.enable_ipv6": "false"
+      }
+    },
+    {
+      "id": "b4cd55fdfee6f4fd88300d6e72f763a27c7ad26bb73f5a0806768f06202ec597",
+      "name": "neshane-v3-023-routing-reference_ingress-network",
+      "driver": "bridge",
+      "internal": false,
+      "project": "neshane-v3-023-routing-reference",
+      "ipam": {
+        "Config": [
+          {
+            "Gateway": "172.30.3.1",
+            "Subnet": "172.30.3.0/24"
+          }
+        ],
+        "Driver": "default",
+        "Options": null
+      },
+      "containers": {},
+      "options": {
+        "com.docker.network.enable_ipv4": "true",
+        "com.docker.network.enable_ipv6": "false"
+      }
+    },
+    {
+      "id": "d9e7732ed376515174efb0a171a4ce9e8a3817535239f7bf1b5f9310aa606061",
+      "name": "neshane-v3-024-probe-net",
+      "driver": "bridge",
+      "internal": true,
+      "project": null,
+      "ipam": {
+        "Config": [
+          {
+            "Gateway": "172.30.4.1",
+            "Subnet": "172.30.4.0/24"
+          }
+        ],
+        "Driver": "default",
+        "Options": {}
+      },
+      "containers": {},
+      "options": {
+        "com.docker.network.enable_ipv4": "true",
+        "com.docker.network.enable_ipv6": "false"
+      }
+    },
+    {
+      "id": "972e57a544aa920946365245e2c9712aca0d91468ac2b8156e7635d579197401",
+      "name": "none",
+      "driver": "null",
+      "internal": false,
+      "project": null,
+      "ipam": {
+        "Config": null,
+        "Driver": "default",
+        "Options": null
+      },
+      "containers": {},
+      "options": {}
+    }
+  ],
+  "volumes": [
+    {
+      "name": "iam-foundation_postgres-data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/iam-foundation_postgres-data/_data",
+      "createdAt": "2026-10-21T21:59:43Z",
+      "project": "iam-foundation",
+      "options": null
+    },
+    {
+      "name": "iam-foundation_rabbit-data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/iam-foundation_rabbit-data/_data",
+      "createdAt": "2026-10-21T21:59:43Z",
+      "project": "iam-foundation",
+      "options": null
+    },
+    {
+      "name": "iam-foundation_redis-data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/iam-foundation_redis-data/_data",
+      "createdAt": "2026-10-21T21:59:44Z",
+      "project": "iam-foundation",
+      "options": null
+    },
+    {
+      "name": "neshane-local_grafana_data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/neshane-local_grafana_data/_data",
+      "createdAt": "2026-10-31T19:45:04Z",
+      "project": "neshane-local",
+      "options": null
+    },
+    {
+      "name": "neshane-local_mailpit_data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/neshane-local_mailpit_data/_data",
+      "createdAt": "2026-10-31T19:33:39Z",
+      "project": "neshane-local",
+      "options": null
+    },
+    {
+      "name": "neshane-local_postgres_data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/neshane-local_postgres_data/_data",
+      "createdAt": "2026-10-31T18:31:00Z",
+      "project": "neshane-local",
+      "options": null
+    },
+    {
+      "name": "neshane-local_prometheus_data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/neshane-local_prometheus_data/_data",
+      "createdAt": "2026-10-31T19:45:04Z",
+      "project": "neshane-local",
+      "options": null
+    },
+    {
+      "name": "neshane-local_rabbitmq_data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/neshane-local_rabbitmq_data/_data",
+      "createdAt": "2026-10-31T18:40:14Z",
+      "project": "neshane-local",
+      "options": null
+    },
+    {
+      "name": "neshane-local_redis_data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/neshane-local_redis_data/_data",
+      "createdAt": "2026-10-31T18:35:48Z",
+      "project": "neshane-local",
+      "options": null
+    },
+    {
+      "name": "neshane-local_seaweedfs_data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/neshane-local_seaweedfs_data/_data",
+      "createdAt": "2026-10-31T19:09:11Z",
+      "project": "neshane-local",
+      "options": null
+    },
+    {
+      "name": "neshane-local_tempo_data",
+      "driver": "local",
+      "mountpoint": "/var/lib/docker/volumes/neshane-local_tempo_data/_data",
+      "createdAt": "2026-10-31T20:10:01Z",
+      "project": "neshane-local",
+      "options": null
+    }
+  ],
+  "images": [
+    {
+      "id": "sha256:0bad19273070728e6bd4285deb8bab9b2873e44a998f300b8214d2b6c30f87eb",
+      "repoTags": [
+        "neshane-v3-023-reference-peer:local"
+      ],
+      "repoDigests": [],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:17804fb097257c8c8ca9d57338ff756ee1f4312f40e1e521d62c1a1f8614b203",
+      "repoTags": [
+        "chrislusf/seaweedfs:latest"
+      ],
+      "repoDigests": [
+        "chrislusf/seaweedfs@sha256:c2658820e763294a9e9de7b36c81e59b879e3459148351aee4e31a126ca64860"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:28ebddf51f59e38ac800c9f91120726cfb312af377da8908807e0b566a82b017",
+      "repoTags": [
+        "otel/opentelemetry-collector-contrib:0.164.0"
+      ],
+      "repoDigests": [
+        "otel/opentelemetry-collector-contrib@sha256:340c9ca6a36617084c6661bdc4f0fe92b7cda5a805d61673ec8db375fddc522b"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:431b070f8300b219ab7e6597e7ebb158df31767739896f53a936cfc749d8437a",
+      "repoTags": [],
+      "repoDigests": [
+        "postgres@sha256:99d1a998c76487d3abb48b141505bda5dcf8089c0c4cd7be40f75de314fa32f0"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:56bb95ea275c701307deeae627421eb0e574b65bcf2e597e85ed2c436cb122c9",
+      "repoTags": [],
+      "repoDigests": [],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+      "repoTags": [
+        "axllent/mailpit:latest"
+      ],
+      "repoDigests": [
+        "axllent/mailpit@sha256:9b3a463be15354c0f0eba91697d80e3e0d8a5623ef0e627cacc836bc17fd5231"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:5dc4a64b27ad76a505bb1636cd05247f5e6e5e61fdc0fccda37ee061009cb1ff",
+      "repoTags": [
+        "neshane/reference-service:v3-017-local"
+      ],
+      "repoDigests": [],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:61eeb02a78bc63ba4196aaa2cfb508b430816a96ee704239cfff236d8c5d1e98",
+      "repoTags": [
+        "neshane-v3-023-reference-runtime:local"
+      ],
+      "repoDigests": [],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:6fdb07f6c488549f0ead4e0624664bbb63fcee9f1a2a79f7f21e23c08f6355cd",
+      "repoTags": [
+        "rabbitmq:4.2-management"
+      ],
+      "repoDigests": [
+        "rabbitmq@sha256:d1fb8b38bd0805935907a22b2b7483fba38c9a8dd7e8a74bfba4a6e7a9e91707"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:7158b04fc5247fb064841c13f2ba4159904276f1bddcb2ba71a8a7da7e5ee73d",
+      "repoTags": [
+        "neshane-v3-023-reference-service:local"
+      ],
+      "repoDigests": [],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:81edcaa5ff2923f7be9c1f43d3e5076f29c6c9c216c86964b5fd038959404429",
+      "repoTags": [
+        "postgres:17"
+      ],
+      "repoDigests": [
+        "postgres@sha256:31ba9c94a03ada9988f2bb493a22a75eef3a185884533e5cdbcd498ea835b08f"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:8400f365c39767b0d0df30e3aeb0796f873c3acf89b28089745bfafd88d83c7c",
+      "repoTags": [
+        "grafana/grafana:13.2.1"
+      ],
+      "repoDigests": [
+        "grafana/grafana@sha256:f772d434e8fab0049deb2b1b30abd43342bcfca1537614aa8d36080232cf4283"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:8ae454435ef3f88685f53505be8525a05f3ac28b968f02c1608ac08c7b8b36b3",
+      "repoTags": [
+        "neshane/reference-peer-service:v3-017-local"
+      ],
+      "repoDigests": [],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:9823645c452a9a994f575ed238e1a4f67365acbf8e842db769060820fab06449",
+      "repoTags": [
+        "redis:7.4"
+      ],
+      "repoDigests": [
+        "redis@sha256:b6b6e3dc0c0952737748e55d5d885272840c7e42ba41ab1d5489f693419882f5"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:a0eaf5ce9666be0730d76376ca5a41061be5725043c5b008f20e485aa7a059c7",
+      "repoTags": [],
+      "repoDigests": [],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+      "repoTags": [
+        "prom/prometheus:v3.7.3"
+      ],
+      "repoDigests": [
+        "prom/prometheus@sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:b0734d8b5a78590e31c234df44654f59bea2fdbaece5c61302d416bfa50ccdb6",
+      "repoTags": [
+        "amazon/aws-cli:latest"
+      ],
+      "repoDigests": [
+        "amazon/aws-cli@sha256:d557b3524475d70dd3104cf44d96568ee3188897b73a6ece2b37aa50e1af362f"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:c70277e21e72686b57b6d5ccb5063a6fc6be133f98fe8b628f1ec55793a6c157",
+      "repoTags": [],
+      "repoDigests": [],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:d1b47a86637121283f8bb3d9342ee2c77bd2bb92b1cb2dfb35f2b13629498961",
+      "repoTags": [
+        "grafana/tempo:3.1.1"
+      ],
+      "repoDigests": [
+        "grafana/tempo@sha256:64e2fbd56d9c2b3412a4b430a58ea59e91a670b1e75f920a0c702213ad145044"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    {
+      "id": "sha256:d6e12f17fc504d0faad96b8f717bed18224938a8e5b58f0c1a1c6ea6e289066b",
+      "repoTags": [],
+      "repoDigests": [],
+      "architecture": "amd64",
+      "os": "linux"
+    }
+  ]
+}

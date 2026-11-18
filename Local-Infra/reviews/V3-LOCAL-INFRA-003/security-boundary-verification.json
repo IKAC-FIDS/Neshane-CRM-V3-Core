@@ -1,0 +1,14 @@
+{
+  "task": "V3-LOCAL-INFRA-003",
+  "loopbackOnlyPublication": true,
+  "redisUnpublished": true,
+  "networkSegmentation": "preserved (separate postgres/redis/broker/mail/telemetry/experimental networks)",
+  "internalNetworkRetainedForRedisOnly": true,
+  "egressIsolationRemovedForPublishedServices": "documented trade-off; loopback binds, segmentation, no-privileged, resource limits unchanged",
+  "noPrivilegedNoHostNetworkingNoDockerSocket": "unchanged from V3-LOCAL-INFRA-001 (enforced by static validator)",
+  "syntheticOnlyTelemetry": true,
+  "amqpCredentialVhostEnforcement": true,
+  "noAuthOrPermissionWeakening": true,
+  "noZeroZeroZeroZeroBinding": true,
+  "noWindowsFirewallOrDockerDesktopChange": true
+}

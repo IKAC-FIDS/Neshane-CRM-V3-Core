@@ -1,0 +1,157 @@
+{
+  "task": "V3-LOCAL-INFRA-004",
+  "baseline17": [
+    {
+      "path": "Local-Infra/.env.example",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "A8C6D839AA6D69F8A85AD4BABB224CEE9D328B93FB255F20E4627FB0722E324F",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/.gitattributes",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/.gitignore",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "E6A4C8916FA87342996484C846E9DE53B16916C512432C3DF4482F18D7623792",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/README.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 0,
+      "sha256": "EC73700B1BB98776F8A79C1136EE39A0DD0FB17F0373A0C0C38E3A23F15FE693",
+      "predecessorState": "MODIFIED_IN_003"
+    },
+    {
+      "path": "Local-Infra/Validate-DevelopmentBaseline.ps1",
+      "classification": "REPRODUCIBLE_VALIDATION_TOOL",
+      "bytes": 0,
+      "sha256": "02BCE90F83CF94C81021044D9CEB119BE8D5CC133EBF37B9E6E9F1AFF946CEB3",
+      "predecessorState": "MODIFIED_IN_003"
+    },
+    {
+      "path": "Local-Infra/compose.seaweedfs.yaml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "CDC48CF4925AA235CC7140320A800FA67DFA21323A3D2ED8CB680F96FBEE7B53",
+      "predecessorState": "MODIFIED_IN_003"
+    },
+    {
+      "path": "Local-Infra/compose.yaml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "EC2BFBA40636FB927E6A9973E76BC4BA3E1B3D584ED97DCD7D6EFF19C1998DAA",
+      "predecessorState": "MODIFIED_IN_003"
+    },
+    {
+      "path": "Local-Infra/configuration-sources.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 0,
+      "sha256": "37CCBF6ABD8A5E32AB5C1DE3451CC6E8FFE5BCBAF53166FE892E9EFE321D0BB1",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/image-references.json",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "117A9585B6EA45E41784952774EABC462DE85EC0FF1293CEF40ED1D085B8468F",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/observability/grafana-datasources.yaml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "3CD67479CA3308271DF011BB31D77707AA36EB108BA77AEBA3E5FAA40351A410",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/observability/otel-collector.yaml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "B798D7E13F3D8B2AB98A0D7E33A6724D564ABAC77283EBC9AC461CBBD8CEAA23",
+      "predecessorState": "MODIFIED_IN_003"
+    },
+    {
+      "path": "Local-Infra/observability/prometheus.yml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "E5C83DB9672999F4F8C7A27201198741B19A5F7FDB7C11ADC823AA89DED99589",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/observability/tempo.yaml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "CC861CD4C4AACD940FEE623F947E41EF5937D3D74B435BAAD8663FE8E7BBCEED",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/postgres/10-development-role.sh",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "C7F53185C94707AFC8B48F705FBFCC102D4BF961223B98B0AA5B4EA407D6328B",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/rabbitmq/rabbitmq.conf",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 0,
+      "sha256": "C58EAC455B4DCB25A24A5E3D8DDE3ED40385E494E3853A9D14CBD5EE0E8B7875",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/runtime-validation-plan.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 0,
+      "sha256": "7075323CBC308AA86CBB6D8593097051822DA28BF1A4E6AEB2E879A2CEA60C3F",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/validation-report.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 0,
+      "sha256": "00F41C4F9D9580F8496FC95636523FA39D3EFB8F6FE9A86A9C74EC51D44040D0",
+      "predecessorState": "BYTE_IDENTICAL"
+    }
+  ],
+  "reconciliation": {
+    "original17": 17,
+    "byteIdentical13": 12,
+    "modified5": [
+      "Local-Infra/README.md",
+      "Local-Infra/Validate-DevelopmentBaseline.ps1",
+      "Local-Infra/compose.seaweedfs.yaml",
+      "Local-Infra/compose.yaml",
+      "Local-Infra/observability/otel-collector.yaml"
+    ],
+    "newFilesInBaseline": 0,
+    "duplicatedFiles": 0,
+    "miscounted": false,
+    "explanation": "The 17 baseline files were created in V3-LOCAL-INFRA-001. V3-LOCAL-INFRA-003 modified exactly 5 (Collector filter fix, internal:true network correction, static validator network invariant, README networking documentation, SeaweedFS experimental network); the other 13 are byte-identical to the 001 baseline (verified via predecessor-hashes.json). The 152 files under reviews/ are V3-LOCAL-INFRA-002 (134) and V3-LOCAL-INFRA-003 (18) evidence, not part of the 17-file baseline. No file is new within the baseline, none duplicated, no miscount."
+  },
+  "evidence16_002": {
+    "Validate-Runtime.py": true,
+    "amqp-probe.escript": true,
+    "checks.json": true,
+    "cleanup-report.json": true,
+    "docker-after.json": true,
+    "docker-before.json": true,
+    "downloaded-images-report.json": true,
+    "execution-plan.md": true,
+    "image-identity-verification.json": true,
+    "residual-findings.json": true,
+    "resource-preservation-report.json": true,
+    "runtime-commands.json": true,
+    "runtime-validation-report.md": true,
+    "security-boundary-verification.json": true,
+    "service-validation-matrix.json": true,
+    "session.json": true
+  }
+}

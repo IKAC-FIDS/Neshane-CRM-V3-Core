@@ -1,0 +1,260 @@
+{
+  "task": "V3-LOCAL-INFRA-003",
+  "project": "v3li003-reval-e7610b",
+  "checks": [
+    {
+      "checkIdentifier": "LIR003-HOST-POSTGRES_PORT",
+      "service": "all",
+      "expectedResult": "Declared localhost port published and reachable after removing internal:true",
+      "status": "PASS",
+      "actualResult": {
+        "port": "11053",
+        "reachable": true
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-HOST-RABBITMQ_AMQP_PORT",
+      "service": "all",
+      "expectedResult": "Declared localhost port published and reachable after removing internal:true",
+      "status": "PASS",
+      "actualResult": {
+        "port": "11054",
+        "reachable": true
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-HOST-RABBITMQ_UI_PORT",
+      "service": "all",
+      "expectedResult": "Declared localhost port published and reachable after removing internal:true",
+      "status": "PASS",
+      "actualResult": {
+        "port": "11055",
+        "reachable": true
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-HOST-MAILPIT_SMTP_PORT",
+      "service": "all",
+      "expectedResult": "Declared localhost port published and reachable after removing internal:true",
+      "status": "PASS",
+      "actualResult": {
+        "port": "11056",
+        "reachable": true
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-HOST-MAILPIT_UI_PORT",
+      "service": "all",
+      "expectedResult": "Declared localhost port published and reachable after removing internal:true",
+      "status": "PASS",
+      "actualResult": {
+        "port": "11057",
+        "reachable": true
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-HOST-OTLP_GRPC_PORT",
+      "service": "all",
+      "expectedResult": "Declared localhost port published and reachable after removing internal:true",
+      "status": "PASS",
+      "actualResult": {
+        "port": "11058",
+        "reachable": true
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-HOST-PROMETHEUS_PORT",
+      "service": "all",
+      "expectedResult": "Declared localhost port published and reachable after removing internal:true",
+      "status": "PASS",
+      "actualResult": {
+        "port": "11060",
+        "reachable": true
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-HOST-GRAFANA_PORT",
+      "service": "all",
+      "expectedResult": "Declared localhost port published and reachable after removing internal:true",
+      "status": "PASS",
+      "actualResult": {
+        "port": "11061",
+        "reachable": true
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-HOST-SEAWEEDFS_S3_PORT",
+      "service": "all",
+      "expectedResult": "Declared localhost port published and reachable after removing internal:true",
+      "status": "PASS",
+      "actualResult": {
+        "port": "11062",
+        "reachable": true
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-PROMETHEUS-INGEST",
+      "service": "prometheus",
+      "expectedResult": "Corrected collector forwards synthetic metric (value 7, minimized)",
+      "status": "PASS",
+      "actualResult": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {
+                "__name__": "neshane_synthetic_probe_total",
+                "exported_job": "neshane-synthetic",
+                "instance": "otel-collector:8889",
+                "job": "otel-collector",
+                "otel_scope_name": "synthetic"
+              },
+              "value": [
+                1795009174.966,
+                "7"
+              ]
+            }
+          ]
+        }
+      },
+      "remainingLimitation": "Waits for the 15s scrape interval."
+    },
+    {
+      "checkIdentifier": "LIR003-GRAFANA-NESHANE-PROMETHEUS",
+      "service": "grafana",
+      "expectedResult": "Provisioned datasource healthy",
+      "status": "PASS",
+      "actualResult": {
+        "httpStatus": 200,
+        "response": {
+          "details": {
+            "application": "Prometheus",
+            "features": {
+              "rulerApiEnabled": false
+            }
+          },
+          "message": "Successfully queried the Prometheus API.",
+          "status": "OK"
+        }
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-GRAFANA-NESHANE-TEMPO",
+      "service": "grafana",
+      "expectedResult": "Provisioned datasource healthy",
+      "status": "PASS",
+      "actualResult": {
+        "httpStatus": 200,
+        "response": {
+          "message": "Data source is working",
+          "status": "OK"
+        }
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-AMQP-FULL",
+      "service": "rabbitmq",
+      "expectedResult": "Full AMQP 0-9-1 connect/auth/vhost/channel/queue/publish/consume/ack + negative tests",
+      "status": "PASS",
+      "actualResult": {
+        "exit": 0,
+        "stdout": "/tmp/full.escript:58:15: Warning: a term is constructed, but never used\n%   58|         HS -> {closed, {no_start, HS}}\n%     |               ^\n\nAMQP_FULL_PASS payload_matches=true reject_invalid_password=invalid_password_rejected reject_invalid_vhost=invalid_vhost_rejected",
+        "stderr": ""
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-PG-REGRESSION",
+      "service": "postgres",
+      "expectedResult": "Restricted app identity authenticates",
+      "status": "PASS",
+      "actualResult": "1",
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-REDIS-UNPUBLISHED",
+      "service": "redis",
+      "expectedResult": "Redis remains host-unpublished",
+      "status": "PASS",
+      "actualResult": {},
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-MAILPIT",
+      "service": "mailpit",
+      "expectedResult": "Mailpit API reachable",
+      "status": "PASS",
+      "actualResult": 200,
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-SEAWEED-HEALTH",
+      "service": "seaweedfs",
+      "expectedResult": "Experimental mini internal health",
+      "status": "PASS",
+      "actualResult": {
+        "health": "{\"health\":\"ok\"}",
+        "note": "Initial FAIL was a harness defect: BusyBox wget does not support --max-time (correct is -T SEC). Re-checked with -T 5; the source-confirmed internal admin /health returns ok."
+      },
+      "remainingLimitation": "Experimental mini only; harness timeout flag corrected, no config change."
+    },
+    {
+      "checkIdentifier": "LIR003-TEMPO-RETRIEVE",
+      "service": "tempo",
+      "expectedResult": "Corrected collector path delivers trace to Tempo",
+      "status": "PASS",
+      "actualResult": {
+        "traceID": "re-emitted confirmed PASS"
+      },
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-COLLECTOR-READY",
+      "service": "otel-collector",
+      "expectedResult": "Collector starts with corrected Advanced OTTL filter",
+      "status": "PASS",
+      "actualResult": "confirmed",
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-COLLECTOR-HEALTH",
+      "service": "otel-collector",
+      "expectedResult": "Internal health extension responds",
+      "status": "PASS",
+      "actualResult": "confirmed 200",
+      "remainingLimitation": ""
+    },
+    {
+      "checkIdentifier": "LIR003-OTLP-ACCEPT",
+      "service": "otel-collector",
+      "expectedResult": "Synthetic metric/trace OTLP/HTTP accepted",
+      "status": "PASS",
+      "actualResult": "confirmed 200",
+      "remainingLimitation": ""
+    }
+  ],
+  "counts": {
+    "PASS": 21,
+    "FAIL": 0
+  },
+  "governance": {
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "GS-01/GS-04": "RETAINED"
+  }
+}

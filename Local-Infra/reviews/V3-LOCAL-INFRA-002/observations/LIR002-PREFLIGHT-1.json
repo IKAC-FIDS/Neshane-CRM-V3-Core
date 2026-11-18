@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-11-18T11:32:00.367174+00:00",
+  "actual": {
+    "baselineFiles": 17,
+    "project": "v3li002-20261118t113152-ad6c12",
+    "portCollision": false,
+    "resourceCollision": false,
+    "engine": {
+      "os": "linux",
+      "arch": "x86_64",
+      "memory": 8009216000,
+      "cpus": 16
+    }
+  }
+}

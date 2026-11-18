@@ -1,0 +1,63 @@
+{
+  "task": "V3-LOCAL-INFRA-004",
+  "recordedAt": "2026-11-18T14:48:45.530370+00:00",
+  "staticValidator": {
+    "exitCode": 0,
+    "outcome": "PASS \u00e2\u20ac\u201d STATIC CHECKS ONLY"
+  },
+  "baselineReconciliation": {
+    "original17": true,
+    "byteIdentical13": true,
+    "modified5": [
+      "README.md",
+      "Validate-DevelopmentBaseline.ps1",
+      "compose.seaweedfs.yaml",
+      "compose.yaml",
+      "observability/otel-collector.yaml"
+    ]
+  },
+  "evidence16_002ByteIdentical": true,
+  "repositoriesUnchanged": true,
+  "repositories": {
+    "E:/Neshane-CRM-V3": {
+      "head": "c3926e6a8c9847281d49987abdbafbbced562dbb",
+      "branch": "codex/v3-024-root-preservation"
+    },
+    "E:/Neshane-CRM-V3/Backend": {
+      "head": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+      "branch": "codex/v3-024-dedicated-managed-design"
+    },
+    "E:/Neshane-CRM-V3/Frontend": {
+      "head": "faa563f8f5c3bda25c3e5f40c7a8688c1bc245e7",
+      "branch": "main"
+    },
+    "E:/Neshane-CRM-V3-V3-024-main-adoption": {
+      "head": "094c966de745285bd5a8d1975312eb06d930d4a8",
+      "branch": "main"
+    }
+  },
+  "runtimeMatrix": {
+    "matrix": {
+      "PASS": 21,
+      "FAIL": 0
+    },
+    "verified21Pass0Fail": true
+  },
+  "secretScan": "No known credential value, private key, AWS key or token pattern in any included file.",
+  "commitPreflight": {
+    "noProductCode": true,
+    "noAdrChange": true,
+    "noUnrelatedFile": true,
+    "noActualEnv": true
+  },
+  "recommendedDisposition": "READY FOR DEVELOPMENT-ONLY ACCEPTANCE",
+  "governance": {
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "GS-01/GS-04": "RETAINED"
+  },
+  "lineEndingNormalization": "All included files normalized to LF per .gitattributes at commit time."
+}

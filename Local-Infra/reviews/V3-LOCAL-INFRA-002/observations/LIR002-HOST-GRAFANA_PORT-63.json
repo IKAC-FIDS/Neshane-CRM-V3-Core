@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-18T12:06:33.119875+00:00",
+  "actual": {
+    "port": 14430,
+    "reachable": false,
+    "error": "[WinError 10061] No connection could be made because the target machine actively refused it",
+    "actualDockerPorts": {
+      "3000/tcp": []
+    }
+  }
+}

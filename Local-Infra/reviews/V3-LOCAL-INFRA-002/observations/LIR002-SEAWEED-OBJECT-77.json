@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-11-18T12:08:40.699920+00:00",
+  "actual": {
+    "putStatus": 200,
+    "getStatus": 200,
+    "expectedSha256": "5570970becc05fddc5913f2e4434051d7cb23420abd5e005a3d0fa17135cbe86",
+    "actualSha256": "5570970becc05fddc5913f2e4434051d7cb23420abd5e005a3d0fa17135cbe86",
+    "putResponse": ""
+  }
+}

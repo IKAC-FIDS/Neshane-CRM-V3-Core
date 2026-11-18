@@ -1,0 +1,354 @@
+{
+  "task": "V3-LOCAL-INFRA-003",
+  "method": "Deterministic comparison: mounts sorted by (type,name/source,destination) while preserving full mount attributes; raw and sorted equality both recorded.",
+  "conclusion": {
+    "orderOnlyMismatches": [
+      "cf8c221e922dd5b04ae583ddaa593f7251d815ea1dc47d63eded414449cd3021",
+      "adf02fe038159fefdaf11dad5a08746f826116a06fc4bc1a78f73b23116f0d32"
+    ],
+    "actualChanges": [],
+    "preservationDockerFailExplanation": "The 002 PRESERVATION-DOCKER FAIL is reproduced as a mount-array ordering difference only; the deterministic comparator confirms all mount attributes are preserved and no actual container/network/volume change occurred."
+  },
+  "containers": [
+    {
+      "identity": "6848c622faa09be80b2ae6ab1b08c2a590bb223b48bdec980532829400170d9b",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    },
+    {
+      "identity": "ad7d9ab966698c83f2862aa490e16747c43407b4e312aa0a274e5521fff3d920",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    },
+    {
+      "identity": "59bf1b7c8acbf0391549b0642fe10ed87b3e9b6e2681f13d02bb2bf5da5dd5da",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    },
+    {
+      "identity": "8a2d5758beea10819763cbddd757f0c9c82ced58b026e4364a7fefd6301edba3",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    },
+    {
+      "identity": "86e9458bae85c9eb3da6b1e7540da38145492cbc760f6400f39501e4e6736d10",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    },
+    {
+      "identity": "ffe6c5bb7dd1fc4995f921beaa155519fee110e3ea496f5dcd6dc97b87a8e821",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    },
+    {
+      "identity": "cf8c221e922dd5b04ae583ddaa593f7251d815ea1dc47d63eded414449cd3021",
+      "changed": false,
+      "rawEqual": false,
+      "sortedEqual": true,
+      "reason": "mount-array ORDER only; all mount attributes preserved"
+    },
+    {
+      "identity": "adf02fe038159fefdaf11dad5a08746f826116a06fc4bc1a78f73b23116f0d32",
+      "changed": false,
+      "rawEqual": false,
+      "sortedEqual": true,
+      "reason": "mount-array ORDER only; all mount attributes preserved"
+    },
+    {
+      "identity": "165e661f846d664e6b1dd4157f1347388e66d3aa72ca23533bb40454b1eaf4bc",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    },
+    {
+      "identity": "f365048f8803dfdbba00ff573a506bdea2bfda6cb8acf31451267d3423de9cda",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    },
+    {
+      "identity": "c684eba5dda00d66b7a3c42d06cf8f92228ffc7a4f3535f25ba2d99f1a433006",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    },
+    {
+      "identity": "73f72ed261bd8a96bd1cf68d84d82bffb8adf305c22b0cbd99770737d0876920",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    },
+    {
+      "identity": "9067bf4606ffb8ea0486b3d85eb140163953b7945f8d3f1075d6ab2aa7fbee65",
+      "changed": false,
+      "rawEqual": true,
+      "sortedEqual": true
+    }
+  ],
+  "networks": [
+    {
+      "identity": "047235e632a4b37811a036f06917f1a85b299aeedbc635b84bf1c9f7fac943d4",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "448154e3d2e830e127ffb3d6f43b9e065c55b7ff63fcd95a86be706ff905d0eb",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "8650c6399ca6e29110be26e3853b88ff07f3d1681243182243cf386a1752d9b7",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "0b48d77d04f24561974d7cd0fa327a09bce5b90ad8254b9ba67abada67f2da59",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "b4cd55fdfee6f4fd88300d6e72f763a27c7ad26bb73f5a0806768f06202ec597",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "d9e7732ed376515174efb0a171a4ce9e8a3817535239f7bf1b5f9310aa606061",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "972e57a544aa920946365245e2c9712aca0d91468ac2b8156e7635d579197401",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    }
+  ],
+  "volumes": [
+    {
+      "identity": "iam-foundation_postgres-data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "iam-foundation_rabbit-data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "iam-foundation_redis-data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "neshane-local_grafana_data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "neshane-local_mailpit_data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "neshane-local_postgres_data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "neshane-local_prometheus_data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "neshane-local_rabbitmq_data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "neshane-local_redis_data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "neshane-local_seaweedfs_data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "neshane-local_tempo_data",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    }
+  ],
+  "images": [
+    {
+      "identity": "sha256:0bad19273070728e6bd4285deb8bab9b2873e44a998f300b8214d2b6c30f87eb",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:17804fb097257c8c8ca9d57338ff756ee1f4312f40e1e521d62c1a1f8614b203",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:28ebddf51f59e38ac800c9f91120726cfb312af377da8908807e0b566a82b017",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:431b070f8300b219ab7e6597e7ebb158df31767739896f53a936cfc749d8437a",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:56bb95ea275c701307deeae627421eb0e574b65bcf2e597e85ed2c436cb122c9",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:5dc4a64b27ad76a505bb1636cd05247f5e6e5e61fdc0fccda37ee061009cb1ff",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:61eeb02a78bc63ba4196aaa2cfb508b430816a96ee704239cfff236d8c5d1e98",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:6fdb07f6c488549f0ead4e0624664bbb63fcee9f1a2a79f7f21e23c08f6355cd",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:7158b04fc5247fb064841c13f2ba4159904276f1bddcb2ba71a8a7da7e5ee73d",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:81edcaa5ff2923f7be9c1f43d3e5076f29c6c9c216c86964b5fd038959404429",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:8400f365c39767b0d0df30e3aeb0796f873c3acf89b28089745bfafd88d83c7c",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:8ae454435ef3f88685f53505be8525a05f3ac28b968f02c1608ac08c7b8b36b3",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:9823645c452a9a994f575ed238e1a4f67365acbf8e842db769060820fab06449",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:a0eaf5ce9666be0730d76376ca5a41061be5725043c5b008f20e485aa7a059c7",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:b0734d8b5a78590e31c234df44654f59bea2fdbaece5c61302d416bfa50ccdb6",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:c70277e21e72686b57b6d5ccb5063a6fc6be133f98fe8b628f1ec55793a6c157",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:d1b47a86637121283f8bb3d9342ee2c77bd2bb92b1cb2dfb35f2b13629498961",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:d6e12f17fc504d0faad96b8f717bed18224938a8e5b58f0c1a1c6ea6e289066b",
+      "changed": false,
+      "rawEqual": true,
+      "reason": "unchanged"
+    },
+    {
+      "identity": "sha256:140936e8665d5274aa58df31b722693b4b451c541bb0f1a263a345d424bfacb4",
+      "changed": true,
+      "reason": "added (post-snapshot)"
+    },
+    {
+      "identity": "sha256:3a17a97bb6c7d9a7ee1bd3d5ecf7c6d02adf4bfd9fe73a974b3767b442dfbfaa",
+      "changed": true,
+      "reason": "added (post-snapshot)"
+    },
+    {
+      "identity": "sha256:6bee76be921b372f8b452c11321831372a65cab168b57773ee60ca70dc0f3b0e",
+      "changed": true,
+      "reason": "added (post-snapshot)"
+    },
+    {
+      "identity": "sha256:eb8cc2139494277cd547c3515a89219d7a21e9db426205c83d37fa96d1da424b",
+      "changed": true,
+      "reason": "added (post-snapshot)"
+    }
+  ]
+}

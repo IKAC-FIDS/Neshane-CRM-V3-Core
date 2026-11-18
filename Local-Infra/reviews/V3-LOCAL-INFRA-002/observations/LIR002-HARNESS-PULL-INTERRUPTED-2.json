@@ -1,0 +1,6 @@
+{
+  "observedAt": "2026-11-18T11:36:05.215969+00:00",
+  "actual": {
+    "observation": "Initial shell command exceeded the harness 120-second limit; no task containers were created. The incomplete pull is not treated as an image identity PASS."
+  }
+}

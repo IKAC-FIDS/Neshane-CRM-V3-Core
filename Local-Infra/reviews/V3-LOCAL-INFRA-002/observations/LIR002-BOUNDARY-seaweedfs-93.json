@@ -1,0 +1,82 @@
+{
+  "observedAt": "2026-11-18T12:23:41.859525+00:00",
+  "actual": {
+    "id": "d0cc7da397401797220d2764fc890568906834b29eaa06205995faba73f39373",
+    "name": "/v3li002-20261118t113152-ad6c12-seaweedfs-1",
+    "imageID": "sha256:17804fb097257c8c8ca9d57338ff756ee1f4312f40e1e521d62c1a1f8614b203",
+    "imageReference": "chrislusf/seaweedfs@sha256:c2658820e763294a9e9de7b36c81e59b879e3459148351aee4e31a126ca64860",
+    "project": "v3li002-20261118t113152-ad6c12",
+    "service": "seaweedfs",
+    "status": "running",
+    "running": true,
+    "startedAt": "2026-11-18T12:15:59.567966698Z",
+    "restartCount": 0,
+    "oomKilled": false,
+    "ports": {
+      "8333/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "14431"
+        }
+      ]
+    },
+    "networks": {
+      "v3li002-20261118t113152-ad6c12_experimental": {
+        "Aliases": [
+          "v3li002-20261118t113152-ad6c12-seaweedfs-1",
+          "seaweedfs"
+        ],
+        "DNSNames": [
+          "v3li002-20261118t113152-ad6c12-seaweedfs-1",
+          "seaweedfs",
+          "d0cc7da39740"
+        ],
+        "DriverOpts": null,
+        "EndpointID": "7d64ebfc9a03dd1468f7486649b1cf5db3ceec9b6ab639d707f6c4b26e72b626",
+        "Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "GwPriority": 0,
+        "IPAMConfig": null,
+        "IPAddress": "172.30.5.2",
+        "IPPrefixLen": 24,
+        "IPv6Gateway": "",
+        "Links": null,
+        "MacAddress": "3a:7f:a8:92:d5:92",
+        "NetworkID": "6448048efecd46be006b3f833cc78447772211a44cae3ece2e6fb7219d3d99ab"
+      }
+    },
+    "mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "v3li002-20261118t113152-ad6c12_seaweedfs_data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "v3li002-20261118t113152-ad6c12_seaweedfs_data",
+        "Type": "volume"
+      }
+    ],
+    "memory": 536870912,
+    "nanoCPUs": 500000000,
+    "pidsLimit": 256,
+    "privileged": false,
+    "networkMode": "v3li002-20261118t113152-ad6c12_experimental",
+    "securityOpt": [
+      "no-new-privileges:true"
+    ],
+    "capAdd": null,
+    "logConfig": {
+      "Config": {
+        "max-file": "2",
+        "max-size": "5m"
+      },
+      "Type": "json-file"
+    },
+    "restartPolicy": {
+      "MaximumRetryCount": 0,
+      "Name": "no"
+    }
+  }
+}

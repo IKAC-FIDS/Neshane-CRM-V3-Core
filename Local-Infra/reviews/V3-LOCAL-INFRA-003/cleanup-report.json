@@ -1,0 +1,51 @@
+{
+  "task": "V3-LOCAL-INFRA-003",
+  "taskContainersRemaining": [],
+  "taskNetworksRemaining": [],
+  "taskVolumesRemaining": [],
+  "pruneUsed": false,
+  "explicitRemovalOnly": true,
+  "preExistingPreserved": {
+    "task": "V3-LOCAL-INFRA-003",
+    "preExistingContainers": [
+      "165e661f846d",
+      "59bf1b7c8acb",
+      "6848c622faa0",
+      "73f72ed261bd",
+      "86e9458bae85",
+      "8a2d5758beea",
+      "9067bf4606ff",
+      "ad7d9ab96669",
+      "adf02fe03815",
+      "c684eba5dda0",
+      "cf8c221e922d",
+      "f365048f8803",
+      "ffe6c5bb7dd1"
+    ],
+    "preExistingNetworks": [
+      "0b48d77d04f2",
+      "8650c6399ca6",
+      "b4cd55fdfee6",
+      "d9e7732ed376",
+      "ff76980ce250"
+    ],
+    "preExistingVolumes": [
+      "neshane-local_grafana_data",
+      "neshane-local_mailpit_data",
+      "neshane-local_postgres_data",
+      "neshane-local_prometheus_data",
+      "neshane-local_rabbitmq_data",
+      "neshane-local_redis_data",
+      "neshane-local_seaweedfs_data",
+      "neshane-local_tempo_data"
+    ],
+    "preExistingIamVolumes": [
+      "iam-foundation_postgres-data",
+      "iam-foundation_rabbit-data",
+      "iam-foundation_redis-data"
+    ],
+    "taskResourcesRemoved": true,
+    "pruneUsed": false,
+    "originalRootBackendFrontend": "Preserved; see predecessor-hashes.json and repository verification"
+  }
+}

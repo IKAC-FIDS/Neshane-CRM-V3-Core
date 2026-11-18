@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-11-18T11:41:08.411359+00:00",
+  "actual": {
+    "service": "postgres",
+    "reference": "postgres:17.12@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac",
+    "actual": {
+      "id": "sha256:140936e8665d5274aa58df31b722693b4b451c541bb0f1a263a345d424bfacb4",
+      "repoTags": [],
+      "repoDigests": [
+        "postgres@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "pullRequired": true,
+    "newImageID": true,
+    "status": "PASS"
+  }
+}

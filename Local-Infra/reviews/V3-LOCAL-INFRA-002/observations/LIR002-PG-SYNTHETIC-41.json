@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-11-18T11:52:36.120883+00:00",
+  "actual": {
+    "seed": {
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "data": {
+      "code": 0,
+      "stdout": "synthetic-v3li002-20261118t113152-ad6c12\n",
+      "stderr": ""
+    }
+  }
+}

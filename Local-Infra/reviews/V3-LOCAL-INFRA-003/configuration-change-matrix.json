@@ -1,0 +1,59 @@
+{
+  "task": "V3-LOCAL-INFRA-003",
+  "recordedAt": "2026-11-18T13:38:50.262709+00:00",
+  "changes": [
+    {
+      "file": "observability/otel-collector.yaml",
+      "originalFinding": "LIR002-NATIVE-COLLECTOR: FAIL (filter/synthetic mixed Basic and Advanced configuration styles)",
+      "rootCause": "The filter processor (contrib 0.164.0) forbids mixing flat string conditions with object {context,conditions} entries in the same conditions list.",
+      "change": "Rewrote trace_conditions and metric_conditions to consistent Advanced OTTL object style; kept error_mode: propagate and the synthetic-only boundary (resource attribute neshane.synthetic==true; metric name allowlist).",
+      "technicalRationale": "Match the filter processor Advanced config documented for 0.164.0.",
+      "securityImpact": "None weakened: filtering, attribute minimization, no logs pipeline and bounded retries are preserved.",
+      "expectedBehavior": "Native `validate --config` exits 0; collector starts and enforces the synthetic boundary.",
+      "validation": "Native validation exit 0; runtime LIR003-COLLECTOR-READY/HEALTH/OTLP-ACCEPT."
+    },
+    {
+      "file": "compose.yaml",
+      "originalFinding": "LIR002-HOST-*: FAIL (8 localhost-published ports unreachable; NetworkSettings.Ports empty)",
+      "rootCause": "internal:true networks suppress host port publication on Docker Desktop (confirmed by A/B test: internal => empty binding + unreachable, default => binding + reachable).",
+      "change": "Removed internal:true from postgres, broker, mail, telemetry networks; retained internal:true for the unpublished redis network.",
+      "technicalRationale": "Host ingress requires a bridge gateway; Docker Desktop does not create the host binding on internal networks.",
+      "securityImpact": "Loopback-only binds, network segmentation, no-privileged and resource limits remain. Container egress isolation is no longer provided for published services (documented trade-off).",
+      "expectedBehavior": "Published ports appear in NetworkSettings.Ports and are reachable from the host.",
+      "validation": "A/B test; LIR003-HOST-* reachable."
+    },
+    {
+      "file": "compose.seaweedfs.yaml",
+      "originalFinding": "Experimental SeaweedFS S3 host port unreachable (same internal network root cause)",
+      "rootCause": "experimental network had internal:true.",
+      "change": "Removed internal:true from the experimental network.",
+      "technicalRationale": "Same as compose.yaml.",
+      "securityImpact": "Loopback S3 bind preserved.",
+      "expectedBehavior": "S3 host port published.",
+      "validation": "LIR003-HOST-SEAWEEDFS_S3_PORT."
+    },
+    {
+      "file": "Validate-DevelopmentBaseline.ps1",
+      "originalFinding": "Static validator encoded the wrong all-networks-internal assertion",
+      "rootCause": "The validator asserted every network is internal, which contradicted the corrected networking model.",
+      "change": "Now asserts task-scoped (non-external) networks; a network is internal only when none of its services publishes a host port. Also excludes the reviews/ evidence directory from the baseline file scan.",
+      "technicalRationale": "Keep static validation consistent with the corrected Docker Desktop networking model and exclude runtime evidence from baseline-config checks.",
+      "securityImpact": "Strengthens the invariant (published<=>non-internal) instead of weakening it.",
+      "expectedBehavior": "Static validator passes with the corrected config.",
+      "validation": "Validate-DevelopmentBaseline.ps1 PASS."
+    },
+    {
+      "file": "README.md",
+      "originalFinding": "Documentation described all networks as internal:true (now incorrect)",
+      "rootCause": "Documentation predated the networking correction.",
+      "change": "Documented segmentation (not egress isolation) as the boundary; internal:true retained only for Redis; host-port networks must be non-internal.",
+      "technicalRationale": "Accuracy.",
+      "securityImpact": "None.",
+      "expectedBehavior": "README reflects the corrected model.",
+      "validation": "Static validator README boundary check PASS."
+    }
+  ],
+  "notChanged": [
+    "No 002 evidence modified. No image reference/digest changed. No service definition, healthcheck, volume, credential placeholder or resource limit changed beyond the networking correction and Collector filter syntax."
+  ]
+}

@@ -1,0 +1,42 @@
+# Explicit opt-in only: EXPERIMENTAL / DEV-ONLY. OD-017 remains OPEN.
+# Combine with compose.yaml; never interpret this as a product storage decision.
+services:
+  seaweedfs:
+    image: chrislusf/seaweedfs@sha256:c2658820e763294a9e9de7b36c81e59b879e3459148351aee4e31a126ca64860
+    restart: "no"
+    init: true
+    mem_limit: 512m
+    cpus: 0.5
+    pids_limit: 256
+    security_opt: [no-new-privileges:true]
+    environment:
+      AWS_ACCESS_KEY_ID: ${SEAWEEDFS_ACCESS_KEY:?Set synthetic S3 access key}
+      AWS_SECRET_ACCESS_KEY: ${SEAWEEDFS_SECRET_KEY:?Set synthetic S3 secret key}
+      S3_BUCKET: neshane-dev
+      WEED_ADMIN_USER: ${SEAWEEDFS_ADMIN_USER:?Set experimental admin user}
+      WEED_ADMIN_PASSWORD: ${SEAWEEDFS_ADMIN_PASSWORD:?Set experimental admin password}
+    command:
+      - mini
+      - -dir=/data
+      - -webdav=false
+      - -s3.port.iceberg=0
+      - -s3.port.lance=0
+      - -master.telemetry=false
+    ports:
+      - "127.0.0.1:${SEAWEEDFS_S3_PORT:-18333}:8333"
+    networks: [experimental]
+    volumes:
+      - seaweedfs_data:/data
+    logging:
+      driver: json-file
+      options:
+        max-size: 5m
+        max-file: "2"
+    # Admin /health is internal :12535. Source-confirmed endpoint, but no
+    # invented in-image HTTP tool dependency; probe awaits authorized runtime.
+
+networks:
+  experimental:
+
+volumes:
+  seaweedfs_data:

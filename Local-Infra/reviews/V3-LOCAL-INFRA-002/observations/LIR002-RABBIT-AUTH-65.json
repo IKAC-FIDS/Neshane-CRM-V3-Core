@@ -1,0 +1,7 @@
+{
+  "observedAt": "2026-11-18T12:07:41.022522+00:00",
+  "actual": {
+    "validHttpStatus": 200,
+    "invalidHttpStatus": 401
+  }
+}

@@ -1,0 +1,1142 @@
+{
+  "task": "V3-LOCAL-INFRA-004",
+  "recordedAt": "2026-11-18T14:45:48.568136+00:00",
+  "totalUntracked": 169,
+  "includedCount": 164,
+  "excludedCount": 12,
+  "files": [
+    {
+      "path": "Local-Infra/.env.example",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 1149,
+      "sha256": "A8C6D839AA6D69F8A85AD4BABB224CEE9D328B93FB255F20E4627FB0722E324F",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/.gitattributes",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 14,
+      "sha256": "A79691A93B46E49CE460C26EF22AFCC03D6ECA1E63BF2EDBC20E96159510F6C9",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/.gitignore",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 93,
+      "sha256": "E6A4C8916FA87342996484C846E9DE53B16916C512432C3DF4482F18D7623792",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/README.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 13742,
+      "sha256": "EC73700B1BB98776F8A79C1136EE39A0DD0FB17F0373A0C0C38E3A23F15FE693",
+      "predecessorState": "MODIFIED_IN_003"
+    },
+    {
+      "path": "Local-Infra/Validate-DevelopmentBaseline.ps1",
+      "classification": "REPRODUCIBLE_VALIDATION_TOOL",
+      "bytes": 13567,
+      "sha256": "02BCE90F83CF94C81021044D9CEB119BE8D5CC133EBF37B9E6E9F1AFF946CEB3",
+      "predecessorState": "MODIFIED_IN_003"
+    },
+    {
+      "path": "Local-Infra/compose.seaweedfs.yaml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 1366,
+      "sha256": "CDC48CF4925AA235CC7140320A800FA67DFA21323A3D2ED8CB680F96FBEE7B53",
+      "predecessorState": "MODIFIED_IN_003"
+    },
+    {
+      "path": "Local-Infra/compose.yaml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 7392,
+      "sha256": "EC2BFBA40636FB927E6A9973E76BC4BA3E1B3D584ED97DCD7D6EFF19C1998DAA",
+      "predecessorState": "MODIFIED_IN_003"
+    },
+    {
+      "path": "Local-Infra/configuration-sources.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 5317,
+      "sha256": "37CCBF6ABD8A5E32AB5C1DE3451CC6E8FFE5BCBAF53166FE892E9EFE321D0BB1",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/image-references.json",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 3022,
+      "sha256": "117A9585B6EA45E41784952774EABC462DE85EC0FF1293CEF40ED1D085B8468F",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/observability/grafana-datasources.yaml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 307,
+      "sha256": "3CD67479CA3308271DF011BB31D77707AA36EB108BA77AEBA3E5FAA40351A410",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/observability/otel-collector.yaml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 2348,
+      "sha256": "B798D7E13F3D8B2AB98A0D7E33A6724D564ABAC77283EBC9AC461CBBD8CEAA23",
+      "predecessorState": "MODIFIED_IN_003"
+    },
+    {
+      "path": "Local-Infra/observability/prometheus.yml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 293,
+      "sha256": "E5C83DB9672999F4F8C7A27201198741B19A5F7FDB7C11ADC823AA89DED99589",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/observability/tempo.yaml",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 615,
+      "sha256": "CC861CD4C4AACD940FEE623F947E41EF5937D3D74B435BAAD8663FE8E7BBCEED",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/postgres/10-development-role.sh",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 946,
+      "sha256": "C7F53185C94707AFC8B48F705FBFCC102D4BF961223B98B0AA5B4EA407D6328B",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/rabbitmq/rabbitmq.conf",
+      "classification": "BASELINE_CONFIGURATION",
+      "bytes": 376,
+      "sha256": "C58EAC455B4DCB25A24A5E3D8DDE3ED40385E494E3853A9D14CBD5EE0E8B7875",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/Validate-Runtime.py",
+      "classification": "REPRODUCIBLE_VALIDATION_TOOL",
+      "bytes": 70253,
+      "sha256": "8147F3C07B3F63B3609FF65BA3CDF69B886646833AD936042E1E2576A45BB660"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/amqp-probe.escript",
+      "classification": "REPRODUCIBLE_VALIDATION_TOOL",
+      "bytes": 2596,
+      "sha256": "A2F45E76B49B7DA31F42F49AB838E626A471C31F1EFE76EB69F946C7EB6593ED"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/checks.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 178383,
+      "sha256": "33FEE504AA1339A3446DEEC9F18069C7888BF2596AB24185384F1257CB48B2E0"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/cleanup-report.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 1950,
+      "sha256": "7D36F4AC0387953FDFF99E5996FEA9FA5EFCB2A7400E77C4699A2B3D44940CB6"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/docker-after.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 48480,
+      "sha256": "86DA19948B7C2255F58C3D5C79B800168D1A7174DCC29A29722166FA9F882CB8"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/docker-before.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 47292,
+      "sha256": "44ADA59576FC39738F6F7AC6EB35599E171D542B04C72A4FB03EC1371A3F31BC"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/downloaded-images-report.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 5574,
+      "sha256": "42972DF8C8FFFFE258B6E9798B7F43B0388366C36863F8D27BCC9D62F385109F"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/execution-plan.md",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 5744,
+      "sha256": "14FD118A98CF428F08A3EAA79FE0F95926B387AC3AD3314D8A7D85D008C5C950"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/image-identity-verification.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 5053,
+      "sha256": "6D4A413535826CD0E2A8DD456707C171F8B0E1DDB25F6B2CC973F9E4417EBF18"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-grafana-26.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2690,
+      "sha256": "4A0F0AD6B7B3C59437D3315EC9D7FB08235C60FECB42A3C01D507F46CF4E4C14"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-grafana-89.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2690,
+      "sha256": "98A661D6B1F871A2B62EBA5E06F9064F06B9453F388E07D97B3804E8DA33B313"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-mailpit-32.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2470,
+      "sha256": "80B58DCE37052D363D3E87CB08DDD9264A399D6FF41A8BAA777816B468D6E76C"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-mailpit-94.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2470,
+      "sha256": "10B957A63086546CF71571B7F684BEBF01C51C27936467F09471E07F5A8BAD48"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-otel-collector-101.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 151,
+      "sha256": "E0BE0A7B2A4A563886009FADD2374F051A5BAAE236CC420F64C66C0CFE512403"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-postgres-27.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2686,
+      "sha256": "05A2B6292F43915C5D8AB60B4716697FB702AD8CEB6E8B75BFF21ED275DBA625"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-postgres-88.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2686,
+      "sha256": "598322738E41B0F5C691F62BD1D7A84FBE88CE9A7E7BDC497DC924670F539C4F"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-prometheus-28.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2675,
+      "sha256": "0DF57A59531BDCD193A6FA7B7F39409164537C8116F767985661BBC6DBE3E02F"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-prometheus-90.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2675,
+      "sha256": "0CF6E3D4A18A1130409C218C40646D6595F639F5F207C62927535B1F475DF229"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-rabbitmq-30.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2768,
+      "sha256": "EB6C3A0F3536B0BA0C99460F4AC6BC1454B94F79CEB5D357948CAF5D01C8178A"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-rabbitmq-92.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2768,
+      "sha256": "72589327ED89D17F9D71DB434C1329CC3EECC4578867F3B92157D6C78465E70D"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-redis-29.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2217,
+      "sha256": "319D3E09F2D10C044BEE2DFFC7AAB10FEAF918B47ABB4864EB7CE1E741A4F38B"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-redis-91.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2217,
+      "sha256": "A9CC319FF2820D124188D687F82BBDF55D3BC1FEA08BB6A1C914AB00DAF92527"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-seaweedfs-31.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2386,
+      "sha256": "FC90DF4748AAB160531FDEB90D3A859B60A677839EA52B652ED372F4024E6DD4"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-seaweedfs-93.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2386,
+      "sha256": "85F83427080574EB8DE5BFA01CE4AFA3E9FBF0815C71B40A13E371FD7C03F712"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-tempo-33.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2497,
+      "sha256": "5037F624B55A9125AB835E0A85537E86FB48F0733F613A09C4F2CFB78D0B6B3C"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-BOUNDARY-tempo-95.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2497,
+      "sha256": "0757D7EB41EA51D65C3E133E96D1C1ACCF8876B402B2940DA79E394CE5476BAE"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-CLEANUP-96.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 273,
+      "sha256": "C3D39CBE6ABC06B285A8D688A5ED9D2E2F927BAC458EF6FA4800BCD2A81A81B4"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-COLLECTOR-HEALTH-49.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 150,
+      "sha256": "341325E29508E10CE1E65E13329433A68A59BCDE2E82F7577536BCCF9EB3FA5A"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-COLLECTOR-HEALTH-69.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 150,
+      "sha256": "5574960CD5AF9A36DD396A123E02237D5851F10A5C83D2D92F3A7D6FDBD4E3AC"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-EVIDENCE-CREDENTIAL-SCAN-100.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 175,
+      "sha256": "8F0E467B0479228EEC4D545848F2813116A8D5775E89D20FB78662F12657768D"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-GRAFANA-NATIVE-HEALTH-72.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 229,
+      "sha256": "871B01F7928878665B9CFC22ECAED7BB2F6B1C48A4FA877F8B90FEE5B7B6AC42"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-GRAFANA-NESHANE-PROMETHEUS-73.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 335,
+      "sha256": "94D4DDB8E6C73739420A945419877A44F9FD9B85C00CED32CF129DBA45D206E7"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-GRAFANA-NESHANE-TEMPO-74.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 185,
+      "sha256": "706D67B35C66443D1436F9C4C24A3916F6CCB2DB58DDDC66BB232342BB15050B"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-HARNESS-PULL-INTERRUPTED-2.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 251,
+      "sha256": "17173D08599139A698D88D2743C420FA1A2AC96B3AED3FB638F63A7E6E471C6A"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-HOST-GRAFANA_PORT-63.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 279,
+      "sha256": "FCB661F2FAA2AF304FB8D8539811B995D4A1AD2615C6D2B781CA11032762ACA3"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-HOST-MAILPIT_SMTP_PORT-60.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 301,
+      "sha256": "9D21AE0F3E9444D0F9FFBC410A3B7C03E99397FC947C785AAF74AFE7A7DE227A"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-HOST-MAILPIT_UI_PORT-61.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 301,
+      "sha256": "6A2C6BED89474D9835747E00D50DEFB0FE5248CAAB222E694F49FB0119F2BC5E"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-HOST-POSTGRES_PORT-57.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 279,
+      "sha256": "BB63E7AC1DF2E46D7E8E7D6E14253E5B90259D12E952519AD4A1E9D19B24A92E"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-HOST-PROMETHEUS_PORT-62.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 279,
+      "sha256": "225010EF161FD79ED5F9EA53310CB09AC1E7FEAFBD49B077761F1EEF7EAA88E8"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-HOST-RABBITMQ_AMQP_PORT-58.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 302,
+      "sha256": "C189AA90DFFAC8C6020E5B828989810AEFC92914EA3F5C5AA59FE95FEBB4DB85"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-HOST-RABBITMQ_UI_PORT-59.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 302,
+      "sha256": "8B4F15BFBE907E778EF84A4D40EE33AFC88DF1C201EBDBBC44FDA1C01398971A"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-HOST-SEAWEEDFS_S3_PORT-64.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 279,
+      "sha256": "2064FE5CF85CA971CAB52BFB3EB8B6D0E7EC2F3F549FA78A2BD1572A00B5B4DD"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-IMAGE-grafana-10.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 641,
+      "sha256": "1D57D69D4B40AB9D0E3EBFC49C3B59328CCB8E150DF9130B7E92C49819D5E90B"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-IMAGE-mailpit-7.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 600,
+      "sha256": "E5300E61F0646FAC27B8DA572143AAEC022BB228783FCB00D5A1B8DA33FE8FE6"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-IMAGE-otel-collector-8.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 713,
+      "sha256": "9892762BCFEEEAF598729F7C512CE3D2E5D2254C05BD2F566FB65FE4A398BCFD"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-IMAGE-postgres-3.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 585,
+      "sha256": "6F876EC69BF202AC0BA654BCAA7687365697DC06BC1B10D092E001A708A2CBD6"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-IMAGE-prometheus-9.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 644,
+      "sha256": "72B865AA7BE0CF1795DE7DA6FC1C51547181FAE073C26B705B00FAED469A9896"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-IMAGE-rabbitmq-5.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 596,
+      "sha256": "817556F28622329E594ED4FCFB562909692E2415EFE13199767ED062DE95E469"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-IMAGE-redis-4.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 577,
+      "sha256": "D1432DFA6C3BFD0D1B3DF3408E8D388DF70526FC5BA65DE0FF5AE1459411794C"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-IMAGE-seaweedfs-6.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 648,
+      "sha256": "B2F64BE4B1B5586974B2B77883718C28C8FC38EE315E5F28CEC087CEA5BCD871"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-IMAGE-tempo-11.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 631,
+      "sha256": "356BEBD28723A65F08D664C027198A389F7D840CE168116468DF4DD367EA992D"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-INTERNAL-BLOCKED-seaweedfs-79.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 225,
+      "sha256": "9336F65AF4235B478AB7B77CA6D677B57BF1D868CD1A6568A59EE27DA0CBDE27"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-MAILPIT-DELIVERY-75.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 149,
+      "sha256": "F97FB868A3DAF105828473FDD77DD5DB9431F3C862678A50A14B420FBB2695BE"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-NATIVE-COLLECTOR-12.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 437,
+      "sha256": "67DA180DBE496093C4A23A5FB4C89D8A4B2E416A0B806E60C09D72A4BA85880F"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-NATIVE-PROMETHEUS-13.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 210,
+      "sha256": "014A19E1C33E4F67324DEC77A82FC97CB81119543A62DD6F401A54E11F3B887C"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-NATIVE-TEMPO-14.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 42833,
+      "sha256": "6230DD17F2C32777D1B97B94EBF1D669B182E76984FD6BF36E7B7EDB5185B191"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-NATIVE-TEMPO-CORRECTED-INVOCATION-15.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 124,
+      "sha256": "588B42A3375D9371C24DA03257A3D643B7DA21A167FE49689F6C2B894578E9B3"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-NETWORK-DENY-53.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 178,
+      "sha256": "BCC536E0AB8CAF32AEF8E0428C76C3FAF6D5C9C9DFAF623EEA88F80D1FA50BE0"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-OTLP-ACCEPT-102.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 145,
+      "sha256": "6E27E5D0D53F0A577007F2FCA030CDA4C37C940619E8A70BDF1ECFA1C701FF78"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-AUTH-35.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 127,
+      "sha256": "D094594C8D63AA6E28A1FFE7240F11F20C6B3910E9F9B17D2F4E0096AA35B205"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-DENY-ASSUME-ADMIN-38.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 185,
+      "sha256": "037F107B46CCD482851225EA8140BC8965C56D8728020400E721711F888C35F0"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-DENY-CREATE-ROLE-39.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 235,
+      "sha256": "8F086E712278E246BE24FC91770A49F94D203E7FA3618982EDE549E85A8349F1"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-DENY-CREATE-SCHEMA-40.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 176,
+      "sha256": "A1636B506B279F5668624EEDB3A89B0CF183A2837626BCC785DA50905894B3A4"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-DENY-SUPERUSER-37.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 251,
+      "sha256": "EC99478B403A93ACD20B1BE403D40FBCFF5681655323EB38CDBC17164F980D9F"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-EXISTING-VOLUME-43.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 3057,
+      "sha256": "5994A7AEDB04A3918550BC31762C560A19BE484F35C547FA5CE6325CBC879281"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-EXISTING-VOLUME-81.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 2982,
+      "sha256": "7BE800EF979234517DDF3118F1FE256D2148E291370666D79AF1FB3B25F4EA06"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-INVALID-36.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 263,
+      "sha256": "B45C99EFED42A7C3A6D5034D20E5B7A9FFBB8928CD8AF76ADC7F536BBC9D65E8"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-PERSIST-42.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 268,
+      "sha256": "BABEA2CC64070442D9344853803A0E11FFB93388DC774D304955ABB0727435D5"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-RESTORE-TASK-CONFIG-44.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 123,
+      "sha256": "5D3E3DD87689C645259C0BD19F30FC7FEE166D26769D990D4B42E7FFDFC2474F"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-RESTORE-TASK-CONFIG-82.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 123,
+      "sha256": "AF35576195A4E9E49F71540D1D7843184A399386CE13D500B79064D5715571D0"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-ROLES-34.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 180,
+      "sha256": "6E66B17021877E04FDCA92FB7B7A059765ACCDA7A0FACF371163D9112E4F241D"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PG-SYNTHETIC-41.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 269,
+      "sha256": "F1204414B7AF3C9B6213FC0309EC274D00A97DD0929DF4341FD467AAF957D115"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PREFLIGHT-1.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 320,
+      "sha256": "ADEDD5AA773E35613F0025EAD697CD812112775855B785E03469F2E55610ABE7"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PRESERVATION-17-98.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 112,
+      "sha256": "B67B3546A7312C0784CA7D953B56E8A72CDF334840399ED5AD4A2D3E5BFFD038"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PRESERVATION-DOCKER-97.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 23001,
+      "sha256": "A3F15AA6F7C6B26345105151666D07C27A70ED83FF3F469339A72B5979964B7A"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PRESERVATION-REPOSITORIES-99.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 272,
+      "sha256": "DB969D7225B9DEF9E7982AC6EB983537F155C92B537EC526AEF4D4148DA9AE6B"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PROMETHEUS-INGEST-105.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 145,
+      "sha256": "D273B490011ED7E814E188F6A774818257EFBB1A243DC941591BF8325D480432"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-PROMETHEUS-RETENTION-71.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 154,
+      "sha256": "23AF8D6624EFBA0020190722EBA5998C849C18DF7C47975F2A8EADC543A179B8"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-RABBIT-AMQP-67.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 497,
+      "sha256": "3C99BDF991E61D8FA4ABAF2A6B198D0BF0BE05F5B2B1149C6671DC4313D5F25B"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-RABBIT-AMQP-CORRECTED-PROBE-80.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 182,
+      "sha256": "DC2F4B4B7A73D1AEB48BEC021EFCDDED46F18EF4DAEE0728EC660C67240CA40E"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-RABBIT-AMQP-CORRECTED-PROBE-87.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 218,
+      "sha256": "4EBCF6F182910D589A557B3232C4A60E2BA39B04927F501DAF3DA99374206C70"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-RABBIT-AUTH-65.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 131,
+      "sha256": "CC7F096323244E672108B1B9276A55E49247AFFF499E5A69CC7753D9C97AF42B"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-RABBIT-PERMISSIONS-66.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 581,
+      "sha256": "5E51FAA4D6C5AF645E514CAF96305A480443C7DB035BCE99033C601B89EC927D"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-RABBIT-PERSIST-MESSAGE-68.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 279,
+      "sha256": "6672AAB4506F9D7401F9805F5BDCF9CDDD5F21C718E075AD6C1F8615EA5907A3"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-READY-grafana-24.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 123,
+      "sha256": "5A422D3D452477314F797FDB0771E9166C5F94CEBC171FE3AF7FA88382807144"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-READY-mailpit-20.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 123,
+      "sha256": "342CA2DE1E50A80A7BE5FF59FCB6C9A62EBB21D015DB2A483B12BCBF83FC7F25"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-READY-otel-collector-22.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 150,
+      "sha256": "1C6F41A095B7F9757CEE5F60D05BDD03D7D681D03966C3BEC57E97FD53205C2C"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-READY-postgres-17.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 123,
+      "sha256": "347B27D27FC8891E87DC4A433E0E54E3583E4D375B1F12D9484A98C3D5F56AFB"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-READY-prometheus-23.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 123,
+      "sha256": "14BD6406A9390A416AB203FC8C29789C2662D0BF95513413F55DEFA9F080CC64"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-READY-rabbitmq-19.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 123,
+      "sha256": "CD47B95514158AD8573B85F70F63F3C5A2F8B1E94D7E7845B5A8A712D69FA264"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-READY-redis-18.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 123,
+      "sha256": "F5D1B646C9F20EEFF8DEEB8749E51B2B963474E4A4C03AA79E0ED9E70FF2F68D"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-READY-seaweedfs-25.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 130,
+      "sha256": "C00DB5CF92731490A0FA407B191BD222751E8F217D624177207E33C350619805"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-READY-tempo-21.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 130,
+      "sha256": "C2B103EC6661C6E7B3E5D8D5BEDB2AB119ED7C226F907D2745B48E498C729BFB"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-REDIS-CONNECT-45.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 304,
+      "sha256": "02E3B642FFBB8BF782BD6F9AD51CAE52E5C8A8EDF4E17274CEB03CBF94DB9542"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-REDIS-PERSIST-46.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 406,
+      "sha256": "159D9C7F51875C6954E3D8E510E97726AE76723E19DF7645FC742D514ADFDF04"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-REDIS-UNPUBLISHED-47.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 97,
+      "sha256": "63F5583400DA474B85312CB54E511C3D467B891EF0C90946499906EB52E4557C"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SEAWEED-AUTH-78.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 926,
+      "sha256": "1C405D4EDFCE13761334F26AFBB65F9B1E89F6E50BDA81AC457252015872BEA1"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SEAWEED-AUTH-85.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 926,
+      "sha256": "B0012B23A3B020D16F8F1C743FC89299F5BC9505DBB82BF0E78C89A9BBA09C08"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SEAWEED-HEALTH-55.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 145,
+      "sha256": "DA47D42FB021276E7FBDC093C4FB3BA6357AF782EF4E2A088513759C4DDDA6C8"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SEAWEED-HEALTH-76.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 145,
+      "sha256": "35D5435B41B819FAC0B0861FE95D05CDE4166840CC0CFF992196B0570597DBA5"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SEAWEED-HEALTH-83.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 145,
+      "sha256": "80BEF358632881F8EA4BC394242C093B41F9B4255321C98AFAEDD44FB37F1DE8"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SEAWEED-OBJECT-77.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 318,
+      "sha256": "C155E5C4F7ED84F91A6F67BF52031FFE78B30D73A556D596C56B4782E96A2E69"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SEAWEED-OBJECT-84.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 318,
+      "sha256": "B3FD77F682E9368DF77A571F1D17982AD849F54B90A3975CFA716E0F6A4C2B89"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SEAWEED-PERSIST-86.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 279,
+      "sha256": "D5165E357D84E6978D09F88FD19F62A7B229652A838AB65D90886E9524C5BFFB"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SERVICE-BLOCKED-mailpit-54.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 185,
+      "sha256": "5CFC79DFDE817D40EF533D2E27A2AA6C7686509DA9CA9BE36B8EEA7493A93CEE"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SERVICE-BLOCKED-observability-51.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 201,
+      "sha256": "6DB44363E871D27A4212A9E696DC655A38C130776C28C57ECED7F2A81910EF83"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SERVICE-BLOCKED-rabbitmq-48.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 201,
+      "sha256": "AB8FA75500A4A1A7C0D0887D1FB6434FEC16E9EAE487D97F95BD65DE64E7124A"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-SERVICE-BLOCKED-seaweedfs-56.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 201,
+      "sha256": "158F6DDD2DCA8207E30B6D95BE3D46B422F51FE7462FC6288E9F3B3DD671A562"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-START-16.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 3978,
+      "sha256": "9B6CDEF4D330C2BE408DEE692C0F85035F739600B4BA6408E4C80016CFF8F498"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-TELEMETRY-LOGS-DISABLED-104.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 145,
+      "sha256": "F06B9B21D36F1DDE609EF87B3A34EC049FB897366677D4B4FCF62D402289BCD6"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-TELEMETRY-NEGATIVES-103.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 145,
+      "sha256": "A63F5FB44BE3EC4E009928AA570763F4A9BCD0E176FE9DF0354F5D1BDDB9727B"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-TEMPO-HEALTH-50.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 131,
+      "sha256": "E99B9AADCD0E84DDB674BE6925422C27CAB38FBDC36C8F11F00C4B7238310D33"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-TEMPO-HEALTH-70.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 131,
+      "sha256": "998C2851ECFAE7CD422E450B42E23A4014D34ACE698AAAA5E8AB9219D14B434C"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-TEMPO-RETENTION-52.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 277,
+      "sha256": "AB32B7522C3A3AAE1E45480269667298E21BA9999682CBD53DEEABB6EF1C81E6"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/LIR002-TEMPO-RETRIEVE-106.json",
+      "classification": "HISTORICAL_EVIDENCE",
+      "bytes": 145,
+      "sha256": "E9AEB930328E4F37FB6B51F967D27E6FC6B62883C28DFDFFD3984C07A0195AE7"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-grafana.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "AD4C2F4BC0C3D3AE73D3EF4E8C203B769940A93A7135D4834B913F97BBED2177"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-mailpit.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "EF8F34747A9231190ACD6171FB3C75C37BE5FC0533F6F66D2926198F87418020"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-postgres.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "32121F3CB0CE7928039B32621C5D01437B6E3AEDD383ACFDAD951068A0EFA807"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-prometheus.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "E73A1B5A454357B964ABCEDA6FE101D970A14B8CA2B335131452CFE404128189"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-rabbitmq.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "AC01CDB05614E43BAA168463A903CDC731F0A993860776DE37594379D991A6B6"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-redis.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "4979E587AE6E5A9A5AE098A0CF8B848D74DE6C9D30F82E83796E77E43758C5DE"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-seaweedfs.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "86A1F92A12B1B7767036A09DBFDFD8D8415E60DDCD6F9BC494FAD131833205C7"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-tempo.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "106AEDBAA042173926D9F16F384F944D519EAFAD224ECC2569FC8F9DD943A7FC"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/native-otel-collector.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "5DD36D3686B21CD15D2E33ADD55C4FD27073BCB943666D31F52188C6E121AF9E"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/native-prometheus.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "C6D30127CF18CCE33FA880371456D97EDC5910E32C49E19BC54381E79C70C1F7"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/native-tempo.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "1F80E3D1F9CD005BFC9409B3D2BA40CC0F31C8D6A1EE0D66F8F24F16BC04E3BA"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/task-probe-tools.json",
+      "classification": "TEMPORARY_GENERATED_ARTIFACT",
+      "bytes": 0,
+      "sha256": "BB90CF539753B4A634A2E1325E08CDF3C15A9C7B98568586EFAEE8554DB11B99"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/residual-findings.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 91117,
+      "sha256": "D3757132A2F37AA5A0EBEFA8E2CE9BFA0425D9DCF90359C509CB39258976B1AA"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/resource-preservation-report.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 21727,
+      "sha256": "42A739EC73B1E557975D2417302255E1F91463E66953CEB74F117A4A1DAE75AF"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/runtime-commands.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 750664,
+      "sha256": "D6623A88BF88CBA517C9690887EFBAEDDF158EFC1C130F324D976E9CFF6757F1"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/runtime-validation-report.md",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 25346,
+      "sha256": "C06251962F40630B36F613993E09277A2B3BD47B911B3A2C12562585A666BAFF"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/security-boundary-verification.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 21751,
+      "sha256": "A7039277A893DED2805B4F5DC47A8B7E1223C3AF362C9B745512998C88F9FB2A"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/service-validation-matrix.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 178383,
+      "sha256": "33FEE504AA1339A3446DEEC9F18069C7888BF2596AB24185384F1257CB48B2E0"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/session.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 2582,
+      "sha256": "DEBA0FF5896C4A031EC4A64112139CEABDED4A2FB619AB51A6DFB6538647040F"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/amqp-full-probe-result.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 340,
+      "sha256": "FFAE579AB31326263101383BF1C2C1809B2DF80113607BA397BC13DA1617EB68"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/amqp-full-probe.escript",
+      "classification": "REPRODUCIBLE_VALIDATION_TOOL",
+      "bytes": 6394,
+      "sha256": "38142BFF7A1D6BB5D074BBEA241EC5AFC185481D708D21FA3609ABF2F52C68D8"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/amqp-server-diagnostic.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 1216,
+      "sha256": "F858FC4F245048EDC80EA9B0B4BE5BB00B8EFAC25BFB2A58C2CAE02898CDF33B"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/cleanup-report.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 1350,
+      "sha256": "AC1EB645BD75798B093F398701C5E0C68EE1598B5085884A91B9993694F14FB8"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/configuration-change-matrix.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 4418,
+      "sha256": "8A1FD040DAE0D9D7154A0444B0317430F5E1A6A21500D92589C7496D9E176B0E"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/defect-register.md",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 3145,
+      "sha256": "BD66BB5614E5C478858152CD13F41972A489840D6CC439A931FB9B66D2DF7F7D"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/historical-failure-traceability.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 3140,
+      "sha256": "C54EBC7408B06D14136338666C183E4F01EC0AEF42238FA174E55B4E3A913CCB"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/host-connectivity-ab-test.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 302,
+      "sha256": "988D07EBD6447E46900DC286DC3E13BD66F2950083071C3FBC9160C677A125FF"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/predecessor-hashes.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 5241,
+      "sha256": "4D78BFE0989ABC60A130FCD7EA02966936D4ED96DF76B1CF0B64B8B4941E1628"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/preservation-comparator-result.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 10401,
+      "sha256": "71AB661C1D8F6180708F6F158296C0C08003E9E3030A4CD765AF700F77423DF8"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/preservation-verification.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 537,
+      "sha256": "9E5B76D4DB3BC7B41371A6D5AE8417E42E3F96C49CD10522810BE58F9BBBEA5C"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/remediation-report.md",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 3100,
+      "sha256": "A26D6D8FA9613A0E05C9C016A2FC9EF551F8AB7C171B18D13C71D342C9D98BF4"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/resource-preservation-report.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 1057,
+      "sha256": "7D660FFF10F888653C2072F74DE05AD39F443C8C165D95CD05C8EBC1FE7A5958"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/root-cause-analysis.md",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 3790,
+      "sha256": "59E440A6DDE44354AECC84BA732B7A61AC5936B4BFEA44BA23D8A0F798A06528"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/runtime-validation-matrix.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 8108,
+      "sha256": "32FDBCA0C490DDCDB51ED68DEC97556EA36421E46413FE3DAB1DABDEEA00D5FE"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/seaweedfs-health-recheck.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 1142,
+      "sha256": "F0D3B7C11404FC5BACC0FBFF41B8E3A208316045D1F2B1A7157F021BD5E0135F"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/security-boundary-verification.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 715,
+      "sha256": "CA64C28B1FAC4E7E68B6118168FAE2C7A00BC558B1F4C7580E7888B6F5B24598"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-003/validation-report.md",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 2898,
+      "sha256": "46626DA3A6B9A9BA80FA86F2C6B37CC6B711AAB1C2EA019FE435CED406A6A0FC"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-004/acceptance-recommendation.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 1344,
+      "sha256": "102B4B5C95DD250B69798C894409EC77065DA794C8DBC6D100606B18C18B4466"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-004/baseline-inventory.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 6066,
+      "sha256": "8B90C04859B32D00E3C159C21FC33DE47675C804117E65ABB4467860D22983C4"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-004/commit-manifest.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 49663,
+      "sha256": "9D5FC4809D84229E502DAD277F3976E66C58A2A0B80EDCFC8C659A344707E705"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-004/final-review.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 3695,
+      "sha256": "F8F57C9B1117E9B7A5F632BA4ACBDF1A88250A3B59495D7661A2B8D08AE4F922"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-004/historical-evidence-traceability.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 683,
+      "sha256": "918719352B8DEF63EFEE2D5061D82D8B77EFB39C20CFE1DE33D1D17A6925B603"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-004/residual-limitations.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 2542,
+      "sha256": "35A3D9FCDCD537323BDF3E4F9F1CECBAC6D75684D7C748DB83F0E0ADE5FB85BB"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-004/validation-results.json",
+      "classification": "REQUIRED_VALIDATION_EVIDENCE",
+      "bytes": 1735,
+      "sha256": "919401ADA0F7FC966DE2E24C5EC59F0D4B363BD404C2AD6FC5B85BB015E1919E"
+    },
+    {
+      "path": "Local-Infra/runtime-validation-plan.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 5213,
+      "sha256": "7075323CBC308AA86CBB6D8593097051822DA28BF1A4E6AEB2E879A2CEA60C3F",
+      "predecessorState": "BYTE_IDENTICAL"
+    },
+    {
+      "path": "Local-Infra/validation-report.md",
+      "classification": "REQUIRED_DOCUMENTATION",
+      "bytes": 8909,
+      "sha256": "00F41C4F9D9580F8496FC95636523FA39D3EFB8F6FE9A86A9C74EC51D44040D0",
+      "predecessorState": "BYTE_IDENTICAL"
+    }
+  ],
+  "excluded": [
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-grafana.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-mailpit.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-postgres.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-prometheus.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-rabbitmq.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-redis.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-seaweedfs.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/log-tempo.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/native-otel-collector.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/native-prometheus.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/native-tempo.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    },
+    {
+      "path": "Local-Infra/reviews/V3-LOCAL-INFRA-002/observations/task-probe-tools.json",
+      "reason": "redundant raw runtime output / temporary diagnostic (not referenced by any check evidence; conclusions fully substantiated by checks.json + observation references)"
+    }
+  ],
+  "classificationCounts": {
+    "BASELINE_CONFIGURATION": 12,
+    "REQUIRED_DOCUMENTATION": 7,
+    "REPRODUCIBLE_VALIDATION_TOOL": 4,
+    "REQUIRED_VALIDATION_EVIDENCE": 35,
+    "HISTORICAL_EVIDENCE": 106,
+    "TEMPORARY_GENERATED_ARTIFACT": 12
+  },
+  "note": "The 004 review artifacts are included in this manifest for traceability of the final review.",
+  "lineEnding": "LF normalized per .gitattributes (* text eol=lf)"
+}

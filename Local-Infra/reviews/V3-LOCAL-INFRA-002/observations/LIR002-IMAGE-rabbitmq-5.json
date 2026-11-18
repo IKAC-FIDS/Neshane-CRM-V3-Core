@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-11-18T11:42:36.081307+00:00",
+  "actual": {
+    "service": "rabbitmq",
+    "reference": "rabbitmq:4.2.9-management@sha256:7fa20d0d23d63ed90499bbf62e24af48ec4ae5eb22d173f3db96e3f85b26884a",
+    "actual": {
+      "id": "sha256:eb8cc2139494277cd547c3515a89219d7a21e9db426205c83d37fa96d1da424b",
+      "repoTags": [],
+      "repoDigests": [
+        "rabbitmq@sha256:7fa20d0d23d63ed90499bbf62e24af48ec4ae5eb22d173f3db96e3f85b26884a"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "pullRequired": true,
+    "newImageID": true,
+    "status": "PASS"
+  }
+}

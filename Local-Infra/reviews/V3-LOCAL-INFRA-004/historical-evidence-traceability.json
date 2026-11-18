@@ -1,0 +1,15 @@
+{
+  "task": "V3-LOCAL-INFRA-004",
+  "source": "V3-LOCAL-INFRA-003/historical-failure-traceability.json",
+  "note": "All original 002 PASS/FAIL/BLOCKED observations are preserved verbatim in reviews/V3-LOCAL-INFRA-002/checks.json and its observation references. The 003 traceability maps each historical FAIL/BLOCKED to a disposition. Historical failures are NOT erased or invalidated; they remain recorded history.",
+  "preservedObservationCount": 106,
+  "excludedRawRuntimeOutput": 12,
+  "governance": {
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "GS-01/GS-04": "RETAINED"
+  }
+}

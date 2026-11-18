@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-11-18T12:15:57.834396+00:00",
+  "actual": {
+    "invalidSignatureStatus": 403,
+    "anonymousStatus": 403,
+    "invalidResponse": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>SignatureDoesNotMatch</Code><Message>The request signature we calculated does not match the signature you provided. Check your key and signing method.</Message><Resource>/neshane-dev/v3li002-20261118t113152-ad6c12.txt</Resource><RequestId>18E922C4521236AB6A501054</RequestId><Key>v3li002-20261118t113152-ad6c12.txt</Key><BucketName>neshane-dev</BucketName></Error>",
+    "anonymousResponse": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>AccessDenied</Code><Message>Access Denied.</Message><Resource>/neshane-dev/v3li002-20261118t113152-ad6c12.txt</Resource><RequestId>18E922C509D4B7F8FBA2329E</RequestId><Key>v3li002-20261118t113152-ad6c12.txt</Key><BucketName>neshane-dev</BucketName></Error>"
+  }
+}

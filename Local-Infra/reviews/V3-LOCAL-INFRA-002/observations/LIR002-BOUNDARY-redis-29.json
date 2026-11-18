@@ -1,0 +1,75 @@
+{
+  "observedAt": "2026-11-18T11:50:16.619427+00:00",
+  "actual": {
+    "id": "a992f61ac4d2ab1788c48fe2423b5ac10616cf5d794fa75e821028fc2a2cfd3f",
+    "name": "/v3li002-20261118t113152-ad6c12-redis-1",
+    "imageID": "sha256:3a17a97bb6c7d9a7ee1bd3d5ecf7c6d02adf4bfd9fe73a974b3767b442dfbfaa",
+    "imageReference": "redis:7.4.12@sha256:2e3eb11462c4e3759e6972678dd051d150ff54b1e60714b3c33b701260172a90",
+    "project": "v3li002-20261118t113152-ad6c12",
+    "service": "redis",
+    "status": "running",
+    "running": true,
+    "startedAt": "2026-11-18T11:49:06.985348627Z",
+    "restartCount": 0,
+    "oomKilled": false,
+    "ports": {},
+    "networks": {
+      "v3li002-20261118t113152-ad6c12_redis": {
+        "Aliases": [
+          "v3li002-20261118t113152-ad6c12-redis-1",
+          "redis"
+        ],
+        "DNSNames": [
+          "v3li002-20261118t113152-ad6c12-redis-1",
+          "redis",
+          "a992f61ac4d2"
+        ],
+        "DriverOpts": null,
+        "EndpointID": "8017249e64b65a42a291d896a921b49d63d189f5abc7d8a4b4906866a06e63f4",
+        "Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "GwPriority": 0,
+        "IPAMConfig": null,
+        "IPAddress": "172.30.7.2",
+        "IPPrefixLen": 24,
+        "IPv6Gateway": "",
+        "Links": null,
+        "MacAddress": "7a:3b:30:18:0a:66",
+        "NetworkID": "150a1306ea313b013f2e233b43eefaa737c2bcfb778208bad10519de316696c9"
+      }
+    },
+    "mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "v3li002-20261118t113152-ad6c12_redis_data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "v3li002-20261118t113152-ad6c12_redis_data",
+        "Type": "volume"
+      }
+    ],
+    "memory": 402653184,
+    "nanoCPUs": 500000000,
+    "pidsLimit": 256,
+    "privileged": false,
+    "networkMode": "v3li002-20261118t113152-ad6c12_redis",
+    "securityOpt": [
+      "no-new-privileges:true"
+    ],
+    "capAdd": null,
+    "logConfig": {
+      "Config": {
+        "max-file": "2",
+        "max-size": "5m"
+      },
+      "Type": "json-file"
+    },
+    "restartPolicy": {
+      "MaximumRetryCount": 0,
+      "Name": "no"
+    }
+  }
+}

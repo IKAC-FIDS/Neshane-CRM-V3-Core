@@ -1,0 +1,83 @@
+{
+  "observedAt": "2026-11-18T11:50:17.724512+00:00",
+  "actual": {
+    "id": "5d2fd3a0e58a1100e05edc8b5cd16e942c919a3845629e26eb5e7cf2c0cfa599",
+    "name": "/v3li002-20261118t113152-ad6c12-tempo-1",
+    "imageID": "sha256:d1b47a86637121283f8bb3d9342ee2c77bd2bb92b1cb2dfb35f2b13629498961",
+    "imageReference": "grafana/tempo:3.1.1@sha256:64e2fbd56d9c2b3412a4b430a58ea59e91a670b1e75f920a0c702213ad145044",
+    "project": "v3li002-20261118t113152-ad6c12",
+    "service": "tempo",
+    "status": "running",
+    "running": true,
+    "startedAt": "2026-11-18T11:49:06.986860248Z",
+    "restartCount": 0,
+    "oomKilled": false,
+    "ports": {},
+    "networks": {
+      "v3li002-20261118t113152-ad6c12_telemetry": {
+        "Aliases": [
+          "v3li002-20261118t113152-ad6c12-tempo-1",
+          "tempo"
+        ],
+        "DNSNames": [
+          "v3li002-20261118t113152-ad6c12-tempo-1",
+          "tempo",
+          "5d2fd3a0e58a"
+        ],
+        "DriverOpts": null,
+        "EndpointID": "bb17aa19dd651e456f5e4b60589bcfa5a26490e8f41be0ddc36091ef5c3e18e7",
+        "Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "GwPriority": 0,
+        "IPAMConfig": null,
+        "IPAddress": "172.30.6.2",
+        "IPPrefixLen": 24,
+        "IPv6Gateway": "",
+        "Links": null,
+        "MacAddress": "7a:0c:91:79:f5:4b",
+        "NetworkID": "0bf84e56eeb7f0ace2526b8da2e9d9f5fc6f1061b4159f083168bb82e3f7618d"
+      }
+    },
+    "mounts": [
+      {
+        "Destination": "/etc/tempo.yaml",
+        "Mode": "ro",
+        "Propagation": "rprivate",
+        "RW": false,
+        "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\observability\\tempo.yaml",
+        "Type": "bind"
+      },
+      {
+        "Destination": "/var/tempo",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "v3li002-20261118t113152-ad6c12_tempo_data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "v3li002-20261118t113152-ad6c12_tempo_data",
+        "Type": "volume"
+      }
+    ],
+    "memory": 805306368,
+    "nanoCPUs": 1000000000,
+    "pidsLimit": 256,
+    "privileged": false,
+    "networkMode": "v3li002-20261118t113152-ad6c12_telemetry",
+    "securityOpt": [
+      "no-new-privileges:true"
+    ],
+    "capAdd": null,
+    "logConfig": {
+      "Config": {
+        "max-file": "2",
+        "max-size": "5m"
+      },
+      "Type": "json-file"
+    },
+    "restartPolicy": {
+      "MaximumRetryCount": 0,
+      "Name": "no"
+    }
+  }
+}

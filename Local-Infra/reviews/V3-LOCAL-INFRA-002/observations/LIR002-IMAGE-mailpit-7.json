@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-11-18T11:42:52.193239+00:00",
+  "actual": {
+    "service": "mailpit",
+    "reference": "axllent/mailpit:v1.34.0@sha256:23a2ef85bc50853ab3093645d1d64679afd8887e89da5e48a88940c172591a4e",
+    "actual": {
+      "id": "sha256:6bee76be921b372f8b452c11321831372a65cab168b57773ee60ca70dc0f3b0e",
+      "repoTags": [],
+      "repoDigests": [
+        "axllent/mailpit@sha256:23a2ef85bc50853ab3093645d1d64679afd8887e89da5e48a88940c172591a4e"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "pullRequired": true,
+    "newImageID": true,
+    "status": "PASS"
+  }
+}

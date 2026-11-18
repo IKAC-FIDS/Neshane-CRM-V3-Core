@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-18T11:55:27.253936+00:00",
+  "actual": {
+    "probe": {
+      "code": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    "toolAvailable": true
+  }
+}

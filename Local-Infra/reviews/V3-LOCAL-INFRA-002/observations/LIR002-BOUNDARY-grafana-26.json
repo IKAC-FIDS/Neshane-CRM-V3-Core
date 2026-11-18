@@ -1,0 +1,90 @@
+{
+  "observedAt": "2026-11-18T11:50:15.855607+00:00",
+  "actual": {
+    "id": "686426ebf0b1d10fb10baa073a3571e99130aad3b77a01026c86838ef23ce696",
+    "name": "/v3li002-20261118t113152-ad6c12-grafana-1",
+    "imageID": "sha256:8400f365c39767b0d0df30e3aeb0796f873c3acf89b28089745bfafd88d83c7c",
+    "imageReference": "grafana/grafana:13.2.1@sha256:f772d434e8fab0049deb2b1b30abd43342bcfca1537614aa8d36080232cf4283",
+    "project": "v3li002-20261118t113152-ad6c12",
+    "service": "grafana",
+    "status": "running",
+    "running": true,
+    "startedAt": "2026-11-18T11:49:17.081004519Z",
+    "restartCount": 0,
+    "oomKilled": false,
+    "ports": {
+      "3000/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "14430"
+        }
+      ]
+    },
+    "networks": {
+      "v3li002-20261118t113152-ad6c12_telemetry": {
+        "Aliases": [
+          "v3li002-20261118t113152-ad6c12-grafana-1",
+          "grafana"
+        ],
+        "DNSNames": [
+          "v3li002-20261118t113152-ad6c12-grafana-1",
+          "grafana",
+          "686426ebf0b1"
+        ],
+        "DriverOpts": null,
+        "EndpointID": "3fcf4f9f5c202e9012f56b26610d6f94e7d52c0bdf5e874daf3334cc5d525e90",
+        "Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "GwPriority": 0,
+        "IPAMConfig": null,
+        "IPAddress": "172.30.6.4",
+        "IPPrefixLen": 24,
+        "IPv6Gateway": "",
+        "Links": null,
+        "MacAddress": "6a:75:22:6b:24:3b",
+        "NetworkID": "0bf84e56eeb7f0ace2526b8da2e9d9f5fc6f1061b4159f083168bb82e3f7618d"
+      }
+    },
+    "mounts": [
+      {
+        "Destination": "/var/lib/grafana",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "v3li002-20261118t113152-ad6c12_grafana_data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "v3li002-20261118t113152-ad6c12_grafana_data",
+        "Type": "volume"
+      },
+      {
+        "Destination": "/etc/grafana/provisioning/datasources/datasources.yaml",
+        "Mode": "ro",
+        "Propagation": "rprivate",
+        "RW": false,
+        "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\observability\\grafana-datasources.yaml",
+        "Type": "bind"
+      }
+    ],
+    "memory": 402653184,
+    "nanoCPUs": 500000000,
+    "pidsLimit": 256,
+    "privileged": false,
+    "networkMode": "v3li002-20261118t113152-ad6c12_telemetry",
+    "securityOpt": [
+      "no-new-privileges:true"
+    ],
+    "capAdd": null,
+    "logConfig": {
+      "Config": {
+        "max-file": "2",
+        "max-size": "5m"
+      },
+      "Type": "json-file"
+    },
+    "restartPolicy": {
+      "MaximumRetryCount": 0,
+      "Name": "no"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "permissions": [
+    {
+      "read": ".*",
+      "write": ".*",
+      "configure": ".*",
+      "vhost": "neshane_dev"
+    }
+  ],
+  "probeExit": 1,
+  "probeStdout": "AMQP_PROBE_FAILED class=error stage={valid_authentication,vhost_open_response} reason=closed",
+  "probeStderr": "",
+  "serverLogRelevant": [
+    "2026-11-18 13:28:12.396980+00:00 [info] <0.1075.0> Started message store of type persistent for vhost 'neshane_dev'\u001b[0m",
+    "2026-11-18 13:28:12.534625+00:00 [info] <0.209.0> Successfully set permissions for user 'li003r' in virtual host 'neshane_dev' to '.*', '.*', '.*'\u001b[0m",
+    "2026-11-18 13:28:12.710021+00:00 [info] <0.1133.0> Ready to start client connection listeners\u001b[0m",
+    "2026-11-18 13:28:15.225797+00:00 [info] <0.1285.0> accepting AMQP connection 127.0.0.1:40310 -> 127.0.0.1:5672\u001b[0m",
+    "\u001b[38;5;160m2026-11-18 13:28:18.237816+00:00 [error] <0.1285.0> closing AMQP connection <0.1285.0> (127.0.0.1:40310 -> 127.0.0.1:5672):\u001b[0m",
+    "\u001b[38;5;160m2026-11-18 13:28:18.237816+00:00 [error] <0.1285.0> failed to negotiate connection parameters: negotiated channel_max = 0 (no limit) is higher than the maximum allowed value (2047)\u001b[0m"
+  ]
+}

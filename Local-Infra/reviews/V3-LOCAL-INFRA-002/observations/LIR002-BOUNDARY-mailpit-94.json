@@ -1,0 +1,88 @@
+{
+  "observedAt": "2026-11-18T12:23:42.687301+00:00",
+  "actual": {
+    "id": "145d7482b73f98100ee807bef70fbdd2c34c0901c7eea2945ab56bc97cf1b38e",
+    "name": "/v3li002-20261118t113152-ad6c12-mailpit-1",
+    "imageID": "sha256:6bee76be921b372f8b452c11321831372a65cab168b57773ee60ca70dc0f3b0e",
+    "imageReference": "axllent/mailpit:v1.34.0@sha256:23a2ef85bc50853ab3093645d1d64679afd8887e89da5e48a88940c172591a4e",
+    "project": "v3li002-20261118t113152-ad6c12",
+    "service": "mailpit",
+    "status": "running",
+    "running": true,
+    "startedAt": "2026-11-18T11:49:07.034924299Z",
+    "restartCount": 0,
+    "oomKilled": false,
+    "ports": {
+      "1025/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "14425"
+        }
+      ],
+      "8025/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "14426"
+        }
+      ]
+    },
+    "networks": {
+      "v3li002-20261118t113152-ad6c12_mail": {
+        "Aliases": [
+          "v3li002-20261118t113152-ad6c12-mailpit-1",
+          "mailpit"
+        ],
+        "DNSNames": [
+          "v3li002-20261118t113152-ad6c12-mailpit-1",
+          "mailpit",
+          "145d7482b73f"
+        ],
+        "DriverOpts": null,
+        "EndpointID": "9ae8c1886ccc2e6036e946c60a1ef2d0cbd2f46a32361bf55055fb1be51b5095",
+        "Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "GwPriority": 0,
+        "IPAMConfig": null,
+        "IPAddress": "172.30.9.2",
+        "IPPrefixLen": 24,
+        "IPv6Gateway": "",
+        "Links": null,
+        "MacAddress": "6a:9e:31:fe:6b:40",
+        "NetworkID": "6cec952b219d4a347da13c72f57fd4909ea929ac2ecf0158c5c12b4061df1ffe"
+      }
+    },
+    "mounts": [
+      {
+        "Destination": "/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "v3li002-20261118t113152-ad6c12_mailpit_data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "v3li002-20261118t113152-ad6c12_mailpit_data",
+        "Type": "volume"
+      }
+    ],
+    "memory": 134217728,
+    "nanoCPUs": 500000000,
+    "pidsLimit": 256,
+    "privileged": false,
+    "networkMode": "v3li002-20261118t113152-ad6c12_mail",
+    "securityOpt": [
+      "no-new-privileges:true"
+    ],
+    "capAdd": null,
+    "logConfig": {
+      "Config": {
+        "max-file": "2",
+        "max-size": "5m"
+      },
+      "Type": "json-file"
+    },
+    "restartPolicy": {
+      "MaximumRetryCount": 0,
+      "Name": "no"
+    }
+  }
+}

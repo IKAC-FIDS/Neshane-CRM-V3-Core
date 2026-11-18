@@ -1,0 +1,58 @@
+{
+  "task": "V3-LOCAL-INFRA-003",
+  "recordedAt": "2026-11-18T13:38:50.264126+00:00",
+  "source": "../V3-LOCAL-INFRA-002/checks.json",
+  "allowedDispositions": [
+    "RESOLVED_AND_REVALIDATED",
+    "CONFIRMED_ENVIRONMENT_LIMITATION",
+    "UNRESOLVED",
+    "BLOCKED_BY_EXTERNAL_PREREQUISITE"
+  ],
+  "items": [
+    {
+      "historical": "LIR002-NATIVE-COLLECTOR (FAIL)",
+      "disposition": "RESOLVED_AND_REVALIDATED",
+      "evidence": "otel-collector.yaml filter/Advanced style correction; native validate exit 0; LIR003-COLLECTOR-READY/HEALTH"
+    },
+    {
+      "historical": "LIR002-NATIVE-TEMPO (FAIL)",
+      "disposition": "RESOLVED_AND_REVALIDATED",
+      "evidence": "Harness used -config.verify without a value; corrected to -config.verify=true; Tempo config valid and running in 002 and 003"
+    },
+    {
+      "historical": "LIR002-HOST-POSTGRES_PORT / RABBITMQ_AMQP_PORT / RABBITMQ_UI_PORT / MAILPIT_SMTP_PORT / MAILPIT_UI_PORT / PROMETHEUS_PORT / GRAFANA_PORT / SEAWEEDFS_S3_PORT (8 FAIL)",
+      "disposition": "RESOLVED_AND_REVALIDATED",
+      "evidence": "internal:true network suppression confirmed by A/B test; networks corrected; LIR003-HOST-* reachable"
+    },
+    {
+      "historical": "LIR002-RABBIT-AMQP (FAIL) and LIR002-RABBIT-AMQP-CORRECTED-PROBE (FAIL)",
+      "disposition": "RESOLVED_AND_REVALIDATED",
+      "evidence": "Server log: \"negotiated channel_max = 0 ... higher than the maximum allowed value (2047)\"; corrected client negotiates channel_max=2047; amqp-full-probe PASS (connect/auth/vhost/channel/queue/publish/consume/ack + invalid credential 403 + invalid vhost 530)"
+    },
+    {
+      "historical": "LIR002-PRESERVATION-DOCKER (FAIL)",
+      "disposition": "RESOLVED_AND_REVALIDATED",
+      "evidence": "Deterministic comparator (sorted mounts) confirms order-only difference; no actual change; comparator also detects real changes"
+    },
+    {
+      "historical": "LIR002-COLLECTOR-HEALTH / READY-otel-collector / BOUNDARY-otel-collector / OTLP-ACCEPT / TELEMETRY-NEGATIVES / TELEMETRY-LOGS-DISABLED / PROMETHEUS-INGEST / TEMPO-RETRIEVE (BLOCKED)",
+      "disposition": "RESOLVED_AND_REVALIDATED",
+      "evidence": "Collector native config fixed; LIR003 collector health, OTLP accept, Prometheus ingest, Tempo retrieve all re-validated"
+    },
+    {
+      "historical": "LIR002-HARNESS-PULL-INTERRUPTED (BLOCKED)",
+      "disposition": "CONFIRMED_ENVIRONMENT_LIMITATION",
+      "evidence": "Initial shell harness 120s limit exceeded; resumed pull succeeded for the same pinned reference; not a baseline defect"
+    },
+    {
+      "historical": "LIR002-PG-EXISTING-VOLUME (FAIL then PASS)",
+      "disposition": "RESOLVED_AND_REVALIDATED",
+      "evidence": "Text-stdin CRLF conversion on Windows caused the first observation; binary stdin corrected the probe; task synthetic config restored"
+    },
+    {
+      "historical": "LIR002-SERVICE-BLOCKED-rabbitmq / mailpit / seaweedfs / observability (BLOCKED)",
+      "disposition": "RESOLVED_AND_REVALIDATED",
+      "evidence": "Initial host-path HTTP failures; internal task-network checks subsequently PASSED for all four groups"
+    }
+  ]
+}

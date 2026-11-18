@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-11-18T11:42:52.916147+00:00",
+  "actual": {
+    "service": "prometheus",
+    "reference": "prom/prometheus:v3.7.3@sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038",
+    "actual": {
+      "id": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+      "repoTags": [
+        "prom/prometheus:v3.7.3"
+      ],
+      "repoDigests": [
+        "prom/prometheus@sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "pullRequired": false,
+    "newImageID": false,
+    "status": "PASS"
+  }
+}

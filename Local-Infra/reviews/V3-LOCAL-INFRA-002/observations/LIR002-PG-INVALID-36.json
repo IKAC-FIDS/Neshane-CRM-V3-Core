@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-11-18T11:51:56.071152+00:00",
+  "actual": {
+    "code": 2,
+    "stdout": "",
+    "stderr": "psql: error: connection to server at \"127.0.0.1\", port 5432 failed: FATAL:  password authentication failed for user \"neshane_dev_app\"\n"
+  }
+}

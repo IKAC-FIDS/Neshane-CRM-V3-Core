@@ -1,0 +1,96 @@
+{
+  "observedAt": "2026-11-18T12:23:41.074987+00:00",
+  "actual": {
+    "id": "34560d3749905fde9c0aa628632f5753de3757b399291a24b71419117d24ac66",
+    "name": "/v3li002-20261118t113152-ad6c12-rabbitmq-1",
+    "imageID": "sha256:eb8cc2139494277cd547c3515a89219d7a21e9db426205c83d37fa96d1da424b",
+    "imageReference": "rabbitmq:4.2.9-management@sha256:7fa20d0d23d63ed90499bbf62e24af48ec4ae5eb22d173f3db96e3f85b26884a",
+    "project": "v3li002-20261118t113152-ad6c12",
+    "service": "rabbitmq",
+    "status": "running",
+    "running": true,
+    "startedAt": "2026-11-18T12:07:53.192550516Z",
+    "restartCount": 0,
+    "oomKilled": false,
+    "ports": {
+      "15672/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "14424"
+        }
+      ],
+      "5672/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "14423"
+        }
+      ]
+    },
+    "networks": {
+      "v3li002-20261118t113152-ad6c12_broker": {
+        "Aliases": [
+          "v3li002-20261118t113152-ad6c12-rabbitmq-1",
+          "rabbitmq"
+        ],
+        "DNSNames": [
+          "v3li002-20261118t113152-ad6c12-rabbitmq-1",
+          "rabbitmq",
+          "34560d374990"
+        ],
+        "DriverOpts": null,
+        "EndpointID": "d99d0f0653a9a054365ffdb7f7a10868b18d2dfb783f7047e2d26671db1ab4cd",
+        "Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "GwPriority": 0,
+        "IPAMConfig": null,
+        "IPAddress": "172.30.10.2",
+        "IPPrefixLen": 24,
+        "IPv6Gateway": "",
+        "Links": null,
+        "MacAddress": "d6:cf:83:a4:7d:07",
+        "NetworkID": "4713b456e3335f5b2a744b9ef7d7e2bf576ae395cf66d3792cddaf63dda175fa"
+      }
+    },
+    "mounts": [
+      {
+        "Destination": "/var/lib/rabbitmq",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "v3li002-20261118t113152-ad6c12_rabbitmq_data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "v3li002-20261118t113152-ad6c12_rabbitmq_data",
+        "Type": "volume"
+      },
+      {
+        "Destination": "/etc/rabbitmq/rabbitmq.conf",
+        "Mode": "ro",
+        "Propagation": "rprivate",
+        "RW": false,
+        "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\rabbitmq\\rabbitmq.conf",
+        "Type": "bind"
+      }
+    ],
+    "memory": 805306368,
+    "nanoCPUs": 1000000000,
+    "pidsLimit": 256,
+    "privileged": false,
+    "networkMode": "v3li002-20261118t113152-ad6c12_broker",
+    "securityOpt": [
+      "no-new-privileges:true"
+    ],
+    "capAdd": null,
+    "logConfig": {
+      "Config": {
+        "max-file": "2",
+        "max-size": "5m"
+      },
+      "Type": "json-file"
+    },
+    "restartPolicy": {
+      "MaximumRetryCount": 0,
+      "Name": "no"
+    }
+  }
+}

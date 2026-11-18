@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-11-18T11:42:36.261728+00:00",
+  "actual": {
+    "service": "seaweedfs",
+    "reference": "chrislusf/seaweedfs@sha256:c2658820e763294a9e9de7b36c81e59b879e3459148351aee4e31a126ca64860",
+    "actual": {
+      "id": "sha256:17804fb097257c8c8ca9d57338ff756ee1f4312f40e1e521d62c1a1f8614b203",
+      "repoTags": [
+        "chrislusf/seaweedfs:latest"
+      ],
+      "repoDigests": [
+        "chrislusf/seaweedfs@sha256:c2658820e763294a9e9de7b36c81e59b879e3459148351aee4e31a126ca64860"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "pullRequired": false,
+    "newImageID": false,
+    "status": "PASS"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-11-18T12:15:45.011146+00:00",
+  "actual": {
+    "code": 0,
+    "stdout": "{\"health\":\"ok\"}\n",
+    "stderr": ""
+  }
+}

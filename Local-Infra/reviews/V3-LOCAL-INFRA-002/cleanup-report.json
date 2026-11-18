@@ -1,0 +1,43 @@
+{
+  "removed": {
+    "containers": [],
+    "networks": [],
+    "volumes": []
+  },
+  "previouslyRemovedTaskProbeContainers": [
+    "f0475fa99bd83fd8bd7a6d3b58239d64157bcc5fd366e6b799d118d9847ae76f",
+    "2f15cb3ca94cf7cd01c9a0438d78b33ad4358a2660aedf9b5c0fc0f06aefe1e3",
+    "43a83aeada92880543ad11c3cb04b2b7e16708f15892d6d0709307010949d95b",
+    "d07e052fec9144c717ed0682cb5e162dfa47e46c7698acf978539444c0d3229d",
+    "0d1bad7e2eebc422bb009b84dc45d9d5703d5229025e25ac6175d29730eb22c3",
+    "c0c0387286a1c70689e26a4b2565fbab59ee5905d79435429ed9c571bda49618",
+    "3a343319b6f9ad917fd8c5287e85eef8f831656905c998995eedb74014cb9bea",
+    "813b649f2e5c2c43ce2b165e9fd9e2c54ffb3021c4f390cd0af36f27caf865c6",
+    "d2def50c13eeef9da3ef6b4ee00e8eb16177eb506119f87fd4a7cace6f0abe4b",
+    "e93bf5194cd6671ae6fef3dabb05dbd953f16d4da3e4b83c2462bb77d5a75830",
+    "939bf7ba65d5249896938eedb7919d408c1658f3a69b4a8210498dd07e703dd2",
+    "f8b07f26147997f5cd667f128312ea23b2856c8333a9ee7960ef6091a693e6ce",
+    "86fc1bf9d3c7aeca299a4e252d67c52ec0213674cdd9c9bce05c2ac18dfe6c3b",
+    "b5ae71bbbd79a681d6e4ff1da40188594334a2942cb26cf7e3db1e3a17e6c2d8",
+    "3884f967d6414fbcc93863a8a2367a6d8fe654bfd0f4b636ebe865c7e5e0dab6",
+    "7341b99835f7ab03a6784764147b6889fd9a140546afeeebb0f925e7d6f73902",
+    "aac0e8ee8685e86bfec877070daf425f6122d32ba6d1e2c8be54a7a082008477",
+    "6b8fbf187927e264decbff5e520d4b505d462b34e66c3076376e60717eb12fbc",
+    "0632522e0244c374ab4d51ae382d3104a6e1c52997352cbf84fb9785ef3b06a7",
+    "51082ec45cd68d3156f50ec8de1e7788bdbb639356fb68577ef025e273542c43",
+    "6a119482cc92f6ca6d68b26d9b4839746b39b311825bcb7eabcc88b1c502d645",
+    "830700df878446a792d0ed562ed83707208f7bc275c6f19b7714cb95cca3f8bd"
+  ],
+  "remaining": {
+    "containers": [],
+    "networks": [],
+    "volumes": []
+  },
+  "unexpectedNewResourcesNotRemoved": {
+    "containers": [],
+    "networks": [],
+    "volumes": []
+  },
+  "errors": [],
+  "privateInputsRemoved": true
+}

@@ -1,0 +1,5 @@
+{
+  "probeExit": 0,
+  "probeStdout": "/tmp/full.escript:58:15: Warning: a term is constructed, but never used\n%   58|         HS -> {closed, {no_start, HS}}\n%     |               ^\n\nAMQP_FULL_PASS payload_matches=true reject_invalid_password=invalid_password_rejected reject_invalid_vhost=invalid_vhost_rejected",
+  "probeStderr": ""
+}

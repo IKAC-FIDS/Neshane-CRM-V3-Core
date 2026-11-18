@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-11-18T11:52:58.983252+00:00",
+  "actual": {
+    "health": {
+      "status": "running",
+      "health": "healthy"
+    },
+    "read": {
+      "code": 0,
+      "stdout": "synthetic-v3li002-20261118t113152-ad6c12\n",
+      "stderr": ""
+    }
+  }
+}

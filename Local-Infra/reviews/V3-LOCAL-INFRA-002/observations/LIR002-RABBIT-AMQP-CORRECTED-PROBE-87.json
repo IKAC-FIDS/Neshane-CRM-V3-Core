@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-11-18T12:23:10.983524+00:00",
+  "actual": {
+    "code": 1,
+    "stdout": "AMQP_PROBE_FAILED class=error stage={valid_authentication,vhost_open_response} reason=closed\n",
+    "stderr": ""
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-11-18T11:44:40.107776+00:00",
+  "actual": {
+    "code": 1,
+    "stdout": "",
+    "stderr": "Error: failed to get config: cannot unmarshal the configuration: decoding failed due to the following error(s):\n\n'processors' error reading configuration for \"filter/synthetic\": '' configuring multiple configuration styles is not supported, please use only Basic configuration or only Advanced configuration\n"
+  }
+}

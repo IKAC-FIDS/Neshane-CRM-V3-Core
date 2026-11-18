@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-11-18T11:54:53.136432+00:00",
+  "actual": {
+    "exitCode": 0,
+    "retentionLines": [
+      "block_retention: 336h0m0s",
+      "compacted_block_retention: 1h0m0s",
+      "block_retention: 24h0m0s",
+      "compacted_block_retention: 1h0m0s"
+    ]
+  }
+}

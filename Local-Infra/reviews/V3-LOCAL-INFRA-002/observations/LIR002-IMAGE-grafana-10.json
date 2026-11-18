@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-11-18T11:42:53.136895+00:00",
+  "actual": {
+    "service": "grafana",
+    "reference": "grafana/grafana:13.2.1@sha256:f772d434e8fab0049deb2b1b30abd43342bcfca1537614aa8d36080232cf4283",
+    "actual": {
+      "id": "sha256:8400f365c39767b0d0df30e3aeb0796f873c3acf89b28089745bfafd88d83c7c",
+      "repoTags": [
+        "grafana/grafana:13.2.1"
+      ],
+      "repoDigests": [
+        "grafana/grafana@sha256:f772d434e8fab0049deb2b1b30abd43342bcfca1537614aa8d36080232cf4283"
+      ],
+      "architecture": "amd64",
+      "os": "linux"
+    },
+    "pullRequired": false,
+    "newImageID": false,
+    "status": "PASS"
+  }
+}

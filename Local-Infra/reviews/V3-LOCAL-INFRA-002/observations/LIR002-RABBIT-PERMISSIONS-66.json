@@ -1,0 +1,20 @@
+{
+  "observedAt": "2026-11-18T12:07:41.050847+00:00",
+  "actual": {
+    "users": {
+      "code": 0,
+      "stdout": "[\n{\"user\":\"[REDACTED]\",\"tags\":[\"management\"]}\n]\n",
+      "stderr": ""
+    },
+    "developmentVhostPermissions": {
+      "code": 0,
+      "stdout": "[\n{\"user\":\"[REDACTED]\",\"read\":\".*\",\"write\":\".*\",\"configure\":\".*\"}\n]\n",
+      "stderr": ""
+    },
+    "allTaskUserPermissions": {
+      "code": 0,
+      "stdout": "[\n{\"read\":\".*\",\"write\":\".*\",\"configure\":\".*\",\"vhost\":\"neshane_dev\"}\n]\n",
+      "stderr": ""
+    }
+  }
+}

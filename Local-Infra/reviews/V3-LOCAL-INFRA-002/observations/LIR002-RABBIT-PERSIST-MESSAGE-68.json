@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-11-18T12:08:10.820750+00:00",
+  "actual": {
+    "queueCreateStatus": 201,
+    "publishStatus": 200,
+    "routed": true,
+    "health": {
+      "status": "running",
+      "health": "healthy"
+    },
+    "consumeStatus": 200,
+    "payloadMatches": true
+  }
+}

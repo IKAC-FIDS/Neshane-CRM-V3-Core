@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-11-18T12:08:25.591119+00:00",
+  "actual": {
+    "httpStatus": 200,
+    "response": {
+      "message": "Data source is working",
+      "status": "OK"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "observedAt": "2026-11-18T12:08:48.890860+00:00",
+  "actual": {
+    "exception": "Internal approved-image HTTP client failed: curl: (7) Failed to connect to seaweedfs:8333 after 1 ms: Could not connect to server\n"
+  }
+}

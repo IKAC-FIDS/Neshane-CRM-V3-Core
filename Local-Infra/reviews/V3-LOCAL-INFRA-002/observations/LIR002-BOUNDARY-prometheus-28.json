@@ -1,0 +1,90 @@
+{
+  "observedAt": "2026-11-18T11:50:16.342476+00:00",
+  "actual": {
+    "id": "48b7304e03df6a355215a5f01ac744d6cb7e48506e0b41fddf5d521551084357",
+    "name": "/v3li002-20261118t113152-ad6c12-prometheus-1",
+    "imageID": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+    "imageReference": "prom/prometheus:v3.7.3@sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038",
+    "project": "v3li002-20261118t113152-ad6c12",
+    "service": "prometheus",
+    "status": "running",
+    "running": true,
+    "startedAt": "2026-11-18T11:49:07.039452608Z",
+    "restartCount": 0,
+    "oomKilled": false,
+    "ports": {
+      "9090/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "14429"
+        }
+      ]
+    },
+    "networks": {
+      "v3li002-20261118t113152-ad6c12_telemetry": {
+        "Aliases": [
+          "v3li002-20261118t113152-ad6c12-prometheus-1",
+          "prometheus"
+        ],
+        "DNSNames": [
+          "v3li002-20261118t113152-ad6c12-prometheus-1",
+          "prometheus",
+          "48b7304e03df"
+        ],
+        "DriverOpts": null,
+        "EndpointID": "7aac2f55c3a2e89ebe3bc1c829dd046b71ba364cbc682f25d580b05f48d3f217",
+        "Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "GwPriority": 0,
+        "IPAMConfig": null,
+        "IPAddress": "172.30.6.3",
+        "IPPrefixLen": 24,
+        "IPv6Gateway": "",
+        "Links": null,
+        "MacAddress": "4e:00:6e:03:0c:d6",
+        "NetworkID": "0bf84e56eeb7f0ace2526b8da2e9d9f5fc6f1061b4159f083168bb82e3f7618d"
+      }
+    },
+    "mounts": [
+      {
+        "Destination": "/prometheus",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "v3li002-20261118t113152-ad6c12_prometheus_data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "v3li002-20261118t113152-ad6c12_prometheus_data",
+        "Type": "volume"
+      },
+      {
+        "Destination": "/etc/prometheus/prometheus.yml",
+        "Mode": "ro",
+        "Propagation": "rprivate",
+        "RW": false,
+        "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\observability\\prometheus.yml",
+        "Type": "bind"
+      }
+    ],
+    "memory": 536870912,
+    "nanoCPUs": 500000000,
+    "pidsLimit": 256,
+    "privileged": false,
+    "networkMode": "v3li002-20261118t113152-ad6c12_telemetry",
+    "securityOpt": [
+      "no-new-privileges:true"
+    ],
+    "capAdd": null,
+    "logConfig": {
+      "Config": {
+        "max-file": "2",
+        "max-size": "5m"
+      },
+      "Type": "json-file"
+    },
+    "restartPolicy": {
+      "MaximumRetryCount": 0,
+      "Name": "no"
+    }
+  }
+}

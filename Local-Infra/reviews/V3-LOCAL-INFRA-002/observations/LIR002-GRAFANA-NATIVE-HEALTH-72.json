@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-18T12:08:21.538161+00:00",
+  "actual": {
+    "httpStatus": 200,
+    "health": {
+      "database": "ok",
+      "version": "13.2.1",
+      "commit": "56cd3e9288d8255fecebe5d05b48d191f50674b5"
+    }
+  }
+}

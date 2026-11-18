@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-11-18T12:15:19.475933+00:00",
+  "actual": {
+    "changedPasswordRejected": true,
+    "originalPasswordAndRowRetained": true,
+    "originalPasswordProbe": {
+      "code": 0,
+      "stdout": "synthetic-v3li002-20261118t113152-ad6c12\n",
+      "stderr": ""
+    },
+    "inputTransport": "exact binary stdin; prior text-input observation remains preserved",
+    "logs": {
+      "code": 0,
+      "stdout": "\nPostgreSQL Database directory appears to contain a database; Skipping initialization\n\n",
+      "stderr": "2026-11-18 12:14:50.230 UTC [7] LOG:  starting PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit\n2026-11-18 12:14:50.230 UTC [7] LOG:  listening on IPv4 address \"0.0.0.0\", port 5432\n2026-11-18 12:14:50.230 UTC [7] LOG:  listening on IPv6 address \"::\", port 5432\n2026-11-18 12:14:50.235 UTC [7] LOG:  listening on Unix socket \"/var/run/postgresql/.s.PGSQL.5432\"\n2026-11-18 12:14:50.246 UTC [30] LOG:  database system was shut down at 2026-11-18 12:14:49 UTC\n2026-11-18 12:14:50.268 UTC [7] LOG:  database system is ready to accept connections\n2026-11-18 12:14:55.246 UTC [42] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:14:55.246 UTC [42] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 12:15:00.346 UTC [57] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:15:00.346 UTC [57] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 12:15:05.072 UTC [65] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:15:05.072 UTC [65] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 12:15:05.466 UTC [73] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:15:05.466 UTC [73] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 12:15:10.585 UTC [82] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:15:10.585 UTC [82] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 12:15:15.698 UTC [97] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:15:15.698 UTC [97] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n"
+    }
+  }
+}

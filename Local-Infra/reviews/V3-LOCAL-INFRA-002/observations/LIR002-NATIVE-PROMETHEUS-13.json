@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-11-18T11:44:41.205822+00:00",
+  "actual": {
+    "code": 0,
+    "stdout": "Checking /config.yml\n SUCCESS: /config.yml is valid prometheus config file syntax\n\n",
+    "stderr": ""
+  }
+}

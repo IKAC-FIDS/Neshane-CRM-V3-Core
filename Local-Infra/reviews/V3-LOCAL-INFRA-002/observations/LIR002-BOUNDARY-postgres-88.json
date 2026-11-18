@@ -1,0 +1,90 @@
+{
+  "observedAt": "2026-11-18T12:23:36.914387+00:00",
+  "actual": {
+    "id": "cd0aed6b00ddf1cbb14e49d4d9f804c08ed49f12059c00a48ab65a138df3c493",
+    "name": "/v3li002-20261118t113152-ad6c12-postgres-1",
+    "imageID": "sha256:140936e8665d5274aa58df31b722693b4b451c541bb0f1a263a345d424bfacb4",
+    "imageReference": "postgres:17.12@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac",
+    "project": "v3li002-20261118t113152-ad6c12",
+    "service": "postgres",
+    "status": "running",
+    "running": true,
+    "startedAt": "2026-11-18T12:15:20.111917858Z",
+    "restartCount": 0,
+    "oomKilled": false,
+    "ports": {
+      "5432/tcp": [
+        {
+          "HostIp": "127.0.0.1",
+          "HostPort": "14422"
+        }
+      ]
+    },
+    "networks": {
+      "v3li002-20261118t113152-ad6c12_postgres": {
+        "Aliases": [
+          "v3li002-20261118t113152-ad6c12-postgres-1",
+          "postgres"
+        ],
+        "DNSNames": [
+          "v3li002-20261118t113152-ad6c12-postgres-1",
+          "postgres",
+          "cd0aed6b00dd"
+        ],
+        "DriverOpts": null,
+        "EndpointID": "0af35614af75ad9fa02124d22fc4b6738ff73fb75424ea82188487e8446505a8",
+        "Gateway": "",
+        "GlobalIPv6Address": "",
+        "GlobalIPv6PrefixLen": 0,
+        "GwPriority": 0,
+        "IPAMConfig": null,
+        "IPAddress": "172.30.8.2",
+        "IPPrefixLen": 24,
+        "IPv6Gateway": "",
+        "Links": null,
+        "MacAddress": "6e:8a:17:0a:b3:38",
+        "NetworkID": "03d15cef591ba42daa00eb88a0ad44d462919e6dd3d46ef74ff3ad179a61d76a"
+      }
+    },
+    "mounts": [
+      {
+        "Destination": "/var/lib/postgresql/data",
+        "Driver": "local",
+        "Mode": "rw",
+        "Name": "v3li002-20261118t113152-ad6c12_postgres_data",
+        "Propagation": "",
+        "RW": true,
+        "Source": "v3li002-20261118t113152-ad6c12_postgres_data",
+        "Type": "volume"
+      },
+      {
+        "Destination": "/docker-entrypoint-initdb.d/10-development-role.sh",
+        "Mode": "ro",
+        "Propagation": "rprivate",
+        "RW": false,
+        "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\postgres\\10-development-role.sh",
+        "Type": "bind"
+      }
+    ],
+    "memory": 536870912,
+    "nanoCPUs": 1000000000,
+    "pidsLimit": 256,
+    "privileged": false,
+    "networkMode": "v3li002-20261118t113152-ad6c12_postgres",
+    "securityOpt": [
+      "no-new-privileges:true"
+    ],
+    "capAdd": null,
+    "logConfig": {
+      "Config": {
+        "max-file": "2",
+        "max-size": "5m"
+      },
+      "Type": "json-file"
+    },
+    "restartPolicy": {
+      "MaximumRetryCount": 0,
+      "Name": "no"
+    }
+  }
+}

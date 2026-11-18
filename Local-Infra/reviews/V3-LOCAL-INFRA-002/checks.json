@@ -1,0 +1,3483 @@
+[
+  {
+    "checkIdentifier": "LIR002-PREFLIGHT",
+    "service": "all",
+    "expectedResult": "17 unchanged baseline files; unique project, ports, fresh volumes and local engine",
+    "actualResult": {
+      "baselineFiles": 17,
+      "project": "v3li002-20261118t113152-ad6c12",
+      "portCollision": false,
+      "resourceCollision": false,
+      "engine": {
+        "os": "linux",
+        "arch": "x86_64",
+        "memory": 8009216000,
+        "cpus": 16
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PREFLIGHT-1.json",
+    "remainingLimitation": "Shared Docker host is trusted. Existing live volume contents are not frozen or byte-snapshotted."
+  },
+  {
+    "checkIdentifier": "LIR002-HARNESS-PULL-INTERRUPTED",
+    "service": "runner",
+    "expectedResult": "Pinned image acquisition completes within the command window",
+    "actualResult": {
+      "observation": "Initial shell command exceeded the harness 120-second limit; no task containers were created. The incomplete pull is not treated as an image identity PASS."
+    },
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-HARNESS-PULL-INTERRUPTED-2.json",
+    "remainingLimitation": "Retry is limited to the same nine authorized digest references; no baseline or existing resources changed."
+  },
+  {
+    "checkIdentifier": "LIR002-IMAGE-postgres",
+    "service": "postgres",
+    "expectedResult": "Exact approved digest; linux/amd64",
+    "actualResult": {
+      "service": "postgres",
+      "reference": "postgres:17.12@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac",
+      "actual": {
+        "id": "sha256:140936e8665d5274aa58df31b722693b4b451c541bb0f1a263a345d424bfacb4",
+        "repoTags": [],
+        "repoDigests": [
+          "postgres@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac"
+        ],
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "pullRequired": true,
+      "newImageID": true,
+      "status": "PASS"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-IMAGE-postgres-3.json",
+    "remainingLimitation": "Digest identity is not a vulnerability scan or publisher attestation."
+  },
+  {
+    "checkIdentifier": "LIR002-IMAGE-redis",
+    "service": "redis",
+    "expectedResult": "Exact approved digest; linux/amd64",
+    "actualResult": {
+      "service": "redis",
+      "reference": "redis:7.4.12@sha256:2e3eb11462c4e3759e6972678dd051d150ff54b1e60714b3c33b701260172a90",
+      "actual": {
+        "id": "sha256:3a17a97bb6c7d9a7ee1bd3d5ecf7c6d02adf4bfd9fe73a974b3767b442dfbfaa",
+        "repoTags": [],
+        "repoDigests": [
+          "redis@sha256:2e3eb11462c4e3759e6972678dd051d150ff54b1e60714b3c33b701260172a90"
+        ],
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "pullRequired": true,
+      "newImageID": true,
+      "status": "PASS"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-IMAGE-redis-4.json",
+    "remainingLimitation": "Digest identity is not a vulnerability scan or publisher attestation."
+  },
+  {
+    "checkIdentifier": "LIR002-IMAGE-rabbitmq",
+    "service": "rabbitmq",
+    "expectedResult": "Exact approved digest; linux/amd64",
+    "actualResult": {
+      "service": "rabbitmq",
+      "reference": "rabbitmq:4.2.9-management@sha256:7fa20d0d23d63ed90499bbf62e24af48ec4ae5eb22d173f3db96e3f85b26884a",
+      "actual": {
+        "id": "sha256:eb8cc2139494277cd547c3515a89219d7a21e9db426205c83d37fa96d1da424b",
+        "repoTags": [],
+        "repoDigests": [
+          "rabbitmq@sha256:7fa20d0d23d63ed90499bbf62e24af48ec4ae5eb22d173f3db96e3f85b26884a"
+        ],
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "pullRequired": true,
+      "newImageID": true,
+      "status": "PASS"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-IMAGE-rabbitmq-5.json",
+    "remainingLimitation": "Digest identity is not a vulnerability scan or publisher attestation."
+  },
+  {
+    "checkIdentifier": "LIR002-IMAGE-seaweedfs",
+    "service": "seaweedfs",
+    "expectedResult": "Exact approved digest; linux/amd64",
+    "actualResult": {
+      "service": "seaweedfs",
+      "reference": "chrislusf/seaweedfs@sha256:c2658820e763294a9e9de7b36c81e59b879e3459148351aee4e31a126ca64860",
+      "actual": {
+        "id": "sha256:17804fb097257c8c8ca9d57338ff756ee1f4312f40e1e521d62c1a1f8614b203",
+        "repoTags": [
+          "chrislusf/seaweedfs:latest"
+        ],
+        "repoDigests": [
+          "chrislusf/seaweedfs@sha256:c2658820e763294a9e9de7b36c81e59b879e3459148351aee4e31a126ca64860"
+        ],
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "pullRequired": false,
+      "newImageID": false,
+      "status": "PASS"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-IMAGE-seaweedfs-6.json",
+    "remainingLimitation": "Digest identity is not a vulnerability scan or publisher attestation."
+  },
+  {
+    "checkIdentifier": "LIR002-IMAGE-mailpit",
+    "service": "mailpit",
+    "expectedResult": "Exact approved digest; linux/amd64",
+    "actualResult": {
+      "service": "mailpit",
+      "reference": "axllent/mailpit:v1.34.0@sha256:23a2ef85bc50853ab3093645d1d64679afd8887e89da5e48a88940c172591a4e",
+      "actual": {
+        "id": "sha256:6bee76be921b372f8b452c11321831372a65cab168b57773ee60ca70dc0f3b0e",
+        "repoTags": [],
+        "repoDigests": [
+          "axllent/mailpit@sha256:23a2ef85bc50853ab3093645d1d64679afd8887e89da5e48a88940c172591a4e"
+        ],
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "pullRequired": true,
+      "newImageID": true,
+      "status": "PASS"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-IMAGE-mailpit-7.json",
+    "remainingLimitation": "Digest identity is not a vulnerability scan or publisher attestation."
+  },
+  {
+    "checkIdentifier": "LIR002-IMAGE-otel-collector",
+    "service": "otel-collector",
+    "expectedResult": "Exact approved digest; linux/amd64",
+    "actualResult": {
+      "service": "otel-collector",
+      "reference": "otel/opentelemetry-collector-contrib:0.164.0@sha256:340c9ca6a36617084c6661bdc4f0fe92b7cda5a805d61673ec8db375fddc522b",
+      "actual": {
+        "id": "sha256:28ebddf51f59e38ac800c9f91120726cfb312af377da8908807e0b566a82b017",
+        "repoTags": [
+          "otel/opentelemetry-collector-contrib:0.164.0"
+        ],
+        "repoDigests": [
+          "otel/opentelemetry-collector-contrib@sha256:340c9ca6a36617084c6661bdc4f0fe92b7cda5a805d61673ec8db375fddc522b"
+        ],
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "pullRequired": false,
+      "newImageID": false,
+      "status": "PASS"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-IMAGE-otel-collector-8.json",
+    "remainingLimitation": "Digest identity is not a vulnerability scan or publisher attestation."
+  },
+  {
+    "checkIdentifier": "LIR002-IMAGE-prometheus",
+    "service": "prometheus",
+    "expectedResult": "Exact approved digest; linux/amd64",
+    "actualResult": {
+      "service": "prometheus",
+      "reference": "prom/prometheus:v3.7.3@sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038",
+      "actual": {
+        "id": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+        "repoTags": [
+          "prom/prometheus:v3.7.3"
+        ],
+        "repoDigests": [
+          "prom/prometheus@sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038"
+        ],
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "pullRequired": false,
+      "newImageID": false,
+      "status": "PASS"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-IMAGE-prometheus-9.json",
+    "remainingLimitation": "Digest identity is not a vulnerability scan or publisher attestation."
+  },
+  {
+    "checkIdentifier": "LIR002-IMAGE-grafana",
+    "service": "grafana",
+    "expectedResult": "Exact approved digest; linux/amd64",
+    "actualResult": {
+      "service": "grafana",
+      "reference": "grafana/grafana:13.2.1@sha256:f772d434e8fab0049deb2b1b30abd43342bcfca1537614aa8d36080232cf4283",
+      "actual": {
+        "id": "sha256:8400f365c39767b0d0df30e3aeb0796f873c3acf89b28089745bfafd88d83c7c",
+        "repoTags": [
+          "grafana/grafana:13.2.1"
+        ],
+        "repoDigests": [
+          "grafana/grafana@sha256:f772d434e8fab0049deb2b1b30abd43342bcfca1537614aa8d36080232cf4283"
+        ],
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "pullRequired": false,
+      "newImageID": false,
+      "status": "PASS"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-IMAGE-grafana-10.json",
+    "remainingLimitation": "Digest identity is not a vulnerability scan or publisher attestation."
+  },
+  {
+    "checkIdentifier": "LIR002-IMAGE-tempo",
+    "service": "tempo",
+    "expectedResult": "Exact approved digest; linux/amd64",
+    "actualResult": {
+      "service": "tempo",
+      "reference": "grafana/tempo:3.1.1@sha256:64e2fbd56d9c2b3412a4b430a58ea59e91a670b1e75f920a0c702213ad145044",
+      "actual": {
+        "id": "sha256:d1b47a86637121283f8bb3d9342ee2c77bd2bb92b1cb2dfb35f2b13629498961",
+        "repoTags": [
+          "grafana/tempo:3.1.1"
+        ],
+        "repoDigests": [
+          "grafana/tempo@sha256:64e2fbd56d9c2b3412a4b430a58ea59e91a670b1e75f920a0c702213ad145044"
+        ],
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "pullRequired": false,
+      "newImageID": false,
+      "status": "PASS"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-IMAGE-tempo-11.json",
+    "remainingLimitation": "Digest identity is not a vulnerability scan or publisher attestation."
+  },
+  {
+    "checkIdentifier": "LIR002-NATIVE-COLLECTOR",
+    "service": "otel-collector",
+    "expectedResult": "Native Collector config/components/OTTL validation exits zero",
+    "actualResult": {
+      "code": 1,
+      "stdout": "",
+      "stderr": "Error: failed to get config: cannot unmarshal the configuration: decoding failed due to the following error(s):\n\n'processors' error reading configuration for \"filter/synthetic\": '' configuring multiple configuration styles is not supported, please use only Basic configuration or only Advanced configuration\n"
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-NATIVE-COLLECTOR-12.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-NATIVE-PROMETHEUS",
+    "service": "prometheus",
+    "expectedResult": "Native promtool config validation exits zero",
+    "actualResult": {
+      "code": 0,
+      "stdout": "Checking /config.yml\n SUCCESS: /config.yml is valid prometheus config file syntax\n\n",
+      "stderr": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-NATIVE-PROMETHEUS-13.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-NATIVE-TEMPO",
+    "service": "tempo",
+    "expectedResult": "Native Tempo configuration verification exits zero",
+    "actualResult": {
+      "code": 2,
+      "stdout": "",
+      "stderr": "flag needs an argument: -config.verify\nUsage of /tempo:\n  -auth.enabled\n    \tSet to true to enable auth (deprecated: use multitenancy.enabled)\n  -backend-scheduler.provider.work.compaction.block-retention duration\n    \tDuration to keep blocks/traces. (default 336h0m0s)\n  -backend-scheduler.provider.work.compaction.compaction-window duration\n    \tMaximum time window across which to compact blocks. (default 1h0m0s)\n  -backend-scheduler.provider.work.compaction.max-block-bytes uint\n    \tMaximum size of a compacted block. (default 107374182400)\n  -backend-scheduler.provider.work.compaction.max-objects-per-block int\n    \tMaximum number of traces in a compacted block. (default 6000000)\n  -backend-scheduler.provider.work.max-compaction-level int\n    \tMaximum compaction level to include in compaction jobs. 0 means no limit.\n  -backend-scheduler.provider.work.max-input-blocks int\n    \tMaximum number of blocks to compact in a single job. (default 4)\n  -backend-scheduler.provider.work.min-cycle-interval duration\n    \tMinimum time between tenant prioritization cycles to prevent excessive CPU usage when no work is available. (default 30s)\n  -backend-scheduler.provider.work.min-input-blocks int\n    \tMinimum number of blocks to compact in a single job. (default 2)\n  -backend-scheduler.provider.workbackend-scheduler.compaction-provider.measure-interval duration\n    \tInterval at which to metric tenant blocklist (default 1m0s)\n  -backend-scheduler.provider.workbackend-scheduler.max-jobs-per-tenant int\n    \tMaximum number of jobs to run per tenant before moving on to the next tenant (default 1000)\n  -backend-scheduler.provider.workbackend-scheduler.redaction-provider.max-rescan-generations int\n    \tMaximum number of rescan generations before giving up and requiring operator resubmission (default 5)\n  -backend-scheduler.provider.workbackend-scheduler.redaction-provider.poll-interval duration\n    \tInterval at which to check for pending redaction jobs when the queue is empty (default 2s)\n  -backend-scheduler.provider.workbackend-scheduler.redaction-provider.rescan-delay duration\n    \tHow long to wait before rescanning for output blocks from compaction jobs active at submission time (default 5m0s)\n  -backend-scheduler.provider.workbackend-scheduler.retention-interval duration\n    \tInterval at which to perform tenant retention (default 1h0m0s)\n  -backend-scheduler.workdead-job-timeout duration\n    \tTime after which a job is considered dead and marked as failed (default 24h0m0s)\n  -backend-scheduler.workprune-age duration\n    \tAge at which to prune completed jobs (default 1h0m0s)\n  -backend-schedulerbackend-scheduler.backend-flush-interval duration\n    \tInterval at which to flush the work cache to the backend storage (default 1m0s)\n  -backend-schedulerbackend-scheduler.job-timeout duration\n    \tInternal duration to wait for a job before telling the worker to try again (default 15s)\n  -backend-schedulerbackend-scheduler.local-work-path string\n    \tPath to store local work cache. (default \"/var/tempo\")\n  -backend-schedulerbackend-scheduler.maintenance-interval duration\n    \tInterval at which to perform scheduler maintenance tasks (default 1m0s)\n  -backend-worker.backoff-max-period duration\n    \tMaximum delay when backing off. (default 1m0s)\n  -backend-worker.backoff-min-period duration\n    \tMinimum delay when backing off. (default 100ms)\n  -backend-worker.backoff-retries int\n    \tNumber of times to backoff and retry before failing.\n  -backend-worker.compaction.block-retention duration\n    \tDuration to keep blocks/traces. (default 336h0m0s)\n  -backend-worker.compaction.compaction-window duration\n    \tMaximum time window across which to compact blocks. (default 1h0m0s)\n  -backend-worker.compaction.max-block-bytes uint\n    \tMaximum size of a compacted block. (default 107374182400)\n  -backend-worker.compaction.max-objects-per-block int\n    \tMaximum number of traces in a compacted block. (default 6000000)\n  -backend-worker.finish-on-shutdown-timeout duration\n    \tTimeout for finishing the current job before shutting down the worker. (default 30s)\n  -block-builder.assigned-partitions value\n    \tList of partitions assigned to this block builder.\n  -block-builder.block.max-block-bytes uint\n    \tMaximum size of a block. (default 20971520)\n  -block-builder.consume-cycle-duration duration\n    \tInterval between consumption cycles. (default 5m0s)\n  -block-builder.instance-id string\n    \tInstance id. (default \"3eb8b449e6a6\")\n  -block-builder.max-bytes-per-cycle uint\n    \tMaximum number of bytes that can be consumed in a single cycle. 0 to disable (default 5000000000)\n  -block-builder.partitions-per-instance int\n    \tNumber of partitions assigned to this block builder.\n  -block-builder.wal.path string\n    \tPath at which store WAL blocks. (default \"/var/tempo/block-builder/traces\")\n  -block-profile-threshold int\n    \tOverride default block profiling threshold.\n  -config.enable-legacy-overrides\n    \tEnable the deprecated legacy overrides format. This is disabled by default and will be removed in a future release.\n  -config.expand-env value\n    \tWhether to expand environment variables in config file\n  -config.file value\n    \tConfiguration file to load\n  -config.per-user-override-config string\n    \tFile name of per-user Overrides.\n  -config.per-user-override-period value\n    \tPeriod with this to reload the Overrides. (default 10s)\n  -config.verify value\n    \tVerify configuration and exit\n  -config.verify-errors-only value\n    \tFail -config.verify only on hard errors, not configuration warnings\n  -distributor.ingestion-burst-size-bytes int\n    \tPer-user ingestion burst size in bytes. Should be set to the expected size (in bytes) of a single push request. (default 30000000)\n  -distributor.ingestion-rate-limit-bytes int\n    \tPer-user ingestion rate limit in bytes per second. (default 30000000)\n  -distributor.log-discarded-spans.enabled\n    \tEnable to log every discarded span to help debug ingestion or calculate span error distributions using the logs.\n  -distributor.log-discarded-spans.filter-by-status-error\n    \tEnable to filter out spans without status error.\n  -distributor.log-discarded-spans.include-attributes\n    \tEnable to include span attributes in the logs.\n  -distributor.log-received-spans.enabled\n    \tEnable to log every received span to help debug ingestion or calculate span error distributions using the logs.\n  -distributor.log-received-spans.filter-by-status-error\n    \tEnable to filter out spans without status error.\n  -distributor.log-received-spans.include-attributes\n    \tEnable to include span attributes in the logs.\n  -distributor.rate-limit-strategy string\n    \tWhether the various ingestion rate limits should be applied individually to each distributor instance (local), or evenly shared across the cluster (global). (default \"local\")\n  -enable-go-runtime-metrics\n    \tSet to true to enable all Go runtime metrics\n  -generator.address string\n    \tThe Kafka backend address. (default \"localhost:9092\")\n  -generator.auto-create-topic-default-partitions int\n    \tWhen auto-creation of Kafka topic is enabled and this value is positive, Kafka's num.partitions configuration option is set on Kafka brokers with this value when Tempo component that uses Kafka starts. This configuration option specifies the default number of partitions that the Kafka broker uses for auto-created topics. Note that this is a Kafka-cluster wide setting, and applies to any auto-created topic. If the setting of num.partitions fails, Tempo proceeds anyways, but auto-created topics could have an incorrect number of partitions. (default 1000)\n  -generator.auto-create-topic-enabled\n    \tEnable auto-creation of Kafka topic if it doesn't exist. (default true)\n  -generator.client-id string\n    \tThe Kafka client ID.\n  -generator.client-rack string\n    \tThe rack identifier for this Kafka client. Corresponds to the Kafka client.rack setting and enables fetching from the closest replica (KIP-392). Set this to the instance's availability zone to reduce cross-zone Kafka traffic.\n  -generator.consumer-group string\n    \tThe consumer group used by the consumer to track the last consumed offset. The consumer group must be different for each ingester. If the configured consumer group contains the '<partition>' placeholder, it is replaced with the actual partition ID owned by the ingester. When empty (recommended), Tempo uses the ingester instance ID to guarantee uniqueness.\n  -generator.consumer-group-offset-commit-interval duration\n    \tHow frequently a consumer should commit the consumed offset to Kafka. The last committed offset is used at startup to continue the consumption from where it was left. (default 1s)\n  -generator.consumer_group_lag_metric_update_interval duration\n    \tHow often the lag metric is updated. Set to 0 to disable metric calculation and export  (default 1m0s)\n  -generator.dial-timeout duration\n    \tThe maximum time allowed to open a connection to a Kafka broker. (default 2s)\n  -generator.disable-kafka-telemetry\n    \tDisable KIP-714 Kafka client metrics\n  -generator.instance-availability-zone string\n    \tDefine Availability Zone in which this instance is running.\n  -generator.instance-id string\n    \tInstance id. (default \"3eb8b449e6a6\")\n  -generator.last-produced-offset-retry-timeout duration\n    \tHow long to retry a failed request to get the last produced offset. (default 10s)\n  -generator.leave-consumer-group-on-shutdown\n    \tIf true, send LeaveGroup to Kafka on shutdown for immediate partition reassignment. Default false; set to true for Deployment rollouts where pod names change on each restart.\n  -generator.max-consumer-lag-at-startup duration\n    \tThe guaranteed maximum lag before a consumer is considered to have caught up reading from a partition at startup, becomes ACTIVE in the hash ring and passes the readiness check. Set both -generator.target-consumer-lag-at-startup and -generator.max-consumer-lag-at-startup to 0 to disable waiting for maximum consumer lag being honored at startup. (default 15s)\n  -generator.producer-compression string\n    \tCompression codec used by the Kafka producer. Supported values: none, gzip, snappy, lz4, zstd. If not set, the Kafka client's default codec preference is used.\n  -generator.producer-max-buffered-bytes int\n    \tThe maximum size of (uncompressed) buffered and unacknowledged produced records sent to Kafka. The produce request fails once this limit is reached. This limit is per Kafka client. 0 to disable the limit. (default 1073741824)\n  -generator.producer-max-record-size-bytes int\n    \tThe maximum size of a Kafka record data that should be generated by the producer. An incoming write request larger than this size is split into multiple Kafka records. We strongly recommend to not change this setting unless for testing purposes. (default 15983616)\n  -generator.sasl-mechanism value\n    \tThe SASL mechanism used to authenticate to Kafka. Supported values: PLAIN, SCRAM-SHA-256, SCRAM-SHA-512, OAUTHBEARER, AWS_MSK_IAM. For backwards-compatibility, PLAIN with no username nor password disables SASL. (default PLAIN)\n  -generator.sasl-msk-iam-access-key value\n    \tThe AWS access key ID to authenticate to Kafka using SASL AWS_MSK_IAM. Consider generator.sasl-msk-iam-file-path instead.\n  -generator.sasl-msk-iam-file-path string\n    \tPath to a file containing AWS credentials to authenticate to Kafka using SASL AWS_MSK_IAM. Mutually exclusive with generator.sasl-msk-iam-http-socket-path. The file is read anew on every reauthentication, so it can be updated with fresh credentials. The file must be in JSON format, adhering to this JSON schema: {\"type\": \"object\", \"required\": [\"AccessKey\", \"SecretKey\"], \"properties\": {\"AccessKey\": {\"type\": \"string\"}, \"SecretKey\": {\"type\": \"string\"}, \"SessionToken\": {\"type\": \"string\"}, \"UserAgent\": {\"type\": \"string\"}}}\n  -generator.sasl-msk-iam-http-socket-path string\n    \tPath to a Unix domain socket to fetch AWS credentials from via HTTP. Mutually exclusive with generator.sasl-msk-iam-file-path. On every authentication or reauthentication, an HTTP GET / request is made to the socket and the response body is read as JSON. The JSON schema is the same as for generator.sasl-msk-iam-file-path.\n  -generator.sasl-msk-iam-http-socket-timeout duration\n    \tTimeout for requesting AWS credentials from the HTTP socket. Effective when generator.sasl-msk-iam-http-socket-path is set. (default 10s)\n  -generator.sasl-msk-iam-secret-key value\n    \tThe AWS secret access key to authenticate to Kafka using SASL AWS_MSK_IAM. Consider generator.sasl-msk-iam-file-path instead.\n  -generator.sasl-msk-iam-session-token value\n    \tOptional AWS session token to authenticate to Kafka using SASL AWS_MSK_IAM.\n  -generator.sasl-msk-iam-user-agent string\n    \tOptional user agent to use when authenticating to Kafka using SASL AWS_MSK_IAM.\n  -generator.sasl-oauthbearer-extensions value\n    \tOptional additional OAuth extensions to include when authenticating to Kafka using SASL OAUTHBearer [REDACTED] a JSON object. (default {})\n  -generator.sasl-oauthbearer-file-path string\n    \tPath to a file containing an OAuth token to authenticate to Kafka. Mutually exclusive with generator.sasl-oauthbearer-http-socket-path. The file is read anew on every reauthentication, so it can be updated with fresh tokens. The file must be in JSON format, adhering to this JSON schema: {\"type\": \"object\", \"required\": [\"token\"], \"properties\": {\"token\": {\"type\": \"string\"}, \"zid\": {\"type\": \"string\"}, \"extensions\": {\"type\": \"object\", \"additionalProperties\": {\"type\": \"string\"}}}}\n  -generator.sasl-oauthbearer-http-socket-path string\n    \tPath to a Unix domain socket to fetch an OAuth token from via HTTP. Mutually exclusive with generator.sasl-oauthbearer-file-path. On every authentication or reauthentication, an HTTP GET / request is made to the socket and the response body is read as JSON. The JSON schema is the same as for generator.sasl-oauthbearer-file-path.\n  -generator.sasl-oauthbearer-http-socket-timeout duration\n    \tTimeout for requesting the token from the HTTP socket. Effective when generator.sasl-oauthbearer-http-socket-path is set. (default 10s)\n  -generator.sasl-oauthbearer-token value\n    \tThe OAuth token to use to authenticate to Kafka. Consider generator.sasl-oauthbearer-file-path instead.\n  -generator.sasl-oauthbearer-zid string\n    \tOptional authorization ID to use when authenticating to Kafka using SASL OAUTHBEARER.\n  -generator.sasl-password value\n    \tThe password used to authenticate the username to Kafka using SASL. To enable SASL, configure both the username and password.\n  -generator.sasl-username string\n    \tThe username used to authenticate to Kafka using SASL. To enable SASL, configure both the username and password.\n  -generator.skip-stale-backlog-on-startup\n    \tIf true, on startup seek partitions forward to now-metrics_ingestion_time_range_slack instead of replaying from the committed offset, skipping backlog the slack would drop. Requires Kafka ingest.\n  -generator.target-consumer-lag-at-startup duration\n    \tThe best-effort maximum lag a consumer tries to achieve at startup. Set both -generator.target-consumer-lag-at-startup and -generator.max-consumer-lag-at-startup to 0 to disable waiting for maximum consumer lag being honored at startup. (default 2s)\n  -generator.tls-ca-path string\n    \tPath to the CA certificates to validate server certificate against. If not set, the host's root CA certificates are used.\n  -generator.tls-cert-path string\n    \tPath to the client certificate, which will be used for authenticating with the server. Also requires the key path to be configured.\n  -generator.tls-cipher-suites string\n    \tOverride the default cipher suite list (separated by commas).\n  -generator.tls-enabled\n    \tEnable TLS for the Kafka client connection.\n  -generator.tls-insecure-skip-verify\n    \tSkip validating server certificate.\n  -generator.tls-key-path string\n    \tPath to the key for the client certificate. Also requires the client certificate to be configured.\n  -generator.tls-min-version string\n    \tOverride the default minimum TLS version. Allowed values: VersionTLS10, VersionTLS11, VersionTLS12, VersionTLS13\n  -generator.tls-server-name string\n    \tOverride the expected name on the server certificate.\n  -generator.topic string\n    \tThe Kafka topic name.\n  -generator.write-timeout duration\n    \tHow long to wait for an incoming write request to be successfully committed to the Kafka backend. (default 10s)\n  -generatorconsul.acl-token value\n    \tACL Token used to interact with Consul.\n  -generatorconsul.cas-retry-delay duration\n    \tMaximum duration to wait before retrying a Compare And Swap (CAS) operation. (default 1s)\n  -generatorconsul.client-timeout duration\n    \tHTTP timeout when talking to Consul (default 20s)\n  -generatorconsul.consistent-reads\n    \tEnable consistent reads to Consul.\n  -generatorconsul.hostname string\n    \tHostname and port of Consul. (default \"localhost:8500\")\n  -generatorconsul.watch-burst-size int\n    \tBurst size used in rate limit. Values less than 1 are treated as 1. (default 1)\n  -generatorconsul.watch-rate-limit float\n    \tRate limit when watching key or prefix in Consul, in requests per second. 0 disables the rate limit. (default 1)\n  -generatoretcd.dial-timeout duration\n    \tThe dial timeout for the etcd connection. (default 10s)\n  -generatoretcd.endpoints value\n    \tThe etcd endpoints to connect to.\n  -generatoretcd.max-retries int\n    \tThe maximum number of retries to do for failed ops. (default 10)\n  -generatoretcd.password value\n    \tEtcd password.\n  -generatoretcd.tls-ca-path string\n    \tPath to the CA certificates to validate server certificate against. If not set, the host's root CA certificates are used.\n  -generatoretcd.tls-cert-path string\n    \tPath to the client certificate, which will be used for authenticating with the server. Also requires the key path to be configured.\n  -generatoretcd.tls-cipher-suites string\n    \tOverride the default cipher suite list (separated by commas).\n  -generatoretcd.tls-enabled\n    \tEnable TLS.\n  -generatoretcd.tls-insecure-skip-verify\n    \tSkip validating server certificate.\n  -generatoretcd.tls-key-path string\n    \tPath to the key for the client certificate. Also requires the client certificate to be configured.\n  -generatoretcd.tls-min-version string\n    \tOverride the default minimum TLS version. Allowed values: VersionTLS10, VersionTLS11, VersionTLS12, VersionTLS13\n  -generatoretcd.tls-server-name string\n    \tOverride the expected name on the server certificate.\n  -generatoretcd.username string\n    \tEtcd username.\n  -generatormulti.mirror-enabled\n    \tMirror writes to the secondary store.\n  -generatormulti.mirror-timeout duration\n    \tTimeout for storing a value to the secondary store. (default 2s)\n  -generatormulti.primary string\n    \tPrimary backend storage used by multi-client.\n  -generatormulti.secondary string\n    \tSecondary backend storage used by multi-client.\n  -generatorprefix string\n    \tThe prefix for the keys in the store. Should end with a /. (default \"collectors/\")\n  -generatorstore string\n    \tBackend storage to use for the ring. Supported values are: consul, etcd, inmemory, memberlist, multi. (default \"consul\")\n  -health\n    \tRun a health check against the /ready endpoint and exit\n  -health.url string\n    \tURL to check when running health check (default \"http://localhost:3200/ready\")\n  -http-api-prefix string\n    \tString prefix for all http api endpoints.\n  -ingest.address string\n    \tThe Kafka backend address. (default \"localhost:9092\")\n  -ingest.auto-create-topic-default-partitions int\n    \tWhen auto-creation of Kafka topic is enabled and this value is positive, Kafka's num.partitions configuration option is set on Kafka brokers with this value when Tempo component that uses Kafka starts. This configuration option specifies the default number of partitions that the Kafka broker uses for auto-created topics. Note that this is a Kafka-cluster wide setting, and applies to any auto-created topic. If the setting of num.partitions fails, Tempo proceeds anyways, but auto-created topics could have an incorrect number of partitions. (default 1000)\n  -ingest.auto-create-topic-enabled\n    \tEnable auto-creation of Kafka topic if it doesn't exist. (default true)\n  -ingest.client-id string\n    \tThe Kafka client ID.\n  -ingest.client-rack string\n    \tThe rack identifier for this Kafka client. Corresponds to the Kafka client.rack setting and enables fetching from the closest replica (KIP-392). Set this to the instance's availability zone to reduce cross-zone Kafka traffic.\n  -ingest.consumer-group string\n    \tThe consumer group used by the consumer to track the last consumed offset. The consumer group must be different for each ingester. If the configured consumer group contains the '<partition>' placeholder, it is replaced with the actual partition ID owned by the ingester. When empty (recommended), Tempo uses the ingester instance ID to guarantee uniqueness.\n  -ingest.consumer-group-offset-commit-interval duration\n    \tHow frequently a consumer should commit the consumed offset to Kafka. The last committed offset is used at startup to continue the consumption from where it was left. (default 1s)\n  -ingest.consumer_group_lag_metric_update_interval duration\n    \tHow often the lag metric is updated. Set to 0 to disable metric calculation and export  (default 1m0s)\n  -ingest.dial-timeout duration\n    \tThe maximum time allowed to open a connection to a Kafka broker. (default 2s)\n  -ingest.disable-kafka-telemetry\n    \tDisable KIP-714 Kafka client metrics\n  -ingest.last-produced-offset-retry-timeout duration\n    \tHow long to retry a failed request to get the last produced offset. (default 10s)\n  -ingest.max-consumer-lag-at-startup duration\n    \tThe guaranteed maximum lag before a consumer is considered to have caught up reading from a partition at startup, becomes ACTIVE in the hash ring and passes the readiness check. Set both -ingest.target-consumer-lag-at-startup and -ingest.max-consumer-lag-at-startup to 0 to disable waiting for maximum consumer lag being honored at startup. (default 15s)\n  -ingest.producer-compression string\n    \tCompression codec used by the Kafka producer. Supported values: none, gzip, snappy, lz4, zstd. If not set, the Kafka client's default codec preference is used.\n  -ingest.producer-max-buffered-bytes int\n    \tThe maximum size of (uncompressed) buffered and unacknowledged produced records sent to Kafka. The produce request fails once this limit is reached. This limit is per Kafka client. 0 to disable the limit. (default 1073741824)\n  -ingest.producer-max-record-size-bytes int\n    \tThe maximum size of a Kafka record data that should be generated by the producer. An incoming write request larger than this size is split into multiple Kafka records. We strongly recommend to not change this setting unless for testing purposes. (default 15983616)\n  -ingest.sasl-mechanism value\n    \tThe SASL mechanism used to authenticate to Kafka. Supported values: PLAIN, SCRAM-SHA-256, SCRAM-SHA-512, OAUTHBEARER, AWS_MSK_IAM. For backwards-compatibility, PLAIN with no username nor password disables SASL. (default PLAIN)\n  -ingest.sasl-msk-iam-access-key value\n    \tThe AWS access key ID to authenticate to Kafka using SASL AWS_MSK_IAM. Consider ingest.sasl-msk-iam-file-path instead.\n  -ingest.sasl-msk-iam-file-path string\n    \tPath to a file containing AWS credentials to authenticate to Kafka using SASL AWS_MSK_IAM. Mutually exclusive with ingest.sasl-msk-iam-http-socket-path. The file is read anew on every reauthentication, so it can be updated with fresh credentials. The file must be in JSON format, adhering to this JSON schema: {\"type\": \"object\", \"required\": [\"AccessKey\", \"SecretKey\"], \"properties\": {\"AccessKey\": {\"type\": \"string\"}, \"SecretKey\": {\"type\": \"string\"}, \"SessionToken\": {\"type\": \"string\"}, \"UserAgent\": {\"type\": \"string\"}}}\n  -ingest.sasl-msk-iam-http-socket-path string\n    \tPath to a Unix domain socket to fetch AWS credentials from via HTTP. Mutually exclusive with ingest.sasl-msk-iam-file-path. On every authentication or reauthentication, an HTTP GET / request is made to the socket and the response body is read as JSON. The JSON schema is the same as for ingest.sasl-msk-iam-file-path.\n  -ingest.sasl-msk-iam-http-socket-timeout duration\n    \tTimeout for requesting AWS credentials from the HTTP socket. Effective when ingest.sasl-msk-iam-http-socket-path is set. (default 10s)\n  -ingest.sasl-msk-iam-secret-key value\n    \tThe AWS secret access key to authenticate to Kafka using SASL AWS_MSK_IAM. Consider ingest.sasl-msk-iam-file-path instead.\n  -ingest.sasl-msk-iam-session-token value\n    \tOptional AWS session token to authenticate to Kafka using SASL AWS_MSK_IAM.\n  -ingest.sasl-msk-iam-user-agent string\n    \tOptional user agent to use when authenticating to Kafka using SASL AWS_MSK_IAM.\n  -ingest.sasl-oauthbearer-extensions value\n    \tOptional additional OAuth extensions to include when authenticating to Kafka using SASL OAUTHBearer [REDACTED] a JSON object. (default {})\n  -ingest.sasl-oauthbearer-file-path string\n    \tPath to a file containing an OAuth token to authenticate to Kafka. Mutually exclusive with ingest.sasl-oauthbearer-http-socket-path. The file is read anew on every reauthentication, so it can be updated with fresh tokens. The file must be in JSON format, adhering to this JSON schema: {\"type\": \"object\", \"required\": [\"token\"], \"properties\": {\"token\": {\"type\": \"string\"}, \"zid\": {\"type\": \"string\"}, \"extensions\": {\"type\": \"object\", \"additionalProperties\": {\"type\": \"string\"}}}}\n  -ingest.sasl-oauthbearer-http-socket-path string\n    \tPath to a Unix domain socket to fetch an OAuth token from via HTTP. Mutually exclusive with ingest.sasl-oauthbearer-file-path. On every authentication or reauthentication, an HTTP GET / request is made to the socket and the response body is read as JSON. The JSON schema is the same as for ingest.sasl-oauthbearer-file-path.\n  -ingest.sasl-oauthbearer-http-socket-timeout duration\n    \tTimeout for requesting the token from the HTTP socket. Effective when ingest.sasl-oauthbearer-http-socket-path is set. (default 10s)\n  -ingest.sasl-oauthbearer-token value\n    \tThe OAuth token to use to authenticate to Kafka. Consider ingest.sasl-oauthbearer-file-path instead.\n  -ingest.sasl-oauthbearer-zid string\n    \tOptional authorization ID to use when authenticating to Kafka using SASL OAUTHBEARER.\n  -ingest.sasl-password value\n    \tThe password used to authenticate the username to Kafka using SASL. To enable SASL, configure both the username and password.\n  -ingest.sasl-username string\n    \tThe username used to authenticate to Kafka using SASL. To enable SASL, configure both the username and password.\n  -ingest.target-consumer-lag-at-startup duration\n    \tThe best-effort maximum lag a consumer tries to achieve at startup. Set both -ingest.target-consumer-lag-at-startup and -ingest.max-consumer-lag-at-startup to 0 to disable waiting for maximum consumer lag being honored at startup. (default 2s)\n  -ingest.tls-ca-path string\n    \tPath to the CA certificates to validate server certificate against. If not set, the host's root CA certificates are used.\n  -ingest.tls-cert-path string\n    \tPath to the client certificate, which will be used for authenticating with the server. Also requires the key path to be configured.\n  -ingest.tls-cipher-suites string\n    \tOverride the default cipher suite list (separated by commas).\n  -ingest.tls-enabled\n    \tEnable TLS for the Kafka client connection.\n  -ingest.tls-insecure-skip-verify\n    \tSkip validating server certificate.\n  -ingest.tls-key-path string\n    \tPath to the key for the client certificate. Also requires the client certificate to be configured.\n  -ingest.tls-min-version string\n    \tOverride the default minimum TLS version. Allowed values: VersionTLS10, VersionTLS11, VersionTLS12, VersionTLS13\n  -ingest.tls-server-name string\n    \tOverride the expected name on the server certificate.\n  -ingest.topic string\n    \tThe Kafka topic name.\n  -ingest.write-timeout duration\n    \tHow long to wait for an incoming write request to be successfully committed to the Kafka backend. (default 10s)\n  -ingester.max-bytes-per-trace int\n    \tMaximum size of a trace in bytes.  0 to disable. (default 5000000)\n  -ingester.max-global-traces-per-user int\n    \tMaximum number of active traces per user, across the cluster. 0 to disable.\n  -ingester.max-traces-per-user int\n    \tMaximum number of active traces per user, per ingester. 0 to disable. (default 10000)\n  -live-store.complete-block-timeout duration\n    \tDuration to keep blocks in the live store after they have been flushed. (default 20m0s)\n  -live-store.concurrent-blocks uint\n    \tNumber of concurrent blocks to query for metrics. (default 10)\n  -live-store.instance-availability-zone string\n    \tDefine Availability Zone in which this instance is running.\n  -live-store.metrics.time-overlap-cutoff float\n    \tTime overlap cutoff ratio for metrics queries (0.0-1.0). (default 0.2)\n  -live-store.partition-ring.consul.acl-token value\n    \tACL Token used to interact with Consul.\n  -live-store.partition-ring.consul.cas-retry-delay duration\n    \tMaximum duration to wait before retrying a Compare And Swap (CAS) operation. (default 1s)\n  -live-store.partition-ring.consul.client-timeout duration\n    \tHTTP timeout when talking to Consul (default 20s)\n  -live-store.partition-ring.consul.consistent-reads\n    \tEnable consistent reads to Consul.\n  -live-store.partition-ring.consul.hostname string\n    \tHostname and port of Consul. (default \"localhost:8500\")\n  -live-store.partition-ring.consul.watch-burst-size int\n    \tBurst size used in rate limit. Values less than 1 are treated as 1. (default 1)\n  -live-store.partition-ring.consul.watch-rate-limit float\n    \tRate limit when watching key or prefix in Consul, in requests per second. 0 disables the rate limit. (default 1)\n  -live-store.partition-ring.delete-inactive-partition-after duration\n    \tHow long to wait before an INACTIVE partition is eligible for deletion. The partition is deleted only if it has been in INACTIVE state for at least the configured duration and it has no owners registered. A value of 0 disables partitions deletion. (default 13h0m0s)\n  -live-store.partition-ring.etcd.dial-timeout duration\n    \tThe dial timeout for the etcd connection. (default 10s)\n  -live-store.partition-ring.etcd.endpoints value\n    \tThe etcd endpoints to connect to.\n  -live-store.partition-ring.etcd.max-retries int\n    \tThe maximum number of retries to do for failed ops. (default 10)\n  -live-store.partition-ring.etcd.password value\n    \tEtcd password.\n  -live-store.partition-ring.etcd.tls-ca-path string\n    \tPath to the CA certificates to validate server certificate against. If not set, the host's root CA certificates are used.\n  -live-store.partition-ring.etcd.tls-cert-path string\n    \tPath to the client certificate, which will be used for authenticating with the server. Also requires the key path to be configured.\n  -live-store.partition-ring.etcd.tls-cipher-suites string\n    \tOverride the default cipher suite list (separated by commas).\n  -live-store.partition-ring.etcd.tls-enabled\n    \tEnable TLS.\n  -live-store.partition-ring.etcd.tls-insecure-skip-verify\n    \tSkip validating server certificate.\n  -live-store.partition-ring.etcd.tls-key-path string\n    \tPath to the key for the client certificate. Also requires the client certificate to be configured.\n  -live-store.partition-ring.etcd.tls-min-version string\n    \tOverride the default minimum TLS version. Allowed values: VersionTLS10, VersionTLS11, VersionTLS12, VersionTLS13\n  -live-store.partition-ring.etcd.tls-server-name string\n    \tOverride the expected name on the server certificate.\n  -live-store.partition-ring.etcd.username string\n    \tEtcd username.\n  -live-store.partition-ring.min-partition-owners-count int\n    \tMinimum number of owners to wait before a PENDING partition gets switched to ACTIVE. (default 1)\n  -live-store.partition-ring.min-partition-owners-duration duration\n    \tHow long the minimum number of owners are enforced before a PENDING partition gets switched to ACTIVE. (default 10s)\n  -live-store.partition-ring.multi.mirror-enabled\n    \tMirror writes to the secondary store.\n  -live-store.partition-ring.multi.mirror-timeout duration\n    \tTimeout for storing a value to the secondary store. (default 2s)\n  -live-store.partition-ring.multi.primary string\n    \tPrimary backend storage used by multi-client.\n  -live-store.partition-ring.multi.secondary string\n    \tSecondary backend storage used by multi-client.\n  -live-store.partition-ring.prefix string\n    \tThe prefix for the keys in the store. Should end with a /. (default \"collectors/\")\n  -live-store.partition-ring.store string\n    \tBackend storage to use for the ring. Supported values are: consul, etcd, inmemory, memberlist, multi. (default \"memberlist\")\n  -live-store.readiness-max-wait duration\n    \tMaximum time to wait for catching up at startup. Only used if readiness-target-lag > 0. (default 30m0s)\n  -live-store.readiness-target-lag duration\n    \tTarget lag threshold before live-store is ready. 0 disables waiting (backward compatible).\n  -live-store.remove-owner-on-shutdown\n    \tRemove partition owner from the ring on shutdown. (default true)\n  -live-store.shutdown_marker_dir string\n    \tPath to the shutdown marker directory. (default \"/var/tempo/live-store/shutdown-marker\")\n  -live-store.wal.path string\n    \tPath at which store WAL blocks. (default \"/var/tempo/live-store/traces\")\n  -live-storeconsul.acl-token value\n    \tACL Token used to interact with Consul.\n  -live-storeconsul.cas-retry-delay duration\n    \tMaximum duration to wait before retrying a Compare And Swap (CAS) operation. (default 1s)\n  -live-storeconsul.client-timeout duration\n    \tHTTP timeout when talking to Consul (default 20s)\n  -live-storeconsul.consistent-reads\n    \tEnable consistent reads to Consul.\n  -live-storeconsul.hostname string\n    \tHostname and port of Consul. (default \"localhost:8500\")\n  -live-storeconsul.watch-burst-size int\n    \tBurst size used in rate limit. Values less than 1 are treated as 1. (default 1)\n  -live-storeconsul.watch-rate-limit float\n    \tRate limit when watching key or prefix in Consul, in requests per second. 0 disables the rate limit. (default 1)\n  -live-storeetcd.dial-timeout duration\n    \tThe dial timeout for the etcd connection. (default 10s)\n  -live-storeetcd.endpoints value\n    \tThe etcd endpoints to connect to.\n  -live-storeetcd.max-retries int\n    \tThe maximum number of retries to do for failed ops. (default 10)\n  -live-storeetcd.password value\n    \tEtcd password.\n  -live-storeetcd.tls-ca-path string\n    \tPath to the CA certificates to validate server certificate against. If not set, the host's root CA certificates are used.\n  -live-storeetcd.tls-cert-path string\n    \tPath to the client certificate, which will be used for authenticating with the server. Also requires the key path to be configured.\n  -live-storeetcd.tls-cipher-suites string\n    \tOverride the default cipher suite list (separated by commas).\n  -live-storeetcd.tls-enabled\n    \tEnable TLS.\n  -live-storeetcd.tls-insecure-skip-verify\n    \tSkip validating server certificate.\n  -live-storeetcd.tls-key-path string\n    \tPath to the key for the client certificate. Also requires the client certificate to be configured.\n  -live-storeetcd.tls-min-version string\n    \tOverride the default minimum TLS version. Allowed values: VersionTLS10, VersionTLS11, VersionTLS12, VersionTLS13\n  -live-storeetcd.tls-server-name string\n    \tOverride the expected name on the server certificate.\n  -live-storeetcd.username string\n    \tEtcd username.\n  -live-storemulti.mirror-enabled\n    \tMirror writes to the secondary store.\n  -live-storemulti.mirror-timeout duration\n    \tTimeout for storing a value to the secondary store. (default 2s)\n  -live-storemulti.primary string\n    \tPrimary backend storage used by multi-client.\n  -live-storemulti.secondary string\n    \tSecondary backend storage used by multi-client.\n  -live-storeprefix string\n    \tThe prefix for the keys in the store. Should end with a /. (default \"collectors/\")\n  -live-storestore string\n    \tBackend storage to use for the ring. Supported values are: consul, etcd, inmemory, memberlist, multi. (default \"consul\")\n  -log.level value\n    \tOnly log messages with the given severity or above. Valid levels: [debug, info, warn, error] (default info)\n  -memberlist.bind-port int\n    \tPort for memberlist to communicate on (default 7946)\n  -memberlist.host-port value\n    \tHost port to connect to memberlist cluster.\n  -memberlist.message-history-buffer-bytes int\n    \t\n  -metrics-generator.native-histogram-bucket-factor float\n    \tThe growth factor between buckets for native histograms. (default 1.1)\n  -metrics-generator.native-histogram-max-bucket-number value\n    \tThe maximum number of buckets for native histograms. (default 100)\n  -metrics-generator.native-histogram-min-reset-duration duration\n    \tThe minimum duration before a native histogram can be reset. (default 15m0s)\n  -multitenancy.enabled\n    \tSet to true to enable multitenancy.\n  -mutex-profile-fraction int\n    \tOverride default mutex profiling fraction.\n  -querier.frontend-address string\n    \tAddress of query frontend service, in host:port format.\n  -querier.max-blocks-per-tag-values-query int\n    \tMaximum number of blocks to query for a tag-values query. 0 to disable.\n  -querier.max-bytes-per-tag-values-query int\n    \tMaximum size of response for a tag-values query. Used mainly to limit large the number of values associated with a particular tag (default 1000000)\n  -querier.max-condition-groups-per-tag-query int\n    \tMaximum number of OR-expanded condition groups allowed in a tag search query. Queries that expand beyond this limit will be rejected. (default 100)\n  -query-frontend.mcp-server.enabled\n    \tSet to true to enable the MCP server\n  -reporting.backoff-max-period duration\n    \tMaximum delay when backing off. (default 10s)\n  -reporting.backoff-min-period duration\n    \tMinimum delay when backing off. (default 100ms)\n  -reporting.backoff-retries int\n    \tNumber of times to backoff and retry before failing. (default 10)\n  -reporting.enabled\n    \tEnable anonymous usage reporting. (default true)\n  -server.grpc-listen-port int\n    \tgRPC server listen port. (default 9095)\n  -server.http-listen-port int\n    \tHTTP server listen port. (default 3200)\n  -shutdown-delay duration\n    \tHow long to wait between SIGTERM and shutdown. After receiving SIGTERM, Tempo will report not-ready status via /ready endpoint.\n  -span-profiling\n    \tSet to true to enable span profiling (pyroscope pprof labels on OTel spans).\n  -storage.trace.azure.container_name string\n    \tAzure container name to store blocks in.\n  -storage.trace.azure.endpoint string\n    \tAzure endpoint to push blocks to. (default \"blob.core.windows.net\")\n  -storage.trace.azure.max_buffers int\n    \tNumber of simultaneous uploads. (default 4)\n  -storage.trace.azure.prefix string\n    \tAzure container prefix to store blocks in.\n  -storage.trace.azure.storage_account_key value\n    \tAzure storage access key.\n  -storage.trace.azure.storage_account_name string\n    \tAzure storage account name.\n  -storage.trace.backend string\n    \tTrace backend (s3, azure, gcs, local)\n  -storage.trace.block.v2-bloom-filter-false-positive float\n    \tBloom Filter False Positive. (default 0.01)\n  -storage.trace.block.v2-bloom-filter-shard-size-bytes int\n    \tBloom Filter Shard Size in bytes. (default 102400)\n  -storage.trace.blocklist_poll duration\n    \tPeriod at which to run the maintenance cycle. (default 5m0s)\n  -storage.trace.gcs.bucket string\n    \tgcs bucket to store traces in.\n  -storage.trace.gcs.list_blocks_concurrency int\n    \tnumber of concurrent list calls to make to backend (default 3)\n  -storage.trace.gcs.max_retries int\n    \tnumber of times to retry failed compaction/retention operations (default 3)\n  -storage.trace.gcs.prefix string\n    \tgcs bucket prefix to store traces in.\n  -storage.trace.local.path string\n    \tpath to store traces at.\n  -storage.trace.pool.max-workers int\n    \tWorkers in the worker pool. (default 400)\n  -storage.trace.pool.queue-depth int\n    \tWork item queue depth. (default 20000)\n  -storage.trace.s3.access_key string\n    \ts3 access key.\n  -storage.trace.s3.bucket string\n    \ts3 bucket to store blocks in.\n  -storage.trace.s3.endpoint string\n    \ts3 endpoint to push blocks to.\n  -storage.trace.s3.list_blocks_concurrency int\n    \tnumber of concurrent list calls to make to backend (default 3)\n  -storage.trace.s3.prefix string\n    \ts3 root directory to store blocks in.\n  -storage.trace.s3.secret_key value\n    \ts3 secret key.\n  -storage.trace.s3.session_token value\n    \ts3 session token.\n  -storage.trace.s3.sse.encryption-key value\n    \tSSE-C Encryption Key used for object encryption.\n  -storage.trace.s3.sse.kms-encryption-context string\n    \tKMS Encryption Context used for object encryption. It expects JSON formatted string.\n  -storage.trace.s3.sse.kms-key-id string\n    \tKMS Key ID used to encrypt objects in S3\n  -storage.trace.s3.sse.type string\n    \tEnable AWS Server Side Encryption. Supported values: SSE-KMS, SSE-S3, SSE-C.\n  -storage.trace.s3.tls_min_version string\n    \tminimum version of TLS to use when connecting to s3. (default \"VersionTLS12\")\n  -storage.trace.wal.path string\n    \tPath at which store WAL blocks. (default \"/var/tempo/wal\")\n  -target string\n    \ttarget module (default \"all\")\n  -version\n    \tPrint this builds version information\n"
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-NATIVE-TEMPO-14.json",
+    "remainingLimitation": "An unsupported verify flag is a native validation failure, not permission to invent success; actual startup is separately observed."
+  },
+  {
+    "checkIdentifier": "LIR002-NATIVE-TEMPO-CORRECTED-INVOCATION",
+    "service": "tempo",
+    "expectedResult": "Value-taking config.verify option is invoked correctly; retain initial harness FAIL",
+    "actualResult": {
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-NATIVE-TEMPO-CORRECTED-INVOCATION-15.json",
+    "remainingLimitation": "First missing-argument observation remains FAIL; this observation does not overwrite it."
+  },
+  {
+    "checkIdentifier": "LIR002-START",
+    "service": "all",
+    "expectedResult": "Only task-owned pinned services start without pull or baseline edits",
+    "actualResult": {
+      "code": 0,
+      "stdout": "",
+      "stderr": " Network v3li002-20261118t113152-ad6c12_experimental  Creating\n Network v3li002-20261118t113152-ad6c12_experimental  Created\n Network v3li002-20261118t113152-ad6c12_telemetry  Creating\n Network v3li002-20261118t113152-ad6c12_telemetry  Created\n Network v3li002-20261118t113152-ad6c12_redis  Creating\n Network v3li002-20261118t113152-ad6c12_redis  Created\n Network v3li002-20261118t113152-ad6c12_postgres  Creating\n Network v3li002-20261118t113152-ad6c12_postgres  Created\n Network v3li002-20261118t113152-ad6c12_mail  Creating\n Network v3li002-20261118t113152-ad6c12_mail  Created\n Network v3li002-20261118t113152-ad6c12_broker  Creating\n Network v3li002-20261118t113152-ad6c12_broker  Created\n Volume v3li002-20261118t113152-ad6c12_tempo_data  Creating\n Volume v3li002-20261118t113152-ad6c12_tempo_data  Created\n Volume v3li002-20261118t113152-ad6c12_redis_data  Creating\n Volume v3li002-20261118t113152-ad6c12_redis_data  Created\n Volume v3li002-20261118t113152-ad6c12_postgres_data  Creating\n Volume v3li002-20261118t113152-ad6c12_postgres_data  Created\n Volume v3li002-20261118t113152-ad6c12_mailpit_data  Creating\n Volume v3li002-20261118t113152-ad6c12_mailpit_data  Created\n Volume v3li002-20261118t113152-ad6c12_rabbitmq_data  Creating\n Volume v3li002-20261118t113152-ad6c12_rabbitmq_data  Created\n Volume v3li002-20261118t113152-ad6c12_seaweedfs_data  Creating\n Volume v3li002-20261118t113152-ad6c12_seaweedfs_data  Created\n Volume v3li002-20261118t113152-ad6c12_grafana_data  Creating\n Volume v3li002-20261118t113152-ad6c12_grafana_data  Created\n Volume v3li002-20261118t113152-ad6c12_prometheus_data  Creating\n Volume v3li002-20261118t113152-ad6c12_prometheus_data  Created\n Container v3li002-20261118t113152-ad6c12-seaweedfs-1  Creating\n Container v3li002-20261118t113152-ad6c12-postgres-1  Creating\n Container v3li002-20261118t113152-ad6c12-mailpit-1  Creating\n Container v3li002-20261118t113152-ad6c12-prometheus-1  Creating\n Container v3li002-20261118t113152-ad6c12-tempo-1  Creating\n Container v3li002-20261118t113152-ad6c12-redis-1  Creating\n Container v3li002-20261118t113152-ad6c12-rabbitmq-1  Creating\n Container v3li002-20261118t113152-ad6c12-tempo-1  Created\n Container v3li002-20261118t113152-ad6c12-mailpit-1  Created\n Container v3li002-20261118t113152-ad6c12-prometheus-1  Created\n Container v3li002-20261118t113152-ad6c12-grafana-1  Creating\n Container v3li002-20261118t113152-ad6c12-rabbitmq-1  Created\n Container v3li002-20261118t113152-ad6c12-redis-1  Created\n Container v3li002-20261118t113152-ad6c12-seaweedfs-1  Created\n Container v3li002-20261118t113152-ad6c12-postgres-1  Created\n Container v3li002-20261118t113152-ad6c12-grafana-1  Created\n Container v3li002-20261118t113152-ad6c12-prometheus-1  Starting\n Container v3li002-20261118t113152-ad6c12-tempo-1  Starting\n Container v3li002-20261118t113152-ad6c12-rabbitmq-1  Starting\n Container v3li002-20261118t113152-ad6c12-redis-1  Starting\n Container v3li002-20261118t113152-ad6c12-postgres-1  Starting\n Container v3li002-20261118t113152-ad6c12-mailpit-1  Starting\n Container v3li002-20261118t113152-ad6c12-seaweedfs-1  Starting\n Container v3li002-20261118t113152-ad6c12-redis-1  Started\n Container v3li002-20261118t113152-ad6c12-seaweedfs-1  Started\n Container v3li002-20261118t113152-ad6c12-mailpit-1  Started\n Container v3li002-20261118t113152-ad6c12-tempo-1  Started\n Container v3li002-20261118t113152-ad6c12-rabbitmq-1  Started\n Container v3li002-20261118t113152-ad6c12-postgres-1  Started\n Container v3li002-20261118t113152-ad6c12-prometheus-1  Started\n Container v3li002-20261118t113152-ad6c12-prometheus-1  Waiting\n Container v3li002-20261118t113152-ad6c12-prometheus-1  Healthy\n Container v3li002-20261118t113152-ad6c12-grafana-1  Starting\n Container v3li002-20261118t113152-ad6c12-grafana-1  Started\n"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-START-16.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-READY-postgres",
+    "service": "postgres",
+    "expectedResult": "Container remains running; configured health check is healthy",
+    "actualResult": {
+      "status": "running",
+      "health": "healthy"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-READY-postgres-17.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-READY-redis",
+    "service": "redis",
+    "expectedResult": "Container remains running; configured health check is healthy",
+    "actualResult": {
+      "status": "running",
+      "health": "healthy"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-READY-redis-18.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-READY-rabbitmq",
+    "service": "rabbitmq",
+    "expectedResult": "Container remains running; configured health check is healthy",
+    "actualResult": {
+      "status": "running",
+      "health": "healthy"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-READY-rabbitmq-19.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-READY-mailpit",
+    "service": "mailpit",
+    "expectedResult": "Container remains running; configured health check is healthy",
+    "actualResult": {
+      "status": "running",
+      "health": "healthy"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-READY-mailpit-20.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-READY-tempo",
+    "service": "tempo",
+    "expectedResult": "Container remains running; configured health check is healthy",
+    "actualResult": {
+      "status": "running",
+      "health": "not-configured"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-READY-tempo-21.json",
+    "remainingLimitation": "No Docker healthcheck for Collector/Tempo/SeaweedFS: independent endpoint checks are also required."
+  },
+  {
+    "checkIdentifier": "LIR002-READY-otel-collector",
+    "service": "otel-collector",
+    "expectedResult": "Start only native-valid configuration",
+    "actualResult": "Not started: native configuration rejected. Baseline is deliberately unchanged.",
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-READY-otel-collector-22.json",
+    "remainingLimitation": "Fix requires a separately authorized baseline correction, not a weakened filter."
+  },
+  {
+    "checkIdentifier": "LIR002-READY-prometheus",
+    "service": "prometheus",
+    "expectedResult": "Container remains running; configured health check is healthy",
+    "actualResult": {
+      "status": "running",
+      "health": "healthy"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-READY-prometheus-23.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-READY-grafana",
+    "service": "grafana",
+    "expectedResult": "Container remains running; configured health check is healthy",
+    "actualResult": {
+      "status": "running",
+      "health": "healthy"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-READY-grafana-24.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-READY-seaweedfs",
+    "service": "seaweedfs",
+    "expectedResult": "Container remains running; configured health check is healthy",
+    "actualResult": {
+      "status": "running",
+      "health": "not-configured"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-READY-seaweedfs-25.json",
+    "remainingLimitation": "No Docker healthcheck for Collector/Tempo/SeaweedFS: independent endpoint checks are also required."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-grafana",
+    "service": "grafana",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "686426ebf0b1d10fb10baa073a3571e99130aad3b77a01026c86838ef23ce696",
+      "name": "/v3li002-20261118t113152-ad6c12-grafana-1",
+      "imageID": "sha256:8400f365c39767b0d0df30e3aeb0796f873c3acf89b28089745bfafd88d83c7c",
+      "imageReference": "grafana/grafana:13.2.1@sha256:f772d434e8fab0049deb2b1b30abd43342bcfca1537614aa8d36080232cf4283",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "grafana",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:17.081004519Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14430"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_telemetry": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-grafana-1",
+            "grafana"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-grafana-1",
+            "grafana",
+            "686426ebf0b1"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "3fcf4f9f5c202e9012f56b26610d6f94e7d52c0bdf5e874daf3334cc5d525e90",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.6.4",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "6a:75:22:6b:24:3b",
+          "NetworkID": "0bf84e56eeb7f0ace2526b8da2e9d9f5fc6f1061b4159f083168bb82e3f7618d"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/grafana",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_grafana_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_grafana_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/etc/grafana/provisioning/datasources/datasources.yaml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\observability\\grafana-datasources.yaml",
+          "Type": "bind"
+        }
+      ],
+      "memory": 402653184,
+      "nanoCPUs": 500000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_telemetry",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-grafana-26.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-postgres",
+    "service": "postgres",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "a0727a236ac5fe488c4f1199100525cfe1cc73d8529de8626edf623af016e338",
+      "name": "/v3li002-20261118t113152-ad6c12-postgres-1",
+      "imageID": "sha256:140936e8665d5274aa58df31b722693b4b451c541bb0f1a263a345d424bfacb4",
+      "imageReference": "postgres:17.12@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "postgres",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:06.996521977Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14422"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_postgres": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-postgres-1",
+            "postgres"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-postgres-1",
+            "postgres",
+            "a0727a236ac5"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "b2576696a3ab05e46d47c6b56d70698f85d5a8518fbc2359f3b3e55ffb11102e",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.8.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "5e:ce:de:43:c8:0a",
+          "NetworkID": "03d15cef591ba42daa00eb88a0ad44d462919e6dd3d46ef74ff3ad179a61d76a"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/docker-entrypoint-initdb.d/10-development-role.sh",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\postgres\\10-development-role.sh",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_postgres_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_postgres_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 536870912,
+      "nanoCPUs": 1000000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_postgres",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-postgres-27.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-prometheus",
+    "service": "prometheus",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "48b7304e03df6a355215a5f01ac744d6cb7e48506e0b41fddf5d521551084357",
+      "name": "/v3li002-20261118t113152-ad6c12-prometheus-1",
+      "imageID": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+      "imageReference": "prom/prometheus:v3.7.3@sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "prometheus",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:07.039452608Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14429"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_telemetry": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-prometheus-1",
+            "prometheus"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-prometheus-1",
+            "prometheus",
+            "48b7304e03df"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "7aac2f55c3a2e89ebe3bc1c829dd046b71ba364cbc682f25d580b05f48d3f217",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.6.3",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "4e:00:6e:03:0c:d6",
+          "NetworkID": "0bf84e56eeb7f0ace2526b8da2e9d9f5fc6f1061b4159f083168bb82e3f7618d"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/prometheus",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_prometheus_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_prometheus_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/etc/prometheus/prometheus.yml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\observability\\prometheus.yml",
+          "Type": "bind"
+        }
+      ],
+      "memory": 536870912,
+      "nanoCPUs": 500000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_telemetry",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-prometheus-28.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-redis",
+    "service": "redis",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "a992f61ac4d2ab1788c48fe2423b5ac10616cf5d794fa75e821028fc2a2cfd3f",
+      "name": "/v3li002-20261118t113152-ad6c12-redis-1",
+      "imageID": "sha256:3a17a97bb6c7d9a7ee1bd3d5ecf7c6d02adf4bfd9fe73a974b3767b442dfbfaa",
+      "imageReference": "redis:7.4.12@sha256:2e3eb11462c4e3759e6972678dd051d150ff54b1e60714b3c33b701260172a90",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "redis",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:06.985348627Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {},
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_redis": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-redis-1",
+            "redis"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-redis-1",
+            "redis",
+            "a992f61ac4d2"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "8017249e64b65a42a291d896a921b49d63d189f5abc7d8a4b4906866a06e63f4",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.7.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "7a:3b:30:18:0a:66",
+          "NetworkID": "150a1306ea313b013f2e233b43eefaa737c2bcfb778208bad10519de316696c9"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_redis_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_redis_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 402653184,
+      "nanoCPUs": 500000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_redis",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-redis-29.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-rabbitmq",
+    "service": "rabbitmq",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "34560d3749905fde9c0aa628632f5753de3757b399291a24b71419117d24ac66",
+      "name": "/v3li002-20261118t113152-ad6c12-rabbitmq-1",
+      "imageID": "sha256:eb8cc2139494277cd547c3515a89219d7a21e9db426205c83d37fa96d1da424b",
+      "imageReference": "rabbitmq:4.2.9-management@sha256:7fa20d0d23d63ed90499bbf62e24af48ec4ae5eb22d173f3db96e3f85b26884a",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "rabbitmq",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:07.070048039Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "15672/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14424"
+          }
+        ],
+        "5672/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14423"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_broker": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-rabbitmq-1",
+            "rabbitmq"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-rabbitmq-1",
+            "rabbitmq",
+            "34560d374990"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "4c558838003c78f249b54af8ba7081fbba0493bc79017345ff152b3512dec2d9",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.10.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "4e:bf:da:3f:73:e5",
+          "NetworkID": "4713b456e3335f5b2a744b9ef7d7e2bf576ae395cf66d3792cddaf63dda175fa"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/rabbitmq",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_rabbitmq_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_rabbitmq_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/etc/rabbitmq/rabbitmq.conf",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\rabbitmq\\rabbitmq.conf",
+          "Type": "bind"
+        }
+      ],
+      "memory": 805306368,
+      "nanoCPUs": 1000000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_broker",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-rabbitmq-30.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-seaweedfs",
+    "service": "seaweedfs",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "d0cc7da397401797220d2764fc890568906834b29eaa06205995faba73f39373",
+      "name": "/v3li002-20261118t113152-ad6c12-seaweedfs-1",
+      "imageID": "sha256:17804fb097257c8c8ca9d57338ff756ee1f4312f40e1e521d62c1a1f8614b203",
+      "imageReference": "chrislusf/seaweedfs@sha256:c2658820e763294a9e9de7b36c81e59b879e3459148351aee4e31a126ca64860",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "seaweedfs",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:07.027985936Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "8333/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14431"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_experimental": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-seaweedfs-1",
+            "seaweedfs"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-seaweedfs-1",
+            "seaweedfs",
+            "d0cc7da39740"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "4cc05d07d443c8dab92a9f94009b7c8e4d63d6328fa0e881fc46478cdab4d37d",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.5.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "da:2c:20:cd:dc:d1",
+          "NetworkID": "6448048efecd46be006b3f833cc78447772211a44cae3ece2e6fb7219d3d99ab"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_seaweedfs_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_seaweedfs_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 536870912,
+      "nanoCPUs": 500000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_experimental",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-seaweedfs-31.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-mailpit",
+    "service": "mailpit",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "145d7482b73f98100ee807bef70fbdd2c34c0901c7eea2945ab56bc97cf1b38e",
+      "name": "/v3li002-20261118t113152-ad6c12-mailpit-1",
+      "imageID": "sha256:6bee76be921b372f8b452c11321831372a65cab168b57773ee60ca70dc0f3b0e",
+      "imageReference": "axllent/mailpit:v1.34.0@sha256:23a2ef85bc50853ab3093645d1d64679afd8887e89da5e48a88940c172591a4e",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "mailpit",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:07.034924299Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "1025/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14425"
+          }
+        ],
+        "8025/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14426"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_mail": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-mailpit-1",
+            "mailpit"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-mailpit-1",
+            "mailpit",
+            "145d7482b73f"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "9ae8c1886ccc2e6036e946c60a1ef2d0cbd2f46a32361bf55055fb1be51b5095",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.9.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "6a:9e:31:fe:6b:40",
+          "NetworkID": "6cec952b219d4a347da13c72f57fd4909ea929ac2ecf0158c5c12b4061df1ffe"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_mailpit_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_mailpit_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 134217728,
+      "nanoCPUs": 500000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_mail",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-mailpit-32.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-tempo",
+    "service": "tempo",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "5d2fd3a0e58a1100e05edc8b5cd16e942c919a3845629e26eb5e7cf2c0cfa599",
+      "name": "/v3li002-20261118t113152-ad6c12-tempo-1",
+      "imageID": "sha256:d1b47a86637121283f8bb3d9342ee2c77bd2bb92b1cb2dfb35f2b13629498961",
+      "imageReference": "grafana/tempo:3.1.1@sha256:64e2fbd56d9c2b3412a4b430a58ea59e91a670b1e75f920a0c702213ad145044",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "tempo",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:06.986860248Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {},
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_telemetry": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-tempo-1",
+            "tempo"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-tempo-1",
+            "tempo",
+            "5d2fd3a0e58a"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "bb17aa19dd651e456f5e4b60589bcfa5a26490e8f41be0ddc36091ef5c3e18e7",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.6.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "7a:0c:91:79:f5:4b",
+          "NetworkID": "0bf84e56eeb7f0ace2526b8da2e9d9f5fc6f1061b4159f083168bb82e3f7618d"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/etc/tempo.yaml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\observability\\tempo.yaml",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/var/tempo",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_tempo_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_tempo_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 805306368,
+      "nanoCPUs": 1000000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_telemetry",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-tempo-33.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-PG-ROLES",
+    "service": "postgres",
+    "expectedResult": "Bootstrap superuser and app restricted attributes are distinct",
+    "actualResult": {
+      "code": 0,
+      "stdout": "neshane_dev_admin|t|t|t|t|t\nneshane_dev_app|f|f|f|f|f\n",
+      "stderr": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-ROLES-34.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-PG-AUTH",
+    "service": "postgres",
+    "expectedResult": "App authenticates over TCP",
+    "actualResult": {
+      "code": 0,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-AUTH-35.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-PG-INVALID",
+    "service": "postgres",
+    "expectedResult": "Incorrect password rejected",
+    "actualResult": {
+      "code": 2,
+      "stdout": "",
+      "stderr": "psql: error: connection to server at \"127.0.0.1\", port 5432 failed: FATAL:  password authentication failed for user \"neshane_dev_app\"\n"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-INVALID-36.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-PG-DENY-SUPERUSER",
+    "service": "postgres",
+    "expectedResult": "Restricted app cannot perform privileged/schema administration",
+    "actualResult": {
+      "code": 3,
+      "stdout": "",
+      "stderr": "ERROR:  permission denied to alter role\nDETAIL:  Only roles with the SUPERUSER attribute may change the SUPERUSER attribute.\n"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-DENY-SUPERUSER-37.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-PG-DENY-ASSUME-ADMIN",
+    "service": "postgres",
+    "expectedResult": "Restricted app cannot perform privileged/schema administration",
+    "actualResult": {
+      "code": 3,
+      "stdout": "",
+      "stderr": "ERROR:  permission denied to set role \"neshane_dev_admin\"\n"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-DENY-ASSUME-ADMIN-38.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-PG-DENY-CREATE-ROLE",
+    "service": "postgres",
+    "expectedResult": "Restricted app cannot perform privileged/schema administration",
+    "actualResult": {
+      "code": 3,
+      "stdout": "",
+      "stderr": "ERROR:  permission denied to create role\nDETAIL:  Only roles with the CREATEROLE attribute may create roles.\n"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-DENY-CREATE-ROLE-39.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-PG-DENY-CREATE-SCHEMA",
+    "service": "postgres",
+    "expectedResult": "Restricted app cannot perform privileged/schema administration",
+    "actualResult": {
+      "code": 3,
+      "stdout": "",
+      "stderr": "ERROR:  permission denied for database neshane_dev\n"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-DENY-CREATE-SCHEMA-40.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-PG-SYNTHETIC",
+    "service": "postgres",
+    "expectedResult": "Admin-owned disposable test fixture; limited app INSERT/SELECT",
+    "actualResult": {
+      "seed": {
+        "code": 0,
+        "stdout": "",
+        "stderr": ""
+      },
+      "data": {
+        "code": 0,
+        "stdout": "synthetic-v3li002-20261118t113152-ad6c12\n",
+        "stderr": ""
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-SYNTHETIC-41.json",
+    "remainingLimitation": "Synthetic fixture only; no product schema, migrations or RLS implementation."
+  },
+  {
+    "checkIdentifier": "LIR002-PG-PERSIST",
+    "service": "postgres",
+    "expectedResult": "Synthetic row survives restart",
+    "actualResult": {
+      "health": {
+        "status": "running",
+        "health": "healthy"
+      },
+      "read": {
+        "code": 0,
+        "stdout": "synthetic-v3li002-20261118t113152-ad6c12\n",
+        "stderr": ""
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-PERSIST-42.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-PG-EXISTING-VOLUME",
+    "service": "postgres",
+    "expectedResult": "Existing volume skips init: changed env does not rotate stored app password",
+    "actualResult": {
+      "changedPasswordRejected": true,
+      "originalPasswordAndRowRetained": false,
+      "logs": {
+        "code": 0,
+        "stdout": "\nPostgreSQL Database directory appears to contain a database; Skipping initialization\n\n",
+        "stderr": "2026-11-18 11:53:00.128 UTC [7] LOG:  starting PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit\n2026-11-18 11:53:00.128 UTC [7] LOG:  listening on IPv4 address \"0.0.0.0\", port 5432\n2026-11-18 11:53:00.128 UTC [7] LOG:  listening on IPv6 address \"::\", port 5432\n2026-11-18 11:53:00.132 UTC [7] LOG:  listening on Unix socket \"/var/run/postgresql/.s.PGSQL.5432\"\n2026-11-18 11:53:00.139 UTC [30] LOG:  database system was shut down at 2026-11-18 11:52:59 UTC\n2026-11-18 11:53:00.148 UTC [7] LOG:  database system is ready to accept connections\n2026-11-18 11:53:05.112 UTC [41] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 11:53:05.112 UTC [41] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 11:53:10.233 UTC [57] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 11:53:10.233 UTC [57] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 11:53:13.383 UTC [65] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 11:53:13.383 UTC [65] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 11:53:15.367 UTC [73] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 11:53:15.367 UTC [73] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 11:53:20.049 UTC [80] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 11:53:20.049 UTC [80] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 11:53:20.491 UTC [89] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 11:53:20.491 UTC [89] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 11:53:25.609 UTC [97] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 11:53:25.609 UTC [97] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n"
+      }
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-PG-EXISTING-VOLUME-43.json",
+    "remainingLimitation": "Expected configured readiness failure during changed-password experiment, not a production rotation implementation."
+  },
+  {
+    "checkIdentifier": "LIR002-PG-RESTORE-TASK-CONFIG",
+    "service": "postgres",
+    "expectedResult": "Task-only original synthetic config restored",
+    "actualResult": {
+      "status": "running",
+      "health": "healthy"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-RESTORE-TASK-CONFIG-44.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-REDIS-CONNECT",
+    "service": "redis",
+    "expectedResult": "Internal service DNS/PING; expected AOF, 256MiB and noeviction",
+    "actualResult": {
+      "ping": {
+        "code": 0,
+        "stdout": "PONG\n",
+        "stderr": ""
+      },
+      "config": {
+        "code": 0,
+        "stdout": "maxmemory-policy\nnoeviction\nmaxmemory\n268435456\nappendonly\nyes\n",
+        "stderr": ""
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-REDIS-CONNECT-45.json",
+    "remainingLimitation": "Unauthenticated dev network only; no cache/session/tenant policy."
+  },
+  {
+    "checkIdentifier": "LIR002-REDIS-PERSIST",
+    "service": "redis",
+    "expectedResult": "Synthetic write is AOF-synchronized and survives process restart",
+    "actualResult": {
+      "set": {
+        "code": 0,
+        "stdout": "OK\n",
+        "stderr": ""
+      },
+      "waitAof": {
+        "code": 0,
+        "stdout": "1\n0\n",
+        "stderr": ""
+      },
+      "health": {
+        "status": "running",
+        "health": "healthy"
+      },
+      "get": {
+        "code": 0,
+        "stdout": "synthetic-aof\n",
+        "stderr": ""
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-REDIS-PERSIST-46.json",
+    "remainingLimitation": "Process restart only, not host power-loss or backup durability."
+  },
+  {
+    "checkIdentifier": "LIR002-REDIS-UNPUBLISHED",
+    "service": "redis",
+    "expectedResult": "No host-published Redis port",
+    "actualResult": {
+      "portBindings": {}
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-REDIS-UNPUBLISHED-47.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-SERVICE-BLOCKED-rabbitmq",
+    "service": "rabbitmq",
+    "expectedResult": "Complete all bounded service checks",
+    "actualResult": {
+      "exception": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-SERVICE-BLOCKED-rabbitmq-48.json",
+    "remainingLimitation": "Subsequent checks in this service group were not completed."
+  },
+  {
+    "checkIdentifier": "LIR002-COLLECTOR-HEALTH",
+    "service": "otel-collector",
+    "expectedResult": "Actual internal health extension responds successfully",
+    "actualResult": {
+      "code": null,
+      "reason": "Not started after native config rejection"
+    },
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-COLLECTOR-HEALTH-49.json",
+    "remainingLimitation": "Health extension is not proof of downstream ingestion."
+  },
+  {
+    "checkIdentifier": "LIR002-TEMPO-HEALTH",
+    "service": "tempo",
+    "expectedResult": "Actual internal Tempo /ready succeeds",
+    "actualResult": {
+      "code": 0,
+      "stdout": "ready\n",
+      "stderr": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-TEMPO-HEALTH-50.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-SERVICE-BLOCKED-observability",
+    "service": "observability",
+    "expectedResult": "Complete all bounded service checks",
+    "actualResult": {
+      "exception": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-SERVICE-BLOCKED-observability-51.json",
+    "remainingLimitation": "Subsequent checks in this service group were not completed."
+  },
+  {
+    "checkIdentifier": "LIR002-TEMPO-RETENTION",
+    "service": "tempo",
+    "expectedResult": "Native running Tempo reports development 24h block retention",
+    "actualResult": {
+      "exitCode": 0,
+      "retentionLines": [
+        "block_retention: 336h0m0s",
+        "compacted_block_retention: 1h0m0s",
+        "block_retention: 24h0m0s",
+        "compacted_block_retention: 1h0m0s"
+      ]
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-TEMPO-RETENTION-52.json",
+    "remainingLimitation": "Configured retention, not wall-clock expiry/durability proof."
+  },
+  {
+    "checkIdentifier": "LIR002-NETWORK-DENY",
+    "service": "boundary",
+    "expectedResult": "Telemetry peer cannot establish TCP to the isolated Redis network",
+    "actualResult": {
+      "probe": {
+        "code": 1,
+        "stdout": "",
+        "stderr": ""
+      },
+      "toolAvailable": true
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-NETWORK-DENY-53.json",
+    "remainingLimitation": "Single task-owned cross-network connection attempt; metadata checks cover every service."
+  },
+  {
+    "checkIdentifier": "LIR002-SERVICE-BLOCKED-mailpit",
+    "service": "mailpit",
+    "expectedResult": "Complete all bounded service checks",
+    "actualResult": {
+      "exception": "[WinError 10061] No connection could be made because the target machine actively refused it"
+    },
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-SERVICE-BLOCKED-mailpit-54.json",
+    "remainingLimitation": "Subsequent checks in this service group were not completed."
+  },
+  {
+    "checkIdentifier": "LIR002-SEAWEED-HEALTH",
+    "service": "seaweedfs",
+    "expectedResult": "Source-confirmed internal admin health responds",
+    "actualResult": {
+      "code": 0,
+      "stdout": "{\"health\":\"ok\"}\n",
+      "stderr": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-SEAWEED-HEALTH-55.json",
+    "remainingLimitation": "Experimental mini only; this is not S3 authorization evidence."
+  },
+  {
+    "checkIdentifier": "LIR002-SERVICE-BLOCKED-seaweedfs",
+    "service": "seaweedfs",
+    "expectedResult": "Complete all bounded service checks",
+    "actualResult": {
+      "exception": "<urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>"
+    },
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-SERVICE-BLOCKED-seaweedfs-56.json",
+    "remainingLimitation": "Subsequent checks in this service group were not completed."
+  },
+  {
+    "checkIdentifier": "LIR002-HOST-POSTGRES_PORT",
+    "service": "postgres",
+    "expectedResult": "Declared localhost development endpoint is reachable from this Windows host",
+    "actualResult": {
+      "port": 14422,
+      "reachable": false,
+      "error": "[WinError 10061] No connection could be made because the target machine actively refused it",
+      "actualDockerPorts": {
+        "5432/tcp": []
+      }
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-HOST-POSTGRES_PORT-57.json",
+    "remainingLimitation": "Internal-only Docker networks may suppress publishing on this engine; no network/bind is loosened to hide failure."
+  },
+  {
+    "checkIdentifier": "LIR002-HOST-RABBITMQ_AMQP_PORT",
+    "service": "rabbitmq",
+    "expectedResult": "Declared localhost development endpoint is reachable from this Windows host",
+    "actualResult": {
+      "port": 14423,
+      "reachable": false,
+      "error": "[WinError 10061] No connection could be made because the target machine actively refused it",
+      "actualDockerPorts": {
+        "15672/tcp": [],
+        "5672/tcp": []
+      }
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-HOST-RABBITMQ_AMQP_PORT-58.json",
+    "remainingLimitation": "Internal-only Docker networks may suppress publishing on this engine; no network/bind is loosened to hide failure."
+  },
+  {
+    "checkIdentifier": "LIR002-HOST-RABBITMQ_UI_PORT",
+    "service": "rabbitmq",
+    "expectedResult": "Declared localhost development endpoint is reachable from this Windows host",
+    "actualResult": {
+      "port": 14424,
+      "reachable": false,
+      "error": "[WinError 10061] No connection could be made because the target machine actively refused it",
+      "actualDockerPorts": {
+        "15672/tcp": [],
+        "5672/tcp": []
+      }
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-HOST-RABBITMQ_UI_PORT-59.json",
+    "remainingLimitation": "Internal-only Docker networks may suppress publishing on this engine; no network/bind is loosened to hide failure."
+  },
+  {
+    "checkIdentifier": "LIR002-HOST-MAILPIT_SMTP_PORT",
+    "service": "mailpit",
+    "expectedResult": "Declared localhost development endpoint is reachable from this Windows host",
+    "actualResult": {
+      "port": 14425,
+      "reachable": false,
+      "error": "[WinError 10061] No connection could be made because the target machine actively refused it",
+      "actualDockerPorts": {
+        "1025/tcp": [],
+        "8025/tcp": []
+      }
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-HOST-MAILPIT_SMTP_PORT-60.json",
+    "remainingLimitation": "Internal-only Docker networks may suppress publishing on this engine; no network/bind is loosened to hide failure."
+  },
+  {
+    "checkIdentifier": "LIR002-HOST-MAILPIT_UI_PORT",
+    "service": "mailpit",
+    "expectedResult": "Declared localhost development endpoint is reachable from this Windows host",
+    "actualResult": {
+      "port": 14426,
+      "reachable": false,
+      "error": "[WinError 10061] No connection could be made because the target machine actively refused it",
+      "actualDockerPorts": {
+        "1025/tcp": [],
+        "8025/tcp": []
+      }
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-HOST-MAILPIT_UI_PORT-61.json",
+    "remainingLimitation": "Internal-only Docker networks may suppress publishing on this engine; no network/bind is loosened to hide failure."
+  },
+  {
+    "checkIdentifier": "LIR002-HOST-PROMETHEUS_PORT",
+    "service": "prometheus",
+    "expectedResult": "Declared localhost development endpoint is reachable from this Windows host",
+    "actualResult": {
+      "port": 14429,
+      "reachable": false,
+      "error": "[WinError 10061] No connection could be made because the target machine actively refused it",
+      "actualDockerPorts": {
+        "9090/tcp": []
+      }
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-HOST-PROMETHEUS_PORT-62.json",
+    "remainingLimitation": "Internal-only Docker networks may suppress publishing on this engine; no network/bind is loosened to hide failure."
+  },
+  {
+    "checkIdentifier": "LIR002-HOST-GRAFANA_PORT",
+    "service": "grafana",
+    "expectedResult": "Declared localhost development endpoint is reachable from this Windows host",
+    "actualResult": {
+      "port": 14430,
+      "reachable": false,
+      "error": "[WinError 10061] No connection could be made because the target machine actively refused it",
+      "actualDockerPorts": {
+        "3000/tcp": []
+      }
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-HOST-GRAFANA_PORT-63.json",
+    "remainingLimitation": "Internal-only Docker networks may suppress publishing on this engine; no network/bind is loosened to hide failure."
+  },
+  {
+    "checkIdentifier": "LIR002-HOST-SEAWEEDFS_S3_PORT",
+    "service": "seaweedfs",
+    "expectedResult": "Declared localhost development endpoint is reachable from this Windows host",
+    "actualResult": {
+      "port": 14431,
+      "reachable": false,
+      "error": "[WinError 10061] No connection could be made because the target machine actively refused it",
+      "actualDockerPorts": {
+        "8333/tcp": []
+      }
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-HOST-SEAWEEDFS_S3_PORT-64.json",
+    "remainingLimitation": "Internal-only Docker networks may suppress publishing on this engine; no network/bind is loosened to hide failure."
+  },
+  {
+    "checkIdentifier": "LIR002-RABBIT-AUTH",
+    "service": "rabbitmq",
+    "expectedResult": "Valid management login works; invalid password rejected",
+    "actualResult": {
+      "validHttpStatus": 200,
+      "invalidHttpStatus": 401
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-RABBIT-AUTH-65.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-RABBIT-PERMISSIONS",
+    "service": "rabbitmq",
+    "expectedResult": "Development user has management not administrator tag, dev vhost permissions only",
+    "actualResult": {
+      "users": {
+        "code": 0,
+        "stdout": "[\n{\"user\":\"[REDACTED]\",\"tags\":[\"management\"]}\n]\n",
+        "stderr": ""
+      },
+      "developmentVhostPermissions": {
+        "code": 0,
+        "stdout": "[\n{\"user\":\"[REDACTED]\",\"read\":\".*\",\"write\":\".*\",\"configure\":\".*\"}\n]\n",
+        "stderr": ""
+      },
+      "allTaskUserPermissions": {
+        "code": 0,
+        "stdout": "[\n{\"read\":\".*\",\"write\":\".*\",\"configure\":\".*\",\"vhost\":\"neshane_dev\"}\n]\n",
+        "stderr": ""
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-RABBIT-PERMISSIONS-66.json",
+    "remainingLimitation": "No product messaging identity/topology is accepted."
+  },
+  {
+    "checkIdentifier": "LIR002-RABBIT-AMQP",
+    "service": "rabbitmq",
+    "expectedResult": "Native internal AMQP handshake accepts valid credentials/vhost and rejects invalid password",
+    "actualResult": {
+      "code": 127,
+      "stdout": "",
+      "stderr": "escript: Internal error: {badmatch,{error,espipe}}\n[{escript,parse_header,2,[{file,\"escript.erl\"},{line,604}]},\n {escript,parse_file,2,[{file,\"escript.erl\"},{line,559}]},\n {escript,parse_and_run,3,[{file,\"escript.erl\"},{line,438}]},\n {escript,start,1,[{file,\"escript.erl\"},{line,418}]},\n {init,start_it,1,[]},\n {init,start_em,1,[]},\n {init,do_boot,3,[]}]\n"
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-RABBIT-AMQP-67.json",
+    "remainingLimitation": "Internal listener test; published host endpoint failure remains separately recorded."
+  },
+  {
+    "checkIdentifier": "LIR002-RABBIT-PERSIST-MESSAGE",
+    "service": "rabbitmq",
+    "expectedResult": "Durable synthetic queue/persistent message survives restart and is consumed",
+    "actualResult": {
+      "queueCreateStatus": 201,
+      "publishStatus": 200,
+      "routed": true,
+      "health": {
+        "status": "running",
+        "health": "healthy"
+      },
+      "consumeStatus": 200,
+      "payloadMatches": true
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-RABBIT-PERSIST-MESSAGE-68.json",
+    "remainingLimitation": "Task-only disposable queue fixture, not product topology or delivery guarantees."
+  },
+  {
+    "checkIdentifier": "LIR002-COLLECTOR-HEALTH",
+    "service": "otel-collector",
+    "expectedResult": "Actual internal health extension responds successfully",
+    "actualResult": {
+      "code": null,
+      "reason": "Not started after native config rejection"
+    },
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-COLLECTOR-HEALTH-69.json",
+    "remainingLimitation": "Health extension is not proof of downstream ingestion."
+  },
+  {
+    "checkIdentifier": "LIR002-TEMPO-HEALTH",
+    "service": "tempo",
+    "expectedResult": "Actual internal Tempo /ready succeeds",
+    "actualResult": {
+      "code": 0,
+      "stdout": "ready\n",
+      "stderr": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-TEMPO-HEALTH-70.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-PROMETHEUS-RETENTION",
+    "service": "prometheus",
+    "expectedResult": "Native running configuration has 1d and 256MB retention",
+    "actualResult": {
+      "httpStatus": 200,
+      "retentionTime": "1d",
+      "retentionSize": "256MiB"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PROMETHEUS-RETENTION-71.json",
+    "remainingLimitation": "Configured caps observed; 24-hour expiry is not time-travel tested."
+  },
+  {
+    "checkIdentifier": "LIR002-GRAFANA-NATIVE-HEALTH",
+    "service": "grafana",
+    "expectedResult": "Native server loads config and database; /api/health succeeds",
+    "actualResult": {
+      "httpStatus": 200,
+      "health": {
+        "database": "ok",
+        "version": "13.2.1",
+        "commit": "56cd3e9288d8255fecebe5d05b48d191f50674b5"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-GRAFANA-NATIVE-HEALTH-72.json",
+    "remainingLimitation": "Startup, provisioning and APIs verify native loading; no invented validation-only CLI flag."
+  },
+  {
+    "checkIdentifier": "LIR002-GRAFANA-NESHANE-PROMETHEUS",
+    "service": "grafana",
+    "expectedResult": "Provisioned datasource backend connectivity is healthy",
+    "actualResult": {
+      "httpStatus": 200,
+      "response": {
+        "details": {
+          "application": "Prometheus",
+          "features": {
+            "rulerApiEnabled": false
+          }
+        },
+        "message": "Successfully queried the Prometheus API.",
+        "status": "OK"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-GRAFANA-NESHANE-PROMETHEUS-73.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-GRAFANA-NESHANE-TEMPO",
+    "service": "grafana",
+    "expectedResult": "Provisioned datasource backend connectivity is healthy",
+    "actualResult": {
+      "httpStatus": 200,
+      "response": {
+        "message": "Data source is working",
+        "status": "OK"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-GRAFANA-NESHANE-TEMPO-74.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-MAILPIT-DELIVERY",
+    "service": "mailpit",
+    "expectedResult": "Synthetic SMTP is captured and visible in task Mailpit",
+    "actualResult": {
+      "smtpAccepted": true,
+      "httpStatus": 200,
+      "matchingMessages": 1
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-MAILPIT-DELIVERY-75.json",
+    "remainingLimitation": "No relay is configured; internal network and localhost binds checked. No external email delivery was requested."
+  },
+  {
+    "checkIdentifier": "LIR002-SEAWEED-HEALTH",
+    "service": "seaweedfs",
+    "expectedResult": "Source-confirmed internal admin health responds",
+    "actualResult": {
+      "code": 0,
+      "stdout": "{\"health\":\"ok\"}\n",
+      "stderr": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-SEAWEED-HEALTH-76.json",
+    "remainingLimitation": "Experimental mini only; this is not S3 authorization evidence."
+  },
+  {
+    "checkIdentifier": "LIR002-SEAWEED-OBJECT",
+    "service": "seaweedfs",
+    "expectedResult": "Signed S3 PUT/GET succeeds with identical SHA-256",
+    "actualResult": {
+      "putStatus": 200,
+      "getStatus": 200,
+      "expectedSha256": "5570970becc05fddc5913f2e4434051d7cb23420abd5e005a3d0fa17135cbe86",
+      "actualSha256": "5570970becc05fddc5913f2e4434051d7cb23420abd5e005a3d0fa17135cbe86",
+      "putResponse": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-SEAWEED-OBJECT-77.json",
+    "remainingLimitation": "EXPERIMENTAL / DEV-ONLY; OD-017 is not resolved."
+  },
+  {
+    "checkIdentifier": "LIR002-SEAWEED-AUTH",
+    "service": "seaweedfs",
+    "expectedResult": "Wrong signing secret and missing credentials are rejected",
+    "actualResult": {
+      "invalidSignatureStatus": 403,
+      "anonymousStatus": 403,
+      "invalidResponse": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>SignatureDoesNotMatch</Code><Message>The request signature we calculated does not match the signature you provided. Check your key and signing method.</Message><Resource>/neshane-dev/v3li002-20261118t113152-ad6c12.txt</Resource><RequestId>18E9225FE9B1AB3ABAF0816C</RequestId><Key>v3li002-20261118t113152-ad6c12.txt</Key><BucketName>neshane-dev</BucketName></Error>",
+      "anonymousResponse": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>AccessDenied</Code><Message>Access Denied.</Message><Resource>/neshane-dev/v3li002-20261118t113152-ad6c12.txt</Resource><RequestId>18E922605F48B392CE378C2C</RequestId><Key>v3li002-20261118t113152-ad6c12.txt</Key><BucketName>neshane-dev</BucketName></Error>"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-SEAWEED-AUTH-78.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-INTERNAL-BLOCKED-seaweedfs",
+    "service": "seaweedfs",
+    "expectedResult": "Complete independent checks over unchanged task networks",
+    "actualResult": {
+      "exception": "Internal approved-image HTTP client failed: curl: (7) Failed to connect to seaweedfs:8333 after 1 ms: Could not connect to server\n"
+    },
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-INTERNAL-BLOCKED-seaweedfs-79.json",
+    "remainingLimitation": "Host reachability failures and initial BLOCKED observations remain preserved."
+  },
+  {
+    "checkIdentifier": "LIR002-RABBIT-AMQP-CORRECTED-PROBE",
+    "service": "rabbitmq",
+    "expectedResult": "Seekable native AMQP probe accepts valid credentials/vhost and rejects invalid password",
+    "actualResult": {
+      "code": 1,
+      "stdout": "AMQP_PROBE_FAILED class=error stage=valid_authentication\n",
+      "stderr": ""
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-RABBIT-AMQP-CORRECTED-PROBE-80.json",
+    "remainingLimitation": "Initial escript /dev/stdin espipe FAIL is retained as a harness failure; host path remains FAIL."
+  },
+  {
+    "checkIdentifier": "LIR002-PG-EXISTING-VOLUME",
+    "service": "postgres",
+    "expectedResult": "Existing volume skips init: changed env does not rotate stored app password",
+    "actualResult": {
+      "changedPasswordRejected": true,
+      "originalPasswordAndRowRetained": true,
+      "originalPasswordProbe": {
+        "code": 0,
+        "stdout": "synthetic-v3li002-20261118t113152-ad6c12\n",
+        "stderr": ""
+      },
+      "inputTransport": "exact binary stdin; prior text-input observation remains preserved",
+      "logs": {
+        "code": 0,
+        "stdout": "\nPostgreSQL Database directory appears to contain a database; Skipping initialization\n\n",
+        "stderr": "2026-11-18 12:14:50.230 UTC [7] LOG:  starting PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit\n2026-11-18 12:14:50.230 UTC [7] LOG:  listening on IPv4 address \"0.0.0.0\", port 5432\n2026-11-18 12:14:50.230 UTC [7] LOG:  listening on IPv6 address \"::\", port 5432\n2026-11-18 12:14:50.235 UTC [7] LOG:  listening on Unix socket \"/var/run/postgresql/.s.PGSQL.5432\"\n2026-11-18 12:14:50.246 UTC [30] LOG:  database system was shut down at 2026-11-18 12:14:49 UTC\n2026-11-18 12:14:50.268 UTC [7] LOG:  database system is ready to accept connections\n2026-11-18 12:14:55.246 UTC [42] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:14:55.246 UTC [42] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 12:15:00.346 UTC [57] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:15:00.346 UTC [57] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 12:15:05.072 UTC [65] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:15:05.072 UTC [65] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 12:15:05.466 UTC [73] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:15:05.466 UTC [73] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 12:15:10.585 UTC [82] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:15:10.585 UTC [82] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n2026-11-18 12:15:15.698 UTC [97] FATAL:  password authentication failed for user \"neshane_dev_app\"\n2026-11-18 12:15:15.698 UTC [97] DETAIL:  Connection matched file \"/var/lib/postgresql/data/pg_hba.conf\" line 119: \"host    all             all             127.0.0.1/32            scram-sha-256\"\n"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-EXISTING-VOLUME-81.json",
+    "remainingLimitation": "Expected configured readiness failure during changed-password experiment, not a production rotation implementation."
+  },
+  {
+    "checkIdentifier": "LIR002-PG-RESTORE-TASK-CONFIG",
+    "service": "postgres",
+    "expectedResult": "Task-only original synthetic config restored",
+    "actualResult": {
+      "status": "running",
+      "health": "healthy"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PG-RESTORE-TASK-CONFIG-82.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-SEAWEED-HEALTH",
+    "service": "seaweedfs",
+    "expectedResult": "Source-confirmed internal admin health responds",
+    "actualResult": {
+      "code": 0,
+      "stdout": "{\"health\":\"ok\"}\n",
+      "stderr": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-SEAWEED-HEALTH-83.json",
+    "remainingLimitation": "Experimental mini only; this is not S3 authorization evidence."
+  },
+  {
+    "checkIdentifier": "LIR002-SEAWEED-OBJECT",
+    "service": "seaweedfs",
+    "expectedResult": "Signed S3 PUT/GET succeeds with identical SHA-256",
+    "actualResult": {
+      "putStatus": 200,
+      "getStatus": 200,
+      "expectedSha256": "5570970becc05fddc5913f2e4434051d7cb23420abd5e005a3d0fa17135cbe86",
+      "actualSha256": "5570970becc05fddc5913f2e4434051d7cb23420abd5e005a3d0fa17135cbe86",
+      "putResponse": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-SEAWEED-OBJECT-84.json",
+    "remainingLimitation": "EXPERIMENTAL / DEV-ONLY; OD-017 is not resolved."
+  },
+  {
+    "checkIdentifier": "LIR002-SEAWEED-AUTH",
+    "service": "seaweedfs",
+    "expectedResult": "Wrong signing secret and missing credentials are rejected",
+    "actualResult": {
+      "invalidSignatureStatus": 403,
+      "anonymousStatus": 403,
+      "invalidResponse": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>SignatureDoesNotMatch</Code><Message>The request signature we calculated does not match the signature you provided. Check your key and signing method.</Message><Resource>/neshane-dev/v3li002-20261118t113152-ad6c12.txt</Resource><RequestId>18E922C4521236AB6A501054</RequestId><Key>v3li002-20261118t113152-ad6c12.txt</Key><BucketName>neshane-dev</BucketName></Error>",
+      "anonymousResponse": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>AccessDenied</Code><Message>Access Denied.</Message><Resource>/neshane-dev/v3li002-20261118t113152-ad6c12.txt</Resource><RequestId>18E922C509D4B7F8FBA2329E</RequestId><Key>v3li002-20261118t113152-ad6c12.txt</Key><BucketName>neshane-dev</BucketName></Error>"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-SEAWEED-AUTH-85.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-SEAWEED-PERSIST",
+    "service": "seaweedfs",
+    "expectedResult": "Synthetic object and credential configuration survive restart",
+    "actualResult": {
+      "getStatus": 200,
+      "expectedSha256": "5570970becc05fddc5913f2e4434051d7cb23420abd5e005a3d0fa17135cbe86",
+      "afterRestartSha256": "5570970becc05fddc5913f2e4434051d7cb23420abd5e005a3d0fa17135cbe86"
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-SEAWEED-PERSIST-86.json",
+    "remainingLimitation": "Process restart only; no product storage, HA or power-loss guarantee."
+  },
+  {
+    "checkIdentifier": "LIR002-RABBIT-AMQP-CORRECTED-PROBE",
+    "service": "rabbitmq",
+    "expectedResult": "Seekable native AMQP probe accepts valid credentials/vhost and rejects invalid password",
+    "actualResult": {
+      "code": 1,
+      "stdout": "AMQP_PROBE_FAILED class=error stage={valid_authentication,vhost_open_response} reason=closed\n",
+      "stderr": ""
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-RABBIT-AMQP-CORRECTED-PROBE-87.json",
+    "remainingLimitation": "Initial escript /dev/stdin espipe FAIL is retained as a harness failure; host path remains FAIL."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-postgres",
+    "service": "postgres",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "cd0aed6b00ddf1cbb14e49d4d9f804c08ed49f12059c00a48ab65a138df3c493",
+      "name": "/v3li002-20261118t113152-ad6c12-postgres-1",
+      "imageID": "sha256:140936e8665d5274aa58df31b722693b4b451c541bb0f1a263a345d424bfacb4",
+      "imageReference": "postgres:17.12@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "postgres",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T12:15:20.111917858Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "5432/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14422"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_postgres": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-postgres-1",
+            "postgres"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-postgres-1",
+            "postgres",
+            "cd0aed6b00dd"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "0af35614af75ad9fa02124d22fc4b6738ff73fb75424ea82188487e8446505a8",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.8.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "6e:8a:17:0a:b3:38",
+          "NetworkID": "03d15cef591ba42daa00eb88a0ad44d462919e6dd3d46ef74ff3ad179a61d76a"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/postgresql/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_postgres_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_postgres_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/docker-entrypoint-initdb.d/10-development-role.sh",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\postgres\\10-development-role.sh",
+          "Type": "bind"
+        }
+      ],
+      "memory": 536870912,
+      "nanoCPUs": 1000000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_postgres",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-postgres-88.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-grafana",
+    "service": "grafana",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "686426ebf0b1d10fb10baa073a3571e99130aad3b77a01026c86838ef23ce696",
+      "name": "/v3li002-20261118t113152-ad6c12-grafana-1",
+      "imageID": "sha256:8400f365c39767b0d0df30e3aeb0796f873c3acf89b28089745bfafd88d83c7c",
+      "imageReference": "grafana/grafana:13.2.1@sha256:f772d434e8fab0049deb2b1b30abd43342bcfca1537614aa8d36080232cf4283",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "grafana",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:17.081004519Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "3000/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14430"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_telemetry": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-grafana-1",
+            "grafana"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-grafana-1",
+            "grafana",
+            "686426ebf0b1"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "3fcf4f9f5c202e9012f56b26610d6f94e7d52c0bdf5e874daf3334cc5d525e90",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.6.4",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "6a:75:22:6b:24:3b",
+          "NetworkID": "0bf84e56eeb7f0ace2526b8da2e9d9f5fc6f1061b4159f083168bb82e3f7618d"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/grafana",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_grafana_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_grafana_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/etc/grafana/provisioning/datasources/datasources.yaml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\observability\\grafana-datasources.yaml",
+          "Type": "bind"
+        }
+      ],
+      "memory": 402653184,
+      "nanoCPUs": 500000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_telemetry",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-grafana-89.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-prometheus",
+    "service": "prometheus",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "48b7304e03df6a355215a5f01ac744d6cb7e48506e0b41fddf5d521551084357",
+      "name": "/v3li002-20261118t113152-ad6c12-prometheus-1",
+      "imageID": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+      "imageReference": "prom/prometheus:v3.7.3@sha256:49214755b6153f90a597adcbff0252cc61069f8ab69ce8411285cd4a560e8038",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "prometheus",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:07.039452608Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "9090/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14429"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_telemetry": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-prometheus-1",
+            "prometheus"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-prometheus-1",
+            "prometheus",
+            "48b7304e03df"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "7aac2f55c3a2e89ebe3bc1c829dd046b71ba364cbc682f25d580b05f48d3f217",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.6.3",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "4e:00:6e:03:0c:d6",
+          "NetworkID": "0bf84e56eeb7f0ace2526b8da2e9d9f5fc6f1061b4159f083168bb82e3f7618d"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/prometheus",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_prometheus_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_prometheus_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/etc/prometheus/prometheus.yml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\observability\\prometheus.yml",
+          "Type": "bind"
+        }
+      ],
+      "memory": 536870912,
+      "nanoCPUs": 500000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_telemetry",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-prometheus-90.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-redis",
+    "service": "redis",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "a992f61ac4d2ab1788c48fe2423b5ac10616cf5d794fa75e821028fc2a2cfd3f",
+      "name": "/v3li002-20261118t113152-ad6c12-redis-1",
+      "imageID": "sha256:3a17a97bb6c7d9a7ee1bd3d5ecf7c6d02adf4bfd9fe73a974b3767b442dfbfaa",
+      "imageReference": "redis:7.4.12@sha256:2e3eb11462c4e3759e6972678dd051d150ff54b1e60714b3c33b701260172a90",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "redis",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:53:46.017905055Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {},
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_redis": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-redis-1",
+            "redis"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-redis-1",
+            "redis",
+            "a992f61ac4d2"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "a86f8d6c5eef26985e9599c5c12ea225275160b49263662930b51af53424f74e",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.7.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "12:7a:93:42:e4:38",
+          "NetworkID": "150a1306ea313b013f2e233b43eefaa737c2bcfb778208bad10519de316696c9"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_redis_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_redis_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 402653184,
+      "nanoCPUs": 500000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_redis",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-redis-91.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-rabbitmq",
+    "service": "rabbitmq",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "34560d3749905fde9c0aa628632f5753de3757b399291a24b71419117d24ac66",
+      "name": "/v3li002-20261118t113152-ad6c12-rabbitmq-1",
+      "imageID": "sha256:eb8cc2139494277cd547c3515a89219d7a21e9db426205c83d37fa96d1da424b",
+      "imageReference": "rabbitmq:4.2.9-management@sha256:7fa20d0d23d63ed90499bbf62e24af48ec4ae5eb22d173f3db96e3f85b26884a",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "rabbitmq",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T12:07:53.192550516Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "15672/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14424"
+          }
+        ],
+        "5672/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14423"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_broker": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-rabbitmq-1",
+            "rabbitmq"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-rabbitmq-1",
+            "rabbitmq",
+            "34560d374990"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "d99d0f0653a9a054365ffdb7f7a10868b18d2dfb783f7047e2d26671db1ab4cd",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.10.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "d6:cf:83:a4:7d:07",
+          "NetworkID": "4713b456e3335f5b2a744b9ef7d7e2bf576ae395cf66d3792cddaf63dda175fa"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/var/lib/rabbitmq",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_rabbitmq_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_rabbitmq_data",
+          "Type": "volume"
+        },
+        {
+          "Destination": "/etc/rabbitmq/rabbitmq.conf",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\rabbitmq\\rabbitmq.conf",
+          "Type": "bind"
+        }
+      ],
+      "memory": 805306368,
+      "nanoCPUs": 1000000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_broker",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-rabbitmq-92.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-seaweedfs",
+    "service": "seaweedfs",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "d0cc7da397401797220d2764fc890568906834b29eaa06205995faba73f39373",
+      "name": "/v3li002-20261118t113152-ad6c12-seaweedfs-1",
+      "imageID": "sha256:17804fb097257c8c8ca9d57338ff756ee1f4312f40e1e521d62c1a1f8614b203",
+      "imageReference": "chrislusf/seaweedfs@sha256:c2658820e763294a9e9de7b36c81e59b879e3459148351aee4e31a126ca64860",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "seaweedfs",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T12:15:59.567966698Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "8333/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14431"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_experimental": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-seaweedfs-1",
+            "seaweedfs"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-seaweedfs-1",
+            "seaweedfs",
+            "d0cc7da39740"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "7d64ebfc9a03dd1468f7486649b1cf5db3ceec9b6ab639d707f6c4b26e72b626",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.5.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "3a:7f:a8:92:d5:92",
+          "NetworkID": "6448048efecd46be006b3f833cc78447772211a44cae3ece2e6fb7219d3d99ab"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_seaweedfs_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_seaweedfs_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 536870912,
+      "nanoCPUs": 500000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_experimental",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-seaweedfs-93.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-mailpit",
+    "service": "mailpit",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "145d7482b73f98100ee807bef70fbdd2c34c0901c7eea2945ab56bc97cf1b38e",
+      "name": "/v3li002-20261118t113152-ad6c12-mailpit-1",
+      "imageID": "sha256:6bee76be921b372f8b452c11321831372a65cab168b57773ee60ca70dc0f3b0e",
+      "imageReference": "axllent/mailpit:v1.34.0@sha256:23a2ef85bc50853ab3093645d1d64679afd8887e89da5e48a88940c172591a4e",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "mailpit",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:07.034924299Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {
+        "1025/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14425"
+          }
+        ],
+        "8025/tcp": [
+          {
+            "HostIp": "127.0.0.1",
+            "HostPort": "14426"
+          }
+        ]
+      },
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_mail": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-mailpit-1",
+            "mailpit"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-mailpit-1",
+            "mailpit",
+            "145d7482b73f"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "9ae8c1886ccc2e6036e946c60a1ef2d0cbd2f46a32361bf55055fb1be51b5095",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.9.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "6a:9e:31:fe:6b:40",
+          "NetworkID": "6cec952b219d4a347da13c72f57fd4909ea929ac2ecf0158c5c12b4061df1ffe"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/data",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_mailpit_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_mailpit_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 134217728,
+      "nanoCPUs": 500000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_mail",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-mailpit-94.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-tempo",
+    "service": "tempo",
+    "expectedResult": "Project ownership, loopback ports, segmented networks, limits, mounts and no host privileges",
+    "actualResult": {
+      "id": "5d2fd3a0e58a1100e05edc8b5cd16e942c919a3845629e26eb5e7cf2c0cfa599",
+      "name": "/v3li002-20261118t113152-ad6c12-tempo-1",
+      "imageID": "sha256:d1b47a86637121283f8bb3d9342ee2c77bd2bb92b1cb2dfb35f2b13629498961",
+      "imageReference": "grafana/tempo:3.1.1@sha256:64e2fbd56d9c2b3412a4b430a58ea59e91a670b1e75f920a0c702213ad145044",
+      "project": "v3li002-20261118t113152-ad6c12",
+      "service": "tempo",
+      "status": "running",
+      "running": true,
+      "startedAt": "2026-11-18T11:49:06.986860248Z",
+      "restartCount": 0,
+      "oomKilled": false,
+      "ports": {},
+      "networks": {
+        "v3li002-20261118t113152-ad6c12_telemetry": {
+          "Aliases": [
+            "v3li002-20261118t113152-ad6c12-tempo-1",
+            "tempo"
+          ],
+          "DNSNames": [
+            "v3li002-20261118t113152-ad6c12-tempo-1",
+            "tempo",
+            "5d2fd3a0e58a"
+          ],
+          "DriverOpts": null,
+          "EndpointID": "bb17aa19dd651e456f5e4b60589bcfa5a26490e8f41be0ddc36091ef5c3e18e7",
+          "Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "GwPriority": 0,
+          "IPAMConfig": null,
+          "IPAddress": "172.30.6.2",
+          "IPPrefixLen": 24,
+          "IPv6Gateway": "",
+          "Links": null,
+          "MacAddress": "7a:0c:91:79:f5:4b",
+          "NetworkID": "0bf84e56eeb7f0ace2526b8da2e9d9f5fc6f1061b4159f083168bb82e3f7618d"
+        }
+      },
+      "mounts": [
+        {
+          "Destination": "/etc/tempo.yaml",
+          "Mode": "ro",
+          "Propagation": "rprivate",
+          "RW": false,
+          "Source": "E:\\Neshane-CRM-V3-V3-LOCAL-INFRA-001\\Local-Infra\\observability\\tempo.yaml",
+          "Type": "bind"
+        },
+        {
+          "Destination": "/var/tempo",
+          "Driver": "local",
+          "Mode": "rw",
+          "Name": "v3li002-20261118t113152-ad6c12_tempo_data",
+          "Propagation": "",
+          "RW": true,
+          "Source": "v3li002-20261118t113152-ad6c12_tempo_data",
+          "Type": "volume"
+        }
+      ],
+      "memory": 805306368,
+      "nanoCPUs": 1000000000,
+      "pidsLimit": 256,
+      "privileged": false,
+      "networkMode": "v3li002-20261118t113152-ad6c12_telemetry",
+      "securityOpt": [
+        "no-new-privileges:true"
+      ],
+      "capAdd": null,
+      "logConfig": {
+        "Config": {
+          "max-file": "2",
+          "max-size": "5m"
+        },
+        "Type": "json-file"
+      },
+      "restartPolicy": {
+        "MaximumRetryCount": 0,
+        "Name": "no"
+      }
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-BOUNDARY-tempo-95.json",
+    "remainingLimitation": "Metadata/control evidence on a trusted shared host, not hostile-host/tenant isolation acceptance."
+  },
+  {
+    "checkIdentifier": "LIR002-CLEANUP",
+    "service": "cleanup",
+    "expectedResult": "All explicitly identified task containers/networks/disposable volumes removed",
+    "actualResult": {
+      "removed": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      },
+      "remaining": {
+        "containers": [],
+        "networks": [],
+        "volumes": []
+      },
+      "errors": []
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-CLEANUP-96.json",
+    "remainingLimitation": "Downloaded allowed images are intentionally retained and reported separately."
+  },
+  {
+    "checkIdentifier": "LIR002-PRESERVATION-DOCKER",
+    "service": "preservation",
+    "expectedResult": "Original container instance/state/config, networks/volumes and image references preserved",
+    "actualResult": {
+      "items": [
+        {
+          "kind": "containers",
+          "identity": "6848c622faa09be80b2ae6ab1b08c2a590bb223b48bdec980532829400170d9b",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "containers",
+          "identity": "ad7d9ab966698c83f2862aa490e16747c43407b4e312aa0a274e5521fff3d920",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "containers",
+          "identity": "59bf1b7c8acbf0391549b0642fe10ed87b3e9b6e2681f13d02bb2bf5da5dd5da",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "containers",
+          "identity": "8a2d5758beea10819763cbddd757f0c9c82ced58b026e4364a7fefd6301edba3",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "containers",
+          "identity": "86e9458bae85c9eb3da6b1e7540da38145492cbc760f6400f39501e4e6736d10",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "containers",
+          "identity": "ffe6c5bb7dd1fc4995f921beaa155519fee110e3ea496f5dcd6dc97b87a8e821",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "containers",
+          "identity": "cf8c221e922dd5b04ae583ddaa593f7251d815ea1dc47d63eded414449cd3021",
+          "preserved": false,
+          "difference": {
+            "before": {
+              "id": "cf8c221e922dd5b04ae583ddaa593f7251d815ea1dc47d63eded414449cd3021",
+              "name": "/neshane-tempo",
+              "imageID": "sha256:d1b47a86637121283f8bb3d9342ee2c77bd2bb92b1cb2dfb35f2b13629498961",
+              "imageReference": "grafana/tempo:3.1.1",
+              "project": "neshane-local",
+              "service": "tempo",
+              "status": "running",
+              "running": true,
+              "startedAt": "2026-11-16T18:29:31.132658411Z",
+              "restartCount": 0,
+              "oomKilled": false,
+              "ports": {
+                "3200/tcp": [
+                  {
+                    "HostIp": "127.0.0.1",
+                    "HostPort": "13200"
+                  }
+                ]
+              },
+              "networks": {
+                "neshane-local_default": {
+                  "Aliases": [
+                    "neshane-tempo",
+                    "tempo"
+                  ],
+                  "DNSNames": [
+                    "neshane-tempo",
+                    "tempo",
+                    "cf8c221e922d"
+                  ],
+                  "DriverOpts": null,
+                  "EndpointID": "1bd17f7167c5c7b76c425ae46b595c38ba8c056d7ccc04afd1ecd3af5bb94673",
+                  "Gateway": "172.30.0.1",
+                  "GlobalIPv6Address": "",
+                  "GlobalIPv6PrefixLen": 0,
+                  "GwPriority": 0,
+                  "IPAMConfig": null,
+                  "IPAddress": "172.30.0.3",
+                  "IPPrefixLen": 24,
+                  "IPv6Gateway": "",
+                  "Links": null,
+                  "MacAddress": "66:a8:88:14:ae:cb",
+                  "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+                }
+              },
+              "mounts": [
+                {
+                  "Destination": "/var/tempo",
+                  "Driver": "local",
+                  "Mode": "rw",
+                  "Name": "neshane-local_tempo_data",
+                  "Propagation": "",
+                  "RW": true,
+                  "Source": "/var/lib/docker/volumes/neshane-local_tempo_data/_data",
+                  "Type": "volume"
+                },
+                {
+                  "Destination": "/etc/tempo.yaml",
+                  "Mode": "ro",
+                  "Propagation": "rprivate",
+                  "RW": false,
+                  "Source": "E:\\Neshane-CRM-V3\\Local-Infra\\observability\\tempo.yaml",
+                  "Type": "bind"
+                }
+              ],
+              "memory": 0,
+              "nanoCPUs": 0,
+              "pidsLimit": null,
+              "privileged": false,
+              "networkMode": "neshane-local_default",
+              "securityOpt": null,
+              "capAdd": null,
+              "logConfig": {
+                "Config": {
+                  "max-file": "5",
+                  "max-size": "10m"
+                },
+                "Type": "json-file"
+              },
+              "restartPolicy": {
+                "MaximumRetryCount": 0,
+                "Name": "unless-stopped"
+              }
+            },
+            "after": {
+              "id": "cf8c221e922dd5b04ae583ddaa593f7251d815ea1dc47d63eded414449cd3021",
+              "name": "/neshane-tempo",
+              "imageID": "sha256:d1b47a86637121283f8bb3d9342ee2c77bd2bb92b1cb2dfb35f2b13629498961",
+              "imageReference": "grafana/tempo:3.1.1",
+              "project": "neshane-local",
+              "service": "tempo",
+              "status": "running",
+              "running": true,
+              "startedAt": "2026-11-16T18:29:31.132658411Z",
+              "restartCount": 0,
+              "oomKilled": false,
+              "ports": {
+                "3200/tcp": [
+                  {
+                    "HostIp": "127.0.0.1",
+                    "HostPort": "13200"
+                  }
+                ]
+              },
+              "networks": {
+                "neshane-local_default": {
+                  "Aliases": [
+                    "neshane-tempo",
+                    "tempo"
+                  ],
+                  "DNSNames": [
+                    "neshane-tempo",
+                    "tempo",
+                    "cf8c221e922d"
+                  ],
+                  "DriverOpts": null,
+                  "EndpointID": "1bd17f7167c5c7b76c425ae46b595c38ba8c056d7ccc04afd1ecd3af5bb94673",
+                  "Gateway": "172.30.0.1",
+                  "GlobalIPv6Address": "",
+                  "GlobalIPv6PrefixLen": 0,
+                  "GwPriority": 0,
+                  "IPAMConfig": null,
+                  "IPAddress": "172.30.0.3",
+                  "IPPrefixLen": 24,
+                  "IPv6Gateway": "",
+                  "Links": null,
+                  "MacAddress": "66:a8:88:14:ae:cb",
+                  "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+                }
+              },
+              "mounts": [
+                {
+                  "Destination": "/etc/tempo.yaml",
+                  "Mode": "ro",
+                  "Propagation": "rprivate",
+                  "RW": false,
+                  "Source": "E:\\Neshane-CRM-V3\\Local-Infra\\observability\\tempo.yaml",
+                  "Type": "bind"
+                },
+                {
+                  "Destination": "/var/tempo",
+                  "Driver": "local",
+                  "Mode": "rw",
+                  "Name": "neshane-local_tempo_data",
+                  "Propagation": "",
+                  "RW": true,
+                  "Source": "/var/lib/docker/volumes/neshane-local_tempo_data/_data",
+                  "Type": "volume"
+                }
+              ],
+              "memory": 0,
+              "nanoCPUs": 0,
+              "pidsLimit": null,
+              "privileged": false,
+              "networkMode": "neshane-local_default",
+              "securityOpt": null,
+              "capAdd": null,
+              "logConfig": {
+                "Config": {
+                  "max-file": "5",
+                  "max-size": "10m"
+                },
+                "Type": "json-file"
+              },
+              "restartPolicy": {
+                "MaximumRetryCount": 0,
+                "Name": "unless-stopped"
+              }
+            }
+          }
+        },
+        {
+          "kind": "containers",
+          "identity": "adf02fe038159fefdaf11dad5a08746f826116a06fc4bc1a78f73b23116f0d32",
+          "preserved": false,
+          "difference": {
+            "before": {
+              "id": "adf02fe038159fefdaf11dad5a08746f826116a06fc4bc1a78f73b23116f0d32",
+              "name": "/neshane-prometheus",
+              "imageID": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+              "imageReference": "prom/prometheus:v3.7.3",
+              "project": "neshane-local",
+              "service": "prometheus",
+              "status": "running",
+              "running": true,
+              "startedAt": "2026-11-16T18:29:31.111495429Z",
+              "restartCount": 0,
+              "oomKilled": false,
+              "ports": {
+                "9090/tcp": [
+                  {
+                    "HostIp": "127.0.0.1",
+                    "HostPort": "19090"
+                  }
+                ]
+              },
+              "networks": {
+                "neshane-local_default": {
+                  "Aliases": [
+                    "neshane-prometheus",
+                    "prometheus"
+                  ],
+                  "DNSNames": [
+                    "neshane-prometheus",
+                    "prometheus",
+                    "adf02fe03815"
+                  ],
+                  "DriverOpts": null,
+                  "EndpointID": "267390d94cdd75526a623686ed022661afdd9288a50a3faa85f9ee6a85b7a1f7",
+                  "Gateway": "172.30.0.1",
+                  "GlobalIPv6Address": "",
+                  "GlobalIPv6PrefixLen": 0,
+                  "GwPriority": 0,
+                  "IPAMConfig": null,
+                  "IPAddress": "172.30.0.6",
+                  "IPPrefixLen": 24,
+                  "IPv6Gateway": "",
+                  "Links": null,
+                  "MacAddress": "a2:a4:74:e3:d4:d8",
+                  "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+                }
+              },
+              "mounts": [
+                {
+                  "Destination": "/prometheus",
+                  "Driver": "local",
+                  "Mode": "rw",
+                  "Name": "neshane-local_prometheus_data",
+                  "Propagation": "",
+                  "RW": true,
+                  "Source": "/var/lib/docker/volumes/neshane-local_prometheus_data/_data",
+                  "Type": "volume"
+                },
+                {
+                  "Destination": "/etc/prometheus/prometheus.yml",
+                  "Mode": "ro",
+                  "Propagation": "rprivate",
+                  "RW": false,
+                  "Source": "E:\\Neshane-CRM-V3\\Local-Infra\\observability\\prometheus.yml",
+                  "Type": "bind"
+                }
+              ],
+              "memory": 0,
+              "nanoCPUs": 0,
+              "pidsLimit": null,
+              "privileged": false,
+              "networkMode": "neshane-local_default",
+              "securityOpt": null,
+              "capAdd": null,
+              "logConfig": {
+                "Config": {
+                  "max-file": "5",
+                  "max-size": "10m"
+                },
+                "Type": "json-file"
+              },
+              "restartPolicy": {
+                "MaximumRetryCount": 0,
+                "Name": "unless-stopped"
+              }
+            },
+            "after": {
+              "id": "adf02fe038159fefdaf11dad5a08746f826116a06fc4bc1a78f73b23116f0d32",
+              "name": "/neshane-prometheus",
+              "imageID": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+              "imageReference": "prom/prometheus:v3.7.3",
+              "project": "neshane-local",
+              "service": "prometheus",
+              "status": "running",
+              "running": true,
+              "startedAt": "2026-11-16T18:29:31.111495429Z",
+              "restartCount": 0,
+              "oomKilled": false,
+              "ports": {
+                "9090/tcp": [
+                  {
+                    "HostIp": "127.0.0.1",
+                    "HostPort": "19090"
+                  }
+                ]
+              },
+              "networks": {
+                "neshane-local_default": {
+                  "Aliases": [
+                    "neshane-prometheus",
+                    "prometheus"
+                  ],
+                  "DNSNames": [
+                    "neshane-prometheus",
+                    "prometheus",
+                    "adf02fe03815"
+                  ],
+                  "DriverOpts": null,
+                  "EndpointID": "267390d94cdd75526a623686ed022661afdd9288a50a3faa85f9ee6a85b7a1f7",
+                  "Gateway": "172.30.0.1",
+                  "GlobalIPv6Address": "",
+                  "GlobalIPv6PrefixLen": 0,
+                  "GwPriority": 0,
+                  "IPAMConfig": null,
+                  "IPAddress": "172.30.0.6",
+                  "IPPrefixLen": 24,
+                  "IPv6Gateway": "",
+                  "Links": null,
+                  "MacAddress": "a2:a4:74:e3:d4:d8",
+                  "NetworkID": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c"
+                }
+              },
+              "mounts": [
+                {
+                  "Destination": "/etc/prometheus/prometheus.yml",
+                  "Mode": "ro",
+                  "Propagation": "rprivate",
+                  "RW": false,
+                  "Source": "E:\\Neshane-CRM-V3\\Local-Infra\\observability\\prometheus.yml",
+                  "Type": "bind"
+                },
+                {
+                  "Destination": "/prometheus",
+                  "Driver": "local",
+                  "Mode": "rw",
+                  "Name": "neshane-local_prometheus_data",
+                  "Propagation": "",
+                  "RW": true,
+                  "Source": "/var/lib/docker/volumes/neshane-local_prometheus_data/_data",
+                  "Type": "volume"
+                }
+              ],
+              "memory": 0,
+              "nanoCPUs": 0,
+              "pidsLimit": null,
+              "privileged": false,
+              "networkMode": "neshane-local_default",
+              "securityOpt": null,
+              "capAdd": null,
+              "logConfig": {
+                "Config": {
+                  "max-file": "5",
+                  "max-size": "10m"
+                },
+                "Type": "json-file"
+              },
+              "restartPolicy": {
+                "MaximumRetryCount": 0,
+                "Name": "unless-stopped"
+              }
+            }
+          }
+        },
+        {
+          "kind": "containers",
+          "identity": "165e661f846d664e6b1dd4157f1347388e66d3aa72ca23533bb40454b1eaf4bc",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "containers",
+          "identity": "f365048f8803dfdbba00ff573a506bdea2bfda6cb8acf31451267d3423de9cda",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "containers",
+          "identity": "c684eba5dda00d66b7a3c42d06cf8f92228ffc7a4f3535f25ba2d99f1a433006",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "containers",
+          "identity": "73f72ed261bd8a96bd1cf68d84d82bffb8adf305c22b0cbd99770737d0876920",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "containers",
+          "identity": "9067bf4606ffb8ea0486b3d85eb140163953b7945f8d3f1075d6ab2aa7fbee65",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "networks",
+          "identity": "047235e632a4b37811a036f06917f1a85b299aeedbc635b84bf1c9f7fac943d4",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "networks",
+          "identity": "448154e3d2e830e127ffb3d6f43b9e065c55b7ff63fcd95a86be706ff905d0eb",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "networks",
+          "identity": "ff76980ce2508cb0f8800067f930db1806190303884d4bcf8baa9343c227d27c",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "networks",
+          "identity": "8650c6399ca6e29110be26e3853b88ff07f3d1681243182243cf386a1752d9b7",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "networks",
+          "identity": "0b48d77d04f24561974d7cd0fa327a09bce5b90ad8254b9ba67abada67f2da59",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "networks",
+          "identity": "b4cd55fdfee6f4fd88300d6e72f763a27c7ad26bb73f5a0806768f06202ec597",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "networks",
+          "identity": "d9e7732ed376515174efb0a171a4ce9e8a3817535239f7bf1b5f9310aa606061",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "networks",
+          "identity": "972e57a544aa920946365245e2c9712aca0d91468ac2b8156e7635d579197401",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "iam-foundation_postgres-data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "iam-foundation_rabbit-data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "iam-foundation_redis-data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "neshane-local_grafana_data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "neshane-local_mailpit_data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "neshane-local_postgres_data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "neshane-local_prometheus_data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "neshane-local_rabbitmq_data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "neshane-local_redis_data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "neshane-local_seaweedfs_data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "volumes",
+          "identity": "neshane-local_tempo_data",
+          "preserved": true,
+          "difference": null
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:0bad19273070728e6bd4285deb8bab9b2873e44a998f300b8214d2b6c30f87eb",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:17804fb097257c8c8ca9d57338ff756ee1f4312f40e1e521d62c1a1f8614b203",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:28ebddf51f59e38ac800c9f91120726cfb312af377da8908807e0b566a82b017",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:431b070f8300b219ab7e6597e7ebb158df31767739896f53a936cfc749d8437a",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:56bb95ea275c701307deeae627421eb0e574b65bcf2e597e85ed2c436cb122c9",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:580a202b5088e9c651a8e8b4e461e3213fbd3a3aacaa3d2251892a546a734116",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:5dc4a64b27ad76a505bb1636cd05247f5e6e5e61fdc0fccda37ee061009cb1ff",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:61eeb02a78bc63ba4196aaa2cfb508b430816a96ee704239cfff236d8c5d1e98",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:6fdb07f6c488549f0ead4e0624664bbb63fcee9f1a2a79f7f21e23c08f6355cd",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:7158b04fc5247fb064841c13f2ba4159904276f1bddcb2ba71a8a7da7e5ee73d",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:81edcaa5ff2923f7be9c1f43d3e5076f29c6c9c216c86964b5fd038959404429",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:8400f365c39767b0d0df30e3aeb0796f873c3acf89b28089745bfafd88d83c7c",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:8ae454435ef3f88685f53505be8525a05f3ac28b968f02c1608ac08c7b8b36b3",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:9823645c452a9a994f575ed238e1a4f67365acbf8e842db769060820fab06449",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:a0eaf5ce9666be0730d76376ca5a41061be5725043c5b008f20e485aa7a059c7",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:a683da7699127231b140f7dbd7d60e9741d51543ba91c656bf3287860a39428f",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:b0734d8b5a78590e31c234df44654f59bea2fdbaece5c61302d416bfa50ccdb6",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:c70277e21e72686b57b6d5ccb5063a6fc6be133f98fe8b628f1ec55793a6c157",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:d1b47a86637121283f8bb3d9342ee2c77bd2bb92b1cb2dfb35f2b13629498961",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        },
+        {
+          "kind": "images",
+          "identity": "sha256:d6e12f17fc504d0faad96b8f717bed18224938a8e5b58f0c1a1c6ea6e289066b",
+          "preserved": true,
+          "limitation": "Authorized pulls may add references; prior IDs/tags/digests must remain."
+        }
+      ]
+    },
+    "status": "FAIL",
+    "evidenceReference": "observations/LIR002-PRESERVATION-DOCKER-97.json",
+    "remainingLimitation": "Live pre-existing volumes/counters may evolve naturally; no live data freeze or byte-level content preservation is claimed."
+  },
+  {
+    "checkIdentifier": "LIR002-PRESERVATION-17",
+    "service": "preservation",
+    "expectedResult": "All 17 baseline artifacts byte-identical",
+    "actualResult": {
+      "files": 17,
+      "allEqual": true
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PRESERVATION-17-98.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-PRESERVATION-REPOSITORIES",
+    "service": "preservation",
+    "expectedResult": "Original Root index/files, Root Main, Backend and Frontend unchanged",
+    "actualResult": {
+      "code": 0,
+      "stdout": "PASS: recoverable staged/unstaged/untracked snapshot verified; original index and protected repositories unchanged; actual .env not read/copied.\r\n",
+      "stderr": ""
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-PRESERVATION-REPOSITORIES-99.json",
+    "remainingLimitation": ""
+  },
+  {
+    "checkIdentifier": "LIR002-EVIDENCE-CREDENTIAL-SCAN",
+    "service": "evidence",
+    "expectedResult": "No generated credential value or Basic token in review artifacts",
+    "actualResult": {
+      "matchingFiles": [],
+      "originalEnvRead": false,
+      "generatedCredentialValuesPrinted": false
+    },
+    "status": "PASS",
+    "evidenceReference": "observations/LIR002-EVIDENCE-CREDENTIAL-SCAN-100.json",
+    "remainingLimitation": "Known generated values only; not a claim of exhaustive DLP or inspection of original secrets."
+  },
+  {
+    "checkIdentifier": "LIR002-BOUNDARY-otel-collector",
+    "service": "otel-collector",
+    "expectedResult": "Observe the corresponding service readiness/security boundary",
+    "actualResult": "No service observation: native/start/acquisition prerequisite was not completed.",
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-BOUNDARY-otel-collector-101.json",
+    "remainingLimitation": "Not treated as PASS or not-applicable."
+  },
+  {
+    "checkIdentifier": "LIR002-OTLP-ACCEPT",
+    "service": "otel-collector",
+    "expectedResult": "Complete the corresponding bounded service check",
+    "actualResult": "Not completed because a prerequisite or earlier service-group step failed.",
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-OTLP-ACCEPT-102.json",
+    "remainingLimitation": "No result fabricated; see earlier service/native/start observations."
+  },
+  {
+    "checkIdentifier": "LIR002-TELEMETRY-NEGATIVES",
+    "service": "otel-collector",
+    "expectedResult": "Complete the corresponding bounded service check",
+    "actualResult": "Not completed because a prerequisite or earlier service-group step failed.",
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-TELEMETRY-NEGATIVES-103.json",
+    "remainingLimitation": "No result fabricated; see earlier service/native/start observations."
+  },
+  {
+    "checkIdentifier": "LIR002-TELEMETRY-LOGS-DISABLED",
+    "service": "otel-collector",
+    "expectedResult": "Complete the corresponding bounded service check",
+    "actualResult": "Not completed because a prerequisite or earlier service-group step failed.",
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-TELEMETRY-LOGS-DISABLED-104.json",
+    "remainingLimitation": "No result fabricated; see earlier service/native/start observations."
+  },
+  {
+    "checkIdentifier": "LIR002-PROMETHEUS-INGEST",
+    "service": "prometheus",
+    "expectedResult": "Complete the corresponding bounded service check",
+    "actualResult": "Not completed because a prerequisite or earlier service-group step failed.",
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-PROMETHEUS-INGEST-105.json",
+    "remainingLimitation": "No result fabricated; see earlier service/native/start observations."
+  },
+  {
+    "checkIdentifier": "LIR002-TEMPO-RETRIEVE",
+    "service": "tempo",
+    "expectedResult": "Complete the corresponding bounded service check",
+    "actualResult": "Not completed because a prerequisite or earlier service-group step failed.",
+    "status": "BLOCKED",
+    "evidenceReference": "observations/LIR002-TEMPO-RETRIEVE-106.json",
+    "remainingLimitation": "No result fabricated; see earlier service/native/start observations."
+  }
+]

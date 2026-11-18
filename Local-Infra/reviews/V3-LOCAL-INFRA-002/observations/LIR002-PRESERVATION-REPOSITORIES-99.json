@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-11-18T12:40:57.987215+00:00",
+  "actual": {
+    "code": 0,
+    "stdout": "PASS: recoverable staged/unstaged/untracked snapshot verified; original index and protected repositories unchanged; actual .env not read/copied.\r\n",
+    "stderr": ""
+  }
+}

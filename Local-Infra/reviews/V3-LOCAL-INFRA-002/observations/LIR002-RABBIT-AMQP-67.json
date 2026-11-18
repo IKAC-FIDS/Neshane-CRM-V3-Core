@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-11-18T12:07:48.015709+00:00",
+  "actual": {
+    "code": 127,
+    "stdout": "",
+    "stderr": "escript: Internal error: {badmatch,{error,espipe}}\n[{escript,parse_header,2,[{file,\"escript.erl\"},{line,604}]},\n {escript,parse_file,2,[{file,\"escript.erl\"},{line,559}]},\n {escript,parse_and_run,3,[{file,\"escript.erl\"},{line,438}]},\n {escript,start,1,[{file,\"escript.erl\"},{line,418}]},\n {init,start_it,1,[]},\n {init,start_em,1,[]},\n {init,do_boot,3,[]}]\n"
+  }
+}

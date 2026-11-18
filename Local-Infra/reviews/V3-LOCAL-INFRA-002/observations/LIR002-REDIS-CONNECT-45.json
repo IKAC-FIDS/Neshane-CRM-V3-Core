@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-11-18T11:53:44.229470+00:00",
+  "actual": {
+    "ping": {
+      "code": 0,
+      "stdout": "PONG\n",
+      "stderr": ""
+    },
+    "config": {
+      "code": 0,
+      "stdout": "maxmemory-policy\nnoeviction\nmaxmemory\n268435456\nappendonly\nyes\n",
+      "stderr": ""
+    }
+  }
+}

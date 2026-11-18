@@ -1,0 +1,16 @@
+{
+  "observedAt": "2026-11-18T12:40:54.008042+00:00",
+  "actual": {
+    "removed": {
+      "containers": [],
+      "networks": [],
+      "volumes": []
+    },
+    "remaining": {
+      "containers": [],
+      "networks": [],
+      "volumes": []
+    },
+    "errors": []
+  }
+}
