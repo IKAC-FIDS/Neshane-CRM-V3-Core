@@ -1,0 +1,46 @@
+{
+  "task": "V3-LOCAL-INFRA-005",
+  "decisionIdentifier": "V3-LOCAL-INFRA-005-ACCEPT-001",
+  "gateIdentifier": "G-LOCAL-INFRA",
+  "finalDecision": "ACCEPTED",
+  "decisionScope": "DEVELOPMENT-ONLY",
+  "decisionStatus": "AUTHORITY_DECISION_RECORDED",
+  "designatedAuthorityRole": "Product Decision Owner / TAO",
+  "authoritySource": "Current project conversation instruction: Task ID V3-LOCAL-INFRA-005, Authority decision: ACCEPTED — DEVELOPMENT-ONLY.",
+  "decisionDate": "2026-11-18",
+  "signature": null,
+  "reviewedFeatureCommit": "4c28cbb5cec2f79c059d7ca34e6961fa41a3e890",
+  "reviewedParentBaseline": "094c966de745285bd5a8d1975312eb06d930d4a8",
+  "acceptedScope": [
+    "Local development infrastructure",
+    "Synthetic workloads",
+    "Validated development service connectivity",
+    "Documented development security controls",
+    "Reproducible infrastructure configuration"
+  ],
+  "excludedScope": [
+    "Production readiness and production authorization",
+    "Runtime Tenant Isolation acceptance",
+    "Product implementation authorization",
+    "Production data migration",
+    "Object storage provider selection",
+    "Hostile-host isolation"
+  ],
+  "baselineCountCorrection": {
+    "total": 17,
+    "byteIdentical": 12,
+    "modifiedInV3LocalInfra003": 5,
+    "note": "The earlier '13 byte-identical' label was a one-file overcount; 12 + 5 = 17."
+  },
+  "residualLimitations": "All ten residual limitations in V3-LOCAL-INFRA-004/residual-limitations.md preserved unchanged.",
+  "governance": {
+    "localInfra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "gRuntime": "BLOCKED",
+    "feBe": "PENDING",
+    "authIam": "PENDING",
+    "offline": "PROHIBITED",
+    "od013_014_015_017": "OPEN",
+    "seaweedfs": "EXPERIMENTAL",
+    "productionAuthorization": "NOT GRANTED"
+  }
+}

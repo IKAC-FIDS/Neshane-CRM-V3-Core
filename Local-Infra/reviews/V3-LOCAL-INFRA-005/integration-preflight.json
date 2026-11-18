@@ -1,0 +1,27 @@
+{
+  "task": "V3-LOCAL-INFRA-005",
+  "recordedAt": "2026-11-18T18:29:00.1213255+03:30",
+  "preflight": {
+    "featureCommit": "4c28cbb5cec2f79c059d7ca34e6961fa41a3e890",
+    "featureParent": "094c966de745285bd5a8d1975312eb06d930d4a8",
+    "branch": "codex/v3-local-infra-001",
+    "committedFiles": 164,
+    "manifestPathSetEqual": true,
+    "nonLocalInfraPaths": 0,
+    "secretMatches": 0,
+    "excludedFilesPreserved": 12,
+    "historicalEvidencePreserved": true,
+    "remoteMainAtPreflight": "094c966de745285bd5a8d1975312eb06d930d4a8"
+  },
+  "fastForwardEligibility": {
+    "behind": 0,
+    "ahead": 1,
+    "singleChildCommit": true,
+    "diverged": false
+  },
+  "integrationPlan": [
+    "git push origin codex/v3-local-infra-001",
+    "revalidate remote main equals 094c966de745285bd5a8d1975312eb06d930d4a8",
+    "git push origin <final-commit>:refs/heads/main (fast-forward only, no force, no merge commit)"
+  ]
+}
