@@ -226,3 +226,19 @@ The user-confirmed product decisions CM1-PD-001..057 partially answer existing O
 | PDQ-002-10 | FR-BJ-001 | SECURITY | Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence) |
 | PDQ-002-11 | FR-BJ-001 | SECURITY | Sensitive-process catalog and SoD actor mapping for manual verification |
 | PDQ-002-12 | FR-BJ-001 | TECHNICAL | Overlap conflict-set token/snapshot/locking/transactional implementation (technical design, not API contract) |
+
+## v1.2.1 partial-resolution clarification
+
+Total OPEN questions remain **19** (14 original + PDQ-002-08..12). The user-confirmed decisions partially answer the following without closing them:
+
+| PDQ | Confirmed product-level answer | Remaining OPEN aspects |
+| --- | --- | --- |
+| PDQ-002-01 | Company name + Person given/family required; official IDs/phone/email optional at create | exact field definitions, normalization, validation, national-ID rules |
+| PDQ-002-02 | ACTIVE/INACTIVE/ARCHIVED lifecycle + transition matrix | full dependency catalog, activity-specific restriction, race-safe semantics |
+| PDQ-002-03 | probabilistic warning + controlled override; verified-ID collision blocks; no auto-merge | match algorithm, identifier namespace/scope, merge/delete/retention |
+| PDQ-002-04 | optimistic concurrency; stale reject; no auto-merge | API contract and persistence enforcement |
+| PDQ-002-07 | Company/Person independent; relationship + verification models | role catalog, identifier/taxonomy policy |
+| PDQ-A001-003 | duplicate override, lifecycle, concurrency direction | field/validation/duplicate/merge/retention/disclosure specifics |
+| PDQ-A001-052 | Branch attribution + archive guards | CM-1 operation/actor/profile boundaries and integrations |
+
+No PDQ is closed; formal closure requires explicit authority.

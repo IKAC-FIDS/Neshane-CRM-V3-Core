@@ -61,3 +61,35 @@ Authoritative controlled-exception overlap policy. All PROPOSED / NOT TESTED. No
 | CM1-AUD-01 | Mandatory coordinated Audit failure never reported as a successful mutation. | PROPOSED / NOT TESTED |
 | CM1-AUD-02 | Broker ACK / outbox is not treated as authoritative Audit ingestion. | PROPOSED / NOT TESTED |
 | CM1-AUD-03 | Stale provider result does not overwrite a newer verification state. | PROPOSED / NOT TESTED |
+
+## Expanded testable criteria (v1.2.1) — all PROPOSED / NOT TESTED
+
+| Candidate ID | Scenario and expected result | Status |
+|---|---|---|
+| CM1-LC-04 | Successful authorized creation initializes lifecycle ACTIVE. | PROPOSED / NOT TESTED |
+| CM1-LC-05 | ACTIVE → INACTIVE with open activities preserves them; none are closed or deleted automatically. | PROPOSED / NOT TESTED |
+| CM1-LC-06 | INACTIVE → ACTIVE requires revalidation; invalid revalidation rejects the transition. | PROPOSED / NOT TESTED |
+| CM1-LC-07 | Archive with any unresolved applicable open dependency is rejected. | PROPOSED / NOT TESTED |
+| CM1-LC-08 | Dependency-check failure or unknown result does not authorize archive. | PROPOSED / NOT TESTED |
+| CM1-LC-09 | ARCHIVED → INACTIVE restoration is the only restore path. | PROPOSED / NOT TESTED |
+| CM1-LC-10 | Direct ARCHIVED → ACTIVE is rejected. | PROPOSED / NOT TESTED |
+| CM1-LC-11 | A lifecycle change of one record does not implicitly change the lifecycle of related records. | PROPOSED / NOT TESTED |
+| CM1-BRN-06 | Branch creation requires a valid same-Tenant Company parent. | PROPOSED / NOT TESTED |
+| CM1-BRN-07 | Effective Branch availability is restricted when the parent Company is inactive or archived (new activities restricted per policy). | PROPOSED / NOT TESTED |
+| CM1-BRN-08 | Branch status is preserved independently when the parent Company is deactivated. | PROPOSED / NOT TESTED |
+| CM1-BRN-09 | Parent-Company archive is blocked while a Branch has unresolved applicable open dependencies. | PROPOSED / NOT TESTED |
+| CM1-BRN-10 | Cross-Tenant Company reference is denied (fail closed). | PROPOSED / NOT TESTED |
+| CM1-UPD-06 | Sensitive identifier change requires a mandatory reason. | PROPOSED / NOT TESTED |
+| CM1-UPD-07 | Routine edit does not require a business reason but remains audited. | PROPOSED / NOT TESTED |
+| CM1-UPD-08 | Verified identifier conflict blocks the update. | PROPOSED / NOT TESTED |
+| CM1-UPD-09 | Routine edit of an ARCHIVED record is rejected. | PROPOSED / NOT TESTED |
+| CM1-UPD-10 | Mandatory coordinated Audit failure prevents reporting a successful durable mutation. | PROPOSED / NOT TESTED |
+| CM1-DUP-04 | Existing-record suggestion is disclosure-safe (no other-customer or cross-Tenant disclosure). | PROPOSED / NOT TESTED |
+| CM1-DUP-05 | A repeated identical create request does not create a second Customer where an idempotency contract applies. | PROPOSED / NOT TESTED |
+| CM1-REL-14 | Relationship target must be a valid Company/Branch in the same Tenant. | PROPOSED / NOT TESTED |
+| CM1-REL-15 | Open-ended (null endDate) interval participates correctly in overlap assessment. | PROPOSED / NOT TESTED |
+| CM1-REL-16 | Unauthorized overlap exception is rejected. | PROPOSED / NOT TESTED |
+| CM1-REL-17 | Ending one Relationship leaves other Relationships unchanged. | PROPOSED / NOT TESTED |
+| CM1-REL-18 | Changing personId or targetId through an ordinary edit is rejected. | PROPOSED / NOT TESTED (policy question: immutability not separately user-confirmed) |
+| CM1-AUD-04 | Audit uses controlled evidence references; no identity-document copy into Audit. | PROPOSED / NOT TESTED |
+| CM1-AUD-05 | Ordinary warnings/rejected validations carry no assumed mandatory Audit event absent explicit governing source. | PROPOSED / NOT TESTED |

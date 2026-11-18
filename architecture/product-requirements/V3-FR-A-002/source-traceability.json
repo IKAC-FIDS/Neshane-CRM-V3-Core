@@ -1,8 +1,8 @@
 {
   "taskId": "V3-FR-A-002",
   "status": "REQUIREMENTS_ENGINEERING_PREPARED_FOR_OWNER_REVIEW_NOT_ACCEPTED",
-  "recordedAt": "2026-11-18T20:33:14.710823+00:00",
-  "repositoryBaseline": "d0dcfe6a257792c7457ba49f3112f85bc79b0883",
+  "recordedAt": "2026-11-18T21:01:20.815693+00:00",
+  "repositoryBaseline": "e5a41e3e99758e332dcde89451350a753d32543e",
   "branch": "codex/v3-fr-a-002",
   "governance": {
     "roadmap": "APPROVED AS PRODUCT EXECUTION ROADMAP",
@@ -943,7 +943,7 @@
       "requiredDecisionAuthority": "Product Decision Owner / TAO"
     }
   ],
-  "version": "1.2.0",
+  "version": "1.2.1",
   "productDecisionRegister": {
     "path": "customer-master-product-decision-record.json",
     "recordId": "V3-FR-A-002-PDR-001",
@@ -1019,5 +1019,58 @@
     "status": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_REPOSITORY_ACCEPTANCE_PENDING"
   },
   "userConfirmedDecisionsPresent": true,
-  "fieldDictionaryFieldCount": 31
+  "fieldDictionaryFieldCount": 31,
+  "decisionCoverageMatrix": {
+    "path": "customer-decision-coverage-matrix.json",
+    "version": "1.2.1",
+    "decisionCount": 57,
+    "coverageCounts": {
+      "PARTIAL": 47,
+      "DOCUMENTED_ONLY": 5,
+      "FULL": 3,
+      "BLOCKED_BY_OPEN_DECISION": 2
+    }
+  },
+  "acceptanceInventory": {
+    "canonicalCriteria": 5,
+    "detailedCriteria": 83,
+    "totalUnique": 88
+  },
+  "partialResolutionLedger": [
+    {
+      "pdqId": "PDQ-002-01",
+      "confirmedAnswer": "Company name + Person given/family required; official IDs/phone/email optional at create (CM1-PD-016/017/053)",
+      "remaining": "exact field definitions, normalization, validation, national-ID rules"
+    },
+    {
+      "pdqId": "PDQ-002-02",
+      "confirmedAnswer": "ACTIVE/INACTIVE/ARCHIVED lifecycle + transition matrix (CM1-PD-008..012/054)",
+      "remaining": "full dependency catalog, activity-specific restriction policy, race-safe semantics"
+    },
+    {
+      "pdqId": "PDQ-002-03",
+      "confirmedAnswer": "probabilistic warning + controlled override; verified-ID collision blocks; no auto-merge (CM1-PD-005..007/052)",
+      "remaining": "exact match algorithm, identifier namespace/scope, merge/delete/retention workflows"
+    },
+    {
+      "pdqId": "PDQ-002-04",
+      "confirmedAnswer": "optimistic concurrency; stale reject; no auto-merge (CM1-PD-014/038/039/055)",
+      "remaining": "exact API contract and persistence enforcement"
+    },
+    {
+      "pdqId": "PDQ-002-07",
+      "confirmedAnswer": "Company/Person independent; relationship model and verification states (CM1-PD-001/003/004/029/047)",
+      "remaining": "role catalog, identifier/national-ID policy, taxonomy"
+    },
+    {
+      "pdqId": "PDQ-A001-003",
+      "confirmedAnswer": "controlled duplicate override, lifecycle, concurrency direction (CM1-PD-001/005/009/014)",
+      "remaining": "field/validation/duplicate/merge/retention/disclosure specifics"
+    },
+    {
+      "pdqId": "PDQ-A001-052",
+      "confirmedAnswer": "Branch attribution + archive guards (CM1-PD-002/011)",
+      "remaining": "selected CM-1 operation/actor/profile boundaries and integrations"
+    }
+  ]
 }

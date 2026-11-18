@@ -1,6 +1,6 @@
 {
   "recordId": "V3-FR-A-002-PDR-001",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "date": "2026-11-18",
   "scope": [
     "FR-BJ-001",
@@ -438,5 +438,6 @@
     }
   ],
   "relationshipOverlapPolicyStatus": "LATEST_USER_DECISION_AUTHORITATIVE_CONTROLLED_EXCEPTION",
-  "branchReparentingStatus": "DIRECT_REPARENTING_PROHIBITED; TRANSFER_BY_NEW_BRANCH"
+  "branchReparentingStatus": "DIRECT_REPARENTING_PROHIBITED; TRANSFER_BY_NEW_BRANCH",
+  "coverageReviewNote": "v1.2.1 Coverage Review reconciliation: FLD-002-11 corrected to Required/Immutable; lifecycle restated as formal-source-baseline vs user-confirmed target; stale OPEN/PROPOSED statements reconciled; acceptance criteria expanded; decision coverage matrix added."
 }

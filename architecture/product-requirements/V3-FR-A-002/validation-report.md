@@ -44,3 +44,13 @@ Read-only Git recovery investigation; filesystem search; authoring helper `v3-fr
 - Open questions: 14 existing + 5 new (PDQ-002-08..12); none closed.
 - Field dictionary: 16 + 1 (FLD-002-17 verification state) + 14 (REL-002-01..14 relationship fields) = 31 candidate fields; all remain PROPOSED/OPEN (none approved as mandatory).
 - Acceptance criteria: canonical AC-01..05 + CM1-FLD-06, CM1-DUP-01..03, CM1-LC-01..03, CM1-UPD-01..05, CM1-VER-17/18, CM1-BRN-01..05, CM1-REL-01..13, CM1-AUD-01..05 — all PROPOSED / NOT TESTED.
+
+## v1.2.1 Coverage Reconciliation
+
+- **Field dictionary:** FLD-002-11 corrected to Required / Immutable (Branch parent Company reference) per CM1-PD-044/045/047; earlier Optional/Mutable superseded; persistence/API schema still unapproved.
+- **Lifecycle:** restated as formal-source-baseline vs user-confirmed target (Company/Person, Branch, Relationship, Verification) with explicit transition matrices; the historical "no state machine / all transitions OPEN" statement is preserved only as source-baseline status.
+- **Business rules / operation catalog / requirements:** stale OPEN/PROPOSED statements reconciled into APPROVED SOURCE INVARIANT / USER-CONFIRMED / PROPOSED / OPEN distinctions.
+- **Acceptance criteria:** canonical 5 + detailed 83 = 88 unique IDs (expanded with lifecycle/branch/CUS-UPDATE/duplicate/relationship/audit edge cases).
+- **Decision coverage matrix:** 57 decisions mapped; FULL=3, PARTIAL=47, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2.
+- **OPEN questions:** 19 total; 7 partial resolutions recorded; none closed.
+- **Relationship overlap:** controlled-exception policy remains authoritative; absolute-overlap prohibition remains superseded.

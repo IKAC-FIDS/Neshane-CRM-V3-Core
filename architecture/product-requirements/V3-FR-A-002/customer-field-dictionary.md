@@ -24,7 +24,7 @@
 | FLD-002-08 | Address | Postal/physical address components | Company, Person, Contact, Branch | structured | Optional | OPEN | Persian address parts/normalization OPEN | Restricted | Mutable | OPEN |
 | FLD-002-09 | Customer classification | Type/category within Customer Domain | Company, Person | enum | Optional | OPEN | Taxonomy/lifecycle effect OPEN | Tenant Confidential | Mutable | OPEN |
 | FLD-002-10 | Customer status | Lifecycle status value | Company, Person | enum | Required | OPEN | Allowed values/transitions OPEN | Tenant Confidential | Controlled | OPEN |
-| FLD-002-11 | Branch relationship | Link between branch and parent company | Branch | reference | Optional | OPEN | Referential integrity OPEN | Tenant Confidential | Mutable | OPEN |
+| FLD-002-11 | Branch parent Company reference | Parent Company reference for a Branch (immutable after creation) | Branch | reference | Required | OPEN | Parent Company must exist, same Tenant, authorized; direct reparenting rejected; real transfer = new Branch | Tenant Confidential | Immutable | USER_CONFIRMED (CM1-PD-044/045/047); schema unapproved |
 | FLD-002-12 | Relationship type | Typed relationship between customer records | Relationship | enum | Required | OPEN | Allowed taxonomy OPEN | Tenant Confidential | Controlled | OPEN |
 | FLD-002-13 | External reference | Optional external-system reference | Company, Person | text | Optional | OPEN | Provenance/authority OPEN | Tenant Confidential | Mutable | OPEN |
 | FLD-002-14 | Validation state | Customer validation outcome | Company, Person | enum | Required | OPEN | Values/transitions OPEN | Tenant Confidential | Controlled | OPEN |
@@ -59,3 +59,9 @@ Sensitivity uses candidate DC notation, not an approved classification model.
 ## Branch parent immutability
 
 - `companyId` (Branch parent) is immutable after creation; direct Branch reparenting is prohibited; transfer uses a new Branch under the target Company (CM1-PD-044/045). Branch has its own stable ID and only ACTIVE/INACTIVE record states (CM1-PD-042/047).
+
+## Branch parent reference — user-confirmed vs schema
+
+- **User-confirmed business constraint:** every Branch has exactly one Company parent (CM1-PD-047); the parent reference is required and immutable after creation (CM1-PD-044); direct reparenting is rejected (CM1-PD-045).
+- **Persistence/API schema and referential-integrity enforcement:** still unapproved; these are technical design matters, not changed by the user-confirmed product direction.
+- The earlier `Optional / Mutable` status for FLD-002-11 is superseded by the user-confirmed `Required / Immutable` target policy.

@@ -1,50 +1,42 @@
 # Customer business-rule catalog — V3-FR-A-002
 
-**No business rule is approved beyond source invariants.**
+Classification legend: **APPROVED SOURCE INVARIANT** (baseline architecture/audit) · **USER-CONFIRMED PRODUCT DIRECTION** (product policy, acceptance pending) · **PROPOSED IMPLEMENTATION/CONTRACT** · **OPEN DECISION**.
 
-## APPROVED (source invariants)
+## APPROVED SOURCE INVARIANT
 
 - Customer Domain owns Customer Master data; authoritative writer and final resource/action authorizer (V3-002B-DEC-002).
-- Durable CUS-CREATE/CUS-UPDATE require coordinated mandatory Audit publication obligation; success not reported without the durably recorded obligation (DEC-012 principles 1/2/4).
-- Explicit disclosure denial carries disclosure-safe Audit obligation; zero-result search is not a denial (DEC-012 principle 3).
-- Pending Submission PERMITTED NOT REQUIRED; never authoritative; external recording prohibited (DEC-005).
+- Validated Tenant Context; client selector untrusted; cross-tenant fails closed.
+- Durable CUS-CREATE/CUS-UPDATE require coordinated mandatory Audit obligation; success not reported without the durably recorded obligation (DEC-012).
+- Explicit disclosure denial carries disclosure-safe Audit obligation; zero-result search is not a denial (DEC-012 p3).
 - Broker ACK / Outbox record is not authoritative Audit ingestion (DEC-013/014).
-- Validated Tenant Context; owning-Domain authorization; fail closed.
+- Pending Submission PERMITTED NOT REQUIRED; never authoritative; external recording prohibited (DEC-005).
 
-## PROPOSED (candidate, not approved)
+## USER-CONFIRMED PRODUCT DIRECTION
 
-- Duplicate detection criteria and handling.
-- Merge / deletion / retention policy.
-- Concurrency control for CUS-UPDATE.
-- Customer classification taxonomy and status semantics.
+**Entity model:** Company and Person independent; Branch subordinate to Company; Person may have multiple concurrent relationships without duplicating identity (CM1-PD-001..004).
 
-## OPEN
+**Duplicates (policy confirmed):** probabilistic match → warning + suggestion; authorized CUS-CREATE override with mandatory reason; no supervisor approval; verified identifier collision cannot be overridden; no automatic merge (CM1-PD-005..007, CM1-PD-052). *Still OPEN: exact matching algorithm, identifier namespace/uniqueness enforcement, full merge/delete/retention workflows.*
 
-- Exact field validation/uniqueness/normalization rules.
-- Lifecycle state machine and transition guards.
-- Operation-specific Audit failure policy (no executable DURABLE_DEFER).
-- Referential integrity for Branch/Relationship and deletion semantics.
+**Lifecycle:** ACTIVE/INACTIVE/ARCHIVED with the transition matrix in customer-lifecycle.md §B (CM1-PD-008..012, CM1-PD-054).
 
-Every PROPOSED/OPEN rule blocks dependent implementation until explicitly dispositioned.
+**CUS-UPDATE / concurrency (policy confirmed):** optimistic concurrency; reject stale versions; no auto-merge/last-write-wins (CM1-PD-013..015, CM1-PD-055). *Still OPEN: exact API contract and persistence enforcement.*
 
-## Relationship and overlap (user-confirmed — authoritative)
+**Identity verification (policy confirmed):** system/manual verification; separate verification authority; evidence-based validity; no universal expiry; SoD for sensitive processes (CM1-PD-019..028, CM1-PD-056/057). *Still OPEN: trusted provider catalog, formal evidence acceptance, sensitive-process catalog, provider failure/recovery.*
 
-- Each Person may have multiple concurrent Relationships with Company/Branch; each role is a distinct Relationship (CM1-PD-029).
-- Same Person + same target + same role + overlapping interval → warning; allowed only through a controlled exception (warning + valid authority + mandatory reason + Audit); reuse existing OR create with mandatory exception reason (no supervisor approval) (CM1-PD-033/035).
-- Distinct role codes / different targets / Company-vs-Branch overlap freely (CM1-PD-034).
-- ENDED intervals participate in historical overlap detection (CM1-PD-037).
-- Idempotent retries must not create duplicate Relationship records (CM1-PD-039).
-- Overlap exception does not bypass stale-version, Tenant isolation, validation, or disclosure control (CM1-PD-040).
-- Supersedes any prior absolute-overlap prohibition (CM1-PD-041).
+**Relationship and overlap (authoritative):** multiple concurrent relationships; controlled overlap exception (warning + authority + mandatory reason + Audit); distinct roles/targets overlap freely; supersedes absolute-overlap prohibition (CM1-PD-029..041).
 
-## Branch reparenting (user-confirmed)
+**Branch:** subordinate; immutable companyId; no direct reparenting; transfer via new Branch; only ACTIVE/INACTIVE (CM1-PD-042..047).
 
-- Direct Branch reparenting prohibited; branchId/companyId immutable (CM1-PD-044).
-- Transfer = new Branch under target Company + deactivate original; no automatic transfer of activities/relationships; optional succession reference does not transfer ownership/permissions (CM1-PD-045).
+**Audit boundaries:** durable mutations honor coordinated obligations; proposed Branch/Relationship/Verification operations require auditability requirement (contract pending); no assumed mandatory Audit for warnings/rejected validations/reads; controlled evidence references; ACK != ingestion (CM1-PD-048..051).
 
-## Audit boundaries (user-confirmed)
+## PROPOSED IMPLEMENTATION/CONTRACT
 
-- Durable Customer mutations honor coordinated Audit obligations; proposed Branch/Relationship/Verification operations require auditability requirement with formal operational contract pending (CM1-PD-048).
-- Rejected validations/warnings/read-only queries have no assumed mandatory Audit event (CM1-PD-049).
-- Controlled evidence references over copying identity docs/private identifiers into Audit (CM1-PD-050).
-- Mandatory coordinated Audit failure must not report success; ACK/outbox != authoritative ingestion (CM1-PD-051).
+- Persistence/API schema for fields, relationships, and verification state (all unapproved).
+- Overlap conflict-set token/snapshot/locking/transactional mechanics (technical design, not API contract).
+- Branch reparenting coordination workflow and activity-transfer contracts.
+
+## OPEN DECISION
+
+- Exact field validation/uniqueness/normalization; role catalog; identifier namespace/scope.
+- Merge/deletion/retention/legal-hold; operation-specific Audit failure/recovery owner and policy.
+- Sensitive-process catalog and SoD actor mapping; trusted provider catalog; evidence acceptance/retention.

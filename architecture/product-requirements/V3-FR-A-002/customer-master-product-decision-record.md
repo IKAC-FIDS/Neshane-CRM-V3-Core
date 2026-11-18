@@ -1,7 +1,7 @@
 # Customer Master — Product Decision Record
 
 **Record ID:** `V3-FR-A-002-PDR-001`
-**Version:** `1.2.0`
+**Version:** `1.2.1`
 **Date:** 2026-11-18
 **Scope:** `FR-BJ-001` / `V3-FR-A-002` / `CM-1`
 **Disposition:** `USER-CONFIRMED PRODUCT DIRECTION — FORMAL REPOSITORY ACCEPTANCE PENDING`
@@ -101,3 +101,11 @@ Partial resolutions are recorded in `openQuestionTraceability` (JSON). Every exi
 
 - No staging, commit, push, code, tests or execution approval is implied.
 
+
+## 9. v1.2.1 coverage reconciliation
+
+- FLD-002-11 corrected: Branch parent Company reference is Required and Immutable (supersedes the earlier Optional/Mutable status), per CM1-PD-044/045/047; persistence/API schema remains unapproved.
+- Lifecycle restated as (A) formal source baseline vs (B) user-confirmed target state machine, with explicit transition matrices and guard conditions; no unapproved API/DB/IAM choice presented as accepted.
+- Stale OPEN/PROPOSED statements reconciled to distinguish user-confirmed product policy from still-OPEN technical/operational contract and still-PENDING formal acceptance.
+- Relationship overlap controlled-exception policy (CM1-PD-033..041) remains authoritative; absolute-overlap prohibition remains superseded.
+- Decision coverage matrix: `customer-decision-coverage-matrix.json` / `.md` maps all 57 decisions; coverage counts FULL=3, PARTIAL=47, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2.

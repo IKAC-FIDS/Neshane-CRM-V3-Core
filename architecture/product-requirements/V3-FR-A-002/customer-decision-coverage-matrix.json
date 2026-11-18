@@ -1,0 +1,960 @@
+{
+  "taskId": "V3-FR-A-002",
+  "version": "1.2.1",
+  "coverageClassificationLegend": {
+    "FULL": "has directly testable acceptance criterion/coverage",
+    "PARTIAL": "some testable criteria; residual OPEN technical/contract gaps remain",
+    "DOCUMENTED_ONLY": "recorded but lacks independently testable acceptance coverage",
+    "BLOCKED_BY_OPEN_DECISION": "depends on an unresolved technical/contract decision"
+  },
+  "decisionCount": 57,
+  "coverageCounts": {
+    "PARTIAL": 47,
+    "DOCUMENTED_ONLY": 5,
+    "FULL": 3,
+    "BLOCKED_BY_OPEN_DECISION": 2
+  },
+  "decisions": [
+    {
+      "decisionId": "CM1-PD-001",
+      "summary": "Company and Person are independent customer types; Branch is a Company subordinate, with its own facts, not an independent customer.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-master-requirements.md (entity model)",
+      "relatedBusinessRule": "Entity model: Company/Person independent; Branch subordinate",
+      "fieldIds": [
+        "FLD-002-01",
+        "FLD-002-02"
+      ],
+      "operationConcepts": [
+        "CUS-CREATE"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-FLD-01",
+        "CM1-FLD-02",
+        "CM1-BRN-01"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-01",
+        "PDQ-002-07"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-002",
+      "summary": "CRM activities may reference Branch as an attribution target, while Company remains the parent; activity-specific authorization and scope remain separate.",
+      "coverageClass": "DOCUMENTED_ONLY",
+      "requirementSection": "customer-master-requirements.md",
+      "relatedBusinessRule": "Branch attribution target for activities",
+      "fieldIds": [
+        "FLD-002-11"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-BRN-01"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-A001-052"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-003",
+      "summary": "One Person may have multiple concurrent relationships with Companies and Branches in the same authorized Tenant scope; relationships do not duplicate identity.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (relationship)",
+      "relatedBusinessRule": "Person multiplicity without identity duplication",
+      "fieldIds": [
+        "REL-002-01",
+        "REL-002-02",
+        "REL-002-04"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-01"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-07"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-004",
+      "summary": "A corporate contact is represented by Person, even without individual active commercial engagement; Contact stores communication channels, Relationship stores affiliation.",
+      "coverageClass": "DOCUMENTED_ONLY",
+      "requirementSection": "customer-master-requirements.md",
+      "relatedBusinessRule": "Contact = Person; Contact stores channels; Relationship stores affiliation",
+      "fieldIds": [
+        "FLD-002-06",
+        "FLD-002-07"
+      ],
+      "operationConcepts": [
+        "CUS-CREATE"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-FLD-02"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-07"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-005",
+      "summary": "Potential matches generate an access-controlled warning and existing-record suggestion; authorized new records are allowed with a mandatory reason.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (duplicates)",
+      "relatedBusinessRule": "Probabilistic match -> warning + suggestion",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-DUP-02",
+        "CM1-DUP-04"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-03"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-006",
+      "summary": "A user authorized for CUS-CREATE may override a probabilistic duplicate warning with a required reason and Audit obligation; no supervisor approval is required.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (duplicates)",
+      "relatedBusinessRule": "Override by authorized CUS-CREATE with reason; no supervisor",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-DUP-02"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-03"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-007",
+      "summary": "Ordinary duplicate override must not bypass a collision with a validated authoritative unique identifier; the identifier registry/scope and conflict resolution remain OPEN.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (duplicates)",
+      "relatedBusinessRule": "Verified identifier collision cannot be overridden",
+      "fieldIds": [
+        "FLD-002-04",
+        "FLD-002-05"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-FLD-05",
+        "CM1-DUP-03",
+        "CM1-UPD-08"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-03"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-008",
+      "summary": "Record lifecycle is separate from commercial engagement/classification; commercial taxonomy is not fixed here.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (B)",
+      "relatedBusinessRule": "Record lifecycle separate from commercial status",
+      "fieldIds": [
+        "FLD-002-09",
+        "FLD-002-10"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-LC-01",
+        "CM1-VER-18"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-02"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-009",
+      "summary": "Record states are ACTIVE, INACTIVE, ARCHIVED; after successful authorized creation and validation, initial state is ACTIVE.",
+      "coverageClass": "FULL",
+      "requirementSection": "customer-lifecycle.md (B)",
+      "relatedBusinessRule": "ACTIVE/INACTIVE/ARCHIVED; initial ACTIVE",
+      "fieldIds": [
+        "FLD-002-10"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-LC-04"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-02"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-010",
+      "summary": "ACTIVE -> INACTIVE may occur with ongoing activities preserved; initiating new activities is restricted by activity-specific policy.",
+      "coverageClass": "FULL",
+      "requirementSection": "customer-lifecycle.md (B)",
+      "relatedBusinessRule": "ACTIVE->INACTIVE with activities preserved",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-LC-05"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-02"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-011",
+      "summary": "ACTIVE/INACTIVE -> ARCHIVED is blocked until every applicable open activity/dependency is disposed of; unknown dependency outcome cannot be treated as clear.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (B)",
+      "relatedBusinessRule": "Archive blocked until dependencies resolved",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-LC-07",
+        "CM1-LC-08",
+        "CM1-BRN-09"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-02"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-012",
+      "summary": "ARCHIVED -> INACTIVE is the only restore transition; INACTIVE -> ACTIVE requires revalidation. Direct ARCHIVED -> ACTIVE is forbidden.",
+      "coverageClass": "FULL",
+      "requirementSection": "customer-lifecycle.md (B)",
+      "relatedBusinessRule": "Restore via INACTIVE only; no direct ACTIVE",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-LC-09",
+        "CM1-LC-10"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-02"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-013",
+      "summary": "CUS-UPDATE permits authorized users to edit identity facts, including sensitive business identifiers, with revalidation and Audit; no separate supervisor approval.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (CUS-UPDATE)",
+      "relatedBusinessRule": "Authorized edit of identity facts",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-UPD-06",
+        "CM1-UPD-07"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-04"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-014",
+      "summary": "CUS-UPDATE requires a record version; stale-version writes are rejected fully. No automatic merge or last-write-wins.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (CUS-UPDATE)",
+      "relatedBusinessRule": "Optimistic concurrency",
+      "fieldIds": [
+        "REL-002-10"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-UPD-01"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-04"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-015",
+      "summary": "An edit reason is mandatory only for changes to sensitive identity identifiers and exceptional changes; routine edits do not require a reason. All durable updates retain Audit obligations.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (CUS-UPDATE)",
+      "relatedBusinessRule": "Reason only for sensitive/exceptional edits",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-UPD-06",
+        "CM1-UPD-07"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-04"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-016",
+      "summary": "Company legal/display name and Person given/family names are required for initial registration; system-issued stable identity and ACTIVE initial record status. Structured name parts and normalization rules require field-dictionary review.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-field-dictionary.md",
+      "relatedBusinessRule": "Company name + Person given/family required",
+      "fieldIds": [
+        "FLD-002-01",
+        "FLD-002-02"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-FLD-01",
+        "CM1-FLD-02",
+        "CM1-FLD-03"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-01"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-017",
+      "summary": "Official Person and Company identifiers are optional at initial create; workflows requiring formal identity verification may require the identifier and qualifying verification. Neither phone nor email is mandatory at initial registration.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-field-dictionary.md",
+      "relatedBusinessRule": "Official identifiers optional at create; phone/email not mandatory",
+      "fieldIds": [
+        "FLD-002-04",
+        "FLD-002-05",
+        "FLD-002-06",
+        "FLD-002-07"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-FLD-01",
+        "CM1-FLD-02",
+        "CM1-FLD-06"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-01"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-018",
+      "summary": "A sufficiently verified official identifier must be unique within its approved identity/issuer/Tenant scope; confirmed conflicts block create/update or confirmation and cannot be bypassed with probabilistic-match exception. Identifier namespace and technical unique key remain OPEN.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (duplicates)",
+      "relatedBusinessRule": "Verified identifier unique in scope; collision blocks",
+      "fieldIds": [
+        "FLD-002-04",
+        "FLD-002-05"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-FLD-05",
+        "CM1-UPD-08"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-01",
+        "PDQ-002-03"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-019",
+      "summary": "Formal identity verification is distinct from record lifecycle and commercial status. Its states are NOT_VERIFIED, VERIFIED, REQUIRES_REVERIFICATION; initial creation is NOT_VERIFIED unless a separate trusted verification occurs.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (E)",
+      "relatedBusinessRule": "Verification independent; NOT_VERIFIED initial",
+      "fieldIds": [
+        "FLD-002-17"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-01",
+        "CM1-VER-17"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-07"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-020",
+      "summary": "Both trusted external/system verification and evidence-backed manual verification by separately authorized actor are permitted; both produce attributable evidence/history and coordinated Audit obligations. Customer Domain remains final authoritative state writer.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (verification)",
+      "relatedBusinessRule": "System + manual verification routes",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-02",
+        "CM1-VER-03"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-07"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-021",
+      "summary": "An actor who created the customer may manually verify that customer if independently permitted in normal processes; sensitive processes require a different verifying actor. Sensitive-process catalog and permission grants remain OPEN.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "actor-resource-policy-matrix.md",
+      "relatedBusinessRule": "Manual verification SoD",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-04",
+        "CM1-VER-05"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-11"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-022",
+      "summary": "No universal time-based identity verification expiry. Effective validity depends on underlying required evidence, material identity changes, trusted revocation, and evidence validity rules. Age alone does not invalidate VERIFIED.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (verification)",
+      "relatedBusinessRule": "No universal expiry",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-09",
+        "CM1-VER-10"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-023",
+      "summary": "Expiry/loss of validity of evidence necessary to substantiate an otherwise valid earlier verification, or a material change to identity facts supporting it, moves VERIFIED to REQUIRES_REVERIFICATION; successful new trusted verification returns VERIFIED.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (E)",
+      "relatedBusinessRule": "Evidence expiry / identity change -> reverify",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-06"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-024",
+      "summary": "If prior verification is proven fundamentally invalid (false/misattributed/invalid from outset), effective status becomes NOT_VERIFIED, including from REQUIRES_REVERIFICATION. Requires an independent new trusted verification for VERIFIED; never erase historical evidence.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (E)",
+      "relatedBusinessRule": "Fundamental invalidity -> NOT_VERIFIED",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-07",
+        "CM1-VER-08"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-025",
+      "summary": "Verification decisions preserve method (SYSTEM/MANUAL), source/issuer, verified actor/service, decision time, relevant identity revision, controlled evidence reference, reason and correlation. Protect sensitive evidence and retain histories subject to unresolved retention and disclosure rules.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-field-and-verification-addendum.md",
+      "relatedBusinessRule": "Verification evidence provenance",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-15",
+        "CM1-AUD-04"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-026",
+      "summary": "Generic CUS-UPDATE must not directly set VERIFIED; trusted verification workflow authorizes and verifies actor or provider result, identity revision, duplicate collision, evidence and required durable Audit. Stale or ambiguous responses do not confer VERIFIED.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (verification)",
+      "relatedBusinessRule": "CUS-UPDATE cannot set VERIFIED; stale response rejected",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-03",
+        "CM1-VER-11",
+        "CM1-VER-12"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-07"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-027",
+      "summary": "NOT_VERIFIED and REQUIRES_REVERIFICATION can coexist with ACTIVE Customer; any consuming operation requiring verified identity must check effective evidence validity before relying on VERIFIED, not assume status flag alone suffices.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (verification)",
+      "relatedBusinessRule": "VERIFIED status alone insufficient",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-18"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-028",
+      "summary": "Verification expiry/revocation preserves Customer ID, historical relationships and an auditable, provenance-bound record. Trusted fundamental invalidation cannot silently be ignored by sensitive consumers when persistence is temporarily unavailable; precise fail/recovery contract remains OPEN.",
+      "coverageClass": "BLOCKED_BY_OPEN_DECISION",
+      "requirementSection": "customer-failure-scenarios.md",
+      "relatedBusinessRule": "Revocation history + safe failure",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-13"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-10"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-029",
+      "summary": "Each Person may have multiple concurrent Relationships with Company and/or Branch. Each independent role is represented by a distinct Relationship; roles/affiliations belong to Relationship, not to duplicate Person records.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (relationship)",
+      "relatedBusinessRule": "Multiple concurrent relationships",
+      "fieldIds": [
+        "REL-002-01",
+        "REL-002-02",
+        "REL-002-04"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-01"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-030",
+      "summary": "Recommended conceptual Relationship fields: relationshipId, personId, targetType (COMPANY|BRANCH), targetId, roleCode, roleTitle, status, startDate, endDate, recordVersion, createdAt, updatedAt, endedReason, optional source/evidence reference. These are conceptual, not an approved schema or API.",
+      "coverageClass": "DOCUMENTED_ONLY",
+      "requirementSection": "customer-field-dictionary.md",
+      "relatedBusinessRule": "Relationship conceptual fields",
+      "fieldIds": [
+        "REL-002-01",
+        "REL-002-02",
+        "REL-002-03",
+        "REL-002-04",
+        "REL-002-05",
+        "REL-002-06",
+        "REL-002-07",
+        "REL-002-08",
+        "REL-002-09",
+        "REL-002-10",
+        "REL-002-11",
+        "REL-002-12",
+        "REL-002-13",
+        "REL-002-14"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-01"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-031",
+      "summary": "Relationship lifecycle states are ACTIVE and ENDED (proposed for formal review). An ENDED historical Relationship is not reopened; a later recurrence of the same role is a separate Relationship.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (D)",
+      "relatedBusinessRule": "Relationship ACTIVE/ENDED; ENDED not reopened",
+      "fieldIds": [
+        "REL-002-07"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-02"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-032",
+      "summary": "Use the conceptual half-open interval [startDate, endDate): start inclusive, end exclusive, null end means open-ended, empty or backwards intervals are invalid. Effective usability considers status, interval, Person status, target status and permissions.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (D)",
+      "relatedBusinessRule": "Half-open interval",
+      "fieldIds": [
+        "REL-002-08",
+        "REL-002-09"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-03",
+        "CM1-REL-15"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-033",
+      "summary": "For the same Person, TargetType, TargetId and RoleCode, overlapping Relationship intervals are allowed only through a controlled exception with a warning, valid authority, mandatory reason and Audit.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (relationship)",
+      "relatedBusinessRule": "Overlap only via controlled exception",
+      "fieldIds": [
+        "REL-002-05",
+        "REL-002-08",
+        "REL-002-09"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-04",
+        "CM1-REL-06"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-12"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-034",
+      "summary": "Distinct role codes may overlap freely; the same role may overlap across different companies/targets; the same role in Company vs its Branch concerns different targets (different TargetId).",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (relationship)",
+      "relatedBusinessRule": "Distinct roles/targets overlap freely",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-05"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-035",
+      "summary": "Same Person + same target + same role + overlapping intervals produces a warning. The user may select/use an existing Relationship instead of creating a new one. An authorized user may intentionally create/update an overlapping Relationship with a mandatory exception reason; no separate supervisor approval is required.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (relationship)",
+      "relatedBusinessRule": "Warning + reuse-or-exception",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-06"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-036",
+      "summary": "A reason is required for each newly authorized overlap decision; old reasons do not authorize all future changes automatically.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (relationship)",
+      "relatedBusinessRule": "Reason per decision",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-07"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-037",
+      "summary": "Even ENDED Relationship intervals participate in historical overlap detection.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (relationship)",
+      "relatedBusinessRule": "ENDED intervals in overlap detection",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-08"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-038",
+      "summary": "Two cases are distinguished: (1) updating the same Relationship rejects stale record versions; (2) creating separate overlapping Relationships concurrently uses a consistent, authoritative overlap assessment. If the relevant conflict set changed after the user reviewed a warning, require re-evaluation before finalizing.",
+      "coverageClass": "BLOCKED_BY_OPEN_DECISION",
+      "requirementSection": "customer-failure-scenarios.md",
+      "relatedBusinessRule": "Overlap concurrency",
+      "fieldIds": [
+        "REL-002-10"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-09",
+        "CM1-REL-10"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-12"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-039",
+      "summary": "Idempotent retries must not produce unintended additional Relationship records. An intentional, approved overlap exception and an accidental duplicate request are distinct cases.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-failure-scenarios.md",
+      "relatedBusinessRule": "Idempotent retry no duplicate",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-11"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-12"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-040",
+      "summary": "Overlap exception authorization does not bypass stale-version checks, Tenant isolation, input validation, or disclosure control. Avoid disclosing non-visible Relationship details through warning output.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (relationship)",
+      "relatedBusinessRule": "Exception does not bypass invariants",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-12",
+        "CM1-REL-13"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-041",
+      "summary": "The controlled-exception overlap policy SUPERSEDES any prior rule prohibiting all overlapping Relationships (same Person+target+role). No active absolute-overlap-prohibition rule remains; historical absolute-denial expectations, if imported later, are superseded.",
+      "coverageClass": "DOCUMENTED_ONLY",
+      "requirementSection": "customer-business-rules.md (relationship)",
+      "relatedBusinessRule": "Supersession of absolute-overlap prohibition",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-REL-04"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-042",
+      "summary": "Branch has only two independent record states: ACTIVE and INACTIVE. Branch does not have an independently managed ARCHIVED state. Effective operational availability depends on its own status, its parent Company lifecycle status, and applicable resource/action policy.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (C)",
+      "relatedBusinessRule": "Branch ACTIVE/INACTIVE; no ARCHIVED",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-BRN-01"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-043",
+      "summary": "Deactivating Company does not automatically change stored Branch statuses. Deactivating Branch does not automatically modify Company or Person. Existing open activities remain available for permitted continuation; creating new activities is restricted if Branch or parent Company is effectively inactive.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (C)",
+      "relatedBusinessRule": "Company/Branch deactivation independence",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-BRN-04",
+        "CM1-BRN-08"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-044",
+      "summary": "Direct Branch reparenting is prohibited. branchId and companyId are immutable after creation.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-field-dictionary.md",
+      "relatedBusinessRule": "Branch parent immutable; no reparenting",
+      "fieldIds": [
+        "FLD-002-11"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-BRN-02",
+        "CM1-UPD-02"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-045",
+      "summary": "When a Branch is genuinely transferred, create a new Branch under the target Company with a new Branch ID and deactivate the original. Do not transfer historical activities or Person Relationships automatically; historical activities remain attributed to the original Company/Branch. New Relationships and activity assignments use their own authorized operations. An optional succession reference between old and new branches may be proposed but must not transfer ownership/permissions.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (branch)",
+      "relatedBusinessRule": "Transfer = new Branch + deactivate original",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-BRN-03"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-09"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-046",
+      "summary": "Archiving Company requires resolution of applicable open dependencies across Company and Branches. Branch records and historical associations remain intact after Company archiving. Restoring Company does not automatically activate inactive Branches.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (C)",
+      "relatedBusinessRule": "Branch lifecycle dependency guards",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-BRN-09",
+        "CM1-BRN-05"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-047",
+      "summary": "Branch is subordinate to Company (not an independent Customer), has its own stable ID and independently maintained data, and has exactly one Company parent whose ID is immutable after creation. Branches can have Person Relationships. Company/Branch references respect Tenant isolation.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-field-dictionary.md",
+      "relatedBusinessRule": "Branch identity, single parent, Person relationships, Tenant isolation",
+      "fieldIds": [
+        "FLD-002-11"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-BRN-06",
+        "CM1-REL-14"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-048",
+      "summary": "Customer durable mutations honor existing coordinated persistent Audit obligations. Proposed independent Branch, Relationship and Verification operations require an auditability product requirement, with the precise operational contract still requiring formal approval.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (audit)",
+      "relatedBusinessRule": "Audit obligations for durable + proposed operations",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-AUD-01",
+        "CM1-AUD-02"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-10"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-049",
+      "summary": "Rejected validations, warnings, or read-only queries do not carry an assumed mandatory Audit rule unless supported by existing authoritative sources.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (audit)",
+      "relatedBusinessRule": "No assumed mandatory Audit for warnings/rejections/reads",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-AUD-05"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-050",
+      "summary": "Prefer controlled references to sensitive evidence over copying entire identity documents or private identifiers into Audit logs.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (audit)",
+      "relatedBusinessRule": "Controlled evidence references",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-AUD-04"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-051",
+      "summary": "A mandatory coordinated Audit failure must not result in a successful mutation being reported. Broker ACK or outbox publication alone is not authoritative Audit ingestion. Preserve version/concurrency safety and prevent stale provider results from silently overwriting newer verification states.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (audit)",
+      "relatedBusinessRule": "Audit safe failure; ACK != ingestion; stale provider",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-AUD-01",
+        "CM1-AUD-02",
+        "CM1-AUD-03",
+        "CM1-UPD-10"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-10"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-052",
+      "summary": "Similar names, shared phone numbers, or shared emails alone are not conclusive identity matches. Automatic merging of Customer records is not authorized. Distinguish an intentional duplicate-warning override from an accidental duplicate caused by retrying the same request. Avoid unauthorized disclosure of other customers/Tenant data through duplicate detection.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (duplicates)",
+      "relatedBusinessRule": "Non-conclusive signals; no auto-merge; intentional vs accidental",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-DUP-01",
+        "CM1-DUP-03",
+        "CM1-DUP-04",
+        "CM1-DUP-05"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-03"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-053",
+      "summary": "Address and Latin name are optional unless a specific consuming workflow requires them. Official identification may be required later by a workflow requiring formal identity verification. A structurally valid identifier is not automatically verified. Verified official identifiers must be unique within the formally defined identity scope; conclusive conflicts block the conflicting create/update. No silent assumption of global cross-Tenant identity deduplication.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-field-dictionary.md",
+      "relatedBusinessRule": "Address/Latin optional; structurally-valid != verified; scope uniqueness",
+      "fieldIds": [
+        "FLD-002-03",
+        "FLD-002-04",
+        "FLD-002-05",
+        "FLD-002-08"
+      ],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-FLD-06",
+        "CM1-DUP-01"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-01"
+      ]
+    },
+    {
+      "decisionId": "CM1-PD-054",
+      "summary": "Deactivation is allowed even with open activities; existing open activities and historical data remain intact. Starting new activities for INACTIVE customers is restricted per owning-module policy. Archiving must not delete Customer data, relationships, or audit history. Restoring an archived Customer must not automatically reopen historical activities/relationships.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md (B)",
+      "relatedBusinessRule": "Deactivation/archive/restore consolidation",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-LC-02",
+        "CM1-LC-03",
+        "CM1-LC-05",
+        "CM1-LC-11"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-055",
+      "summary": "Updating Company must not silently reparent Branches; updating Person must not silently alter unrelated Relationships. Converting Company into Person or vice versa is not supported as a normal CM-1 update. Routine edits of ARCHIVED records are not allowed (use authorized recovery). INACTIVE records may be corrected without automatically becoming ACTIVE.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (CUS-UPDATE)",
+      "relatedBusinessRule": "No reparent/relationship alter; no conversion; INACTIVE correctable",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-UPD-02",
+        "CM1-UPD-03",
+        "CM1-UPD-04",
+        "CM1-UPD-05",
+        "CM1-UPD-09"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-056",
+      "summary": "A record can be ACTIVE and NOT_VERIFIED, and can be VERIFIED without automatically receiving access or operational authorization. Verification state never substitutes for resource authorization or membership.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md (verification)",
+      "relatedBusinessRule": "VERIFIED confers no access",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-17",
+        "CM1-VER-18"
+      ],
+      "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-057",
+      "summary": "Effective time and recording time are recorded distinctly when relevant. The specific evidence-retention period, trusted-provider catalog, revocation dispute process, and detailed failure/recovery mechanism remain open.",
+      "coverageClass": "DOCUMENTED_ONLY",
+      "requirementSection": "customer-field-and-verification-addendum.md",
+      "relatedBusinessRule": "Effective vs recording time; retention/provider/dispute OPEN",
+      "fieldIds": [],
+      "operationConcepts": [],
+      "acceptanceCriterionIds": [
+        "CM1-VER-15"
+      ],
+      "relatedOpenPqdIds": []
+    }
+  ]
+}

@@ -188,16 +188,16 @@
     },
     {
       "fieldId": "FLD-002-11",
-      "businessName": "Branch relationship",
-      "description": "Link between branch and parent company",
+      "businessName": "Branch parent Company reference",
+      "description": "Parent Company reference for a Branch (immutable after creation)",
       "applicableCustomerType": "Branch",
       "logicalType": "reference",
-      "requiredStatus": "Optional",
+      "requiredStatus": "Required",
       "uniqueness": "OPEN",
-      "validationConstraints": "Referential integrity OPEN",
+      "validationConstraints": "Parent Company must exist, same Tenant, authorized; direct reparenting rejected; real transfer = new Branch",
       "sensitivity": "Tenant Confidential",
-      "mutability": "Mutable",
-      "decisionStatus": "OPEN"
+      "mutability": "Immutable",
+      "decisionStatus": "USER_CONFIRMED (CM1-PD-044/045/047); persistence/API schema still unapproved"
     },
     {
       "fieldId": "FLD-002-12",
@@ -477,5 +477,5 @@
     "REL-002-13",
     "REL-002-14"
   ],
-  "branchParentImmutability": "companyId immutable after creation; direct Branch reparenting prohibited (CM1-PD-044/045)"
+  "branchParentImmutability": "companyId immutable after creation; direct Branch reparenting prohibited (CM1-PD-044/045); every Branch has exactly one Company parent (CM1-PD-047); persistence/API schema unapproved"
 }

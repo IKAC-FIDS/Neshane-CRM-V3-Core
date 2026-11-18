@@ -1,18 +1,18 @@
-# V3-FR-A-002 — Customer Master Product Decision Package v1.2.0
+# V3-FR-A-002 — Customer Master Product Decision Package v1.2.1
 
 ## Included
-- The 13 original authoritative-source candidate files (requirements, operations, fields, business rules, lifecycle, actor policy, failure/deployment scenarios, acceptance criteria, open decisions, source-traceability, validation) are retained and reconciled in place.
-- `customer-master-product-decision-record.md` and `.json` carry **57 user-confirmed product-direction decisions** (CM1-PD-001..028 + CM1-PD-029..057) plus a supersession record.
-- `customer-field-and-verification-addendum.md` maps new decisions to candidate FLD-002-* definitions.
-- `cm1-acceptance-criteria-addendum.md` adds proposed acceptance scenarios (CM1-FLD-*, CM1-VER-*, CM1-REL-*, CM1-BRN-*, CM1-AUD-*, CM1-DUP-*, CM1-LC-*, CM1-UPD-*); NOT EXECUTED.
-- `sha256-manifest.json` captures integrity hashes (regenerated for v1.2.0).
+- Reconciled requirements, business rules, field dictionary, lifecycle (explicit source-baseline vs user-confirmed target), operation catalog, actor policy, failure/deployment scenarios, acceptance criteria, open decisions, source traceability.
+- `customer-master-product-decision-record.md` / `.json`: 57 user-confirmed decisions (CM1-PD-001..057) plus supersession record.
+- `customer-decision-coverage-matrix.md` / `.json`: coverage map of all 57 decisions (FULL=3, PARTIAL=47, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2).
+- `cm1-acceptance-criteria-addendum.md`: detailed CM1 acceptance criteria (all PROPOSED / NOT TESTED).
+- `sha256-manifest.json`: integrity manifest (self-reference omitted by convention).
 
 ## Key policy (user-confirmed, authoritative)
-- Relationship overlap: same Person+TargetType+TargetId+RoleCode overlapping intervals are allowed only via controlled exception (warning + authority + mandatory reason + Audit). Distinct roles/targets/Company-vs-Branch overlap freely. This supersedes any absolute-overlap prohibition.
-- Branch: subordinate to Company, immutable companyId, no direct reparenting (transfer = new Branch + deactivate original), only ACTIVE/INACTIVE states.
+- Relationship overlap: same Person+TargetType+TargetId+RoleCode overlapping intervals allowed only via controlled exception. Distinct roles/targets/Company-vs-Branch overlap freely. Supersedes any absolute-overlap prohibition.
+- Branch: subordinate to Company, immutable companyId (Required/Immutable parent reference), no direct reparenting, only ACTIVE/INACTIVE.
 - Identity verification: NOT_VERIFIED/VERIFIED/REQUIRES_REVERIFICATION, independent of record lifecycle; no universal expiry; no implicit access.
 
 ## Governance
-- All existing open-product-decisions entries remain OPEN (14 + 5 new); none closed.
+- 19 OPEN questions (14 original + PDQ-002-08..12); 7 partial resolutions recorded; none closed.
 - Not an approved DB design, IAM grant, API, or provider integration; does not authorize runtime/offline/production.
-- G-RUNTIME BLOCKED, FE-BE & AUTH/IAM PENDING; no Git commit/push performed.
+- G-RUNTIME BLOCKED, FE-BE & AUTH/IAM PENDING; no Git commit/push performed by this task.
