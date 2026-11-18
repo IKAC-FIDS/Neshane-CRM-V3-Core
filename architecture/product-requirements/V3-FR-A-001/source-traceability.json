@@ -1,0 +1,3571 @@
+{
+  "taskId": "V3-FR-A-001",
+  "status": "REQUIREMENTS_ENGINEERING_PREPARED_FOR_OWNER_REVIEW_NOT_ACCEPTED",
+  "recordedAt": "2026-11-18T18:09:59.132248+00:00",
+  "repositoryBaseline": "702912743b36cd20ddb3a920394521c324ec0041",
+  "branch": "codex/v3-fr-a-001",
+  "governance": {
+    "Roadmap": "APPROVED AS PRODUCT EXECUTION ROADMAP",
+    "ThisTask": "EXPLICIT REQUIREMENTS-ENGINEERING AUTHORIZATION ONLY",
+    "Local-Infra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "Offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "SeaweedFS": "EXPERIMENTAL",
+    "Product implementation": "NOT AUTHORIZED",
+    "Production": "NOT AUTHORIZED"
+  },
+  "sourceInventory": [
+    {
+      "sourceId": "SRC-A001-001",
+      "repository": "Core",
+      "path": "AGENTS.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "d65782264323175aaf25dddf5c72ef7407c73fb0",
+      "gitBytes": 7009,
+      "gitSha256": "9d4eceb3bb30901e984615fbd02c7711025a0bc83c07db3c705584610c72af86",
+      "workingTreeSha256": "14c2ff2eeafa342e6e58613489081c362e0e1c157cc5ef8da8b5e11cf0d99fb0",
+      "classification": "ACCEPTED_ROADMAP_OR_EXECUTION_GUIDANCE"
+    },
+    {
+      "sourceId": "SRC-A001-002",
+      "repository": "Core",
+      "path": "deployment/support-matrix.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "e24a165dd639a100ad3ccac69204609aa4557d84",
+      "gitBytes": 36404,
+      "gitSha256": "3405bfd59460cd3ccca82a9979039839d03297e77c933aed1befa6ca6375c1ab",
+      "workingTreeSha256": "95bb291d73341460c8e3ca55473008f514e1575ac8d6c304fc4076bd1a651f31",
+      "classification": "NORMATIVE_SOURCE_WITH_HISTORICAL_QUALIFICATIONS"
+    },
+    {
+      "sourceId": "SRC-A001-003",
+      "repository": "Core",
+      "path": "migration/v2-owner-review.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "7797c8bc741ce278499170235bb6bf52adeb54b5",
+      "gitBytes": 227859,
+      "gitSha256": "053aac488aa18c46bdf64418fdfc9f7ab8604c526f824586e432d3701ccc5566",
+      "workingTreeSha256": "ed1863b518622aa60a7c8f59b3a96aaba51321ed22d99d538bc40494211ea001",
+      "classification": "NORMATIVE_SOURCE_WITH_HISTORICAL_QUALIFICATIONS"
+    },
+    {
+      "sourceId": "SRC-A001-004",
+      "repository": "Core",
+      "path": "architecture/reviews/V3-003-decision-record.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "b186c68e8ca384249b52a76f1894d9b90ecdbc8c",
+      "gitBytes": 165165,
+      "gitSha256": "7e5ce45c547fda56d44f9df4da0e3035741ba20699b4a9500fd6cc0dfb38cdef",
+      "workingTreeSha256": "c10cc39dae995d2026d75aecfea04e93e147e381f306fb274c63a82e8d7a3594",
+      "classification": "NORMATIVE_SOURCE_WITH_HISTORICAL_QUALIFICATIONS"
+    },
+    {
+      "sourceId": "SRC-A001-005",
+      "repository": "Core",
+      "path": "architecture/task-governance.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "c90dd36a9b270138915eb696475e1405ee88f789",
+      "gitBytes": 21392,
+      "gitSha256": "09737ddf927bf14c72b1c5c8d02a1c606c7703bc8f712f01c6820930551bc59b",
+      "workingTreeSha256": "1274e460d103cefe5cc071cf1578b61a48d4764f98bf635cb9d16584a8a77d70",
+      "classification": "NORMATIVE_SOURCE_WITH_HISTORICAL_QUALIFICATIONS"
+    },
+    {
+      "sourceId": "SRC-A001-006",
+      "repository": "Core",
+      "path": "architecture/control-plane/ownership-matrix.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "42a4ee8e409170cbc12f9957f49a21915c5e7f6a",
+      "gitBytes": 41889,
+      "gitSha256": "6cd3e4de6cc59b1587669092dc027cd8ff6c7d95cb5818df361ed8f7cb1f8b34",
+      "workingTreeSha256": "2b792c5ec508a813157e6a4f47e045fc9bd64c53e43772f75b2971a5db9f7c04",
+      "classification": "NORMATIVE_SOURCE_WITH_HISTORICAL_QUALIFICATIONS"
+    },
+    {
+      "sourceId": "SRC-A001-007",
+      "repository": "Core",
+      "path": "architecture/standards/security.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "9ed662b8838e35953894ebbea1dfb5d578ed4e5f",
+      "gitBytes": 1592,
+      "gitSha256": "41ca85ac28bbbc05ebd7b6b2801d8aad20b4808042e23f95d563832b49930b06",
+      "workingTreeSha256": "fdf6884619112416ed7b38cc76427063adae7844b195b9e7f18b99236d2eee5b",
+      "classification": "NORMATIVE_SOURCE_WITH_HISTORICAL_QUALIFICATIONS"
+    },
+    {
+      "sourceId": "SRC-A001-008",
+      "repository": "Core",
+      "path": "architecture/standards/service-architecture.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "2d3c5f70ef81567eebb175f332a91d30a63d2546",
+      "gitBytes": 1512,
+      "gitSha256": "a4876a6619f56dfe3e0d00fd38535b831fbe165ea8a374c4aaa4a026a0b7ca40",
+      "workingTreeSha256": "d3732e68282da29fe364e62f8f02c81a4f85ee92e962939b6ea16e700bafbbb8",
+      "classification": "NORMATIVE_SOURCE_WITH_HISTORICAL_QUALIFICATIONS"
+    },
+    {
+      "sourceId": "SRC-A001-009",
+      "repository": "Core",
+      "path": "architecture/open-decisions.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "6e4d1e09ee6805afeffd873894851944c2d12cc7",
+      "gitBytes": 12163,
+      "gitSha256": "5f0bbd9d3501ffb66f94a09dfd3036f2fc38e2eedf2665078a90766fee38acd3",
+      "workingTreeSha256": "f489f4ea8334df8b5a29c79381fccd2a44813e342ece3225f858a29626cd2def",
+      "classification": "NORMATIVE_SOURCE_WITH_HISTORICAL_QUALIFICATIONS"
+    },
+    {
+      "sourceId": "SRC-A001-010",
+      "repository": "Core",
+      "path": "architecture/baseline-v3.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "e395b8b29b2c5ebcf94c6db01f95559125a7ac81",
+      "gitBytes": 32972,
+      "gitSha256": "6c6219e8534b707659da317cab598dab70a6a0db55f5d8d1f4ea937691a1731f",
+      "workingTreeSha256": "e47b92bd1f0462e009eb9a3ddabb9478fb3e862e55e755cfbae92a345f90c3d9",
+      "classification": "NORMATIVE_SOURCE_WITH_HISTORICAL_QUALIFICATIONS"
+    },
+    {
+      "sourceId": "SRC-A001-011",
+      "repository": "Core",
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.json",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "92fcd59e5d4ed8d4d374615be1f490adb4fcb5b3",
+      "gitBytes": 929892,
+      "gitSha256": "3ad890e912f89b442a178b150ae43a576e514679188fc9bbc49b315495f98a6b",
+      "workingTreeSha256": "3ad890e912f89b442a178b150ae43a576e514679188fc9bbc49b315495f98a6b",
+      "classification": "ACCEPTED_ROADMAP_OR_EXECUTION_GUIDANCE"
+    },
+    {
+      "sourceId": "SRC-A001-012",
+      "repository": "Core",
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-004/roadmap-acceptance-decision.json",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "8346de4e2348f9faa2d9b66f583df7d68b5c8657",
+      "gitBytes": 6558,
+      "gitSha256": "621be7e1bc7b5c52208fd8f3f6a4ed795bf3b996dec0ca84891fe626af0d36aa",
+      "workingTreeSha256": "621be7e1bc7b5c52208fd8f3f6a4ed795bf3b996dec0ca84891fe626af0d36aa",
+      "classification": "ACCEPTED_ROADMAP_OR_EXECUTION_GUIDANCE"
+    },
+    {
+      "sourceId": "SRC-A001-013",
+      "repository": "Core",
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-004/accepted-roadmap-baseline.json",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "5f03091da4bc5974f40d28db29cb9ee8b21c01cf",
+      "gitBytes": 72191,
+      "gitSha256": "454762aee825a594e0dd5191bace0d4910cb4e3293798ebcb3dfe208b9e6c4f3",
+      "workingTreeSha256": "454762aee825a594e0dd5191bace0d4910cb4e3293798ebcb3dfe208b9e6c4f3",
+      "classification": "ACCEPTED_ROADMAP_OR_EXECUTION_GUIDANCE"
+    },
+    {
+      "sourceId": "SRC-A001-014",
+      "repository": "Core",
+      "path": "architecture/adr/002-service-ownership.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "d928d5845389392a46674e647ebd0be576b6e4ad",
+      "gitBytes": 1568,
+      "gitSha256": "e4844f2b280b44e2f50225e0017d1c6b48c1097fed00b3d2c7c372e24f6ab123",
+      "workingTreeSha256": "af00f38c014438cb69ce47196bb8332ba926bb051303449feef9b6069631a457",
+      "classification": "NORMATIVE_SOURCE_WITH_BOUNDED_SCOPE"
+    },
+    {
+      "sourceId": "SRC-A001-015",
+      "repository": "Core",
+      "path": "architecture/adr/003-cell-based-hybrid-tenancy.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "26563ab4f5c91d4f3e41e1e5eb3981705bb30165",
+      "gitBytes": 1580,
+      "gitSha256": "626cde56ec9823b0f66c427a304ae86bc785e01e10730a1e75b30938c438108a",
+      "workingTreeSha256": "16581d42f325c21a5fa087d344a86b2446119d6977b04243b4aece13597ab193",
+      "classification": "NORMATIVE_SOURCE_WITH_BOUNDED_SCOPE"
+    },
+    {
+      "sourceId": "SRC-A001-016",
+      "repository": "Core",
+      "path": "architecture/adr/004-sovereign-authority.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "eef0f8a7f9d74a8241225ac1e683cea63ee4ef71",
+      "gitBytes": 1639,
+      "gitSha256": "006f86844ccd3342af9e09b972988d2a69e136f2990f97103eb8196dcfb01448",
+      "workingTreeSha256": "26f7ffebaabb91e86cd9196d4fb6e1a1bb86e1463989fb3c17fff9f575a5111d",
+      "classification": "NORMATIVE_SOURCE_WITH_BOUNDED_SCOPE"
+    },
+    {
+      "sourceId": "SRC-A001-017",
+      "repository": "Core",
+      "path": "architecture/adr/005-domain-owned-authorization.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "9b56144893574075533fab6f05a11a654bb655e0",
+      "gitBytes": 1692,
+      "gitSha256": "0ce22471ed41a0a6df09a9a7811a29095e57e4b20df40e904d2f3f18c5bf85d2",
+      "workingTreeSha256": "7beb13eb0de7cc4896e16e4bd6a2c6e457b786cd50ecd147b70208121f6ce7ea",
+      "classification": "NORMATIVE_SOURCE_WITH_BOUNDED_SCOPE"
+    },
+    {
+      "sourceId": "SRC-A001-018",
+      "repository": "Core",
+      "path": "architecture/adr/006-plugin-extension-model.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "9f853acc1ac08a9749020a7ee0f658041b8032c1",
+      "gitBytes": 1654,
+      "gitSha256": "3fb6a8dd919cfd7987a79c2d59ebc086c3d9dc1f49cec7fc2e39aad0fef57f1f",
+      "workingTreeSha256": "b945331b2bab069999ffacbc521678e8b2cad603abaf48567baa4005fbfc373e",
+      "classification": "NORMATIVE_SOURCE_WITH_BOUNDED_SCOPE"
+    },
+    {
+      "sourceId": "SRC-A001-019",
+      "repository": "Core",
+      "path": "architecture/adr/009-frontend-architecture.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "65bc1c77272b99e6098d833cf82ae9707cf36b63",
+      "gitBytes": 1551,
+      "gitSha256": "75987580d0c894faf65d533f84e7140826b798223503da41c91265120b514bfa",
+      "workingTreeSha256": "7cc4bf4391f4653660e502448dacb52a1e37c8209fa2190fd02cf984ecba308c",
+      "classification": "NORMATIVE_SOURCE_WITH_BOUNDED_SCOPE"
+    },
+    {
+      "sourceId": "SRC-A001-020",
+      "repository": "Core",
+      "path": "architecture/adr/010-operational-profiles.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "02273dbbfe1d81ee2c22bb5995a4e70031c788ec",
+      "gitBytes": 1566,
+      "gitSha256": "20dd1fbb598088283acffdd5212c4f0fc02edd508031b813bb8036a2fc71c672",
+      "workingTreeSha256": "5dac06a6d0c889559566ef6eed2756f2fb616ffa7e96bdb2659bd95aeac1f9ec",
+      "classification": "NORMATIVE_SOURCE_WITH_BOUNDED_SCOPE"
+    },
+    {
+      "sourceId": "SRC-A001-021",
+      "repository": "Core",
+      "path": "architecture/adr/012-evidence-based-readiness.md",
+      "revision": "702912743b36cd20ddb3a920394521c324ec0041",
+      "gitBlob": "1fe894e22cf8103792248b8ac5489cd1a92ac39c",
+      "gitBytes": 1478,
+      "gitSha256": "7836f33c262e4295a57e274344e38375cb15dfe1168ebe7a59f970425551475c",
+      "workingTreeSha256": "c6c8981c8d46567971e72220513aa02fda4dae6ad25cb1e96993b7c9ce3b383a",
+      "classification": "NORMATIVE_SOURCE_WITH_BOUNDED_SCOPE"
+    },
+    {
+      "sourceId": "SRC-A001-022",
+      "repository": "Backend",
+      "path": "deployment/dedicated-managed/reviews/G-RUNTIME.04/acceptance-decision.json",
+      "revision": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+      "gitBlob": "2a8a8c5b51fe6cf4095d8f4aa9a14249b72fa977",
+      "gitBytes": 15301,
+      "gitSha256": "626d944661907cd0d7474efc2b1b79cf5b333bbf284a9cc19c3890f6c9a0ff95",
+      "workingTreeSha256": "626d944661907cd0d7474efc2b1b79cf5b333bbf284a9cc19c3890f6c9a0ff95",
+      "classification": "CURRENT_AUTHORITY_BLOCKED_DECISION"
+    },
+    {
+      "sourceId": "SRC-A001-023",
+      "repository": "Backend",
+      "path": "deployment/dedicated-managed/reviews/G-RUNTIME.05/fe-be-scope-decision.json",
+      "revision": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+      "gitBlob": "2c3402eb33a21e7594c4c10dd83545a325ba671a",
+      "gitBytes": 8175,
+      "gitSha256": "6fbba1d88690bacce41747a4e870fccdb8d286e552579b4ce9164f19731853b6",
+      "workingTreeSha256": "6fbba1d88690bacce41747a4e870fccdb8d286e552579b4ce9164f19731853b6",
+      "classification": "PENDING_SCOPE_DECISION_NOT_PERMISSION"
+    },
+    {
+      "sourceId": "SRC-A001-024",
+      "repository": "Backend",
+      "path": "deployment/dedicated-managed/reviews/G-RUNTIME.05/auth-iam-scope-decision.json",
+      "revision": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+      "gitBlob": "7b155f1e17af0462c1b1778a727442f407327612",
+      "gitBytes": 8177,
+      "gitSha256": "df6a777e22623821b1754d73f05585f294992a5e9148f815a6a98b5af24aa4f8",
+      "workingTreeSha256": "df6a777e22623821b1754d73f05585f294992a5e9148f815a6a98b5af24aa4f8",
+      "classification": "PENDING_SCOPE_DECISION_NOT_PERMISSION"
+    }
+  ],
+  "evidence": [
+    {
+      "evidenceId": "EVID-A001-001",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 171,
+      "lineEnd": 171,
+      "quote": "| `FR-PF-001` | Establish Trusted Tenant Access | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Option B approved: minimum trusted access for internal authenticated Principals, active Membership validation, valid/revalidated Tenant Context, valid destination Membership for Tenant switching and independent owning-Domain authorization; detailed identity/session choices remain pending |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-002",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 288,
+      "lineEnd": 288,
+      "quote": "   - internal authenticated Principals;",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-003",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 45,
+      "lineEnd": 45,
+      "quote": "3. The resource-owning Domain makes and enforces final resource/action authorization. Identity, Membership, Entitlement, Assignment, gateway routing or physical dedication is not authorization.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-004",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 49,
+      "lineEnd": 49,
+      "quote": "7. User, Workload, Operator and Plugin Installation identities remain distinct. User or Workload identity must be authenticated at every Service trust boundary, including validation of the approved issuer/trust source, intended audience, expiry and required claims. Internal network location, broker delivery or Central identity is not trust by itself. The final identity protocol and credential technology remain unresolved.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-005",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 62,
+      "lineEnd": 62,
+      "quote": "| Operational authority | Authorized provider operations within approved privileged boundaries | Authorized managed operator/provider within the customer-specific dedicated boundary and agreed support model | Sovereign-local authorized operators have final security and operational authority; Central has no implicit administrative right |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-006",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 68,
+      "lineEnd": 68,
+      "quote": "| Proposed customer responsibility | Tenant administration, authorized users, business configuration/data stewardship and incident cooperation within approved contracts | Same, plus agreed dedicated-environment coordination and customer-side dependencies | Local trust/credential custody, authorized operators, local policy, connectivity/federation approval, local recovery and physical/environmental dependencies |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-007",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 67,
+      "lineEnd": 67,
+      "quote": "| Proposed provider/operator responsibility | Cell/platform operation, authorized deployment, observability, recovery process and incident coordination; no Business Fact ownership | Managed dedicated infrastructure, authorized release/upgrade/recovery and support access; no universal Domain authority | Approved artifacts and support interfaces only under local policy; no unapproved Central operation or data access |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-008",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 297,
+      "lineEnd": 297,
+      "quote": "The Product disposition does not approve Customer Portal or external customer users; a named IdP, SSO, Passkey or protocol; token/session/refresh technology; Tenant administration UI; unapproved Membership policy details; implicit authorization from Authentication, Membership or Entitlement; numeric SLA or offline guarantees; implementation availability; or Production Readiness.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-009",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 208,
+      "lineEnd": 208,
+      "quote": "2. Business Actor catalog and accountable Business Owner for each Journey.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-010",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 221,
+      "lineEnd": 221,
+      "quote": "15. Operation-level approval owners.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-011",
+      "sourceId": "SRC-A001-007",
+      "lineStart": 7,
+      "lineEnd": 7,
+      "quote": "- The owning service authorizes every operation and object. Gateways and upstream services cannot be the sole authorizer.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-012",
+      "sourceId": "SRC-A001-007",
+      "lineStart": 13,
+      "lineEnd": 13,
+      "quote": "- Client-provided tenant headers or fields are selectors only. Missing, conflicting, or invalid context fails closed before domain or persistence work.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-013",
+      "sourceId": "SRC-A001-005",
+      "lineStart": 30,
+      "lineEnd": 30,
+      "quote": "- That owner is the single final internal decision authority for Neshane product",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-014",
+      "sourceId": "SRC-A001-005",
+      "lineStart": 36,
+      "lineEnd": 36,
+      "quote": "- An explicit decision by this owner in the project conversation is sufficient",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-015",
+      "sourceId": "SRC-A001-005",
+      "lineStart": 46,
+      "lineEnd": 46,
+      "quote": "- Independent expert/specialist review is advisory input to the final internal",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-016",
+      "sourceId": "SRC-A001-005",
+      "lineStart": 53,
+      "lineEnd": 53,
+      "quote": "- Binding exception: legal, regulatory, contractual or otherwise independently",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-017",
+      "sourceId": "SRC-A001-005",
+      "lineStart": 79,
+      "lineEnd": 79,
+      "quote": "The designated Task Owner or CPO may accept and close an ordinary development or documentation task when all of the following are present:",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-018",
+      "sourceId": "SRC-A001-005",
+      "lineStart": 119,
+      "lineEnd": 119,
+      "quote": "Material architecture decisions require approval by the designated architecture authority under the existing ADR and Open Decision process. A Level 1 task acceptance cannot approve or close an ADR or Open Decision unless that architecture process is expressly completed.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-019",
+      "sourceId": "SRC-A001-005",
+      "lineStart": 181,
+      "lineEnd": 181,
+      "quote": "Security-critical decisions, Security/Tenant Gate decisions and eligible risk/exception dispositions require an explicit, traceable decision by the unified internal owner against the applicable scope and evidence. Independent technical assessment is advisory to that final decision unless the binding exception above requires independent approval. Technical security conditions, required verification and non-waivable controls remain blocking. Level 1 closure alone is not Security acceptance, risk acceptance or runtime verification; the owner must explicitly issue the distinct Level 3 decision. Do not label an owner decision as independent Security Sign-off.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-020",
+      "sourceId": "SRC-A001-005",
+      "lineStart": 215,
+      "lineEnd": 215,
+      "quote": "Production release requires executable validation, the applicable explicit Security/Gate decisions, operational evidence, approvals required by the binding exception and explicit release authorization from the unified internal owner. Readiness approval and permission to execute a release/deployment remain separately scoped. Documentation acceptance, architecture approval and implementation completion do not establish Production Readiness.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-021",
+      "sourceId": "SRC-A001-010",
+      "lineStart": 32,
+      "lineEnd": 32,
+      "quote": "`NESHANE-V3-ARCH-P00-006: EFFECTIVE FOR DESIGN_ONLY / REFERENCE_ONLY FROM 2026-11-13T14:21:48+03:30`.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-022",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 1644,
+      "lineEnd": 1644,
+      "quote": "Audit evidence shall identify the relevant validated Actor, Tenant, operation, safe Customer reference, outcome and correlation context, subject to data-minimization requirements.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-023",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 1508,
+      "lineEnd": 1508,
+      "quote": "Every supported FIRST_RELEASE privileged operation within the approved `FR-SO-004` scope shall produce mandatory Audit evidence for its execution request and material execution outcome.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-024",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 1522,
+      "lineEnd": 1522,
+      "quote": "Sensitive access to authoritative Audit records, including applicable authorized access, authorization denial and material access failure, shall be subject to mandatory Audit evidence obligations.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-025",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 115,
+      "lineEnd": 115,
+      "quote": "| 10 | Deployment, operations and support authority | Infrastructure-operation scope — Shared: **Provider Operations Authority**; Managed: **Dedicated Managed Operations Authority**; Sovereign: **Sovereign Operations Authority**. Destination business-operation scope remains with each **resource-owning Domain**. | Operations Authority changes infrastructure with scoped identity. Destination D authorizes sensitive Domain actions. Support identity has no independent write authority. | Shared: `N/A`. Managed: `A` — release/operational intent GCP → Dedicated Operations Authority; `C` — support/recovery coordination. Sovereign: `A` — locally accepted release artifact proposal GCP → Sovereign Operations Authority; `C` — locally initiated support; `X` — GCP emergency execution or implicit administration. | Sovereign Operations Authority owns restart/rollback/recovery. No global support identity has implicit access. Runtime tooling is `OPEN`. | ADR-004/010/011/012; OD-015/023. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-026",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 116,
+      "lineEnd": 116,
+      "quote": "| 11 | Audit evidence and operational telemetry | Business-fact scope: each **producing Domain**. Authoritative Audit-record scope: the profile's **Audit Domain**. Operational-telemetry scope: the profile's **Observability Authority**. | Producing D writes owned Business Facts/obligations; Audit Domain owns authoritative Audit records; Observability Authority owns minimized telemetry configuration. None may overwrite another scope. | Shared: `N/A` — required Audit and provider telemetry stay inside the co-operated profile. Managed: `A` — permitted telemetry LCP → GCP; `O` — explicitly authorized support query. Sovereign: `A` — locally permitted minimized export LCP → GCP; `O` — locally approved support query; `X` — central Audit acknowledgement as local success or telemetry command backchannel. | Export loss cannot erase local Audit obligations. Missing required local Audit authority follows approved operation-specific semantics; executable DURABLE_DEFER remains unapproved. | ADR-004/007/010; V3-003-DEC-010/011/014 principles. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-027",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 117,
+      "lineEnd": 117,
+      "quote": "| 12 | Recovery and emergency administrative access | Infrastructure-recovery scope — Shared: **Provider Recovery Authority**; Managed: **Dedicated Managed Recovery Authority**; Sovereign: **Sovereign Recovery Authority**. Durable Domain-evidence scope remains with its **owning Domain**; emergency business-action authorization remains with the **destination Domain**. | Recovery Authority orchestrates infrastructure recovery; owning Domain supplies authoritative evidence; destination D authorizes business effects. No support or replica becomes an evidence owner. | Shared: `N/A`. Managed: `A` — approved recovery artifact/status exchange; `C` — recovery coordination. Sovereign: `A` — locally accepted recovery artifact proposal GCP → Sovereign Recovery Authority; `C` — locally initiated assistance; `X` — central restore, re-drive or emergency action without local authorization. | The profile Recovery Authority decides infrastructure restore; Domain owners decide evidence correction/re-drive effects. No automatic restoration, generic break-glass authority or central override is approved. | ADR-004/007/010/012; V3-003-DEC-014; OD-012/015/023. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-028",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 166,
+      "lineEnd": 166,
+      "quote": "| `FR-BJ-001` | Register and Maintain Customer Master | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Customer Domain owns Customer Master and authorization |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-029",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 167,
+      "lineEnd": 167,
+      "quote": "| `FR-BJ-002` | Find and Review Customer | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Business search only; no search engine selection |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-030",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 168,
+      "lineEnd": 168,
+      "quote": "| `FR-BJ-003` | Manage Opportunity Through the Sales Pipeline | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Sales owns Opportunity/Pipeline/Stage/amount-currency; detailed rules pending |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-031",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 169,
+      "lineEnd": 169,
+      "quote": "| `FR-BJ-004` | Register and Process a Customer Request | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | No Portal or general Workflow Engine dependency |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-032",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 170,
+      "lineEnd": 170,
+      "quote": "| `FR-BJ-005` | Plan and Track a Work Task | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Manual contract-based links; linked resource authorization remains independent |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-033",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 171,
+      "lineEnd": 171,
+      "quote": "| `FR-PF-001` | Establish Trusted Tenant Access | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Option B approved: minimum trusted access for internal authenticated Principals, active Membership validation, valid/revalidated Tenant Context, valid destination Membership for Tenant switching and independent owning-Domain authorization; detailed identity/session choices remain pending |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-034",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 172,
+      "lineEnd": 172,
+      "quote": "| `FR-PF-002` | Evaluate Feature Eligibility | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Eligibility is not Membership or Business Authorization; Sovereign evaluation is local |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-035",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 173,
+      "lineEnd": 173,
+      "quote": "| `FR-PF-003` | Enforce Quota-Controlled Operation | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Each capability-to-Quota integration needs separate approval |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-036",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 174,
+      "lineEnd": 174,
+      "quote": "| `FR-PF-004` | Deliver Authorized In-App Notification | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Core + In-App only; Email/SMS/Push deferred |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-037",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 175,
+      "lineEnd": 175,
+      "quote": "| `FR-PF-005` | Attach and Retrieve File for an Approved Resource | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Dual File/resource authorization; storage/scanning/retention choices pending |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-038",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 176,
+      "lineEnd": 176,
+      "quote": "| `FR-PF-006` | Produce an Approved Deterministic Report | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Reporting Core only; each Report Set and authorization requires approval |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-039",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 177,
+      "lineEnd": 177,
+      "quote": "| `FR-SO-001` | Record Security, Administrative and Privileged Audit Evidence | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Audit Core; catalog/retention/integrity mechanics incomplete |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-040",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 178,
+      "lineEnd": 178,
+      "quote": "| `FR-SO-002` | Review Authorized Audit Evidence | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Audit Domain authorizes Audit resources; disclosure rules incomplete |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-041",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 179,
+      "lineEnd": 179,
+      "quote": "| `FR-SO-003` | Observe Platform and Service Health | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Operational Core obligation; signal/readiness catalog pending |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-042",
+      "sourceId": "SRC-A001-002",
+      "lineStart": 180,
+      "lineEnd": 180,
+      "quote": "| `FR-SO-004` | Execute an Authorized Privileged Operation | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | `SUPPORTED IN FIRST RELEASE` | Destination Domain authorization and Audit required; no generic Admin authority |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-043",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 128,
+      "lineEnd": 128,
+      "quote": "| Customer company/person/contact master | **Customer Domain** | Undecided deployment boundary | Customer-owned company, person, contact, branch and relationship records; Customer Domain is authoritative and owns writes | Versioned Customer API/events; authorized projections | Customer Domain enforces resource/action authorization; Platform Core supplies validated tenant/membership context | **Approved — V3-002B-DEC-002** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-044",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 131,
+      "lineEnd": 131,
+      "quote": "| Sales opportunity/pipeline | **Sales Domain** | Undecided deployment boundary | Sales-owned Opportunity, Pipeline, Stage Transition and Opportunity amount/currency; Sales Domain is authoritative and owns writes | Customer references only by identifier and versioned API/event or authorized projection; Sales-owned API/events for consumers | Sales Domain makes and enforces final Opportunity resource/action authorization | **Approved — V3-002B-DEC-006** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-045",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 132,
+      "lineEnd": 132,
+      "quote": "| Notification templates/delivery | **Notification Domain** | Undecided deployment boundary | Notification-owned Template, Rule, Lifecycle, Delivery Ledger, Delivery Attempts, Deduplication, Retry State and In-App records; physical persistence design remains undecided | Producing Domain retains Business Fact; integration uses versioned contracts with tenant provenance | Notification authorizes Notification resources and recipient access only; producer retains business-operation authorization | **Approved — V3-002B-DEC-009** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-046",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 133,
+      "lineEnd": 133,
+      "quote": "| Customer Request workflow | **Customer Request Domain within the logical Workflow capability** | Undecided deployment boundary; no mandatory generic Workflow Engine | Request, Lifecycle, Status History, Triage and Assignment; Customer Request Domain is authoritative and owns writes | Customer reference only by identifier and versioned contracts; later Task/Opportunity/Technical Document integration by owned contracts | Customer Request Domain makes and enforces final Request resource/action authorization; Assignment grants no authority | **Approved — V3-002B-DEC-012** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-047",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 134,
+      "lineEnd": 134,
+      "quote": "| Audit | **Audit Domain for system-wide Audit records; Producing Domains retain Business Facts and Domain-specific Audit** | Undecided deployment boundary | Audit Domain is authoritative for system-wide security, administrative and Privileged records and authorized Audit projections; producers remain authoritative for their Business Facts and Domain-specific Audit | Versioned contracts only; Audit Domain has no direct access to private domain databases | Audit Domain makes and enforces final access decisions for its Audit resources; Dedicated Sovereign security and operational authority is local | **Approved — V3-002B-DEC-014** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-048",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 135,
+      "lineEnd": 135,
+      "quote": "| Entitlement | **Independent logical Entitlement capability in Platform Core** | Undecided deployment boundary | Entitlement owns authoritative Feature Assignment, effective Entitlement state and Eligibility evaluation results; Plan/Subscription facts, Billing, Pricing and Quota ownership remain separate | Versioned policy/evaluation contracts; Tenant Management retains Tenant/Organization and Membership | Entitlement decides eligibility only; each Resource-owning Domain makes and enforces final Resource/Action Authorization; Dedicated Sovereign authority/evaluation is local | **Approved — V3-002B-DEC-018** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-049",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 136,
+      "lineEnd": 136,
+      "quote": "| Quota | **Independent logical Quota capability in Platform Core** | Undecided deployment boundary | Quota owns authoritative Effective Limit, Reservation Ledger, Usage/Consumption State, Reconciliation State and Quota Decision Results; producers retain source Usage Facts | Versioned policy/usage contracts; Entitlement remains owner of Eligibility; no shared database access | Producing Resource-owning Domain makes and enforces final Resource/Action Authorization; Dedicated Sovereign Quota authority/control is local | **Approved — V3-002B-DEC-021** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-050",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 138,
+      "lineEnd": 138,
+      "quote": "| Reporting | **Reporting Capability for report resources; Producing Domains retain Business Facts** | Undecided deployment boundary | Reporting owns Report Catalog/Definition Metadata, Execution State, Generated Report Artifact/Snapshot and its authorized dedicated Projections; producers own source Business Facts | Versioned source contracts and approved projections only; Operational Platform is infrastructure operator, not semantic owner | Reporting authorizes its report resources subject to Tenant Isolation and source disclosure constraints; projections cannot bypass source authorization; Dedicated Sovereign authority is local | **Approved — V3-002B-DEC-028** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-051",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 140,
+      "lineEnd": 140,
+      "quote": "| Work Core / Task | **Work Domain** | Undecided deployment boundary | Work owns Task, Task Lifecycle/Status, Due Date, Assignment Record and cross-domain Link Metadata | Related Customer, Opportunity and Customer Request resources remain owned by their domains; valid contracts only; no direct database access or foreign Business Fact writes | Work authorizes only Task resources; Assignment/links grant no Membership, Entitlement or authorization to related resources | **Approved — V3-002B-DEC-035** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-052",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 141,
+      "lineEnd": 141,
+      "quote": "| Files/content | **File/Content Domain for file state; Resource-owning Domain for attachment meaning and relation** | Undecided deployment boundary | File/Content owns File Metadata, Content/Object Lifecycle, Storage Reference, Integrity/Checksum and Validation/Quarantine State; resource owner owns Attachment semantics and relationship to its Business Resource | Versioned authorized contracts only; no direct cross-service database access; attachment deletion does not by itself delete the File Object | File Domain authorizes the file and Resource-owning Domain authorizes attachment operations and related-resource access; File ID/link grants no authority; Dedicated Sovereign authority is local | **Approved — V3-002B-DEC-038** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-053",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 144,
+      "lineEnd": 144,
+      "quote": "| Administration / Operational Core | **Operational Platform Capability for operational state; source services and logical domains retain their authorities** | Undecided deployment boundary | Operational Platform owns Operational Visibility Projections, Health/Readiness Aggregation, Privileged Operation Request/Execution State and approved control state; source services own signals/configuration; domains own Business Facts; Audit/Tenant/Reporting/Notification ownerships remain unchanged | Versioned authorized contracts only; no direct cross-service database access; deferred Bulk Import, Email Administration and advanced capability ownerships remain Pending | Operational Platform authorizes only its resources; destination domain authorizes business effects; privileged actions require limited identity, explicit scope and traceable Audit; Dedicated Sovereign authority is local | **Approved — V3-002B-DEC-050** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-054",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 129,
+      "lineEnd": 129,
+      "quote": "| Identity/principal/session | **Identity Trust Capability in Platform Core** | Undecided deployment boundary | Identity owns Principal Identity, Credential/Authenticator Registration, External Identity Mapping, Authentication State, Session/Refresh/Revocation State and Token-Issuance Metadata; Tenant, Entitlement, Portal and business ownerships remain separate | Versioned identity contracts; provider assertions require validation and approved mapping; no direct business-data ownership | Identity decides only Principal/Session validity; token/session grants no Membership, Entitlement or business authorization; Tenant switching revalidates Membership/Context; Dedicated Sovereign authority is local | **Approved — V3-002B-DEC-053** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-055",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 130,
+      "lineEnd": 130,
+      "quote": "| Tenant/Organization/Membership | **Tenant Management Capability in Platform Core** | Undecided deployment boundary | Tenant Management owns Tenant, Organization, Tenant Lifecycle, Organization/Tenant Membership, Membership Status, Principal-to-Tenant Association and Membership Role Assignment; Identity, Entitlement and business ownerships remain separate | Versioned tenant/membership contracts; Tenant Context derives from valid Principal plus active Membership and is revalidated at trust boundaries | Tenant Management authorizes its own resources and membership administration only; Membership/role grants no Entitlement or business authorization; Dedicated Sovereign authority is local | **Approved — V3-002B-DEC-054** |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-056",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 110,
+      "lineEnd": 110,
+      "quote": "| 5 | Identity and workload trust | Issuer-admission scope — Shared: **Provider Trust Authority**; Managed: **Dedicated Managed Trust Authority**; Sovereign: **Sovereign Trust Authority**. Credential-assertion scope: the single **Admitted Identity Issuer** identified by validated issuer metadata for that credential. | Trust Authority alone admits/removes issuers. The Admitted Identity Issuer is authoritative only for its credential assertions; every D validates issuer, audience, expiry and required claims, then performs Domain authorization. | Shared: `N/A`. Managed: `A` — approved issuer metadata GCP → Dedicated Trust Authority; no synchronous cross-plane validation is selected by this baseline. Sovereign: `A` — locally approved issuer metadata GCP → Sovereign Trust Authority; `X` — central runtime identity validation on a critical path. | Cached evidence is usable only within approved lifetime/revocation rules. Exact session, workload identity and disconnected revocation semantics are `OPEN`; future identity decisions must classify any new edge. | ADR-004/005; OD-009/010/011. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-057",
+      "sourceId": "SRC-A001-016",
+      "lineStart": 17,
+      "lineEnd": 17,
+      "quote": "Dedicated Sovereign has a locally authoritative Control Plane with final security and operational authority and an independently operating Data Plane. Local trust, secrets, policy, grants, audit, plugin lifecycle, recovery and credential lifecycle are supported. Neshane Central interacts only through locally approved, authenticated and policy-controlled federation/telemetry; Central identities have no implicit local administrative rights.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-058",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 116,
+      "lineEnd": 116,
+      "quote": "| Customer Portal — customer-facing access, external users, authentication/session, account workspace and submission/sharing | LATER_RELEASE | V3-002B-DEC-043 | Approved | No FIRST_RELEASE dependency; every exposed resource/action requires owner-domain requirements, contract and authorization |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-059",
+      "sourceId": "SRC-A001-018",
+      "lineStart": 17,
+      "lineEnd": 17,
+      "quote": "Plugins execute outside main processes and access Neshane through the Extension Gateway. Event-driven extension is preferred; controlled synchronous hooks are supported with explicit timeout, failure, authorization and idempotency semantics. Plugin Package, Installation and Runtime Instance are distinct. Each Installation has its own identity, grants, tenant binding, configuration and lifecycle. Customer-hosted, Neshane-hosted and Sovereign-local execution are supported; Business Services retain final domain decisions.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-060",
+      "sourceId": "SRC-A001-014",
+      "lineStart": 17,
+      "lineEnd": 17,
+      "quote": "Each service exclusively owns its domain model, persistence mappings, schema/logical database, credentials, repositories and migrations. Integration is through owned, versioned contracts. Cross-service SQL, private database access, shared ORM entities, cross-service foreign keys and implementation dependencies are prohibited. Shared libraries may contain limited technical primitives or versioned contract types, never shared business ownership.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-061",
+      "sourceId": "SRC-A001-005",
+      "lineStart": 145,
+      "lineEnd": 145,
+      "quote": "QUALITY_AUTHORITY = EXISTING_TECHNICAL_ARCHITECTURE_OWNER_ROLE_HOLDER",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-062",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 106,
+      "lineEnd": 106,
+      "quote": "| 1 | Tenant Registry and stable Tenant ID | Stable-ID/active-registry scope — Shared: **Provider Tenant Registry Authority**; Managed: **Global Managed Tenant Registry Authority**; Sovereign: **Sovereign Tenant Registry Authority** after explicit local import. | The named Registry Authority alone writes its registry. Managed LCP holds a read-only validated replica; Sovereign treats a global provisioning artifact only as input. D resolves Tenant through locally validated state. | Shared: `N/A` — no separate cross-plane edge. Managed: `A` — registry snapshot GCP → LCP; `C` — initial provisioning/conflict disposition. Sovereign: `C` — provisioning proposal GCP → LCP; `A` — optional catalog status LCP → GCP. | Existing locally validated identities remain resolvable; creation/import requires the named authority. Unknown or conflicting identity fails closed. | ADR-003; ADR-004; `R2-ACCEPTED` handover semantics. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-063",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 107,
+      "lineEnd": 107,
+      "quote": "| 2 | Tenant lifecycle and suspension | Runtime-effective lifecycle scope — Shared: **Provider Tenant Lifecycle Authority**; Managed: **Global Managed Tenant Lifecycle Authority**; Sovereign: **Sovereign Tenant Lifecycle Authority**. Commercial-account scope remains separately owned by **Product Authority** and is not permission. | The Lifecycle Authority writes technical lifecycle state; the profile LCP activates validated state and D enforces it. Product Authority writes only commercial status. | Shared: `N/A`. Managed: `A` — lifecycle state GCP → LCP; `C` — conflict/exception disposition. Sovereign: `A` — commercial or suspension notice GCP → LCP; `C` — locally authorized disposition when policy requires review. | Locally known effective suspension denies affected access. Instant effect of a central-only notice during disconnection is not claimed; freshness/effect policy is `OPEN`. | ADR-003/004/005; OD-009/010/023. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-064",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 108,
+      "lineEnd": 108,
+      "quote": "| 3 | Cell Registry and Tenant Placement | Placement scope — Shared: **Provider Placement Authority**; Managed: **Global Managed Placement Authority**; Sovereign: **Sovereign Placement Authority**. | The named Placement Authority alone writes assignment/generation. The profile router and destination D validate Tenant plus the locally activated generation. | Shared: `N/A`. Managed: `A` — placement intent GCP → LCP; `C` — migration coordination. Sovereign: `A` — optional placement proposal GCP → LCP; `C` — locally approved migration coordination; `X` — GCP runtime placement lookup. | Stale/lower generation is rejected. Existing valid local placement can operate; new move or unresolved conflict stops. Migration automation is `OPEN`. | ADR-003; OD-015/022/023. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-065",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 109,
+      "lineEnd": 109,
+      "quote": "| 4 | Trust authorities and cryptographic keys | Trust-admission/key-custody scope — Shared: **Provider Trust Authority**; Managed: **Dedicated Managed Trust Authority**; Sovereign: **Sovereign Trust Authority**. | The named Trust Authority alone mutates its trust store and controls private-key custody. Workloads validate locally; replicas never obtain custody authority. | Shared: `N/A`. Managed: `A` — approved public trust bundle GCP → Dedicated Trust Authority; `C` — governed rotation ceremony. Sovereign: `A` — locally approved public trust bundle GCP → Sovereign Trust Authority; `C` — governed local import/rotation; `X` — private-key export or central online validation on a critical path. | Missing, expired or locally known revoked trust fails closed. GCP cannot replace or extract Sovereign private keys. | ADR-004/005/010; OD-011/012. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-066",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 110,
+      "lineEnd": 110,
+      "quote": "| 5 | Identity and workload trust | Issuer-admission scope — Shared: **Provider Trust Authority**; Managed: **Dedicated Managed Trust Authority**; Sovereign: **Sovereign Trust Authority**. Credential-assertion scope: the single **Admitted Identity Issuer** identified by validated issuer metadata for that credential. | Trust Authority alone admits/removes issuers. The Admitted Identity Issuer is authoritative only for its credential assertions; every D validates issuer, audience, expiry and required claims, then performs Domain authorization. | Shared: `N/A`. Managed: `A` — approved issuer metadata GCP → Dedicated Trust Authority; no synchronous cross-plane validation is selected by this baseline. Sovereign: `A` — locally approved issuer metadata GCP → Sovereign Trust Authority; `X` — central runtime identity validation on a critical path. | Cached evidence is usable only within approved lifetime/revocation rules. Exact session, workload identity and disconnected revocation semantics are `OPEN`; future identity decisions must classify any new edge. | ADR-004/005; OD-009/010/011. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-067",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 111,
+      "lineEnd": 111,
+      "quote": "| 6 | Platform and local policies | Common-policy-contract scope: **Shared Policy Governance**. Activation scope — Shared: **Shared Policy Activation Authority**; Managed: **Dedicated Managed Policy Activation Authority**; Sovereign: **Sovereign Policy Authority**. Resource-rule scope: each **resource-owning Domain**. | Shared Policy Governance writes the common contract; the profile Activation Authority activates a validated version; each D owns and enforces resource rules. No policy can disable mandatory security invariants. | Shared: `N/A`. Managed: `A` — policy artifact GCP → Dedicated Policy Activation Authority; `C` — exception/conflict disposition. Sovereign: `A` — policy proposal GCP → Sovereign Policy Authority; `C` — local approval/conflict disposition; `X` — remote policy activation by GCP. | Incompatible or stale policy does not overwrite the active local version. Missing required policy fails the affected decision closed. | ADR-004/005; `R2-ACCEPTED` version/conflict rules. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-068",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 112,
+      "lineEnd": 112,
+      "quote": "| 7 | Product entitlements and offline license verification | Commercial-evidence scope: **Product Entitlement Authority**. Eligibility-activation scope — Shared: **Shared Entitlement Eligibility Authority**; Managed: **Dedicated Managed Entitlement Eligibility Authority**; Sovereign: **Sovereign Entitlement Eligibility Authority**. Permission scope: each **resource-owning Domain**. | Product Authority issues commercial evidence; profile Eligibility Authority validates/activates it; D separately authorizes resources/actions. No replica or entitlement issuer grants permission. | Shared: `N/A`. Managed: `A` — versioned entitlement evidence GCP → Dedicated Eligibility Authority; `C` — commercial exception coordination. Sovereign: `A` — versioned entitlement evidence GCP → Sovereign Eligibility Authority; `C` — locally governed exception coordination; `X` — GCP runtime eligibility lookup. | Expiry, grace, refresh and disconnected renewal are `OPEN`; no perpetual or numeric offline guarantee is created. Invalid evidence cannot become permission. | ADR-004/005; OD-001/023; Product authority required. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-069",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 113,
+      "lineEnd": 113,
+      "quote": "| 8 | Administrative and user Grants | Platform/admin-grant scope — Shared: **Shared Platform Grant Authority**; Managed: **Dedicated Managed Grant Authority**; Sovereign: **Sovereign Grant Authority**. Resource-grant scope: each **resource-owning Domain**. Plugin Installation-grant scope: the profile's **Plugin Control Plane**. | Each named Grant Authority alone writes its scope. Destination D performs final resource/action authorization. Plugin grants remain Installation- and Tenant-bound. | Shared: `N/A`. Managed: `A` — optional grant-status visibility LCP → GCP; `C` — managed grant request, with LCP decision. Sovereign: `A` — optional grant-status visibility LCP → GCP; `C` — locally approved support request; `X` — GCP grant mutation or authorization. | Known revocation fails closed. Grant cache freshness and in-flight semantics remain governed design gaps; emergency access cannot bypass Domain authorization/Audit. | ADR-004/005/006; V3-003-DEC-008 principles; OD-010/016. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-070",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 114,
+      "lineEnd": 114,
+      "quote": "| 9 | Application admission and Client Registration | Admission scope — Shared: **Shared Admission Authority**; Managed: **Dedicated Managed Admission Authority**; Sovereign: **Sovereign Admission Authority**. | The named Admission Authority registers a client/workload for its trust domain. D still validates identity/audience and authorizes the operation. Catalog replicas cannot admit. | Shared: `N/A`. Managed: `A` — approved client/artifact catalog GCP → Dedicated Admission Authority; `C` — admission request. Sovereign: `A` — approved artifact/catalog proposal GCP → Sovereign Admission Authority; `C` — local admission request; `X` — runtime registration against GCP. | Unknown, revoked or scope-mismatched client fails closed. Protocol and credential mechanisms remain `OPEN`. | ADR-004/005/008; OD-007/009/011/012. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-071",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 115,
+      "lineEnd": 115,
+      "quote": "| 10 | Deployment, operations and support authority | Infrastructure-operation scope — Shared: **Provider Operations Authority**; Managed: **Dedicated Managed Operations Authority**; Sovereign: **Sovereign Operations Authority**. Destination business-operation scope remains with each **resource-owning Domain**. | Operations Authority changes infrastructure with scoped identity. Destination D authorizes sensitive Domain actions. Support identity has no independent write authority. | Shared: `N/A`. Managed: `A` — release/operational intent GCP → Dedicated Operations Authority; `C` — support/recovery coordination. Sovereign: `A` — locally accepted release artifact proposal GCP → Sovereign Operations Authority; `C` — locally initiated support; `X` — GCP emergency execution or implicit administration. | Sovereign Operations Authority owns restart/rollback/recovery. No global support identity has implicit access. Runtime tooling is `OPEN`. | ADR-004/010/011/012; OD-015/023. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-072",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 116,
+      "lineEnd": 116,
+      "quote": "| 11 | Audit evidence and operational telemetry | Business-fact scope: each **producing Domain**. Authoritative Audit-record scope: the profile's **Audit Domain**. Operational-telemetry scope: the profile's **Observability Authority**. | Producing D writes owned Business Facts/obligations; Audit Domain owns authoritative Audit records; Observability Authority owns minimized telemetry configuration. None may overwrite another scope. | Shared: `N/A` — required Audit and provider telemetry stay inside the co-operated profile. Managed: `A` — permitted telemetry LCP → GCP; `O` — explicitly authorized support query. Sovereign: `A` — locally permitted minimized export LCP → GCP; `O` — locally approved support query; `X` — central Audit acknowledgement as local success or telemetry command backchannel. | Export loss cannot erase local Audit obligations. Missing required local Audit authority follows approved operation-specific semantics; executable DURABLE_DEFER remains unapproved. | ADR-004/007/010; V3-003-DEC-010/011/014 principles. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-073",
+      "sourceId": "SRC-A001-006",
+      "lineStart": 117,
+      "lineEnd": 117,
+      "quote": "| 12 | Recovery and emergency administrative access | Infrastructure-recovery scope — Shared: **Provider Recovery Authority**; Managed: **Dedicated Managed Recovery Authority**; Sovereign: **Sovereign Recovery Authority**. Durable Domain-evidence scope remains with its **owning Domain**; emergency business-action authorization remains with the **destination Domain**. | Recovery Authority orchestrates infrastructure recovery; owning Domain supplies authoritative evidence; destination D authorizes business effects. No support or replica becomes an evidence owner. | Shared: `N/A`. Managed: `A` — approved recovery artifact/status exchange; `C` — recovery coordination. Sovereign: `A` — locally accepted recovery artifact proposal GCP → Sovereign Recovery Authority; `C` — locally initiated assistance; `X` — central restore, re-drive or emergency action without local authorization. | The profile Recovery Authority decides infrastructure restore; Domain owners decide evidence correction/re-drive effects. No automatic restoration, generic break-glass authority or central override is approved. | ADR-004/007/010/012; V3-003-DEC-014; OD-012/015/023. |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-074",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 108,
+      "lineEnd": 108,
+      "quote": "| Linka/external registry | LATER_RELEASE | V3-002B-DEC-024 | Approved | Customer Core must operate without an external provider; later entry requires provider contract, provenance, retention, resilience, validation and authorized approval before Customer Master change |",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-075",
+      "sourceId": "SRC-A001-014",
+      "lineStart": 17,
+      "lineEnd": 17,
+      "quote": "Each service exclusively owns its domain model, persistence mappings, schema/logical database, credentials, repositories and migrations. Integration is through owned, versioned contracts. Cross-service SQL, private database access, shared ORM entities, cross-service foreign keys and implementation dependencies are prohibited. Shared libraries may contain limited technical primitives or versioned contract types, never shared business ownership.",
+      "evidenceMeaning": "BOUNDED_EXISTING_SOURCE_FACT"
+    },
+    {
+      "evidenceId": "EVID-A001-076",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 89,
+      "lineEnd": 89,
+      "quote": "| Customer/CRM core | FIRST_RELEASE | V3-002B-DEC-001 | Approved | Company/person/contact master capability; does not include Linka, Sales, Portal, AI or Workflow automatically |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-077",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 299,
+      "lineEnd": 299,
+      "quote": "| Operation | `CUS-CREATE` |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-078",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 323,
+      "lineEnd": 323,
+      "quote": "| `CUS-VALIDATE` | `NOT_ASSESSED` | Business effects of unavailability, false rejection, invalid acceptance and delayed validation remain unresolved |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-079",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 324,
+      "lineEnd": 324,
+      "quote": "| `CUS-GET-FOR-UPDATE` | `NOT_ASSESSED` | Field/use-case business impact is unresolved |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-080",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 325,
+      "lineEnd": 325,
+      "quote": "| `CUS-UPDATE` | `NOT_ASSESSED` | Critical field and use-case categories and their consequences are unresolved |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-081",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 365,
+      "lineEnd": 365,
+      "quote": "| Operation | `CUS-SEARCH` |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-082",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 379,
+      "lineEnd": 379,
+      "quote": "| Operation | `CUS-GET` |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-083",
+      "sourceId": "SRC-A001-004",
+      "lineStart": 404,
+      "lineEnd": 404,
+      "quote": "| `CUS-AUTHORIZE-DISCLOSURE` | `NOT_ASSESSED` | Fail-closed remains mandatory, but BC cannot be inferred from Security Criticality |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-084",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 90,
+      "lineEnd": 90,
+      "quote": "| Sales — Opportunity/Pipeline core | FIRST_RELEASE | V3-002B-DEC-004 | Approved | Contractual relationship with Customer Domain; auxiliary Sales capabilities are not included automatically |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-085",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 99,
+      "lineEnd": 99,
+      "quote": "| Customer Requests core | FIRST_RELEASE | V3-002B-DEC-011 | Approved | Internal creation, Customer contract reference, view/tracking, base lifecycle, status history and base assignment |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-086",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 112,
+      "lineEnd": 112,
+      "quote": "| Work Core — Task | FIRST_RELEASE | V3-002B-DEC-034 | Approved | Create/View/Edit, Assignment, Status, Due Date and manual contract-based links; Assignment grants no authority |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-087",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 95,
+      "lineEnd": 95,
+      "quote": "| Notification Core + In-App | FIRST_RELEASE | V3-002B-DEC-008 | Approved | Template, base rules, lifecycle, Delivery Ledger, deduplication, retry/audit and In-App notification |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-088",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 114,
+      "lineEnd": 114,
+      "quote": "| File/Attachment Core | FIRST_RELEASE | V3-002B-DEC-037 | Approved | Metadata, controlled upload/download, base lifecycle and contract-based attachments; each resource attachment needs independent requirements/authorization |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-089",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 109,
+      "lineEnd": 109,
+      "quote": "| Reporting Core | FIRST_RELEASE | V3-002B-DEC-027 | Approved | Deterministic tenant-scoped reports required by approved FIRST_RELEASE capabilities; each Report Set requires separate requirements and authorization |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    },
+    {
+      "evidenceId": "EVID-A001-090",
+      "sourceId": "SRC-A001-003",
+      "lineStart": 104,
+      "lineEnd": 104,
+      "quote": "| Audit Core | FIRST_RELEASE | V3-002B-DEC-013 | Approved | Append-oriented security, administrative and privileged events; Tenant/Platform separation; Actor/Action/Target/Outcome/Correlation; authorized viewing; integrity controls; base Retention Policy |",
+      "evidenceMeaning": "DOCUMENTED_CAPABILITY_OR_OPERATION_CONCEPT_ONLY; NOT ACTOR_PERMISSION_OR_NEW_APPROVAL"
+    }
+  ],
+  "canonicalTask": {
+    "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.json",
+    "gitSha256": "3ad890e912f89b442a178b150ae43a576e514679188fc9bbc49b315495f98a6b",
+    "taskDefinition": {
+      "executionSequence": 1,
+      "taskId": "V3-FR-A-001",
+      "parentTaskId": null,
+      "parentRelationship": "ROOT_RECORD",
+      "workstream": "A",
+      "milestone": "M0-CM1-REQUIREMENTS_AND_SCOPE",
+      "title": "Confirm actors, ownership and product decision workflow",
+      "objective": "Confirm actors, ownership and product decision workflow",
+      "description": "Confirm accountable Business Owners, actor catalog, decision ledger and incremental delivery scope",
+      "targetRepository": "Core",
+      "repositoryContributors": [],
+      "prerequisites": [],
+      "deliverables": [
+        "Approved-or-OPEN actor/owner matrix; requirement review checklist"
+      ],
+      "acceptanceCriteria": [
+        {
+          "id": "V3-FR-A-001-AC-01",
+          "criterion": "Complete the declared deliverable set for this bounded record",
+          "measurement": "Every listed deliverable has a path/revision, accountable owner and review result; no missing deliverable",
+          "evidenceArtifact": "Deliverable manifest and review checklist",
+          "approvalStatus": "PROPOSED_NOT_APPROVED",
+          "result": "NOT_EVALUATED_NO_EXECUTION"
+        },
+        {
+          "id": "V3-FR-A-001-AC-02",
+          "criterion": "Trace the full declared scope to normative requirements and disposition gaps",
+          "measurement": "Every selected capability/operation/policy requirement has a source locator and approved / OPEN / explicitly excluded disposition; zero orphan requirements or guessed rules",
+          "evidenceArtifact": "Scope-to-requirement decision ledger",
+          "approvalStatus": "PROPOSED_NOT_APPROVED",
+          "result": "NOT_EVALUATED_NO_EXECUTION"
+        },
+        {
+          "id": "V3-FR-A-001-AC-03",
+          "criterion": "Inventory all fifteen approved capabilities with actor/owner facts and gaps",
+          "measurement": "Exactly the fifteen original FR IDs, each with authoritative scope/data owner, candidate actor versus approved actor distinction, accountable-owner status and OPEN questions; zero invented appointments",
+          "evidenceArtifact": "Fifteen-row actor/ownership inventory",
+          "approvalStatus": "PROPOSED_NOT_APPROVED",
+          "result": "NOT_EVALUATED_NO_EXECUTION"
+        },
+        {
+          "id": "V3-FR-A-001-AC-04",
+          "criterion": "Demonstrate all inherited task-specific criteria without changing their meaning",
+          "measurement": "Each inherited criterion below has an approved measurable example/assessment and evidence locator; unapproved business rules/NFR thresholds stay OPEN. All mandatory accepted cases satisfied, no FAIL or unknown relabeled PASS",
+          "evidenceArtifact": "Criterion-to-example/result matrix",
+          "approvalStatus": "PROPOSED_NOT_APPROVED",
+          "result": "NOT_EVALUATED_NO_EXECUTION"
+        },
+        {
+          "id": "V3-FR-A-001-AC-05",
+          "criterion": "Preserve scoped authority and readiness boundaries",
+          "measurement": "Scope approval and every applicable effective OD/policy/Gate disposition identified with source/revision; no implicit IAM/FE-BE permission, offline continuation, production or architecture closure",
+          "evidenceArtifact": "Authority applicability checklist",
+          "approvalStatus": "PROPOSED_NOT_APPROVED",
+          "result": "NOT_EVALUATED_NO_EXECUTION"
+        }
+      ],
+      "inheritedProposedAcceptanceCriteria": [
+        "All 15 capabilities retain identifiers and boundaries; unassigned roles explicit",
+        "Trace every outcome to approved requirements/source revision; retain failed/unexecuted evidence and exclusions",
+        "Acceptance references exact operation/role/Tenant/profile examples approved for this bounded scope; OPEN rules cannot be guessed."
+      ],
+      "validationStrategy": [
+        "Document/contract and ownership review against source references",
+        "Documentary consistency and explicit OPEN/PROPOSED status checks; no runtime claim",
+        "Documentary and later evidence-matrix assessment against measurable criteria above; no test or runtime execution by V3-PRODUCT-PLAN-003"
+      ],
+      "blockingDependencies": [
+        {
+          "condition": "Explicit authorization for this exact task/increment; all implementation permissions remain PENDING. Preparation completion is not an effective architecture/security/Gate decision.",
+          "classification": "TASK_AUTHORIZATION",
+          "currentStatus": "PENDING"
+        }
+      ],
+      "authorityRequirements": [
+        "Explicit Product Decision Owner / TAO task authorization against approved requirements and exact scope; current review grants NONE",
+        "Level 2 material architecture decisions; Level 3 security/policy/Gate decisions; Level 4 production/readiness/release are distinct where applicable",
+        "No separate appointment artifact demanded solely to establish unified internal authority; binding external obligations and technical evidence preserved",
+        "Commit, push, publication, hosted CI and deployment require their own explicit authorization"
+      ],
+      "proposedStatus": "PROPOSED",
+      "classification": "PROPOSED_EXECUTABLE_TASK",
+      "sourceExecutionDisposition": "EXECUTION_CANDIDATE",
+      "workKind": "DESIGN_ONLY",
+      "executionAuthorization": "PENDING_NOT_GRANTED",
+      "currentlyEligibleToExecute": false,
+      "completionSemantics": "Completion requires bounded accepted deliverables/evidence and applicable explicit decisions; no automatic release, Gate transition or authorization.",
+      "capabilityReferences": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "authoritativeRequirementReferences": [
+        "Core:deployment/support-matrix.md §5 (original FR row), §11 Option B",
+        "Core:migration/v2-owner-review.md §§4–5 (scope and logical ownership)",
+        "Core:architecture/task-governance.md §§Unified final internal decision authority, Levels 1–4",
+        "Core:deployment/support-matrix.md §5 FR-BJ-001",
+        "Core:migration/v2-owner-review.md §5 owner: Customer Domain",
+        "Core:deployment/support-matrix.md §5 FR-BJ-002",
+        "Core:deployment/support-matrix.md §5 FR-BJ-003",
+        "Core:migration/v2-owner-review.md §5 owner: Sales Domain",
+        "Core:deployment/support-matrix.md §5 FR-BJ-004",
+        "Core:migration/v2-owner-review.md §5 owner: Customer Request Domain",
+        "Core:deployment/support-matrix.md §5 FR-BJ-005",
+        "Core:migration/v2-owner-review.md §5 owner: Work Domain",
+        "Core:deployment/support-matrix.md §5 FR-PF-001",
+        "Core:migration/v2-owner-review.md §5 owner: Identity Trust and Tenant Management (distinct owners)",
+        "Core:deployment/support-matrix.md §5 FR-PF-002",
+        "Core:migration/v2-owner-review.md §5 owner: Entitlement capability",
+        "Core:deployment/support-matrix.md §5 FR-PF-003",
+        "Core:migration/v2-owner-review.md §5 owner: Quota capability",
+        "Core:deployment/support-matrix.md §5 FR-PF-004",
+        "Core:migration/v2-owner-review.md §5 owner: Notification Domain",
+        "Core:deployment/support-matrix.md §5 FR-PF-005",
+        "Core:migration/v2-owner-review.md §5 owner: File/Content Domain and attachment resource owner (distinct)",
+        "Core:deployment/support-matrix.md §5 FR-PF-006",
+        "Core:migration/v2-owner-review.md §5 owner: Reporting capability; source facts remain producer-owned",
+        "Core:deployment/support-matrix.md §5 FR-SO-001",
+        "Core:migration/v2-owner-review.md §5 owner: Audit Domain; producing Domains retain Business Facts",
+        "Core:deployment/support-matrix.md §5 FR-SO-002",
+        "Core:migration/v2-owner-review.md §5 owner: Audit Domain",
+        "Core:deployment/support-matrix.md §5 FR-SO-003",
+        "Core:migration/v2-owner-review.md §5 owner: Operational Platform; each service owns signals",
+        "Core:deployment/support-matrix.md §5 FR-SO-004",
+        "Core:migration/v2-owner-review.md §5 owner: Operational Platform; destination Domain; Audit Domain (distinct)"
+      ],
+      "planningInputReferences": [
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/proposed-task-register.json task V3-FR-A-001",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-BJ-001",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-BJ-002",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-BJ-003",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-BJ-004",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-BJ-005",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-PF-001",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-PF-002",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-PF-003",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-PF-004",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-PF-005",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-PF-006",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-SO-001",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-SO-002",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-SO-003",
+        "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json capability FR-SO-004"
+      ],
+      "explicitExclusions": [
+        "No scope expansion, unapproved technology choice, gate bypass or production authorization",
+        "No implementation permission from this planning register"
+      ],
+      "parallelExecutionEligibility": "After own input contracts/requirements and explicit scope approval; unrelated OD/task completion not required. Runtime reliance retains separate gate predicates.",
+      "sourceRecordSequence": 1,
+      "cm1Membership": "CORE",
+      "consolidationRefinements": [
+        "Added proposed measurable evidence criteria without selecting business rules or technologies"
+      ],
+      "dependencyWave": 0
+    },
+    "roadmapApprovalSource": "architecture/product-planning/V3-PRODUCT-PLAN-004/roadmap-acceptance-decision.json",
+    "roadmapApproval": "APPROVED AS PRODUCT EXECUTION ROADMAP.",
+    "taskInstructionCompatibility": "MATCH — requirements/actor/owner/decision/checklist only; no prerequisites; Core; no code, new permissions, technology, commit or Gate action",
+    "prerequisites": []
+  },
+  "taskExecutionAuthority": {
+    "source": "Current user message: Task ID V3-FR-A-001, Authorization",
+    "exactText": "Execute the approved requirements-engineering task V3-FR-A-001\nwithin its canonical roadmap scope.",
+    "recordingTimestamp": "2026-11-18T18:09:59.132248+00:00",
+    "authorityIssuanceTimestamp": null,
+    "scope": "Only this requirements-engineering Task, isolated branch and nine in-scope documents; no product/IAM implementation, test/Docker, staging/commit/push or subsequent task",
+    "basis": "Existing Product Decision Owner/TAO unified internal authority; no new role appointment or legal identity assertion"
+  },
+  "approvedRoadmapPreservation": [
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/architecture-dependency-matrix.json",
+      "bytes": 75099,
+      "sha256": "92a18e52ce028f1ed13b07aa8115f127814214c05f31dd92f036c5cc01d97cd9"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/capability-inventory.json",
+      "bytes": 17528,
+      "sha256": "dbd582e77fd982bb737550259e15c372e7607dd269efeb28e41856ebcd8ef16d"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/critical-path.md",
+      "bytes": 3819,
+      "sha256": "6734bb897f592eb03d27c9a8e85f378cf21241b87c6b19d559c3fbd1f6facf7b"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/delivery-milestones.md",
+      "bytes": 1894,
+      "sha256": "3b57a6f12b031f1bbf1c0e17da530128174d7ce19f27a3cf8bac1aea4605a8db"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/first-release-roadmap.md",
+      "bytes": 4724,
+      "sha256": "b762017c860ad7d045f29bd954d4c67e7862ed52ad848fd97b76af6d2460566b"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/open-decision-dependency-matrix.json",
+      "bytes": 38065,
+      "sha256": "9f9834cf7088b4a2695e43dd01903e0a8ab458072930e655c3a1ff883ab8817f"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/product-decision-questions.md",
+      "bytes": 9495,
+      "sha256": "77289de5045bff8122e94e30949ce205bd45bf54069acd391fcd8eab7a7dada9"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/proposed-task-register.json",
+      "bytes": 231339,
+      "sha256": "972116e78bff8b92579b1e02a64ed88b3f8c3626395f3f5cbf2104f89ac97416"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/proposed-task-register.md",
+      "bytes": 15867,
+      "sha256": "20b71f93aea7341f2e21216a677714abf2ff61d36d2d6116d77770a12fd16920"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/requirements-maturity-matrix.json",
+      "bytes": 94793,
+      "sha256": "29fb42ba4f321924cf56119cd1f65fc400f1a9a58cfb734b64bcd393ea1b8ca3"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-001/review-report.md",
+      "bytes": 8192,
+      "sha256": "6678a87f9571261388b313b12fd13072fc8437d11ba16eecd4acf5ebb2898a92"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/complete-task-table.md",
+      "bytes": 130699,
+      "sha256": "ae04e925c500070dbd814d0a50ecf705fbef2fdd18103ead8808025b9bd4fefa"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/critical-path-and-parallel-workstreams.md",
+      "bytes": 3783,
+      "sha256": "c2d0c628d2ec9c3a54f6f2da31cbc6eae930e5d2f90838325e7047e2e0a89c0a"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/execution-sequence-and-milestones.md",
+      "bytes": 2618,
+      "sha256": "02ca55887562fcd2c0092a10aa4dac21d8ec026379e28641182ae72a64704149"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/first-customer-milestone.md",
+      "bytes": 5467,
+      "sha256": "2d88510e82e3e2736010c3fad0d2abc5c5f5462c947feb5573cb2feae27f42f0"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/optimized-roadmap.md",
+      "bytes": 5195,
+      "sha256": "7c9cc22500ab165524b8a144c85b90767641afc86143031ed42d5bf37bbf17c3"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/optimized-task-inventory.json",
+      "bytes": 635279,
+      "sha256": "d3224f47bfa3d14d53a35cacc4ba0c65f6416a4e6faa3b71ce656aa0f1eaf78d"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/original-task-review.json",
+      "bytes": 450965,
+      "sha256": "c80a52fa8fae1be19402e0316b88598b76eb979ef9f6fb659f2f83184e89d961"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/required-authority-decisions.md",
+      "bytes": 3188,
+      "sha256": "fe92234706e98d585094439e81615574d1d54ba6c18e5f5d22de0111fdfcbff8"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/review-report.md",
+      "bytes": 6314,
+      "sha256": "7ff62c216cd9b5ef849ed10bfbc24f7b0f94066bdcb97ea5c4c4756415dbe4a3"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/roadmap-comparison.json",
+      "bytes": 47152,
+      "sha256": "60448830e82cb431e019ec7789191133114f2239a55ee2e1eb9156af0d355024"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/roadmap-comparison.md",
+      "bytes": 5024,
+      "sha256": "a8055269e666250c0bb9b96fb1adce023ab95ce08edae5968bb41f06aae2ce3c"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/task-by-task-review.md",
+      "bytes": 65584,
+      "sha256": "64e6a062d1eae99ed80527b92f46bb57bd0ca70481306634b386151a8589786b"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-002/validation-results.json",
+      "bytes": 3156,
+      "sha256": "d64d3c7d3372f25c4aff2dfc2671f3db5de0225994570a71ec834fdeeb7407ab"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/cm-1-execution-package.md",
+      "bytes": 13265,
+      "sha256": "f8cf03ad998e3c197d450312c898a304c8f24456bc348e296dce7caceb5cf10c"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.csv",
+      "bytes": 512839,
+      "sha256": "dae57c0e777c22da203bd73138db16c8aa44f69bea147449d9f4b02ccce5d23d"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.json",
+      "bytes": 929892,
+      "sha256": "3ad890e912f89b442a178b150ae43a576e514679188fc9bbc49b315495f98a6b"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/execution-roadmap.md",
+      "bytes": 642913,
+      "sha256": "afbad8cffb8bf8cad8d2589fe64eebc206760e84af488d90846ff3f69f3386dc"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/roadmap-acceptance-proposal.md",
+      "bytes": 4196,
+      "sha256": "113dc569953545f9c1905c3d616dfb21cf0ee971c9708c0582a319c04b678946"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-003/validation-report.md",
+      "bytes": 8071,
+      "sha256": "1eb25650a1838895b68cfcdb9da764d01645959bb3b0b8789b0c8bcee1f397d5"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-004/accepted-roadmap-baseline.json",
+      "bytes": 72191,
+      "sha256": "454762aee825a594e0dd5191bace0d4910cb4e3293798ebcb3dfe208b9e6c4f3"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-004/execution-governance.md",
+      "bytes": 5241,
+      "sha256": "443beb351ee5587fccd124c6e72263b259b3dcb425106c88b453960cb80abd3f"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-004/roadmap-acceptance-decision.json",
+      "bytes": 6558,
+      "sha256": "621be7e1bc7b5c52208fd8f3f6a4ed795bf3b996dec0ca84891fe626af0d36aa"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-004/roadmap-acceptance-decision.md",
+      "bytes": 5972,
+      "sha256": "ec525cf554ffcbfce49685b3eab05ac64809427792c8a471b23df7f7c5938b6d"
+    },
+    {
+      "path": "architecture/product-planning/V3-PRODUCT-PLAN-004/validation-report.md",
+      "bytes": 7878,
+      "sha256": "5deca6d617c28c8802dece7b4b9c7c81aa68552a6d3fd2187ba12428af6f9663"
+    }
+  ],
+  "actorsEvidenceIndex": {
+    "ACT-A001-001": [
+      "EVID-A001-002",
+      "EVID-A001-001",
+      "EVID-A001-003"
+    ],
+    "ACT-A001-002": [
+      "EVID-A001-002",
+      "EVID-A001-009",
+      "EVID-A001-028",
+      "EVID-A001-043",
+      "EVID-A001-022",
+      "EVID-A001-076",
+      "EVID-A001-077",
+      "EVID-A001-078",
+      "EVID-A001-079",
+      "EVID-A001-080"
+    ],
+    "ACT-A001-003": [
+      "EVID-A001-002",
+      "EVID-A001-009",
+      "EVID-A001-029",
+      "EVID-A001-043",
+      "EVID-A001-081",
+      "EVID-A001-082",
+      "EVID-A001-083"
+    ],
+    "ACT-A001-004": [
+      "EVID-A001-002",
+      "EVID-A001-009",
+      "EVID-A001-030",
+      "EVID-A001-044",
+      "EVID-A001-084"
+    ],
+    "ACT-A001-005": [
+      "EVID-A001-002",
+      "EVID-A001-009",
+      "EVID-A001-031",
+      "EVID-A001-046",
+      "EVID-A001-085"
+    ],
+    "ACT-A001-006": [
+      "EVID-A001-002",
+      "EVID-A001-009",
+      "EVID-A001-032",
+      "EVID-A001-051",
+      "EVID-A001-086"
+    ],
+    "ACT-A001-007": [
+      "EVID-A001-002",
+      "EVID-A001-009",
+      "EVID-A001-036",
+      "EVID-A001-045",
+      "EVID-A001-087"
+    ],
+    "ACT-A001-008": [
+      "EVID-A001-002",
+      "EVID-A001-009",
+      "EVID-A001-037",
+      "EVID-A001-052",
+      "EVID-A001-088"
+    ],
+    "ACT-A001-009": [
+      "EVID-A001-002",
+      "EVID-A001-009",
+      "EVID-A001-038",
+      "EVID-A001-050",
+      "EVID-A001-089"
+    ],
+    "ACT-A001-010": [
+      "EVID-A001-002",
+      "EVID-A001-009",
+      "EVID-A001-040",
+      "EVID-A001-047",
+      "EVID-A001-024",
+      "EVID-A001-090"
+    ],
+    "ACT-A001-011": [
+      "EVID-A001-006",
+      "EVID-A001-008",
+      "EVID-A001-055"
+    ],
+    "ACT-A001-012": [
+      "EVID-A001-005",
+      "EVID-A001-007",
+      "EVID-A001-025",
+      "EVID-A001-027",
+      "EVID-A001-023"
+    ],
+    "ACT-A001-013": [
+      "EVID-A001-005",
+      "EVID-A001-007",
+      "EVID-A001-025",
+      "EVID-A001-027",
+      "EVID-A001-023"
+    ],
+    "ACT-A001-014": [
+      "EVID-A001-005",
+      "EVID-A001-007",
+      "EVID-A001-025",
+      "EVID-A001-027",
+      "EVID-A001-023"
+    ],
+    "ACT-A001-015": [
+      "EVID-A001-004",
+      "EVID-A001-011",
+      "EVID-A001-012"
+    ],
+    "ACT-A001-016": [
+      "EVID-A001-047",
+      "EVID-A001-045",
+      "EVID-A001-049",
+      "EVID-A001-050",
+      "EVID-A001-026"
+    ],
+    "ACT-A001-017": [
+      "EVID-A001-047",
+      "EVID-A001-026",
+      "EVID-A001-024"
+    ],
+    "ACT-A001-018": [
+      "EVID-A001-054",
+      "EVID-A001-056",
+      "EVID-A001-008"
+    ],
+    "ACT-A001-019": [
+      "EVID-A001-057",
+      "EVID-A001-025",
+      "EVID-A001-026"
+    ],
+    "ACT-A001-020": [
+      "EVID-A001-008",
+      "EVID-A001-058"
+    ],
+    "ACT-A001-021": [
+      "EVID-A001-059",
+      "EVID-A001-004"
+    ],
+    "ACT-A001-022": [
+      "EVID-A001-013",
+      "EVID-A001-014",
+      "EVID-A001-016"
+    ],
+    "ACT-A001-023": [
+      "EVID-A001-060",
+      "EVID-A001-009",
+      "EVID-A001-010"
+    ],
+    "ACT-A001-024": [
+      "EVID-A001-015",
+      "EVID-A001-016"
+    ],
+    "ACT-A001-025": [
+      "EVID-A001-061",
+      "EVID-A001-013"
+    ],
+    "ACT-A001-026": [
+      "EVID-A001-062",
+      "EVID-A001-063",
+      "EVID-A001-064",
+      "EVID-A001-065",
+      "EVID-A001-066",
+      "EVID-A001-067",
+      "EVID-A001-068",
+      "EVID-A001-069",
+      "EVID-A001-070",
+      "EVID-A001-071",
+      "EVID-A001-072",
+      "EVID-A001-073"
+    ]
+  },
+  "capabilityEvidenceIndex": {
+    "FR-BJ-001": [
+      "EVID-A001-028",
+      "EVID-A001-043"
+    ],
+    "FR-BJ-002": [
+      "EVID-A001-029",
+      "EVID-A001-043"
+    ],
+    "FR-BJ-003": [
+      "EVID-A001-030",
+      "EVID-A001-044"
+    ],
+    "FR-BJ-004": [
+      "EVID-A001-031",
+      "EVID-A001-046"
+    ],
+    "FR-BJ-005": [
+      "EVID-A001-032",
+      "EVID-A001-051"
+    ],
+    "FR-PF-001": [
+      "EVID-A001-033",
+      "EVID-A001-054",
+      "EVID-A001-055"
+    ],
+    "FR-PF-002": [
+      "EVID-A001-034",
+      "EVID-A001-048"
+    ],
+    "FR-PF-003": [
+      "EVID-A001-035",
+      "EVID-A001-049"
+    ],
+    "FR-PF-004": [
+      "EVID-A001-036",
+      "EVID-A001-045"
+    ],
+    "FR-PF-005": [
+      "EVID-A001-037",
+      "EVID-A001-052"
+    ],
+    "FR-PF-006": [
+      "EVID-A001-038",
+      "EVID-A001-050"
+    ],
+    "FR-SO-001": [
+      "EVID-A001-039",
+      "EVID-A001-047"
+    ],
+    "FR-SO-002": [
+      "EVID-A001-040",
+      "EVID-A001-047"
+    ],
+    "FR-SO-003": [
+      "EVID-A001-041",
+      "EVID-A001-053"
+    ],
+    "FR-SO-004": [
+      "EVID-A001-042",
+      "EVID-A001-053"
+    ]
+  },
+  "decisionCategories": [
+    {
+      "category": "Product requirements and scope",
+      "decisionLevel": "LEVEL 1/product-scope decision",
+      "existingAuthority": "Existing Product Decision Owner / TAO (user/CPO project capacity)",
+      "governanceEvidenceIds": [
+        "EVID-A001-013",
+        "EVID-A001-014",
+        "EVID-A001-017"
+      ],
+      "requiredApproval": "Explicit task/requirement/scope disposition; owners contribute requirements evidence; task acceptance distinct from code permission",
+      "escalationBoundary": "Material architecture → Level 2; security-sensitive policy/Gate/risk → Level 3; binding external obligation escalated for affected path",
+      "unresolvedQuestions": [
+        "Accountable per-capability Business Owners and operation actors UNASSIGNED/OPEN",
+        "No product rule approved just by documenting a question"
+      ],
+      "newAuthorityAssignments": []
+    },
+    {
+      "category": "Architecture",
+      "decisionLevel": "LEVEL 2",
+      "existingAuthority": "Existing unified owner in Technical Architecture Owner capacity",
+      "governanceEvidenceIds": [
+        "EVID-A001-013",
+        "EVID-A001-018"
+      ],
+      "requiredApproval": "Evidence-grounded alternatives/impact and explicit applicable decision; existing ADR/register/traceable effectiveness process",
+      "escalationBoundary": "Stop affected dependent implementation for unresolved necessary mechanism or conflicting approved invariant; do not block unrelated requirements design",
+      "unresolvedQuestions": [
+        "OD choices retain original owner/milestone and status; this task selects none"
+      ],
+      "newAuthorityAssignments": []
+    },
+    {
+      "category": "Security, authorization, risk and Tenant Gate",
+      "decisionLevel": "LEVEL 3",
+      "existingAuthority": "Existing unified owner in security/Gate/risk decision capacity; technical specialist assessment advisory unless binding exception applies",
+      "governanceEvidenceIds": [
+        "EVID-A001-013",
+        "EVID-A001-019",
+        "EVID-A001-015",
+        "EVID-A001-016"
+      ],
+      "requiredApproval": "Exact scoped evidence-supported decision; mandatory technical evidence/non-waivable controls preserved; independent assessment is not fabricated",
+      "escalationBoundary": "Binding legal/regulatory/contractual independent approval remains required if actually identified; G-RUNTIME BLOCKED not cleared here",
+      "unresolvedQuestions": [
+        "Reviewers UNASSIGNED unless actual source identifies them; no security sign-off claimed",
+        "Operation-specific authorization/failure/retention and authority freshness policies OPEN"
+      ],
+      "newAuthorityAssignments": []
+    },
+    {
+      "category": "Operational policy, infrastructure and profile execution",
+      "decisionLevel": "LEVEL 1/2/3 as impact requires; actual runtime authority per profile",
+      "existingAuthority": "Project policy/task authorization: existing unified owner; runtime infrastructure scope: existing Provider/Dedicated Managed/Sovereign Operations/Recovery Authorities; destination Domain owns business effects",
+      "governanceEvidenceIds": [
+        "EVID-A001-013",
+        "EVID-A001-025",
+        "EVID-A001-027"
+      ],
+      "requiredApproval": "Explicit scoped operational permission and approved technical policies; local Sovereign authority independent of Central; Audit/evidence required",
+      "escalationBoundary": "Unknown/invalid local authority or unapproved sensitive effect fails affected path closed; no generic admin/emergency override",
+      "unresolvedQuestions": [
+        "Actual operator/principal appointments and detailed action/failure/recovery policies UNASSIGNED/OPEN"
+      ],
+      "newAuthorityAssignments": []
+    },
+    {
+      "category": "Task/roadmap acceptance and production release",
+      "decisionLevel": "LEVEL 1 bounded task/roadmap; LEVEL 4 production readiness and release",
+      "existingAuthority": "Existing unified owner in explicit task/acceptance/release capacity; profile-local release/operating authority preserved",
+      "governanceEvidenceIds": [
+        "EVID-A001-013",
+        "EVID-A001-017",
+        "EVID-A001-020",
+        "EVID-A001-027"
+      ],
+      "requiredApproval": "Each acceptance names exact deliverables/baseline/evidence; traceable Git recording only when authorized. Readiness and actual release/deployment execution permission separate",
+      "escalationBoundary": "No local documentation or roadmap approval becomes production/Gate acceptance; required security/profile evidence remains blocking",
+      "unresolvedQuestions": [
+        "This document set is not yet accepted/committed; no automatic task closure or release",
+        "All profile execution evidence and applicable Gate dispositions remain required"
+      ],
+      "newAuthorityAssignments": []
+    }
+  ],
+  "questionRegister": [
+    {
+      "questionId": "PDQ-A001-001",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001"
+      ],
+      "existingRequirement": "Company/person/contact master maintenance; Customer owns branch and relationship facts; logical ownership approved by V3-002B-DEC-002",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-002",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-028",
+        "EVID-A001-043",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-002",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-002",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-028",
+        "EVID-A001-043",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-003",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001"
+      ],
+      "existingRequirement": "Company/person/contact master maintenance; Customer owns branch and relationship facts",
+      "missingDecision": "Which Customer actor journeys, field/validation, duplicate, merge/deletion/retention, concurrent edit/correction and operation-specific Audit failure boundaries must the selected milestone actually support? No merge/delete/Pending Submission requirement inferred.",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-002",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-028",
+        "EVID-A001-043"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-004",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-002"
+      ],
+      "existingRequirement": "Authorized retrieval and business search; disclosure belongs to Customer; logical ownership approved by V3-002B-DEC-002",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-003",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-029",
+        "EVID-A001-043",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-005",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-002"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-003",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-029",
+        "EVID-A001-043",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-006",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-002"
+      ],
+      "existingRequirement": "Authorized retrieval and business search; disclosure belongs to Customer",
+      "missingDecision": "Which actors need which search filters, result/detail fields, pagination/matching, freshness and disclosure-safe denial/failure semantics? No external engine or generic export permission inferred.",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-003",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-029",
+        "EVID-A001-043"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-007",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-003"
+      ],
+      "existingRequirement": "Opportunity/Pipeline core and Customer contract reference; amount/currency independent of Product Catalog; logical ownership approved by V3-002B-DEC-006",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-004"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-030",
+        "EVID-A001-044",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-008",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-003"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-004"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-030",
+        "EVID-A001-044",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-009",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-003"
+      ],
+      "existingRequirement": "Opportunity/Pipeline core and Customer contract reference; amount/currency independent of Product Catalog",
+      "missingDecision": "Who uses which Pipeline/Stage transitions, amount/currency and completion/concurrency rules, without deferred Product Catalog dependency?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-004"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-030",
+        "EVID-A001-044"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-010",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-004"
+      ],
+      "existingRequirement": "Internal creation, Customer reference, view/tracking, base lifecycle, status history and assignment; logical ownership approved by V3-002B-DEC-012",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-005"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-031",
+        "EVID-A001-046",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-011",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-004"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-005"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-031",
+        "EVID-A001-046",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-012",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-004"
+      ],
+      "existingRequirement": "Internal creation, Customer reference, view/tracking, base lifecycle, status history and assignment",
+      "missingDecision": "Which internal Request actors, categories, triage/assignment, status history, escalation and completion/reopen rules apply without Portal/workflow automation?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-005"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-031",
+        "EVID-A001-046"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-013",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-005"
+      ],
+      "existingRequirement": "Create/view/edit, assignment, status, due date and manual contract-based links; logical ownership approved by V3-002B-DEC-035",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-006"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-032",
+        "EVID-A001-051",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-014",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-005"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-006"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-032",
+        "EVID-A001-051",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-015",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-005"
+      ],
+      "existingRequirement": "Create/view/edit, assignment, status, due date and manual contract-based links",
+      "missingDecision": "Which Task participants may request which create/view/edit/assignment/status/due-date/manual-link operations, with which assignee eligibility and completion/overdue rules?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-006"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-032",
+        "EVID-A001-051"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-016",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-001"
+      ],
+      "existingRequirement": "Approved Option B: internal authenticated Principal, active Membership, valid/revalidated Tenant Context, destination Membership validation for switching; logical ownership approved by V3-002B-DEC-053, V3-002B-DEC-054",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-007",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-033",
+        "EVID-A001-054",
+        "EVID-A001-055",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-017",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-001"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-007",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-033",
+        "EVID-A001-054",
+        "EVID-A001-055",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-018",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-001"
+      ],
+      "existingRequirement": "Approved Option B: internal authenticated Principal, active Membership, valid/revalidated Tenant Context, destination Membership validation for switching",
+      "missingDecision": "Which internal Principal onboarding, Membership administration, switching, role-association and session/revocation journeys are actually in scope? Do not select identity technology or Tenant admin UI.",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-007",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-033",
+        "EVID-A001-054",
+        "EVID-A001-055"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-019",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-002"
+      ],
+      "existingRequirement": "Feature Assignment and effective eligibility, traceable to Tenant/Organization and approved Plan/Subscription facts; logical ownership approved by V3-002B-DEC-018",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-008"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-034",
+        "EVID-A001-048",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-020",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-002"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-008"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-034",
+        "EVID-A001-048",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-021",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-002"
+      ],
+      "existingRequirement": "Feature Assignment and effective eligibility, traceable to Tenant/Organization and approved Plan/Subscription facts",
+      "missingDecision": "Who owns Plan/Subscription source facts and Feature Assignment approval, and which consuming operations require eligibility with what valid/unknown/freshness semantics?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-008"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-034",
+        "EVID-A001-048"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-022",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-003"
+      ],
+      "existingRequirement": "Effective limits, Usage, atomic Reservation/Commit/Release, reconciliation and Reason/Period/Correlation; logical ownership approved by V3-002B-DEC-021",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-009"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-035",
+        "EVID-A001-049",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-023",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-003"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-009"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-035",
+        "EVID-A001-049",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-024",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-003"
+      ],
+      "existingRequirement": "Effective limits, Usage, atomic Reservation/Commit/Release, reconciliation and Reason/Period/Correlation",
+      "missingDecision": "Which operation integrations are quota-controlled, who approves effective limits and which reservation/commit/release/period/reset/reconciliation semantics apply?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-009"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-035",
+        "EVID-A001-049"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-025",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-004"
+      ],
+      "existingRequirement": "Core + In-App: Template, base Rule/lifecycle, Delivery Ledger, deduplication, retry/Audit; logical ownership approved by V3-002B-DEC-009",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-010"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-036",
+        "EVID-A001-045",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-026",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-004"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-010"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-036",
+        "EVID-A001-045",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-027",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-004"
+      ],
+      "existingRequirement": "Core + In-App: Template, base Rule/lifecycle, Delivery Ledger, deduplication, retry/Audit",
+      "missingDecision": "Which Notification types and producing facts require which authorized recipients, delivery/read behavior, retry/deduplication bounds and retention?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-010"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-036",
+        "EVID-A001-045"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-028",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-005"
+      ],
+      "existingRequirement": "Metadata, controlled upload/download, base lifecycle and contract-based attachments; logical ownership approved by V3-002B-DEC-038",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-011"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-037",
+        "EVID-A001-052",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-029",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-005"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-011"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-037",
+        "EVID-A001-052",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-030",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-005"
+      ],
+      "existingRequirement": "Metadata, controlled upload/download, base lifecycle and contract-based attachments",
+      "missingDecision": "Which resource owners approve which Attachment relations, uploader/reader actions, content validation/quarantine, retention/unlink/delete and multi-link semantics?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-011"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-037",
+        "EVID-A001-052"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-031",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-006"
+      ],
+      "existingRequirement": "Reporting Core: approved deterministic tenant-scoped Report Sets, execution/artifact and authorized projections; logical ownership approved by V3-002B-DEC-028",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-012"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-038",
+        "EVID-A001-050",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-032",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-006"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-012"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-038",
+        "EVID-A001-050",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-033",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-006"
+      ],
+      "existingRequirement": "Reporting Core: approved deterministic tenant-scoped Report Sets, execution/artifact and authorized projections",
+      "missingDecision": "Which exact Report Sets, accountable Business Owners, consumers, source-data owners, disclosure/freshness and artifact retention/determinism criteria are approved?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-012"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-038",
+        "EVID-A001-050"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-034",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-001"
+      ],
+      "existingRequirement": "Append-oriented Audit Core, Tenant/Platform separation, Actor/Action/Target/Outcome/Correlation, integrity and base retention policy obligation; logical ownership approved by V3-002B-DEC-014",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-013",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-039",
+        "EVID-A001-047",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-035",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-001"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-013",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-039",
+        "EVID-A001-047",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-036",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-001"
+      ],
+      "existingRequirement": "Append-oriented Audit Core, Tenant/Platform separation, Actor/Action/Target/Outcome/Correlation, integrity and base retention policy obligation",
+      "missingDecision": "Which additional mandatory Audit events, producer/ingestion owners, evidence/failure/retention/integrity/reconciliation and audit-of-audit responsibilities are required beyond existing bounded obligations?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-013",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-039",
+        "EVID-A001-047"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-037",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-002"
+      ],
+      "existingRequirement": "Authorized Audit Core viewing with Tenant/Platform scope and disclosure protection; logical ownership approved by V3-002B-DEC-014",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-014"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-040",
+        "EVID-A001-047",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-038",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-002"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-014"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-040",
+        "EVID-A001-047",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-039",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-002"
+      ],
+      "existingRequirement": "Authorized Audit Core viewing with Tenant/Platform scope and disclosure protection",
+      "missingDecision": "Which reviewers and purposes may request which Audit queries/fields, with what Tenant/Platform disclosure and sensitive access/lifecycle evidence obligations?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-014"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-040",
+        "EVID-A001-047"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-040",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-003"
+      ],
+      "existingRequirement": "Operational Core health/readiness, scope separation and authorized signal aggregation; logical ownership approved by V3-002B-DEC-050",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-015",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-041",
+        "EVID-A001-053",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-041",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-003"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-015",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-041",
+        "EVID-A001-053",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-042",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-003"
+      ],
+      "existingRequirement": "Operational Core health/readiness, scope separation and authorized signal aggregation",
+      "missingDecision": "Which operators/service owners need which safe health/readiness/visibility signals, unknown-state semantics, escalation and numeric objectives at original responsible milestones?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-015",
+        "V3-FR-A-017",
+        "V3-FR-H-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-041",
+        "EVID-A001-053"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-043",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-004"
+      ],
+      "existingRequirement": "Scoped operational request/execution with limited identity, explicit Tenant/Platform scope, destination authorization and durable Audit; logical ownership approved by V3-002B-DEC-050",
+      "missingDecision": "Which named person/team is the accountable Business Owner for this capability, distinct from its approved logical domain/data owner?",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Explicitly nominate an accountable person/team without changing logical data ownership"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Retain UNASSIGNED pending evidence; do not accept dependent owner-sensitive policy as resolved"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-016"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-042",
+        "EVID-A001-053",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-044",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-004"
+      ],
+      "existingRequirement": "Internal authenticated access and resource-owner authorization remain mandatory; no complete actor/operation role catalog approved",
+      "missingDecision": "Which actual human/workload/operator participants and operation/disclosure requirements are needed, and who supplies evidence? These are actor requirements, not a new RBAC model.",
+      "proposedOptions": [
+        {
+          "status": "PROPOSED",
+          "text": "Collect named journey participants and owner-authored action/resource examples for later approval"
+        },
+        {
+          "status": "PROPOSED",
+          "text": "Keep unconfirmed personas/policies OPEN and prohibit implied permissions"
+        }
+      ],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-016"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-042",
+        "EVID-A001-053",
+        "EVID-A001-002",
+        "EVID-A001-009"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-045",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-004"
+      ],
+      "existingRequirement": "Scoped operational request/execution with limited identity, explicit Tenant/Platform scope, destination authorization and durable Audit",
+      "missingDecision": "Which privileged actors/actions, request/outcome evidence, destination authorizers and emergency/revocation/concurrency/crash/recovery boundaries are supported? No blanket Admin or break-glass right.",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-016"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-042",
+        "EVID-A001-053"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-046",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-001"
+      ],
+      "existingRequirement": "Existing Tenant administration/customer-side responsibility; Tenant Management owns Membership",
+      "missingDecision": "Who is entitled to administer Tenant/Organization Membership and delegate/revoke authority, and how are tenant-scoped and platform-scoped administration separated?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-007",
+        "V3-FR-C-001"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; applicable Level 2/3 technical/policy decision in addition to product scope",
+      "category": "SECURITY",
+      "sourceEvidenceIds": [
+        "EVID-A001-006",
+        "EVID-A001-055"
+      ],
+      "relatedExistingDecisionIds": [
+        "OD-009",
+        "OD-010"
+      ],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-047",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-001"
+      ],
+      "existingRequirement": "Identity Trust and admitted issuer are separate from Membership and Domain authority",
+      "missingDecision": "Which exact authenticated issuer/admission/mapping and user/workload lifecycle policies will be approved in later mechanism tasks?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-C-001",
+        "V3-FR-C-003",
+        "V3-FR-C-005"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; applicable Level 2/3 technical/policy decision in addition to product scope",
+      "category": "ARCHITECTURE_SECURITY",
+      "sourceEvidenceIds": [
+        "EVID-A001-054",
+        "EVID-A001-004"
+      ],
+      "relatedExistingDecisionIds": [
+        "OD-009",
+        "OD-010",
+        "OD-011",
+        "OD-012"
+      ],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-048",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-001",
+        "FR-SO-004"
+      ],
+      "existingRequirement": "V3-020 documents separate profile authority records and no implicit global support right",
+      "missingDecision": "Which actual operating persons/workloads realize each approved profile authority scope, without merging registry, trust, grants, operations and Domain authorization?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-D-001",
+        "V3-FR-C-005",
+        "V3-FR-A-016"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; applicable Level 2/3 technical/policy decision in addition to product scope",
+      "category": "OPERATIONS",
+      "sourceEvidenceIds": [
+        "EVID-A001-025",
+        "EVID-A001-005"
+      ],
+      "relatedExistingDecisionIds": [
+        "OD-011",
+        "OD-012",
+        "OD-015"
+      ],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-049",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-SO-001"
+      ],
+      "existingRequirement": "Existing Customer durable mutation/disclosure-denial Audit obligations and conditional direction retained",
+      "missingDecision": "Who owns selected operation-specific Audit failure, ingestion confirmation, backlog visibility/recovery/reconciliation and escalation decisions before any executable deferred path?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-013",
+        "V3-FR-A-017",
+        "V3-FR-E-000"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; applicable Level 2/3 technical/policy decision in addition to product scope",
+      "category": "SECURITY",
+      "sourceEvidenceIds": [
+        "EVID-A001-022",
+        "EVID-A001-024",
+        "EVID-A001-026"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-050",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "existingRequirement": "Unified final internal authority and binding-exception rule exist; actual legal/regulatory/contractual obligations not established by this inventory",
+      "missingDecision": "Which identified binding obligations impose additional independent review, retention/disclosure or separation conditions for each affected decision? Provide governing source/clause rather than inventing a new internal authority.",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-I-001",
+        "V3-FR-A-013"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; applicable Level 2/3 technical/policy decision in addition to product scope",
+      "category": "SECURITY",
+      "sourceEvidenceIds": [
+        "EVID-A001-016",
+        "EVID-A001-015"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-051",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "existingRequirement": "Operational authority is not unrestricted Business/Audit access",
+      "missingDecision": "Which exact authorized visibility, Audit-review purpose and privileged-action matrices are required, with denial, revocation/emergency and recovery conditions?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-014",
+        "V3-FR-A-015",
+        "V3-FR-A-016"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; applicable Level 2/3 technical/policy decision in addition to product scope",
+      "category": "SECURITY",
+      "sourceEvidenceIds": [
+        "EVID-A001-005",
+        "EVID-A001-024",
+        "EVID-A001-023"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-052",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "existingRequirement": "All fifteen First Release target capabilities and three profiles approved; CM-1 first product milestone accepted as structure only",
+      "missingDecision": "Which selected CM-1 operation/actor/profile boundaries and required eligibility/quota/notification/attachment/report integrations are approved, and which remain explicitly outside this increment without removing First Release obligations?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-002",
+        "V3-FR-A-003",
+        "V3-FR-A-017"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-001",
+        "EVID-A001-003"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-053",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-001",
+        "FR-BJ-001",
+        "FR-BJ-004"
+      ],
+      "existingRequirement": "External Portal users, Linka/external registry and Email/SMS/Push are deferred; no named provider or external customer user selected",
+      "missingDecision": "Are any external actor interactions required by a separately approved selected first-release operation beyond admitted issuer/profile coordination? Otherwise retain deferred external customer/provider features excluded.",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-A-007",
+        "V3-FR-A-017"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; explicit scoped product/requirements disposition",
+      "category": "PRODUCT",
+      "sourceEvidenceIds": [
+        "EVID-A001-008",
+        "EVID-A001-074"
+      ],
+      "relatedExistingDecisionIds": [],
+      "newAuthorityAssignment": "NONE"
+    },
+    {
+      "questionId": "PDQ-A001-054",
+      "status": "OPEN",
+      "affectedCapabilities": [
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "existingRequirement": "Each service/profile needs independent evidence; target objectives and some ownership milestones remain OPEN",
+      "missingDecision": "Who provides accountable operational/security/profile acceptance evidence and required numeric objectives without converting design or local lab success to production readiness?",
+      "proposedOptions": [],
+      "selectedAnswer": null,
+      "dependentTaskImpact": [
+        "V3-FR-I-001",
+        "V3-FR-B-023",
+        "V3-FR-J-004"
+      ],
+      "requiredDecisionAuthority": "Product Decision Owner / TAO under existing unified authority; applicable Level 2/3 technical/policy decision in addition to product scope",
+      "category": "OPERATIONS",
+      "sourceEvidenceIds": [
+        "EVID-A001-020",
+        "EVID-A001-026",
+        "EVID-A001-010"
+      ],
+      "relatedExistingDecisionIds": [
+        "OD-023"
+      ],
+      "newAuthorityAssignment": "NONE"
+    }
+  ],
+  "authorizationBoundaryEvidence": [
+    {
+      "boundaryId": "AUTHB-A001-01",
+      "name": "Identity versus authorization",
+      "evidenceIds": [
+        "EVID-A001-054",
+        "EVID-A001-011",
+        "EVID-A001-003"
+      ]
+    },
+    {
+      "boundaryId": "AUTHB-A001-02",
+      "name": "Tenant Membership versus permissions",
+      "evidenceIds": [
+        "EVID-A001-055",
+        "EVID-A001-001",
+        "EVID-A001-012"
+      ]
+    },
+    {
+      "boundaryId": "AUTHB-A001-03",
+      "name": "Feature eligibility versus authorization",
+      "evidenceIds": [
+        "EVID-A001-048",
+        "EVID-A001-049",
+        "EVID-A001-003"
+      ]
+    },
+    {
+      "boundaryId": "AUTHB-A001-04",
+      "name": "Resource/data ownership versus access rights",
+      "evidenceIds": [
+        "EVID-A001-043",
+        "EVID-A001-051",
+        "EVID-A001-052",
+        "EVID-A001-050"
+      ]
+    },
+    {
+      "boundaryId": "AUTHB-A001-05",
+      "name": "Platform versus Tenant administration",
+      "evidenceIds": [
+        "EVID-A001-006",
+        "EVID-A001-025",
+        "EVID-A001-023",
+        "EVID-A001-053"
+      ]
+    },
+    {
+      "boundaryId": "AUTHB-A001-06",
+      "name": "Service ownership versus cross-service access",
+      "evidenceIds": [
+        "EVID-A001-075",
+        "EVID-A001-004",
+        "EVID-A001-047"
+      ]
+    },
+    {
+      "boundaryId": "AUTHB-A001-07",
+      "name": "Project governance versus runtime local authority",
+      "evidenceIds": [
+        "EVID-A001-013",
+        "EVID-A001-016",
+        "EVID-A001-025",
+        "EVID-A001-026"
+      ]
+    }
+  ],
+  "canonicalAcceptanceCoverage": [
+    {
+      "criterionId": "V3-FR-A-001-AC-01",
+      "canonicalCriterion": "Complete the declared deliverable set for this bounded record",
+      "canonicalMeasurement": "Every listed deliverable has a path/revision, accountable owner and review result; no missing deliverable",
+      "evidenceArtifacts": [
+        "actor-inventory.md",
+        "actor-inventory.json",
+        "capability-ownership-matrix.md",
+        "capability-ownership-matrix.json",
+        "decision-governance.md",
+        "authorization-boundaries.md",
+        "open-product-decisions.md",
+        "source-traceability.json",
+        "validation-report.md"
+      ],
+      "documentaryAssessment": "MET_WITH_EXPLICIT_OPEN_REQUIREMENTS_NOT_FINAL_OWNER_ACCEPTANCE",
+      "assessment": "All declared actor/owner matrix and checklist/decision-ledger deliverables present; accountable person assignments remain UNASSIGNED, existing project decision authority cited."
+    },
+    {
+      "criterionId": "V3-FR-A-001-AC-02",
+      "canonicalCriterion": "Trace the full declared scope to normative requirements and disposition gaps",
+      "canonicalMeasurement": "Every selected capability/operation/policy requirement has a source locator and approved / OPEN / explicitly excluded disposition; zero orphan requirements or guessed rules",
+      "evidenceArtifacts": [
+        "source-traceability.json",
+        "open-product-decisions.md",
+        "capability-ownership-matrix.json"
+      ],
+      "documentaryAssessment": "MET_WITH_EXPLICIT_OPEN_REQUIREMENTS_NOT_FINAL_OWNER_ACCEPTANCE",
+      "assessment": "Every capability/owner/actor assertion has evidence locator or explicit analytical/OPEN status; all54 questions have source, impacts and required existing authority."
+    },
+    {
+      "criterionId": "V3-FR-A-001-AC-03",
+      "canonicalCriterion": "Inventory all fifteen approved capabilities with actor/owner facts and gaps",
+      "canonicalMeasurement": "Exactly the fifteen original FR IDs, each with authoritative scope/data owner, candidate actor versus approved actor distinction, accountable-owner status and OPEN questions; zero invented appointments",
+      "evidenceArtifacts": [
+        "actor-inventory.json",
+        "capability-ownership-matrix.json"
+      ],
+      "documentaryAssessment": "MET_WITH_EXPLICIT_OPEN_REQUIREMENTS_NOT_FINAL_OWNER_ACCEPTANCE",
+      "assessment": "Exactly15 original capabilities, approved logical ownership retained, actor class versus analytical view distinguished, all15 accountable Business Owners UNASSIGNED and linked OPEN questions."
+    },
+    {
+      "criterionId": "V3-FR-A-001-AC-04",
+      "canonicalCriterion": "Demonstrate all inherited task-specific criteria without changing their meaning",
+      "canonicalMeasurement": "Each inherited criterion below has an approved measurable example/assessment and evidence locator; unapproved business rules/NFR thresholds stay OPEN. All mandatory accepted cases satisfied, no FAIL or unknown relabeled PASS",
+      "evidenceArtifacts": [
+        "validation-report.md",
+        "source-traceability.json"
+      ],
+      "documentaryAssessment": "MET_WITH_EXPLICIT_OPEN_REQUIREMENTS_NOT_FINAL_OWNER_ACCEPTANCE",
+      "assessment": "Inherited criteria demonstrated with existing approved examples: Customer logical owner V3-002B-DEC-002; distinct Identity/Tenant V3-002B-DEC-053/054; Option B minimum internal access; no new rule or persona ratified."
+    },
+    {
+      "criterionId": "V3-FR-A-001-AC-05",
+      "canonicalCriterion": "Preserve scoped authority and readiness boundaries",
+      "canonicalMeasurement": "Scope approval and every applicable effective OD/policy/Gate disposition identified with source/revision; no implicit IAM/FE-BE permission, offline continuation, production or architecture closure",
+      "evidenceArtifacts": [
+        "decision-governance.md",
+        "authorization-boundaries.md",
+        "source-traceability.json"
+      ],
+      "documentaryAssessment": "MET_WITH_EXPLICIT_OPEN_REQUIREMENTS_NOT_FINAL_OWNER_ACCEPTANCE",
+      "assessment": "Only current named requirements task permission used; roadmap hashes unchanged, Git staging/commit/push absent, no technology/RBAC/IAM/control/Gate/production decision."
+    }
+  ],
+  "inheritedCriteria": [
+    "All 15 capabilities retain identifiers and boundaries; unassigned roles explicit",
+    "Trace every outcome to approved requirements/source revision; retain failed/unexecuted evidence and exclusions",
+    "Acceptance references exact operation/role/Tenant/profile examples approved for this bounded scope; OPEN rules cannot be guessed."
+  ],
+  "nextEligibleTaskCandidates": [
+    {
+      "taskId": "V3-FR-A-002",
+      "title": "Define requirements: Register and Maintain Customer Master",
+      "repository": "Core",
+      "canonicalTaskPrerequisites": [],
+      "eligibility": "CANDIDATE_FOR_SEPARATE_REQUIREMENTS_OR_DESIGN_SCOPE_APPROVAL; NOT STARTED",
+      "openInputs": "Use source actor/owner/decision questions; selected-rule approval before dependent implementation. D-001 still requires B-024.",
+      "executionPermission": "NONE_FROM_THIS_TASK"
+    },
+    {
+      "taskId": "V3-FR-A-003",
+      "title": "Define requirements: Find and Review Customer",
+      "repository": "Core",
+      "canonicalTaskPrerequisites": [],
+      "eligibility": "CANDIDATE_FOR_SEPARATE_REQUIREMENTS_OR_DESIGN_SCOPE_APPROVAL; NOT STARTED",
+      "openInputs": "Use source actor/owner/decision questions; selected-rule approval before dependent implementation. D-001 still requires B-024.",
+      "executionPermission": "NONE_FROM_THIS_TASK"
+    },
+    {
+      "taskId": "V3-FR-A-007",
+      "title": "Define requirements: Establish Trusted Tenant Access",
+      "repository": "Core",
+      "canonicalTaskPrerequisites": [],
+      "eligibility": "CANDIDATE_FOR_SEPARATE_REQUIREMENTS_OR_DESIGN_SCOPE_APPROVAL; NOT STARTED",
+      "openInputs": "Use source actor/owner/decision questions; selected-rule approval before dependent implementation. D-001 still requires B-024.",
+      "executionPermission": "NONE_FROM_THIS_TASK"
+    },
+    {
+      "taskId": "V3-FR-A-013",
+      "title": "Define requirements: Record Security, Administrative and Privileged Audit Evidence",
+      "repository": "Core",
+      "canonicalTaskPrerequisites": [],
+      "eligibility": "CANDIDATE_FOR_SEPARATE_REQUIREMENTS_OR_DESIGN_SCOPE_APPROVAL; NOT STARTED",
+      "openInputs": "Use source actor/owner/decision questions; selected-rule approval before dependent implementation. D-001 still requires B-024.",
+      "executionPermission": "NONE_FROM_THIS_TASK"
+    },
+    {
+      "taskId": "V3-FR-A-015",
+      "title": "Define requirements: Observe Platform and Service Health",
+      "repository": "Core",
+      "canonicalTaskPrerequisites": [],
+      "eligibility": "CANDIDATE_FOR_SEPARATE_REQUIREMENTS_OR_DESIGN_SCOPE_APPROVAL; NOT STARTED",
+      "openInputs": "Use source actor/owner/decision questions; selected-rule approval before dependent implementation. D-001 still requires B-024.",
+      "executionPermission": "NONE_FROM_THIS_TASK"
+    },
+    {
+      "taskId": "V3-FR-A-017",
+      "title": "Define cross-capability approval matrices and bounded failure policies",
+      "repository": "Core",
+      "canonicalTaskPrerequisites": [],
+      "eligibility": "CANDIDATE_FOR_SEPARATE_REQUIREMENTS_OR_DESIGN_SCOPE_APPROVAL; NOT STARTED",
+      "openInputs": "Use source actor/owner/decision questions; selected-rule approval before dependent implementation. D-001 still requires B-024.",
+      "executionPermission": "NONE_FROM_THIS_TASK"
+    },
+    {
+      "taskId": "V3-FR-G-001",
+      "title": "Define feature UX, Design System and client boundary specifications",
+      "repository": "Core",
+      "canonicalTaskPrerequisites": [],
+      "eligibility": "CANDIDATE_FOR_SEPARATE_REQUIREMENTS_OR_DESIGN_SCOPE_APPROVAL; NOT STARTED",
+      "openInputs": "Use source actor/owner/decision questions; selected-rule approval before dependent implementation. D-001 still requires B-024.",
+      "executionPermission": "NONE_FROM_THIS_TASK"
+    },
+    {
+      "taskId": "V3-FR-I-001",
+      "title": "Assess security and acceptance requirements across all profiles",
+      "repository": "Core",
+      "canonicalTaskPrerequisites": [],
+      "eligibility": "CANDIDATE_FOR_SEPARATE_REQUIREMENTS_OR_DESIGN_SCOPE_APPROVAL; NOT STARTED",
+      "openInputs": "Use source actor/owner/decision questions; selected-rule approval before dependent implementation. D-001 still requires B-024.",
+      "executionPermission": "NONE_FROM_THIS_TASK"
+    },
+    {
+      "taskId": "V3-FR-B-024",
+      "title": "Review applicable design-governance synchronization and dependency acceptance",
+      "repository": "Core",
+      "canonicalTaskPrerequisites": [],
+      "eligibility": "CANDIDATE_FOR_SEPARATE_REQUIREMENTS_OR_DESIGN_SCOPE_APPROVAL; NOT STARTED",
+      "openInputs": "Use source actor/owner/decision questions; selected-rule approval before dependent implementation. D-001 still requires B-024.",
+      "executionPermission": "NONE_FROM_THIS_TASK"
+    },
+    {
+      "taskId": "V3-FR-D-001",
+      "title": "Determine G-RUNTIME remediation scope and path applicability",
+      "repository": "Core",
+      "canonicalTaskPrerequisites": [
+        "V3-FR-B-024"
+      ],
+      "eligibility": "CANDIDATE_FOR_SEPARATE_REQUIREMENTS_OR_DESIGN_SCOPE_APPROVAL; NOT STARTED",
+      "openInputs": "Use source actor/owner/decision questions; selected-rule approval before dependent implementation. D-001 still requires B-024.",
+      "executionPermission": "NONE_FROM_THIS_TASK"
+    }
+  ],
+  "repositoryPreflight": {
+    "Core": {
+      "path": "E:\\Neshane-CRM-V3-V3-024-main-adoption",
+      "head": "702912743b36cd20ddb3a920394521c324ec0041",
+      "branch": "codex/v3-fr-a-001",
+      "status": "",
+      "trackedDiff": "",
+      "indexDiff": ""
+    },
+    "Backend": {
+      "path": "E:\\Neshane-CRM-V3\\Backend",
+      "head": "abd76d821c98e1fe10fe2d6c2c1772b0df7641e7",
+      "branch": "main",
+      "status": "",
+      "trackedDiff": "",
+      "indexDiff": ""
+    },
+    "Frontend": {
+      "path": "E:\\Neshane-CRM-V3\\Frontend",
+      "head": "faa563f8f5c3bda25c3e5f40c7a8688c1bc245e7",
+      "branch": "main",
+      "status": "",
+      "trackedDiff": "",
+      "indexDiff": ""
+    }
+  },
+  "sourcePrecedence": [
+    "Current unified task-governance rule controls final INTERNAL project authority, overriding older separate appointment prerequisites without erasing history",
+    "Explicit row-level V3-002B approvals control logical ownership despite introductory proposal wording; named accountable persons/services are not inferred",
+    "Later support-matrix section11 approves FR-PF-001 Option B; earlier V3-003 missing product-confirmation row remains historical only",
+    "Latest baseline introduction records P00-006 limited design effectivity; older pending snapshots in OD/ADR history not current Runtime acceptance",
+    "G-RUNTIME.04 actual BLOCKED decision and current accepted roadmap governance control over older PENDING/continuity prose; offline remains PROHIBITED",
+    "Accepted roadmap/task structure is not approved detailed rules/personas/actor permission policy; 001 planning personas remain analytical"
+  ],
+  "historicalLimits": [
+    "No claim of independently signed stakeholder/actor review or legal person identity",
+    "No prior complete independent historical hash manifest for002; existing bounded provenance limits retained",
+    "No degraded NFR prose reconstructed into approved requirements; no numerical target/technology chosen",
+    "Local-Infra development/synthetic acceptance and all ten limitations preserved; no service/runtime revalidation"
+  ]
+}

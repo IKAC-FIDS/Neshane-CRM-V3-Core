@@ -1,0 +1,1698 @@
+{
+  "taskId": "V3-FR-A-001",
+  "status": "REQUIREMENTS_ENGINEERING_PREPARED_FOR_OWNER_REVIEW_NOT_ACCEPTED",
+  "recordedAt": "2026-11-18T18:09:59.132248+00:00",
+  "repositoryBaseline": "702912743b36cd20ddb3a920394521c324ec0041",
+  "branch": "codex/v3-fr-a-001",
+  "governance": {
+    "Roadmap": "APPROVED AS PRODUCT EXECUTION ROADMAP",
+    "ThisTask": "EXPLICIT REQUIREMENTS-ENGINEERING AUTHORIZATION ONLY",
+    "Local-Infra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "Offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "SeaweedFS": "EXPERIMENTAL",
+    "Product implementation": "NOT AUTHORIZED",
+    "Production": "NOT AUTHORIZED"
+  },
+  "identifierPolicy": "ACT-A001-* local catalog IDs; not permission/role/claim IDs and do not replace TA-* threat actors or any existing identifier",
+  "classificationRule": "Approved actor class, documented operational responsibility, analytical participation view, existing project authority and contextual/deferred principal are different. Human capability views derive from approved operation + internal Principal scope, not new approved product personas.",
+  "actors": [
+    {
+      "actorId": "ACT-A001-001",
+      "name": "Internal authenticated Principal",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "DOCUMENTED_APPROVED_ACTOR_CLASS",
+      "applicableCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Participate in protected FIRST_RELEASE journeys only after active Membership, validated Context and separate Domain authorization"
+      ],
+      "documentedOperations": [
+        "Active Membership validation; valid destination Membership for Tenant switching; access journey, not an approved operation-permission list"
+      ],
+      "authorizationBoundaries": "Authenticated Principal or assigned operational responsibility is not permission. Owning Domain authorizes each resource/action; detailed role/action/disclosure matrix remains OPEN.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-002",
+        "EVID-A001-001",
+        "EVID-A001-003"
+      ],
+      "unresolvedRequirements": [
+        "Exact supported internal personas, onboarding, role/action/disclosure and session policies OPEN"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "decisionQuestionIds": [
+        "PDQ-A001-001",
+        "PDQ-A001-002",
+        "PDQ-A001-003",
+        "PDQ-A001-004",
+        "PDQ-A001-005",
+        "PDQ-A001-006",
+        "PDQ-A001-007",
+        "PDQ-A001-008",
+        "PDQ-A001-009",
+        "PDQ-A001-010",
+        "PDQ-A001-011",
+        "PDQ-A001-012",
+        "PDQ-A001-013",
+        "PDQ-A001-014",
+        "PDQ-A001-015",
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-019",
+        "PDQ-A001-020",
+        "PDQ-A001-021",
+        "PDQ-A001-022",
+        "PDQ-A001-023",
+        "PDQ-A001-024",
+        "PDQ-A001-025",
+        "PDQ-A001-026",
+        "PDQ-A001-027",
+        "PDQ-A001-028",
+        "PDQ-A001-029",
+        "PDQ-A001-030",
+        "PDQ-A001-031",
+        "PDQ-A001-032",
+        "PDQ-A001-033",
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036",
+        "PDQ-A001-037",
+        "PDQ-A001-038",
+        "PDQ-A001-039",
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-053",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-002",
+      "name": "Customer maintenance participant",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "ANALYTICAL_PARTICIPATION_VIEW_NOT_APPROVED_ROLE",
+      "applicableCapabilities": [
+        "FR-BJ-001"
+      ],
+      "businessResponsibilities": [
+        "Maintain authoritative Customer Master through Customer-owned validation and writes"
+      ],
+      "documentedOperations": [
+        "CUS-CREATE; CUS-VALIDATE; CUS-GET-FOR-UPDATE; CUS-UPDATE are documented Customer operation concepts; no granted permission"
+      ],
+      "authorizationBoundaries": "Authenticated Principal or assigned operational responsibility is not permission. Owning Domain authorizes each resource/action; detailed role/action/disclosure matrix remains OPEN.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-002",
+        "EVID-A001-009",
+        "EVID-A001-028",
+        "EVID-A001-043",
+        "EVID-A001-022",
+        "EVID-A001-076",
+        "EVID-A001-077",
+        "EVID-A001-078",
+        "EVID-A001-079",
+        "EVID-A001-080"
+      ],
+      "unresolvedRequirements": [
+        "Human persona/role and organization-specific assignment UNASSIGNED; mapping to an actual allowed action is OPEN",
+        "Capability/operation participation is documented; this local label is analytical, not an approved role or permission"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-001",
+      "viewInterpretation": "Derived view of existing capability/operation and internal Principal scope; no separate human actor taxonomy or product role ratified",
+      "decisionQuestionIds": [
+        "PDQ-A001-001",
+        "PDQ-A001-002",
+        "PDQ-A001-003",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-052",
+        "PDQ-A001-053"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-003",
+      "name": "Customer find/review participant",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "ANALYTICAL_PARTICIPATION_VIEW_NOT_APPROVED_ROLE",
+      "applicableCapabilities": [
+        "FR-BJ-002"
+      ],
+      "businessResponsibilities": [
+        "Find/review Customer within Customer-controlled disclosure boundary"
+      ],
+      "documentedOperations": [
+        "CUS-SEARCH; CUS-GET; CUS-AUTHORIZE-DISCLOSURE are documented assessment/operation concepts, not permissions"
+      ],
+      "authorizationBoundaries": "Authenticated Principal or assigned operational responsibility is not permission. Owning Domain authorizes each resource/action; detailed role/action/disclosure matrix remains OPEN.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-002",
+        "EVID-A001-009",
+        "EVID-A001-029",
+        "EVID-A001-043",
+        "EVID-A001-081",
+        "EVID-A001-082",
+        "EVID-A001-083"
+      ],
+      "unresolvedRequirements": [
+        "Human persona/role and organization-specific assignment UNASSIGNED; mapping to an actual allowed action is OPEN",
+        "Capability/operation participation is documented; this local label is analytical, not an approved role or permission"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-001",
+      "viewInterpretation": "Derived view of existing capability/operation and internal Principal scope; no separate human actor taxonomy or product role ratified",
+      "decisionQuestionIds": [
+        "PDQ-A001-004",
+        "PDQ-A001-005",
+        "PDQ-A001-006",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-052"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-004",
+      "name": "Opportunity/Pipeline participant",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "ANALYTICAL_PARTICIPATION_VIEW_NOT_APPROVED_ROLE",
+      "applicableCapabilities": [
+        "FR-BJ-003"
+      ],
+      "businessResponsibilities": [
+        "Perform approved Sales journey; Customer reference does not transfer Customer ownership"
+      ],
+      "documentedOperations": [
+        "Manage Opportunity, Pipeline/Stage transitions and amount/currency; detailed operation catalog OPEN"
+      ],
+      "authorizationBoundaries": "Authenticated Principal or assigned operational responsibility is not permission. Owning Domain authorizes each resource/action; detailed role/action/disclosure matrix remains OPEN.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-002",
+        "EVID-A001-009",
+        "EVID-A001-030",
+        "EVID-A001-044",
+        "EVID-A001-084"
+      ],
+      "unresolvedRequirements": [
+        "Human persona/role and organization-specific assignment UNASSIGNED; mapping to an actual allowed action is OPEN",
+        "Capability/operation participation is documented; this local label is analytical, not an approved role or permission"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-001",
+      "viewInterpretation": "Derived view of existing capability/operation and internal Principal scope; no separate human actor taxonomy or product role ratified",
+      "decisionQuestionIds": [
+        "PDQ-A001-007",
+        "PDQ-A001-008",
+        "PDQ-A001-009",
+        "PDQ-A001-050",
+        "PDQ-A001-052"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-005",
+      "name": "Internal Customer Request participant",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "ANALYTICAL_PARTICIPATION_VIEW_NOT_APPROVED_ROLE",
+      "applicableCapabilities": [
+        "FR-BJ-004"
+      ],
+      "businessResponsibilities": [
+        "Register/process Request without a Portal or mandatory generic Workflow Engine"
+      ],
+      "documentedOperations": [
+        "Internal creation, view/tracking, base lifecycle, history, triage and assignment; exact transitions OPEN"
+      ],
+      "authorizationBoundaries": "Authenticated Principal or assigned operational responsibility is not permission. Owning Domain authorizes each resource/action; detailed role/action/disclosure matrix remains OPEN.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-002",
+        "EVID-A001-009",
+        "EVID-A001-031",
+        "EVID-A001-046",
+        "EVID-A001-085"
+      ],
+      "unresolvedRequirements": [
+        "Human persona/role and organization-specific assignment UNASSIGNED; mapping to an actual allowed action is OPEN",
+        "Capability/operation participation is documented; this local label is analytical, not an approved role or permission"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-001",
+      "viewInterpretation": "Derived view of existing capability/operation and internal Principal scope; no separate human actor taxonomy or product role ratified",
+      "decisionQuestionIds": [
+        "PDQ-A001-010",
+        "PDQ-A001-011",
+        "PDQ-A001-012",
+        "PDQ-A001-050",
+        "PDQ-A001-052",
+        "PDQ-A001-053"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-006",
+      "name": "Work Task participant / assignment subject",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "ANALYTICAL_PARTICIPATION_VIEW_NOT_APPROVED_ROLE",
+      "applicableCapabilities": [
+        "FR-BJ-005"
+      ],
+      "businessResponsibilities": [
+        "Plan/track Work Task; assignment/link grants no related-resource authority"
+      ],
+      "documentedOperations": [
+        "Create/View/Edit, Assignment, Status, Due Date and manual contract links; exact assignee policy OPEN"
+      ],
+      "authorizationBoundaries": "Authenticated Principal or assigned operational responsibility is not permission. Owning Domain authorizes each resource/action; detailed role/action/disclosure matrix remains OPEN.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-002",
+        "EVID-A001-009",
+        "EVID-A001-032",
+        "EVID-A001-051",
+        "EVID-A001-086"
+      ],
+      "unresolvedRequirements": [
+        "Human persona/role and organization-specific assignment UNASSIGNED; mapping to an actual allowed action is OPEN",
+        "Capability/operation participation is documented; this local label is analytical, not an approved role or permission"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-001",
+      "viewInterpretation": "Derived view of existing capability/operation and internal Principal scope; no separate human actor taxonomy or product role ratified",
+      "decisionQuestionIds": [
+        "PDQ-A001-013",
+        "PDQ-A001-014",
+        "PDQ-A001-015",
+        "PDQ-A001-050",
+        "PDQ-A001-052"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-007",
+      "name": "In-App Notification recipient concept",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "ANALYTICAL_PARTICIPATION_VIEW_NOT_APPROVED_ROLE",
+      "applicableCapabilities": [
+        "FR-PF-004"
+      ],
+      "businessResponsibilities": [
+        "Notification recipient access is distinct from producer Business Fact authorization"
+      ],
+      "documentedOperations": [
+        "Receive/access an authorized In-App notification; recipient determination/type/read/dismiss details OPEN"
+      ],
+      "authorizationBoundaries": "Authenticated Principal or assigned operational responsibility is not permission. Owning Domain authorizes each resource/action; detailed role/action/disclosure matrix remains OPEN.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-002",
+        "EVID-A001-009",
+        "EVID-A001-036",
+        "EVID-A001-045",
+        "EVID-A001-087"
+      ],
+      "unresolvedRequirements": [
+        "Human persona/role and organization-specific assignment UNASSIGNED; mapping to an actual allowed action is OPEN",
+        "Capability/operation participation is documented; this local label is analytical, not an approved role or permission"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-001",
+      "viewInterpretation": "Derived view of existing capability/operation and internal Principal scope; no separate human actor taxonomy or product role ratified",
+      "decisionQuestionIds": [
+        "PDQ-A001-025",
+        "PDQ-A001-026",
+        "PDQ-A001-027",
+        "PDQ-A001-050",
+        "PDQ-A001-052"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-008",
+      "name": "File/Attachment operation participant",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "ANALYTICAL_PARTICIPATION_VIEW_NOT_APPROVED_ROLE",
+      "applicableCapabilities": [
+        "FR-PF-005"
+      ],
+      "businessResponsibilities": [
+        "Participate only under separate File and related-resource authorization"
+      ],
+      "documentedOperations": [
+        "Controlled upload/download and resource attachment; resource-specific matrix OPEN"
+      ],
+      "authorizationBoundaries": "Authenticated Principal or assigned operational responsibility is not permission. Owning Domain authorizes each resource/action; detailed role/action/disclosure matrix remains OPEN.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-002",
+        "EVID-A001-009",
+        "EVID-A001-037",
+        "EVID-A001-052",
+        "EVID-A001-088"
+      ],
+      "unresolvedRequirements": [
+        "Human persona/role and organization-specific assignment UNASSIGNED; mapping to an actual allowed action is OPEN",
+        "Capability/operation participation is documented; this local label is analytical, not an approved role or permission"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-001",
+      "viewInterpretation": "Derived view of existing capability/operation and internal Principal scope; no separate human actor taxonomy or product role ratified",
+      "decisionQuestionIds": [
+        "PDQ-A001-028",
+        "PDQ-A001-029",
+        "PDQ-A001-030",
+        "PDQ-A001-050",
+        "PDQ-A001-052"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-009",
+      "name": "Deterministic Report consumer concept",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "ANALYTICAL_PARTICIPATION_VIEW_NOT_APPROVED_ROLE",
+      "applicableCapabilities": [
+        "FR-PF-006"
+      ],
+      "businessResponsibilities": [
+        "Report disclosure preserves source data restrictions"
+      ],
+      "documentedOperations": [
+        "Request/access approved deterministic report; no final Report Set or reader permission inferred"
+      ],
+      "authorizationBoundaries": "Authenticated Principal or assigned operational responsibility is not permission. Owning Domain authorizes each resource/action; detailed role/action/disclosure matrix remains OPEN.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-002",
+        "EVID-A001-009",
+        "EVID-A001-038",
+        "EVID-A001-050",
+        "EVID-A001-089"
+      ],
+      "unresolvedRequirements": [
+        "Human persona/role and organization-specific assignment UNASSIGNED; mapping to an actual allowed action is OPEN",
+        "Capability/operation participation is documented; this local label is analytical, not an approved role or permission"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-001",
+      "viewInterpretation": "Derived view of existing capability/operation and internal Principal scope; no separate human actor taxonomy or product role ratified",
+      "decisionQuestionIds": [
+        "PDQ-A001-031",
+        "PDQ-A001-032",
+        "PDQ-A001-033",
+        "PDQ-A001-050",
+        "PDQ-A001-052",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-010",
+      "name": "Authorized Audit reviewer concept",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "ANALYTICAL_PARTICIPATION_VIEW_NOT_APPROVED_ROLE",
+      "applicableCapabilities": [
+        "FR-SO-002"
+      ],
+      "businessResponsibilities": [
+        "Review Audit within Audit Domain authorization; operator title is not blanket Audit access"
+      ],
+      "documentedOperations": [
+        "Authorized Audit evidence viewing/search; exact viewer/purpose/disclosure operation catalog OPEN"
+      ],
+      "authorizationBoundaries": "Authenticated Principal or assigned operational responsibility is not permission. Owning Domain authorizes each resource/action; detailed role/action/disclosure matrix remains OPEN.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-002",
+        "EVID-A001-009",
+        "EVID-A001-040",
+        "EVID-A001-047",
+        "EVID-A001-024",
+        "EVID-A001-090"
+      ],
+      "unresolvedRequirements": [
+        "Human persona/role and organization-specific assignment UNASSIGNED; mapping to an actual allowed action is OPEN",
+        "Capability/operation participation is documented; this local label is analytical, not an approved role or permission"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-001",
+      "viewInterpretation": "Derived view of existing capability/operation and internal Principal scope; no separate human actor taxonomy or product role ratified",
+      "decisionQuestionIds": [
+        "PDQ-A001-037",
+        "PDQ-A001-038",
+        "PDQ-A001-039",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-011",
+      "name": "Tenant administration responsibility (role model unspecified)",
+      "actorCategory": "TENANT_SCOPED_ADMINISTRATOR",
+      "recordKind": "DOCUMENTED_RESPONSIBILITY_NOT_APPROVED_ROLE_CATALOG",
+      "applicableCapabilities": [
+        "FR-PF-001"
+      ],
+      "businessResponsibilities": [
+        "Customer-side Tenant administration, authorized users and business configuration/data stewardship within approved contracts"
+      ],
+      "documentedOperations": [
+        "No complete approved Tenant administrator action catalog; Membership administration ownership belongs to Tenant Management, not any automatically entitled user"
+      ],
+      "authorizationBoundaries": "Tenant-scoped administration is not Platform administration, Entitlement, Customer data access or a universal administrator. Resource owners decide actions.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-006",
+        "EVID-A001-008",
+        "EVID-A001-055"
+      ],
+      "unresolvedRequirements": [
+        "Who may administer Membership, delegation/revocation and configuration? OPEN",
+        "Tenant administration UI and exact role permissions are not approved by minimum access scope"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "decisionQuestionIds": [
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-050",
+        "PDQ-A001-052",
+        "PDQ-A001-053"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-012",
+      "name": "Provider operations participant",
+      "actorCategory": "PLATFORM_OPERATIONAL_ACTOR",
+      "recordKind": "DOCUMENTED_PROFILE_OPERATIONAL_RESPONSIBILITY",
+      "applicableCapabilities": [
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Operate only approved infrastructure/visibility/support/recovery within named profile and explicit destination scope"
+      ],
+      "documentedOperations": [
+        "Authorized visibility and privileged request/execution; exact action/role/emergency catalogs remain OPEN"
+      ],
+      "authorizationBoundaries": "No implicit Business Fact ownership, Audit access or customer-data permission; destination Domain authorization and durable Audit required. Global support has no ambient local right.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific. Profiles: Shared SaaS",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-005",
+        "EVID-A001-007",
+        "EVID-A001-025",
+        "EVID-A001-027",
+        "EVID-A001-023"
+      ],
+      "unresolvedRequirements": [
+        "Named operators and role/action/approval/break-glass model UNASSIGNED/OPEN",
+        "Approved operation-specific identity, failure, recovery and revocation conditions missing"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "deploymentProfiles": [
+        "Shared SaaS"
+      ],
+      "decisionQuestionIds": [
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-048",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-013",
+      "name": "Managed operations/support participant",
+      "actorCategory": "PLATFORM_OPERATIONAL_ACTOR",
+      "recordKind": "DOCUMENTED_PROFILE_OPERATIONAL_RESPONSIBILITY",
+      "applicableCapabilities": [
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Operate only approved infrastructure/visibility/support/recovery within named profile and explicit destination scope"
+      ],
+      "documentedOperations": [
+        "Authorized visibility and privileged request/execution; exact action/role/emergency catalogs remain OPEN"
+      ],
+      "authorizationBoundaries": "No implicit Business Fact ownership, Audit access or customer-data permission; destination Domain authorization and durable Audit required. Global support has no ambient local right.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific. Profiles: Dedicated Managed",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-005",
+        "EVID-A001-007",
+        "EVID-A001-025",
+        "EVID-A001-027",
+        "EVID-A001-023"
+      ],
+      "unresolvedRequirements": [
+        "Named operators and role/action/approval/break-glass model UNASSIGNED/OPEN",
+        "Approved operation-specific identity, failure, recovery and revocation conditions missing"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "deploymentProfiles": [
+        "Dedicated Managed"
+      ],
+      "decisionQuestionIds": [
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-048",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-014",
+      "name": "Sovereign-local operations participant",
+      "actorCategory": "PLATFORM_OPERATIONAL_ACTOR",
+      "recordKind": "DOCUMENTED_PROFILE_OPERATIONAL_RESPONSIBILITY",
+      "applicableCapabilities": [
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Operate only approved infrastructure/visibility/support/recovery within named profile and explicit destination scope"
+      ],
+      "documentedOperations": [
+        "Authorized visibility and privileged request/execution; exact action/role/emergency catalogs remain OPEN"
+      ],
+      "authorizationBoundaries": "No implicit Business Fact ownership, Audit access or customer-data permission; destination Domain authorization and durable Audit required. Global support has no ambient local right.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific. Profiles: Dedicated Sovereign",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-005",
+        "EVID-A001-007",
+        "EVID-A001-025",
+        "EVID-A001-027",
+        "EVID-A001-023"
+      ],
+      "unresolvedRequirements": [
+        "Named operators and role/action/approval/break-glass model UNASSIGNED/OPEN",
+        "Approved operation-specific identity, failure, recovery and revocation conditions missing"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "deploymentProfiles": [
+        "Dedicated Sovereign"
+      ],
+      "decisionQuestionIds": [
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-048",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-015",
+      "name": "Authenticated service/workload identity",
+      "actorCategory": "SERVICE_AND_WORKLOAD_IDENTITY",
+      "recordKind": "DOCUMENTED_DISTINCT_IDENTITY_CLASS",
+      "applicableCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Authenticate at each relevant service trust boundary and act only within owning/consuming contract authority"
+      ],
+      "documentedOperations": [
+        "Owning use cases and authorized cross-service API/event/job paths; no concrete new workload/service chosen"
+      ],
+      "authorizationBoundaries": "Internal network, broker delivery or valid workload credential does not confer tenant/resource access. Audience, scope, provenance, Context and Domain authorization required.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-004",
+        "EVID-A001-011",
+        "EVID-A001-012"
+      ],
+      "unresolvedRequirements": [
+        "Issuance, trust admission, audience/credential/session lifecycle and actual service inventory OPEN; OD-009..012 remain unresolved"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "decisionQuestionIds": [
+        "PDQ-A001-001",
+        "PDQ-A001-002",
+        "PDQ-A001-003",
+        "PDQ-A001-004",
+        "PDQ-A001-005",
+        "PDQ-A001-006",
+        "PDQ-A001-007",
+        "PDQ-A001-008",
+        "PDQ-A001-009",
+        "PDQ-A001-010",
+        "PDQ-A001-011",
+        "PDQ-A001-012",
+        "PDQ-A001-013",
+        "PDQ-A001-014",
+        "PDQ-A001-015",
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-019",
+        "PDQ-A001-020",
+        "PDQ-A001-021",
+        "PDQ-A001-022",
+        "PDQ-A001-023",
+        "PDQ-A001-024",
+        "PDQ-A001-025",
+        "PDQ-A001-026",
+        "PDQ-A001-027",
+        "PDQ-A001-028",
+        "PDQ-A001-029",
+        "PDQ-A001-030",
+        "PDQ-A001-031",
+        "PDQ-A001-032",
+        "PDQ-A001-033",
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036",
+        "PDQ-A001-037",
+        "PDQ-A001-038",
+        "PDQ-A001-039",
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-053",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-016",
+      "name": "Producing Domain workload",
+      "actorCategory": "SERVICE_AND_WORKLOAD_IDENTITY",
+      "recordKind": "DOCUMENTED_PRODUCER_RESPONSIBILITY",
+      "applicableCapabilities": [
+        "FR-BJ-001",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-006",
+        "FR-SO-001"
+      ],
+      "businessResponsibilities": [
+        "Retain owned Business Facts/Usage and coordinate applicable required publication obligations; do not transfer source fact ownership to Audit/Notification/Reporting"
+      ],
+      "documentedOperations": [
+        "Producer facts, Usage integration, Notification delivery inputs and approved source-report data contracts; only selected integrations apply"
+      ],
+      "authorizationBoundaries": "Own fact publication is not downstream authorization or proof of Audit ingestion; no direct consumer private-database access.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-047",
+        "EVID-A001-045",
+        "EVID-A001-049",
+        "EVID-A001-050",
+        "EVID-A001-026"
+      ],
+      "unresolvedRequirements": [
+        "Exact producer/event/usage/source projections and policies OPEN; no universal mandatory events inferred"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-015",
+      "decisionQuestionIds": [
+        "PDQ-A001-001",
+        "PDQ-A001-002",
+        "PDQ-A001-003",
+        "PDQ-A001-022",
+        "PDQ-A001-023",
+        "PDQ-A001-024",
+        "PDQ-A001-025",
+        "PDQ-A001-026",
+        "PDQ-A001-027",
+        "PDQ-A001-031",
+        "PDQ-A001-032",
+        "PDQ-A001-033",
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-052",
+        "PDQ-A001-053",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-017",
+      "name": "Audit-owned processing workload",
+      "actorCategory": "SERVICE_AND_WORKLOAD_IDENTITY",
+      "recordKind": "DOCUMENTED_AUDIT_BOUNDARY_RESPONSIBILITY",
+      "applicableCapabilities": [
+        "FR-SO-001",
+        "FR-SO-002"
+      ],
+      "businessResponsibilities": [
+        "Audit owns authoritative system-wide Audit records and its authorized projections; producers keep original Business Facts"
+      ],
+      "documentedOperations": [
+        "Authoritative evidence recording/access; exact ingestion confirmation/retry/access contracts OPEN"
+      ],
+      "authorizationBoundaries": "Audit ownership permits neither direct producer-database queries nor universal user disclosure. Sensitive access has distinct Audit obligations.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-047",
+        "EVID-A001-026",
+        "EVID-A001-024"
+      ],
+      "unresolvedRequirements": [
+        "Precise ingestion evidence, viewer purpose, correction/retention/legal policy, recursive Audit behavior OPEN"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "underlyingDocumentedActorClass": "ACT-A001-015",
+      "decisionQuestionIds": [
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036",
+        "PDQ-A001-037",
+        "PDQ-A001-038",
+        "PDQ-A001-039",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-018",
+      "name": "Admitted identity issuer / external IdP boundary",
+      "actorCategory": "EXTERNAL_SYSTEM_ACTOR",
+      "recordKind": "DOCUMENTED_TRUST_BOUNDARY_PROVIDER_NOT_SELECTED",
+      "applicableCapabilities": [
+        "FR-PF-001"
+      ],
+      "businessResponsibilities": [
+        "Supply credential assertions only within an admitted trust scope; Neshane validates mapping and Principal/session evidence"
+      ],
+      "documentedOperations": [
+        "Credential assertion validation; no named provider, SSO, protocol or credential transport selected"
+      ],
+      "authorizationBoundaries": "An issuer assertion creates no automatic Membership, entitlement, local Sovereign Principal or resource permission. Profile Trust Authority admits issuer; each Domain validates its own boundary.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-054",
+        "EVID-A001-056",
+        "EVID-A001-008"
+      ],
+      "unresolvedRequirements": [
+        "Provider choice, admission/mapping and session/trust lifecycle OPEN; no concrete external integration authorized"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "decisionQuestionIds": [
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-050",
+        "PDQ-A001-052",
+        "PDQ-A001-053"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-019",
+      "name": "Central / federation / external support system boundary",
+      "actorCategory": "EXTERNAL_SYSTEM_ACTOR",
+      "recordKind": "DOCUMENTED_CONDITIONAL_CROSS_PLANE_CONTEXT",
+      "applicableCapabilities": [
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-SO-001",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Provide only locally approved artifacts, coordination, minimized telemetry or support/federation interactions where permitted"
+      ],
+      "documentedOperations": [
+        "Locally governed proposals, synchronization/support and minimized telemetry; no general central runtime call requirement"
+      ],
+      "authorizationBoundaries": "No implicit Sovereign administration; critical local authority must not depend synchronously on Central. Current offline continuation still PROHIBITED.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-057",
+        "EVID-A001-025",
+        "EVID-A001-026"
+      ],
+      "unresolvedRequirements": [
+        "Exact federation/support actor admission, data classes, freshness and Critical Local Operation catalog OPEN"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "decisionQuestionIds": [
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-019",
+        "PDQ-A001-020",
+        "PDQ-A001-021",
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036",
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-053",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-020",
+      "name": "External customer / Portal user (deferred)",
+      "actorCategory": "HUMAN_PRODUCT_USER",
+      "recordKind": "DOCUMENTED_DEFERRED_HUMAN_EXTERNAL_PRINCIPAL",
+      "applicableCapabilities": [],
+      "businessResponsibilities": [
+        "No FIRST_RELEASE runtime responsibility approved for an external customer Principal"
+      ],
+      "documentedOperations": [
+        "Portal submission/sharing is LATER_RELEASE; a Customer Master record is not a login Principal"
+      ],
+      "authorizationBoundaries": "Do not add external customers to minimum internal access scope or infer permission from a Customer record/link.",
+      "tenantBoundaries": "External-user trust, Membership and resource exposure require separate later scope.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-008",
+        "EVID-A001-058"
+      ],
+      "unresolvedRequirements": [
+        "All external Principal/user journey, trust/session/resource requirements remain later-scope decisions"
+      ],
+      "firstReleaseApplicability": "CONTEXT_ONLY_NOT_FIRST_RELEASE_DELIVERABLE",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "actorNature": "HUMAN_EXTERNAL_CUSTOMER_NOT_FIRST_RELEASE",
+      "contextOnlyCapabilities": [
+        "FR-PF-001",
+        "FR-BJ-001",
+        "FR-BJ-004"
+      ],
+      "decisionQuestionIds": [
+        "PDQ-A001-001",
+        "PDQ-A001-002",
+        "PDQ-A001-003",
+        "PDQ-A001-010",
+        "PDQ-A001-011",
+        "PDQ-A001-012",
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-052",
+        "PDQ-A001-053"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-021",
+      "name": "Plugin Installation identity (architectural extension context)",
+      "actorCategory": "SERVICE_AND_WORKLOAD_IDENTITY",
+      "recordKind": "DOCUMENTED_ARCHITECTURAL_CONTEXT_NOT_MANDATORY_JOURNEY",
+      "applicableCapabilities": [],
+      "businessResponsibilities": [
+        "Distinct Package/Installation/Runtime boundary; only Installation-scoped identity/grants if separately selected"
+      ],
+      "documentedOperations": [
+        "Extension Gateway events/hooks only within approved extension scope; no extension implementation required by this actor inventory"
+      ],
+      "authorizationBoundaries": "Installation/Tenant binding and valid grant do not replace resource-owning Domain authorization; never in-process or direct database authority.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-059",
+        "EVID-A001-004"
+      ],
+      "unresolvedRequirements": [
+        "Installed plugin actors/scopes and grant/revocation model OPEN; hosted runtime/marketplace not CM-1 prerequisite"
+      ],
+      "firstReleaseApplicability": "CONTEXT_ONLY_NOT_FIRST_RELEASE_DELIVERABLE",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "decisionQuestionIds": [
+        "PDQ-A001-053"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-022",
+      "name": "Product Decision Owner / TAO (existing unified internal authority)",
+      "actorCategory": "PRODUCT_GOVERNANCE_AUTHORITY",
+      "recordKind": "DOCUMENTED_EXISTING_PROJECT_AUTHORITY",
+      "applicableCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Final internal product, architecture, security/Gate/risk, task-authorization and release decisions as distinct scopes"
+      ],
+      "documentedOperations": [
+        "Issue explicit scope/evidence-bound conversation decisions and authorize recording separately; no fabricated signature"
+      ],
+      "authorizationBoundaries": "Project decision authority is not a runtime login role or bypass of Domain/Sovereign authority; technical evidence and binding obligations remain mandatory.",
+      "tenantBoundaries": "Governance spans profiles but does not grant runtime Tenant access or Central administration.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-013",
+        "EVID-A001-014",
+        "EVID-A001-016"
+      ],
+      "unresolvedRequirements": [
+        "Actual decision issuance timestamps only if provided; no legal identity/signature assertion",
+        "Named per-capability accountable Business Owner not automatically this authority"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "EXISTING_CONVERSATION_ROLE_ATTRIBUTION_ONLY",
+      "approvedProductRoleName": "NOT_A_RUNTIME_ROLE",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "decisionQuestionIds": [
+        "PDQ-A001-001",
+        "PDQ-A001-002",
+        "PDQ-A001-003",
+        "PDQ-A001-004",
+        "PDQ-A001-005",
+        "PDQ-A001-006",
+        "PDQ-A001-007",
+        "PDQ-A001-008",
+        "PDQ-A001-009",
+        "PDQ-A001-010",
+        "PDQ-A001-011",
+        "PDQ-A001-012",
+        "PDQ-A001-013",
+        "PDQ-A001-014",
+        "PDQ-A001-015",
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-019",
+        "PDQ-A001-020",
+        "PDQ-A001-021",
+        "PDQ-A001-022",
+        "PDQ-A001-023",
+        "PDQ-A001-024",
+        "PDQ-A001-025",
+        "PDQ-A001-026",
+        "PDQ-A001-027",
+        "PDQ-A001-028",
+        "PDQ-A001-029",
+        "PDQ-A001-030",
+        "PDQ-A001-031",
+        "PDQ-A001-032",
+        "PDQ-A001-033",
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036",
+        "PDQ-A001-037",
+        "PDQ-A001-038",
+        "PDQ-A001-039",
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-053",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-023",
+      "name": "Domain/Service Owner contributor role",
+      "actorCategory": "PRODUCT_GOVERNANCE_AUTHORITY",
+      "recordKind": "DOCUMENTED_OWNERSHIP_RESPONSIBILITY_PERSON_UNASSIGNED",
+      "applicableCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Supply domain rules, evidence, contract/data ownership and scoped review; preserve final project decision route"
+      ],
+      "documentedOperations": [
+        "Requirement/contract/persistence and business-effect boundary review, not universal runtime access"
+      ],
+      "authorizationBoundaries": "Logical Service/Data ownership is not an appointed person or cross-service database privilege. Final internal approval remains unified owner; destination runtime authorization belongs to owning Domain.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-060",
+        "EVID-A001-009",
+        "EVID-A001-010"
+      ],
+      "unresolvedRequirements": [
+        "Accountable individual/team for every journey UNASSIGNED; no appointment made"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "decisionQuestionIds": [
+        "PDQ-A001-001",
+        "PDQ-A001-002",
+        "PDQ-A001-003",
+        "PDQ-A001-004",
+        "PDQ-A001-005",
+        "PDQ-A001-006",
+        "PDQ-A001-007",
+        "PDQ-A001-008",
+        "PDQ-A001-009",
+        "PDQ-A001-010",
+        "PDQ-A001-011",
+        "PDQ-A001-012",
+        "PDQ-A001-013",
+        "PDQ-A001-014",
+        "PDQ-A001-015",
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-019",
+        "PDQ-A001-020",
+        "PDQ-A001-021",
+        "PDQ-A001-022",
+        "PDQ-A001-023",
+        "PDQ-A001-024",
+        "PDQ-A001-025",
+        "PDQ-A001-026",
+        "PDQ-A001-027",
+        "PDQ-A001-028",
+        "PDQ-A001-029",
+        "PDQ-A001-030",
+        "PDQ-A001-031",
+        "PDQ-A001-032",
+        "PDQ-A001-033",
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036",
+        "PDQ-A001-037",
+        "PDQ-A001-038",
+        "PDQ-A001-039",
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-053",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-024",
+      "name": "Specialist / independent technical assessor role",
+      "actorCategory": "PRODUCT_GOVERNANCE_AUTHORITY",
+      "recordKind": "DOCUMENTED_ADVISORY_ASSESSMENT_ROLE",
+      "applicableCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Provide requested actual technical assessments and findings; independence is evidenced, not asserted by role name"
+      ],
+      "documentedOperations": [
+        "Assess design/security/quality evidence in authorized scope only"
+      ],
+      "authorizationBoundaries": "Advisory to unified final owner unless identified binding external obligation requires independent approval; cannot waive controls or convert failed cases PASS.",
+      "tenantBoundaries": "No runtime Tenant or operator rights granted by reviewer status.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-015",
+        "EVID-A001-016"
+      ],
+      "unresolvedRequirements": [
+        "Specific reviewers UNASSIGNED unless independently documented; no specialist sign-off claimed; binding obligations must be evidenced"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "decisionQuestionIds": [
+        "PDQ-A001-001",
+        "PDQ-A001-002",
+        "PDQ-A001-003",
+        "PDQ-A001-004",
+        "PDQ-A001-005",
+        "PDQ-A001-006",
+        "PDQ-A001-007",
+        "PDQ-A001-008",
+        "PDQ-A001-009",
+        "PDQ-A001-010",
+        "PDQ-A001-011",
+        "PDQ-A001-012",
+        "PDQ-A001-013",
+        "PDQ-A001-014",
+        "PDQ-A001-015",
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-019",
+        "PDQ-A001-020",
+        "PDQ-A001-021",
+        "PDQ-A001-022",
+        "PDQ-A001-023",
+        "PDQ-A001-024",
+        "PDQ-A001-025",
+        "PDQ-A001-026",
+        "PDQ-A001-027",
+        "PDQ-A001-028",
+        "PDQ-A001-029",
+        "PDQ-A001-030",
+        "PDQ-A001-031",
+        "PDQ-A001-032",
+        "PDQ-A001-033",
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036",
+        "PDQ-A001-037",
+        "PDQ-A001-038",
+        "PDQ-A001-039",
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-053",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-025",
+      "name": "Existing scoped interim Quality Authority",
+      "actorCategory": "PRODUCT_GOVERNANCE_AUTHORITY",
+      "recordKind": "DOCUMENTED_EXISTING_SCOPED_QUALITY_ROLE",
+      "applicableCapabilities": [
+        "FR-BJ-001",
+        "FR-BJ-002",
+        "FR-BJ-003",
+        "FR-BJ-004",
+        "FR-BJ-005",
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-PF-003",
+        "FR-PF-004",
+        "FR-PF-005",
+        "FR-PF-006",
+        "FR-SO-001",
+        "FR-SO-002",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Maintain accepted OD-020 contract-quality policy and evidence/risk duties within existing scope, not a new appointment"
+      ],
+      "documentedOperations": [
+        "Scoped Quality review of contract risk, evidence and exceptions under accepted rules"
+      ],
+      "authorizationBoundaries": "Technical/Quality capacities and final owner decisions remain distinct; no independent Security sign-off, mandatory-control waiver or production execution right.",
+      "tenantBoundaries": "No runtime resource rights from Quality role.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-061",
+        "EVID-A001-013"
+      ],
+      "unresolvedRequirements": [
+        "No named assessor or completed review fabricated; current task assigns no new quality/security authority"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "EXISTING_SCOPED_TAO_ROLE_ONLY",
+      "approvedProductRoleName": "NOT_A_RUNTIME_ROLE",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "decisionQuestionIds": [
+        "PDQ-A001-001",
+        "PDQ-A001-002",
+        "PDQ-A001-003",
+        "PDQ-A001-004",
+        "PDQ-A001-005",
+        "PDQ-A001-006",
+        "PDQ-A001-007",
+        "PDQ-A001-008",
+        "PDQ-A001-009",
+        "PDQ-A001-010",
+        "PDQ-A001-011",
+        "PDQ-A001-012",
+        "PDQ-A001-013",
+        "PDQ-A001-014",
+        "PDQ-A001-015",
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-019",
+        "PDQ-A001-020",
+        "PDQ-A001-021",
+        "PDQ-A001-022",
+        "PDQ-A001-023",
+        "PDQ-A001-024",
+        "PDQ-A001-025",
+        "PDQ-A001-026",
+        "PDQ-A001-027",
+        "PDQ-A001-028",
+        "PDQ-A001-029",
+        "PDQ-A001-030",
+        "PDQ-A001-031",
+        "PDQ-A001-032",
+        "PDQ-A001-033",
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036",
+        "PDQ-A001-037",
+        "PDQ-A001-038",
+        "PDQ-A001-039",
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-053",
+        "PDQ-A001-054"
+      ]
+    },
+    {
+      "actorId": "ACT-A001-026",
+      "name": "Profile control-plane authority scopes (twelve documented boundaries)",
+      "actorCategory": "PLATFORM_OPERATIONAL_ACTOR",
+      "recordKind": "DOCUMENTED_LOGICAL_AUTHORITY_SCOPES_NOT_PRINCIPAL_ASSIGNMENTS",
+      "applicableCapabilities": [
+        "FR-PF-001",
+        "FR-PF-002",
+        "FR-SO-001",
+        "FR-SO-003",
+        "FR-SO-004"
+      ],
+      "businessResponsibilities": [
+        "Maintain only the separately owned registry/lifecycle/placement/trust/policy/eligibility/grant/admission/operations/evidence/recovery scopes recorded in V3-020"
+      ],
+      "documentedOperations": [
+        "Exact twelve source control-plane rows copied as documented authority boundaries, not executable permission list"
+      ],
+      "authorizationBoundaries": "Co-operated planes or shared operator do not merge scopes; replicas do not gain write authority; Domain authorization and Sovereign local authority remain distinct.",
+      "tenantBoundaries": "Validated/revalidated Tenant Context; Tenant selector untrusted; cross-Tenant access not implied. Shared, Managed and Sovereign preserve logical boundaries; local authority is profile-specific.",
+      "authoritativeEvidenceIds": [
+        "EVID-A001-062",
+        "EVID-A001-063",
+        "EVID-A001-064",
+        "EVID-A001-065",
+        "EVID-A001-066",
+        "EVID-A001-067",
+        "EVID-A001-068",
+        "EVID-A001-069",
+        "EVID-A001-070",
+        "EVID-A001-071",
+        "EVID-A001-072",
+        "EVID-A001-073"
+      ],
+      "unresolvedRequirements": [
+        "Actual principal/service/person realization and detailed operation/freshness/grant policies UNASSIGNED/OPEN; no runtime/control-plane deployment chosen"
+      ],
+      "firstReleaseApplicability": "DOCUMENTED_SCOPE_OR_CONTEXT_ONLY_NO_PERMISSION",
+      "assignedPersonOrWorkload": "UNASSIGNED",
+      "approvedProductRoleName": "UNASSIGNED",
+      "permissionGrant": "NONE_CREATED",
+      "catalogIdentifierMeaning": "Task-local traceability identifier, not a role/claim/grant or a renamed historical Actor identifier",
+      "documentedAuthorityScopes": [
+        {
+          "sourceRow": 1,
+          "boundary": "Tenant Registry and stable Tenant ID",
+          "authoritativeOwnerByProfile": "Stable-ID/active-registry scope — Shared: **Provider Tenant Registry Authority**; Managed: **Global Managed Tenant Registry Authority**; Sovereign: **Sovereign Tenant Registry Authority** after explicit local import.",
+          "runtimeEnforcementBoundary": "The named Registry Authority alone writes its registry. Managed LCP holds a read-only validated replica; Sovereign treats a global provisioning artifact only as input. D resolves Tenant through locally validated state.",
+          "governance": "ADR-003; ADR-004; `R2-ACCEPTED` handover semantics.",
+          "evidenceId": "EVID-A001-062",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 2,
+          "boundary": "Tenant lifecycle and suspension",
+          "authoritativeOwnerByProfile": "Runtime-effective lifecycle scope — Shared: **Provider Tenant Lifecycle Authority**; Managed: **Global Managed Tenant Lifecycle Authority**; Sovereign: **Sovereign Tenant Lifecycle Authority**. Commercial-account scope remains separately owned by **Product Authority** and is not permission.",
+          "runtimeEnforcementBoundary": "The Lifecycle Authority writes technical lifecycle state; the profile LCP activates validated state and D enforces it. Product Authority writes only commercial status.",
+          "governance": "ADR-003/004/005; OD-009/010/023.",
+          "evidenceId": "EVID-A001-063",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 3,
+          "boundary": "Cell Registry and Tenant Placement",
+          "authoritativeOwnerByProfile": "Placement scope — Shared: **Provider Placement Authority**; Managed: **Global Managed Placement Authority**; Sovereign: **Sovereign Placement Authority**.",
+          "runtimeEnforcementBoundary": "The named Placement Authority alone writes assignment/generation. The profile router and destination D validate Tenant plus the locally activated generation.",
+          "governance": "ADR-003; OD-015/022/023.",
+          "evidenceId": "EVID-A001-064",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 4,
+          "boundary": "Trust authorities and cryptographic keys",
+          "authoritativeOwnerByProfile": "Trust-admission/key-custody scope — Shared: **Provider Trust Authority**; Managed: **Dedicated Managed Trust Authority**; Sovereign: **Sovereign Trust Authority**.",
+          "runtimeEnforcementBoundary": "The named Trust Authority alone mutates its trust store and controls private-key custody. Workloads validate locally; replicas never obtain custody authority.",
+          "governance": "ADR-004/005/010; OD-011/012.",
+          "evidenceId": "EVID-A001-065",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 5,
+          "boundary": "Identity and workload trust",
+          "authoritativeOwnerByProfile": "Issuer-admission scope — Shared: **Provider Trust Authority**; Managed: **Dedicated Managed Trust Authority**; Sovereign: **Sovereign Trust Authority**. Credential-assertion scope: the single **Admitted Identity Issuer** identified by validated issuer metadata for that credential.",
+          "runtimeEnforcementBoundary": "Trust Authority alone admits/removes issuers. The Admitted Identity Issuer is authoritative only for its credential assertions; every D validates issuer, audience, expiry and required claims, then performs Domain authorization.",
+          "governance": "ADR-004/005; OD-009/010/011.",
+          "evidenceId": "EVID-A001-066",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 6,
+          "boundary": "Platform and local policies",
+          "authoritativeOwnerByProfile": "Common-policy-contract scope: **Shared Policy Governance**. Activation scope — Shared: **Shared Policy Activation Authority**; Managed: **Dedicated Managed Policy Activation Authority**; Sovereign: **Sovereign Policy Authority**. Resource-rule scope: each **resource-owning Domain**.",
+          "runtimeEnforcementBoundary": "Shared Policy Governance writes the common contract; the profile Activation Authority activates a validated version; each D owns and enforces resource rules. No policy can disable mandatory security invariants.",
+          "governance": "ADR-004/005; `R2-ACCEPTED` version/conflict rules.",
+          "evidenceId": "EVID-A001-067",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 7,
+          "boundary": "Product entitlements and offline license verification",
+          "authoritativeOwnerByProfile": "Commercial-evidence scope: **Product Entitlement Authority**. Eligibility-activation scope — Shared: **Shared Entitlement Eligibility Authority**; Managed: **Dedicated Managed Entitlement Eligibility Authority**; Sovereign: **Sovereign Entitlement Eligibility Authority**. Permission scope: each **resource-owning Domain**.",
+          "runtimeEnforcementBoundary": "Product Authority issues commercial evidence; profile Eligibility Authority validates/activates it; D separately authorizes resources/actions. No replica or entitlement issuer grants permission.",
+          "governance": "ADR-004/005; OD-001/023; Product authority required.",
+          "evidenceId": "EVID-A001-068",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 8,
+          "boundary": "Administrative and user Grants",
+          "authoritativeOwnerByProfile": "Platform/admin-grant scope — Shared: **Shared Platform Grant Authority**; Managed: **Dedicated Managed Grant Authority**; Sovereign: **Sovereign Grant Authority**. Resource-grant scope: each **resource-owning Domain**. Plugin Installation-grant scope: the profile's **Plugin Control Plane**.",
+          "runtimeEnforcementBoundary": "Each named Grant Authority alone writes its scope. Destination D performs final resource/action authorization. Plugin grants remain Installation- and Tenant-bound.",
+          "governance": "ADR-004/005/006; V3-003-DEC-008 principles; OD-010/016.",
+          "evidenceId": "EVID-A001-069",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 9,
+          "boundary": "Application admission and Client Registration",
+          "authoritativeOwnerByProfile": "Admission scope — Shared: **Shared Admission Authority**; Managed: **Dedicated Managed Admission Authority**; Sovereign: **Sovereign Admission Authority**.",
+          "runtimeEnforcementBoundary": "The named Admission Authority registers a client/workload for its trust domain. D still validates identity/audience and authorizes the operation. Catalog replicas cannot admit.",
+          "governance": "ADR-004/005/008; OD-007/009/011/012.",
+          "evidenceId": "EVID-A001-070",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 10,
+          "boundary": "Deployment, operations and support authority",
+          "authoritativeOwnerByProfile": "Infrastructure-operation scope — Shared: **Provider Operations Authority**; Managed: **Dedicated Managed Operations Authority**; Sovereign: **Sovereign Operations Authority**. Destination business-operation scope remains with each **resource-owning Domain**.",
+          "runtimeEnforcementBoundary": "Operations Authority changes infrastructure with scoped identity. Destination D authorizes sensitive Domain actions. Support identity has no independent write authority.",
+          "governance": "ADR-004/010/011/012; OD-015/023.",
+          "evidenceId": "EVID-A001-071",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 11,
+          "boundary": "Audit evidence and operational telemetry",
+          "authoritativeOwnerByProfile": "Business-fact scope: each **producing Domain**. Authoritative Audit-record scope: the profile's **Audit Domain**. Operational-telemetry scope: the profile's **Observability Authority**.",
+          "runtimeEnforcementBoundary": "Producing D writes owned Business Facts/obligations; Audit Domain owns authoritative Audit records; Observability Authority owns minimized telemetry configuration. None may overwrite another scope.",
+          "governance": "ADR-004/007/010; V3-003-DEC-010/011/014 principles.",
+          "evidenceId": "EVID-A001-072",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        },
+        {
+          "sourceRow": 12,
+          "boundary": "Recovery and emergency administrative access",
+          "authoritativeOwnerByProfile": "Infrastructure-recovery scope — Shared: **Provider Recovery Authority**; Managed: **Dedicated Managed Recovery Authority**; Sovereign: **Sovereign Recovery Authority**. Durable Domain-evidence scope remains with its **owning Domain**; emergency business-action authorization remains with the **destination Domain**.",
+          "runtimeEnforcementBoundary": "Recovery Authority orchestrates infrastructure recovery; owning Domain supplies authoritative evidence; destination D authorizes business effects. No support or replica becomes an evidence owner.",
+          "governance": "ADR-004/007/010/012; V3-003-DEC-014; OD-012/015/023.",
+          "evidenceId": "EVID-A001-073",
+          "assignedPersonOrRuntimeRealization": "UNASSIGNED",
+          "meaning": "Existing R2-accepted logical authority scope, not a new product role, appointment or active runtime grant"
+        }
+      ],
+      "decisionQuestionIds": [
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018",
+        "PDQ-A001-019",
+        "PDQ-A001-020",
+        "PDQ-A001-021",
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036",
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042",
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045",
+        "PDQ-A001-046",
+        "PDQ-A001-047",
+        "PDQ-A001-048",
+        "PDQ-A001-049",
+        "PDQ-A001-050",
+        "PDQ-A001-051",
+        "PDQ-A001-052",
+        "PDQ-A001-053",
+        "PDQ-A001-054"
+      ]
+    }
+  ],
+  "categories": [
+    "EXTERNAL_SYSTEM_ACTOR",
+    "HUMAN_PRODUCT_USER",
+    "PLATFORM_OPERATIONAL_ACTOR",
+    "PRODUCT_GOVERNANCE_AUTHORITY",
+    "SERVICE_AND_WORKLOAD_IDENTITY",
+    "TENANT_SCOPED_ADMINISTRATOR"
+  ],
+  "exclusions": [
+    "No new RBAC model or role membership/permission assignment",
+    "Threat actors in V3-003 Annexes are not product roles and are not renumbered",
+    "External customer/Portal and plugin installation context do not become mandatory15-capability implementation scope",
+    "Broker, database and storage products are technical components, not automatically human/external authorized actors; selection and any concrete identities remain OPEN"
+  ]
+}

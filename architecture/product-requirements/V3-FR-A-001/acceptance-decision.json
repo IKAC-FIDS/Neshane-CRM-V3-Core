@@ -1,0 +1,67 @@
+{
+  "task": "V3-FR-A-001",
+  "title": "Product Actors, Ownership and Decision Governance",
+  "decisionStatus": "AUTHORITY_DECISION_RECORDED",
+  "exactAuthorityDecision": "ACCEPTED — REQUIREMENTS BASELINE",
+  "authority": "Product Decision Owner / Technical Architecture Owner (TAO), existing unified internal project role",
+  "authoritySource": "User instruction for V3-FR-A-001-ACCEPTANCE",
+  "decisionDate": "2026-11-18",
+  "authorityIssuanceTimestamp": null,
+  "recordingTimestamp": "2026-11-18T17:56:52.658634+00:00",
+  "recordingTimestampMeaning": "Actual recording event in UTC, not a fabricated owner issuance time",
+  "legalIdentityOrSignatureClaim": null,
+  "reviewedRepository": "Core",
+  "reviewedBranch": "codex/v3-fr-a-001",
+  "reviewedHead": "702912743b36cd20ddb3a920394521c324ec0041",
+  "acceptedScope": [
+    "Nine V3-FR-A-001 requirements-engineering artifacts",
+    "15 first-release capabilities with approved logical ownership and candidate actor/owner questions",
+    "26 documented actor records, 54 open product decision questions and 90 source-fact locators"
+  ],
+  "explicitlyPreservedOpenItems": [
+    "54 open product decision questions",
+    "15 unassigned accountable Business Owners",
+    "unresolved role, authorization, actor and governance questions",
+    "existing architecture and governance gates"
+  ],
+  "implementationAuthorizationGranted": false,
+  "productRulesApproved": false,
+  "rbacOrIamApproved": false,
+  "productRolesApproved": false,
+  "architectureDecisionsClosed": [],
+  "unresolvedBusinessRulesApproved": false,
+  "acceptedArtifactManifest": [
+    "architecture/product-requirements/V3-FR-A-001/actor-inventory.md",
+    "architecture/product-requirements/V3-FR-A-001/actor-inventory.json",
+    "architecture/product-requirements/V3-FR-A-001/authorization-boundaries.md",
+    "architecture/product-requirements/V3-FR-A-001/capability-ownership-matrix.md",
+    "architecture/product-requirements/V3-FR-A-001/capability-ownership-matrix.json",
+    "architecture/product-requirements/V3-FR-A-001/decision-governance.md",
+    "architecture/product-requirements/V3-FR-A-001/open-product-decisions.md",
+    "architecture/product-requirements/V3-FR-A-001/source-traceability.json",
+    "architecture/product-requirements/V3-FR-A-001/validation-report.md"
+  ],
+  "newAcceptanceArtifacts": [
+    "architecture/product-requirements/V3-FR-A-001/acceptance-decision.md",
+    "architecture/product-requirements/V3-FR-A-001/acceptance-decision.json"
+  ],
+  "exactAcceptedNextTask": "V3-FR-A-002",
+  "nextTaskStarted": false,
+  "gitRegistration": {
+    "authorizedCommitCount": 1,
+    "expectedParent": "702912743b36cd20ddb3a920394521c324ec0041",
+    "expectedArtifactCount": 11,
+    "message": "docs(product): accept actors ownership and decision governance baseline",
+    "pushAuthorized": false
+  },
+  "governance": {
+    "roadmap": "APPROVED AS PRODUCT EXECUTION ROADMAP",
+    "v3FrA001": "ACCEPTED — REQUIREMENTS BASELINE",
+    "localInfra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "gRuntime": "BLOCKED",
+    "feBe": "PENDING",
+    "authIam": "PENDING",
+    "offline": "PROHIBITED",
+    "production": "NOT AUTHORIZED"
+  }
+}

@@ -1,0 +1,1171 @@
+{
+  "taskId": "V3-FR-A-001",
+  "status": "REQUIREMENTS_ENGINEERING_PREPARED_FOR_OWNER_REVIEW_NOT_ACCEPTED",
+  "recordedAt": "2026-11-18T18:09:59.132248+00:00",
+  "repositoryBaseline": "702912743b36cd20ddb3a920394521c324ec0041",
+  "branch": "codex/v3-fr-a-001",
+  "governance": {
+    "Roadmap": "APPROVED AS PRODUCT EXECUTION ROADMAP",
+    "ThisTask": "EXPLICIT REQUIREMENTS-ENGINEERING AUTHORIZATION ONLY",
+    "Local-Infra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "G-RUNTIME": "BLOCKED",
+    "FE-BE": "PENDING",
+    "AUTH/IAM": "PENDING",
+    "Offline": "PROHIBITED",
+    "OD-013/014/015/017": "OPEN",
+    "SeaweedFS": "EXPERIMENTAL",
+    "Product implementation": "NOT AUTHORIZED",
+    "Production": "NOT AUTHORIZED"
+  },
+  "ownershipRule": "Approved logical ownership remains authoritative. Accountable person/team and named deployable are separate, undocumented assignments marked UNASSIGNED; topology OPEN. Existing unified final decision authority is not default Business Owner.",
+  "capabilities": [
+    {
+      "capabilityId": "FR-BJ-001",
+      "title": "Register and Maintain Customer Master",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Customer Domain"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Customer-owned company, person, contact, branch and relationship records; Customer Domain is authoritative and owns writes"
+      ],
+      "operationOwnership": [
+        "Customer Domain enforces resource/action authorization; Platform Core supplies validated tenant/membership context"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-002"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-002",
+          "capabilityConcept": "Customer company/person/contact master",
+          "approvedLogicalOwner": "Customer Domain",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Customer-owned company, person, contact, branch and relationship records; Customer Domain is authoritative and owns writes",
+          "readAndIntegrationBoundary": "Versioned Customer API/events; authorized projections",
+          "authorizationOwner": "Customer Domain enforces resource/action authorization; Platform Core supplies validated tenant/membership context",
+          "approval": "**Approved — V3-002B-DEC-002**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Customer Domain enforces resource/action authorization; Platform Core supplies validated tenant/membership context"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Identity/Tenant Context and Customer authorization mandatory",
+        "Customer mutation Audit obligations mandatory for covered successful mutations; exact failure policy OPEN",
+        "Entitlement/Quota/Attachment/Notification integration only where separately required"
+      ],
+      "documentedResponsibilities": "Company/person/contact master maintenance; Customer owns branch and relationship facts",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-002",
+        "ACT-A001-015",
+        "ACT-A001-016",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-001",
+        "PDQ-A001-002",
+        "PDQ-A001-003"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-028",
+        "EVID-A001-043"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-BJ-002",
+      "title": "Find and Review Customer",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Customer Domain"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Customer-owned company, person, contact, branch and relationship records; Customer Domain is authoritative and owns writes"
+      ],
+      "operationOwnership": [
+        "Customer Domain enforces resource/action authorization; Platform Core supplies validated tenant/membership context"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-002"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-002",
+          "capabilityConcept": "Customer company/person/contact master",
+          "approvedLogicalOwner": "Customer Domain",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Customer-owned company, person, contact, branch and relationship records; Customer Domain is authoritative and owns writes",
+          "readAndIntegrationBoundary": "Versioned Customer API/events; authorized projections",
+          "authorizationOwner": "Customer Domain enforces resource/action authorization; Platform Core supplies validated tenant/membership context",
+          "approval": "**Approved — V3-002B-DEC-002**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Customer Domain enforces resource/action authorization; Platform Core supplies validated tenant/membership context"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Identity/Tenant and Customer disclosure authorization mandatory",
+        "Search remains Customer-owned; no selected engine",
+        "Safe explicit Customer disclosure-denial Audit; no universal successful-read event"
+      ],
+      "documentedResponsibilities": "Authorized retrieval and business search; disclosure belongs to Customer",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-003",
+        "ACT-A001-015",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-004",
+        "PDQ-A001-005",
+        "PDQ-A001-006"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-029",
+        "EVID-A001-043"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-BJ-003",
+      "title": "Manage Opportunity Through the Sales Pipeline",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Sales Domain"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Sales-owned Opportunity, Pipeline, Stage Transition and Opportunity amount/currency; Sales Domain is authoritative and owns writes"
+      ],
+      "operationOwnership": [
+        "Sales Domain makes and enforces final Opportunity resource/action authorization"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-006"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-006",
+          "capabilityConcept": "Sales opportunity/pipeline",
+          "approvedLogicalOwner": "Sales Domain",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Sales-owned Opportunity, Pipeline, Stage Transition and Opportunity amount/currency; Sales Domain is authoritative and owns writes",
+          "readAndIntegrationBoundary": "Customer references only by identifier and versioned API/event or authorized projection; Sales-owned API/events for consumers",
+          "authorizationOwner": "Sales Domain makes and enforces final Opportunity resource/action authorization",
+          "approval": "**Approved — V3-002B-DEC-006**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Sales Domain makes and enforces final Opportunity resource/action authorization"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Customer reference by versioned contract/authorized projection; no private SQL",
+        "Identity/Tenant and Sales authorization mandatory",
+        "Product Catalog/Lead Source/Pain Point/Use Case LATER_RELEASE; amount/currency independent"
+      ],
+      "documentedResponsibilities": "Opportunity/Pipeline core and Customer contract reference; amount/currency independent of Product Catalog",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-004",
+        "ACT-A001-015",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-007",
+        "PDQ-A001-008",
+        "PDQ-A001-009"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-030",
+        "EVID-A001-044"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-BJ-004",
+      "title": "Register and Process a Customer Request",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Customer Request Domain within the logical Workflow capability"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary; no mandatory generic Workflow Engine"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Request, Lifecycle, Status History, Triage and Assignment; Customer Request Domain is authoritative and owns writes"
+      ],
+      "operationOwnership": [
+        "Customer Request Domain makes and enforces final Request resource/action authorization; Assignment grants no authority"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-012"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-012",
+          "capabilityConcept": "Customer Request workflow",
+          "approvedLogicalOwner": "Customer Request Domain within the logical Workflow capability",
+          "owningBoundary": "Undecided deployment boundary; no mandatory generic Workflow Engine",
+          "authoritativeDataAndWrites": "Request, Lifecycle, Status History, Triage and Assignment; Customer Request Domain is authoritative and owns writes",
+          "readAndIntegrationBoundary": "Customer reference only by identifier and versioned contracts; later Task/Opportunity/Technical Document integration by owned contracts",
+          "authorizationOwner": "Customer Request Domain makes and enforces final Request resource/action authorization; Assignment grants no authority",
+          "approval": "**Approved — V3-002B-DEC-012**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Customer Request Domain makes and enforces final Request resource/action authorization; Assignment grants no authority"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Customer reference contract; Request authorization independent",
+        "No Portal/generic Workflow Engine prerequisite",
+        "Automatic Task/Opportunity/Document links LATER_RELEASE"
+      ],
+      "documentedResponsibilities": "Internal creation, Customer reference, view/tracking, base lifecycle, status history and assignment",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-005",
+        "ACT-A001-015",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-010",
+        "PDQ-A001-011",
+        "PDQ-A001-012"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-031",
+        "EVID-A001-046"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-BJ-005",
+      "title": "Plan and Track a Work Task",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Work Domain"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Work owns Task, Task Lifecycle/Status, Due Date, Assignment Record and cross-domain Link Metadata"
+      ],
+      "operationOwnership": [
+        "Work authorizes only Task resources; Assignment/links grant no Membership, Entitlement or authorization to related resources"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-035"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-035",
+          "capabilityConcept": "Work Core / Task",
+          "approvedLogicalOwner": "Work Domain",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Work owns Task, Task Lifecycle/Status, Due Date, Assignment Record and cross-domain Link Metadata",
+          "readAndIntegrationBoundary": "Related Customer, Opportunity and Customer Request resources remain owned by their domains; valid contracts only; no direct database access or foreign Business Fact writes",
+          "authorizationOwner": "Work authorizes only Task resources; Assignment/links grant no Membership, Entitlement or authorization to related resources",
+          "approval": "**Approved — V3-002B-DEC-035**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Work authorizes only Task resources; Assignment/links grant no Membership, Entitlement or authorization to related resources"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Work authorization and validated Tenant Context",
+        "Manual links preserve related-domain authorization",
+        "Assignment grants no related-resource access; automatic integration deferred"
+      ],
+      "documentedResponsibilities": "Create/view/edit, assignment, status, due date and manual contract-based links",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-006",
+        "ACT-A001-015",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-013",
+        "PDQ-A001-014",
+        "PDQ-A001-015"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-032",
+        "EVID-A001-051"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-PF-001",
+      "title": "Establish Trusted Tenant Access",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Identity Trust Capability in Platform Core",
+        "Tenant Management Capability in Platform Core"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary",
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Identity owns Principal Identity, Credential/Authenticator Registration, External Identity Mapping, Authentication State, Session/Refresh/Revocation State and Token-Issuance Metadata; Tenant, Entitlement, Portal and business ownerships remain separate",
+        "Tenant Management owns Tenant, Organization, Tenant Lifecycle, Organization/Tenant Membership, Membership Status, Principal-to-Tenant Association and Membership Role Assignment; Identity, Entitlement and business ownerships remain separate"
+      ],
+      "operationOwnership": [
+        "Identity decides only Principal/Session validity; token/session grants no Membership, Entitlement or business authorization; Tenant switching revalidates Membership/Context; Dedicated Sovereign authority is local",
+        "Tenant Management authorizes its own resources and membership administration only; Membership/role grants no Entitlement or business authorization; Dedicated Sovereign authority is local"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-053",
+        "V3-002B-DEC-054"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-053",
+          "capabilityConcept": "Identity/principal/session",
+          "approvedLogicalOwner": "Identity Trust Capability in Platform Core",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Identity owns Principal Identity, Credential/Authenticator Registration, External Identity Mapping, Authentication State, Session/Refresh/Revocation State and Token-Issuance Metadata; Tenant, Entitlement, Portal and business ownerships remain separate",
+          "readAndIntegrationBoundary": "Versioned identity contracts; provider assertions require validation and approved mapping; no direct business-data ownership",
+          "authorizationOwner": "Identity decides only Principal/Session validity; token/session grants no Membership, Entitlement or business authorization; Tenant switching revalidates Membership/Context; Dedicated Sovereign authority is local",
+          "approval": "**Approved — V3-002B-DEC-053**"
+        },
+        {
+          "decisionId": "V3-002B-DEC-054",
+          "capabilityConcept": "Tenant/Organization/Membership",
+          "approvedLogicalOwner": "Tenant Management Capability in Platform Core",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Tenant Management owns Tenant, Organization, Tenant Lifecycle, Organization/Tenant Membership, Membership Status, Principal-to-Tenant Association and Membership Role Assignment; Identity, Entitlement and business ownerships remain separate",
+          "readAndIntegrationBoundary": "Versioned tenant/membership contracts; Tenant Context derives from valid Principal plus active Membership and is revalidated at trust boundaries",
+          "authorizationOwner": "Tenant Management authorizes its own resources and membership administration only; Membership/role grants no Entitlement or business authorization; Dedicated Sovereign authority is local",
+          "approval": "**Approved — V3-002B-DEC-054**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Identity decides only Principal/Session validity; token/session grants no Membership, Entitlement or business authorization; Tenant switching revalidates Membership/Context; Dedicated Sovereign authority is local",
+          "Tenant Management authorizes its own resources and membership administration only; Membership/role grants no Entitlement or business authorization; Dedicated Sovereign authority is local"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Identity Principal/session validity and Tenant Management Membership are distinct",
+        "Resource-owning Domains retain final operation authority",
+        "Entitlement when applicable never substitutes for Membership/authorization"
+      ],
+      "documentedResponsibilities": "Approved Option B: internal authenticated Principal, active Membership, valid/revalidated Tenant Context, destination Membership validation for switching",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-011",
+        "ACT-A001-015",
+        "ACT-A001-018",
+        "ACT-A001-019",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025",
+        "ACT-A001-026"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-016",
+        "PDQ-A001-017",
+        "PDQ-A001-018"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-033",
+        "EVID-A001-054",
+        "EVID-A001-055"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-PF-002",
+      "title": "Evaluate Feature Eligibility",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Independent logical Entitlement capability in Platform Core"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Entitlement owns authoritative Feature Assignment, effective Entitlement state and Eligibility evaluation results; Plan/Subscription facts, Billing, Pricing and Quota ownership remain separate"
+      ],
+      "operationOwnership": [
+        "Entitlement decides eligibility only; each Resource-owning Domain makes and enforces final Resource/Action Authorization; Dedicated Sovereign authority/evaluation is local"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-018"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-018",
+          "capabilityConcept": "Entitlement",
+          "approvedLogicalOwner": "Independent logical Entitlement capability in Platform Core",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Entitlement owns authoritative Feature Assignment, effective Entitlement state and Eligibility evaluation results; Plan/Subscription facts, Billing, Pricing and Quota ownership remain separate",
+          "readAndIntegrationBoundary": "Versioned policy/evaluation contracts; Tenant Management retains Tenant/Organization and Membership",
+          "authorizationOwner": "Entitlement decides eligibility only; each Resource-owning Domain makes and enforces final Resource/Action Authorization; Dedicated Sovereign authority/evaluation is local",
+          "approval": "**Approved — V3-002B-DEC-018**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Entitlement decides eligibility only; each Resource-owning Domain makes and enforces final Resource/Action Authorization; Dedicated Sovereign authority/evaluation is local"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Tenant/Organization references remain Tenant Management-owned",
+        "Plan/Subscription source facts owner OPEN; Billing/Pricing not implicitly owned here",
+        "Each capability mapping separately defined; no business permission from eligibility"
+      ],
+      "documentedResponsibilities": "Feature Assignment and effective eligibility, traceable to Tenant/Organization and approved Plan/Subscription facts",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-015",
+        "ACT-A001-019",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025",
+        "ACT-A001-026"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-019",
+        "PDQ-A001-020",
+        "PDQ-A001-021"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-034",
+        "EVID-A001-048"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-PF-003",
+      "title": "Enforce Quota-Controlled Operation",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Independent logical Quota capability in Platform Core"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Quota owns authoritative Effective Limit, Reservation Ledger, Usage/Consumption State, Reconciliation State and Quota Decision Results; producers retain source Usage Facts"
+      ],
+      "operationOwnership": [
+        "Producing Resource-owning Domain makes and enforces final Resource/Action Authorization; Dedicated Sovereign Quota authority/control is local"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-021"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-021",
+          "capabilityConcept": "Quota",
+          "approvedLogicalOwner": "Independent logical Quota capability in Platform Core",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Quota owns authoritative Effective Limit, Reservation Ledger, Usage/Consumption State, Reconciliation State and Quota Decision Results; producers retain source Usage Facts",
+          "readAndIntegrationBoundary": "Versioned policy/usage contracts; Entitlement remains owner of Eligibility; no shared database access",
+          "authorizationOwner": "Producing Resource-owning Domain makes and enforces final Resource/Action Authorization; Dedicated Sovereign Quota authority/control is local",
+          "approval": "**Approved — V3-002B-DEC-021**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Producing Resource-owning Domain makes and enforces final Resource/Action Authorization; Dedicated Sovereign Quota authority/control is local"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Producing Domain owns operation and source Usage Facts",
+        "Entitlement eligibility distinct from Limit/Reservation/Usage",
+        "Each consuming-capability integration requires approval"
+      ],
+      "documentedResponsibilities": "Effective limits, Usage, atomic Reservation/Commit/Release, reconciliation and Reason/Period/Correlation",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-015",
+        "ACT-A001-016",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-022",
+        "PDQ-A001-023",
+        "PDQ-A001-024"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-035",
+        "EVID-A001-049"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-PF-004",
+      "title": "Deliver Authorized In-App Notification",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Notification Domain"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Notification-owned Template, Rule, Lifecycle, Delivery Ledger, Delivery Attempts, Deduplication, Retry State and In-App records; physical persistence design remains undecided"
+      ],
+      "operationOwnership": [
+        "Notification authorizes Notification resources and recipient access only; producer retains business-operation authorization"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-009"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-009",
+          "capabilityConcept": "Notification templates/delivery",
+          "approvedLogicalOwner": "Notification Domain",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Notification-owned Template, Rule, Lifecycle, Delivery Ledger, Delivery Attempts, Deduplication, Retry State and In-App records; physical persistence design remains undecided",
+          "readAndIntegrationBoundary": "Producing Domain retains Business Fact; integration uses versioned contracts with tenant provenance",
+          "authorizationOwner": "Notification authorizes Notification resources and recipient access only; producer retains business-operation authorization",
+          "approval": "**Approved — V3-002B-DEC-009**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Notification authorizes Notification resources and recipient access only; producer retains business-operation authorization"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Producing Domain owns Business Fact and original operation authorization",
+        "Notification owns recipient/delivery state only",
+        "In-App only; Email/SMS/Push deferred"
+      ],
+      "documentedResponsibilities": "Core + In-App: Template, base Rule/lifecycle, Delivery Ledger, deduplication, retry/Audit",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-007",
+        "ACT-A001-015",
+        "ACT-A001-016",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-025",
+        "PDQ-A001-026",
+        "PDQ-A001-027"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-036",
+        "EVID-A001-045"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-PF-005",
+      "title": "Attach and Retrieve File for an Approved Resource",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "File/Content Domain for file state; Resource-owning Domain for attachment meaning and relation"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "File/Content owns File Metadata, Content/Object Lifecycle, Storage Reference, Integrity/Checksum and Validation/Quarantine State; resource owner owns Attachment semantics and relationship to its Business Resource"
+      ],
+      "operationOwnership": [
+        "File Domain authorizes the file and Resource-owning Domain authorizes attachment operations and related-resource access; File ID/link grants no authority; Dedicated Sovereign authority is local"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-038"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-038",
+          "capabilityConcept": "Files/content",
+          "approvedLogicalOwner": "File/Content Domain for file state; Resource-owning Domain for attachment meaning and relation",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "File/Content owns File Metadata, Content/Object Lifecycle, Storage Reference, Integrity/Checksum and Validation/Quarantine State; resource owner owns Attachment semantics and relationship to its Business Resource",
+          "readAndIntegrationBoundary": "Versioned authorized contracts only; no direct cross-service database access; attachment deletion does not by itself delete the File Object",
+          "authorizationOwner": "File Domain authorizes the file and Resource-owning Domain authorizes attachment operations and related-resource access; File ID/link grants no authority; Dedicated Sovereign authority is local",
+          "approval": "**Approved — V3-002B-DEC-038**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "File Domain authorizes the file and Resource-owning Domain authorizes attachment operations and related-resource access; File ID/link grants no authority; Dedicated Sovereign authority is local"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "File Domain owns object/file state; resource Domain owns Attachment relation",
+        "Both authorizations required; resource-by-resource attachment approval",
+        "Provider/scanning/retention OPEN; attachment unlink not automatic object deletion"
+      ],
+      "documentedResponsibilities": "Metadata, controlled upload/download, base lifecycle and contract-based attachments",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-008",
+        "ACT-A001-015",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-028",
+        "PDQ-A001-029",
+        "PDQ-A001-030"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-037",
+        "EVID-A001-052"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-PF-006",
+      "title": "Produce an Approved Deterministic Report",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Reporting Capability for report resources; Producing Domains retain Business Facts"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Reporting owns Report Catalog/Definition Metadata, Execution State, Generated Report Artifact/Snapshot and its authorized dedicated Projections; producers own source Business Facts"
+      ],
+      "operationOwnership": [
+        "Reporting authorizes its report resources subject to Tenant Isolation and source disclosure constraints; projections cannot bypass source authorization; Dedicated Sovereign authority is local"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-028"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-028",
+          "capabilityConcept": "Reporting",
+          "approvedLogicalOwner": "Reporting Capability for report resources; Producing Domains retain Business Facts",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Reporting owns Report Catalog/Definition Metadata, Execution State, Generated Report Artifact/Snapshot and its authorized dedicated Projections; producers own source Business Facts",
+          "readAndIntegrationBoundary": "Versioned source contracts and approved projections only; Operational Platform is infrastructure operator, not semantic owner",
+          "authorizationOwner": "Reporting authorizes its report resources subject to Tenant Isolation and source disclosure constraints; projections cannot bypass source authorization; Dedicated Sovereign authority is local",
+          "approval": "**Approved — V3-002B-DEC-028**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Reporting authorizes its report resources subject to Tenant Isolation and source disclosure constraints; projections cannot bypass source authorization; Dedicated Sovereign authority is local"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Reporting owns definitions/execution/artifact/projections; producers own facts",
+        "Approved Report Sets, source freshness and disclosure rules required",
+        "No cross-service SQL, advanced/custom builder or mandatory synchronous per-record source checks"
+      ],
+      "documentedResponsibilities": "Reporting Core: approved deterministic tenant-scoped Report Sets, execution/artifact and authorized projections",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-009",
+        "ACT-A001-015",
+        "ACT-A001-016",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-031",
+        "PDQ-A001-032",
+        "PDQ-A001-033"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-038",
+        "EVID-A001-050"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-SO-001",
+      "title": "Record Security, Administrative and Privileged Audit Evidence",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Audit Domain for system-wide Audit records; Producing Domains retain Business Facts and Domain-specific Audit"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Audit Domain is authoritative for system-wide security, administrative and Privileged records and authorized Audit projections; producers remain authoritative for their Business Facts and Domain-specific Audit"
+      ],
+      "operationOwnership": [
+        "Audit Domain makes and enforces final access decisions for its Audit resources; Dedicated Sovereign security and operational authority is local"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-014"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-014",
+          "capabilityConcept": "Audit",
+          "approvedLogicalOwner": "Audit Domain for system-wide Audit records; Producing Domains retain Business Facts and Domain-specific Audit",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Audit Domain is authoritative for system-wide security, administrative and Privileged records and authorized Audit projections; producers remain authoritative for their Business Facts and Domain-specific Audit",
+          "readAndIntegrationBoundary": "Versioned contracts only; Audit Domain has no direct access to private domain databases",
+          "authorizationOwner": "Audit Domain makes and enforces final access decisions for its Audit resources; Dedicated Sovereign security and operational authority is local",
+          "approval": "**Approved — V3-002B-DEC-014**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Audit Domain makes and enforces final access decisions for its Audit resources; Dedicated Sovereign security and operational authority is local"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Producing Domain Business Facts/obligations distinct from authoritative Audit ingestion",
+        "Trusted source/Tenant provenance, integrity and scoped disclosure",
+        "No universal Audit catalog/failure/retention policy or executable DURABLE_DEFER approval"
+      ],
+      "documentedResponsibilities": "Append-oriented Audit Core, Tenant/Platform separation, Actor/Action/Target/Outcome/Correlation, integrity and base retention policy obligation",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-015",
+        "ACT-A001-016",
+        "ACT-A001-017",
+        "ACT-A001-019",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025",
+        "ACT-A001-026"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-034",
+        "PDQ-A001-035",
+        "PDQ-A001-036"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-039",
+        "EVID-A001-047"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-SO-002",
+      "title": "Review Authorized Audit Evidence",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Audit Domain for system-wide Audit records; Producing Domains retain Business Facts and Domain-specific Audit"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Audit Domain is authoritative for system-wide security, administrative and Privileged records and authorized Audit projections; producers remain authoritative for their Business Facts and Domain-specific Audit"
+      ],
+      "operationOwnership": [
+        "Audit Domain makes and enforces final access decisions for its Audit resources; Dedicated Sovereign security and operational authority is local"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-014"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-014",
+          "capabilityConcept": "Audit",
+          "approvedLogicalOwner": "Audit Domain for system-wide Audit records; Producing Domains retain Business Facts and Domain-specific Audit",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Audit Domain is authoritative for system-wide security, administrative and Privileged records and authorized Audit projections; producers remain authoritative for their Business Facts and Domain-specific Audit",
+          "readAndIntegrationBoundary": "Versioned contracts only; Audit Domain has no direct access to private domain databases",
+          "authorizationOwner": "Audit Domain makes and enforces final access decisions for its Audit resources; Dedicated Sovereign security and operational authority is local",
+          "approval": "**Approved — V3-002B-DEC-014**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Audit Domain makes and enforces final access decisions for its Audit resources; Dedicated Sovereign security and operational authority is local"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Audit Domain controls its resources, not general operator entitlement",
+        "Sensitive access/lifecycle evidence obligations per existing bounded decisions",
+        "Search/disclosure/purpose policy and audit-of-audit recursion OPEN"
+      ],
+      "documentedResponsibilities": "Authorized Audit Core viewing with Tenant/Platform scope and disclosure protection",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-010",
+        "ACT-A001-015",
+        "ACT-A001-017",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-037",
+        "PDQ-A001-038",
+        "PDQ-A001-039"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-040",
+        "EVID-A001-047"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-SO-003",
+      "title": "Observe Platform and Service Health",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Operational Platform Capability for operational state; source services and logical domains retain their authorities"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Operational Platform owns Operational Visibility Projections, Health/Readiness Aggregation, Privileged Operation Request/Execution State and approved control state; source services own signals/configuration; domains own Business Facts; Audit/Tenant/Reporting/Notification ownerships remain unchanged"
+      ],
+      "operationOwnership": [
+        "Operational Platform authorizes only its resources; destination domain authorizes business effects; privileged actions require limited identity, explicit scope and traceable Audit; Dedicated Sovereign authority is local"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-050"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-050",
+          "capabilityConcept": "Administration / Operational Core",
+          "approvedLogicalOwner": "Operational Platform Capability for operational state; source services and logical domains retain their authorities",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Operational Platform owns Operational Visibility Projections, Health/Readiness Aggregation, Privileged Operation Request/Execution State and approved control state; source services own signals/configuration; domains own Business Facts; Audit/Tenant/Reporting/Notification ownerships remain unchanged",
+          "readAndIntegrationBoundary": "Versioned authorized contracts only; no direct cross-service database access; deferred Bulk Import, Email Administration and advanced capability ownerships remain Pending",
+          "authorizationOwner": "Operational Platform authorizes only its resources; destination domain authorizes business effects; privileged actions require limited identity, explicit scope and traceable Audit; Dedicated Sovereign authority is local",
+          "approval": "**Approved — V3-002B-DEC-050**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Operational Platform authorizes only its resources; destination domain authorizes business effects; privileged actions require limited identity, explicit scope and traceable Audit; Dedicated Sovereign authority is local"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Each Service owns source signal; Operational Platform authorized aggregation only",
+        "Profile Observability Authority owns minimized telemetry configuration",
+        "Telemetry is not authoritative Audit or Domain authorization; no universal operational UI"
+      ],
+      "documentedResponsibilities": "Operational Core health/readiness, scope separation and authorized signal aggregation",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-012",
+        "ACT-A001-013",
+        "ACT-A001-014",
+        "ACT-A001-015",
+        "ACT-A001-019",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025",
+        "ACT-A001-026"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-040",
+        "PDQ-A001-041",
+        "PDQ-A001-042"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-041",
+        "EVID-A001-053"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    },
+    {
+      "capabilityId": "FR-SO-004",
+      "title": "Execute an Authorized Privileged Operation",
+      "releaseScope": "FIRST_RELEASE_APPROVED_TARGET",
+      "businessDomainOwner": [
+        "Operational Platform Capability for operational state; source services and logical domains retain their authorities"
+      ],
+      "owningServiceOrArchitecturalBoundary": [
+        "Undecided deployment boundary"
+      ],
+      "namedOwningService": "UNASSIGNED",
+      "accountableBusinessOwner": "UNASSIGNED",
+      "appointedOperationOwnerPerson": "UNASSIGNED",
+      "deploymentTopology": "OPEN — logical ownership is not a selected service topology or one deployable per capability",
+      "dataOwnership": [
+        "Operational Platform owns Operational Visibility Projections, Health/Readiness Aggregation, Privileged Operation Request/Execution State and approved control state; source services own signals/configuration; domains own Business Facts; Audit/Tenant/Reporting/Notification ownerships remain unchanged"
+      ],
+      "operationOwnership": [
+        "Operational Platform authorizes only its resources; destination domain authorizes business effects; privileged actions require limited identity, explicit scope and traceable Audit; Dedicated Sovereign authority is local"
+      ],
+      "approvedOwnershipDecisions": [
+        "V3-002B-DEC-050"
+      ],
+      "approvedOwnershipCells": [
+        {
+          "decisionId": "V3-002B-DEC-050",
+          "capabilityConcept": "Administration / Operational Core",
+          "approvedLogicalOwner": "Operational Platform Capability for operational state; source services and logical domains retain their authorities",
+          "owningBoundary": "Undecided deployment boundary",
+          "authoritativeDataAndWrites": "Operational Platform owns Operational Visibility Projections, Health/Readiness Aggregation, Privileged Operation Request/Execution State and approved control state; source services own signals/configuration; domains own Business Facts; Audit/Tenant/Reporting/Notification ownerships remain unchanged",
+          "readAndIntegrationBoundary": "Versioned authorized contracts only; no direct cross-service database access; deferred Bulk Import, Email Administration and advanced capability ownerships remain Pending",
+          "authorizationOwner": "Operational Platform authorizes only its resources; destination domain authorizes business effects; privileged actions require limited identity, explicit scope and traceable Audit; Dedicated Sovereign authority is local",
+          "approval": "**Approved — V3-002B-DEC-050**"
+        }
+      ],
+      "decisionAuthority": {
+        "finalInternalScopeDecisions": "Existing user/Product Decision Owner/TAO; explicit distinct decision capacities",
+        "runtimeResourceAuthorization": [
+          "Operational Platform authorizes only its resources; destination domain authorizes business effects; privileged actions require limited identity, explicit scope and traceable Audit; Dedicated Sovereign authority is local"
+        ],
+        "profileRuntimeAuthority": "Existing V3-020 distinct profile scopes; local Sovereign final authority, not implicit Central administration",
+        "accountableBusinessOwnerAssignment": "UNASSIGNED — not defaulted to TAO or logical Domain"
+      },
+      "crossDomainDependencies": [
+        "Operational Platform request/execution; destination Domain effect authorization; Audit record ownership",
+        "Profile Operations/Recovery authority for infrastructure only",
+        "No generic Admin or emergency cross-Domain bypass; actual action/approval/recovery model OPEN"
+      ],
+      "documentedResponsibilities": "Scoped operational request/execution with limited identity, explicit Tenant/Platform scope, destination authorization and durable Audit",
+      "actorReferences": [
+        "ACT-A001-001",
+        "ACT-A001-012",
+        "ACT-A001-013",
+        "ACT-A001-014",
+        "ACT-A001-015",
+        "ACT-A001-019",
+        "ACT-A001-022",
+        "ACT-A001-023",
+        "ACT-A001-024",
+        "ACT-A001-025",
+        "ACT-A001-026"
+      ],
+      "actorRequirementMaturity": "Documented classes/operation views only; exact business roles/permission mapping OPEN",
+      "unresolvedOwnershipQuestions": [
+        "PDQ-A001-043",
+        "PDQ-A001-044",
+        "PDQ-A001-045"
+      ],
+      "sourceEvidenceIds": [
+        "EVID-A001-042",
+        "EVID-A001-053"
+      ],
+      "profiles": [
+        "Shared SaaS",
+        "Dedicated Managed",
+        "Dedicated Sovereign"
+      ]
+    }
+  ],
+  "approvalCount": 15,
+  "unassignedAccountableBusinessOwners": 15
+}
