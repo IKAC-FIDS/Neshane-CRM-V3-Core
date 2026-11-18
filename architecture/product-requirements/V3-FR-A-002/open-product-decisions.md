@@ -1,6 +1,6 @@
 # Open product decisions — V3-FR-A-002
 
-**14 OPEN decisions** for FR-BJ-001; none resolved. Carried IDs preserved verbatim; new use PDQ-002-*.
+**19 OPEN decisions** for FR-BJ-001 (14 original + PDQ-002-08..12); some product-level answers are partial, none is closed. Carried IDs preserved verbatim; new use PDQ-002-*.
 
 ## PDQ-A001-001 — FR-BJ-001
 
@@ -221,7 +221,7 @@ The user-confirmed product decisions CM1-PD-001..057 partially answer existing O
 
 | Question ID | Capability | Category | Missing decision |
 | --- | --- | --- | --- |
-| PDQ-002-08 | FR-BJ-001 | PRODUCT | Exact Relationship role catalog (roleCode/roleTitle) and date/time representation |
+| PDQ-002-08 | FR-BJ-001 | PRODUCT | OPEN / PARTIALLY ANSWERED by CM1-PD-058..065: hybrid catalog, applicability, lifecycle, identity/preservation, controlled scope changes and authority confirmed; exact vocabulary/codes, namespace, schema/reference, operation/IAM, concurrency, history, Audit and temporal/API contracts remain OPEN |
 | PDQ-002-09 | FR-BJ-001 | PRODUCT | Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics) |
 | PDQ-002-10 | FR-BJ-001 | SECURITY | Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence) |
 | PDQ-002-11 | FR-BJ-001 | SECURITY | Sensitive-process catalog and SoD actor mapping for manual verification |
@@ -242,3 +242,7 @@ Total OPEN questions remain **19** (14 original + PDQ-002-08..12). The user-conf
 | PDQ-A001-052 | Branch attribution + archive guards | CM-1 operation/actor/profile boundaries and integrations |
 
 No PDQ is closed; formal closure requires explicit authority.
+
+## v1.3.0 Role Catalog partial resolution — PDQ-002-08
+
+**Disposition: OPEN / PARTIALLY ANSWERED; formal acceptance PENDING.** CM1-PD-058..065 confirm product policy, not executable design. Exact answers and all eight residual contracts are in `customer-role-catalog.md` RC-001..008 / RC-OPEN. Dependent proposed scenarios: CM1-ROL-01..16; related technical/Audit questions: PDQ-002-10/12. Total remains 19; no new question ID and no closure. Earlier role-catalog-as-wholly-open wording describes the historical baseline only; the residuals now concern the listed contracts, not the confirmed hybrid/lifecycle/authority policies. No physical Role deletion is supported; general Customer deletion/retention questions remain separate.

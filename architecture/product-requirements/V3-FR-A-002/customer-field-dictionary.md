@@ -45,8 +45,8 @@ Sensitivity uses candidate DC notation, not an approved classification model.
 | REL-002-02 | personId | reference | Required | Reference integrity |
 | REL-002-03 | targetType | enum | Required | One of COMPANY/BRANCH |
 | REL-002-04 | targetId | reference | Required | Reference integrity + Tenant isolation |
-| REL-002-05 | roleCode | enum | Required | Role catalog OPEN |
-| REL-002-06 | roleTitle | text | Optional | None |
+| REL-002-05 | roleCode | enum (candidate; schema OPEN) | Required | Hybrid catalog confirmed; new assignments require ACTIVE role, current applicability and authorized Tenant/system reference; exact reference/namespace OPEN (PDQ-002-08) |
+| REL-002-06 | roleTitle | text | Optional | Title changes preserve identity/history; historical display/reference representation OPEN (PDQ-002-08) |
 | REL-002-07 | status | enum | Required | ACTIVE/ENDED |
 | REL-002-08 | startDate | date/time | Required | Half-open [start,end) |
 | REL-002-09 | endDate | date/time | Optional | null allowed; not before start |
@@ -59,6 +59,10 @@ Sensitivity uses candidate DC notation, not an approved classification model.
 ## Branch parent immutability
 
 - `companyId` (Branch parent) is immutable after creation; direct Branch reparenting is prohibited; transfer uses a new Branch under the target Company (CM1-PD-044/045). Branch has its own stable ID and only ACTIVE/INACTIVE record states (CM1-PD-042/047).
+
+## Role reference — product policy vs schema
+
+Role Definition identity/code immutability (CM1-PD-061) is distinct from an existing Relationship's conceptual roleCode field. No Role schema, Relationship reference shape or change-of-role editing contract is selected. See `customer-role-catalog.md` RC-004/008. Existing field IDs are preserved; no executable Role schema or new approved source entity is added.
 
 ## Branch parent reference — user-confirmed vs schema
 

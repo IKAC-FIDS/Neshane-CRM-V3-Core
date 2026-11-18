@@ -45,8 +45,9 @@ MET — documentary; not owner acceptance. All detailed rules/fields/lifecycle/d
 
 Detailed CM1 scenarios (CM1-REL-*, CM1-BRN-*, CM1-AUD-*, plus lifecycle/branch/CUS-UPDATE/duplicate/relationship/audit edge cases added in v1.2.1) are carried in `cm1-acceptance-criteria-addendum.md` (single source of truth; not duplicated here). The controlled-exception Relationship overlap policy is the authoritative policy and supersedes any prior absolute-overlap denial (see CM1-PD-041).
 
-## Inventory (v1.2.1)
+## Inventory (v1.3.0 proposed package)
 
 - Canonical criteria: **5** (V3-FR-A-002-AC-01..05).
-- Detailed CM1 criteria: **83** (FLD 6, VER 18, REL 18, BRN 10, AUD 5, DUP 5, LC 11, UPD 10).
-- Total unique criterion IDs: **88**. All detailed criteria remain PROPOSED / NOT TESTED.
+- Detailed CM1 criteria: **99** (FLD 6, VER 18, REL 18, BRN 10, AUD 5, DUP 5, LC 11, UPD 10, ROL 16).
+- Total unique criterion IDs: **104**. All detailed criteria remain PROPOSED / NOT TESTED.
+- Previous v1.2.1 inventory: 5 canonical + 83 detailed = 88. Added: CM1-ROL-01..16; no existing criterion ID removed or changed.

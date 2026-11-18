@@ -28,3 +28,7 @@
 - Normal workflow: creator may manually verify the same record only if independently authorized to verify.
 - Sensitive workflows subject to SoD: verifier must differ from creator. Sensitive-process catalog and permission grants remain OPEN.
 - A VERIFIED state confers no access or operational authorization (CM1-PD-056).
+
+## Role Catalog authorization boundaries (v1.3.0 product direction)
+
+Organizational Role Definitions are not IAM/RBAC roles or grants (CM1-PD-058). System catalog authority manages System Roles; Tenant users cannot modify them. Authorized owning-Tenant actors manage Tenant Roles; other-Tenant access/references require a separate governing contract, none granted here (CM1-PD-064). CUS-CREATE alone is insufficient. Incompatible applicability changes require appropriate management authority (CM1-PD-063), distinct from the ordinary Relationship overlap exception's no-supervisor rule. Exact operation/permission bindings and identity of catalog managers remain OPEN; no runtime actor is appointed. See `customer-role-catalog.md` RC-006/007.

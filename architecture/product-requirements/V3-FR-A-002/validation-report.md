@@ -1,5 +1,46 @@
 # Requirements-engineering validation report — V3-FR-A-002
 
+## Current supplement — v1.3.0 Role Catalog (proposed package; formal acceptance PENDING)
+
+The older sections below are historical reports, not renewed evidence for this task. In particular, this update does not revalidate recovery-investigation claims, historical Backend/Frontend HEADs, or earlier broad semantic-consistency claims. Current evidence is limited to the changes and checks listed here.
+
+- Task: V3-FR-A-002 / Customer Master / Relationship / PDQ-002-08. Exact authority/source, baseline and actual UTC recording time: `customer-role-catalog.md#authority-and-scope` and PDR JSON `roleCatalogAuthority`.
+- Root: `E:/Neshane-CRM-V3-V3-024-main-adoption`; branch `codex/v3-fr-a-002`; initial HEAD `5d9c2f491e24a5afdc8349fd067be982e1e64365`; initial working tree and index clean. No Git mutation authorized or executed.
+- Added CM1-PD-058..065; total 65. Original 57 decision objects preserved without modification. Hybrid organizational catalog is not an IAM/RBAC grant. No exact vocabulary, namespace, executable schema, permission or API contract selected.
+- New requirements/rules: `customer-role-catalog.md` RC-001..008/RC-OPEN; linked from requirements, rules, lifecycle, operation catalog, actor policy and field dictionaries. No field ID or approved source entity added.
+- Coverage: FULL=3, PARTIAL=55, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2. All eight new decisions PARTIAL with explicit residual gaps; testable scenarios alone do not approve their executable contracts. Existing 57 coverage records retained.
+- Acceptance inventory: previously 5 canonical + 83 detailed = 88; now 5 + 99 = 104 unique definition IDs. Added CM1-ROL-01..16 only; all PROPOSED / NOT TESTED. No original criterion definition removed or altered.
+- OPEN inventory: 19 unchanged. PDQ-002-08 is OPEN / PARTIALLY ANSWERED with eight explicit residual contracts, dependent decisions/scenarios and related PDQ-002-10/12. No closure; affected executable design blocked pending disposition.
+- Found and corrected: Traceability's current decision-register version was stale at 1.2.0; now 1.3.0. Historical source inventory, evidence, revisions and SHA values preserved. Source-baseline OPEN entries remain historical; the current partial-resolution ledger states the new answers.
+- Manual scoped review: new policy preserves controlled-exception overlap and does not equate catalog management authority with CUS-CREATE or with ordinary overlap authorization. Role scope changes requiring management authority are not a new supervisor requirement for overlap. Exact Role reference/technical overlap key remains OPEN; no new absolute-overlap prohibition introduced.
+
+### Actual validation commands and scope
+
+Executed from the Root above:
+
+```powershell
+git --no-optional-locks rev-parse --show-toplevel
+git --no-optional-locks status --short --branch --untracked-files=all
+git --no-optional-locks rev-parse HEAD
+git --no-optional-locks diff --cached --stat
+python -X utf8 C:/Users/user/AppData/Local/Temp/opencode/a002-role-130-validate.py
+python -X utf8 C:/Users/user/AppData/Local/Temp/opencode/a002-role-130-validate.py --manifest
+git --no-optional-locks diff --check
+git --no-optional-locks diff --stat
+git --no-optional-locks status --short --untracked-files=all
+```
+
+The local checker is outside the package, not a durable software-test suite. It uses read-only `git show` against the reviewed HEAD for preservation comparisons. Its manifest mode checks exact current file bytes and full file inventory, excluding the manifest itself. The manifest cannot authenticate itself; an independently reviewed digest or future authorized Git recording is required for tamper evidence.
+
+- Documentation/structural checks: PASS (27 checks before manifest regeneration; final manifest-mode result is recorded in the task response). JSON parsing, unique/preserved decisions/fields/criteria/OPEN IDs, references, matrix counts, current versions, baseline source invariants, scoped changes and whitespace checked.
+- Validation tooling corrections: first text-inspection command failed under Windows cp1252; repeated with `python -X utf8`. Initial checker counted only table criteria and missed the five canonical bullet definitions (three count checks failed); corrected the parser to read actual canonical definitions, without weakening expected counts. Rerun: 27/27 PASS.
+- Semantic review is scoped to the new Role decisions and their interactions; exhaustive re-review of all pre-existing product policy, historical evidence and independent specialist assessment: NOT VERIFIED.
+- Software/build/runtime/integration tests: NOT EXECUTED (documentation-only task). No implementation, DB migration, IAM configuration, Backend/Frontend, deployment or unrelated roadmap edit. No network/dependency activity, Docker resource or service execution.
+- Gates unchanged: G-RUNTIME BLOCKED; FE-BE/AUTH/IAM PENDING; Offline PROHIBITED; Local-Infra ACCEPTED — DEVELOPMENT-ONLY; Production NOT AUTHORIZED. Pending Submission PERMITTED NOT REQUIRED, non-authoritative; coordinated durable Audit obligations preserved.
+- Manual review needed: PDR new exact decisions, RC-006 management/impact guards, RC-007 system/Tenant distinction, eight RC-OPEN residual contracts, CM1-ROL scenarios and coverage gaps. Next step requires separate user review/disposition; no formal acceptance or Git action inferred.
+
+## Historical report (pre-v1.3.0; not revalidated by this update)
+
 Status: **PREPARED — READY FOR TASK OWNER REVIEW; not accepted**. Recording timestamp `2026-11-18T18:40:28.795918+00:00`.
 
 ## Recovery investigation outcome (Phase 1)

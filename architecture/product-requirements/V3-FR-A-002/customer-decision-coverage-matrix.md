@@ -1,11 +1,19 @@
-# Customer Master — Decision Coverage Matrix (v1.2.1)
+# Customer Master — Decision Coverage Matrix (v1.3.0 proposed package)
 
-Maps all 57 user-confirmed product decisions (CM1-PD-001..057) to requirements, rules, fields, operations, acceptance criteria and OPEN questions. Coverage classification: FULL / PARTIAL / DOCUMENTED_ONLY / BLOCKED_BY_OPEN_DECISION.
+Maps all 65 user-confirmed product decisions (CM1-PD-001..065) to requirements, rules, fields, operations, acceptance criteria and OPEN questions. Coverage classification: FULL / PARTIAL / DOCUMENTED_ONLY / BLOCKED_BY_OPEN_DECISION. Coverage is documentation/scenario coverage, never executed test evidence or formal acceptance.
 
-**Coverage counts:** BLOCKED_BY_OPEN_DECISION=2, DOCUMENTED_ONLY=5, FULL=3, PARTIAL=47
+**Coverage counts:** BLOCKED_BY_OPEN_DECISION=2, DOCUMENTED_ONLY=5, FULL=3, PARTIAL=55
 
 | Decision ID | Coverage | Summary | Fields | Acceptance criteria | Related OPEN |
 | --- | --- | --- | --- | --- | --- |
+| CM1-PD-058 | PARTIAL | RC-001 hybrid catalog; no IAM/RBAC grants | REL-002-05 | CM1-ROL-01, CM1-ROL-13, CM1-ROL-14 | PDQ-002-08 |
+| CM1-PD-059 | PARTIAL | RC-002 applicability / new assignments | REL-002-03, REL-002-05 | CM1-ROL-02, CM1-ROL-08, CM1-ROL-09 | PDQ-002-08 |
+| CM1-PD-060 | PARTIAL | RC-003 lifecycle and authorized transitions | — | CM1-ROL-03, CM1-ROL-04 | PDQ-002-08 |
+| CM1-PD-061 | PARTIAL | RC-004 immutable identity / no deletion | REL-002-05 | CM1-ROL-05, CM1-ROL-06, CM1-ROL-15 | PDQ-002-08 |
+| CM1-PD-062 | PARTIAL | RC-005 Relationship preservation | REL-002-05, REL-002-07, REL-002-08, REL-002-09 | CM1-ROL-07 | PDQ-002-08 |
+| CM1-PD-063 | PARTIAL | RC-006 controlled scope change | REL-002-03, REL-002-05 | CM1-ROL-08, CM1-ROL-09, CM1-ROL-10, CM1-ROL-11 | PDQ-002-08, PDQ-002-10 |
+| CM1-PD-064 | PARTIAL | RC-007 system/Tenant authority | — | CM1-ROL-12, CM1-ROL-13, CM1-ROL-14 | PDQ-002-08 |
+| CM1-PD-065 | PARTIAL | RC-004/008 history / overlap safeguards | REL-002-05, REL-002-06, REL-002-10 | CM1-ROL-15, CM1-ROL-16, CM1-REL-09, CM1-REL-10 | PDQ-002-08, PDQ-002-10, PDQ-002-12 |
 | CM1-PD-001 | PARTIAL | Company and Person are independent customer types; Branch is a Company subordinate, with i | FLD-002-01, FLD-002-02 | CM1-FLD-01, CM1-FLD-02, CM1-BRN-01 | PDQ-002-01, PDQ-002-07 |
 | CM1-PD-002 | DOCUMENTED_ONLY | CRM activities may reference Branch as an attribution target, while Company remains the pa | FLD-002-11 | CM1-BRN-01 | PDQ-A001-052 |
 | CM1-PD-003 | PARTIAL | One Person may have multiple concurrent relationships with Companies and Branches in the s | REL-002-01, REL-002-02, REL-002-04 | CM1-REL-01 | PDQ-002-07 |

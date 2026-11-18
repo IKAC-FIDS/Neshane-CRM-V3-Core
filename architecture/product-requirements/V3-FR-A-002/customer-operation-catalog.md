@@ -45,3 +45,9 @@ No candidate operation assumed approved; duplicates and merge/delete are PROPOSE
 - **Branch management** (create/update/deactivate/transfer): Branch subordinate to Company; immutable parent; transfer via new Branch. (CM1-PD-042..047)
 
 These are product-direction proposals; the four documented operation concepts (CUS-CREATE, CUS-VALIDATE, CUS-GET-FOR-UPDATE, CUS-UPDATE) remain unchanged. No permission grant or operation approval is implied.
+
+## Role Catalog logical capability (v1.3.0 product direction)
+
+Create/manage Role title/applicability, deactivate/reactivate, and validate new Relationship assignments against ACTIVE status and current applicability (CM1-PD-058..065). Physical deletion and identity/code mutation are unsupported. Scope changes preserve existing Relationships; incompatible changes require management authority, impact evaluation, disclosure-safe warning, mandatory reason and auditability. System/Tenant management boundaries: `customer-role-catalog.md#rc-007--authority-and-tenant-boundaries`.
+
+These are logical capabilities only, not new approved CUS operation IDs or CUS-UPDATE permission reuse. Exact management operation/IAM/API/persistence, concurrent scope-dependency evaluation and operation-specific Audit failure/recovery remain OPEN under PDQ-002-08/10/12. CUS-CREATE does not confer catalog management authority.

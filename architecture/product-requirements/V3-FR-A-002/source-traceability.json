@@ -943,12 +943,24 @@
       "requiredDecisionAuthority": "Product Decision Owner / TAO"
     }
   ],
-  "version": "1.2.1",
+  "version": "1.3.0",
+  "roleCatalogReconciliation": {
+    "taskId": "V3-FR-A-002",
+    "baseline": "5d9c2f491e24a5afdc8349fd067be982e1e64365",
+    "recordedAt": "2026-11-18T21:36:02.131992+00:00",
+    "source": "User conversation: V3-FR-A-002 — Role Catalog Product Decisions; CM1-PD-058..065 and Remaining OPEN Contracts",
+    "authority": "USER-CONFIRMED PRODUCT DIRECTION",
+    "formalAcceptance": "PENDING",
+    "policyArtifact": "customer-role-catalog.md",
+    "exactDecisions": "customer-master-product-decision-record.json decisions CM1-PD-058..065",
+    "historicalProvenancePreserved": true,
+    "notSourceApprovedRepositoryEvidence": true
+  },
   "productDecisionRegister": {
     "path": "customer-master-product-decision-record.json",
     "recordId": "V3-FR-A-002-PDR-001",
-    "version": "1.2.0",
-    "decisionCount": 57,
+    "version": "1.3.0",
+    "decisionCount": 65,
     "decisionIds": [
       "CM1-PD-001",
       "CM1-PD-002",
@@ -1006,7 +1018,15 @@
       "CM1-PD-054",
       "CM1-PD-055",
       "CM1-PD-056",
-      "CM1-PD-057"
+      "CM1-PD-057",
+      "CM1-PD-058",
+      "CM1-PD-059",
+      "CM1-PD-060",
+      "CM1-PD-061",
+      "CM1-PD-062",
+      "CM1-PD-063",
+      "CM1-PD-064",
+      "CM1-PD-065"
     ],
     "supersessions": [
       {
@@ -1022,10 +1042,10 @@
   "fieldDictionaryFieldCount": 31,
   "decisionCoverageMatrix": {
     "path": "customer-decision-coverage-matrix.json",
-    "version": "1.2.1",
-    "decisionCount": 57,
+    "version": "1.3.0",
+    "decisionCount": 65,
     "coverageCounts": {
-      "PARTIAL": 47,
+      "PARTIAL": 55,
       "DOCUMENTED_ONLY": 5,
       "FULL": 3,
       "BLOCKED_BY_OPEN_DECISION": 2
@@ -1033,10 +1053,33 @@
   },
   "acceptanceInventory": {
     "canonicalCriteria": 5,
-    "detailedCriteria": 83,
-    "totalUnique": 88
+    "detailedCriteria": 99,
+    "totalUnique": 104,
+    "addedIds": ["CM1-ROL-01", "CM1-ROL-02", "CM1-ROL-03", "CM1-ROL-04", "CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-07", "CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11", "CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14", "CM1-ROL-15", "CM1-ROL-16"],
+    "newCriteriaStatus": "PROPOSED / NOT TESTED"
   },
   "partialResolutionLedger": [
+    {
+      "pdqId": "PDQ-002-08",
+      "disposition": "OPEN / PARTIALLY ANSWERED",
+      "formalAcceptance": "PENDING",
+      "confirmedAnswer": "Hybrid System/Tenant catalog; COMPANY/BRANCH/BOTH scope; ACTIVE/INACTIVE lifecycle; immutable identity/no physical deletion; Relationship preservation; controlled scope changes; system/Tenant authority; historical/overlap safeguards.",
+      "remaining": [
+        "Initial standard System Role vocabulary and exact roleCode values",
+        "Role code normalization and namespace enforcement",
+        "Exact Role Definition field schema and persistence contract",
+        "Role management operation and IAM permission contracts",
+        "Concurrent updates and scope-change dependency consistency mechanism",
+        "Role history representation and historical display contract",
+        "Operation-specific Audit failure and recovery behavior",
+        "Relationship temporal representation and API compatibility"
+      ],
+      "dependentDecisionIds": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065"],
+      "dependentAcceptanceCriterionIds": ["CM1-ROL-01", "CM1-ROL-02", "CM1-ROL-03", "CM1-ROL-04", "CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-07", "CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11", "CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14", "CM1-ROL-15", "CM1-ROL-16"],
+      "relatedOpenQuestionIds": ["PDQ-002-10", "PDQ-002-12"],
+      "policyReference": "customer-role-catalog.md#rc-open--remaining-open-contracts",
+      "affectedExecutableDesign": "BLOCKED until remaining contracts are separately dispositioned"
+    },
     {
       "pdqId": "PDQ-002-01",
       "confirmedAnswer": "Company name + Person given/family required; official IDs/phone/email optional at create (CM1-PD-016/017/053)",

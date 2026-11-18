@@ -1,7 +1,7 @@
 # Customer Master — Product Decision Record
 
 **Record ID:** `V3-FR-A-002-PDR-001`
-**Version:** `1.2.1`
+**Version:** `1.3.0` (proposed package; formal acceptance pending)
 **Date:** 2026-11-18
 **Scope:** `FR-BJ-001` / `V3-FR-A-002` / `CM-1`
 **Disposition:** `USER-CONFIRMED PRODUCT DIRECTION — FORMAL REPOSITORY ACCEPTANCE PENDING`
@@ -74,6 +74,23 @@
 | `CM1-PD-055` | CUS-UPDATE consolidation | Updating Company must not silently reparent Branches; updating Person must not silently alter unrelated Relationships. Converting Company into Person or vice versa is not supported as a normal CM-1 update. Routine edits of ARCHIVED records are not allowed (use authorized recovery). INACTIVE records may be corrected without automatically becoming ACTIVE. |
 | `CM1-PD-056` | Verification independent of authorization | A record can be ACTIVE and NOT_VERIFIED, and can be VERIFIED without automatically receiving access or operational authorization. Verification state never substitutes for resource authorization or membership. |
 | `CM1-PD-057` | Verification time semantics and open items | Effective time and recording time are recorded distinctly when relevant. The specific evidence-retention period, trusted-provider catalog, revocation dispute process, and detailed failure/recovery mechanism remain open. |
+
+## Role Catalog decisions — v1.3.0 (CM1-PD-058..065)
+
+Source/authority, recording timestamp, reviewed baseline and exact decision wording are recorded in JSON `roleCatalogAuthority` and `decisions`. Detailed product rules and residual contracts: [customer-role-catalog.md](customer-role-catalog.md).
+
+| Decision ID | Topic | User-confirmed product direction |
+| --- | --- | --- |
+| CM1-PD-058 | Hybrid Role Catalog | System roles shared across authorized Tenants and Tenant-owned custom roles; organizational responsibilities, not IAM/RBAC grants. |
+| CM1-PD-059 | Applicability | Exactly COMPANY / BRANCH / BOTH; validate new assignments against current scope. |
+| CM1-PD-060 | Lifecycle | Exactly ACTIVE / INACTIVE; valid new Role starts ACTIVE; authorized validated deactivation/reactivation. |
+| CM1-PD-061 | Identity / deletion | Immutable roleId and roleCode; no physical deletion, even without Relationships; preserve historical references. |
+| CM1-PD-062 | Relationship preservation | Role state changes never mutate existing Relationships; inactive Roles unavailable for new assignments. |
+| CM1-PD-063 | Scope change | Authorized scope changes permitted; incompatible existing Relationships require impact evaluation, disclosure-safe warning, mandatory reason, management authority and auditability. Preserve existing records; new scope governs subsequent assignments. |
+| CM1-PD-064 | Catalog authority | System authority governs System Roles; Tenant users cannot modify them. Tenant roles managed only by authorized owning-Tenant actors; no cross-Tenant access/reference absent a separate governing contract. CUS-CREATE alone is insufficient. |
+| CM1-PD-065 | History / overlap | Preserve identity/history through title/status/scope changes; no bypass of version, overlap authorization, Tenant or mandatory Audit checks; exact reference and overlap key remain unapproved. |
+
+These eight decisions partially answer PDQ-002-08; all 19 questions stay OPEN. No earlier decision is removed or rewritten. Current total: 65 user-confirmed decisions. The historical v1.2.1 counts below describe that earlier package only.
 
 ## 3. Supersession
 

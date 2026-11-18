@@ -1,4 +1,4 @@
-# CM-1 — Candidate Acceptance Criteria Addendum (v1.1.0)
+# CM-1 — Candidate Acceptance Criteria Addendum (v1.3.0 proposed package)
 
 **Status:** PROPOSED / NOT EXECUTED / OWNER REVIEW REQUIRED. This file supplements original `acceptance-criteria.md` and its canonical V3-FR-A-002-AC-01..05; it does NOT change canonical assessment or claim PASS. IDs are package-local and should be reconciled before adopting into an authoritative acceptance matrix.
 
@@ -93,3 +93,26 @@ Authoritative controlled-exception overlap policy. All PROPOSED / NOT TESTED. No
 | CM1-REL-18 | Changing personId or targetId through an ordinary edit is rejected. | PROPOSED / NOT TESTED (policy question: immutability not separately user-confirmed) |
 | CM1-AUD-04 | Audit uses controlled evidence references; no identity-document copy into Audit. | PROPOSED / NOT TESTED |
 | CM1-AUD-05 | Ordinary warnings/rejected validations carry no assumed mandatory Audit event absent explicit governing source. | PROPOSED / NOT TESTED |
+
+## Role Catalog scenarios (v1.3.0)
+
+Product basis: CM1-PD-058..065 / `customer-role-catalog.md#rc-001--hybrid-catalog-and-organizational-meaning` through RC-008. These are proposed test scenarios, not executed tests or approved API/IAM/persistence contracts. Fixtures use symbolic roles, not an approved standard vocabulary. Contract-dependent assertions require separate design disposition.
+
+| Candidate ID | Scenario and expected result | Status |
+| --- | --- | --- |
+| CM1-ROL-01 | Given authorized access to a shared System Role and an owning-Tenant custom Role, both are available under their respective catalog boundaries; assigning either organizational role confers no IAM/RBAC grant. | PROPOSED / NOT TESTED |
+| CM1-ROL-02 | Given otherwise valid new assignments, COMPANY scope permits Company and rejects Branch; BRANCH permits Branch and rejects Company; BOTH permits either. Missing, multiple or other scope values fail validation. | PROPOSED / NOT TESTED |
+| CM1-ROL-03 | Valid authorized Role creation starts ACTIVE. Role lifecycle admits exactly ACTIVE/INACTIVE, not ARCHIVED or ENDED. | PROPOSED / NOT TESTED |
+| CM1-ROL-04 | An authorized actor can deactivate ACTIVE and reactivate INACTIVE subject to validation; an actor lacking the applicable authority cannot perform either transition. | PROPOSED / NOT TESTED |
+| CM1-ROL-05 | Attempted post-creation roleId or roleCode change is rejected; historical identity/references remain intact. Exact field/API enforcement remains OPEN. | PROPOSED / NOT TESTED |
+| CM1-ROL-06 | Physical deletion is unsupported both for a Role with no Relationships and one with historical Relationships; identity and references remain preserved. | PROPOSED / NOT TESTED |
+| CM1-ROL-07 | Deactivate then reactivate a Role referenced by ACTIVE and ENDED Relationships: none are created, terminated, reactivated, deleted or modified; individual statuses, intervals and historical references remain unchanged. New assignment to INACTIVE is rejected. | PROPOSED / NOT TESTED |
+| CM1-ROL-08 | An appropriately authorized, validated scope change compatible with all existing Relationships is permitted; existing Relationships remain unchanged and subsequent assignments follow the current scope. No extra reason rule for this compatible case is inferred. | PROPOSED / NOT TESTED |
+| CM1-ROL-09 | For an incompatible scope change, evaluate affected Relationships and show a disclosure-safe warning; require business reason and appropriate management authority, preserve existing Relationships, retain auditable change/justification, and apply new scope to subsequent assignments only. | PROPOSED / NOT TESTED |
+| CM1-ROL-10 | Repeat an incompatible scope-change attempt with missing reason or absent management authority: neither attempt may finalize the change. Neither impact warnings nor rejection output disclose hidden Relationship details. | PROPOSED / NOT TESTED |
+| CM1-ROL-11 | After a scope change, Person/Company/Branch states and all existing Relationship states/intervals remain unchanged, including incompatible historical references. | PROPOSED / NOT TESTED |
+| CM1-ROL-12 | A Tenant user attempting System Role modification is denied; System Role management requires system catalog authority. Exact operation/permission bindings remain OPEN. | PROPOSED / NOT TESTED |
+| CM1-ROL-13 | Tenant A's custom Role is owned by that Tenant: appropriately authorized A actor may manage it; unauthorized A actor and B actor cannot manage/access/reference it. No cross-Tenant exception is assumed without a separate governing contract. | PROPOSED / NOT TESTED |
+| CM1-ROL-14 | An actor possessing only CUS-CREATE cannot manage the Role Catalog; organizational Role assignment itself does not provide catalog management authority. | PROPOSED / NOT TESTED |
+| CM1-ROL-15 | Authorized title, lifecycle and applicability changes preserve roleId/roleCode and historical Relationship references. Exact historical display and reference representation are OPEN, not assumed snapshots. | PROPOSED / NOT TESTED |
+| CM1-ROL-16 | After catalog changes, stale Relationship versions are still rejected; controlled overlapping assignment still requires valid authority/reason and preserves Tenant isolation and mandatory Audit obligations. No catalog change bypasses these checks. Exact reference, overlap key and consistency/Audit failure mechanism remain OPEN. | PROPOSED / NOT TESTED |

@@ -1,6 +1,19 @@
 {
   "recordId": "V3-FR-A-002-PDR-001",
-  "version": "1.2.1",
+  "version": "1.3.0",
+  "packageVersionStatus": "PROPOSED; FORMAL ACCEPTANCE PENDING",
+  "roleCatalogAuthority": {
+    "taskId": "V3-FR-A-002",
+    "scope": "Customer Master / Relationship / PDQ-002-08",
+    "source": "User conversation: V3-FR-A-002 — Role Catalog Product Decisions; CM1-PD-058..065 and Remaining OPEN Contracts",
+    "authority": "USER-CONFIRMED PRODUCT DIRECTION",
+    "formalAcceptance": "PENDING",
+    "reviewedBaseline": "5d9c2f491e24a5afdc8349fd067be982e1e64365",
+    "recordedAt": "2026-11-18T21:36:02.131992+00:00",
+    "issuedAt": null,
+    "exactDecisionLocation": "decisions CM1-PD-058..065",
+    "openContractLocation": "customer-role-catalog.md#rc-open--remaining-open-contracts"
+  },
   "date": "2026-11-18",
   "scope": [
     "FR-BJ-001",
@@ -294,9 +307,50 @@
       "id": "CM1-PD-057",
       "topic": "Verification time semantics and open items",
       "rule": "Effective time and recording time are recorded distinctly when relevant. The specific evidence-retention period, trusted-provider catalog, revocation dispute process, and detailed failure/recovery mechanism remain open."
+    },
+    {
+      "id": "CM1-PD-058",
+      "topic": "Hybrid Role Catalog",
+      "rule": "Customer Master shall support a hybrid Relationship Role Catalog consisting of system-defined roles shared across authorized Tenants and Tenant-defined custom roles owned by their respective Tenant.\n\nRole definitions represent organizational responsibilities and shall not grant IAM/RBAC permissions."
+    },
+    {
+      "id": "CM1-PD-059",
+      "topic": "Role Applicability Scope",
+      "rule": "Each Role Definition shall have exactly one applicability scope:\n\n- COMPANY\n- BRANCH\n- BOTH\n\nNew Relationship assignments shall be validated against the Role's current applicability scope."
+    },
+    {
+      "id": "CM1-PD-060",
+      "topic": "Role Lifecycle",
+      "rule": "Role Definitions shall support exactly two lifecycle states:\n\n- ACTIVE\n- INACTIVE\n\nA newly created valid Role shall initially be ACTIVE.\n\nAn authorized actor may deactivate or reactivate a Role, subject to applicable validation and authorization."
+    },
+    {
+      "id": "CM1-PD-061",
+      "topic": "Immutable Identity and No Physical Deletion",
+      "rule": "The roleId and roleCode of a Role Definition shall remain immutable after creation.\n\nPhysical deletion of Role Definitions is not supported, including for Roles without existing Relationships.\n\nHistorical Role identities and references must be preserved."
+    },
+    {
+      "id": "CM1-PD-062",
+      "topic": "Relationship Preservation",
+      "rule": "Deactivating or reactivating a Role shall not automatically create, terminate, reactivate, delete, or modify any existing Relationship.\n\nAn INACTIVE Role shall not be available for new Relationship assignments.\n\nExisting Relationships retain their individual statuses, temporal intervals, and historical references."
+    },
+    {
+      "id": "CM1-PD-063",
+      "topic": "Controlled Applicability Scope Changes",
+      "rule": "Authorized changes to a Role's applicability scope are permitted.\n\nIf the proposed change makes existing Relationships incompatible with the new scope:\n\n1. The system shall evaluate the affected Relationships.\n2. An impact warning shall be presented without unauthorized disclosure.\n3. A mandatory business reason shall be captured.\n4. Appropriate management authority shall be validated.\n5. Existing Relationships shall remain unchanged.\n6. The new scope shall govern subsequent Relationship assignments.\n7. The change and its justification shall remain auditable.\n\nA scope change shall not implicitly modify Person, Company, Branch, or Relationship state."
+    },
+    {
+      "id": "CM1-PD-064",
+      "topic": "Tenant and System Role Boundaries",
+      "rule": "System Role Definitions shall be governed by the system catalog authority.\n\nTenant users shall not modify System Role Definitions.\n\nTenant Role Definitions shall be owned by a single Tenant and managed only by appropriately authorized actors within that Tenant.\n\nCross-Tenant Role access and references shall be prohibited unless explicitly authorized by a separate governing contract.\n\nCUS-CREATE permission shall not by itself grant Role Catalog management authority."
+    },
+    {
+      "id": "CM1-PD-065",
+      "topic": "Historical Integrity and Relationship Overlap",
+      "rule": "Changes to Role titles, lifecycle status, or applicability scope shall preserve Role identity and historical Relationship references.\n\nThe controlled-exception Relationship overlap policy remains authoritative.\n\nRole Catalog changes shall not bypass Relationship version checks, overlap authorization, Tenant isolation, or mandatory Audit obligations.\n\nThe exact Role reference contract and technical overlap key remain subject to formal design approval."
     }
   ],
   "openQuestionTraceability": {
+    "PDQ-002-08": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065"],
     "PDQ-002-07": [
       "CM1-PD-001",
       "CM1-PD-003",
@@ -370,12 +424,12 @@
     "Approved specific identity fields, data normalization, national/legal identifier validators",
     "Evidence sufficiency, manual verifier permissions, sensitive process catalog and separation-of-duties applicability",
     "Verification expiration/revocation source of truth, notification semantics, recovery and evidence retention",
-    "Exact Relationship role catalog (roleCode/roleTitle taxonomy) and date/time representation?",
+    "Role Catalog product policy confirmed by CM1-PD-058..065; exact System vocabulary/codes, namespace, schema/reference, operations/IAM, consistency, history/display, Audit and temporal/API contracts remain OPEN (PDQ-002-08).",
     "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?",
     "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?",
     "Sensitive-process catalog and SoD actor mapping for manual verification?",
     "Overlap conflict-set token/snapshot/locking/transactional implementation (technical design, not an API contract)?",
-    "Exact Relationship role catalog (roleCode/roleTitle taxonomy) and date/time representation?",
+    "Role Catalog product policy confirmed by CM1-PD-058..065; exact System vocabulary/codes, namespace, schema/reference, operations/IAM, consistency, history/display, Audit and temporal/API contracts remain OPEN (PDQ-002-08).",
     "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?",
     "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?",
     "Sensitive-process catalog and SoD actor mapping for manual verification?",
@@ -410,7 +464,10 @@
       "questionId": "PDQ-002-08",
       "affectedCapability": "FR-BJ-001",
       "category": "PRODUCT",
-      "missingDecision": "Exact Relationship role catalog (roleCode/roleTitle taxonomy) and date/time representation?"
+      "missingDecision": "Exact System vocabulary/codes, namespace, Role schema/reference, management operation/IAM, scope-change consistency, history/display, Audit failure/recovery and Relationship temporal/API contracts.",
+      "disposition": "OPEN / PARTIALLY ANSWERED",
+      "confirmedBy": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065"],
+      "remainingContractReference": "customer-role-catalog.md#rc-open--remaining-open-contracts"
     },
     {
       "questionId": "PDQ-002-09",

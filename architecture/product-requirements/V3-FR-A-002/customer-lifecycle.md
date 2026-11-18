@@ -39,3 +39,7 @@ States: **NOT_VERIFIED** / **VERIFIED** / **REQUIRES_REVERIFICATION**, independe
 - initial → NOT_VERIFIED; trusted system/manual evidence → VERIFIED; necessary-evidence expiry or material identity change → REQUIRES_REVERIFICATION; fresh success → VERIFIED; fundamental invalidity → NOT_VERIFIED. No universal TTL.
 
 No unapproved API, database, or IAM implementation choice is presented as an accepted requirement.
+
+## F. Role Definition lifecycle (v1.3.0 user-confirmed product direction)
+
+Exactly ACTIVE / INACTIVE; valid creation starts ACTIVE; authorized validated ACTIVE → INACTIVE and INACTIVE → ACTIVE. Physical deletion is unsupported even without Relationships. Full guards: `customer-role-catalog.md#rc-003--lifecycle` (CM1-PD-060/061). Role status changes never mutate existing Relationships or their intervals; INACTIVE Roles cannot receive new assignments (CM1-PD-062). This is independent of Relationship ACTIVE/ENDED and Customer/verification states; no IAM lifecycle or grant is implied.

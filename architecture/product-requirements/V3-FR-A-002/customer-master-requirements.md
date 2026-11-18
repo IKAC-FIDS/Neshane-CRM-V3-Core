@@ -55,6 +55,10 @@ FR-BJ-001 covers create/maintain of authoritative Customer Master. FR-BJ-002 (CU
 - Half-open interval `[startDate, endDate)` (CM1-PD-032).
 - Overlap policy (LATEST/authoritative): same Person+TargetType+TargetId+RoleCode overlapping intervals allowed only via controlled exception; distinct roles/targets/Company-vs-Branch overlap freely (CM1-PD-033..041).
 
+## Relationship Role Catalog (user-confirmed product direction; formal acceptance pending)
+
+CM1-PD-058..065 add a hybrid System/Tenant catalog of organizational responsibilities, not IAM/RBAC roles. See [customer-role-catalog.md](customer-role-catalog.md) RC-001..008 for applicability COMPANY/BRANCH/BOTH, ACTIVE/INACTIVE lifecycle, immutable identity/no deletion, Relationship preservation, controlled scope changes and authority/history/overlap boundaries. Role reference schema and executable contracts remain OPEN under PDQ-002-08. The earlier source-derived entities remain unchanged; no sixth approved source entity or new service is inferred.
+
 ## Identity verification model (user-confirmed)
 
 - Verification independent of record lifecycle and commercial status; states NOT_VERIFIED / VERIFIED / REQUIRES_REVERIFICATION (CM1-PD-019/056).
