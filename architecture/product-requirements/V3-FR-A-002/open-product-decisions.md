@@ -1,5 +1,15 @@
 # Open product decisions — V3-FR-A-002
 
+## Current individual disposition — v1.7.0
+
+All **19 unique question IDs remain OPEN**; no automatic closure. Current full per-question answered product, remaining actual product, exclusion/deferral, technical contracts, external dependencies, canonical downstream references, acceptance and implementation impacts: **customer-bounded-readiness.json** (`questions`, exactly one entry per question). Human summary and blockers: **customer-bounded-readiness.md**. PDR JSON `refinementsV170` records changes while preserving all prior decision objects.
+
+Farzad accountability, five logical actors and bounded product scope now recorded. Product-ready/technical-open catalog PDQ-002-08 is not reopened. Pending Submission/merge/physical deletion/direct external access excluded; transfer coordination/real verification/fuzzy deferred. Exact actor/disclosure boundaries, profile/nine branch applicability, day time reference, unspecified business validations and legal/issuer/evidence requirements remain OPEN; archive/manual verification conditional, no evidence clearance fabricated.
+
+## Historical question wording and partial-resolution ledgers (through v1.6.0)
+
+The original questions/options/status `selected answer NONE` and older OPEN residuals below are preserved as historical baseline text only; they do NOT assert that current owner/scope/critical-fields/SoD/Audit answers are absent. The 19-entry current disposition above supersedes their unanswered-product interpretations without closing IDs. Duplicate legacy `unresolved` strings in PDR are not extra questions. Original question wording retained for traceability, including technical residual statement PDQ-002-08.
+
 **19 OPEN decisions** for FR-BJ-001 (14 original + PDQ-002-08..12); some product-level answers are partial, none is closed. Carried IDs preserved verbatim; new use PDQ-002-*.
 
 ## PDQ-A001-001 — FR-BJ-001

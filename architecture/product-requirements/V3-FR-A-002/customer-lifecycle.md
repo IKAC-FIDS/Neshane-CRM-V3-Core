@@ -1,5 +1,27 @@
 # Customer lifecycle — V3-FR-A-002
 
+## Current guards and bounded availability — v1.7.0
+
+User-confirmed CM1-PD-086..095 refine the preserved state machines below, not a new schema or implementation. Archive/restoration and manual verification remain CONDITIONALLY INCLUDED; exact evidence/applicability/contracts missing -> affected path BLOCKED. Formal acceptance PENDING.
+
+| Operation/transition | Additional current product guard |
+| --- | --- |
+| Customer ACTIVE -> INACTIVE | Authorization, mandatory deactivation reason/Audit; open dependencies allowed with existing new-activity restrictions; preserve related stored states |
+| Customer ACTIVE/INACTIVE -> ARCHIVED | Mandatory reason/Audit; every applicable dependency cleared with evidence; unknown/unavailable blocks; closed activities/history alone not blockers |
+| ARCHIVED -> INACTIVE | Authorized conditional restoration with mandatory reason/Audit; no related activation/reopening |
+| INACTIVE -> ACTIVE | Validate mandatory fields/definite identifier conflicts/authorization/Audit; ordinary reason optional; VERIFIED not globally required unless workflow requires; no automatic Branch/Relationship activation |
+| ARCHIVED -> ACTIVE | Prohibited; use restoration then separately validated reactivation |
+| Branch ACTIVE -> INACTIVE | Mandatory reason/Audit; parent/Person/Relationship stored states and history preserved |
+| Manual Relationship END | Mandatory reason/Audit; Person/target/Role identities not rewritten; correction END+new, no ENDED reopening |
+| Natural Relationship expiry | No manually supplied END reason; no stored-status mutation/scheduling mechanism selected; mutations if any retain Audit |
+| New Relationship assignment | Deny inactive Person/Company/Branch/effectively inactive parent and other invalid eligibility; existing history preserved, no retrospective grant |
+
+Archive dependency categories (only applicable capabilities): open sales opportunities, active contracts, open orders, open support tickets, active projects, ongoing tenders, outstanding delivery commitments, open activities/follow-ups, active Branches, active Relationships. No integration with an unimplemented service is invented. Lack of clearance evidence blocks archive, never counts as no dependency.
+
+Relationship intervals use **calendar-day [start,end)**, inclusive start/exclusive end, future start allowed, optional end; empty/backwards invalid. **Exact applicable day time reference remains OPEN**, along with calendar presentation/storage. This is not a selection of timezone, calendar system, locking or conflict-set mechanism. Controlled overlap/historical ENDED participation/fresh reasons/version/idempotency/Tenant safeguards unchanged.
+
+Verification transitions: initial NOT_VERIFIED; valid evidence/authorized success -> VERIFIED; material identity change or expired/invalidated essential evidence -> REQUIRES_REVERIFICATION; proven fundamentally invalid verification -> NOT_VERIFIED; successful authorized reverification -> VERIFIED. Dispute/objection alone cannot restore VERIFIED. No universal fixed expiry; preserve verification/revocation/invalidation history and record-lifecycle independence. Manual revocation needs reason/Audit; essential evidence and three different-verifier cases PD-089/090 required. Trusted system integration remains deferred and real data/documents prohibited in initial synthetic development.
+
 ## A. Formal source baseline
 
 The authoritative source baseline (V3-003 decision record, support-matrix, V3-002B ownership) did **not** previously approve a detailed Customer lifecycle state machine. The earlier "no approved state machine / all transitions OPEN" statement is retained as historical source status only, not as a contradiction of the user-confirmed target lifecycle below.

@@ -1,5 +1,24 @@
 # Customer field dictionary — V3-FR-A-002
 
+## Current v1.7.0 product mappings
+
+38 conceptual field IDs; all previous 31 retained. The original candidate inventory below remains source/history, read with these approved business mappings and the current JSON counterpart. Exact schema/normalization/length/format validators OPEN. No mandatory Persian-language input inferred from the legacy display-name label.
+
+| Customer | Required business facts | Optional at registration | Conditional |
+| --- | --- | --- | --- |
+| Company | Company name FLD-002-20 | English name FLD-002-03; registration number FLD-002-21; telephone/email/address FLD-002-06/07/08; country/website/notes FLD-002-22/23/24 | Official identifiers FLD-002-05, required only for formal-verification workflows |
+| Person | Given name FLD-002-18 AND family name FLD-002-19 | English name FLD-002-03; telephone/email/address FLD-002-06/07/08; country/notes FLD-002-22/24 | Official identifiers FLD-002-04, required only for formal-verification workflows |
+
+CM1-PD-082: optional fields validated when supplied. FLD-002-02 retained display representation, not a substitute for these separate mandatory facts or new required language field. FLD-002-21 is a conceptual mapping to the registration-number member of FLD-002-05, not a demanded duplicate column. No prior classification/external-reference/validation field removed or made newly mandatory. FLD-002-16 remains historical but Pending Submission/draft is EXCLUDED FROM CM-1 (CM1-PD-080).
+
+CM1-PD-083 initial extensible vocabulary: Company Iranian legal entity national identifier / Company registration number / Economic identifier; Person Iranian national identifier / Passport number / Valid foreign national identifier. Multiple identifiers per entity; validation by type/jurisdiction/issuer. Verified-valid uniqueness within applicable Tenant+namespace, never global deduplication; definite conflicts cannot be overridden and need authorized controlled correction. Exact namespaces/normalization/legal formats/issuer validity/mechanisms require authoritative evidence and remain OPEN.
+
+CM1-PD-085: official Company name, Person given/family names, identifiers/type/issuer edits require reason; material evidence impact requires reverification. Ordinary contact/address changes have optional reason but may affect verification basis. Existing optimistic version/Audit guards preserved.
+
+CM1-PD-086 current Relationship constraints override older candidate mutability/type descriptions below: Person, target kind/ID and Role identity immutable in ordinary edit; correction END+new. Manual END reason required, natural expiry no manually supplied reason. Business dates are calendar-day [start,end), empty/backwards invalid, future start and open end allowed; exact time reference/calendar/storage OPEN. New operational assignments to inactive Person/Company/Branch prohibited; history retained without retrospective assignment grant. Role reference shape remains OPEN, not Role identity mutability.
+
+CM1-PD-089/093 logical verification/Audit information supplements prior provenance, not a physical field schema. Complete safe logical lists are in PDR/operation catalog. Field dictionary JSON is the current detailed mapping; the source candidate tables below do not negate this overlay.
+
 **No executable field schema is formally accepted.** Five approved master entities remain source-derived; candidate representations are PROPOSED/OPEN while user-confirmed business constraints and logical Audit information are identified in the overlays below. Mandatory product information does not approve persistence/API fields. Jurisdiction-specific fields are NOT universally mandatory.
 
 ## Approved master entities (detailed fields OPEN)

@@ -45,11 +45,13 @@ Historical initial assessment: MET — documentary, not owner acceptance. Curren
 
 Detailed CM1 scenarios (CM1-REL-*, CM1-BRN-*, CM1-AUD-*, plus lifecycle/branch/CUS-UPDATE/duplicate/relationship/audit edge cases added in v1.2.1) are carried in `cm1-acceptance-criteria-addendum.md` (single source of truth; not duplicated here). The controlled-exception Relationship overlap policy is the authoritative policy and supersedes any prior absolute-overlap denial (see CM1-PD-041).
 
-## Inventory (v1.6.0 proposed package)
+## Inventory (v1.7.0 bounded candidate)
 
 - Canonical criteria: **5** (V3-FR-A-002-AC-01..05).
-- Detailed CM1 criteria: **153** (FLD 6, VER 18, REL 18, BRN 10, AUD 5, DUP 5, LC 11, UPD 10, ROL 70).
-- Total unique criterion IDs: **158**. All detailed criteria remain PROPOSED / NOT TESTED.
+- Detailed CM1 criteria: **207** (FLD 6, VER 18, REL 18, BRN 10, AUD 5, DUP 5, LC 11, UPD 10, ROL 70, BND 54).
+- Total unique criterion IDs: **212**. All detailed criteria remain PROPOSED / NOT TESTED.
+- v1.7.0 adds CM1-BND-01..54 only; all five canonical and 153 prior detailed definition lines preserved verbatim. New implementation-dependent execution BLOCKED. Prior canonical AC-03's UNASSIGNED owner and CM1-REL-18's immutability parenthetical are historical inventory notes answered by CM1-PD-078/086, not current requirements to remain unassigned/undecided. Deferred system verification/transfer and excluded workflows are not PASS. Current acceptance candidate still has explicit blockers; see customer-bounded-readiness.md.
+- Previous v1.6.0 inventory: 5 canonical +153 detailed =158; 77 decisions. This historical count is not the current inventory.
 - Previous v1.5.0 inventory: 5 canonical +128 detailed =133; added CM1-ROL-46..70 (25). Earlier definition lines unchanged; new implementation-dependent scenarios explicitly BLOCKED. Catalog-specific Audit coverage now has explicit product authority (CM1-PD-077); this does not negate existing no-assumed-event criteria for ordinary reads/warnings/validation absent a governing requirement.
 - Previous v1.4.0 inventory: 5 canonical + 112 detailed = 117. Added CM1-ROL-30..45 (16); all earlier definition lines unchanged. Software execution remains BLOCKED pending relevant executable design; no scenario marked executed.
 - Previous v1.3.0 inventory: 5 canonical + 99 detailed = 104. Added CM1-ROL-17..29; original five canonical definitions and CM1-ROL-01..16 are unchanged. See the addendum's v1.4.0 execution-dependency column: software scenarios are BLOCKED pending executable design.

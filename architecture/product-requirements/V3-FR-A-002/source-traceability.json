@@ -943,7 +943,25 @@
       "requiredDecisionAuthority": "Product Decision Owner / TAO"
     }
   ],
-  "version": "1.6.0",
+  "version": "1.7.0",
+  "boundedConsolidationReconciliation": {
+    "taskId": "V3-FR-A-002",
+    "source": "User task: Consolidate approved Customer Master product decisions and prepare bounded requirements acceptance candidate v1.7.0; Packages 1..4 clauses 1..18",
+    "baseline": "6f79975ab974c285dbac2547847add53513f8467",
+    "recordedAt": "2026-11-19T08:51:49.335997+00:00",
+    "issuedAt": null,
+    "authority": "USER-CONFIRMED PRODUCT DIRECTION — Farzad; existing governance preserved",
+    "formalAcceptance": "PENDING",
+    "decisionIds": ["CM1-PD-078", "CM1-PD-079", "CM1-PD-080", "CM1-PD-081", "CM1-PD-082", "CM1-PD-083", "CM1-PD-084", "CM1-PD-085", "CM1-PD-086", "CM1-PD-087", "CM1-PD-088", "CM1-PD-089", "CM1-PD-090", "CM1-PD-091", "CM1-PD-092", "CM1-PD-093", "CM1-PD-094", "CM1-PD-095"],
+    "exactDecisionReference": "customer-master-product-decision-record.json decisions and refinementsV170",
+    "policyReference": "customer-bounded-readiness.md",
+    "questionDispositionReference": "customer-bounded-readiness.json questions; exactly 19 unique IDs, all OPEN, full residual/scope/external/downstream/acceptance/implementation disposition",
+    "scenarioReference": "cm1-acceptance-criteria-addendum.md#bounded-four-package-scenarios-v170",
+    "historicalProvenancePreserved": true,
+    "notSourceApprovedRepositoryEvidence": true,
+    "historicalTextBoundary": "Original sourceInventory/evidence/canonicalTask/operationInventory/openQuestions and historical ledgers remain provenance; stale UNASSIGNED/NONE/OPEN policy text does not override current packages. Duplicate legacy unresolved strings are not new question IDs. Current PDR supersessions plus refinementsV170 apply, no original decisions rewritten.",
+    "roadmapBoundary": "Downstream task IDs/titles and F-000 actual prerequisite mirrored in customer-bounded-readiness.json; these are disposition references, not added roadmap edges or authorization. Canonical roadmap unchanged."
+  },
   "catalogGovernanceReconciliation": {
     "taskId": "V3-FR-A-002",
     "baseline": "895efd76595ca36a9ee5c8028a67c8854d5d318e",
@@ -1000,10 +1018,11 @@
     "notSourceApprovedRepositoryEvidence": true
   },
   "productDecisionRegister": {
+    "currentRefinementsReference": "customer-master-product-decision-record.json refinementsV170; supersessions below retain earlier overlap history",
     "path": "customer-master-product-decision-record.json",
     "recordId": "V3-FR-A-002-PDR-001",
-    "version": "1.6.0",
-    "decisionCount": 77,
+    "version": "1.7.0",
+    "decisionCount": 95,
     "decisionIds": [
       "CM1-PD-001",
       "CM1-PD-002",
@@ -1081,7 +1100,8 @@
       "CM1-PD-074",
       "CM1-PD-075",
       "CM1-PD-076",
-      "CM1-PD-077"
+      "CM1-PD-077",
+      "CM1-PD-078", "CM1-PD-079", "CM1-PD-080", "CM1-PD-081", "CM1-PD-082", "CM1-PD-083", "CM1-PD-084", "CM1-PD-085", "CM1-PD-086", "CM1-PD-087", "CM1-PD-088", "CM1-PD-089", "CM1-PD-090", "CM1-PD-091", "CM1-PD-092", "CM1-PD-093", "CM1-PD-094", "CM1-PD-095"
     ],
     "supersessions": [
       {
@@ -1094,13 +1114,13 @@
     "status": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_REPOSITORY_ACCEPTANCE_PENDING"
   },
   "userConfirmedDecisionsPresent": true,
-  "fieldDictionaryFieldCount": 31,
+  "fieldDictionaryFieldCount": 38,
   "decisionCoverageMatrix": {
     "path": "customer-decision-coverage-matrix.json",
-    "version": "1.6.0",
-    "decisionCount": 77,
+    "version": "1.7.0",
+    "decisionCount": 95,
     "coverageCounts": {
-      "PARTIAL": 67,
+      "PARTIAL": 85,
       "DOCUMENTED_ONLY": 5,
       "FULL": 3,
       "BLOCKED_BY_OPEN_DECISION": 2
@@ -1108,19 +1128,22 @@
   },
   "acceptanceInventory": {
     "canonicalCriteria": 5,
-    "detailedCriteria": 153,
-    "totalUnique": 158,
+    "detailedCriteria": 207,
+    "totalUnique": 212,
     "historicalInventoryV130": {"version": "1.3.0", "canonicalCriteria": 5, "detailedCriteria": 99, "totalUnique": 104},
     "historicalInventoryV140": {"version": "1.4.0", "canonicalCriteria": 5, "detailedCriteria": 112, "totalUnique": 117},
-    "previousInventory": {"version": "1.5.0", "canonicalCriteria": 5, "detailedCriteria": 128, "totalUnique": 133},
+    "historicalInventoryV150": {"version": "1.5.0", "canonicalCriteria": 5, "detailedCriteria": 128, "totalUnique": 133},
+    "previousInventory": {"version": "1.6.0", "canonicalCriteria": 5, "detailedCriteria": 153, "totalUnique": 158},
     "historicalAddedIdsV130": ["CM1-ROL-01", "CM1-ROL-02", "CM1-ROL-03", "CM1-ROL-04", "CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-07", "CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11", "CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14", "CM1-ROL-15", "CM1-ROL-16"],
     "historicalAddedIdsV140": ["CM1-ROL-17", "CM1-ROL-18", "CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29"],
     "previousAddedIds": ["CM1-ROL-30", "CM1-ROL-31", "CM1-ROL-32", "CM1-ROL-33", "CM1-ROL-34", "CM1-ROL-35", "CM1-ROL-36", "CM1-ROL-37", "CM1-ROL-38", "CM1-ROL-39", "CM1-ROL-40", "CM1-ROL-41", "CM1-ROL-42", "CM1-ROL-43", "CM1-ROL-44", "CM1-ROL-45"],
-    "addedIds": ["CM1-ROL-46", "CM1-ROL-47", "CM1-ROL-48", "CM1-ROL-49", "CM1-ROL-50", "CM1-ROL-51", "CM1-ROL-52", "CM1-ROL-53", "CM1-ROL-54", "CM1-ROL-55", "CM1-ROL-56", "CM1-ROL-57", "CM1-ROL-58", "CM1-ROL-59", "CM1-ROL-60", "CM1-ROL-61", "CM1-ROL-62", "CM1-ROL-63", "CM1-ROL-64", "CM1-ROL-65", "CM1-ROL-66", "CM1-ROL-67", "CM1-ROL-68", "CM1-ROL-69", "CM1-ROL-70"],
+    "historicalAddedIdsV160": ["CM1-ROL-46", "CM1-ROL-47", "CM1-ROL-48", "CM1-ROL-49", "CM1-ROL-50", "CM1-ROL-51", "CM1-ROL-52", "CM1-ROL-53", "CM1-ROL-54", "CM1-ROL-55", "CM1-ROL-56", "CM1-ROL-57", "CM1-ROL-58", "CM1-ROL-59", "CM1-ROL-60", "CM1-ROL-61", "CM1-ROL-62", "CM1-ROL-63", "CM1-ROL-64", "CM1-ROL-65", "CM1-ROL-66", "CM1-ROL-67", "CM1-ROL-68", "CM1-ROL-69", "CM1-ROL-70"],
+    "addedIds": ["CM1-BND-01", "CM1-BND-02", "CM1-BND-03", "CM1-BND-04", "CM1-BND-05", "CM1-BND-06", "CM1-BND-07", "CM1-BND-08", "CM1-BND-09", "CM1-BND-10", "CM1-BND-11", "CM1-BND-12", "CM1-BND-13", "CM1-BND-14", "CM1-BND-15", "CM1-BND-16", "CM1-BND-17", "CM1-BND-18", "CM1-BND-19", "CM1-BND-20", "CM1-BND-21", "CM1-BND-22", "CM1-BND-23", "CM1-BND-24", "CM1-BND-25", "CM1-BND-26", "CM1-BND-27", "CM1-BND-28", "CM1-BND-29", "CM1-BND-30", "CM1-BND-31", "CM1-BND-32", "CM1-BND-33", "CM1-BND-34", "CM1-BND-35", "CM1-BND-36", "CM1-BND-37", "CM1-BND-38", "CM1-BND-39", "CM1-BND-40", "CM1-BND-41", "CM1-BND-42", "CM1-BND-43", "CM1-BND-44", "CM1-BND-45", "CM1-BND-46", "CM1-BND-47", "CM1-BND-48", "CM1-BND-49", "CM1-BND-50", "CM1-BND-51", "CM1-BND-52", "CM1-BND-53", "CM1-BND-54"],
     "softwareExecution": "BLOCKED pending relevant executable design; NOT EXECUTED",
     "newCriteriaStatus": "PROPOSED / NOT TESTED"
   },
-  "partialResolutionLedger": [
+  "currentPartialResolutionLedgerReference": "customer-bounded-readiness.json questions; 19 individual current dispositions; human summary in customer-bounded-readiness.md. Historical ledger below remains unchanged provenance, not current unanswered-product assertions.",
+  "historicalPartialResolutionLedgerV160": [
     {
       "pdqId": "PDQ-002-08",
       "disposition": "OPEN / PARTIALLY ANSWERED",

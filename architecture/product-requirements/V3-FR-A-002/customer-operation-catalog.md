@@ -1,5 +1,35 @@
 # Customer operation catalog — V3-FR-A-002
 
+## Current logical operation and reason matrix — v1.7.0
+
+CM1-PD-078..095 approve product behavior/scope, not new executable CUS IDs, permission reuse, API/schema or implementation. Earlier source/candidate decomposition below remains historical representation where refined. All Customer Master mutations and unauthorized mutation attempts require Audit; exact event classification/contracts remain OPEN. Validation-only failures/warnings/ordinary reads do not automatically require a new event absent governing obligations; protected evidence/Audit reads are independently authorized and traceable. Four source operation IDs retained.
+
+| Logical operation/resource | Scope | Reason policy | Other required boundary |
+| --- | --- | --- | --- |
+| Ordinary Company/Person registration | INCLUDED | Optional | Required mapped names; optional supplied fields validated; initial ACTIVE/NOT_VERIFIED; authority/Audit |
+| Exceptional duplicate registration | INCLUDED | REQUIRED | Basic warning, reuse option, valid authority; no supervisor; definite conflict never overrideable; Audit |
+| Sensitive official name/identifier/type/issuer update | INCLUDED | REQUIRED | Version, validation, evidence-impact/reverification, authority/Audit |
+| Ordinary non-sensitive Customer/contact/Branch update | INCLUDED | Optional | Version, supplied-value validation, authority/Audit; contact evidence impact may require reverification |
+| Customer deactivation / Branch deactivation | INCLUDED | REQUIRED | Preserve histories/related states; existing open dependencies allowed, new-use restrictions retained; Audit |
+| Ordinary reactivation | INCLUDED | Optional | Mandatory fields/conflicts/authority/Audit; no universal VERIFIED; no related auto-activation |
+| Customer archive / restoration | CONDITIONALLY INCLUDED | REQUIRED | Applicable dependency rules/available evidence; unknown blocks; restore to INACTIVE only; authority/Audit |
+| Branch creation | INCLUDED | Optional | Valid same-Tenant immutable Company parent; authority/Audit |
+| Ordinary Relationship creation/editing | INCLUDED | Optional | Person/target/Role immutable during edit; calendar-day interval/eligibility/version/authority/Audit |
+| Exceptional Relationship overlap | INCLUDED | REQUIRED each new decision | Disclosure-safe warning/authority/Audit; conflict-set reevaluation, no supervisor; stale/Tenant/idempotency guards |
+| Manual Relationship termination | INCLUDED | REQUIRED | END+new correction rather than in-place identity replacement; Audit; natural expiry has no manual END reason |
+| Manual verification / reverification | CONDITIONALLY INCLUDED | Valid evidence REQUIRED; no new universal ordinary reason requirement | Independent authority, approved evidence/issuer/legal rules and SoD; Audit/provenance; preserve previously governed evidence reason information |
+| Manual verification revocation | Conditional verification boundary | REQUIRED | Independent authority, preserve invalidation history, no dispute auto-restore; Audit |
+| Role Catalog operations | INCLUDED | PD-073..077 remain authoritative | Ordinary Role lifecycle/Hide/Unhide reasons optional; incompatible scope reason/publication reason+release reference mandatory; full RC safeguards/Audit |
+| Search/review and read-for-update | INCLUDED product scope | No automatic reason/product Audit | Exact disclosure OPEN; search details A-003; source disclosure-denial/security obligations preserved |
+| Sensitive evidence / Audit access | Restricted independently authorized access | Exact access/reason contracts OPEN | Traceability mandatory, no inferred permission from Operator/Reviewer label; no cross-Tenant disclosure |
+| Unauthorized mutation attempt | No mutation allowed | No new caller-supplied reason obligation inferred | Mandatory safe Audit; fail closed, Audit outage never grants permission |
+
+Deferred: real system verification, Branch transfer coordination, advanced fuzzy detector. Excluded: merge/physical deletion/Pending Submission/draft/direct external customer access. Prohibited: offline and real customer/documents in initial synthetic scope. Profile/nine branches OPEN. See customer-bounded-readiness.md; no existing roadmap task removed/started.
+
+Logical Audit information (CM1-PD-093): event ID; applicable Tenant ID; actor ID/type; resource type/ID when available; operation; applicable old/new values; required/provided reason; timestamp; outcome; correlation ID; applicable evidence reference. Preserve earlier catalog origin/identity/publication/history and verification provenance requirements. No credentials/tokens/full identity documents or unnecessary sensitive values; protected access only, no cross-Tenant disclosure. Exact schemas/transactions/publication/retry/recovery/reconciliation/retention OPEN.
+
+Mutation success needs guaranteed coordinated durable Audit obligation; unknown is not definite success. Central Audit outage permits no automatic continuation or new executable policy. Producer obligation/outbox/ACK is distinct from authoritative ingestion, and Sovereign local authority is preserved. Prevent unauthorized Audit edits/deletion and treat attempts as security events without fabricating recording success during failure.
+
 **Four documented Customer operation concepts** derived from authoritative sources (V3-003 decision record + V3-FR-A-001 actor inventory). Operation concepts, NOT permission grants or fully specified operations.
 
 | Operation ID | Name | Summary | Business criticality | Audit boundary |

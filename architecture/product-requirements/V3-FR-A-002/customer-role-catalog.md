@@ -1,4 +1,8 @@
-# Relationship Role Catalog — v1.6.0 proposed package
+# Relationship Role Catalog — v1.7.0 bounded candidate (catalog policies unchanged)
+
+## v1.7.0 applicability only
+
+CM1-PD-078..095 do not reopen/replace catalog policies PD-058..077 or exact initial vocabulary v1.0. Customer Catalog Manager is the logical owning-Tenant manager category of PD-076, not a System governance/IAM/assignment grant. New Customer/Branch deactivation reasons do not change optional ordinary Role lifecycle/Hide/Unhide reasons; incompatible-scope/publication reason+release reference remain mandatory. All RC-001..021 and RC-OPEN mechanisms preserved. PDQ-002-08 **PRODUCT_READY_TECHNICAL_OPEN within approved scope; status OPEN / PARTIALLY ANSWERED**, not closed. Adjacent Relationship ordinary identity edit/day/END rules in PD-086 are not reopening catalog identity/code policy. Current bounded scope/blockers: customer-bounded-readiness.md; no formal acceptance or implementation permission.
 
 ## Authority and scope
 

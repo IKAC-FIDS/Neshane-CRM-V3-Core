@@ -1,6 +1,21 @@
 {
   "recordId": "V3-FR-A-002-PDR-001",
-  "version": "1.6.0",
+  "version": "1.7.0",
+  "boundedConsolidationAuthority": {
+    "taskId": "V3-FR-A-002",
+    "source": "User task: Consolidate approved Customer Master product decisions and prepare bounded requirements acceptance candidate v1.7.0; Packages 1..4, numbered clauses 1..18",
+    "authority": "USER-CONFIRMED PRODUCT DIRECTION — Farzad; existing project governance preserved",
+    "scope": "Bounded synthetic Customer Master requirements candidate; no acceptance or implementation",
+    "reviewedBaseline": "6f79975ab974c285dbac2547847add53513f8467",
+    "branch": "codex/v3-fr-a-002",
+    "recordedAt": "2026-11-19T08:51:49.335997+00:00",
+    "issuedAt": null,
+    "formalAcceptance": "PENDING",
+    "exactDecisionLocation": "decisions CM1-PD-078..095; one decision per numbered approved clause",
+    "readinessReference": "customer-bounded-readiness.md",
+    "questionDispositionReference": "customer-bounded-readiness.json",
+    "historicalUnresolvedNote": "unresolved below is preserved v1.6.0 historical text, including duplicate legacy strings; it is NOT a current count of unanswered product decisions. Current disposition uses exactly 19 question IDs in customer-bounded-readiness.json."
+  },
   "catalogGovernanceAuthority": {
     "taskId": "V3-FR-A-002",
     "scope": "Customer Master / Relationship Role Catalog / PDQ-002-08 / CM1-PD-073..077",
@@ -462,7 +477,99 @@
       "topic": "Role Catalog Audit Requirements",
       "rule": "Mandatory Audit coverage:\n- System Role creation.\n- Tenant Role creation.\n- Label and description changes.\n- Scope changes.\n- Activation and deactivation.\n- Tenant Hide/Unhide.\n- System catalog publication.\n- Unauthorized attempts to modify the catalog.\n\nReason policy:\n- Optional for ordinary creation, metadata changes, compatible scope changes, activation, deactivation, Hide and Unhide.\n- Mandatory for scope changes incompatible with existing relationships.\n- Mandatory for system catalog publication, including the release reference.\n- Preserve previously approved exception reason rules.\n\nLogical Audit information:\n- Event ID.\n- Actor ID or authorized system identity.\n- Tenant ID when applicable.\n- Role ID and roleCode when available.\n- Role origin.\n- Operation.\n- Previous and new values, when applicable.\n- Reason, according to the operation.\n- Timestamp.\n- Outcome.\n- Correlation ID.\n\nAudit constraints:\n- Catalog managers and ordinary users must not be able to modify or delete Audit history.\n- Tenant Audit records must remain isolated.\n- Historical records must survive changes to role titles, status and scope.\n- Do not report a state-changing operation as successful unless durable Audit recording can be guaranteed.\n- Ordinary catalog reads do not independently require product-level Audit under this decision.\n- Security monitoring obligations remain unaffected.\n- Unauthorized attempts must not disclose protected cross-tenant information.\n- Exact Audit schema, transactional guarantees, storage, retention, recovery and access contracts remain OPEN."
     }
+    ,
+    {
+      "id": "CM1-PD-078",
+      "topic": "Accountability",
+      "rule": "Business Owner for FR-BJ-001: Farzad. Product requirements decision authority: Farzad. Interim accountable authority for Audit failure, ingestion, recovery and reconciliation policy: Farzad, until a separate owner is designated. Software development team is responsible for technical design and implementation. Preserve existing project governance authorities. Do not infer IAM permissions from these assignments."
+    },
+    {
+      "id": "CM1-PD-079",
+      "topic": "Logical business actor categories",
+      "rule": "Customer Operator: customer registration and maintenance. Customer Reviewer: authorized customer search and review. Customer Catalog Manager: authorized tenant role catalog management. Customer Verifier: independently authorized identity verification. Audit Reviewer: independently authorized review of Audit evidence. A person may hold multiple independent responsibilities. These are logical business responsibilities, not approved IAM role definitions or permission grants. Prepare an operation/resource/disclosure matrix; exact unresolved grants and disclosure boundaries remain OPEN rather than inventing authorization decisions."
+    },
+    {
+      "id": "CM1-PD-080",
+      "topic": "Selected CM-1 product scope",
+      "rule": "INCLUDED: Individual customer registration; Company customer registration; Customer information maintenance; Contact channel management; Branch management; Related Person management; Relationship management; Role Catalog management; Basic duplicate detection; Customer search and review; Activation and deactivation. CONDITIONALLY INCLUDED: Customer archive and restoration, subject to approved dependency rules and available evidence; Manual identity verification, subject to approved evidence, issuer, authorization and SoD rules. DEFERRED: Real external identity verification integration; Executable Branch transfer coordination workflow; Advanced intelligent/fuzzy duplicate detection. EXCLUDED FROM CM-1: Customer merge; Physical customer deletion; Pending Submission or draft workflow; Direct external customer access. PROHIBITED: Offline operation. Preserve approved Branch transfer semantics: no automatic migration of relationships, activities or historical records. Do not remove deferred capabilities from the roadmap."
+    },
+    {
+      "id": "CM1-PD-081",
+      "topic": "Synthetic development scope and unresolved applicability",
+      "rule": "Synthetic data only. No real customer information or identity documents. Preserve Tenant isolation and all architecture/security controls. Local development does not authorize production. Deployment profile selection and applicability of the nine conditional roadmap branches remain OPEN until explicitly decided. Do not invent profile selection or waive applicable roadmap requirements."
+    },
+    {
+      "id": "CM1-PD-082",
+      "topic": "Minimum customer fields",
+      "rule": "Company: Company name required; English name optional; Official identifier conditional; Registration number optional at registration; Telephone, Email, Address, Country, Website and Notes optional. Person: Given name and Family name required; English name optional; Official identifier conditional; Telephone, Email, Address, Country and Notes optional. Official identifiers are required only for workflows requiring formal identity verification. Optional fields must be validated when supplied. Preserve the existing field dictionary; do not silently remove previously approved fields."
+    },
+    {
+      "id": "CM1-PD-083",
+      "topic": "Jurisdiction-aware official identifiers",
+      "rule": "Support an extensible jurisdiction-aware logical model. Initial Company identifier vocabulary: Iranian legal entity national identifier; Company registration number; Economic identifier. Initial Person vocabulary: Iranian national identifier; Passport number; Valid foreign national identifier. Multiple official identifiers may belong to one entity. Validation depends on identifier type, jurisdiction and issuing authority. Verified valid identifiers are unique within the applicable Tenant and identifier namespace; no global cross-Tenant deduplication. Definite verified identifier conflicts cannot be overridden; resolution requires authorized controlled correction. Exact issuer namespaces, normalization and technical validation mechanisms remain OPEN. Do not claim legal identifier formats or issuer validity without authoritative evidence."
+    },
+    {
+      "id": "CM1-PD-084",
+      "topic": "Basic duplicate signals and controlled exception",
+      "rule": "Same verified valid official identifier blocks a definite conflict. Same unverified official identifier, same company name, same given and family name, same telephone, or same email produces a warning. Multiple matching signals have higher warning priority. Non-definitive signals are not identity proof. Preserve reuse of an existing record or authorized new registration with mandatory reason and Audit; no supervisor approval. Advanced algorithms, scoring thresholds, indexes and concurrent matching remain technical OPENs. Customer merge and physical deletion are excluded from CM-1."
+    },
+    {
+      "id": "CM1-PD-085",
+      "topic": "Critical identity facts and reverification",
+      "rule": "Mandatory reason for changes to Official company name, Official person given/family name, Official identifiers, Identifier type, and Issuing authority. Reverification is required when a change invalidates or materially affects prior verification evidence. Ordinary telephone, email and address changes do not require a mandatory reason by default, but may require reverification when they formed part of the prior verification basis. Preserve optimistic concurrency and prior Audit rules."
+    },
+    {
+      "id": "CM1-PD-086",
+      "topic": "Relationship editing, termination and calendar-day semantics",
+      "rule": "Person identity, Company/Branch target and Role identity are immutable during ordinary Relationship editing; correct them by ending the existing Relationship and creating a new Relationship. Manual END requires mandatory reason and Audit; natural expiry does not require a manually supplied END reason. Business time is calendar-day based; applicable time reference must be explicit and its exact selection remains OPEN. Preserve half-open [start,end), permit future start dates and optional end date; preserve controlled overlap exception rules. Prohibit new operational assignments to inactive Persons, Companies or Branches. Preserve existing Relationships/history after deactivation; history retention does not authorize retrospective assignment workflows. Calendar presentation, storage representation, locking and conflict-set mechanisms remain OPEN."
+    },
+    {
+      "id": "CM1-PD-087",
+      "topic": "Archive dependency policy",
+      "rule": "Applicable open dependencies blocking archive include Open sales opportunities, Active contracts, Open orders, Open support tickets, Active projects, Ongoing tenders, Outstanding delivery commitments, Open activities or follow-ups, Active branches, and Active relationships. Only applicable capabilities participate. Closed activities and historical records do not independently prevent archiving. Unknown dependency results are not clearance. Deactivation with open dependencies remains permitted under existing new-activity restrictions. Do not invent integrations with unimplemented services; if dependency clearance cannot be established, the affected archive operation remains blocked."
+    },
+    {
+      "id": "CM1-PD-088",
+      "topic": "Reactivation guards",
+      "rule": "Reactivation requires mandatory-field validation, definite identifier conflict validation, authorization and Audit. VERIFIED identity is not globally required unless an applicable workflow requires it. Reason is optional for ordinary reactivation. No automatic activation of related branches or relationships. Preserve ARCHIVED -> INACTIVE -> ACTIVE; no direct ARCHIVED -> ACTIVE."
+    },
+    {
+      "id": "CM1-PD-089",
+      "topic": "Verification evidence and unresolved catalogs",
+      "rule": "Permitted conceptual methods: review of valid identity documents; review of valid company registration documents; authorized manual verification with evidence; trusted system verification as a future integration. Verification without evidence is prohibited. Contact information or unsupported customer assertions alone are not formal identity proof. Record logical Evidence type, Issuing authority, Verifying authority, Timestamp, Outcome and Evidence reference. Exact approved issuer/evidence catalogs and applicable legal requirements remain OPEN. Do not authorize real document processing before these requirements are resolved. Initial development remains synthetic-only."
+    },
+    {
+      "id": "CM1-PD-090",
+      "topic": "Separation of Duties cases",
+      "rule": "An actor separately authorized for registration and verification may perform ordinary registration and ordinary verification. A different authorized verifier is mandatory for Verification following correction of an already verified official identifier; Resolution and verification of a definite identifier conflict; Reverification after fundamental evidence invalidation. Additional legal/contractual SoD obligations remain applicable when established. Ordinary registration authority does not grant verification authority."
+    },
+    {
+      "id": "CM1-PD-091",
+      "topic": "Verification lifecycle and disputes",
+      "rule": "Preserve NOT_VERIFIED, VERIFIED and REQUIRES_REVERIFICATION. Initial identity state NOT_VERIFIED; successful verification with valid evidence VERIFIED; material identity change or expired/invalidated essential evidence REQUIRES_REVERIFICATION; proven fundamentally invalid verification NOT_VERIFIED; successful authorized reverification VERIFIED. A dispute or objection does not automatically restore VERIFIED. Preserve verification/invalidation history; no universal fixed expiry. Record and verification lifecycles remain independent."
+    },
+    {
+      "id": "CM1-PD-092",
+      "topic": "Customer mutation Audit coverage and reason policy",
+      "rule": "All Customer Master mutations and unauthorized mutation attempts require Audit. Reason REQUIRED for Exceptional duplicate registration, Sensitive identity changes, Customer deactivation, Customer archive, Customer restoration, Branch deactivation, Exceptional Relationship overlap, Manual Relationship termination and Manual identity verification revocation. Reason OPTIONAL for Ordinary customer registration, Ordinary non-sensitive updates, Ordinary reactivation, Branch creation, Ordinary non-sensitive Branch updates, Ordinary Relationship creation/editing. Verification/reverification require valid evidence. Preserve stricter previously approved reasons. Role Catalog Audit remains governed by CM1-PD-073..077 and existing approved policies. Ordinary customer reads do not automatically require product-level Audit. Access to sensitive identity evidence and Audit records must be traceable and independently authorized."
+    },
+    {
+      "id": "CM1-PD-093",
+      "topic": "Logical Customer Audit information and minimization",
+      "rule": "Logical Audit information: Event ID; Tenant ID when applicable; Actor ID; Actor type; Resource type; Resource ID when available; Operation; Previous values when applicable; New values when applicable; Reason where required or provided; Timestamp; Outcome; Correlation ID; Evidence reference where applicable. Avoid unnecessary sensitive data, credentials, tokens and complete identity documents in Audit records. No cross-Tenant disclosure. Preserve prior catalog-specific origin/identity/release and historical information requirements; no physical event schema is selected."
+    },
+    {
+      "id": "CM1-PD-094",
+      "topic": "Audit failure and ingestion boundary",
+      "rule": "Durable Audit obligation is mandatory. Do not report mutation success if it cannot be guaranteed; unknown Audit outcome must not be reported as definite success. Central Audit unavailability may permit continuation only under an explicitly approved bounded policy; no automatic fail-open and no executable continuation policy authorized by this task. Prevent unauthorized Audit modification/deletion and treat attempts as security events. Preserve producer publication obligation versus authoritative ingestion evidence. Transactions, reliable publication, retry, recovery and reconciliation contracts remain OPEN."
+    },
+    {
+      "id": "CM1-PD-095",
+      "topic": "Retention and synthetic-data boundary",
+      "rule": "Preserve inactive/archived Customer records; inactive Branch records/historical associations; ENDED Relationships/history; verification/revocation history; evidence references subject to applicable policy; protected Audit history; permanent Role identity/roleCode reservation under prior catalog decisions. Physical Customer deletion excluded from CM-1. Do not infer unlimited retention of personal data. Exact durations, legal hold, disclosure, evidence retention and regulatory applicability remain OPEN. No real customer information or identity evidence in initial synthetic development."
+    }
   ],
+  "currentQuestionTraceabilityReference": "customer-bounded-readiness.json questions: exact current per-question decisionIds and downstreamTaskIds; historical partial mapping below retained, not complete v1.7.0 mapping",
   "openQuestionTraceability": {
     "PDQ-002-08": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067", "CM1-PD-068", "CM1-PD-069", "CM1-PD-070", "CM1-PD-071", "CM1-PD-072", "CM1-PD-073", "CM1-PD-074", "CM1-PD-075", "CM1-PD-076", "CM1-PD-077"],
     "PDQ-002-07": [
@@ -564,6 +671,14 @@
     "deployment",
     "runtime gate",
     "closure of other OPEN decisions"
+  ],
+  "refinementsV170": [
+    {"priorDecisionIds": ["CM1-PD-015"], "newDecisionIds": ["CM1-PD-085", "CM1-PD-092"], "scope": "Explicitly classify official names/type/issuer as sensitive and add mandatory lifecycle/END/revocation reasons; supersede any narrower only-sensitive-identifiers interpretation for these operations. Routine edits remain optional-reason, stricter catalog/overlap reasons preserved."},
+    {"priorDecisionIds": ["CM1-PD-016", "CM1-PD-017", "CM1-PD-018", "CM1-PD-053"], "newDecisionIds": ["CM1-PD-082", "CM1-PD-083", "CM1-PD-084"], "scope": "Map mandatory names, extend optional fields and identifier vocabulary, select Tenant plus identifier namespace uniqueness; exact namespaces/legal validators still OPEN. Broader future workflow-conditional fields in PD-053 are not selected as new mandatory CM-1 fields."},
+    {"priorDecisionIds": ["CM1-PD-030", "CM1-PD-032"], "newDecisionIds": ["CM1-PD-086"], "scope": "Ordinary Relationship Person/target/Role replacement prohibited; manual END reason required, natural expiry exempt; calendar-day granularity selected without selecting time reference/storage; no retrospective assignment permission."},
+    {"priorDecisionIds": ["CM1-PD-011", "CM1-PD-012", "CM1-PD-021", "CM1-PD-057"], "newDecisionIds": ["CM1-PD-087", "CM1-PD-088", "CM1-PD-090", "CM1-PD-091"], "scope": "Add applicable archive dependencies, reactivation guards, three mandatory different-verifier cases and no dispute auto-restoration; legal/contractual additions remain OPEN."},
+    {"priorDecisionIds": ["CM1-PD-048", "CM1-PD-049", "CM1-PD-050", "CM1-PD-051"], "newDecisionIds": ["CM1-PD-092", "CM1-PD-093", "CM1-PD-094"], "scope": "Explicit mandatory Audit for all Customer mutations and unauthorized mutation attempts plus traceable protected access. This is the explicit governing-source exception to PD-049, not a blanket requirement for ordinary reads or all validation warnings/rejections. Catalog PD-073..077 unchanged."},
+    {"priorDecisionIds": ["CM1-PD-020", "CM1-PD-045"], "newDecisionIds": ["CM1-PD-080", "CM1-PD-081", "CM1-PD-089", "CM1-PD-095"], "scope": "Preserve future system verification/Branch transfer semantics but defer their executable integrations; exclude merge/deletion/Pending Submission/external direct access from CM-1 only, not the roadmap; prohibit real data/documents and offline operation."}
   ],
   "supersessions": [
     {

@@ -1,5 +1,24 @@
 # Actor–resource policy matrix — V3-FR-A-002
 
+## Current logical operation/resource/disclosure matrix — v1.7.0
+
+CM1-PD-078/079: Farzad Business Owner/product requirements authority and interim accountable Audit policy authority; development team responsible for technical design/implementation, not authorized to begin. These governance assignments do not grant runtime access. Five named logical business categories below are product-approved responsibilities, **not approved IAM roles/permission identifiers/grants or appointments of actual runtime actors**. An individual may independently hold several responsibilities. All operations require owning-service authorization and validated Tenant Context, never client-header/UI trust.
+
+| Logical category | Resource and operation responsibility | Product restrictions | Exact disclosure/grants remaining OPEN |
+| --- | --- | --- | --- |
+| Customer Operator | Customer Company/Person registration/maintenance, associated contact/Branch/Relationship management within selected scope | No implied verification, Audit review, catalog management or foreign-Tenant access; sensitive/lifecycle/END reasons per operation matrix | Per-operation actual actor assignments, read-before-write fields, write fields, related resources, duplicate/overlap suggestion visibility/masking and historical access |
+| Customer Reviewer | Authorized Customer search/review; detail requirements V3-FR-A-003 | No write authority inferred, no verification/evidence/Audit access implied | Query/result fields, filtering, detail/history disclosure, protected identifiers and zero-result/denial behavior |
+| Customer Catalog Manager | Authorized own-Tenant custom Role management and own-Tenant System Hide/Unhide | Maps to PD-076 Tenant category only, not System governance or Relationship assignment; preserve RC-001..021 | Exact catalog operation/grant/actor mapping, visible impact/conflict details and release privacy |
+| Customer Verifier | Independently authorized conditional identity verification/reverification/revocation | Evidence/issuer/legal/SoD prerequisites, not ordinary CUS-UPDATE; real documents prohibited initially | Specific verified facts/evidence visibility, actual grants, multi-step sensitive actor binding, safe revocation/dispute recovery |
+| Audit Reviewer | Independently authorized Audit evidence review | No mutation/deletion privilege or catalog/Customer write authority; access traceable | Event/resource/field/history access, evidence-reference dereference, masking/export/retention and traceability contract |
+| System catalog governance authority (existing PD-076; not a sixth new business role grant) | Existing controlled System catalog creation/metadata/scope/lifecycle/publication | Not implied by Farzad product ownership or Customer Catalog Manager responsibility; no Tenant-private access inferred | Exact System governance runtime bindings/publication/conflict-detection privacy remain OPEN |
+
+Sensitive evidence and Audit access must be traceable and independently authorized (PD-092), not ordinary-read blanket Audit. Deny missing/invalid authorization/Tenant context and cross-Tenant disclosure. Authorized responsibility label alone does not determine field visibility. Exact boundary decisions above remain acceptance blockers for selected examples, not silently converted into allow/deny permission IDs.
+
+PD-090 SoD: ordinary separately authorized registration+verification may be same actor. A different authorized verifier is mandatory after correction of an already verified official identifier, for definite-conflict resolution/verification, and reverification after fundamental evidence invalidation. Exact actor comparison/binding in multistep correction/resolution remains OPEN; do not weaken these cases to a creator-only check or invent approved actor identities. Additional binding legal/contractual SoD remains applicable when established. No supervisor approval introduced for ordinary authorized duplicate/overlap exceptions. Scope/evidence conditions and all implementation Gates remain.
+
+Earlier analytical/source actor notes below are historical where refined; no modification to accepted A-001 actor inventory is performed.
+
 **No executable IAM/RBAC role, permission grant or mechanism is approved.** CM1-PD-076 confirms three logical responsibility categories below, not runtime actor appointments or technical permission bindings. Customer Domain retains final authorization.
 
 ## Actor references (accepted V3-FR-A-001)

@@ -1,5 +1,15 @@
 # Customer Master requirements — V3-FR-A-002
 
+## Current bounded requirements — v1.7.0
+
+CM1-PD-078..095 record four user-approved packages; formal acceptance PENDING. Farzad Business Owner/product requirements authority and interim Audit failure/ingestion/recovery/reconciliation accountable authority; development team technical responsibility, no runtime grants. Five independent logical actors and unresolved disclosure bindings: actor-resource-policy-matrix.md.
+
+Current scope/acceptance limitations: customer-bounded-readiness.md / .json. Registration/maintenance/contact/Branch/Related Person/Relationship/catalog/basic duplicates/activation/deactivation included; Customer search/review included in selected CM-1 scope but detailed FR-BJ-002 requirements remain V3-FR-A-003, not completed here. Archive/restoration and manual verification conditional. Real external verification, executable Branch transfer coordination and fuzzy matching deferred. Merge/physical Customer deletion/Pending Submission/draft/direct external access excluded from CM-1; offline prohibited. Deferred scope remains on roadmap.
+
+Approved behavior: mapped Company/Person minimums; multi-identifier Tenant+namespace model; basic duplicate signals; sensitive official names/type/issuer reasons; immutable ordinary Relationship Person/target/Role with END+new correction/manual-END reason; calendar-day [start,end) with exact time reference OPEN; inactive assignment prohibition; archive dependency list/reactivation guards; evidence-backed verification/three SoD cases/no dispute auto-restore; all mutations/unauthorized attempts Audit, reason matrix and protected-access traceability. Exact rules in PDR JSON, field dictionary/lifecycle/operation catalog; no schema/API/IAM mechanism selected.
+
+Earlier source OPEN statements below are historical where refined by PDR. Exact actors/disclosure/profile/nine branches/time reference/unspecified validations/legal-issuer-evidence applicability and technical contracts remain OPEN. Synthetic only, no real customer data/documents; no implementation/F-000 or formal acceptance authorized. Tenant isolation, owning-Domain authorization and all Gates preserved.
+
 **Requirements engineering / specification preparation only.** FR-BJ-001 scope. No product implementation, field approval, role/RBAC, API/schema or technology selection. APPROVED / PROPOSED / OPEN are explicit and source-located. This specification does NOT cover FR-BJ-002 Customer Search and Browse.
 
 ## Approved scope (source-derived, not inferred)

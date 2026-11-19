@@ -1,8 +1,31 @@
-# Customer Master — Decision Coverage Matrix (v1.6.0 proposed package)
+# Customer Master — Decision Coverage Matrix (v1.7.0 bounded candidate)
 
-Maps all 77 user-confirmed product decisions (CM1-PD-001..077) to requirements/rules/fields/logical operations/scenarios/OPEN questions. Coverage is documentation/scenario coverage, never executed software evidence or formal acceptance. Five new CM1-PD-073..077 rows are PARTIAL with explicit remaining technical contracts, not unanswered product policy. No earlier coverage class promoted. Exact references/gaps in JSON; RC-017..021 are in customer-role-catalog.md. No approved field IDs exist for unresolved IAM/setting schemas.
+Maps all 95 user-confirmed product decisions (CM1-PD-001..095). Coverage means documentation/scenario coverage, never software execution or formal acceptance. Eighteen new rows PARTIAL with explicit residual contracts/evidence/authorization and proposed scenarios. Prior classes retained; historical row gaps refined by new packages are current-dispositioned in customer-bounded-readiness.json and PDR refinementsV170, not treated as unanswered policy by copying stale text. Exact field/operation/scenario/question references in JSON. No IAM/setting field schema invented.
 
-**Coverage counts:** BLOCKED_BY_OPEN_DECISION=2, DOCUMENTED_ONLY=5, FULL=3, PARTIAL=67
+**Coverage counts:** BLOCKED_BY_OPEN_DECISION=2, DOCUMENTED_ONLY=5, FULL=3, PARTIAL=85
+
+New decision coverage (details in JSON):
+
+| Decision ID | Class | Requirement/rule | New scenario IDs |
+| --- | --- | --- | --- |
+| CM1-PD-078 | PARTIAL | Bounded accountability | CM1-BND-01 |
+| CM1-PD-079 | PARTIAL | Actor/resource/disclosure | CM1-BND-02, CM1-BND-41, CM1-BND-49 |
+| CM1-PD-080 | PARTIAL | Selected scope boundaries | CM1-BND-03, CM1-BND-04, CM1-BND-05, CM1-BND-06 |
+| CM1-PD-081 | PARTIAL | Synthetic/profile/applicability | CM1-BND-07, CM1-BND-08, CM1-BND-40 |
+| CM1-PD-082 | PARTIAL | Minimum mapped fields | CM1-BND-09, CM1-BND-10, CM1-BND-11, CM1-BND-12 |
+| CM1-PD-083 | PARTIAL | Multi-identifier namespace/evidence | CM1-BND-13, CM1-BND-14, CM1-BND-15, CM1-BND-16 |
+| CM1-PD-084 | PARTIAL | Basic duplicate signals/exception | CM1-BND-17, CM1-BND-18, CM1-BND-19, CM1-BND-20, CM1-BND-21 |
+| CM1-PD-085 | PARTIAL | Critical facts/evidence basis | CM1-BND-22, CM1-BND-23, CM1-BND-24 |
+| CM1-PD-086 | PARTIAL | Immutable Relationship/day/END | CM1-BND-25, CM1-BND-26, CM1-BND-27, CM1-BND-28, CM1-BND-29, CM1-BND-30 |
+| CM1-PD-087 | PARTIAL | Applicable archive dependencies | CM1-BND-31, CM1-BND-32, CM1-BND-33, CM1-BND-34 |
+| CM1-PD-088 | PARTIAL | Reactivation/restoration guards | CM1-BND-35, CM1-BND-36 |
+| CM1-PD-089 | PARTIAL | Evidence methods/information | CM1-BND-37, CM1-BND-38, CM1-BND-39, CM1-BND-40 |
+| CM1-PD-090 | PARTIAL | Three mandatory SoD cases | CM1-BND-41, CM1-BND-42 |
+| CM1-PD-091 | PARTIAL | Verification/history/dispute | CM1-BND-43, CM1-BND-44 |
+| CM1-PD-092 | PARTIAL | Audit/reason/access policy | CM1-BND-45, CM1-BND-46, CM1-BND-47, CM1-BND-48, CM1-BND-49 |
+| CM1-PD-093 | PARTIAL | Logical safe Audit information | CM1-BND-50 |
+| CM1-PD-094 | PARTIAL | Durable failure/ingestion/security | CM1-BND-51, CM1-BND-52, CM1-BND-53 |
+| CM1-PD-095 | PARTIAL | Retention/legal/synthetic boundary | CM1-BND-54 |
 
 | Decision ID | Coverage | Summary | Fields | Acceptance criteria | Related OPEN |
 | --- | --- | --- | --- | --- | --- |

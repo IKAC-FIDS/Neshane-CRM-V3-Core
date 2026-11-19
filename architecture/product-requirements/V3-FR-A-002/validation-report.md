@@ -1,6 +1,45 @@
 # Requirements-engineering validation report — V3-FR-A-002
 
-## Current supplement — v1.6.0 catalog governance, history and Audit
+## Current supplement — v1.7.0 bounded acceptance candidate
+
+**PREPARED FOR SEPARATE OWNER REVIEW; NOT ACCEPTED; no implementation authorization.** Earlier reports are historical, not renewed execution evidence. Task V3-FR-A-002 / bounded candidate v1.7.0; branch `codex/v3-fr-a-002`; original/full HEAD `6f79975ab974c285dbac2547847add53513f8467`; initial worktree/index clean. Authority: USER-CONFIRMED PRODUCT DIRECTION — Farzad (PDR `boundedConsolidationAuthority`, recording time `2026-11-19T08:51:49.335997+00:00`, issuance time not supplied). Documentation only; no Backend/Frontend/schema/API/IAM/application test/build/runtime; no stage/commit/push; formal acceptance and every Gate unchanged.
+
+### A. Baseline and scope
+- Baseline v1.6.0 actual: 77 decisions, 5 canonical +153 detailed =158 unique criteria, 19 unique OPEN IDs, 31 field IDs, 21 manifest files, coverage FULL3/PARTIAL67/DOC5/BLOCKED2.
+- Current v1.7.0 actual: **95 decisions**, **5 canonical +207 detailed =212 unique criteria**, **38 field IDs**, coverage **FULL3/PARTIAL85/DOC5/BLOCKED2**, **19 OPEN IDs** (none closed), **23 manifest files**.
+- Two new package artifacts: `customer-bounded-readiness.md` and `customer-bounded-readiness.json`.
+
+### B. Four-package reconciliation
+- 18 new decisions CM1-PD-078..095 map one-to-one to the 18 numbered user clauses. All 77 prior parsed objects and raw UTF-8 object substrings are byte-identical to baseline. Precise narrowed/extended applicability recorded in `refinementsV170` (six entries), not silent rewrites.
+- P1 accountability/actors/scope: Farzad Business Owner/product authority and interim Audit policy accountability; five independent logical responsibilities; selected included/conditional/deferred/excluded/prohibited scope; synthetic only; profile and nine branches OPEN.
+- P2 data/identifiers/duplicates/relationships: mandatory Company name and Person given/family mapped to new FLD-002-18/19/20; multi-identifier Tenant+namespace with no global dedup/definite override; basic signals; sensitive official facts; immutable ordinary Relationship Person/target/Role with END+new; manual-END reason; calendar-day [start,end) with exact time reference OPEN; inactive assignment prohibition; controlled overlap PD-033..041 preserved.
+- P3 lifecycle/verification/SoD: applicable archive dependency list, unknown-blocks, deactivation still permitted with required reason; reactivation guards and ARCHIVED->INACTIVE->ACTIVE; evidence-backed verification methods and required logical evidence information; three mandatory different-verifier SoD cases; three-state lifecycle/no dispute auto-restore/no universal TTL.
+- P4 Audit/evidence/retention: all mutations/unauthorized mutation attempts Audit; required/optional reason matrix; catalog PD-073..077 preserved; safe logical Audit information; guaranteed durable obligation/unknown-not-success/no executable continuation; protected traceable access; retention without unlimited personal data; synthetic only.
+- Role Catalog PD-058..077, exact 12-entry vocabulary, RC-001..021 sections and historical RC-OPEN/proposals unchanged. New Customer/Branch deactivation reasons do not alter catalog reason policy. PDQ-002-08 product-ready within approved scope, still OPEN / PARTIALLY ANSWERED.
+
+### C. Open-question disposition and blockers
+- Each of the 19 unique IDs keeps its exact original title text and `OPEN` status in `customer-bounded-readiness.json`, with separate answeredProduct/remainingProduct/scopeDisposition/technicalContracts/externalDependencies/downstreamTaskIds/acceptanceImpact/implementationImpact. Legacy duplicate `unresolved` strings and the historical "14 OPEN" line are reconciled as provenance, not extra questions.
+- Remaining acceptance blockers retained: exact actor/disclosure boundaries and approvals; deployment profile and nine branch applicability; explicit day time reference; needed unspecified business validations and authoritative legal/issuer/evidence requirements; applicable archive clearance evidence. Archive/manual verification stay conditional; no fabricated clearance. No decision was invented to force readiness.
+
+### D. Commands, results and failures
+```powershell
+git --no-optional-locks status --short --branch --untracked-files=all
+git --no-optional-locks rev-parse HEAD
+python -X utf8 C:/Users/user/AppData/Local/Temp/opencode/a002-v170-validate.py
+python -X utf8 C:/Users/user/AppData/Local/Temp/opencode/a002-v170-validate.py --manifest
+git --no-optional-locks diff --check
+git --no-optional-locks diff --stat
+```
+- First external-validator run: **44/45 PASS**, 1 FAIL only because two validator assertion substrings used the wrong letter case (`No executable continuation policy` vs actual lowercase `no`, and `Unknown Audit outcome` vs actual lowercase `unknown`) while the decision text was correct. Fixed the two assertion strings; re-run **45/45 PASS**. This was validator string normalization, not a content change or suppressed check.
+- Manifest run (after regeneration below) validates complete inventory/self-exclusion, exact-byte SHA-256 across all other package files, `git diff --check` clean (only LF->CRLF working-copy warnings) and package-wide trailing-whitespace cleanliness.
+- JSON parse across six artifacts; unique decision/criterion/field/question IDs; cross-references; prior-object preservation; Role Catalog/vocabulary/roadmap byte-integrity; F-000 prerequisite mirrored exactly (`V3-FR-A-002` only) with no implementation authority; 19 original question texts; coverage counts agreement; introduced links resolve. Build/application/integration/runtime tests NOT EXECUTED; all software scenarios PROPOSED / NOT TESTED and BLOCKED. No dependency/network/service/Docker activity.
+
+### E. Governance unchanged
+G-RUNTIME: BLOCKED; FE-BE: PENDING; AUTH/IAM: PENDING; Offline: PROHIBITED; Local-Infra: ACCEPTED — DEVELOPMENT-ONLY; Production: NOT AUTHORIZED; Formal acceptance: PENDING. V3-FR-F-000 NOT AUTHORIZED. Next action is explicit owner review only.
+
+## Historical v1.6.0 supplement (not renewed v1.7.0 evidence)
+
+## v1.6.0 catalog governance, history and Audit
 
 **PREPARED FOR USER REVIEW; USER-CONFIRMED PRODUCT DIRECTION; formal acceptance PENDING.** Earlier reports are historical, not renewed execution evidence. No executable architecture, IAM, Audit integration, runtime or production approval is granted.
 

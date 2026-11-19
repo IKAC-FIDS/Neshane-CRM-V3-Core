@@ -1,5 +1,28 @@
 # Customer failure scenarios — V3-FR-A-002
 
+## Current additional failure boundaries — v1.7.0
+
+User-confirmed policies CM1-PD-078..095; scenarios PROPOSED / NOT TESTED; all implementation-dependent execution BLOCKED. Exact new coverage CM1-BND-01..54 in addendum. No failure simulation/runtime executed.
+
+| Failure/scenario | Product-required outcome / limitation | New scenarios |
+| --- | --- | --- |
+| Generic display name without required Person parts | Mandatory given/family validated independently; no substitution or extra mandatory language inferred | CM1-BND-09, CM1-BND-10 |
+| Invalid optional supplied field / unknown identifier validator | Optional does not mean unvalidated; no made-up legal format/issuer/checksum or fake validation PASS | CM1-BND-11, CM1-BND-13 |
+| Same unverified identifier/name/phone/email | Warning, not definite proof; multiple signals raise warning priority, not verification; controlled exception reason/Audit, no supervisor | CM1-BND-17, CM1-BND-18, CM1-BND-19, CM1-BND-20, CM1-BND-21 |
+| Definite verified conflict / unauthorized correction | Block override; require controlled authorized correction/SoD and no cross-Tenant leakage | CM1-BND-15, CM1-BND-16 |
+| Missing critical-name/type/issuer/lifecycle/END/revocation reason | Cannot finalize as valid successful mutation; optional ordinary reasons cannot bypass sensitive/exception class | CM1-BND-22, CM1-BND-34, CM1-BND-36, CM1-BND-46 |
+| Relationship Person/target/Role replacement / inactive assignment | Reject in-place identity replacement/new inactive operational assignment; authorized END+new preserves history and overlap guards | CM1-BND-25, CM1-BND-29, CM1-BND-30 |
+| No selected time reference / natural expiry | Day-granularity selected, exact boundary results not guessed; natural expiry requires no manual END reason or inferred scheduling mutation | CM1-BND-26, CM1-BND-27, CM1-BND-28 |
+| Unknown applicable archive dependency, unavailable or unimplemented source | Affected archive blocked; no mock/no-service result treated as clearance; closed/history alone not blocker | CM1-BND-31, CM1-BND-32, CM1-BND-33 |
+| Invalid/unauthorized reactivation | Block on mandatory fields/definite conflicts/authority/Audit; no universal VERIFIED guard or related activation added | CM1-BND-35, CM1-BND-36 |
+| Evidence-free or sensitive same-actor verification / dispute | No evidence-free success; enforce three different-verifier cases, independent grants, no dispute auto-VERIFIED/history erasure | CM1-BND-39, CM1-BND-41, CM1-BND-42, CM1-BND-43, CM1-BND-44 |
+| Unauthorized mutation or protected evidence/Audit access | Fail closed and disclosure-safe; unauthorized mutation attempts require Audit; protected access independently authorized/traceable, exact event/access contracts OPEN | CM1-BND-45, CM1-BND-49 |
+| Audit obligation unavailable or unknown | No definite success; preserve originating effect/obligation consistency, no ACK/outbox-as-ingestion | CM1-BND-51 |
+| Central Audit unavailable / unauthorized Audit edit | No automatic fail-open/continuation; preserve Sovereign local authority; deny Audit change and treat attempt as security event, no fabricated durable recording | CM1-BND-52, CM1-BND-53 |
+| Real data/document or excluded/deferred workflow requested | Outside scope, not executed or PASS; no production/profile/control waiver | CM1-BND-04, CM1-BND-05, CM1-BND-07, CM1-BND-08, CM1-BND-40, CM1-BND-54 |
+
+The preserved older validation-only no-assumed-event wording below does not waive the explicit PD-092 Audit of unauthorized mutation attempts or protected-access traceability. It also does not impose a new mandatory event for every unrelated warning/read/validation failure. No executable transaction/retry/continuation policy selected.
+
 PROPOSED acceptance examples; not executed; not accepted.
 
 The first matrix retains historical source-baseline dispositions. Its former policy-OPEN notes do not override later user-confirmed lifecycle/duplicate/concurrency directions or the Role Catalog overlays below; exact operational mechanisms/formal acceptance remain OPEN/PENDING. No existing policy is superseded by this source-baseline table.

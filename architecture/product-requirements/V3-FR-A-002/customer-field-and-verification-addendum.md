@@ -1,4 +1,16 @@
-# CM-1 — Customer Field and Verification Rules Addendum (v1.1.0)
+# CM-1 — Customer Field and Verification Rules Addendum (v1.7.0 bounded candidate)
+
+## Current v1.7.0 overlay
+
+CM1-PD-082..091/095 govern current product rules; lower sections retain historical v1.1.0 provenance where noted. Current dictionary has 38 conceptual IDs, including all 31 prior IDs. Mandatory Person given/family names map independently to FLD-002-18/19, Company name to FLD-002-20; FLD-002-02 remains display concept, no mandatory Persian input or generic-name substitute. Optional registration number/country/Company website/notes map to FLD-002-21..24; English name uses FLD-002-03. Complete minimums in dictionary JSON minimumFieldMappings; optional supplied fields validated; exact schemas/normalization/limits OPEN.
+
+Initial multi-identifier vocabulary and applicable Tenant+namespace uniqueness now product-confirmed by PD-083; exact namespace/issuer/legal-format evidence/mechanisms remain OPEN, not overall business uniqueness scope. Official names/identifier/type/issuer changes need reason; material evidence impact requires reverification, including ordinary contact facts when prior basis. Ordinary contact reason remains optional.
+
+Permitted conceptual evidence methods: valid identity-document review, valid Company-registration-document review, authorized manual evidence-backed verification, future trusted system verification. No evidence-free/contact-only/unsupported-assertion formal proof. Required logical evidence information: evidence type, issuing authority, verifying authority, timestamp, outcome, reference; earlier method/identity revision/provenance/reason/correlation/effective-vs-recording information retained. No raw documents copied into Audit.
+
+Three mandatory different-authorized-verifier cases: corrected already-verified identifier; definite-conflict resolution/verification; reverification after fundamental invalidity. Ordinary actor can register and verify only under independent authorities. Exact multi-step actor mapping and additional legal/contractual SoD OPEN. Dispute never automatically restores VERIFIED; three-state lifecycle/no blanket TTL/history preserved. Manual revocation reason/Audit mandatory; verification/reverification requires valid accepted evidence.
+
+Manual verification CONDITIONALLY INCLUDED, subject to approved evidence/issuer/authorization/SoD; real external integration DEFERRED. No real customer data/documents in initial synthetic development; catalogs/legal applicability not resolved by conceptual method names or mock issuers. Retention/history preservation is subject to applicable policy, not unlimited personal retention. Detailed residual blockers and current individual questions: customer-bounded-readiness.json.
 
 **Authority:** USER-CONFIRMED PRODUCT DIRECTION; repository acceptance pending. Complements, does not overwrite, the original `customer-field-dictionary.md/json` (16 fields all officially PROPOSED / OPEN). No database schema, IAM roles, approved technical field names or provider selection inferred.
 
@@ -17,7 +29,7 @@
 ## Original candidate field mapping
 
 - `FLD-002-01` stable internal identity: immutable, tenant-scoped visibility; not an official identifier.
-- `FLD-002-02`: existing candidate is Persian *display name*. User-confirmed legal/person name minimum should NOT be represented as already implemented by this single field; structured names/naming fields require dictionary expansion/review.
+- `FLD-002-02`: retained display-name concept; current v1.7.0 dictionary separately maps mandatory Person given/family and Company name (FLD-002-18/19/20). This is documented product mapping, not implementation.
 - `FLD-002-04` Person identifier; `FLD-002-05` Company legal identifier: optional on create; issuer/type/jurisdiction, normalisation, proof of verification, uniqueness namespace and collision policy to be specified.
 - `FLD-002-06` telephone and `FLD-002-07` email: optional; no dedup hard block solely on channel match.
 - `FLD-002-09` commercial category distinct from verification and record lifecycle.

@@ -1,4 +1,25 @@
-# V3-FR-A-002 — Customer Master Product Decision Package v1.6.0 (PROPOSED)
+# V3-FR-A-002 — Customer Master bounded acceptance candidate v1.7.0
+
+**PREPARED FOR SEPARATE OWNER REVIEW — NOT ACCEPTED; no implementation authorization.** Reviewed branch `codex/v3-fr-a-002`, HEAD `6f79975ab974c285dbac2547847add53513f8467`.
+
+## Current package
+
+- **95 product decisions**: prior 77 objects unchanged, new CM1-PD-078..095 correspond to the 18 numbered user-approved clauses in four packages. Authority/baseline/recording time in PDR `boundedConsolidationAuthority`; precise refinements in `refinementsV170`.
+- **5 canonical +207 detailed =212 unique criteria**. Added CM1-BND-01..54; every earlier definition line retained; new PROPOSED / NOT TESTED and implementation-dependent execution BLOCKED. Deferred/excluded/unexecuted cases not PASS.
+- **38 conceptual field IDs**, all prior 31 retained. Given/family names separately mapped; Company name, registration number, country, Company website and notes added as logical mappings, not schema. Exact validators/issuer facts remain OPEN.
+- **95-row coverage matrix**: FULL=3, PARTIAL=85, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2. No previous class promoted; new PARTIAL rows expose contracts/evidence/authorization gaps, not an assertion that all product decisions remain missing.
+- **19 unique questions, all OPEN**. Full current per-question disposition and canonical task references: `customer-bounded-readiness.json`; scope/readiness/blockers/historical reconciliation: `customer-bounded-readiness.md`. Historical PDR unresolved duplicates/source ledgers are not extra questions or current unanswered-owner assertions.
+- Farzad named Business Owner/product requirements and interim Audit policy accountability; five logical actor responsibilities, not grants. Operation/resource/disclosure matrix in `actor-resource-policy-matrix.md`, exact bindings/disclosures OPEN.
+- Included selected Customer operations; archive/restoration/manual verification conditional. Real verification integration/Branch transfer coordination/fuzzy detection deferred; merge/physical deletion/draft/direct external access excluded from CM-1. Offline prohibited. Synthetic only, no real Customer information/documents; no deferred roadmap capability removed.
+- Role Catalog PD-058..077, exact 12-role vocabulary and controlled overlap preserved. PDQ-002-08 product-ready within approved scope, technical contracts OPEN, not closed. New Customer/Branch lifecycle reasons do not override catalog reason rules.
+- Acceptance blockers retained: exact actors/disclosure, profile/nine conditional branches, explicit day time reference, necessary unspecified validation/legal/issuer/evidence policy and applicable archive clearance. Candidate ready for separate review, **not unconditionally ready for formal acceptance or implementation**.
+- Evidence: `validation-report.md`, exact-byte self-excluded `sha256-manifest.json`. No build/runtime/test claims. No deployment/configuration changes required by documentation. Next action: explicit owner review only, not F-000.
+
+G-RUNTIME: BLOCKED; FE-BE: PENDING; AUTH/IAM: PENDING; Offline: PROHIBITED; Local-Infra: ACCEPTED — DEVELOPMENT-ONLY; Production: NOT AUTHORIZED; Formal acceptance: PENDING.
+
+## Historical v1.6.0 package summary (not current counts/dispositions)
+
+The retained summary below describes its prior version only; current counts/scope and answered portions above supersede its OPEN/count text. Pending Submission remains a permitted historical concept but is now excluded from CM-1. No v1.7.0 evidence is inferred from prior validator results.
 
 ## Included
 - Reconciled requirements, business rules, field dictionary, lifecycle (explicit source-baseline vs user-confirmed target), operation catalog, actor policy, failure/deployment scenarios, acceptance criteria, open decisions, source traceability.

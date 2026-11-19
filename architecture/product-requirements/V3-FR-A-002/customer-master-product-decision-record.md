@@ -1,12 +1,39 @@
 # Customer Master — Product Decision Record
 
 **Record ID:** `V3-FR-A-002-PDR-001`
-**Version:** `1.6.0` (proposed package; formal acceptance pending)
+**Version:** `1.7.0` (bounded acceptance candidate; formal acceptance pending)
 **Date:** 2026-11-18
 **Scope:** `FR-BJ-001` / `V3-FR-A-002` / `CM-1`
 **Disposition:** `USER-CONFIRMED PRODUCT DIRECTION — FORMAL REPOSITORY ACCEPTANCE PENDING`
 
 > Newly authored decision record; not an approved IAM/RBAC/API/DB design; not an implementation authorization. Customer Domain remains authoritative writer and final resource/action authorizer; Tenant Context validated; cross-tenant fails closed; durable mutations honor coordinated Audit obligations.
+
+## Current four-package consolidation — v1.7.0
+
+USER-CONFIRMED PRODUCT DIRECTION, not formal acceptance. Exact approved rules in PDR JSON decisions CM1-PD-078..095 (one per numbered user clause); authority, source, exact reviewed HEAD and recording time in `boundedConsolidationAuthority`. All prior 77 decision objects are preserved unchanged. Current readiness, residual blockers and every OPEN disposition: `customer-bounded-readiness.md` / `.json`. Historical version totals/OPEN assertions below describe their own baselines, not a denial of current decisions.
+
+| Decision ID | Package / topic | Approved product direction |
+| --- | --- | --- |
+| CM1-PD-078 | 1 / Accountability | Farzad Business Owner/product requirements authority and interim accountable Audit failure/ingestion/recovery/reconciliation policy authority; development team technical responsibility; governance preserved, no IAM grant. |
+| CM1-PD-079 | 1 / Logical actors | Customer Operator, Customer Reviewer, Customer Catalog Manager, Customer Verifier, Audit Reviewer; independently held responsibilities, no runtime grants; exact disclosure OPEN. |
+| CM1-PD-080 | 1 / CM-1 scope | Selected registration/maintenance/contact/Branch/Person/Relationship/catalog/basic duplicate/search/status operations included; archive/manual verification conditional; real verification/transfer coordination/fuzzy deferred; merge/deletion/draft/direct external access excluded; offline prohibited; transfer history semantics preserved. |
+| CM1-PD-081 | 1 / Development scope | Synthetic only; no real information/documents; Tenant and all controls preserved; profile/nine branches OPEN; production not authorized. |
+| CM1-PD-082 | 2 / Minimum fields | Company name and Person given/family mandatory; identifier conditional on formal-verification workflow; listed optional fields validated when supplied; dictionary retained. |
+| CM1-PD-083 | 2 / Identifiers | Extensible jurisdiction-aware six-concept vocabulary; multiple identifiers; verified-valid uniqueness within applicable Tenant/namespace; no global dedup/definite-conflict override; authorized controlled correction, namespaces/legal formats OPEN. |
+| CM1-PD-084 | 2 / Duplicate detection | Verified-valid same identifier blocks; unverified identifier/name/phone/email warn; multiple signals higher priority; controlled reuse/exception with reason/Audit, no supervisor; advanced matching technical OPEN, merge/delete excluded. |
+| CM1-PD-085 | 2 / Critical facts | Official company/person names, identifiers/type/issuer require reason; material evidence impact requires reverification; ordinary contact/address reason optional, evidence-based reverification still applies; optimistic concurrency/Audit preserved. |
+| CM1-PD-086 | 2 / Relationships | Person/target/Role immutable in ordinary edit, END+new correction; manual END reason/Audit; natural expiry no manual reason; calendar-day half-open interval, explicit time reference OPEN; future/open-ended allowed; inactive assignment prohibited, history/overlap preserved, no retrospective workflow grant. |
+| CM1-PD-087 | 3 / Archive | Ten applicable dependency categories; closed/history alone not blockers; unknown not clear; no fictional integrations; affected archive blocked absent evidence, deactivation still permitted. |
+| CM1-PD-088 | 3 / Reactivation | Mandatory fields/conflict/authorization/Audit checks; ordinary reason optional; VERIFIED not globally required; ARCHIVED -> INACTIVE -> ACTIVE only; no related activation. |
+| CM1-PD-089 | 3 / Evidence | Conceptual valid document/manual evidence methods; future trusted-system integration; no evidence-free verification; logical evidence information, issuer/evidence/legal catalogs OPEN; no real document processing. |
+| CM1-PD-090 | 3 / SoD | Ordinary independent registration+verification authority may coexist; different authorized verifier for corrected verified identifier, definite-conflict resolution/verification and fundamental-invalidity reverification; additional binding SoD preserved. |
+| CM1-PD-091 | 3 / Verification lifecycle | Three states preserved; initial NOT_VERIFIED; material change/essential-evidence invalidation -> REQUIRES_REVERIFICATION; fundamental invalidity -> NOT_VERIFIED; fresh authorized success -> VERIFIED; dispute no automatic restoration; history/no blanket TTL/record independence. |
+| CM1-PD-092 | 4 / Audit and reasons | All Customer mutations/unauthorized mutation attempts audited; required/optional reason matrix; catalog PD-073..077 unchanged; ordinary reads not automatic Audit, protected evidence/Audit access independently authorized and traceable. |
+| CM1-PD-093 | 4 / Logical Audit data | Actor/resource/type/identity/operation/old-new/reason/time/outcome/correlation/evidence information; no secrets/documents/unnecessary sensitive data or cross-Tenant disclosure; no schema chosen. |
+| CM1-PD-094 | 4 / Audit failure | Guaranteed durable obligation before success; unknown not definite success; central outage no automatic fail-open/continuation; protect Audit history, unauthorized changes security events; producer obligation distinct from ingestion; mechanisms OPEN. |
+| CM1-PD-095 | 4 / Retention | Preserve inactive/archived/ENDED/verification/Audit history and applicable evidence refs; permanent Role reservations; physical deletion excluded, no unlimited personal retention; exact durations/hold/legal applicability OPEN, synthetic only. |
+
+Precise refinements are in JSON `refinementsV170`: especially PD-015's reason scope, PD-030/032 Relationship semantics, PD-048/049's explicit Audit-source exception, and deferred execution versus retained policy. Current total **95 decisions**; all 19 questions remain OPEN. Role Catalog policies/vocabulary are not reopened.
 
 ## 1. Decisions confirmed by the product stakeholder (v1.1.0 — CM1-PD-001..028)
 

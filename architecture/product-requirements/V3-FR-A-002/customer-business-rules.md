@@ -1,5 +1,20 @@
 # Customer business-rule catalog — V3-FR-A-002
 
+## Current four-package rules — v1.7.0
+
+CM1-PD-078..095 are user-confirmed product direction, formal acceptance PENDING. Read earlier OPEN clauses below as historical only where answered by these rules. Full scope and current 19 question dispositions: customer-bounded-readiness.md / .json.
+
+- Ownership/actors: Farzad accountability and five independent logical responsibilities, no IAM grants. Exact operation/resource/disclosure boundaries remain OPEN.
+- Fields/identifiers: Company name and Person given/family required; listed optional values validated if supplied, identifiers required only by formal-verification workflows. Six extensible jurisdiction-aware identifier concepts, multiple per entity; verified-valid uniqueness within applicable Tenant+namespace, no global dedup/definite override. Namespaces/legal formats/issuer evidence/technical validation OPEN.
+- Basic duplicates: same verified-valid official identifier definite conflict blocks; same unverified identifier, Company name, Person given+family, phone or email warns; multiple signals higher warning priority, never identity proof. Reuse or authorized reason/Audit exception without supervisor; fuzzy detection deferred, merge/delete excluded.
+- Critical edits: official Company/Person names and identifiers/type/issuer need reason. Material evidence impact requires reverification; ordinary contacts/address no default reason but evidence-basis changes still matter. PD-085/092 explicitly refine the narrower PD-015 interpretation; stale writes/unauthorized updates still denied.
+- Relationships: Person/target/Role not replaced in ordinary edit; END+new correction. Manual END reason/Audit, natural expiry no manual END reason. Calendar-day half-open interval, future/open end allowed; reference selection OPEN. No inactive Person/Company/Branch new operational assignments; preserve history, no retrospective workflow grant. Controlled overlap PD-033..041 unchanged.
+- Archive/reactivation: CM1-PD-087 applicable dependency catalog and unknown-blocks guard; no fictional integrations. Closed/history not independent blockers; archive/restoration conditional. Deactivate with dependencies permitted with mandatory reason/Audit; reactivation validates mandatory facts/conflicts/authority/Audit, ordinary reason optional, no universal VERIFIED prerequisite or related activation.
+- Verification: evidence mandatory, issuer/evidence/legal catalogs OPEN and real documents prohibited. Three mandatory different-verifier cases in PD-090, ordinary independent dual authority allowed. No dispute auto-VERIFIED, no universal expiry; state/history rules retained.
+- Audit/retention: all Customer mutations and unauthorized mutation attempts audited, protected evidence/Audit access independently authorized/traceable; reason matrix in operation catalog. PD-092 is explicit governing-source exception to PD-049, not blanket ordinary read/warning/validation Audit. No guaranteed durable obligation or unknown outcome -> no definite success; no executable continuation/fail-open. Preserve history subject to applicable retention, no unlimited personal retention. Catalog PD-073..077 unchanged.
+
+Initial scope synthetic only; profile/nine branch applicability/time reference/exact disclosure and legal/evidence facts OPEN. Scope exclusions/deferrals do not delete roadmap obligations or authorize implementation.
+
 Classification legend: **APPROVED SOURCE INVARIANT** (baseline architecture/audit) · **USER-CONFIRMED PRODUCT DIRECTION** (product policy, acceptance pending) · **PROPOSED IMPLEMENTATION/CONTRACT** · **OPEN DECISION**.
 
 ## APPROVED SOURCE INVARIANT
