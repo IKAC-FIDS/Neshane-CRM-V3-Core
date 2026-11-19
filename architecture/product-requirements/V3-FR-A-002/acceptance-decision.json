@@ -1,0 +1,168 @@
+{
+  "task": "V3-FR-A-002",
+  "title": "Define requirements: Register and Maintain Customer Master",
+  "decisionStatus": "AUTHORITY_DECISION_RECORDED",
+  "exactAuthorityDecision": "ACCEPTED — BOUNDED REQUIREMENTS BASELINE",
+  "authority": "Farzad — Business Owner and product requirements decision authority; existing project governance preserved",
+  "authoritySource": "Explicit user confirmation of bounded v1.8.0 acceptance in conversation",
+  "decisionDate": "2026-11-19",
+  "authorityIssuanceTimestamp": null,
+  "reviewedRepository": "Core",
+  "reviewedBranch": "codex/v3-fr-a-002",
+  "reviewedHead": "df6463d16390518bc5607e0a5c3d300128b75a9e",
+  "acceptedVersion": "1.8.0",
+  "acceptanceBoundary": "Approved product requirements only; historical PENDING statements in reviewed artifacts describe the pre-decision candidate. This separate overlay does not change source definitions, close questions, authorize execution, or attest complete CM-1 delivery.",
+  "acceptedArtifactManifest": {
+    "path": "architecture/product-requirements/V3-FR-A-002/sha256-manifest.json",
+    "sha256": "92f921eb8b20082008adf8b9b5009fb7a8ac98796079699127ef6e9adcc620b3",
+    "convention": "Exact Git blob bytes, not Windows checkout bytes; self-excluded manifest covers 24 files. Acceptance overlay is separate and not included in reviewed historical manifest.",
+    "fileCount": 24,
+    "files": {
+      "README.md": "33bd94504c87b84f0d0f3991201e159059833671a51434d1d281b4edfffbc236",
+      "acceptance-criteria.md": "737c3092f73da24630df4470cc3ec09d75672aa06289e92a169c5e63197c2148",
+      "actor-resource-policy-matrix.md": "0ed9d4a4b2615439be70b7758680d376051d34b58b9efd1940af75a0d5e1a53e",
+      "cm1-acceptance-criteria-addendum.md": "fe507803b8293cd2971bfa53312bf2d295bf85d0568a43f7fd3cc3571f8d762c",
+      "customer-bounded-readiness.json": "38b244f3497bab9bb9209e1251b672a8289fb9181942558671e97a8579cd3008",
+      "customer-bounded-readiness.md": "ba7580e39c9aa21e9e8c5a73312345b3aef016772dbd93b99fdc4385b573a023",
+      "customer-business-rules.md": "bc247c0036ab4eec85176b0d1219c5d9bcac2901d08041619d9f05155032aeb3",
+      "customer-decision-coverage-matrix.json": "f001bd9dcaaa7d683b5173b29cc21225235df3615fcb4c102ae4c38467afb2df",
+      "customer-decision-coverage-matrix.md": "8c08c532f357ea4a87cade12a2848f6d65b9f80fa0752f8f02128d8b61ebf11e",
+      "customer-failure-scenarios.md": "9a52d59b11237ed61682e68e3a0c9c2cd31f26dd116823ad97d289c546e13a0b",
+      "customer-field-and-verification-addendum.md": "ada284294e35495d2816573f0aa82d93db9b6518d078dde0090edb46da2ed181",
+      "customer-field-dictionary.json": "ea339943c4d7bb09547491d850a4b87ef6d0f2e753d54358242dbd4746dab3d5",
+      "customer-field-dictionary.md": "8faabd1d491c86789c3768c681da8c2b0d25ec49ebfdc47260e6f515de34bb57",
+      "customer-lifecycle.md": "ec92f299f91c4ef738ef88038d45e96044f6f49afc0b1c47a7d0c8057a8b2e3e",
+      "customer-master-product-decision-record.json": "20dc0db52a16193eb3cb8e0e61a9d01a78359e7bdbe2ff384686a664b648cdd8",
+      "customer-master-product-decision-record.md": "bf023edd96ace54fb65ad28cb7d8ca8a1da003bd735b7ecc02f472c6aec5d959",
+      "customer-master-requirements.md": "1aab3cac1908ada8215baed094928d9c57479667aa6131024b4c1b195df1e935",
+      "customer-operation-catalog.md": "292fe21ec3a3c4d8c8ad9ce15fe8acc717306d13bd4443b7ce61d664e5996322",
+      "customer-role-catalog.md": "9b160d2b8e2f3b084152fa9857dd50b08e7ef3d8e055ad0a3ce40e61032b0bb6",
+      "customer-v180-scope-and-document-catalog.md": "e4dc574ffc3a8e4ce01052e1b36cedc1521892481147828a3903b1f519f5d2ca",
+      "deployment-profile-scenarios.md": "b33e715c69c6602b9f9945db28c332f1d446d368b3148c227e4807461f010f0d",
+      "open-product-decisions.md": "943162bc66f92d6b1001e14589a1c900ea4a7e1bebfef12a5d72c754d332067f",
+      "source-traceability.json": "7c7db9b43fa35989c2501b88bda68eb893f37f74c59b28f13dbda13f60310ddd",
+      "validation-report.md": "2b6b9769fd4b7ddce607d8786f41f0e924dcee86ca8e606c555b15f5f9d8a8f1"
+    }
+  },
+  "inventory": {
+    "productDecisions": 106,
+    "canonicalCriteria": 5,
+    "detailedCriteria": 229,
+    "totalCriteria": 234,
+    "openQuestions": 19
+  },
+  "acceptedScope": [
+    "Approved Company/Person registration and maintenance; Branch, contacts, addresses, Relationship and Role Catalog",
+    "Basic duplicate detection, lifecycle activation/deactivation, field validation and calendar/time rules",
+    "Dynamic Customer Document Catalog, bounded evidence upload and history as product requirements only",
+    "Customer search/review selected scope; A-003 remains separate",
+    "Shared SaaS/Shared Cell initial synthetic-only development scope; independent Dedicated Managed/Sovereign evidence deferred"
+  ],
+  "conditionalScope": [
+    "Archive/restore: applicable dependency clearance proven; unknown blocks",
+    "Manual verification: approved issuer/evidence/legal/SoD and secure attachment contracts; upload does not verify identity",
+    "Attachments selected, but A-011 and downstream contracts remain separately governed"
+  ],
+  "excludedOrDeferred": [
+    "Real data/documents; production unauthorized; offline prohibited",
+    "Merge, physical deletion, Pending Submission, direct external access excluded",
+    "Real external verification, advanced matching, executable Branch transfer, OCR, automatic document authenticity, general document service deferred"
+  ],
+  "preservedOpenQuestionIds": [
+    "PDQ-A001-001",
+    "PDQ-A001-002",
+    "PDQ-A001-003",
+    "PDQ-A001-049",
+    "PDQ-A001-050",
+    "PDQ-A001-052",
+    "PDQ-A001-053",
+    "PDQ-002-01",
+    "PDQ-002-02",
+    "PDQ-002-03",
+    "PDQ-002-04",
+    "PDQ-002-05",
+    "PDQ-002-06",
+    "PDQ-002-07",
+    "PDQ-002-08",
+    "PDQ-002-09",
+    "PDQ-002-10",
+    "PDQ-002-11",
+    "PDQ-002-12"
+  ],
+  "remainingBlockers": [
+    "Actual actor bindings, precise masking and authorization examples; no IAM grants",
+    "Issuer/evidence/legal/retention/disclosure/SoD and secure file contracts",
+    "Archive dependency clearance and race-safe contracts",
+    "Unsettled character-count/normalization, authoritative country/identifier formats, document completeness edge cases and timezone-change evaluation; affected rules excluded from independent candidate",
+    "Applicable OD, API/schema, runtime, Audit reliability and downstream prerequisites remain OPEN"
+  ],
+  "canonicalAssessment": [
+    {
+      "id": "V3-FR-A-002-AC-01",
+      "disposition": "BOUNDED_DOCUMENTATION_REVIEWED",
+      "evidence": [
+        "sha256-manifest.json",
+        "README.md",
+        "customer-bounded-readiness.md"
+      ]
+    },
+    {
+      "id": "V3-FR-A-002-AC-02",
+      "disposition": "BOUNDED_PRODUCT_DIRECTION_AND_EXPLICIT_RESIDUALS_ACCEPTED",
+      "evidence": [
+        "source-traceability.json",
+        "customer-master-product-decision-record.json",
+        "customer-decision-coverage-matrix.json",
+        "customer-v180-scope-and-document-catalog.md"
+      ]
+    },
+    {
+      "id": "V3-FR-A-002-AC-03",
+      "disposition": "GAPS_RETAINED_BLOCKING_AFFECTED_EXECUTION",
+      "evidence": [
+        "customer-bounded-readiness.json",
+        "open-product-decisions.md",
+        "actor-resource-policy-matrix.md",
+        "customer-operation-catalog.md"
+      ]
+    },
+    {
+      "id": "V3-FR-A-002-AC-04",
+      "disposition": "REQUIREMENTS_EXAMPLES_RETAINED_NOT_SOFTWARE_PASS",
+      "evidence": [
+        "acceptance-criteria.md",
+        "cm1-acceptance-criteria-addendum.md",
+        "validation-report.md"
+      ]
+    },
+    {
+      "id": "V3-FR-A-002-AC-05",
+      "disposition": "BOUNDED_AUTHORITY_PRESERVED",
+      "evidence": [
+        "customer-v180-scope-and-document-catalog.md",
+        "deployment-profile-scenarios.md",
+        "customer-bounded-readiness.json"
+      ]
+    }
+  ],
+  "validation": {
+    "remoteGitManifest": "24/24 PASS, independently verified against reviewed Git commit; Windows working-copy README hash mismatch observed, not a remote content mismatch",
+    "productTests": "NOT EXECUTED",
+    "detailedCriteria": "PROPOSED / NOT TESTED; implementation-dependent execution BLOCKED",
+    "canonicalCriteriaDefinitionsChanged": false
+  },
+  "implementationAuthorizationGranted": false,
+  "rbacOrIamApproved": false,
+  "architectureDecisionsClosed": [],
+  "nextTaskCandidate": "V3-FR-F-000",
+  "nextTaskStarted": false,
+  "nextTaskAuthorization": "NOT_GRANTED; separate explicit independent scope review and authorization required; pure approved rules only, no Spring/persistence/API/trust/live data/runtime",
+  "governance": {
+    "gRuntime": "BLOCKED",
+    "feBe": "PENDING",
+    "authIam": "PENDING",
+    "offline": "PROHIBITED",
+    "localInfra": "ACCEPTED — DEVELOPMENT-ONLY",
+    "production": "NOT AUTHORIZED"
+  }
+}
