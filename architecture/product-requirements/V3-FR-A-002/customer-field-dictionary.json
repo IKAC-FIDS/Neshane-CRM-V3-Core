@@ -336,8 +336,8 @@
       "applicableCustomerType": "Relationship",
       "logicalType": "enum",
       "requiredStatus": "Required",
-      "uniqueness": "OPEN",
-      "validationConstraints": "Hybrid catalog and initial System vocabulary v1.0 confirmed (CM1-PD-058..066); System Role assignments require global ACTIVE, target applicability, current Tenant selectability, Relationship authority and existing Tenant/validation/concurrency/overlap guards (CM1-PD-067), enforced by Customer Domain. Exact reference, namespace/custom collisions, configuration/defaults and schema OPEN (PDQ-002-08).",
+      "uniqueness": "Repeated Relationship references permitted; canonical Role Definition codes follow System-global and owning-Tenant uniqueness/permanent reservation (CM1-PD-069/070/072). This is not uniqueness of roleCode across Relationships; enforcement/reference contract OPEN.",
+      "validationConstraints": "Initial vocabulary and effective System assignment guards CM1-PD-066/067 preserved; ACTIVE default selectability for new Tenants/new System releases preserves prior settings (CM1-PD-068). Role code input: trim then uppercase, only ASCII A-Z/0-9/underscore, normalized length 3..64 inclusive; no extra first-letter or underscore-placement rule. Canonical registry uniqueness/reservation and future System collision blocking confirmed (CM1-PD-069..072). Global identity/code immutable; not approval to rewrite existing Relationship refs. Exact schema/configuration/materialization, namespace/concurrency enforcement, authorized cross-Tenant detection/privacy, publication/resolution, Unicode/encoding edge cases and reference mechanism remain OPEN (PDQ-002-08).",
       "sensitivity": "Tenant Confidential",
       "mutability": "Controlled",
       "decisionStatus": "PROPOSED (CM1-PD-030)"

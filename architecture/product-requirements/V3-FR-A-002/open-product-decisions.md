@@ -221,7 +221,7 @@ The user-confirmed product decisions CM1-PD-001..057 partially answer existing O
 
 | Question ID | Capability | Category | Missing decision |
 | --- | --- | --- | --- |
-| PDQ-002-08 | FR-BJ-001 | PRODUCT | OPEN / PARTIALLY ANSWERED through CM1-PD-067: hybrid catalog, scope, lifecycle, identity/preservation/authority, exact initial vocabulary v1.0 and Tenant-selectability product policy answered; future vocabulary/publication, defaults, namespace/custom collisions, configuration/schema/reference, operation/IAM/reason policy, concurrency, history, Audit and temporal/API contracts remain OPEN |
+| PDQ-002-08 | FR-BJ-001 | PRODUCT | OPEN / PARTIALLY ANSWERED through CM1-PD-072: vocabulary, selectability/defaults, namespace uniqueness/permanent reservation, future-collision blocking and basic normalization ANSWERED at product level; exact schema/configuration, enforcement/concurrency, cross-Tenant detection authority/privacy, publication/rollback/resolution, Unicode/encoding edge cases, operations/IAM/Audit/reason policy, history/reference and temporal/API contracts remain OPEN |
 | PDQ-002-09 | FR-BJ-001 | PRODUCT | Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics) |
 | PDQ-002-10 | FR-BJ-001 | SECURITY | Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence) |
 | PDQ-002-11 | FR-BJ-001 | SECURITY | Sensitive-process catalog and SoD actor mapping for manual verification |
@@ -245,11 +245,13 @@ No PDQ is closed; formal closure requires explicit authority.
 
 ## v1.3.0 Role Catalog partial resolution — PDQ-002-08
 
-Historical v1.3.0 residuals below are updated by the current v1.4.0 ledger; initial vocabulary is no longer wholly unresolved.
+Historical v1.3.0 residuals below are updated by later ledgers, currently v1.5.0; initial vocabulary is no longer wholly unresolved.
 
 **Disposition: OPEN / PARTIALLY ANSWERED; formal acceptance PENDING.** CM1-PD-058..065 confirm product policy, not executable design. Exact answers and all eight residual contracts are in `customer-role-catalog.md` RC-001..008 / RC-OPEN. Dependent proposed scenarios: CM1-ROL-01..16; related technical/Audit questions: PDQ-002-10/12. Total remains 19; no new question ID and no closure. Earlier role-catalog-as-wholly-open wording describes the historical baseline only; the residuals now concern the listed contracts, not the confirmed hybrid/lifecycle/authority policies. No physical Role deletion is supported; general Customer deletion/retention questions remain separate.
 
 ## v1.4.0 partial-resolution ledger — PDQ-002-08
+
+Historical v1.4.0 disposition only. Defaults, uniqueness/reservation/collision and basic normalization mentioned as OPEN below are answered at product level by the current v1.5.0 ledger; technical contracts are not closed.
 
 **OPEN / PARTIALLY ANSWERED; formal requirements acceptance PENDING; total OPEN remains 19.**
 
@@ -257,3 +259,12 @@ Historical v1.3.0 residuals below are updated by the current v1.4.0 ledger; init
 - Remaining OPEN: all RC-OPEN / RC-PROPOSED contracts, including new-Tenant/later-role defaults, configuration/schema/reference, normalization/length/namespaces, present/future custom-code collisions, catalog publication/version mechanics, exact permissions/Audit events, ordinary hide/unhide reason policy, concurrent hide/assignment consistency, history/display, Audit failure/recovery and temporal/API compatibility. No mandatory hide/unhide reason is inferred from incompatible scope changes.
 - Dependents: CM1-PD-066/067 and CM1-ROL-17..29, in addition to earlier Role decisions/scenarios; related PDQ-002-10/12 unchanged. Contract-dependent software scenarios BLOCKED pending executable design. See `source-traceability.json` partialResolutionLedger and coverage matrix for exact links.
 - No PDQ closure, new ID, runtime approval, global roleId/seed/migration choice, roleCode-to-roleId overlap substitution or governance relaxation.
+
+## v1.5.0 partial-resolution ledger — PDQ-002-08
+
+**OPEN / PARTIALLY ANSWERED; formal acceptance PENDING; all 19 OPEN IDs preserved.**
+
+- Newly ANSWERED product policy: CM1-PD-068 default ACTIVE System selectability for new Tenants/new releases with prior Tenant settings preserved; CM1-PD-069 canonical System-global/owning-Tenant uniqueness while independent Tenants may share custom codes; CM1-PD-070 permanent scoped reservation/identity-preserving reactivation; CM1-PD-071 blocking only a conflicting proposed System Role without destructive automatic resolution or inferred private-data access; CM1-PD-072 trim-uppercase, ASCII A-Z/0-9/underscore, length 3..64, no extra first-letter/underscore-placement grammar.
+- Still OPEN: exact catalog schema/configuration persistence and default materialization; namespace and concurrent uniqueness/reservation enforcement; cross-Tenant conflict detection authorization/privacy; publication/version/rollback and authorized resolution workflow; Unicode trim/uppercase/input encoding edge cases/additional proposed grammar; operation IDs/IAM/actor mappings; Role Audit/failure/recovery; ordinary hide/unhide mandatory reason; history/reference/temporal/API; scope-change/assignment concurrency. See `customer-role-catalog.md` RC-OPEN / RC-PROPOSED.
+- Dependents: CM1-PD-068..072; CM1-ROL-30..45 (all PROPOSED / NOT TESTED, software execution BLOCKED pending relevant design). Full links in `source-traceability.json` partialResolutionLedger and decision coverage matrix. Earlier decisions/scenarios and PDQ-002-10/12 dependencies retained.
+- No formal closure, new PDQ, absolute-overlap prohibition, extra supervisor requirement for ordinary overlap, global custom-code prohibition across independent Tenants, roleId overlap implementation, automatic IAM/legal grant, or executable schema/contract approval.

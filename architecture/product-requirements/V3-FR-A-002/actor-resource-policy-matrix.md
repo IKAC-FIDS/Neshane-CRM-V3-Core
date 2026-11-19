@@ -40,3 +40,7 @@ Organizational Role Definitions are not IAM/RBAC roles or grants (CM1-PD-058). S
 - Relationship actor: separately authorized for assignment; Customer Domain checks effective state and all existing guards, not just a UI list. A selectable Role does not itself grant Relationship authority.
 - Historical viewer: retains otherwise authorized Role/Relationship history regardless of hide/unhide; this confers no new disclosure grant and must not expose other Tenants' settings/Relationships.
 - Initial vocabulary titles (CM1-PD-066), including CEO/BOARD_MEMBER/PRIMARY_CONTACT, provide no IAM/RBAC or verified legal authority. Mandatory reason for ordinary hide/unhide remains OPEN, separate from incompatible scope management.
+
+## Future catalog collision assessment boundary (v1.5.0)
+
+CM1-PD-071 requires assessment against relevant Tenant current/historical custom codes before publishing a new System Role, but grants no central administrator access to Tenant-private data. Detection authority, privacy/disclosure rules, actor mappings and authorized resolution workflow are OPEN. Publication of the conflicting new Role is blocked pending authorized resolution; no automatic rename/delete/conversion/reassignment or Relationship mutation. Default selectability and canonical uniqueness (CM1-PD-068/069/072) confer no management, IAM/RBAC, legal or cross-Tenant authority; matching custom codes in separate Tenants remain independent. Conceptual responsibility only, not an executable permission grant.

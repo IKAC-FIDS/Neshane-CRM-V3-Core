@@ -1,6 +1,19 @@
 {
   "recordId": "V3-FR-A-002-PDR-001",
-  "version": "1.4.0",
+  "version": "1.5.0",
+  "defaultCodePolicyAuthority": {
+    "taskId": "V3-FR-A-002",
+    "scope": "Customer Master / Relationship Role Catalog / PDQ-002-08 / CM1-PD-068..072",
+    "source": "User task: Codex Task — V3-FR-A-002 / Customer Master v1.5.0; decisions CM1-PD-068..072, OPEN contracts and existing policy compatibility",
+    "authority": "USER-CONFIRMED PRODUCT DIRECTION",
+    "formalAcceptance": "PENDING",
+    "reviewedBaseline": "92d02d2c45103d5223e5d9ffd7a6bafc556e3443",
+    "recordedAt": "2026-11-18T22:41:53.576356+00:00",
+    "issuedAt": null,
+    "exactDecisionLocation": "decisions CM1-PD-068..072",
+    "policyReference": "customer-role-catalog.md#rc-012--default-system-role-selectability",
+    "remainingContracts": "customer-role-catalog.md#rc-open--remaining-open-contracts"
+  },
   "vocabularySelectabilityAuthority": {
     "taskId": "V3-FR-A-002",
     "scope": "Customer Master / System Role Vocabulary v1.0 / Tenant selectability / PDQ-002-08",
@@ -384,10 +397,35 @@
       "id": "CM1-PD-067",
       "topic": "Tenant-Specific System Role Selectability",
       "rule": "An appropriately authorized actor within a Tenant may make an otherwise eligible System Role unavailable for new Relationship assignments in that Tenant and subsequently make it selectable again.\n\nThis Tenant-specific setting:\n- Does not modify the global System Role Definition.\n- Does not change global role status, scope, roleId or roleCode.\n- Does not affect other Tenants.\n- Does not create, modify, terminate, delete or reactivate existing Relationships.\n- Does not hide historical Relationship references from otherwise authorized historical views.\n- Does not grant any IAM/RBAC permission.\n- Must be enforced by the authoritative Customer Domain, not merely by UI filtering.\n- Requires validated Tenant context and applicable management authority; CUS-CREATE alone does not grant that authority.\n- Does not permit Tenant users to edit System Role Definitions.\n- Must not disclose another Tenant's settings or Relationships.\n\nEffective eligibility for a new Relationship assignment requires all relevant conditions, including:\n- The System Role is globally ACTIVE.\n- The Role is applicable to the target COMPANY or BRANCH.\n- The Role is selectable in the current Tenant.\n- The actor has the required Relationship-operation authority.\n- All existing Tenant, validation, concurrency and overlap guards pass.\n\nA global INACTIVE state must not be bypassed by a Tenant setting.\n\nRestoring Tenant selectability must not reactivate an INACTIVE global System Role or reopen an ENDED Relationship.\n\nIf a Role becomes non-selectable while a new assignment is being finalized, the operation must not accept an assignment against an invalid effective state. Exact concurrency enforcement remains a technical OPEN contract.\n\nImportant: Treat Tenant-specific unselectability as an assignment restriction, not as the same operation as global Role deactivation, and not as automatic deletion of role history.\n\nDo not invent a Tenant override for global System Role lifecycle or applicableScope."
+    },
+    {
+      "id": "CM1-PD-068",
+      "topic": "Default System Role Selectability",
+      "rule": "When a new Tenant is created, all globally ACTIVE System Roles are selectable by default for new Relationship assignments, subject to existing applicability, operation authorization and other guards.\nWhen a new System Role is released, it is selectable by default in existing Tenants if globally ACTIVE.\nAuthorized Tenant managers may subsequently hide/unhide System Roles under CM1-PD-067.\nPreviously established Tenant hide/unhide settings must be preserved across System Catalog releases.\nGlobal INACTIVE status always prevents new assignment, regardless of Tenant settings.\nNo existing Relationship is modified by default selectability or catalog publication.\n\nDo not assume a specific storage representation, Tenant-provisioning process, migration strategy or default-setting materialization mechanism."
+    },
+    {
+      "id": "CM1-PD-069",
+      "topic": "roleCode Uniqueness",
+      "rule": "System Role codes are unique within the global System Catalog and reserved against Tenant-defined Roles.\nA Tenant Role cannot use the same canonical roleCode as any existing or permanently reserved System Role code.\nTenant Role codes are unique within their owning Tenant, including inactive and historical reservations.\nSeparate Tenants may use the same custom roleCode. Their Role identities, ownership and Relationships remain independent.\nAll comparisons use the canonical normalized roleCode defined in CM1-PD-072.\nTenant isolation and disclosure restrictions remain mandatory.\n\nDo not introduce a global prohibition on matching custom codes across independent Tenants."
+    },
+    {
+      "id": "CM1-PD-070",
+      "topic": "Permanent Code Reservation",
+      "rule": "Once assigned, a roleCode remains reserved within its applicable ownership/namespace scope, including when a Role becomes INACTIVE or is historical.\nDeactivation and subsequent reactivation preserve roleId and roleCode.\nReserved codes must not be reassigned to a different Role.\nNo physical Role deletion is permitted under CM1-PD-061.\nHistorical Relationship references remain preserved.\n\nDo not assume a particular tombstone table, index or retention implementation."
+    },
+    {
+      "id": "CM1-PD-071",
+      "topic": "Future System Catalog Collision",
+      "rule": "Before releasing a new System Role code, assess conflicts with existing and historically reserved Tenant Role codes across relevant Tenants.\nIf the proposed System code conflicts with an existing Tenant custom code, block publication of that new System Role until the conflict is resolved through an explicitly authorized process.\nNever automatically rename, delete, convert or reassign a Tenant Role.\nNever automatically migrate, terminate or modify existing Relationships.\nSelecting a different code for the proposed System Role is a valid non-destructive conflict-resolution option.\nFuture resolution workflows, access authorities, disclosure rules and publication mechanics remain OPEN.\n\nThe product policy blocks release of the conflicting Role; do not infer that every unrelated catalog change or release must also be blocked.\n\nDo not infer that the central catalog administrator may inspect Tenant-private data without authorization."
+    },
+    {
+      "id": "CM1-PD-072",
+      "topic": "roleCode Normalization and Validation",
+      "rule": "Normalize incoming roleCode by trimming leading/trailing whitespace and converting letters to uppercase.\nValidate the normalized result against the allowed character set: ASCII A-Z, digits 0-9 and underscore (_).\nThe normalized roleCode length must be between 3 and 64 characters inclusive.\nUse the canonical normalized value for uniqueness and reservation checks.\nPreserve roleCode immutability after creation.\n\nExamples:\n- \" technical_contact \" → \"TECHNICAL_CONTACT\" (valid).\n- \"CEO\" → \"CEO\" (valid).\n- \"ceo\" → \"CEO\" (canonical collision with the System Role).\n- \"BRANCH-MANAGER\" → invalid.\n- \"مدیر_شعبه\" → invalid.\n- A normalized code shorter than 3 or longer than 64 characters → invalid.\n\nDo not silently add an unconfirmed requirement that the code must start with a letter, prohibit consecutive underscores, or prohibit a leading/trailing underscore unless separately approved.\n\nDocument any further lexical grammar or Unicode edge-case behavior as PROPOSED / OPEN, rather than USER-CONFIRMED.\n\nTechnical implementation of Unicode trim/uppercase semantics and input encoding remains subject to contract definition; acceptance tests must still enforce the confirmed allowed ASCII output."
     }
   ],
   "openQuestionTraceability": {
-    "PDQ-002-08": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067"],
+    "PDQ-002-08": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067", "CM1-PD-068", "CM1-PD-069", "CM1-PD-070", "CM1-PD-071", "CM1-PD-072"],
     "PDQ-002-07": [
       "CM1-PD-001",
       "CM1-PD-003",
@@ -461,12 +499,12 @@
     "Approved specific identity fields, data normalization, national/legal identifier validators",
     "Evidence sufficiency, manual verifier permissions, sensitive process catalog and separation-of-duties applicability",
     "Verification expiration/revocation source of truth, notification semantics, recovery and evidence retention",
-    "Role Catalog policy through CM1-PD-067, including initial vocabulary v1.0 and Tenant selectability, is user-confirmed; defaults, future catalog/publication, normalization/namespaces/custom collisions, configuration/schema/reference, operations/IAM/reason policy, consistency, history/display, Audit and temporal/API contracts remain OPEN (PDQ-002-08).",
+    "Role Catalog product policies through CM1-PD-072 are answered, including default selectability, canonical uniqueness, permanent reservation, future collision blocking and basic normalization. Exact schema/configuration, enforcement/concurrency, cross-Tenant detection authority/privacy, publication/rollback/resolution, Unicode/encoding edge cases, operations/IAM/Audit/reason policy, history/reference and temporal/API contracts remain OPEN (PDQ-002-08).",
     "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?",
     "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?",
     "Sensitive-process catalog and SoD actor mapping for manual verification?",
     "Overlap conflict-set token/snapshot/locking/transactional implementation (technical design, not an API contract)?",
-    "Role Catalog policy through CM1-PD-067, including initial vocabulary v1.0 and Tenant selectability, is user-confirmed; defaults, future catalog/publication, normalization/namespaces/custom collisions, configuration/schema/reference, operations/IAM/reason policy, consistency, history/display, Audit and temporal/API contracts remain OPEN (PDQ-002-08).",
+    "Role Catalog product policies through CM1-PD-072 are answered, including default selectability, canonical uniqueness, permanent reservation, future collision blocking and basic normalization. Exact schema/configuration, enforcement/concurrency, cross-Tenant detection authority/privacy, publication/rollback/resolution, Unicode/encoding edge cases, operations/IAM/Audit/reason policy, history/reference and temporal/API contracts remain OPEN (PDQ-002-08).",
     "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?",
     "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?",
     "Sensitive-process catalog and SoD actor mapping for manual verification?",
@@ -501,9 +539,9 @@
       "questionId": "PDQ-002-08",
       "affectedCapability": "FR-BJ-001",
       "category": "PRODUCT",
-      "missingDecision": "Initial vocabulary v1.0 and Tenant-selectability product policy answered by CM1-PD-066/067; defaults, future vocabulary/publication, namespaces/custom collisions, configuration/schema/reference, management operation/IAM/reason policy, consistency, history/display, Audit and temporal/API contracts remain OPEN.",
+      "missingDecision": "Product policies through CM1-PD-072 answered. OPEN: schema/configuration and default materialization; namespace/concurrent uniqueness/reservation enforcement; cross-Tenant detection authority/privacy; publication/rollback/authorized resolution; Unicode/encoding edge cases; operation/IAM/actor mappings; Audit/failure/recovery; hide/unhide reason policy; history/reference/temporal/API and scope/assignment consistency contracts.",
       "disposition": "OPEN / PARTIALLY ANSWERED",
-      "confirmedBy": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067"],
+      "confirmedBy": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067", "CM1-PD-068", "CM1-PD-069", "CM1-PD-070", "CM1-PD-071", "CM1-PD-072"],
       "remainingContractReference": "customer-role-catalog.md#rc-open--remaining-open-contracts"
     },
     {

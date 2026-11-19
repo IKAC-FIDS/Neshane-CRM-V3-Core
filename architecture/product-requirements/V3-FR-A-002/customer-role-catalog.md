@@ -1,4 +1,4 @@
-# Relationship Role Catalog — v1.4.0 proposed package
+# Relationship Role Catalog — v1.5.0 proposed package
 
 ## Authority and scope
 
@@ -10,6 +10,7 @@
 - Exact v1.3.0 decisions are preserved in the Product Decision Record JSON (`CM1-PD-058..065`). The rules below organize them without expanding their authority.
 - v1.4.0 source: user task **Codex Task — V3-FR-A-002 / Customer Master v1.4.0**, CM1-PD-066/067 and Proposed supplementary governance rules. Authority: USER-CONFIRMED PRODUCT DIRECTION; formal requirements acceptance PENDING.
 - v1.4.0 reviewed baseline: `41a0620ba8216cc86afcccfccbb849ee5e33782e`, branch `codex/v3-fr-a-002`, initially clean working tree/index. Recording time: `2026-11-18T22:09:06.916567+00:00`; owner issuance time not supplied. Earlier baseline/timestamp above remain historical v1.3.0 provenance.
+- v1.5.0 source: user task **Codex Task — V3-FR-A-002 / Customer Master v1.5.0**, exact decisions CM1-PD-068..072 and OPEN contracts. Authority: USER-CONFIRMED PRODUCT DIRECTION; formal acceptance PENDING. Reviewed baseline `92d02d2c45103d5223e5d9ffd7a6bafc556e3443`, branch `codex/v3-fr-a-002`, initially clean worktree/index. Recorded at `2026-11-18T22:41:53.576356+00:00`; issuance time not supplied. Previous authority/baselines remain historical.
 
 ## RC-001 — Hybrid catalog and organizational meaning
 
@@ -54,19 +55,19 @@ The controlled-exception policy `CM1-PD-033..041` remains authoritative. Role ch
 
 ## RC-OPEN — Remaining OPEN Contracts
 
-Vocabulary/selectability product answers are in RC-009..011 below. The residual list here distinguishes those answers from unapproved contracts.
+Vocabulary/selectability product answers are in RC-009..011 below; defaults, uniqueness, permanent reservation, future-collision blocking and basic normalization are now **ANSWERED at product level** by CM1-PD-068..072 / RC-012..016. Earlier v1.4.0 blanket OPEN wording for those policies is updated here; no PDQ is closed.
 
 All remain under **OPEN / PARTIALLY ANSWERED `PDQ-002-08`**; affected executable design is blocked until separately dispositioned. Product policies above remain user-confirmed.
 
-1. Initial vocabulary v1.0 is ANSWERED at product level by CM1-PD-066 (RC-009); future catalog additions/release mechanics and custom-code collision policy remain OPEN, not a complete future universe.
-2. Role code normalization and namespace enforcement.
+1. Exact catalog schema/configuration persistence, provisioning/default materialization and publication/migration mechanisms; initial vocabulary and default policy are answered, not an executable design.
+2. System/Tenant namespace enforcement implementation, concurrent uniqueness/reservation consistency and technical normalization/Unicode/input-encoding edge cases. Basic ASCII output/length/trim-uppercase product policy is answered.
 3. Exact Role Definition field schema and persistence contract.
 4. Role management and Tenant-selectability operation/IAM permission contracts; exact permissions and Audit event names.
 5. Concurrent updates, scope-change dependencies and selectability/assignment finalization consistency mechanism.
 6. Role history representation and historical display contract.
 7. Operation-specific Audit failure and recovery behavior (also `PDQ-002-10`).
 8. Relationship temporal representation and API compatibility (also `PDQ-002-12` for overlap consistency).
-9. New-Tenant/later-role default selectability, configuration representation and ordinary hide/unhide reason policy (RC-PROPOSED); no schema/default is inferred. Tenant-selectability product policy itself is ANSWERED by CM1-PD-067.
+9. Cross-Tenant conflict detection authorization/privacy, catalog version publication/rollback and explicitly authorized collision-resolution workflow. The conflicting new Role is blocked at product level; access authorities and resolution/publication mechanics remain OPEN. Ordinary hide/unhide mandatory-reason policy also remains OPEN; RC-006's scope-change reason is not imported.
 
 See `cm1-acceptance-criteria-addendum.md#role-catalog-scenarios-v130` for proposed, unexecuted scenarios and the decision coverage matrix for each decision's residual gaps. No PDQ is closed.
 
@@ -114,13 +115,46 @@ For a System Role, all relevant conditions must pass together: global ACTIVE sta
 | ACTIVE | Yes | No | Any | Not eligible, including direct API attempts |
 | ACTIVE | Yes | Yes | Fail | Not eligible |
 
-If a Role becomes non-selectable while an assignment is finalized, it must not accept the assignment against an invalid effective state. Exact concurrency/consistency enforcement is OPEN; no token, lock, transaction shape or last-write-wins mechanism is chosen. Missing Tenant context fails closed under existing invariants; missing-setting defaults are separately OPEN and no permissive default is inferred. A permitted selection is not proof of legal representation or authority to perform a business action.
+If a Role becomes non-selectable while an assignment is finalized, it must not accept the assignment against an invalid effective state. Exact concurrency/consistency enforcement is OPEN; no token, lock, transaction shape or last-write-wins mechanism is chosen. Missing Tenant context fails closed under existing invariants. Default selectability is now confirmed in RC-012; exact setting/default representation and materialization remain OPEN, not an authorization bypass. A permitted selection is not proof of legal representation or authority to perform a business action.
 
 ## RC-PROPOSED — Supplementary governance proposals, not confirmed rules
 
-The following require separate disposition, not implied approval: default selectability for new Tenants; default selectability of later catalog additions; exact configuration names/storage; code normalization/length/reserved namespaces; custom-code collision rules for present/future System codes; catalog release/version publication mechanics; exact authorization permissions/Audit event names; and mandatory-reason policy for ordinary hide/unhide. No default, namespace reservation, collision precedence, event name or reason requirement is adopted by this package. Optional English titles, if later proposed, are metadata only, not user-confirmed values.
+Historical proposals for default selectability, role-code uniqueness, permanent reservation, future System collisions and basic normalization/length are now product-level ANSWERED in RC-012..016, not still undecided. The remaining PROPOSED / OPEN design choices are exact configuration names/storage/materialization, namespace/index/tombstone/consistency mechanisms, Unicode trim/uppercase/input encoding edge cases and any further lexical grammar, cross-Tenant detection authorization/privacy, catalog release/version/rollback and authorized resolution mechanics, exact permissions/Audit events, and ordinary hide/unhide mandatory-reason policy. No start-letter requirement or ban on consecutive/leading/trailing underscores is confirmed. Optional English titles remain metadata only. No implementation option, event name or hide/unhide reason requirement is adopted.
 
 New vocabulary/selectability scenarios: `cm1-acceptance-criteria-addendum.md#vocabulary-and-tenant-selectability-scenarios-v140`. Contract-dependent software scenarios are explicitly BLOCKED pending executable design.
+
+## RC-012 — Default System Role selectability
+
+CM1-PD-068: new Tenants receive default selectability of all globally ACTIVE System Roles, subject to applicability, operation authority and other existing guards. Newly released globally ACTIVE System Roles are selectable by default in existing Tenants. Authorized managers may subsequently hide/unhide under CM1-PD-067; established settings survive catalog releases. Global INACTIVE always prevents assignment. Neither defaulting nor publication changes existing Relationships. No storage, Tenant provisioning, migration or default-materialization mechanism is selected.
+
+## RC-013 — Canonical uniqueness and namespace scope
+
+CM1-PD-069: System codes are unique globally within the System Catalog and reserved against Tenant Roles. Tenant Roles cannot use canonical codes of existing or permanently reserved System Roles. Custom codes are unique within their owning Tenant, including inactive/historical reservations; separate Tenants may use the same custom code, with independent Role identities, ownership and Relationships. All comparisons use CM1-PD-072 canonical normalization. No global ban on matching custom codes across independent Tenants and no disclosure/authorization exception is introduced.
+
+## RC-014 — Permanent reservation and identity
+
+CM1-PD-070: an assigned roleCode stays permanently reserved in its applicable ownership/namespace scope, including INACTIVE and historical Roles, and cannot be reassigned to a different Role. Deactivate/reactivate preserves roleId and roleCode. No physical deletion (CM1-PD-061); historical Relationship references survive. No tombstone table, index or retention mechanism is chosen. A matching custom code in a different Tenant is not a reuse within the original Tenant's namespace.
+
+## RC-015 — Future System Catalog collision gate
+
+CM1-PD-071: before releasing a new System code, assess conflicts with existing/historically reserved Tenant codes across relevant Tenants using canonical comparisons. A conflict blocks publication of **that new System Role** until explicitly authorized resolution; it does not impose a blanket block on unrelated catalog changes/releases. Never automatically rename, delete, convert or reassign Tenant Roles or migrate, terminate or modify existing Relationships. Choosing a different proposed System code is a valid non-destructive option. Cross-Tenant detection authorities/privacy, authorized resolution and publication/rollback mechanics remain OPEN. Central catalog administration alone does not authorize inspection of Tenant-private data.
+
+## RC-016 — Canonical normalization and validation
+
+CM1-PD-072: trim leading/trailing whitespace, uppercase letters, then validate the normalized output: only ASCII A-Z, 0-9 and underscore; length **3..64 inclusive**. Use this canonical value for uniqueness/reservation and preserve immutability after creation. These are product constraints, not an approved API or normalization library.
+
+| Incoming roleCode | Canonical result / outcome |
+| --- | --- |
+| ` technical_contact ` | `TECHNICAL_CONTACT`, valid |
+| `CEO` | `CEO`, lexically valid |
+| `ceo` | `CEO`, canonical collision with existing System Role, not a distinct code |
+| `BRANCH-MANAGER` | Invalid: hyphen not allowed |
+| `مدیر_شعبه` | Invalid: non-ASCII output |
+| Normalized length below 3 or above 64 | Invalid |
+
+No extra first-letter rule, underscore adjacency rule or leading/trailing underscore ban: `1_A`, `_AB`, `AB_` and `A__B` satisfy the confirmed lexical constraints when not otherwise reserved/conflicting. This does not assign these codes to actual Roles. Unicode trim/uppercase semantics, input encoding and any further lexical grammar are PROPOSED / OPEN; all eventual tests must enforce the confirmed allowed ASCII output. No new value is assigned to an existing immutable Role through normalization.
+
+New proposed scenarios: `cm1-acceptance-criteria-addendum.md#defaults-and-canonical-code-scenarios-v150`; software execution BLOCKED pending the relevant contracts.
 
 ## Governance preserved
 

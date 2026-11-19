@@ -1,20 +1,85 @@
 {
   "taskId": "V3-FR-A-002",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "coverageClassificationLegend": {
     "FULL": "has directly testable acceptance criterion/coverage",
     "PARTIAL": "some testable criteria; residual OPEN technical/contract gaps remain",
     "DOCUMENTED_ONLY": "recorded but lacks independently testable acceptance coverage",
     "BLOCKED_BY_OPEN_DECISION": "depends on an unresolved technical/contract decision"
   },
-  "decisionCount": 67,
+  "decisionCount": 72,
   "coverageCounts": {
-    "PARTIAL": 57,
+    "PARTIAL": 62,
     "DOCUMENTED_ONLY": 5,
     "FULL": 3,
     "BLOCKED_BY_OPEN_DECISION": 2
   },
   "decisions": [
+    {
+      "decisionId": "CM1-PD-068",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "ACTIVE System default selectability for new Tenants/new releases; preserve established settings and Relationships.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-012--default-system-role-selectability",
+      "relatedBusinessRule": "RC-012",
+      "fieldIds": [],
+      "operationConcepts": ["Default selectability on new Tenant/new System Role availability (logical capabilities)"],
+      "acceptanceCriterionIds": ["CM1-ROL-30", "CM1-ROL-31", "CM1-ROL-32", "CM1-ROL-33"],
+      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "coverageGap": "Product defaults answered; no approved configuration field IDs. Schema/persistence, provisioning/default materialization and publication compatibility remain OPEN. Software scenarios BLOCKED pending design."
+    },
+    {
+      "decisionId": "CM1-PD-069",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Canonical System-global / owning-Tenant uniqueness; matching independent Tenant custom codes allowed.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-013--canonical-uniqueness-and-namespace-scope",
+      "relatedBusinessRule": "RC-013",
+      "fieldIds": ["REL-002-05"],
+      "operationConcepts": ["Role creation canonical registry validation (logical capability; not Relationship roleCode uniqueness)"],
+      "acceptanceCriterionIds": ["CM1-ROL-34", "CM1-ROL-35", "CM1-ROL-36", "CM1-ROL-37", "CM1-ROL-43", "CM1-ROL-45"],
+      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "coverageGap": "Namespace/concurrent uniqueness/reservation enforcement and disclosure-safe operation contracts remain OPEN. REL-002-05 is a conceptual reference, not an approved Role Definition schema."
+    },
+    {
+      "decisionId": "CM1-PD-070",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Permanent scoped code reservation and identity-preserving reactivation; no reassignment/deletion/history loss.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-014--permanent-reservation-and-identity",
+      "relatedBusinessRule": "RC-014",
+      "fieldIds": ["REL-002-05"],
+      "operationConcepts": ["Role reservation validation and reactivation (logical capabilities)"],
+      "acceptanceCriterionIds": ["CM1-ROL-35", "CM1-ROL-38", "CM1-ROL-39", "CM1-ROL-43", "CM1-ROL-45"],
+      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "coverageGap": "Reservation consistency/history/reference enforcement remain OPEN; no tombstone/index/retention implementation selected."
+    },
+    {
+      "decisionId": "CM1-PD-071",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Assess Tenant current/historical collisions before new System publication; block conflicting Role only, resolve non-destructively under authority.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-015--future-system-catalog-collision-gate",
+      "relatedBusinessRule": "RC-015",
+      "fieldIds": ["REL-002-05"],
+      "operationConcepts": ["Pre-publication collision assessment / authorized resolution (logical capabilities; access contract OPEN)"],
+      "acceptanceCriterionIds": ["CM1-ROL-40", "CM1-ROL-41", "CM1-ROL-45"],
+      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "coverageGap": "Cross-Tenant detection authority/privacy, concurrent publication consistency, version publication/rollback and authorized resolution workflow remain OPEN; no private-data access grant."
+    },
+    {
+      "decisionId": "CM1-PD-072",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Trim-uppercase canonical ASCII A-Z/0-9/underscore, length 3..64, used for immutable-code uniqueness/reservation.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-016--canonical-normalization-and-validation",
+      "relatedBusinessRule": "RC-016",
+      "fieldIds": ["REL-002-05"],
+      "operationConcepts": ["Role code normalization/validation before uniqueness/reservation checks (logical capability)"],
+      "acceptanceCriterionIds": ["CM1-ROL-42", "CM1-ROL-43", "CM1-ROL-44", "CM1-ROL-45"],
+      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "coverageGap": "Unicode trim/uppercase/input encoding edge cases, additional proposed grammar and consistent implementation remain OPEN; allowed ASCII output/length is confirmed, not blocked as a product answer."
+    },
     {
       "decisionId": "CM1-PD-066",
       "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
@@ -26,7 +91,7 @@
       "operationConcepts": ["System Role catalog consumption / Relationship assignment (logical capabilities; executable contracts OPEN)"],
       "acceptanceCriterionIds": ["CM1-ROL-17", "CM1-ROL-18", "CM1-ROL-26", "CM1-ROL-29"],
       "relatedOpenPqdIds": ["PDQ-002-08"],
-      "coverageGap": "Initial vocabulary values are answered and directly comparable; schema/reference, namespace/custom collisions and executable publication/assignment contracts remain OPEN. No seed or fixed roleId chosen."
+      "coverageGap": "Initial vocabulary values are answered and unchanged; namespace/reservation/collision product policies now answered by CM1-PD-069..072. Schema/reference, enforcement and executable publication/assignment contracts remain OPEN. No seed or fixed roleId chosen."
     },
     {
       "decisionId": "CM1-PD-067",
@@ -39,7 +104,7 @@
       "operationConcepts": ["Tenant System Role hide/unhide management", "Authoritative effective assignment validation (logical capabilities; no new operation ID)"],
       "acceptanceCriterionIds": ["CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29"],
       "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10", "PDQ-002-12"],
-      "coverageGap": "Software scenarios BLOCKED pending defaults/configuration, management/permission/API, consistency, historical display and Audit failure/recovery design. Ordinary hide/unhide reason policy remains OPEN."
+      "coverageGap": "Defaults answered by CM1-PD-068; software scenarios BLOCKED pending configuration/default materialization, management/permission/API, consistency, historical display and Audit failure/recovery design. Ordinary hide/unhide reason policy remains OPEN."
     },
     {
       "decisionId": "CM1-PD-058",
@@ -52,7 +117,7 @@
       "operationConcepts": ["Role Catalog management (logical capability; operation contract OPEN)"],
       "acceptanceCriterionIds": ["CM1-ROL-01", "CM1-ROL-13", "CM1-ROL-14"],
       "relatedOpenPqdIds": ["PDQ-002-08"],
-      "coverageGap": "Initial System vocabulary v1.0 is answered by CM1-PD-066; future catalog/publication, namespace/custom collisions, schema and operation/permission contracts remain OPEN."
+      "coverageGap": "Initial vocabulary and uniqueness/reservation/collision/basic normalization product policies answered by CM1-PD-066/069..072; future catalog values, publication/enforcement, schema and operation/permission contracts remain OPEN."
     },
     {
       "decisionId": "CM1-PD-059",
@@ -91,7 +156,7 @@
       "operationConcepts": ["Role identity/deletion validation (logical capability)"],
       "acceptanceCriterionIds": ["CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-15"],
       "relatedOpenPqdIds": ["PDQ-002-08"],
-      "coverageGap": "Role Definition field IDs/schema, namespace/reference and history representation remain OPEN; REL-002-05 is not a Role Definition schema."
+      "coverageGap": "Role Definition field IDs/schema, namespace enforcement/reference and history representation remain OPEN; permanent scoped code reservation is product-confirmed by CM1-PD-069/070. REL-002-05 is not a Role Definition schema."
     },
     {
       "decisionId": "CM1-PD-062",

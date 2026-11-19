@@ -45,10 +45,11 @@ MET — documentary; not owner acceptance. All detailed rules/fields/lifecycle/d
 
 Detailed CM1 scenarios (CM1-REL-*, CM1-BRN-*, CM1-AUD-*, plus lifecycle/branch/CUS-UPDATE/duplicate/relationship/audit edge cases added in v1.2.1) are carried in `cm1-acceptance-criteria-addendum.md` (single source of truth; not duplicated here). The controlled-exception Relationship overlap policy is the authoritative policy and supersedes any prior absolute-overlap denial (see CM1-PD-041).
 
-## Inventory (v1.4.0 proposed package)
+## Inventory (v1.5.0 proposed package)
 
 - Canonical criteria: **5** (V3-FR-A-002-AC-01..05).
-- Detailed CM1 criteria: **112** (FLD 6, VER 18, REL 18, BRN 10, AUD 5, DUP 5, LC 11, UPD 10, ROL 29).
-- Total unique criterion IDs: **117**. All detailed criteria remain PROPOSED / NOT TESTED.
+- Detailed CM1 criteria: **128** (FLD 6, VER 18, REL 18, BRN 10, AUD 5, DUP 5, LC 11, UPD 10, ROL 45).
+- Total unique criterion IDs: **133**. All detailed criteria remain PROPOSED / NOT TESTED.
+- Previous v1.4.0 inventory: 5 canonical + 112 detailed = 117. Added CM1-ROL-30..45 (16); all earlier definition lines unchanged. Software execution remains BLOCKED pending relevant executable design; no scenario marked executed.
 - Previous v1.3.0 inventory: 5 canonical + 99 detailed = 104. Added CM1-ROL-17..29; original five canonical definitions and CM1-ROL-01..16 are unchanged. See the addendum's v1.4.0 execution-dependency column: software scenarios are BLOCKED pending executable design.
 - Previous v1.2.1 inventory: 5 canonical + 83 detailed = 88. Added: CM1-ROL-01..16; no existing criterion ID removed or changed.

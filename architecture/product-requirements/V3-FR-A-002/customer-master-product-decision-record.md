@@ -1,7 +1,7 @@
 # Customer Master — Product Decision Record
 
 **Record ID:** `V3-FR-A-002-PDR-001`
-**Version:** `1.4.0` (proposed package; formal acceptance pending)
+**Version:** `1.5.0` (proposed package; formal acceptance pending)
 **Date:** 2026-11-18
 **Scope:** `FR-BJ-001` / `V3-FR-A-002` / `CM-1`
 **Disposition:** `USER-CONFIRMED PRODUCT DIRECTION — FORMAL REPOSITORY ACCEPTANCE PENDING`
@@ -90,7 +90,7 @@ Source/authority, recording timestamp, reviewed baseline and exact decision word
 | CM1-PD-064 | Catalog authority | System authority governs System Roles; Tenant users cannot modify them. Tenant roles managed only by authorized owning-Tenant actors; no cross-Tenant access/reference absent a separate governing contract. CUS-CREATE alone is insufficient. |
 | CM1-PD-065 | History / overlap | Preserve identity/history through title/status/scope changes; no bypass of version, overlap authorization, Tenant or mandatory Audit checks; exact reference and overlap key remain unapproved. |
 
-These eight decisions partially answer PDQ-002-08; all 19 questions stay OPEN. No earlier decision is removed or rewritten. The v1.3.0 total was 65 user-confirmed decisions; current v1.4.0 total is 67. The historical v1.2.1 counts below describe that earlier package only.
+These eight decisions partially answer PDQ-002-08; all 19 questions stay OPEN. No earlier decision is removed or rewritten. Historical totals: v1.3.0 had 65 and v1.4.0 had 67 decisions; current v1.5.0 has 72. Historical version counts below describe their respective packages only.
 
 ## Vocabulary and Tenant selectability — v1.4.0 (CM1-PD-066/067)
 
@@ -101,7 +101,21 @@ Authority: USER-CONFIRMED PRODUCT DIRECTION; formal requirements acceptance PEND
 | CM1-PD-066 | Initial System Role Vocabulary v1.0 | Exact 12 codes, Persian titles and scopes: [RC-009](customer-role-catalog.md#rc-009--initial-system-role-vocabulary-v10), mirrored in JSON decision catalogEntries. Initial, not exhaustive future vocabulary; no exclusive PRIMARY_CONTACT, IAM grant or verified legal/automatic CEO/BOARD_MEMBER authority. Preserve identity/no deletion. No English titles, global roleIds, seed or deployment contract assumed. |
 | CM1-PD-067 | Tenant-specific System Role selectability | Authorized Tenant management may hide/unhide an otherwise eligible System Role for new assignments in that Tenant only. Customer Domain enforces effective global ACTIVE + applicability + Tenant selectability + operation authority and existing guards. Preserve global definition, other Tenants, existing Relationships and authorized history. No lifecycle/scope override; concurrent finalization must not accept invalid effective state; exact enforcement OPEN. |
 
-Hide/unhide is not global deactivation or incompatible scope change: no mandatory reason is inferred from CM1-PD-063. Supplementary default/code/collision/publication/configuration/IAM/Audit/reason rules are proposals under [RC-PROPOSED](customer-role-catalog.md#rc-proposed--supplementary-governance-proposals-not-confirmed-rules), not additional confirmed decisions. PDQ-002-08 stays OPEN / PARTIALLY ANSWERED; 19 OPEN questions unchanged.
+Hide/unhide is not global deactivation or incompatible scope change: no mandatory reason is inferred from CM1-PD-063. The v1.4.0 proposals for defaults/code/reservation/collision/basic normalization are answered by CM1-PD-068..072 below; current residual proposals are under [RC-PROPOSED](customer-role-catalog.md#rc-proposed--supplementary-governance-proposals-not-confirmed-rules). PDQ-002-08 stays OPEN / PARTIALLY ANSWERED; 19 OPEN questions unchanged.
+
+## Defaults and canonical code policy — v1.5.0 (CM1-PD-068..072)
+
+**USER-CONFIRMED PRODUCT DIRECTION; formal acceptance PENDING.** Exact decision wording and source/baseline/recording time: JSON `decisions` and `defaultCodePolicyAuthority`. Earlier CM1-PD-001..067 objects are preserved without semantic changes. Product rules: `customer-role-catalog.md` RC-012..016; all 19 OPEN questions retained.
+
+| Decision ID | Topic | Confirmed product rule |
+| --- | --- | --- |
+| CM1-PD-068 | Default System Role selectability | Globally ACTIVE System Roles default selectable for new Tenants; newly released ACTIVE Roles default selectable in existing Tenants, subject to applicability/authorization/guards. Preserve prior Tenant settings across releases; no INACTIVE bypass or existing Relationship change. Provisioning/storage/default materialization is not selected. |
+| CM1-PD-069 | roleCode uniqueness | Canonical System codes unique globally and reserved against Tenant codes; Tenant codes unique in their own Tenant including inactive/historical reservations. Same custom code across separate Tenants is allowed with independent identities/ownership/Relationships and no disclosure relaxation. |
+| CM1-PD-070 | Permanent reservation | Assigned codes remain reserved in their namespace and cannot be reassigned to another Role; deactivation/reactivation preserves roleId/roleCode. No physical deletion or historical reference loss. No tombstone/index/retention design selected. |
+| CM1-PD-071 | Future System collision | Assess relevant Tenant current/historical codes before new System publication; conflict blocks that new Role until authorized resolution. No automatic Role/Relationship mutation; different proposed System code is a non-destructive option. No blanket block of unrelated releases or implicit access to Tenant-private data. |
+| CM1-PD-072 | Normalization/validation | Trim then uppercase; canonical output only ASCII A-Z/0-9/underscore, length 3..64 inclusive, used for uniqueness/reservation. Immutable after creation. No additional first-letter or underscore-placement grammar. Unicode/encoding implementation edge cases remain PROPOSED / OPEN. |
+
+Examples and guard detail: RC-016. Future resolution workflow, cross-Tenant authorities/privacy, schema/configuration, enforcement/concurrency, publication/rollback, IAM/Audit, hide/unhide reason, history/reference and temporal/API contracts remain OPEN. No API, persistence or roleId-based overlap key is approved.
 
 ## 3. Supersession
 

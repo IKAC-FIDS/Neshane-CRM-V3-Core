@@ -1,17 +1,18 @@
-# V3-FR-A-002 — Customer Master Product Decision Package v1.4.0 (PROPOSED)
+# V3-FR-A-002 — Customer Master Product Decision Package v1.5.0 (PROPOSED)
 
 ## Included
 - Reconciled requirements, business rules, field dictionary, lifecycle (explicit source-baseline vs user-confirmed target), operation catalog, actor policy, failure/deployment scenarios, acceptance criteria, open decisions, source traceability.
-- `customer-master-product-decision-record.md` / `.json`: 67 user-confirmed decisions (CM1-PD-001..067) plus supersession record; formal acceptance PENDING. Original 65 decision objects preserved.
-- `customer-role-catalog.md`: CM1-PD-058..067 policy and residual contracts; RC-009 holds the exact 12-entry initial System Role Vocabulary v1.0, mirrored in PDR JSON catalogEntries. Roles describe organizational responsibilities, not IAM/RBAC grants or verified legal representation.
-- `customer-decision-coverage-matrix.md` / `.json`: all 67 decisions (FULL=3, PARTIAL=57, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2). Two new decisions PARTIAL because executable/governance contracts remain OPEN, not because initial vocabulary/selectability policy is unanswered.
+- `customer-master-product-decision-record.md` / `.json`: 72 user-confirmed decisions (CM1-PD-001..072) plus supersession record; formal acceptance PENDING. Original 67 decision objects preserved.
+- `customer-role-catalog.md`: Role policy through CM1-PD-072; RC-009's exact 12-entry System vocabulary v1.0 and PDR JSON catalogEntries unchanged. RC-012..016 confirm defaults, canonical uniqueness, permanent reservation, future collision gate and basic normalization; implementation remains OPEN. Roles grant no IAM/RBAC or verified legal authority.
+- `customer-decision-coverage-matrix.md` / `.json`: all 72 decisions (FULL=3, PARTIAL=62, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2). Five new decisions PARTIAL due to explicit technical/operational gaps, not unanswered product policy. No earlier coverage class promoted.
 - `cm1-acceptance-criteria-addendum.md`: detailed CM1 acceptance criteria (all PROPOSED / NOT TESTED).
-- Inventory: 5 canonical + 112 detailed = 117 unique criteria. Added CM1-ROL-17..29; five canonical and CM1-ROL-01..16 unchanged. All new criteria PROPOSED / NOT TESTED; contract-dependent execution BLOCKED pending design.
+- Inventory: 5 canonical + 128 detailed = 133 unique criteria; added CM1-ROL-30..45 (16). All previous definition lines, including five canonical and CM1-ROL-01..29, unchanged. New criteria PROPOSED / NOT TESTED; software execution BLOCKED pending design.
 - `sha256-manifest.json`: integrity manifest (self-reference omitted by convention).
 
 ## Key policy (user-confirmed, authoritative)
 - Tenant System Role hide/unhide restricts new assignments locally; it does not edit/deactivate global Roles, alter other Tenants, mutate existing Relationships or hide otherwise authorized history. Customer Domain enforces global ACTIVE + scope + Tenant selectability + Relationship authority and existing guards, including concurrency. No Tenant override of global lifecycle/scope.
-- Initial vocabulary is not exhaustive; no exclusive PRIMARY_CONTACT, automatic CEO/BOARD_MEMBER authority, English title, global roleId or seed/migration choice is inferred. Ordinary hide/unhide reason policy and default selectability remain OPEN, not inherited from incompatible scope changes.
+- Initial vocabulary is not exhaustive; no exclusive PRIMARY_CONTACT, automatic CEO/BOARD_MEMBER authority, English title, global roleId or seed/migration choice. Ordinary hide/unhide reason policy stays OPEN and is not inherited from incompatible scope changes. Default selectability is now product-confirmed (CM1-PD-068), not its storage/materialization.
+- Globally ACTIVE System Roles default selectable in new Tenants/new releases, subject to guards; preserve prior Tenant settings and existing Relationships. Canonical codes are System-global versus owning-Tenant unique and permanently reserved; independent Tenants may share custom codes. Conflicting new System Role publication is blocked without automatic data mutation or private-data access grant; unrelated releases are not automatically blocked. Normalize trim-uppercase then ASCII A-Z/0-9/underscore, length 3..64; no extra first-letter/underscore-placement grammar. Unicode/encoding, enforcement/concurrency and publication/resolution mechanics remain OPEN.
 - Relationship overlap: same Person+TargetType+TargetId+RoleCode overlapping intervals allowed only via controlled exception. Distinct roles/targets/Company-vs-Branch overlap freely. Supersedes any absolute-overlap prohibition.
 - Branch: subordinate to Company, immutable companyId (Required/Immutable parent reference), no direct reparenting, only ACTIVE/INACTIVE.
 - Identity verification: NOT_VERIFIED/VERIFIED/REQUIRES_REVERIFICATION, independent of record lifecycle; no universal expiry; no implicit access.

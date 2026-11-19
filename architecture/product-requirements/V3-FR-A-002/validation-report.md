@@ -1,6 +1,58 @@
 # Requirements-engineering validation report — V3-FR-A-002
 
-## Current supplement — v1.4.0 vocabulary and Tenant selectability
+## Current supplement — v1.5.0 defaults and canonical code policies
+
+**PROPOSED DOCUMENTATION PACKAGE; formal acceptance PENDING.** Earlier sections are historical evidence only; their previous inventory/OPEN statements are not current where superseded by this supplement. No executable design or Gate disposition is granted.
+
+### Baseline, scope and authority
+
+- Task V3-FR-A-002 / Customer Master v1.5.0 / Relationship Role Catalog / PDQ-002-08. Root `E:/Neshane-CRM-V3-V3-024-main-adoption`; expected and actual branch `codex/v3-fr-a-002`, original HEAD `92d02d2c45103d5223e5d9ffd7a6bafc556e3443`. Initial worktree/index clean. No branch/index mutation, stage, commit or push.
+- New IDs CM1-PD-068..072 and CM1-ROL-30..45 were verified unoccupied before authoring. User task decisions are USER-CONFIRMED PRODUCT DIRECTION; exact words, scope, baseline and actual UTC recording timestamp are in PDR JSON defaultCodePolicyAuthority/decisions. Issuance time not supplied; historical authority/provenance retained.
+- Documentation only, confined to the requested package. No executable schema/API/IAM/DB/persistence/migration/Audit integration/runtime/offline/release implementation or approval. No application code/test, Backend/Frontend or unrelated source/roadmap change.
+
+### Current inventory and traceability
+
+- **72 unique decisions CM1-PD-001..072.** All 67 prior JSON decision objects and their original UTF-8 object substrings remain identical to the reviewed Git baseline. New CM1-PD-068..072 represented in Markdown/JSON with RC-012..016 and scenario/operation/field-or-explicit-gap/OPEN mappings.
+- Exact original 12-entry System vocabulary unchanged in JSON and Markdown, including Persian titles/ZWNJ/scopes. All 31 field IDs retained; only REL-002-05 registry/reference policy clarified. Registry code uniqueness is not uniqueness of roleCode across Relationship rows. No new approved field/schema or roleId-based overlap key.
+- Actual baseline acceptance definitions: 5 canonical +112 detailed =117; current 5 +128 =**133 unique IDs**. Added exactly CM1-ROL-30..45 (16), all PROPOSED / NOT TESTED, software execution BLOCKED pending relevant design. All earlier definition lines, including canonical five and CM1-ROL-01..29, unchanged.
+- Coverage: **FULL=3, PARTIAL=62, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2**. All five new decisions PARTIAL with direct proposed scenarios and explicit residual contracts; no older coverage class promoted. Product answers are not blocked merely because implementation design remains OPEN.
+- **19 OPEN question IDs preserved**; PDQ-002-08 stays OPEN / PARTIALLY ANSWERED. Current RC-OPEN/RC-PROPOSED, register and Traceability mark default policy, scoped uniqueness/permanent reservation, future collision blocking and trim-uppercase/ASCII/3..64 normalization ANSWERED at product level. Earlier versions' OPEN language is explicitly historical.
+- Still OPEN: exact catalog/configuration schema/persistence/default materialization; namespace/concurrent uniqueness/reservation enforcement; cross-Tenant conflict detection authorization/privacy; publication/version/rollback and authorized resolution workflow; Unicode trim/uppercase/input encoding/additional proposed grammar; operation IDs/IAM/actor mappings; Role Audit/failure/recovery; ordinary hide/unhide mandatory reason; history/reference/temporal/API and scope-change/assignment consistency.
+
+### Scoped review and limitations
+
+- Confirmed policies preserve prior Tenant settings and existing Relationships through defaulting/releases, global INACTIVE override, identity-preserving reactivation and scoped permanent reservation. Same custom code is allowed across independent Tenants. Conflict blocks only the proposed conflicting System Role; no automatic Role/Relationship mutation or central private-data inspection right.
+- Trim-uppercase/allowed ASCII output/3..64 length is confirmed without an extra first-letter or underscore-placement rule. The validator's isolated ASCII documentary fixtures illustrate examples and boundaries only; they are not a production Unicode normalizer or application tests. Further lexical/Unicode behavior remains PROPOSED / OPEN.
+- Controlled overlap, no additional supervisor approval for ordinary authorized overlap, separate management/reason requirements for incompatible scope changes, validated Tenant Context/fail-closed Customer Domain authorization, no physical deletion and no IAM/legal authority grant preserved. Ordinary hide/unhide reason policy is still OPEN, not inherited from scope changes.
+- Source inventory, original evidence/revisions/SHA values, historical authority, governance fields and adjacent lifecycle/verification/failure/deployment files preserved. Scoped review found no remaining contradiction in the five new policies; exhaustive re-review of earlier product policies, historical recovery claims and independent specialist assessment is NOT VERIFIED.
+- Authoring correction: an extra closing brace introduced while appending decisions was spotted in a read and corrected before the first validator run; original decision objects then passed semantic and raw-byte preservation checks. No failing control disabled or expected count reduced.
+
+### Actual validation commands and results
+
+```powershell
+git --no-optional-locks status --short --branch --untracked-files=all
+git --no-optional-locks rev-parse HEAD
+git --no-optional-locks diff --cached --stat
+python -X utf8 C:/Users/user/AppData/Local/Temp/opencode/a002-role-150-validate.py
+python -X utf8 C:/Users/user/AppData/Local/Temp/opencode/a002-role-150-validate.py --manifest
+git --no-optional-locks diff --check
+git --no-optional-locks diff --stat
+git --no-optional-locks status --short --untracked-files=all
+```
+
+- Structural/documentation run: **39/39 PASS**; final manifest-mode run: **41/41 PASS**, including complete inventory/self-exclusion and exact-byte SHA-256 consistency. JSON syntax, raw/semantic decision preservation, vocabulary, criteria/field/OPEN IDs, all five new mappings, cross-file paths/anchors, current versions/counts, historic/current OPEN distinctions, scope, unchanged governance and whitespace checked. No validation failures remained. Report hash is regenerated after this update and the final control repeated.
+- Manifest uses the existing exact-byte SHA-256 convention and excludes itself. Full inventory/hash consistency PASS; this does not independently authenticate the manifest. Historical source SHA values are not recalculated. git diff --check PASS with only LF-to-CRLF working-copy warnings, no whitespace errors.
+- The checker is task-local outside Git, not application code or a durable runtime test suite. It uses read-only git show/diff for baseline comparisons; introduced reference checks and fixture assertions are documentary evidence only.
+- Build/application/integration/runtime tests **NOT EXECUTED** (documentation-only); no dependencies/network activity, services or Docker resources used. All new software scenarios remain unexecuted and contract-blocked. No skipped check is labelled software PASS.
+- Manual review needed: exact new PDR decisions and RC-012..016, namespace scope versus repeated Relationship refs, only-conflicting-Role publication gate/privacy, normalization examples, remaining contracts and CM1-ROL-30..45 dependencies. Next authorized action is user review; formal acceptance, executable contract decisions and Git operations require separate authorization.
+
+### Governance — unchanged
+
+G-RUNTIME: BLOCKED; FE-BE: PENDING; AUTH/IAM: PENDING; Offline: PROHIBITED; Local-Infra: ACCEPTED — DEVELOPMENT-ONLY; Production: NOT AUTHORIZED; Formal acceptance: PENDING. Pending Submission remains PERMITTED NOT REQUIRED and non-authoritative; coordinated durable Audit obligations preserved.
+
+## Historical v1.4.0 supplement (not renewed v1.5.0 evidence)
+
+### v1.4.0 vocabulary and Tenant selectability
 
 **PROPOSED DOCUMENTATION PACKAGE; formal requirements acceptance PENDING.** This supplement supersedes only current inventory/residual statements of earlier reports, not historical decision semantics or source provenance. Historical reports below are not renewed execution evidence.
 
