@@ -300,3 +300,7 @@ Read-only Git recovery investigation; filesystem search; authoring helper `v3-fr
 - **Decision coverage matrix:** 57 decisions mapped; FULL=3, PARTIAL=47, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2.
 - **OPEN questions:** 19 total; 7 partial resolutions recorded; none closed.
 - **Relationship overlap:** controlled-exception policy remains authoritative; absolute-overlap prohibition remains superseded.
+
+## v1.8.0 validation boundary
+
+Documentation-only candidate. Baseline manifest verified against exact fetched Git bytes; new package validation covers JSON, preservation of prior decisions/criteria, unique IDs, coverage and manifest. No software test, build, runtime, formal acceptance or implementation authorization. No claim of executable behavior.

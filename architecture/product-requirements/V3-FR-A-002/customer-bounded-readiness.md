@@ -95,3 +95,13 @@ Canonical source: `architecture/product-planning/V3-PRODUCT-PLAN-003/execution-r
 ## Gates unchanged
 
 G-RUNTIME: BLOCKED; FE-BE: PENDING; AUTH/IAM: PENDING; Offline: PROHIBITED; Local-Infra: ACCEPTED — DEVELOPMENT-ONLY; Production: NOT AUTHORIZED; Formal acceptance: PENDING.
+
+## Current v1.8.0 disposition
+
+- Separate explicit owner review and bounded acceptance of exact deliverables; no implementation grant
+- Actual actor bindings, exact masking and authorization examples remain subject to design; logical product matrix confirmed
+- Manual verification conditional on approved issuer/evidence/legal/SoD and secure attachment contracts; synthetic only
+- Archive conditional on actual applicable dependency clearance; unknown blocks
+- Exact remaining observable validation (character count, normalization, authoritative country/identifier rules), document completeness edge cases and timezone-change evaluation remain OPEN where not settled; exclude affected rules from independent candidate
+
+For exact current scope, see `customer-v180-scope-and-document-catalog.md` and current JSON; earlier v1.7.0 blockers on profile, time and logical disclosure are historical where answered. All 19 questions OPEN.

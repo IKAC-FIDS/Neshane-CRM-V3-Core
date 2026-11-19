@@ -56,3 +56,9 @@ Detailed CM1 scenarios (CM1-REL-*, CM1-BRN-*, CM1-AUD-*, plus lifecycle/branch/C
 - Previous v1.4.0 inventory: 5 canonical + 112 detailed = 117. Added CM1-ROL-30..45 (16); all earlier definition lines unchanged. Software execution remains BLOCKED pending relevant executable design; no scenario marked executed.
 - Previous v1.3.0 inventory: 5 canonical + 99 detailed = 104. Added CM1-ROL-17..29; original five canonical definitions and CM1-ROL-01..16 are unchanged. See the addendum's v1.4.0 execution-dependency column: software scenarios are BLOCKED pending executable design.
 - Previous v1.2.1 inventory: 5 canonical + 83 detailed = 88. Added: CM1-ROL-01..16; no existing criterion ID removed or changed.
+
+## Current v1.8.0 refinement (overrides only corresponding historical OPEN product portions)
+
+See `customer-v180-scope-and-document-catalog.md` and PDR. All five canonical definitions and 207 earlier detailed definitions retained. See CM1-V18-01..22 in addendum (PROPOSED / NOT TESTED; execution BLOCKED).
+
+All 19 PDQs remain OPEN; no formal acceptance, executable contract or Gate change.

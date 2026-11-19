@@ -65,3 +65,12 @@ No unapproved API, database, or IAM implementation choice is presented as an acc
 ## F. Role Definition lifecycle (v1.3.0 user-confirmed product direction)
 
 Exactly ACTIVE / INACTIVE; valid creation starts ACTIVE; authorized validated ACTIVE → INACTIVE and INACTIVE → ACTIVE. Physical deletion is unsupported even without Relationships. Full guards: `customer-role-catalog.md#rc-003--lifecycle` (CM1-PD-060/061). Role status changes never mutate existing Relationships or their intervals; INACTIVE Roles cannot receive new assignments (CM1-PD-062). This is independent of Relationship ACTIVE/ENDED and Customer/verification states; no IAM lifecycle or grant is implied.
+
+## Current v1.8.0 refinement (overrides only corresponding historical OPEN product portions)
+
+See `customer-v180-scope-and-document-catalog.md` and PDR.
+- CM1-PD-100: Tenant can require a document at initial registration or identity verification, or leave optional; default no mandatory initial registration documents. Add mandatory type or change optional to mandatory for subsequent applicable operations; mandatory to optional removes obligation; deactivate prevents new uploads for that type while preserving existing documents; rename retains identity; no physical deletion of type. Configuration changes do not automatically invalidate prior verification. Actual policy/legal prerequisites remain applicable.
+- CM1-PD-102: Show NOT_PROVIDED, PROVIDED, EXPIRED, SUPERSEDED, INVALIDATED. PROVIDED denotes upload, not authenticity. INVALIDATED by authorized user; replacement retains historical SUPERSEDED version. Show completed mandatory documents versus total applicable mandatory documents, separately from verification status. Exact computation for stage, expiry/invalidity, zero denominator and precedence remains OPEN where not expressly settled; no new verification shortcuts.
+- CM1-PD-104: Tenant-configurable timezone; initial Iran timezone Asia/Tehran. Relationship business dates are calendar days in Tenant timezone, half-open [start,end), future starts/open ends permitted. Issue/expiry of documents are calendar dates; date-only facts do not shift with timezone. Events and Audit timestamps UTC; user-local presentation and Persian/Gregorian calendar configurable independently of language. Preserve past business dates when Tenant timezone changes, and event history unchanged. Exact timezone-change effective evaluation and storage mechanisms OPEN.
+
+All 19 PDQs remain OPEN; no formal acceptance, executable contract or Gate change.

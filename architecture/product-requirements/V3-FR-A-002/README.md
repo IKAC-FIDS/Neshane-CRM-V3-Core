@@ -1,8 +1,8 @@
-# V3-FR-A-002 — Customer Master bounded acceptance candidate v1.7.0
+# V3-FR-A-002 — Customer Master bounded acceptance candidate v1.8.0
 
 **PREPARED FOR SEPARATE OWNER REVIEW — NOT ACCEPTED; no implementation authorization.** Reviewed branch `codex/v3-fr-a-002`, HEAD `6f79975ab974c285dbac2547847add53513f8467`.
 
-## Current package
+## Historical v1.7.0 package
 
 - **95 product decisions**: prior 77 objects unchanged, new CM1-PD-078..095 correspond to the 18 numbered user-approved clauses in four packages. Authority/baseline/recording time in PDR `boundedConsolidationAuthority`; precise refinements in `refinementsV170`.
 - **5 canonical +207 detailed =212 unique criteria**. Added CM1-BND-01..54; every earlier definition line retained; new PROPOSED / NOT TESTED and implementation-dependent execution BLOCKED. Deferred/excluded/unexecuted cases not PASS.
@@ -45,3 +45,7 @@ The retained summary below describes its prior version only; current counts/scop
 - Not an approved DB design, IAM grant, API, or provider integration; does not authorize runtime/offline/production.
 - G-RUNTIME BLOCKED, FE-BE & AUTH/IAM PENDING; no Git commit/push performed by this task.
 - Offline PROHIBITED; Local-Infra ACCEPTED — DEVELOPMENT-ONLY; Production NOT AUTHORIZED. Pending Submission PERMITTED NOT REQUIRED, non-authoritative. No runtime, architecture, IAM, or formal requirements acceptance is inferred.
+
+## Current v1.8.0 package
+
+106 decisions, 5 canonical +229 detailed =234 criteria, 38 existing field IDs plus logical document/contact policies, 19 OPEN PDQs. See `customer-v180-scope-and-document-catalog.md`. Prior inventory historical. Formal acceptance PENDING; no implementation authorization.

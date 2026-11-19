@@ -1,17 +1,58 @@
 {
   "taskId": "V3-FR-A-002",
-  "version": "1.7.0",
-  "currentPolicyReference": "CM1-PD-082..086/089/093; customer-bounded-readiness.md. Previous field IDs retained; source entity notes below are historical schema gaps.",
+  "version": "1.8.0",
+  "currentPolicyReference": "customer-v180-scope-and-document-catalog.md",
   "minimumFieldMappings": {
-    "Company": {"required": ["FLD-002-20"], "optionalAtRegistration": ["FLD-002-03", "FLD-002-21", "FLD-002-06", "FLD-002-07", "FLD-002-08", "FLD-002-22", "FLD-002-23", "FLD-002-24"], "conditional": ["FLD-002-05"]},
-    "Person": {"required": ["FLD-002-18", "FLD-002-19"], "optionalAtRegistration": ["FLD-002-03", "FLD-002-06", "FLD-002-07", "FLD-002-08", "FLD-002-22", "FLD-002-24"], "conditional": ["FLD-002-04"]},
+    "Company": {
+      "required": [
+        "FLD-002-20"
+      ],
+      "optionalAtRegistration": [
+        "FLD-002-03",
+        "FLD-002-21",
+        "FLD-002-06",
+        "FLD-002-07",
+        "FLD-002-08",
+        "FLD-002-22",
+        "FLD-002-23",
+        "FLD-002-24"
+      ],
+      "conditional": [
+        "FLD-002-05"
+      ]
+    },
+    "Person": {
+      "required": [
+        "FLD-002-18",
+        "FLD-002-19"
+      ],
+      "optionalAtRegistration": [
+        "FLD-002-03",
+        "FLD-002-06",
+        "FLD-002-07",
+        "FLD-002-08",
+        "FLD-002-22",
+        "FLD-002-24"
+      ],
+      "conditional": [
+        "FLD-002-04"
+      ]
+    },
     "identifierCondition": "Required only for workflows requiring formal identity verification. Registration number optional at registration; optional supplied fields validated, exact validators OPEN.",
     "displayMapping": "FLD-002-02 retained display concept, not a new mandatory Persian-language input or substitute for Person given/family or Company name. Exact display derivation/localization OPEN."
   },
   "officialIdentifierModel": {
     "decisionId": "CM1-PD-083",
-    "companyVocabulary": ["Iranian legal entity national identifier", "Company registration number", "Economic identifier"],
-    "personVocabulary": ["Iranian national identifier", "Passport number", "Valid foreign national identifier"],
+    "companyVocabulary": [
+      "Iranian legal entity national identifier",
+      "Company registration number",
+      "Economic identifier"
+    ],
+    "personVocabulary": [
+      "Iranian national identifier",
+      "Passport number",
+      "Valid foreign national identifier"
+    ],
     "cardinality": "Multiple per entity; extensible logical model, no executable schema",
     "validationBasis": "Type, jurisdiction, issuing authority; exact namespaces/normalization/mechanisms and authoritative legal-format/issuer evidence OPEN",
     "uniqueness": "Verified valid identifiers unique within applicable Tenant+namespace; no global cross-Tenant deduplication; definite conflict not overrideable, authorized controlled correction only"
@@ -476,13 +517,97 @@
       "mutability": "Controlled",
       "decisionStatus": "PROPOSED (CM1-PD-030)"
     },
-    {"fieldId": "FLD-002-18", "businessName": "Person given name", "description": "Separate mandatory Person given-name fact; not generic display name", "applicableCustomerType": "Person", "logicalType": "text", "requiredStatus": "Required", "uniqueness": "Not unique; matching given+family warns", "validationConstraints": "Mandatory; exact normalization/length OPEN; official name edit requires reason/evidence-impact review", "sensitivity": "Tenant Confidential (candidate classification)", "mutability": "Controlled sensitive edit", "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-016/082/085); schema OPEN"},
-    {"fieldId": "FLD-002-19", "businessName": "Person family name", "description": "Separate mandatory Person family-name fact", "applicableCustomerType": "Person", "logicalType": "text", "requiredStatus": "Required", "uniqueness": "Not unique; matching given+family warns", "validationConstraints": "Mandatory; exact normalization/length OPEN; official name edit requires reason/evidence-impact review", "sensitivity": "Tenant Confidential (candidate classification)", "mutability": "Controlled sensitive edit", "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-016/082/085); schema OPEN"},
-    {"fieldId": "FLD-002-20", "businessName": "Company name", "description": "Mandatory Company name, distinct from optional English/display representation", "applicableCustomerType": "Company", "logicalType": "text", "requiredStatus": "Required", "uniqueness": "Not unique; same Company name warns", "validationConstraints": "Mandatory; exact normalization/length OPEN; official Company name edit requires reason/evidence-impact review", "sensitivity": "Tenant Confidential (candidate classification)", "mutability": "Controlled sensitive edit", "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-016/082/085); schema OPEN"},
-    {"fieldId": "FLD-002-21", "businessName": "Company registration number", "description": "Optional registration input mapped into Company identifier model FLD-002-05; no duplicate storage required", "applicableCustomerType": "Company", "logicalType": "identifier concept", "requiredStatus": "Optional at registration", "uniqueness": "Verified valid within applicable Tenant+namespace", "validationConstraints": "Validate if supplied by type/jurisdiction/issuer; no legal format/issuer claim without authoritative evidence", "sensitivity": "Restricted (candidate classification)", "mutability": "Controlled identifier edit with reason", "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-082/083/085); schema OPEN"},
-    {"fieldId": "FLD-002-22", "businessName": "Country", "description": "Optional country fact; no jurisdiction default inferred", "applicableCustomerType": "Company, Person", "logicalType": "country concept", "requiredStatus": "Optional", "uniqueness": "Not unique", "validationConstraints": "Validate supplied value; vocabulary/representation OPEN", "sensitivity": "Tenant Confidential (candidate classification)", "mutability": "Mutable subject to authority/Audit", "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-082); schema OPEN"},
-    {"fieldId": "FLD-002-23", "businessName": "Website", "description": "Optional Company website; no Person website requirement inferred", "applicableCustomerType": "Company", "logicalType": "website concept", "requiredStatus": "Optional", "uniqueness": "Not unique", "validationConstraints": "Validate when supplied; URL/encoding constraints OPEN", "sensitivity": "Tenant Confidential (candidate classification)", "mutability": "Mutable subject to authority/Audit", "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-082); schema OPEN"},
-    {"fieldId": "FLD-002-24", "businessName": "Notes", "description": "Optional Customer notes, not a route for real evidence/documents in synthetic development", "applicableCustomerType": "Company, Person", "logicalType": "text", "requiredStatus": "Optional", "uniqueness": "Not unique", "validationConstraints": "Validate supplied value; exact length/content rules OPEN; synthetic data only", "sensitivity": "Restricted (candidate classification)", "mutability": "Mutable subject to authority/Audit", "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-081/082); schema OPEN"}
+    {
+      "fieldId": "FLD-002-18",
+      "businessName": "Person given name",
+      "description": "Separate mandatory Person given-name fact; not generic display name",
+      "applicableCustomerType": "Person",
+      "logicalType": "text",
+      "requiredStatus": "Required",
+      "uniqueness": "Not unique; matching given+family warns",
+      "validationConstraints": "Mandatory; exact normalization/length OPEN; official name edit requires reason/evidence-impact review",
+      "sensitivity": "Tenant Confidential (candidate classification)",
+      "mutability": "Controlled sensitive edit",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-016/082/085); schema OPEN"
+    },
+    {
+      "fieldId": "FLD-002-19",
+      "businessName": "Person family name",
+      "description": "Separate mandatory Person family-name fact",
+      "applicableCustomerType": "Person",
+      "logicalType": "text",
+      "requiredStatus": "Required",
+      "uniqueness": "Not unique; matching given+family warns",
+      "validationConstraints": "Mandatory; exact normalization/length OPEN; official name edit requires reason/evidence-impact review",
+      "sensitivity": "Tenant Confidential (candidate classification)",
+      "mutability": "Controlled sensitive edit",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-016/082/085); schema OPEN"
+    },
+    {
+      "fieldId": "FLD-002-20",
+      "businessName": "Company name",
+      "description": "Mandatory Company name, distinct from optional English/display representation",
+      "applicableCustomerType": "Company",
+      "logicalType": "text",
+      "requiredStatus": "Required",
+      "uniqueness": "Not unique; same Company name warns",
+      "validationConstraints": "Mandatory; exact normalization/length OPEN; official Company name edit requires reason/evidence-impact review",
+      "sensitivity": "Tenant Confidential (candidate classification)",
+      "mutability": "Controlled sensitive edit",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-016/082/085); schema OPEN"
+    },
+    {
+      "fieldId": "FLD-002-21",
+      "businessName": "Company registration number",
+      "description": "Optional registration input mapped into Company identifier model FLD-002-05; no duplicate storage required",
+      "applicableCustomerType": "Company",
+      "logicalType": "identifier concept",
+      "requiredStatus": "Optional at registration",
+      "uniqueness": "Verified valid within applicable Tenant+namespace",
+      "validationConstraints": "Validate if supplied by type/jurisdiction/issuer; no legal format/issuer claim without authoritative evidence",
+      "sensitivity": "Restricted (candidate classification)",
+      "mutability": "Controlled identifier edit with reason",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-082/083/085); schema OPEN"
+    },
+    {
+      "fieldId": "FLD-002-22",
+      "businessName": "Country",
+      "description": "Optional country fact; no jurisdiction default inferred",
+      "applicableCustomerType": "Company, Person",
+      "logicalType": "country concept",
+      "requiredStatus": "Optional",
+      "uniqueness": "Not unique",
+      "validationConstraints": "Validate supplied value; vocabulary/representation OPEN",
+      "sensitivity": "Tenant Confidential (candidate classification)",
+      "mutability": "Mutable subject to authority/Audit",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-082); schema OPEN"
+    },
+    {
+      "fieldId": "FLD-002-23",
+      "businessName": "Website",
+      "description": "Optional Company website; no Person website requirement inferred",
+      "applicableCustomerType": "Company",
+      "logicalType": "website concept",
+      "requiredStatus": "Optional",
+      "uniqueness": "Not unique",
+      "validationConstraints": "Validate when supplied; URL/encoding constraints OPEN",
+      "sensitivity": "Tenant Confidential (candidate classification)",
+      "mutability": "Mutable subject to authority/Audit",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-082); schema OPEN"
+    },
+    {
+      "fieldId": "FLD-002-24",
+      "businessName": "Notes",
+      "description": "Optional Customer notes, not a route for real evidence/documents in synthetic development",
+      "applicableCustomerType": "Company, Person",
+      "logicalType": "text",
+      "requiredStatus": "Optional",
+      "uniqueness": "Not unique",
+      "validationConstraints": "Validate supplied value; exact length/content rules OPEN; synthetic data only",
+      "sensitivity": "Restricted (candidate classification)",
+      "mutability": "Mutable subject to authority/Audit",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT (CM1-PD-081/082); schema OPEN"
+    }
   ],
   "fieldApprovalStatus": "NO_EXECUTABLE_FIELD_SCHEMA_FORMALLY_ACCEPTED; user-confirmed product constraints through CM1-PD-095 with 38 conceptual field IDs; exact field/API/persistence/localization/Audit schemas OPEN",
   "relationshipFields": [
@@ -501,5 +626,32 @@
     "REL-002-13",
     "REL-002-14"
   ],
-  "branchParentImmutability": "companyId immutable after creation; direct Branch reparenting prohibited (CM1-PD-044/045); every Branch has exactly one Company parent (CM1-PD-047); persistence/API schema unapproved"
+  "branchParentImmutability": "companyId immutable after creation; direct Branch reparenting prohibited (CM1-PD-044/045); every Branch has exactly one Company parent (CM1-PD-047); persistence/API schema unapproved",
+  "v180LogicalFieldPolicies": [
+    {
+      "id": "CM1-PD-101",
+      "topic": "Evidence upload and metadata",
+      "rule": "Include authorized upload/view of one or multiple identity/company registration files as configured; record type, files, document number if needed, issue date, expiry when applicable, issuer, notes, uploader, upload date and version history. Replacement preserves prior versions. Upload alone does not set VERIFIED; independent authorized manual review with evidence and SoD still required. No OCR, automatic authenticity checking, external verification, general document-management or independent per-document approval workflow; expiry notifications deferred. File security and protected access mandatory; real evidence prohibited in initial synthetic development."
+    },
+    {
+      "id": "CM1-PD-103",
+      "topic": "Document authority and Audit",
+      "rule": "Independent authority for catalog management, upload/replacement/customer-document management, and view/download. Catalog, upload, replacement and other mutations and access to sensitive documents require Audit; no automatic rights from other responsibilities. Preserve durable Audit and evidence minimization constraints. File storage, malware controls, authorization mappings, lifecycle/retention and recovery contracts remain OPEN."
+    },
+    {
+      "id": "CM1-PD-104",
+      "topic": "Date and time",
+      "rule": "Tenant-configurable timezone; initial Iran timezone Asia/Tehran. Relationship business dates are calendar days in Tenant timezone, half-open [start,end), future starts/open ends permitted. Issue/expiry of documents are calendar dates; date-only facts do not shift with timezone. Events and Audit timestamps UTC; user-local presentation and Persian/Gregorian calendar configurable independently of language. Preserve past business dates when Tenant timezone changes, and event history unchanged. Exact timezone-change effective evaluation and storage mechanisms OPEN."
+    },
+    {
+      "id": "CM1-PD-105",
+      "topic": "Field validation",
+      "rule": "Company name and Branch name required 1–255 characters; Person given/family names required 1–100 each; English name optional max 255; address max 1000, notes max 4000. Unicode, trim leading/trailing whitespace; preserve original display and normalized search/match representation. Phone supports domestic/international numbers, email structure, website HTTP/HTTPS, country catalog, province/city and postal validation per country. Optional fields validated if supplied; no uniqueness of names/phone/email. Backend validation mandatory. Exact character-count/normalization, country dataset and official identifier legal formats OPEN; structural validation is not identity proof."
+    },
+    {
+      "id": "CM1-PD-106",
+      "topic": "Multiple contact channels and addresses",
+      "rule": "Permit multiple phones, emails and addresses; allow designation of primary phone, primary email and primary address, and contact channel type. Removal/deactivation preserves required history and Audit. No new mandatory contact or address; exact primary replacement, contact type vocabulary and retention mechanisms OPEN."
+    }
+  ]
 }

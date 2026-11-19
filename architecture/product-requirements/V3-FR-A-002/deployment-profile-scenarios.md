@@ -19,3 +19,11 @@ FR-BJ-001 applies to all three profiles with compatible semantics and independen
 Common: stable non-topology-encoding Tenant identity; validated Context; owning-Domain final authorization; durable Audit; fail closed. Offline continuation PROHIBITED; Full Air Gap remains OD-001 pending.
 
 No profile scenario executed; requirement statements only.
+
+## Current v1.8.0 refinement (overrides only corresponding historical OPEN product portions)
+
+See `customer-v180-scope-and-document-catalog.md` and PDR.
+- CM1-PD-97: Shared SaaS using Shared Cell is selected for initial synthetic development and testing. Dedicated Managed and Dedicated Sovereign are deferred for independent profile evidence; compatible business semantics and isolation in all profiles, no cross-profile acceptance inference. Preserve Sovereign local authority and no mandatory synchronous Central dependency.
+- CM1-PD-98: Gateway/BFF and Feature Eligibility included for integrated product path; Quota deferred unless mandatory platform obligation; Operational Aggregation deferred, baseline health monitoring preserved; Durable Scheduling deferred unless selected operation needs it; Numeric Objectives required to be determined during design/testing; In-App Notification and Approved Reports excluded from CM-1; Attachments included specifically for Customer evidence. No roadmap changes, waiver, or automatic execution authorization.
+
+All 19 PDQs remain OPEN; no formal acceptance, executable contract or Gate change.

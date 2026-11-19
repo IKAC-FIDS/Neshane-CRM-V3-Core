@@ -1,6 +1,6 @@
 {
   "taskId": "V3-FR-A-002",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "currentRefinementReference": "customer-master-product-decision-record.json refinementsV170; historical prior-row gaps answered by new packages are dispositioned individually in customer-bounded-readiness.json. Earlier coverage classes retained, not promoted; BLOCKED_BY_OPEN_DECISION does not mean every such gap is a missing product decision.",
   "coverageClassificationLegend": {
     "FULL": "has directly testable acceptance criterion/coverage",
@@ -8,32 +8,491 @@
     "DOCUMENTED_ONLY": "recorded but lacks independently testable acceptance coverage",
     "BLOCKED_BY_OPEN_DECISION": "depends on an unresolved technical/contract decision"
   },
-  "decisionCount": 95,
+  "decisionCount": 106,
   "coverageCounts": {
-    "PARTIAL": 85,
+    "PARTIAL": 96,
     "DOCUMENTED_ONLY": 5,
     "FULL": 3,
     "BLOCKED_BY_OPEN_DECISION": 2
   },
   "decisions": [
-    {"decisionId": "CM1-PD-078", "summary": "Farzad accountability and development-team responsibility, no IAM/execution grant", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-bounded-readiness.md", "relatedBusinessRule": "Accountability; no permission inferred", "fieldIds": [], "operationConcepts": ["Product and interim Audit policy accountability"], "acceptanceCriterionIds": ["CM1-BND-01"], "relatedOpenPqdIds": ["PDQ-A001-001", "PDQ-A001-049"], "coverageGap": "Appointment answered; formal owner review and execution approval separate; no runtime binding"},
-    {"decisionId": "CM1-PD-079", "summary": "Five independent logical business responsibilities", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "actor-resource-policy-matrix.md", "relatedBusinessRule": "Logical responsibility is not IAM or disclosure grant", "fieldIds": [], "operationConcepts": ["Operate", "Review", "Manage tenant catalog", "Verify", "Review Audit"], "acceptanceCriterionIds": ["CM1-BND-02", "CM1-BND-41", "CM1-BND-49"], "relatedOpenPqdIds": ["PDQ-A001-002"], "coverageGap": "Exact operation/resource/field disclosure and grants/actor mapping OPEN"},
-    {"decisionId": "CM1-PD-080", "summary": "Included/conditional/deferred/excluded/prohibited CM-1 scope", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-bounded-readiness.md", "relatedBusinessRule": "Bounded scope does not delete roadmap capabilities", "fieldIds": ["FLD-002-16"], "operationConcepts": ["Selected Customer operations", "Conditional archive/manual verification"], "acceptanceCriterionIds": ["CM1-BND-03", "CM1-BND-04", "CM1-BND-05", "CM1-BND-06"], "relatedOpenPqdIds": ["PDQ-A001-003", "PDQ-A001-052", "PDQ-A001-053", "PDQ-002-05", "PDQ-002-09"], "coverageGap": "Exact profile/actors/disclosure and conditional applicability/evidence OPEN; no execution"},
-    {"decisionId": "CM1-PD-081", "summary": "Synthetic-only development; profile/nine branches unresolved", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "deployment-profile-scenarios.md", "relatedBusinessRule": "No real data, profile inference or control waiver", "fieldIds": [], "operationConcepts": ["Synthetic development boundary"], "acceptanceCriterionIds": ["CM1-BND-07", "CM1-BND-08", "CM1-BND-40"], "relatedOpenPqdIds": ["PDQ-A001-050", "PDQ-A001-052"], "coverageGap": "Profile/branch applicability and actual isolated-data evidence OPEN"},
-    {"decisionId": "CM1-PD-082", "summary": "Explicit required/optional/conditional minimum fields", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-field-dictionary.md", "relatedBusinessRule": "Required business names mapped separately; supplied optional fields validated", "fieldIds": ["FLD-002-03", "FLD-002-04", "FLD-002-05", "FLD-002-06", "FLD-002-07", "FLD-002-08", "FLD-002-18", "FLD-002-19", "FLD-002-20", "FLD-002-21", "FLD-002-22", "FLD-002-23", "FLD-002-24"], "operationConcepts": ["Register Company/Person", "Maintain supplied optional fields"], "acceptanceCriterionIds": ["CM1-BND-09", "CM1-BND-10", "CM1-BND-11", "CM1-BND-12"], "relatedOpenPqdIds": ["PDQ-002-01"], "coverageGap": "Exact input/business validation limits/normalization/schema OPEN"},
-    {"decisionId": "CM1-PD-083", "summary": "Extensible jurisdiction-aware multi-identifier Tenant+namespace policy", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-field-dictionary.md", "relatedBusinessRule": "Verified conflict blocks; no global dedup; authorized correction", "fieldIds": ["FLD-002-04", "FLD-002-05", "FLD-002-21"], "operationConcepts": ["Validate identifiers", "Correct definite conflict"], "acceptanceCriterionIds": ["CM1-BND-13", "CM1-BND-14", "CM1-BND-15", "CM1-BND-16"], "relatedOpenPqdIds": ["PDQ-002-07", "PDQ-002-03"], "coverageGap": "Exact namespaces/normalization/technical validators and authoritative legal/issuer evidence OPEN"},
-    {"decisionId": "CM1-PD-084", "summary": "Basic duplicate warning/block signals and priority", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-business-rules.md", "relatedBusinessRule": "Non-definitive signals not identity proof; reason/Audit exception no supervisor", "fieldIds": ["FLD-002-04", "FLD-002-05", "FLD-002-06", "FLD-002-07", "FLD-002-18", "FLD-002-19", "FLD-002-20"], "operationConcepts": ["Basic duplicate detection", "Reuse or authorized exceptional registration"], "acceptanceCriterionIds": ["CM1-BND-17", "CM1-BND-18", "CM1-BND-19", "CM1-BND-20", "CM1-BND-21"], "relatedOpenPqdIds": ["PDQ-002-03"], "coverageGap": "Algorithm/scoring/index/concurrency/normalization/disclosure contracts OPEN; fuzzy deferred"},
-    {"decisionId": "CM1-PD-085", "summary": "Sensitive official names/identifiers/type/issuer reasons and evidence-based reverification", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-business-rules.md", "relatedBusinessRule": "Refines PD-015; optimistic concurrency/Audit retained", "fieldIds": ["FLD-002-04", "FLD-002-05", "FLD-002-18", "FLD-002-19", "FLD-002-20"], "operationConcepts": ["Critical identity update", "Ordinary contact edit"], "acceptanceCriterionIds": ["CM1-BND-22", "CM1-BND-23", "CM1-BND-24"], "relatedOpenPqdIds": ["PDQ-002-04", "PDQ-002-11"], "coverageGap": "Exact evidence basis/revision/update contracts and authorization OPEN"},
-    {"decisionId": "CM1-PD-086", "summary": "Immutable Relationship identities, END reason/day intervals/inactive assignment rules", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-lifecycle.md", "relatedBusinessRule": "END+new; calendar-day [start,end); overlap/history preserved", "fieldIds": ["REL-002-02", "REL-002-03", "REL-002-04", "REL-002-05", "REL-002-08", "REL-002-09", "REL-002-13"], "operationConcepts": ["Edit/end/create Relationship", "Validate new assignment"], "acceptanceCriterionIds": ["CM1-BND-25", "CM1-BND-26", "CM1-BND-27", "CM1-BND-28", "CM1-BND-29", "CM1-BND-30"], "relatedOpenPqdIds": ["PDQ-002-04", "PDQ-002-12"], "coverageGap": "Exact time reference/calendar/storage/conflict-set/locking/API/authority contracts OPEN"},
-    {"decisionId": "CM1-PD-087", "summary": "Applicable archive dependency categories and evidence guards", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-lifecycle.md", "relatedBusinessRule": "Unknown never clearance; no invented service integrations", "fieldIds": ["FLD-002-10", "FLD-002-11"], "operationConcepts": ["Conditional archive", "Dependency clearance"], "acceptanceCriterionIds": ["CM1-BND-31", "CM1-BND-32", "CM1-BND-33", "CM1-BND-34"], "relatedOpenPqdIds": ["PDQ-002-02", "PDQ-A001-052"], "coverageGap": "Capability applicability and authoritative clearance/query/race-safe contracts OPEN"},
-    {"decisionId": "CM1-PD-088", "summary": "Reactivation validation/conflict/authority/Audit, ordinary reason optional", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-lifecycle.md", "relatedBusinessRule": "ARCHIVED -> INACTIVE -> ACTIVE, no automatic related activation", "fieldIds": ["FLD-002-10", "FLD-002-17"], "operationConcepts": ["Reactivate", "Conditional restore"], "acceptanceCriterionIds": ["CM1-BND-35", "CM1-BND-36"], "relatedOpenPqdIds": ["PDQ-002-02"], "coverageGap": "Exact operation/validation/conflict/Audit and workflow applicability contracts OPEN"},
-    {"decisionId": "CM1-PD-089", "summary": "Evidence-backed conceptual verification methods and logical information", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-field-and-verification-addendum.md", "relatedBusinessRule": "No evidence-free/contact-only proof, no real documents", "fieldIds": ["FLD-002-17"], "operationConcepts": ["Conditional manual verification", "Future trusted system verification"], "acceptanceCriterionIds": ["CM1-BND-37", "CM1-BND-38", "CM1-BND-39", "CM1-BND-40"], "relatedOpenPqdIds": ["PDQ-002-11", "PDQ-A001-050"], "coverageGap": "Exact issuer/evidence/legal catalogs and logical evidence field schema OPEN; system integration deferred"},
-    {"decisionId": "CM1-PD-090", "summary": "Three mandatory different-verifier SoD cases", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "actor-resource-policy-matrix.md", "relatedBusinessRule": "Ordinary independent dual authority allowed; sensitive distinct verifier", "fieldIds": [], "operationConcepts": ["Sensitive verification/correction/conflict resolution"], "acceptanceCriterionIds": ["CM1-BND-41", "CM1-BND-42"], "relatedOpenPqdIds": ["PDQ-002-11", "PDQ-A001-002"], "coverageGap": "Actor comparison bindings in multistep sensitive workflows, IAM, additional binding legal SoD OPEN"},
-    {"decisionId": "CM1-PD-091", "summary": "Verification lifecycle/history and no dispute auto-restoration", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-lifecycle.md", "relatedBusinessRule": "Three verification states independent of record lifecycle, no universal TTL", "fieldIds": ["FLD-002-17"], "operationConcepts": ["Verify/reverify/invalidate", "Dispute"], "acceptanceCriterionIds": ["CM1-BND-43", "CM1-BND-44"], "relatedOpenPqdIds": ["PDQ-002-11", "PDQ-002-10"], "coverageGap": "Evidence trust/revision/revocation dispute process and safe persistence/recovery OPEN"},
-    {"decisionId": "CM1-PD-092", "summary": "All mutation/unauthorized-attempt Audit and explicit reason/protected-access policy", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-operation-catalog.md", "relatedBusinessRule": "Explicit governing source refines PD-048/049, preserves catalog policy", "fieldIds": ["FLD-002-15", "REL-002-13"], "operationConcepts": ["Audit all Customer mutations/unauthorized attempts", "Trace protected evidence/Audit access"], "acceptanceCriterionIds": ["CM1-BND-45", "CM1-BND-46", "CM1-BND-47", "CM1-BND-48", "CM1-BND-49"], "relatedOpenPqdIds": ["PDQ-002-10", "PDQ-A001-002"], "coverageGap": "Exact event classification/operation/disclosure/access/IAM and durable contracts OPEN"},
-    {"decisionId": "CM1-PD-093", "summary": "Logical Audit information and minimization without schema", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-operation-catalog.md", "relatedBusinessRule": "Safe applicable old/new/evidence/actor/resource/correlation, no secrets/documents", "fieldIds": ["FLD-002-15"], "operationConcepts": ["Record protected logical Audit information"], "acceptanceCriterionIds": ["CM1-BND-50"], "relatedOpenPqdIds": ["PDQ-002-10"], "coverageGap": "Audit schema, minimization/protection and independently authorized access contracts OPEN"},
-    {"decisionId": "CM1-PD-094", "summary": "Guaranteed durable obligation, unknown not success; no executable continuation", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-failure-scenarios.md", "relatedBusinessRule": "No fail-open; publication obligation not ingestion, protect Audit history", "fieldIds": ["FLD-002-15"], "operationConcepts": ["Mutation failure", "Audit security events", "Ingestion/recovery policy"], "acceptanceCriterionIds": ["CM1-BND-51", "CM1-BND-52", "CM1-BND-53"], "relatedOpenPqdIds": ["PDQ-002-06", "PDQ-002-10", "PDQ-A001-049"], "coverageGap": "Transactions/publication/retry/recovery/reconciliation and any future explicit continuation policy OPEN"},
-    {"decisionId": "CM1-PD-095", "summary": "History retention with no unlimited personal retention or real data", "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING", "coverageClass": "PARTIAL", "requirementSection": "customer-bounded-readiness.md", "relatedBusinessRule": "Preserve histories/refs/Role reservations subject to applicable policy", "fieldIds": ["FLD-002-15", "FLD-002-17", "REL-002-14"], "operationConcepts": ["Protect retained history/evidence references"], "acceptanceCriterionIds": ["CM1-BND-54"], "relatedOpenPqdIds": ["PDQ-A001-050"], "coverageGap": "Exact durations/legal hold/disclosure/evidence retention/regulatory applicability OPEN"},
+    {
+      "decisionId": "CM1-PD-078",
+      "summary": "Farzad accountability and development-team responsibility, no IAM/execution grant",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-bounded-readiness.md",
+      "relatedBusinessRule": "Accountability; no permission inferred",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Product and interim Audit policy accountability"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-01"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-A001-001",
+        "PDQ-A001-049"
+      ],
+      "coverageGap": "Appointment answered; formal owner review and execution approval separate; no runtime binding"
+    },
+    {
+      "decisionId": "CM1-PD-079",
+      "summary": "Five independent logical business responsibilities",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "actor-resource-policy-matrix.md",
+      "relatedBusinessRule": "Logical responsibility is not IAM or disclosure grant",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Operate",
+        "Review",
+        "Manage tenant catalog",
+        "Verify",
+        "Review Audit"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-02",
+        "CM1-BND-41",
+        "CM1-BND-49"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-A001-002"
+      ],
+      "coverageGap": "Exact operation/resource/field disclosure and grants/actor mapping OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-080",
+      "summary": "Included/conditional/deferred/excluded/prohibited CM-1 scope",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-bounded-readiness.md",
+      "relatedBusinessRule": "Bounded scope does not delete roadmap capabilities",
+      "fieldIds": [
+        "FLD-002-16"
+      ],
+      "operationConcepts": [
+        "Selected Customer operations",
+        "Conditional archive/manual verification"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-03",
+        "CM1-BND-04",
+        "CM1-BND-05",
+        "CM1-BND-06"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-A001-003",
+        "PDQ-A001-052",
+        "PDQ-A001-053",
+        "PDQ-002-05",
+        "PDQ-002-09"
+      ],
+      "coverageGap": "Exact profile/actors/disclosure and conditional applicability/evidence OPEN; no execution"
+    },
+    {
+      "decisionId": "CM1-PD-081",
+      "summary": "Synthetic-only development; profile/nine branches unresolved",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "deployment-profile-scenarios.md",
+      "relatedBusinessRule": "No real data, profile inference or control waiver",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Synthetic development boundary"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-07",
+        "CM1-BND-08",
+        "CM1-BND-40"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-A001-050",
+        "PDQ-A001-052"
+      ],
+      "coverageGap": "Profile/branch applicability and actual isolated-data evidence OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-082",
+      "summary": "Explicit required/optional/conditional minimum fields",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-field-dictionary.md",
+      "relatedBusinessRule": "Required business names mapped separately; supplied optional fields validated",
+      "fieldIds": [
+        "FLD-002-03",
+        "FLD-002-04",
+        "FLD-002-05",
+        "FLD-002-06",
+        "FLD-002-07",
+        "FLD-002-08",
+        "FLD-002-18",
+        "FLD-002-19",
+        "FLD-002-20",
+        "FLD-002-21",
+        "FLD-002-22",
+        "FLD-002-23",
+        "FLD-002-24"
+      ],
+      "operationConcepts": [
+        "Register Company/Person",
+        "Maintain supplied optional fields"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-09",
+        "CM1-BND-10",
+        "CM1-BND-11",
+        "CM1-BND-12"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-01"
+      ],
+      "coverageGap": "Exact input/business validation limits/normalization/schema OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-083",
+      "summary": "Extensible jurisdiction-aware multi-identifier Tenant+namespace policy",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-field-dictionary.md",
+      "relatedBusinessRule": "Verified conflict blocks; no global dedup; authorized correction",
+      "fieldIds": [
+        "FLD-002-04",
+        "FLD-002-05",
+        "FLD-002-21"
+      ],
+      "operationConcepts": [
+        "Validate identifiers",
+        "Correct definite conflict"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-13",
+        "CM1-BND-14",
+        "CM1-BND-15",
+        "CM1-BND-16"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-07",
+        "PDQ-002-03"
+      ],
+      "coverageGap": "Exact namespaces/normalization/technical validators and authoritative legal/issuer evidence OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-084",
+      "summary": "Basic duplicate warning/block signals and priority",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md",
+      "relatedBusinessRule": "Non-definitive signals not identity proof; reason/Audit exception no supervisor",
+      "fieldIds": [
+        "FLD-002-04",
+        "FLD-002-05",
+        "FLD-002-06",
+        "FLD-002-07",
+        "FLD-002-18",
+        "FLD-002-19",
+        "FLD-002-20"
+      ],
+      "operationConcepts": [
+        "Basic duplicate detection",
+        "Reuse or authorized exceptional registration"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-17",
+        "CM1-BND-18",
+        "CM1-BND-19",
+        "CM1-BND-20",
+        "CM1-BND-21"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-03"
+      ],
+      "coverageGap": "Algorithm/scoring/index/concurrency/normalization/disclosure contracts OPEN; fuzzy deferred"
+    },
+    {
+      "decisionId": "CM1-PD-085",
+      "summary": "Sensitive official names/identifiers/type/issuer reasons and evidence-based reverification",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-business-rules.md",
+      "relatedBusinessRule": "Refines PD-015; optimistic concurrency/Audit retained",
+      "fieldIds": [
+        "FLD-002-04",
+        "FLD-002-05",
+        "FLD-002-18",
+        "FLD-002-19",
+        "FLD-002-20"
+      ],
+      "operationConcepts": [
+        "Critical identity update",
+        "Ordinary contact edit"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-22",
+        "CM1-BND-23",
+        "CM1-BND-24"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-04",
+        "PDQ-002-11"
+      ],
+      "coverageGap": "Exact evidence basis/revision/update contracts and authorization OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-086",
+      "summary": "Immutable Relationship identities, END reason/day intervals/inactive assignment rules",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md",
+      "relatedBusinessRule": "END+new; calendar-day [start,end); overlap/history preserved",
+      "fieldIds": [
+        "REL-002-02",
+        "REL-002-03",
+        "REL-002-04",
+        "REL-002-05",
+        "REL-002-08",
+        "REL-002-09",
+        "REL-002-13"
+      ],
+      "operationConcepts": [
+        "Edit/end/create Relationship",
+        "Validate new assignment"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-25",
+        "CM1-BND-26",
+        "CM1-BND-27",
+        "CM1-BND-28",
+        "CM1-BND-29",
+        "CM1-BND-30"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-04",
+        "PDQ-002-12"
+      ],
+      "coverageGap": "Exact time reference/calendar/storage/conflict-set/locking/API/authority contracts OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-087",
+      "summary": "Applicable archive dependency categories and evidence guards",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md",
+      "relatedBusinessRule": "Unknown never clearance; no invented service integrations",
+      "fieldIds": [
+        "FLD-002-10",
+        "FLD-002-11"
+      ],
+      "operationConcepts": [
+        "Conditional archive",
+        "Dependency clearance"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-31",
+        "CM1-BND-32",
+        "CM1-BND-33",
+        "CM1-BND-34"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-02",
+        "PDQ-A001-052"
+      ],
+      "coverageGap": "Capability applicability and authoritative clearance/query/race-safe contracts OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-088",
+      "summary": "Reactivation validation/conflict/authority/Audit, ordinary reason optional",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md",
+      "relatedBusinessRule": "ARCHIVED -> INACTIVE -> ACTIVE, no automatic related activation",
+      "fieldIds": [
+        "FLD-002-10",
+        "FLD-002-17"
+      ],
+      "operationConcepts": [
+        "Reactivate",
+        "Conditional restore"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-35",
+        "CM1-BND-36"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-02"
+      ],
+      "coverageGap": "Exact operation/validation/conflict/Audit and workflow applicability contracts OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-089",
+      "summary": "Evidence-backed conceptual verification methods and logical information",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-field-and-verification-addendum.md",
+      "relatedBusinessRule": "No evidence-free/contact-only proof, no real documents",
+      "fieldIds": [
+        "FLD-002-17"
+      ],
+      "operationConcepts": [
+        "Conditional manual verification",
+        "Future trusted system verification"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-37",
+        "CM1-BND-38",
+        "CM1-BND-39",
+        "CM1-BND-40"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-11",
+        "PDQ-A001-050"
+      ],
+      "coverageGap": "Exact issuer/evidence/legal catalogs and logical evidence field schema OPEN; system integration deferred"
+    },
+    {
+      "decisionId": "CM1-PD-090",
+      "summary": "Three mandatory different-verifier SoD cases",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "actor-resource-policy-matrix.md",
+      "relatedBusinessRule": "Ordinary independent dual authority allowed; sensitive distinct verifier",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Sensitive verification/correction/conflict resolution"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-41",
+        "CM1-BND-42"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-11",
+        "PDQ-A001-002"
+      ],
+      "coverageGap": "Actor comparison bindings in multistep sensitive workflows, IAM, additional binding legal SoD OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-091",
+      "summary": "Verification lifecycle/history and no dispute auto-restoration",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-lifecycle.md",
+      "relatedBusinessRule": "Three verification states independent of record lifecycle, no universal TTL",
+      "fieldIds": [
+        "FLD-002-17"
+      ],
+      "operationConcepts": [
+        "Verify/reverify/invalidate",
+        "Dispute"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-43",
+        "CM1-BND-44"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-11",
+        "PDQ-002-10"
+      ],
+      "coverageGap": "Evidence trust/revision/revocation dispute process and safe persistence/recovery OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-092",
+      "summary": "All mutation/unauthorized-attempt Audit and explicit reason/protected-access policy",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-operation-catalog.md",
+      "relatedBusinessRule": "Explicit governing source refines PD-048/049, preserves catalog policy",
+      "fieldIds": [
+        "FLD-002-15",
+        "REL-002-13"
+      ],
+      "operationConcepts": [
+        "Audit all Customer mutations/unauthorized attempts",
+        "Trace protected evidence/Audit access"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-45",
+        "CM1-BND-46",
+        "CM1-BND-47",
+        "CM1-BND-48",
+        "CM1-BND-49"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-10",
+        "PDQ-A001-002"
+      ],
+      "coverageGap": "Exact event classification/operation/disclosure/access/IAM and durable contracts OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-093",
+      "summary": "Logical Audit information and minimization without schema",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-operation-catalog.md",
+      "relatedBusinessRule": "Safe applicable old/new/evidence/actor/resource/correlation, no secrets/documents",
+      "fieldIds": [
+        "FLD-002-15"
+      ],
+      "operationConcepts": [
+        "Record protected logical Audit information"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-50"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-10"
+      ],
+      "coverageGap": "Audit schema, minimization/protection and independently authorized access contracts OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-094",
+      "summary": "Guaranteed durable obligation, unknown not success; no executable continuation",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-failure-scenarios.md",
+      "relatedBusinessRule": "No fail-open; publication obligation not ingestion, protect Audit history",
+      "fieldIds": [
+        "FLD-002-15"
+      ],
+      "operationConcepts": [
+        "Mutation failure",
+        "Audit security events",
+        "Ingestion/recovery policy"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-51",
+        "CM1-BND-52",
+        "CM1-BND-53"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-06",
+        "PDQ-002-10",
+        "PDQ-A001-049"
+      ],
+      "coverageGap": "Transactions/publication/retry/recovery/reconciliation and any future explicit continuation policy OPEN"
+    },
+    {
+      "decisionId": "CM1-PD-095",
+      "summary": "History retention with no unlimited personal retention or real data",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-bounded-readiness.md",
+      "relatedBusinessRule": "Preserve histories/refs/Role reservations subject to applicable policy",
+      "fieldIds": [
+        "FLD-002-15",
+        "FLD-002-17",
+        "REL-002-14"
+      ],
+      "operationConcepts": [
+        "Protect retained history/evidence references"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-BND-54"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-A001-050"
+      ],
+      "coverageGap": "Exact durations/legal hold/disclosure/evidence retention/regulatory applicability OPEN"
+    },
     {
       "decisionId": "CM1-PD-073",
       "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
@@ -41,10 +500,25 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-017--hideunhide-governance",
       "relatedBusinessRule": "RC-017 / RC-021",
-      "fieldIds": ["FLD-002-15", "REL-002-05"],
-      "operationConcepts": ["Own-Tenant System Role Hide/Unhide (logical operation; no IAM/operation ID grant)"],
-      "acceptanceCriterionIds": ["CM1-ROL-46", "CM1-ROL-47", "CM1-ROL-48", "CM1-ROL-63", "CM1-ROL-66", "CM1-ROL-69"],
-      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "fieldIds": [
+        "FLD-002-15",
+        "REL-002-05"
+      ],
+      "operationConcepts": [
+        "Own-Tenant System Role Hide/Unhide (logical operation; no IAM/operation ID grant)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-46",
+        "CM1-ROL-47",
+        "CM1-ROL-48",
+        "CM1-ROL-63",
+        "CM1-ROL-66",
+        "CM1-ROL-69"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08",
+        "PDQ-002-10"
+      ],
       "coverageGap": "Reason/authority/Audit product policy answered; technical setting/operation/IAM/actor mapping, durable Audit and effective-state consistency remain OPEN. No approved setting field IDs; software execution BLOCKED."
     },
     {
@@ -54,10 +528,30 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-018--display-metadata-governance",
       "relatedBusinessRule": "RC-018 / RC-021",
-      "fieldIds": ["REL-002-06", "REL-002-05", "FLD-002-15"],
-      "operationConcepts": ["System controlled-release metadata update", "Own-Tenant custom metadata update (logical capabilities)"],
-      "acceptanceCriterionIds": ["CM1-ROL-49", "CM1-ROL-50", "CM1-ROL-51", "CM1-ROL-52", "CM1-ROL-53", "CM1-ROL-63", "CM1-ROL-65", "CM1-ROL-66", "CM1-ROL-69"],
-      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "fieldIds": [
+        "REL-002-06",
+        "REL-002-05",
+        "FLD-002-15"
+      ],
+      "operationConcepts": [
+        "System controlled-release metadata update",
+        "Own-Tenant custom metadata update (logical capabilities)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-49",
+        "CM1-ROL-50",
+        "CM1-ROL-51",
+        "CM1-ROL-52",
+        "CM1-ROL-53",
+        "CM1-ROL-63",
+        "CM1-ROL-65",
+        "CM1-ROL-66",
+        "CM1-ROL-69"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08",
+        "PDQ-002-10"
+      ],
       "coverageGap": "Exact metadata/localization schema, semantic-change assessment procedure, release/permission/reference and Audit contracts remain OPEN. No mandatory language fields or original vocabulary rewrite approved."
     },
     {
@@ -67,10 +561,26 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-019--current-and-historical-role-representation",
       "relatedBusinessRule": "RC-019",
-      "fieldIds": ["REL-002-06", "REL-002-05"],
-      "operationConcepts": ["Authorized current Relationship title rendering", "Historical event/Audit display (logical capabilities)"],
-      "acceptanceCriterionIds": ["CM1-ROL-53", "CM1-ROL-54", "CM1-ROL-55", "CM1-ROL-56", "CM1-ROL-66", "CM1-ROL-68"],
-      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "fieldIds": [
+        "REL-002-06",
+        "REL-002-05"
+      ],
+      "operationConcepts": [
+        "Authorized current Relationship title rendering",
+        "Historical event/Audit display (logical capabilities)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-53",
+        "CM1-ROL-54",
+        "CM1-ROL-55",
+        "CM1-ROL-56",
+        "CM1-ROL-66",
+        "CM1-ROL-68"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08",
+        "PDQ-002-10"
+      ],
       "coverageGap": "Product display policy answered; temporal storage/version/snapshot/localization/reference/API and historical access mechanisms remain OPEN. No Relationship row migration or event-time title rewriting."
     },
     {
@@ -81,9 +591,27 @@
       "requirementSection": "customer-role-catalog.md#rc-020--three-logical-authority-categories",
       "relatedBusinessRule": "RC-020 / RC-006",
       "fieldIds": [],
-      "operationConcepts": ["System governance", "Own-Tenant catalog management", "Customer Master view / separately authorized Relationship assignment (logical responsibilities)"],
-      "acceptanceCriterionIds": ["CM1-ROL-48", "CM1-ROL-50", "CM1-ROL-57", "CM1-ROL-58", "CM1-ROL-59", "CM1-ROL-60", "CM1-ROL-61", "CM1-ROL-64", "CM1-ROL-67", "CM1-ROL-68"],
-      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "operationConcepts": [
+        "System governance",
+        "Own-Tenant catalog management",
+        "Customer Master view / separately authorized Relationship assignment (logical responsibilities)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-48",
+        "CM1-ROL-50",
+        "CM1-ROL-57",
+        "CM1-ROL-58",
+        "CM1-ROL-59",
+        "CM1-ROL-60",
+        "CM1-ROL-61",
+        "CM1-ROL-64",
+        "CM1-ROL-67",
+        "CM1-ROL-68"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08",
+        "PDQ-002-10"
+      ],
       "coverageGap": "Exact IAM roles/permission IDs/grants/technical enforcement/actor mapping remain OPEN; no field ID applies to unapproved permission bindings, no runtime appointment or three-person SoD inferred."
     },
     {
@@ -93,10 +621,35 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-021--catalog-audit-coverage-reasons-and-integrity",
       "relatedBusinessRule": "RC-021",
-      "fieldIds": ["FLD-002-15", "REL-002-06"],
-      "operationConcepts": ["Mandatory catalog-operation/denial Audit", "Publication/incompatible-scope reason validation", "Authorized history protection (logical requirements)"],
-      "acceptanceCriterionIds": ["CM1-ROL-46", "CM1-ROL-48", "CM1-ROL-49", "CM1-ROL-50", "CM1-ROL-55", "CM1-ROL-62", "CM1-ROL-63", "CM1-ROL-64", "CM1-ROL-65", "CM1-ROL-66", "CM1-ROL-67", "CM1-ROL-68", "CM1-ROL-69", "CM1-ROL-70"],
-      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "fieldIds": [
+        "FLD-002-15",
+        "REL-002-06"
+      ],
+      "operationConcepts": [
+        "Mandatory catalog-operation/denial Audit",
+        "Publication/incompatible-scope reason validation",
+        "Authorized history protection (logical requirements)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-46",
+        "CM1-ROL-48",
+        "CM1-ROL-49",
+        "CM1-ROL-50",
+        "CM1-ROL-55",
+        "CM1-ROL-62",
+        "CM1-ROL-63",
+        "CM1-ROL-64",
+        "CM1-ROL-65",
+        "CM1-ROL-66",
+        "CM1-ROL-67",
+        "CM1-ROL-68",
+        "CM1-ROL-69",
+        "CM1-ROL-70"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08",
+        "PDQ-002-10"
+      ],
       "coverageGap": "Exact Audit schema/event names/transactions/storage/retention/recovery/access and failure protocol remain OPEN. Existing durable coordination preserved; no ACK/outbox-as-ingestion or mandatory ordinary read/warning/all-validation event inferred."
     },
     {
@@ -107,9 +660,18 @@
       "requirementSection": "customer-role-catalog.md#rc-012--default-system-role-selectability",
       "relatedBusinessRule": "RC-012",
       "fieldIds": [],
-      "operationConcepts": ["Default selectability on new Tenant/new System Role availability (logical capabilities)"],
-      "acceptanceCriterionIds": ["CM1-ROL-30", "CM1-ROL-31", "CM1-ROL-32", "CM1-ROL-33"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "operationConcepts": [
+        "Default selectability on new Tenant/new System Role availability (logical capabilities)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-30",
+        "CM1-ROL-31",
+        "CM1-ROL-32",
+        "CM1-ROL-33"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Product defaults answered; no approved configuration field IDs. Schema/persistence, provisioning/default materialization and publication compatibility remain OPEN. Software scenarios BLOCKED pending design."
     },
     {
@@ -119,10 +681,23 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-013--canonical-uniqueness-and-namespace-scope",
       "relatedBusinessRule": "RC-013",
-      "fieldIds": ["REL-002-05"],
-      "operationConcepts": ["Role creation canonical registry validation (logical capability; not Relationship roleCode uniqueness)"],
-      "acceptanceCriterionIds": ["CM1-ROL-34", "CM1-ROL-35", "CM1-ROL-36", "CM1-ROL-37", "CM1-ROL-43", "CM1-ROL-45"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "fieldIds": [
+        "REL-002-05"
+      ],
+      "operationConcepts": [
+        "Role creation canonical registry validation (logical capability; not Relationship roleCode uniqueness)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-34",
+        "CM1-ROL-35",
+        "CM1-ROL-36",
+        "CM1-ROL-37",
+        "CM1-ROL-43",
+        "CM1-ROL-45"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Namespace/concurrent uniqueness/reservation enforcement and disclosure-safe operation contracts remain OPEN. REL-002-05 is a conceptual reference, not an approved Role Definition schema."
     },
     {
@@ -132,10 +707,22 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-014--permanent-reservation-and-identity",
       "relatedBusinessRule": "RC-014",
-      "fieldIds": ["REL-002-05"],
-      "operationConcepts": ["Role reservation validation and reactivation (logical capabilities)"],
-      "acceptanceCriterionIds": ["CM1-ROL-35", "CM1-ROL-38", "CM1-ROL-39", "CM1-ROL-43", "CM1-ROL-45"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "fieldIds": [
+        "REL-002-05"
+      ],
+      "operationConcepts": [
+        "Role reservation validation and reactivation (logical capabilities)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-35",
+        "CM1-ROL-38",
+        "CM1-ROL-39",
+        "CM1-ROL-43",
+        "CM1-ROL-45"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Reservation consistency/history/reference enforcement remain OPEN; no tombstone/index/retention implementation selected."
     },
     {
@@ -145,10 +732,20 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-015--future-system-catalog-collision-gate",
       "relatedBusinessRule": "RC-015",
-      "fieldIds": ["REL-002-05"],
-      "operationConcepts": ["Pre-publication collision assessment / authorized resolution (logical capabilities; access contract OPEN)"],
-      "acceptanceCriterionIds": ["CM1-ROL-40", "CM1-ROL-41", "CM1-ROL-45"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "fieldIds": [
+        "REL-002-05"
+      ],
+      "operationConcepts": [
+        "Pre-publication collision assessment / authorized resolution (logical capabilities; access contract OPEN)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-40",
+        "CM1-ROL-41",
+        "CM1-ROL-45"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Cross-Tenant detection authority/privacy, concurrent publication consistency, version publication/rollback and authorized resolution workflow remain OPEN; no private-data access grant."
     },
     {
@@ -158,10 +755,21 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-016--canonical-normalization-and-validation",
       "relatedBusinessRule": "RC-016",
-      "fieldIds": ["REL-002-05"],
-      "operationConcepts": ["Role code normalization/validation before uniqueness/reservation checks (logical capability)"],
-      "acceptanceCriterionIds": ["CM1-ROL-42", "CM1-ROL-43", "CM1-ROL-44", "CM1-ROL-45"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "fieldIds": [
+        "REL-002-05"
+      ],
+      "operationConcepts": [
+        "Role code normalization/validation before uniqueness/reservation checks (logical capability)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-42",
+        "CM1-ROL-43",
+        "CM1-ROL-44",
+        "CM1-ROL-45"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Unicode trim/uppercase/input encoding edge cases, additional proposed grammar and consistent implementation remain OPEN; allowed ASCII output/length is confirmed, not blocked as a product answer."
     },
     {
@@ -171,10 +779,23 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-009--initial-system-role-vocabulary-v10",
       "relatedBusinessRule": "RC-009",
-      "fieldIds": ["REL-002-03", "REL-002-05", "REL-002-06"],
-      "operationConcepts": ["System Role catalog consumption / Relationship assignment (logical capabilities; executable contracts OPEN)"],
-      "acceptanceCriterionIds": ["CM1-ROL-17", "CM1-ROL-18", "CM1-ROL-26", "CM1-ROL-29"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "fieldIds": [
+        "REL-002-03",
+        "REL-002-05",
+        "REL-002-06"
+      ],
+      "operationConcepts": [
+        "System Role catalog consumption / Relationship assignment (logical capabilities; executable contracts OPEN)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-17",
+        "CM1-ROL-18",
+        "CM1-ROL-26",
+        "CM1-ROL-29"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Initial vocabulary values are answered and unchanged; namespace/reservation/collision product policies now answered by CM1-PD-069..072. Schema/reference, enforcement and executable publication/assignment contracts remain OPEN. No seed or fixed roleId chosen."
     },
     {
@@ -184,10 +805,34 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-010--tenant-specific-system-role-selectability",
       "relatedBusinessRule": "RC-010 / RC-011",
-      "fieldIds": ["REL-002-03", "REL-002-05", "REL-002-07", "REL-002-10"],
-      "operationConcepts": ["Tenant System Role hide/unhide management", "Authoritative effective assignment validation (logical capabilities; no new operation ID)"],
-      "acceptanceCriterionIds": ["CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29"],
-      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10", "PDQ-002-12"],
+      "fieldIds": [
+        "REL-002-03",
+        "REL-002-05",
+        "REL-002-07",
+        "REL-002-10"
+      ],
+      "operationConcepts": [
+        "Tenant System Role hide/unhide management",
+        "Authoritative effective assignment validation (logical capabilities; no new operation ID)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-19",
+        "CM1-ROL-20",
+        "CM1-ROL-21",
+        "CM1-ROL-22",
+        "CM1-ROL-23",
+        "CM1-ROL-24",
+        "CM1-ROL-25",
+        "CM1-ROL-26",
+        "CM1-ROL-27",
+        "CM1-ROL-28",
+        "CM1-ROL-29"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08",
+        "PDQ-002-10",
+        "PDQ-002-12"
+      ],
       "coverageGap": "Defaults answered by CM1-PD-068; optional Hide/Unhide reason, logical manager authority, history policy and mandatory Audit now answered by CM1-PD-073/075..077. Software execution BLOCKED pending configuration/default materialization, exact IAM/operation/API, consistency, temporal/history representation and Audit failure/recovery contracts."
     },
     {
@@ -197,10 +842,20 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-001--hybrid-catalog-and-organizational-meaning",
       "relatedBusinessRule": "RC-001",
-      "fieldIds": ["REL-002-05"],
-      "operationConcepts": ["Role Catalog management (logical capability; operation contract OPEN)"],
-      "acceptanceCriterionIds": ["CM1-ROL-01", "CM1-ROL-13", "CM1-ROL-14"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "fieldIds": [
+        "REL-002-05"
+      ],
+      "operationConcepts": [
+        "Role Catalog management (logical capability; operation contract OPEN)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-01",
+        "CM1-ROL-13",
+        "CM1-ROL-14"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Initial vocabulary and uniqueness/reservation/collision/basic normalization product policies answered by CM1-PD-066/069..072; future catalog values, publication/enforcement, schema and operation/permission contracts remain OPEN."
     },
     {
@@ -210,10 +865,21 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-002--applicability",
       "relatedBusinessRule": "RC-002",
-      "fieldIds": ["REL-002-03", "REL-002-05"],
-      "operationConcepts": ["Relationship assignment validation (logical capability)"],
-      "acceptanceCriterionIds": ["CM1-ROL-02", "CM1-ROL-08", "CM1-ROL-09"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "fieldIds": [
+        "REL-002-03",
+        "REL-002-05"
+      ],
+      "operationConcepts": [
+        "Relationship assignment validation (logical capability)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-02",
+        "CM1-ROL-08",
+        "CM1-ROL-09"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Role reference/schema and concurrent scope-change dependency consistency remain OPEN."
     },
     {
@@ -224,9 +890,16 @@
       "requirementSection": "customer-role-catalog.md#rc-003--lifecycle",
       "relatedBusinessRule": "RC-003",
       "fieldIds": [],
-      "operationConcepts": ["Role create/deactivate/reactivate (logical capability)"],
-      "acceptanceCriterionIds": ["CM1-ROL-03", "CM1-ROL-04"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "operationConcepts": [
+        "Role create/deactivate/reactivate (logical capability)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-03",
+        "CM1-ROL-04"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Role lifecycle field schema and management operation/authorization contracts remain OPEN."
     },
     {
@@ -236,10 +909,20 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-004--stable-identity-and-history",
       "relatedBusinessRule": "RC-004",
-      "fieldIds": ["REL-002-05"],
-      "operationConcepts": ["Role identity/deletion validation (logical capability)"],
-      "acceptanceCriterionIds": ["CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-15"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "fieldIds": [
+        "REL-002-05"
+      ],
+      "operationConcepts": [
+        "Role identity/deletion validation (logical capability)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-05",
+        "CM1-ROL-06",
+        "CM1-ROL-15"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Role Definition field IDs/schema, namespace enforcement/reference and history representation remain OPEN; permanent scoped code reservation is product-confirmed by CM1-PD-069/070. REL-002-05 is not a Role Definition schema."
     },
     {
@@ -249,10 +932,21 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-005--relationship-preservation",
       "relatedBusinessRule": "RC-005",
-      "fieldIds": ["REL-002-05", "REL-002-07", "REL-002-08", "REL-002-09"],
-      "operationConcepts": ["Role lifecycle and Relationship assignment (logical capabilities)"],
-      "acceptanceCriterionIds": ["CM1-ROL-07"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "fieldIds": [
+        "REL-002-05",
+        "REL-002-07",
+        "REL-002-08",
+        "REL-002-09"
+      ],
+      "operationConcepts": [
+        "Role lifecycle and Relationship assignment (logical capabilities)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-07"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "Concurrent assignment/catalog update mechanism and exact reference/operation contract remain OPEN."
     },
     {
@@ -262,10 +956,23 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-006--controlled-scope-changes",
       "relatedBusinessRule": "RC-006",
-      "fieldIds": ["REL-002-03", "REL-002-05"],
-      "operationConcepts": ["Role applicability change (logical capability)"],
-      "acceptanceCriterionIds": ["CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11"],
-      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "fieldIds": [
+        "REL-002-03",
+        "REL-002-05"
+      ],
+      "operationConcepts": [
+        "Role applicability change (logical capability)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-08",
+        "CM1-ROL-09",
+        "CM1-ROL-10",
+        "CM1-ROL-11"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08",
+        "PDQ-002-10"
+      ],
       "coverageGap": "Management permission binding, impact/concurrency consistency and operation-specific Audit failure/recovery remain OPEN."
     },
     {
@@ -276,9 +983,17 @@
       "requirementSection": "customer-role-catalog.md#rc-007--authority-and-tenant-boundaries",
       "relatedBusinessRule": "RC-007",
       "fieldIds": [],
-      "operationConcepts": ["Role Catalog authorization (logical capability)"],
-      "acceptanceCriterionIds": ["CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14"],
-      "relatedOpenPqdIds": ["PDQ-002-08"],
+      "operationConcepts": [
+        "Role Catalog authorization (logical capability)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-12",
+        "CM1-ROL-13",
+        "CM1-ROL-14"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08"
+      ],
       "coverageGap": "System catalog authority operation/permission and shared catalog access contracts remain OPEN; no cross-Tenant exception granted."
     },
     {
@@ -288,10 +1003,25 @@
       "coverageClass": "PARTIAL",
       "requirementSection": "customer-role-catalog.md#rc-008--overlap-and-consistency-boundaries",
       "relatedBusinessRule": "RC-004 / RC-008",
-      "fieldIds": ["REL-002-05", "REL-002-06", "REL-002-10"],
-      "operationConcepts": ["Role changes and Relationship consistency (logical capabilities)"],
-      "acceptanceCriterionIds": ["CM1-ROL-15", "CM1-ROL-16", "CM1-REL-09", "CM1-REL-10"],
-      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10", "PDQ-002-12"],
+      "fieldIds": [
+        "REL-002-05",
+        "REL-002-06",
+        "REL-002-10"
+      ],
+      "operationConcepts": [
+        "Role changes and Relationship consistency (logical capabilities)"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-ROL-15",
+        "CM1-ROL-16",
+        "CM1-REL-09",
+        "CM1-REL-10"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-08",
+        "PDQ-002-10",
+        "PDQ-002-12"
+      ],
       "coverageGap": "Role reference/technical overlap key, history/display, consistency and Audit failure/recovery remain OPEN."
     },
     {
@@ -1234,6 +1964,226 @@
         "CM1-VER-15"
       ],
       "relatedOpenPqdIds": []
+    },
+    {
+      "decisionId": "CM1-PD-96",
+      "summary": "Actor operation and disclosure matrix",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Actor operation and disclosure matrix",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Actor operation and disclosure matrix"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-01",
+        "CM1-V18-02"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-A001-002"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
+    },
+    {
+      "decisionId": "CM1-PD-97",
+      "summary": "Profile scope",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Profile scope",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Profile scope"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-03",
+        "CM1-V18-04"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-A001-052"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
+    },
+    {
+      "decisionId": "CM1-PD-98",
+      "summary": "Conditional roadmap branches",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Conditional roadmap branches",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Conditional roadmap branches"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-05",
+        "CM1-V18-06"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-A001-052"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
+    },
+    {
+      "decisionId": "CM1-PD-99",
+      "summary": "Dynamic Customer Document Catalog",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Dynamic Customer Document Catalog",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Dynamic Customer Document Catalog"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-07",
+        "CM1-V18-08"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-01"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
+    },
+    {
+      "decisionId": "CM1-PD-100",
+      "summary": "Document requirement stage and change policy",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Document requirement stage and change policy",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Document requirement stage and change policy"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-09",
+        "CM1-V18-10"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-11"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
+    },
+    {
+      "decisionId": "CM1-PD-101",
+      "summary": "Evidence upload and metadata",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Evidence upload and metadata",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Evidence upload and metadata"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-11",
+        "CM1-V18-12"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-11"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
+    },
+    {
+      "decisionId": "CM1-PD-102",
+      "summary": "Document state and completeness",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Document state and completeness",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Document state and completeness"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-13",
+        "CM1-V18-14"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-11"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
+    },
+    {
+      "decisionId": "CM1-PD-103",
+      "summary": "Document authority and Audit",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Document authority and Audit",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Document authority and Audit"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-15",
+        "CM1-V18-16"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-10"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
+    },
+    {
+      "decisionId": "CM1-PD-104",
+      "summary": "Date and time",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Date and time",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Date and time"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-17",
+        "CM1-V18-18"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-04"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
+    },
+    {
+      "decisionId": "CM1-PD-105",
+      "summary": "Field validation",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Field validation",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Field validation"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-19",
+        "CM1-V18-20"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-01"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
+    },
+    {
+      "decisionId": "CM1-PD-106",
+      "summary": "Multiple contact channels and addresses",
+      "decisionStatus": "USER_CONFIRMED_PRODUCT_DIRECTION_FORMAL_ACCEPTANCE_PENDING",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-v180-scope-and-document-catalog.md",
+      "relatedBusinessRule": "Multiple contact channels and addresses",
+      "fieldIds": [],
+      "operationConcepts": [
+        "Multiple contact channels and addresses"
+      ],
+      "acceptanceCriterionIds": [
+        "CM1-V18-21",
+        "CM1-V18-22"
+      ],
+      "relatedOpenPqdIds": [
+        "PDQ-002-01"
+      ],
+      "coverageGap": "Exact executable contracts and evidence remain OPEN; criteria not tested"
     }
   ]
 }

@@ -106,3 +106,21 @@ New decision coverage (details in JSON):
 | CM1-PD-055 | PARTIAL | Updating Company must not silently reparent Branches; updating Person must not silently al | — | CM1-UPD-02, CM1-UPD-03, CM1-UPD-04, CM1-UPD-05, CM1-UPD-09 | — |
 | CM1-PD-056 | PARTIAL | A record can be ACTIVE and NOT_VERIFIED, and can be VERIFIED without automatically receivi | — | CM1-VER-17, CM1-VER-18 | — |
 | CM1-PD-057 | DOCUMENTED_ONLY | Effective time and recording time are recorded distinctly when relevant. The specific evid | — | CM1-VER-15 | — |
+
+## v1.8.0 current inventory
+
+106 decisions: FULL=3, PARTIAL=96, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2.
+
+| Decision | Topic | Criteria | Coverage |
+| --- | --- | --- | --- |
+| CM1-PD-96 | Actor operation and disclosure matrix | CM1-V18-01, CM1-V18-02 | PARTIAL |
+| CM1-PD-97 | Profile scope | CM1-V18-03, CM1-V18-04 | PARTIAL |
+| CM1-PD-98 | Conditional roadmap branches | CM1-V18-05, CM1-V18-06 | PARTIAL |
+| CM1-PD-99 | Dynamic Customer Document Catalog | CM1-V18-07, CM1-V18-08 | PARTIAL |
+| CM1-PD-100 | Document requirement stage and change policy | CM1-V18-09, CM1-V18-10 | PARTIAL |
+| CM1-PD-101 | Evidence upload and metadata | CM1-V18-11, CM1-V18-12 | PARTIAL |
+| CM1-PD-102 | Document state and completeness | CM1-V18-13, CM1-V18-14 | PARTIAL |
+| CM1-PD-103 | Document authority and Audit | CM1-V18-15, CM1-V18-16 | PARTIAL |
+| CM1-PD-104 | Date and time | CM1-V18-17, CM1-V18-18 | PARTIAL |
+| CM1-PD-105 | Field validation | CM1-V18-19, CM1-V18-20 | PARTIAL |
+| CM1-PD-106 | Multiple contact channels and addresses | CM1-V18-21, CM1-V18-22 | PARTIAL |
