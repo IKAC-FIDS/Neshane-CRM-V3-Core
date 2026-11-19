@@ -1,0 +1,63 @@
+{
+  "task": "V3-FR-A-002",
+  "downstreamTask": "V3-FR-F-000",
+  "authority": "Farzad",
+  "decisionDate": "2026-11-19",
+  "authorityIssuanceTimestamp": null,
+  "status": "OWNER_CONFIRMED_PRODUCT_DIRECTION",
+  "baseline": {
+    "version": "1.8.0",
+    "reviewedCommit": "df6463d16390518bc5607e0a5c3d300128b75a9e",
+    "acceptanceCommit": "156f4c4997ab34af8d2934bfbdc42b54ba6ec260",
+    "historicalManifestUnchanged": true,
+    "historicalDecisionCount": 106,
+    "historicalCriterionCount": 234,
+    "openQuestionCount": 19
+  },
+  "decisions": [
+    {"id": "CM1-PD-107", "subject": "Owned ContactInfo", "rule": "Person, Company and Branch each own independent ContactInfo collections of ContactPoint values; no direct customer phone/email/address fields; reusable Customer Domain component, not a separate microservice.", "trace": ["CM1-PD-001", "CM1-PD-004", "CM1-PD-106"]},
+    {"id": "CM1-PD-108", "subject": "Dynamic contact types", "rule": "System plus Tenant-customizable type catalog with stable identity, unique code, multilingual titles, supported value type, declarative validation rules, applicability, multiplicity, status and order; supported new types configurable without product release.", "trace": ["CM1-PD-105", "CM1-PD-106"]},
+    {"id": "CM1-PD-109", "subject": "Typed contact values", "rule": "Typed values with distinct phone, email, website and address shapes; select supported validation capabilities, no unrestricted arbitrary executable tenant rules.", "trace": ["CM1-PD-105", "CM1-PD-106"]},
+    {"id": "CM1-PD-110", "subject": "Historical preservation", "rule": "Type modification or deactivation does not delete historical contact data; original Tenant and Audit requirements preserved.", "trace": ["CM1-PD-095", "CM1-PD-96", "CM1-PD-106"]},
+    {"id": "CM1-PD-111", "subject": "Multilingual direction", "rule": "Persian and English initially, extensible languages, selectable UI locale, translation keys for messages, localized catalog labels and suitable multilingual facts; stable language-independent codes.", "trace": ["CM1-PD-104", "CM1-PD-105"]},
+    {"id": "CM1-PD-112", "subject": "Presentation settings", "rule": "RTL/LTR, calendar, number/date formatting and timezone independently configurable; canonical dates and identities unchanged.", "trace": ["CM1-PD-104"]}
+  ],
+  "systemVocabulary": [
+    {"code": "PHONE", "translations": {"fa": "تلفن ثابت", "en": "Landline"}},
+    {"code": "MOBILE", "translations": {"fa": "تلفن همراه", "en": "Mobile"}},
+    {"code": "FAX", "translations": {"fa": "فکس", "en": "Fax"}},
+    {"code": "EMAIL", "translations": {"fa": "پست الکترونیکی", "en": "Email"}},
+    {"code": "WEBSITE", "translations": {"fa": "وب‌سایت", "en": "Website"}},
+    {"code": "ADDRESS", "translations": {"fa": "نشانی", "en": "Address"}},
+    {"code": "WHATSAPP", "translations": {"fa": "واتس‌اپ", "en": "WhatsApp"}},
+    {"code": "TELEGRAM", "translations": {"fa": "تلگرام", "en": "Telegram"}},
+    {"code": "LINKEDIN", "translations": {"fa": "لینکدین", "en": "LinkedIn"}},
+    {"code": "INSTAGRAM", "translations": {"fa": "اینستاگرام", "en": "Instagram"}}
+  ],
+  "openRelated": ["PDQ-002-01", "PDQ-002-03", "PDQ-002-04", "PDQ-002-07", "PDQ-002-10"],
+  "openContracts": [
+    "primary groups, replacement, removal and defaults",
+    "type applicability, multiplicity defaults, usage labels, code namespace, normalization, reuse and lifecycle",
+    "translation requirements, fallback, localized historical labels and customer fact eligibility",
+    "supported value shapes, validation descriptors, normalization, country and legal issuer contracts",
+    "storage, version, concurrency, IAM, disclosure, Audit and retention",
+    "GraphQL and events architecture alignment, locale negotiation and presentation contracts"
+  ],
+  "criteria": [
+    {"id": "CM1-CNT-01", "decisionIds": ["CM1-PD-107"], "expected": "Independent owned optional ContactInfo"},
+    {"id": "CM1-CNT-02", "decisionIds": ["CM1-PD-107", "CM1-PD-108"], "expected": "Multiple type-referenced ContactPoints, no direct channel fields"},
+    {"id": "CM1-CNT-03", "decisionIds": ["CM1-PD-108", "CM1-PD-109"], "expected": "Supported custom typed contact configuration"},
+    {"id": "CM1-CNT-04", "decisionIds": ["CM1-PD-107"], "expected": "No implicit owner sharing; mismatch rejected locally"},
+    {"id": "CM1-CNT-05", "decisionIds": ["CM1-PD-108", "CM1-PD-109", "CM1-PD-110"], "expected": "Reject incompatible, inactive or inapplicable new type; retain history"},
+    {"id": "CM1-CNT-06", "decisionIds": ["CM1-PD-108", "CM1-PD-111"], "expected": "Localized title, unchanged identity"},
+    {"id": "CM1-CNT-07", "decisionIds": ["CM1-PD-107", "CM1-PD-108"], "expected": "Multiple contacts and primary selection subject to approved grouping"},
+    {"id": "CM1-CNT-08", "decisionIds": ["CM1-PD-107", "CM1-PD-109"], "expected": "Optional fields, no implicit verification or uniqueness"},
+    {"id": "CM1-CNT-09", "decisionIds": ["CM1-PD-111"], "expected": "Language-independent domain error key"},
+    {"id": "CM1-CNT-10", "decisionIds": ["CM1-PD-112"], "expected": "Presentation preserves canonical facts"}
+  ],
+  "criterionStatus": "PROPOSED_NOT_TESTED",
+  "contractDependentExecution": "BLOCKED",
+  "gatesUnchanged": true,
+  "formalBaselineReacceptance": "NOT_CLAIMED",
+  "implementationAuthorization": "SEPARATE_EXACT_SCOPE_REQUIRED"
+}
