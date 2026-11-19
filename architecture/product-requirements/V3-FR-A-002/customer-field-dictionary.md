@@ -1,6 +1,6 @@
 # Customer field dictionary — V3-FR-A-002
 
-**No field is approved as a mandatory product requirement.** Five approved master entities are source-derived; every candidate field below is PROPOSED with decision status OPEN. Jurisdiction-specific fields are NOT made universally mandatory.
+**No executable field schema is formally accepted.** Five approved master entities remain source-derived; candidate representations are PROPOSED/OPEN while user-confirmed business constraints and logical Audit information are identified in the overlays below. Mandatory product information does not approve persistence/API fields. Jurisdiction-specific fields are NOT universally mandatory.
 
 ## Approved master entities (detailed fields OPEN)
 
@@ -28,7 +28,7 @@
 | FLD-002-12 | Relationship type | Typed relationship between customer records | Relationship | enum | Required | OPEN | Allowed taxonomy OPEN | Tenant Confidential | Controlled | OPEN |
 | FLD-002-13 | External reference | Optional external-system reference | Company, Person | text | Optional | OPEN | Provenance/authority OPEN | Tenant Confidential | Mutable | OPEN |
 | FLD-002-14 | Validation state | Customer validation outcome | Company, Person | enum | Required | OPEN | Values/transitions OPEN | Tenant Confidential | Controlled | OPEN |
-| FLD-002-15 | Audit correlation | Safe actor/tenant/outcome correlation for Audit | All | derived | Required-for-Audit | OPEN | Data-minimized; covered obligations only | Restricted | Append-oriented | OPEN |
+| FLD-002-15 | Audit correlation | Safe actor/tenant/outcome correlation for Audit | All | derived | Required-for-Audit | OPEN | Data-minimized; covered obligations only, including explicit catalog Audit (CM1-PD-073/077). RC-021 logical information is not an approved event schema | Restricted | Append-oriented | OPEN (schema); logical coverage confirmed |
 | FLD-002-16 | Pending submission marker | Non-authoritative pending submission flag | Company, Person | boolean | Conditional | PROPOSED | PERMITTED NOT REQUIRED; never authoritative | Tenant Confidential | Controlled | OPEN |
 
 Sensitivity uses candidate DC notation, not an approved classification model.
@@ -46,7 +46,7 @@ Sensitivity uses candidate DC notation, not an approved classification model.
 | REL-002-03 | targetType | enum | Required | One of COMPANY/BRANCH |
 | REL-002-04 | targetId | reference | Required | Reference integrity + Tenant isolation |
 | REL-002-05 | roleCode | enum (candidate reference shape; schema OPEN) | Required | CM1-PD-066/067 effective guards preserved; CM1-PD-068 defaults preserve Tenant settings. Referenced Role Definition codes follow trim-uppercase, ASCII A-Z/0-9/underscore, normalized length 3..64, namespace uniqueness/permanent reservation and future collision blocking (CM1-PD-069..072). Repeated Relationship references allowed; not roleCode uniqueness across Relationships. Enforcement/reference/configuration/Unicode edge cases remain OPEN |
-| REL-002-06 | roleTitle | text | Optional | Initial System titleFa values exact in CM1-PD-066 catalogEntries; no confirmed English-title field or legal authority. Title changes/hide/unhide preserve identity/history; historical display/reference representation OPEN (PDQ-002-08) |
+| REL-002-06 | roleTitle | text (candidate representation) | Optional (storage shape not selected) | CM1-PD-074/075: current valid title in current Relationship views; event-time title in historical events/Audit, never rewritten. Inactive/hidden references remain visible under authorization. Persian/English labels permitted without mandatory language fields; labels are not identifiers. Exact temporal/localization/reference/API mechanisms OPEN |
 | REL-002-07 | status | enum | Required | ACTIVE/ENDED |
 | REL-002-08 | startDate | date/time | Required | Half-open [start,end) |
 | REL-002-09 | endDate | date/time | Optional | null allowed; not before start |
@@ -64,9 +64,15 @@ Sensitivity uses candidate DC notation, not an approved classification model.
 
 Role Definition identity/code immutability (CM1-PD-061) is distinct from an existing Relationship's conceptual roleCode field. No Role schema, Relationship reference shape or change-of-role editing contract is selected. See `customer-role-catalog.md` RC-004/008. Existing field IDs are preserved; no executable Role schema or new approved source entity is added.
 
-System vocabulary v1.0 is the exact 12-entry documentation catalog in PDR JSON CM1-PD-066 and `customer-role-catalog.md` RC-009; it does not select fixed roleIds or a database seed. Tenant selectability (RC-010/011) remains a local assignment restriction. Default product policy is now ANSWERED (RC-012), not its storage/materialization. No configuration names, persistence representation, roleId-based overlap key or new field ID is approved. Existing Relationships/history remain unchanged; ordinary hide/unhide reason policy remains OPEN.
+System vocabulary v1.0 is the exact 12-entry documentation catalog in PDR JSON CM1-PD-066 and `customer-role-catalog.md` RC-009; it does not select fixed roleIds or a seed. Future authorized controlled display changes do not rewrite that versioned baseline or historical events. Tenant selectability remains a local assignment restriction; defaults are answered, not their storage. Hide/Unhide reason is now OPTIONAL with mandatory Audit (CM1-PD-073/077). No configuration names, persistence representation, roleId-based overlap key or new field ID is approved; existing Relationships/history remain intact.
 
 Code policy (RC-013..016) is confirmed for Role Definitions: System codes globally unique/reserved against Tenant codes; custom codes unique/reserved in their own Tenant, not across all Tenants. Permanent reservations include inactive/history and cannot be reassigned. Reactivation preserves roleId/roleCode. Do not turn this registry policy into a unique roleCode constraint on Relationship rows, rename existing codes, or replace the conceptual overlap key with roleId. Normalization is not authority to edit an existing immutable code. ASCII digits and leading/trailing/consecutive underscores are not separately prohibited; Unicode trim/uppercase/input encoding and further grammar stay PROPOSED / OPEN. No tombstone/index/schema mechanism is chosen.
+
+## Display and Audit logical information (v1.6.0)
+
+CM1-PD-074/075 permits System labels/translations/descriptions under authorized controlled release and own-custom metadata under Tenant manager authority. Stable identity/fundamental semantics preserved; materially different Role needs new Role/new code, not a label-based identity change. Current title rendering is not authority to overwrite Relationship rows or event-time titles. No mandatory Persian/English field, uniqueness constraint on labels, localization storage or snapshot mechanism is selected.
+
+CM1-PD-073/077 requires actor/Tenant/Role identity, old/new selectability/time/optional reason for Hide/Unhide and the complete logical Audit information in `customer-role-catalog.md` RC-021: event ID, actor/authorized system identity, applicable Tenant, available Role ID/code, origin, operation, applicable old/new values, operation-governed reason, timestamp, outcome, correlation. FLD-002-15 is still only a correlation concept, not a container/schema for this entire list. Exact Audit schema/transactions/storage/retention/recovery/access and temporal/reference/API contracts remain OPEN; all 31 existing field IDs preserved.
 
 ## Branch parent reference — user-confirmed vs schema
 

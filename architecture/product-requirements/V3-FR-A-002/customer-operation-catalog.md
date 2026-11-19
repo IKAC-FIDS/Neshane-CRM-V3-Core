@@ -20,8 +20,8 @@
 | manage addresses | CUS-UPDATE (address sub-set) | PROPOSED_DECOMPOSITION |
 | manage customer relationships | CUS-UPDATE (relationship sub-set) | PROPOSED_DECOMPOSITION |
 | change customer status | CUS-UPDATE (status field) | PROPOSED_DECOMPOSITION |
-| archive or deactivate customer | CUS-UPDATE (lifecycle) | PROPOSED — no approved archive/deactivate policy |
-| detect potential duplicates | CUS-VALIDATE (detection) | PROPOSED — no approved duplicate policy |
+| archive or deactivate customer | CUS-UPDATE (lifecycle) | PROPOSED executable decomposition; product lifecycle confirmed, exact contracts OPEN |
+| detect potential duplicates | CUS-VALIDATE (detection) | PROPOSED executable decomposition; warning/exception product policy confirmed, matching contract OPEN |
 | handle duplicate customer records | CUS-UPDATE / merge | PROPOSED — merge/deletion NOT approved |
 
 ## Per-operation detail template (OPEN unless source-approved)
@@ -30,13 +30,13 @@
 - **Preconditions:** validated identity + active Membership + validated Tenant Context; destination authorization.
 - **Required permissions:** none granted; resource/action matrix OPEN.
 - **Inputs/outputs:** authoritative Customer facts only; no aggregate/API shape selected.
-- **Business rules / transitions / validation:** see business-rules, lifecycle and field dictionary; all OPEN.
+- **Business rules / transitions / validation:** user-confirmed product policies are distinguished from OPEN executable contracts; see business rules, lifecycle, field dictionary and Role Catalog through CM1-PD-077. No permission binding or implementation is approved.
 - **Tenant boundary:** validated Context; cross-tenant fails closed.
 - **Failure:** see customer-failure-scenarios.md.
 - **Audit:** CUS-CREATE/CUS-UPDATE durable obligation; validation rejection has no separate mandatory event.
 - **Acceptance:** see acceptance-criteria.md.
 
-No candidate operation assumed approved; duplicates and merge/delete are PROPOSED with no approved policy.
+No candidate executable operation contract is approved. Duplicate/lifecycle product policies have user-confirmed directions, not blanket OPEN status; merge/deletion and affected technical contracts remain unresolved. Formal acceptance stays PENDING.
 
 ## Proposed logical capabilities (NOT new approved CUS operation IDs)
 
@@ -56,8 +56,14 @@ These are logical capabilities only, not new approved CUS operation IDs or CUS-U
 
 CM1-PD-067 permits authorized Tenant-local hide/unhide for new assignments of System Roles (including the initial vocabulary, CM1-PD-066). It is neither global Role deactivation nor System definition editing. Customer Domain enforces RC-010/011 eligibility including direct API attempts and concurrent hide/finalization safety. Existing Relationships and authorized historical references remain intact; no reactivation, other-Tenant change or disclosure is permitted. Validated Tenant context and management authority are necessary; CUS-CREATE alone is insufficient.
 
-No new approved operation ID, request/response schema, permission or Audit event name is introduced. Configuration/default materialization, ordinary hide/unhide reason requirement, concurrency enforcement and Audit failure/recovery are OPEN; product default policy is now answered by CM1-PD-068. The incompatible scope-change mandatory-reason rule is not imported here.
+No new approved operation ID, request/response schema, permission or Audit event name is introduced. Configuration/default materialization, concurrency enforcement and Audit failure/recovery remain OPEN. Product defaults are answered by CM1-PD-068; Hide/Unhide reason OPTIONAL and Audit MANDATORY under CM1-PD-073/077. The incompatible scope-change mandatory-reason rule is not imported here.
 
 ## Defaults, code validation and publication gate (v1.5.0 logical capabilities)
 
 CM1-PD-068..072 add conceptual defaults on new-Tenant/new-System-Role availability while retaining prior settings, canonical code validation/uniqueness/reservation on Role creation, identity-preserving reactivation, and pre-publication collision assessment with non-destructive authorized resolution. See `customer-role-catalog.md` RC-012..016. Conflict blocks that proposed System Role only, not all unrelated catalog changes. Same custom code in independent Tenants is permitted; cross-Tenant detection does not imply private-data access. No new operation ID/API, provisioning/migration, persistence/index/tombstone, IAM or publication mechanism is chosen; concurrency, privacy/authority, rollback/resolution and Audit contracts remain OPEN.
+
+## Catalog governance and Audit logical operations (v1.6.0)
+
+CM1-PD-073..077: manage own-Tenant System Role selectability; update display metadata under System controlled release or own-custom authority; render current versus event-time historical titles; enforce three logical authority categories at the Backend. Exact responsibilities and full operation/Audit/reason matrix: `customer-role-catalog.md` RC-017..021 and actor policy matrix.
+
+Creation, metadata, scope, lifecycle, Hide/Unhide, publication and unauthorized catalog modification attempts have mandatory Audit coverage. Reasons are optional for ordinary creation/metadata/compatible-scope/activation/deactivation/Hide/Unhide; incompatible scope requires reason; publication requires reason including release reference. Metadata optional reason cannot waive publication's mandatory reason. Preserve previous exception rules, old/new applicable values, isolated immutable history and durable no-success guard. Ordinary catalog reads have no independent Audit requirement here, not a waiver of security/source obligations. No operation IDs, event schemas/counts, transaction protocols or permission grants are selected; exact execution/recovery/access contracts remain OPEN.

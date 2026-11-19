@@ -246,7 +246,7 @@
       "logicalType": "derived",
       "requiredStatus": "Required-for-Audit",
       "uniqueness": "OPEN",
-      "validationConstraints": "Data-minimized; covered obligations only",
+      "validationConstraints": "Data-minimized; covered obligations only. CM1-PD-073/077 explicitly cover catalog Audit; RC-021 defines logical information including correlation, old/new applicable values and operation reason policy. No physical Audit schema or publication/transaction mechanism approved.",
       "sensitivity": "Restricted",
       "mutability": "Append-oriented",
       "decisionStatus": "OPEN"
@@ -345,7 +345,7 @@
     {
       "fieldId": "REL-002-06",
       "businessName": "roleTitle",
-      "description": "Human-readable role label; initial System titleFa values are exact CM1-PD-066 catalogEntries; not a confirmed English-title field or legal authority. Preserve identity/history through title changes and Tenant hide/unhide (CM1-PD-065/067); historical display/reference representation OPEN (PDQ-002-08)",
+      "description": "Display metadata, not a unique identifier or IAM/legal authority. Initial vocabulary v1.0 remains exact evidence; CM1-PD-074 allows controlled System or own-custom labels/translations/descriptions with stable identity/semantics and old/new values. Persian/English labels permitted, no required language fields/storage. CM1-PD-075: current Relationship title is current valid title; historical events/Audit preserve event-time title without rewrite, including inactive/hidden Roles under authorization. Temporal/version/snapshot/reference/API/localization mechanisms OPEN (PDQ-002-08); no Relationship row replacement/recreation/mutation implied.",
       "applicableCustomerType": "Relationship",
       "logicalType": "text",
       "requiredStatus": "Optional",
@@ -460,7 +460,7 @@
       "decisionStatus": "PROPOSED (CM1-PD-030)"
     }
   ],
-  "fieldApprovalStatus": "NO_FIELD_APPROVED_AS_MANDATORY; candidate fields PROPOSED/OPEN; verification-state and relationship fields user-confirmed as product direction",
+  "fieldApprovalStatus": "NO_EXECUTABLE_FIELD_SCHEMA_FORMALLY_ACCEPTED; conceptual candidate fields with user-confirmed product constraints including verification, Relationships and CM1-PD-073..077 display/Audit logical information; exact field/API/persistence/localization/Audit schemas remain OPEN",
   "relationshipFields": [
     "REL-002-01",
     "REL-002-02",

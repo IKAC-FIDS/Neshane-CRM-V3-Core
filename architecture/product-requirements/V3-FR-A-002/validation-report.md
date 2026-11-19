@@ -1,6 +1,62 @@
 # Requirements-engineering validation report — V3-FR-A-002
 
-## Current supplement — v1.5.0 defaults and canonical code policies
+## Current supplement — v1.6.0 catalog governance, history and Audit
+
+**PREPARED FOR USER REVIEW; USER-CONFIRMED PRODUCT DIRECTION; formal acceptance PENDING.** Earlier reports are historical, not renewed execution evidence. No executable architecture, IAM, Audit integration, runtime or production approval is granted.
+
+### A. Repository baseline and scope
+
+- Root `E:/Neshane-CRM-V3-V3-024-main-adoption`; branch `codex/v3-fr-a-002`; original/full HEAD `895efd76595ca36a9ee5c8028a67c8854d5d318e`, matching requested prefix `895efd7`. Initial worktree/index clean; baseline v1.5.0, 72 decisions, 5 canonical +128 detailed criteria, 19 OPEN IDs verified from actual files.
+- Task V3-FR-A-002 / PDQ-002-08. Exact user decisions CM1-PD-073..077, source, scope, baseline and actual UTC recording time in PDR JSON catalogGovernanceAuthority/decisions; issuance time not supplied. Prior authority records/provenance preserved.
+- Only Markdown/JSON documentation in the requested package modified. No Backend/Frontend/product code/schema/migration/API/IAM grant/application test/build/runtime work. No add/commit/push/merge/rebase/reset/clean, branch change, next roadmap task or acceptance decision.
+
+### B. Product reconciliation and scoped review
+
+- CM1-PD-073: reason OPTIONAL for Hide/Unhide, Audit MANDATORY, own-Tenant authorized catalog managers only; actor/Tenant/Role/old-new selectability/time/optional reason preserved; no Relationship/history/other-Tenant or global inactive/scope/authority bypass.
+- CM1-PD-074: authorized System metadata under controlled release versus own-custom Tenant metadata; labels/translations/descriptions preserve identity/semantics and old/new values. Ordinary reason OPTIONAL, Audit MANDATORY. No unique-label identity, mandatory language/localization storage or Relationship mutation; materially different Role needs new Role/new code under existing reservation rules.
+- CM1-PD-075: authorized current Relationship title is current valid title; event/Audit title remains event-time title without rewrite. Hidden/INACTIVE Roles stay visible in existing authorized references/history. Temporal/version/snapshot/reference/API representation remains OPEN; initial vocabulary v1.0 evidence is not rewritten by future display releases.
+- CM1-PD-076: three independent logical System-governance/Tenant-manager/Customer-operator responsibilities, not executable IAM roles or appointments. Backend authorization mandatory; neither management nor assignment implies the other. No identity/code/deletion override, business-role IAM/admin/legal grant or new three-person SoD rule; prior scope/overlap safeguards retained.
+- CM1-PD-077: explicit mandatory catalog-operation and unauthorized-modification Audit with logical information, old/new applicable values, isolated immutable history and no successful state-change report without durable guarantee. Ordinary reasons optional; incompatible-scope reason and publication reason including release reference mandatory. Optional ordinary metadata reason cannot waive publication reason.
+- Catalog-specific unauthorized-attempt Audit now has an explicit product basis; no blanket event rule for ordinary reads, unrelated warnings or all validation failures. Existing source/security monitoring and coordinated durable obligations remain unchanged; ACK/outbox is not authoritative ingestion and no new transaction/defer protocol is selected. Protected old/new Audit values are not unredacted public logs or cross-Tenant disclosures.
+- Removed stale active blanket policy-OPEN wording from requirements/operation/assessment notes by distinguishing source-baseline inventory, confirmed product direction, technical OPEN contracts and formal acceptance PENDING. Five canonical definitions and previous business decisions remain unchanged; general historical failure dispositions explicitly identified as historical, not policy overrides.
+- Scoped review found no unresolved contradiction in the five new policies. Exhaustive re-review of older product ambiguities, source execution/recovery claims, independent specialist assessment and actual authorization/Audit durability: NOT VERIFIED. This is not Security Sign-off.
+
+### C. Inventory and coverage
+
+- **77 unique decisions**; prior 72 parsed objects and raw UTF-8 object substrings unchanged against reviewed Git baseline. Exact 12-role initial vocabulary unchanged in JSON/Markdown, including Persian ZWNJ and scopes. Role lifecycle, applicability, ordinary controlled overlap, code/default/uniqueness/reservation policy sections retained verbatim; Customer lifecycle/verification/deployment files unchanged.
+- All 31 field IDs retained. Only FLD-002-15 Audit-correlation and REL-002-06 title descriptions/constraints clarified; logical Audit information is not an approved schema/new physical field list. Role registry uniqueness is not Relationship row uniqueness.
+- Actual criteria: baseline 5+128=133; current **5 canonical +153 detailed =158 unique IDs**. Added **CM1-ROL-46..70 (25)** only; all previous definition lines preserved. New criteria PROPOSED / NOT TESTED with implementation-dependent execution BLOCKED. No literal duplicate new scenario under another ID; scoped review checks their new governance/history/Audit distinctions from earlier generic scenarios.
+- Matrix **FULL=3, PARTIAL=67, DOCUMENTED_ONLY=5, BLOCKED_BY_OPEN_DECISION=2**; complete 77-entry machine/human inventories. Five new decisions PARTIAL with direct rules/logical operations/scenarios/fields-or-explicit-gaps/OPEN references and technical residuals; no earlier class promoted.
+- All 19 OPEN IDs retained; PDQ-002-08 OPEN / PARTIALLY ANSWERED. Hide/Unhide reason, metadata governance, current/event-time display, logical authorities and Audit product coverage/reasons/information are answered, not closed executable contracts. Current register/RC-OPEN/RC-PROPOSED/Traceability updated; earlier version dispositions explicitly historical.
+- Still OPEN: exact catalog/configuration/default materialization; IAM/operations/permissions/grants/actor mappings/technical enforcement; temporal/version/snapshot/localization/reference/API; Audit schema/event names/transactions/storage/retention/recovery/access/failure protocols; namespace/concurrent uniqueness/reservation/scope/assignment mechanisms; Unicode/encoding/further grammar; cross-Tenant collision detection/privacy/authority; publication/release/rollback/authorized resolution and semantic-change assessment procedure.
+
+### D. Commands, validation results and failures
+
+```powershell
+git --no-optional-locks status --short --branch --untracked-files=all
+git --no-optional-locks rev-parse HEAD
+git --no-optional-locks diff --cached --stat
+python -X utf8 C:/Users/user/AppData/Local/Temp/opencode/a002-role-160-validate.py
+python -X utf8 C:/Users/user/AppData/Local/Temp/opencode/a002-role-160-validate.py --manifest
+git --no-optional-locks diff --check
+git --no-optional-locks diff --stat
+git --no-optional-locks status --short --untracked-files=all
+```
+
+- Initial documentation run: **42/43 PASS, 1 FAIL** in the new section-preservation checker. Its heading regex used a greedy dot under DOTALL, incorrectly including subsequent sections. Corrected the heading match to stop at newline; same 13 old sections still compared, no expected set/control removed. Rerun **43/43 PASS**. This was validator parsing, not a software test or accepted policy change.
+- One combined patch was rejected by context verification because an expected sentence had an actual `Examples and guard detail` prefix; no files changed by that rejected patch. Re-read actual context and applied narrower patches. No user work reset/deleted and no check suppressed.
+- JSON syntax, decision/raw preservation, vocabulary, field/criterion/OPEN uniqueness, literal scenario duplication, matrix/ledger completeness, introduced IDs/file/anchor links, current versions/counts, known stale reason-OPEN wording, Tenant/history/Audit policy boundaries, documentation-only scope and whitespace checked. Source inventory/evidence/historical SHA/authority/governance data preserved, not recast as current execution proof.
+- Final manifest-mode run: **45/45 PASS**, including complete inventory/self-exclusion and all exact current file-byte SHA-256 values. The report hash is regenerated after this recording and the check repeated. This validates consistency, not independent authenticity of the manifest. Historical source SHA values are not recalculated. git diff --check PASS; only LF-to-CRLF working-copy warnings, no whitespace errors.
+- Checker is task-local outside Git, not application code or a durable runtime test suite. Build/application/integration/runtime tests NOT EXECUTED; all proposed software scenarios stay BLOCKED. No dependency/network, service or Docker activity; no external specialist/runtime evidence claimed.
+- Manual review required: exact five PDR decisions, RC-017..021 reason/Audit matrix, logical authority separation, current/event-time title distinction, future display release versus immutable vocabulary/history, failure scenarios, remaining contracts and CM1-ROL-46..70. Next action is user review only; later Git, formal acceptance and executable contract work require separate explicit authorization.
+
+### E. Governance unchanged
+
+G-RUNTIME: BLOCKED; FE-BE: PENDING; AUTH/IAM: PENDING; Offline: PROHIBITED; Local-Infra: ACCEPTED — DEVELOPMENT-ONLY; Production: NOT AUTHORIZED; Formal acceptance: PENDING. Pending Submission PERMITTED NOT REQUIRED and non-authoritative. Existing coordinated durable Audit obligations retained.
+
+## Historical v1.5.0 supplement (not renewed v1.6.0 evidence)
+
+### v1.5.0 defaults and canonical code policies
 
 **PROPOSED DOCUMENTATION PACKAGE; formal acceptance PENDING.** Earlier sections are historical evidence only; their previous inventory/OPEN statements are not current where superseded by this supplement. No executable design or Gate disposition is granted.
 

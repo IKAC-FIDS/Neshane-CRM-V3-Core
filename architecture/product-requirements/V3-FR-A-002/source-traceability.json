@@ -943,7 +943,21 @@
       "requiredDecisionAuthority": "Product Decision Owner / TAO"
     }
   ],
-  "version": "1.5.0",
+  "version": "1.6.0",
+  "catalogGovernanceReconciliation": {
+    "taskId": "V3-FR-A-002",
+    "baseline": "895efd76595ca36a9ee5c8028a67c8854d5d318e",
+    "recordedAt": "2026-11-19T06:31:30.259190+00:00",
+    "source": "User task: TASK: V3-FR-A-002 — Customer Master Product Decisions v1.6.0; CM1-PD-073..077",
+    "authority": "USER-CONFIRMED PRODUCT DIRECTION",
+    "formalAcceptance": "PENDING",
+    "policyArtifact": "customer-role-catalog.md#rc-017--hideunhide-governance",
+    "exactDecisions": "customer-master-product-decision-record.json decisions CM1-PD-073..077",
+    "scenarioArtifact": "cm1-acceptance-criteria-addendum.md#catalog-governance-history-and-audit-scenarios-v160",
+    "historicalProvenancePreserved": true,
+    "notSourceApprovedRepositoryEvidence": true,
+    "reconciliation": "Optional Hide/Unhide and ordinary-operation reasons, display/current-event-time policy, logical authorities and explicit catalog Audit policy answered; no blanket ordinary-read/validation event requirement, IAM grant, history rewrite or executable Audit transaction selected. Initial vocabulary v1.0 remains unchanged evidence."
+  },
   "defaultCodePolicyReconciliation": {
     "taskId": "V3-FR-A-002",
     "baseline": "92d02d2c45103d5223e5d9ffd7a6bafc556e3443",
@@ -988,8 +1002,8 @@
   "productDecisionRegister": {
     "path": "customer-master-product-decision-record.json",
     "recordId": "V3-FR-A-002-PDR-001",
-    "version": "1.5.0",
-    "decisionCount": 72,
+    "version": "1.6.0",
+    "decisionCount": 77,
     "decisionIds": [
       "CM1-PD-001",
       "CM1-PD-002",
@@ -1062,7 +1076,12 @@
       "CM1-PD-069",
       "CM1-PD-070",
       "CM1-PD-071",
-      "CM1-PD-072"
+      "CM1-PD-072",
+      "CM1-PD-073",
+      "CM1-PD-074",
+      "CM1-PD-075",
+      "CM1-PD-076",
+      "CM1-PD-077"
     ],
     "supersessions": [
       {
@@ -1078,10 +1097,10 @@
   "fieldDictionaryFieldCount": 31,
   "decisionCoverageMatrix": {
     "path": "customer-decision-coverage-matrix.json",
-    "version": "1.5.0",
-    "decisionCount": 72,
+    "version": "1.6.0",
+    "decisionCount": 77,
     "coverageCounts": {
-      "PARTIAL": 62,
+      "PARTIAL": 67,
       "DOCUMENTED_ONLY": 5,
       "FULL": 3,
       "BLOCKED_BY_OPEN_DECISION": 2
@@ -1089,13 +1108,15 @@
   },
   "acceptanceInventory": {
     "canonicalCriteria": 5,
-    "detailedCriteria": 128,
-    "totalUnique": 133,
+    "detailedCriteria": 153,
+    "totalUnique": 158,
     "historicalInventoryV130": {"version": "1.3.0", "canonicalCriteria": 5, "detailedCriteria": 99, "totalUnique": 104},
-    "previousInventory": {"version": "1.4.0", "canonicalCriteria": 5, "detailedCriteria": 112, "totalUnique": 117},
+    "historicalInventoryV140": {"version": "1.4.0", "canonicalCriteria": 5, "detailedCriteria": 112, "totalUnique": 117},
+    "previousInventory": {"version": "1.5.0", "canonicalCriteria": 5, "detailedCriteria": 128, "totalUnique": 133},
     "historicalAddedIdsV130": ["CM1-ROL-01", "CM1-ROL-02", "CM1-ROL-03", "CM1-ROL-04", "CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-07", "CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11", "CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14", "CM1-ROL-15", "CM1-ROL-16"],
-    "previousAddedIds": ["CM1-ROL-17", "CM1-ROL-18", "CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29"],
-    "addedIds": ["CM1-ROL-30", "CM1-ROL-31", "CM1-ROL-32", "CM1-ROL-33", "CM1-ROL-34", "CM1-ROL-35", "CM1-ROL-36", "CM1-ROL-37", "CM1-ROL-38", "CM1-ROL-39", "CM1-ROL-40", "CM1-ROL-41", "CM1-ROL-42", "CM1-ROL-43", "CM1-ROL-44", "CM1-ROL-45"],
+    "historicalAddedIdsV140": ["CM1-ROL-17", "CM1-ROL-18", "CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29"],
+    "previousAddedIds": ["CM1-ROL-30", "CM1-ROL-31", "CM1-ROL-32", "CM1-ROL-33", "CM1-ROL-34", "CM1-ROL-35", "CM1-ROL-36", "CM1-ROL-37", "CM1-ROL-38", "CM1-ROL-39", "CM1-ROL-40", "CM1-ROL-41", "CM1-ROL-42", "CM1-ROL-43", "CM1-ROL-44", "CM1-ROL-45"],
+    "addedIds": ["CM1-ROL-46", "CM1-ROL-47", "CM1-ROL-48", "CM1-ROL-49", "CM1-ROL-50", "CM1-ROL-51", "CM1-ROL-52", "CM1-ROL-53", "CM1-ROL-54", "CM1-ROL-55", "CM1-ROL-56", "CM1-ROL-57", "CM1-ROL-58", "CM1-ROL-59", "CM1-ROL-60", "CM1-ROL-61", "CM1-ROL-62", "CM1-ROL-63", "CM1-ROL-64", "CM1-ROL-65", "CM1-ROL-66", "CM1-ROL-67", "CM1-ROL-68", "CM1-ROL-69", "CM1-ROL-70"],
     "softwareExecution": "BLOCKED pending relevant executable design; NOT EXECUTED",
     "newCriteriaStatus": "PROPOSED / NOT TESTED"
   },
@@ -1104,21 +1125,21 @@
       "pdqId": "PDQ-002-08",
       "disposition": "OPEN / PARTIALLY ANSWERED",
       "formalAcceptance": "PENDING",
-      "confirmedAnswer": "Role Catalog product directions CM1-PD-058..067 preserved, including exact initial vocabulary v1.0 and Tenant selectability. CM1-PD-068..072 additionally ANSWER default selectability with established settings retained, canonical System-global/owning-Tenant uniqueness, permanent scoped reservation, conflict blocking only the proposed new System Role with non-destructive authorized resolution, and trim-uppercase/ASCII A-Z/0-9/underscore output/3..64 length. Same custom code across independent Tenants remains allowed; no extra first-letter/underscore-placement grammar or cross-Tenant access grant. These are product answers, not executable contracts.",
+      "confirmedAnswer": "Prior CM1-PD-058..072 policies preserved. CM1-PD-073..077 ANSWER Hide/Unhide optional reason/mandatory Audit/own-Tenant manager authority; controlled System versus own-custom display metadata with stable identity/semantics and old-new values; current title versus event-time historical title without rewrite; three independent logical authority categories/Backend enforcement; catalog Audit coverage, ordinary optional versus incompatible-scope/publication mandatory reasons, logical information, isolated immutable history and durable no-success guard. No IAM grant or executable schema/transaction mechanism; ordinary reads/security monitoring distinguished. Initial vocabulary v1.0 remains unchanged evidence.",
       "remaining": [
         "Version publication/rollback and explicitly authorized collision-resolution workflow (blocking/non-destructive product outcome answered)",
         "System/Tenant namespace enforcement implementation and concurrent uniqueness/permanent reservation consistency",
         "Exact catalog/configuration schema and persistence/default materialization/provisioning/reference contracts",
-        "Role/selectability management operation, IAM permissions, Audit event names and ordinary hide/unhide reason policy",
+        "Exact Role/selectability operation IDs, IAM roles/permissions/grants, actor mapping and technical Backend enforcement (logical categories answered)",
         "Concurrent scope changes and selectability/assignment-finalization dependency consistency mechanism",
-        "Role history representation and historical display contract",
-        "Operation-specific Audit failure and recovery behavior",
+        "Temporal storage/version/snapshot/localization/reference/API representation (current versus event-time display policy answered)",
+        "Exact Audit schema/event names, transactional guarantees, storage/retention/recovery/access and failure protocols (coverage/reasons/logical information/durable no-success policy answered)",
         "Relationship temporal representation and API compatibility",
         "Cross-Tenant conflict detection authorization and privacy controls; no inferred central private-data access",
         "Exact normalization Unicode trim/uppercase/input-encoding edge cases and any further PROPOSED grammar"
       ],
-      "dependentDecisionIds": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067", "CM1-PD-068", "CM1-PD-069", "CM1-PD-070", "CM1-PD-071", "CM1-PD-072"],
-      "dependentAcceptanceCriterionIds": ["CM1-ROL-01", "CM1-ROL-02", "CM1-ROL-03", "CM1-ROL-04", "CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-07", "CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11", "CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14", "CM1-ROL-15", "CM1-ROL-16", "CM1-ROL-17", "CM1-ROL-18", "CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29", "CM1-ROL-30", "CM1-ROL-31", "CM1-ROL-32", "CM1-ROL-33", "CM1-ROL-34", "CM1-ROL-35", "CM1-ROL-36", "CM1-ROL-37", "CM1-ROL-38", "CM1-ROL-39", "CM1-ROL-40", "CM1-ROL-41", "CM1-ROL-42", "CM1-ROL-43", "CM1-ROL-44", "CM1-ROL-45"],
+      "dependentDecisionIds": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067", "CM1-PD-068", "CM1-PD-069", "CM1-PD-070", "CM1-PD-071", "CM1-PD-072", "CM1-PD-073", "CM1-PD-074", "CM1-PD-075", "CM1-PD-076", "CM1-PD-077"],
+      "dependentAcceptanceCriterionIds": ["CM1-ROL-01", "CM1-ROL-02", "CM1-ROL-03", "CM1-ROL-04", "CM1-ROL-05", "CM1-ROL-06", "CM1-ROL-07", "CM1-ROL-08", "CM1-ROL-09", "CM1-ROL-10", "CM1-ROL-11", "CM1-ROL-12", "CM1-ROL-13", "CM1-ROL-14", "CM1-ROL-15", "CM1-ROL-16", "CM1-ROL-17", "CM1-ROL-18", "CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29", "CM1-ROL-30", "CM1-ROL-31", "CM1-ROL-32", "CM1-ROL-33", "CM1-ROL-34", "CM1-ROL-35", "CM1-ROL-36", "CM1-ROL-37", "CM1-ROL-38", "CM1-ROL-39", "CM1-ROL-40", "CM1-ROL-41", "CM1-ROL-42", "CM1-ROL-43", "CM1-ROL-44", "CM1-ROL-45", "CM1-ROL-46", "CM1-ROL-47", "CM1-ROL-48", "CM1-ROL-49", "CM1-ROL-50", "CM1-ROL-51", "CM1-ROL-52", "CM1-ROL-53", "CM1-ROL-54", "CM1-ROL-55", "CM1-ROL-56", "CM1-ROL-57", "CM1-ROL-58", "CM1-ROL-59", "CM1-ROL-60", "CM1-ROL-61", "CM1-ROL-62", "CM1-ROL-63", "CM1-ROL-64", "CM1-ROL-65", "CM1-ROL-66", "CM1-ROL-67", "CM1-ROL-68", "CM1-ROL-69", "CM1-ROL-70"],
       "relatedOpenQuestionIds": ["PDQ-002-10", "PDQ-002-12"],
       "policyReference": "customer-role-catalog.md#rc-open--remaining-open-contracts",
       "affectedExecutableDesign": "BLOCKED until remaining contracts are separately dispositioned"

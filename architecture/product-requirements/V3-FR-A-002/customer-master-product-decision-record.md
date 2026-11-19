@@ -1,7 +1,7 @@
 # Customer Master — Product Decision Record
 
 **Record ID:** `V3-FR-A-002-PDR-001`
-**Version:** `1.5.0` (proposed package; formal acceptance pending)
+**Version:** `1.6.0` (proposed package; formal acceptance pending)
 **Date:** 2026-11-18
 **Scope:** `FR-BJ-001` / `V3-FR-A-002` / `CM-1`
 **Disposition:** `USER-CONFIRMED PRODUCT DIRECTION — FORMAL REPOSITORY ACCEPTANCE PENDING`
@@ -90,7 +90,7 @@ Source/authority, recording timestamp, reviewed baseline and exact decision word
 | CM1-PD-064 | Catalog authority | System authority governs System Roles; Tenant users cannot modify them. Tenant roles managed only by authorized owning-Tenant actors; no cross-Tenant access/reference absent a separate governing contract. CUS-CREATE alone is insufficient. |
 | CM1-PD-065 | History / overlap | Preserve identity/history through title/status/scope changes; no bypass of version, overlap authorization, Tenant or mandatory Audit checks; exact reference and overlap key remain unapproved. |
 
-These eight decisions partially answer PDQ-002-08; all 19 questions stay OPEN. No earlier decision is removed or rewritten. Historical totals: v1.3.0 had 65 and v1.4.0 had 67 decisions; current v1.5.0 has 72. Historical version counts below describe their respective packages only.
+These eight decisions partially answer PDQ-002-08; all 19 questions stay OPEN. No earlier decision is removed or rewritten. Historical totals: v1.3.0 had 65, v1.4.0 had 67 and v1.5.0 had 72 decisions; current v1.6.0 has 77. Historical version counts below describe their respective packages only.
 
 ## Vocabulary and Tenant selectability — v1.4.0 (CM1-PD-066/067)
 
@@ -98,7 +98,7 @@ Authority: USER-CONFIRMED PRODUCT DIRECTION; formal requirements acceptance PEND
 
 | Decision ID | Topic | Confirmed product rule |
 | --- | --- | --- |
-| CM1-PD-066 | Initial System Role Vocabulary v1.0 | Exact 12 codes, Persian titles and scopes: [RC-009](customer-role-catalog.md#rc-009--initial-system-role-vocabulary-v10), mirrored in JSON decision catalogEntries. Initial, not exhaustive future vocabulary; no exclusive PRIMARY_CONTACT, IAM grant or verified legal/automatic CEO/BOARD_MEMBER authority. Preserve identity/no deletion. No English titles, global roleIds, seed or deployment contract assumed. |
+| CM1-PD-066 | Initial System Role Vocabulary v1.0 | Exact 12 codes, Persian titles and scopes: [RC-009](customer-role-catalog.md#rc-009--initial-system-role-vocabulary-v10), mirrored in JSON decision catalogEntries. Initial, not exhaustive future vocabulary; no exclusive PRIMARY_CONTACT, IAM grant or verified legal/automatic CEO/BOARD_MEMBER authority. Preserve identity/no deletion. No specific English title values, global roleIds, seed or deployment contract assumed; CM1-PD-074 permits future display-label maintenance without rewriting initial values. |
 | CM1-PD-067 | Tenant-specific System Role selectability | Authorized Tenant management may hide/unhide an otherwise eligible System Role for new assignments in that Tenant only. Customer Domain enforces effective global ACTIVE + applicability + Tenant selectability + operation authority and existing guards. Preserve global definition, other Tenants, existing Relationships and authorized history. No lifecycle/scope override; concurrent finalization must not accept invalid effective state; exact enforcement OPEN. |
 
 Hide/unhide is not global deactivation or incompatible scope change: no mandatory reason is inferred from CM1-PD-063. The v1.4.0 proposals for defaults/code/reservation/collision/basic normalization are answered by CM1-PD-068..072 below; current residual proposals are under [RC-PROPOSED](customer-role-catalog.md#rc-proposed--supplementary-governance-proposals-not-confirmed-rules). PDQ-002-08 stays OPEN / PARTIALLY ANSWERED; 19 OPEN questions unchanged.
@@ -115,7 +115,21 @@ Hide/unhide is not global deactivation or incompatible scope change: no mandator
 | CM1-PD-071 | Future System collision | Assess relevant Tenant current/historical codes before new System publication; conflict blocks that new Role until authorized resolution. No automatic Role/Relationship mutation; different proposed System code is a non-destructive option. No blanket block of unrelated releases or implicit access to Tenant-private data. |
 | CM1-PD-072 | Normalization/validation | Trim then uppercase; canonical output only ASCII A-Z/0-9/underscore, length 3..64 inclusive, used for uniqueness/reservation. Immutable after creation. No additional first-letter or underscore-placement grammar. Unicode/encoding implementation edge cases remain PROPOSED / OPEN. |
 
-Examples and guard detail: RC-016. Future resolution workflow, cross-Tenant authorities/privacy, schema/configuration, enforcement/concurrency, publication/rollback, IAM/Audit, hide/unhide reason, history/reference and temporal/API contracts remain OPEN. No API, persistence or roleId-based overlap key is approved.
+Examples and guard detail: RC-016. Future resolution workflow, cross-Tenant detection authority/privacy, schema/configuration, enforcement/concurrency, publication/rollback, technical IAM/Audit and temporal/reference/API contracts remain OPEN. Hide/unhide reason, logical authorities, display history and catalog Audit policy are now answered by CM1-PD-073..077 below. No executable API, persistence or roleId-based overlap key is approved.
+
+## Catalog governance, history and Audit — v1.6.0 (CM1-PD-073..077)
+
+**USER-CONFIRMED PRODUCT DIRECTION; formal acceptance PENDING.** Exact wording/source/baseline/recording time: PDR JSON `decisions` / `catalogGovernanceAuthority`. All 72 earlier objects retained unchanged; exact vocabulary v1.0 remains baseline evidence, not rewritten by future controlled display releases.
+
+| Decision ID | Topic | Confirmed product rule |
+| --- | --- | --- |
+| CM1-PD-073 | Hide/Unhide Governance | Optional reason, mandatory Audit with actor/Tenant/Role/old-new selectability/time/reason; only own-Tenant authorized catalog managers. Preserve Relationships/history/other Tenants; no global INACTIVE/scope/authorization bypass. |
+| CM1-PD-074 | Role Display Metadata Changes | Controlled System release by product governance; own custom metadata by Tenant managers. Immutable roleId/code, optional Persian/English labels without required language/schema, labels not identifiers, fundamental semantics preserved; materially different Role requires new Role/new code. Mandatory Audit, optional ordinary reason, old/new values; no Relationship replacement/recreation/mutation. |
+| CM1-PD-075 | Historical Role Representation | Current authorized Relationship title is current valid title; events/Audit preserve event-time title without rewrite. INACTIVE/hidden Roles remain visible in existing Relationships/authorized history; stable IDs and Tenant/historical authorization preserved. Temporal/version/snapshot/API mechanisms OPEN. |
+| CM1-PD-076 | Role Catalog Management Authority | Three logical categories: System governance, own-Tenant catalog manager, Customer Master operator with separate Relationship authority. Neither management nor assignment implies the other; no role deletion/id-code mutation/IAM grant. Mandatory Backend authorization and existing scope guards; technical IAM/grants/actor mapping OPEN. |
+| CM1-PD-077 | Role Catalog Audit Requirements | Mandatory creation/metadata/scope/lifecycle/hide-unhide/publication/unauthorized-modification Audit. Optional ordinary reasons; mandatory incompatible-scope reason and publication reason including release reference. Logical information, immutable isolated history and durable no-success guard; ordinary reads have no independent product Audit requirement, security monitoring unchanged. Exact operational contracts OPEN. |
+
+Rules and complete reason/Audit matrix: `customer-role-catalog.md` RC-017..021. CM1-PD-077 is explicit catalog-specific Audit coverage, not a blanket warning/read/validation event rule; earlier CM1-PD-049 and CM1-AUD-05 remain intact with their governing-source exception. Existing coordinated durable obligations and ACK/outbox-not-ingestion boundary preserved. Former OPEN hide/unhide reason and display-history product questions are partially answered, not a closure of any of the 19 OPEN questions. Logical information is not an approved event schema or transactional design.
 
 ## 3. Supersession
 

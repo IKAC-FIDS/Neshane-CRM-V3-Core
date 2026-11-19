@@ -1,6 +1,20 @@
 {
   "recordId": "V3-FR-A-002-PDR-001",
-  "version": "1.5.0",
+  "version": "1.6.0",
+  "catalogGovernanceAuthority": {
+    "taskId": "V3-FR-A-002",
+    "scope": "Customer Master / Relationship Role Catalog / PDQ-002-08 / CM1-PD-073..077",
+    "source": "User task: TASK: V3-FR-A-002 — Customer Master Product Decisions v1.6.0; decisions CM1-PD-073..077 and preservation requirements",
+    "authority": "USER-CONFIRMED PRODUCT DIRECTION",
+    "formalAcceptance": "PENDING",
+    "reviewedBaseline": "895efd76595ca36a9ee5c8028a67c8854d5d318e",
+    "recordedAt": "2026-11-19T06:31:30.259190+00:00",
+    "issuedAt": null,
+    "exactDecisionLocation": "decisions CM1-PD-073..077",
+    "policyReference": "customer-role-catalog.md#rc-017--hideunhide-governance",
+    "auditScopeClarification": "CM1-PD-077 supplies explicit product-level Audit coverage for catalog operations/unauthorized modification attempts, not a blanket mandatory Audit for ordinary reads, warnings or all validation rejections. Existing coordinated durable obligations and ACK-not-ingestion boundaries remain authoritative.",
+    "historicalVocabularyClarification": "The exact initial vocabulary v1.0 remains unchanged evidence; authorized future controlled display revisions do not rewrite it or event-time history. Executable contracts remain OPEN."
+  },
   "defaultCodePolicyAuthority": {
     "taskId": "V3-FR-A-002",
     "scope": "Customer Master / Relationship Role Catalog / PDQ-002-08 / CM1-PD-068..072",
@@ -422,10 +436,35 @@
       "id": "CM1-PD-072",
       "topic": "roleCode Normalization and Validation",
       "rule": "Normalize incoming roleCode by trimming leading/trailing whitespace and converting letters to uppercase.\nValidate the normalized result against the allowed character set: ASCII A-Z, digits 0-9 and underscore (_).\nThe normalized roleCode length must be between 3 and 64 characters inclusive.\nUse the canonical normalized value for uniqueness and reservation checks.\nPreserve roleCode immutability after creation.\n\nExamples:\n- \" technical_contact \" → \"TECHNICAL_CONTACT\" (valid).\n- \"CEO\" → \"CEO\" (valid).\n- \"ceo\" → \"CEO\" (canonical collision with the System Role).\n- \"BRANCH-MANAGER\" → invalid.\n- \"مدیر_شعبه\" → invalid.\n- A normalized code shorter than 3 or longer than 64 characters → invalid.\n\nDo not silently add an unconfirmed requirement that the code must start with a letter, prohibit consecutive underscores, or prohibit a leading/trailing underscore unless separately approved.\n\nDocument any further lexical grammar or Unicode edge-case behavior as PROPOSED / OPEN, rather than USER-CONFIRMED.\n\nTechnical implementation of Unicode trim/uppercase semantics and input encoding remains subject to contract definition; acceptance tests must still enforce the confirmed allowed ASCII output."
+    },
+    {
+      "id": "CM1-PD-073",
+      "topic": "Hide/Unhide Governance",
+      "rule": "Reason is optional for both Hide and Unhide.\nAudit is mandatory.\nOnly authorized tenant catalog managers may perform these operations within their own tenant.\nRecord actor, tenant, role identity, previous and new selectability states, timestamp and optional reason.\nExisting relationships and historical references remain unchanged.\nOther tenants remain unaffected.\nUnhide must not override global role inactivity, scope restrictions or authorization requirements."
+    },
+    {
+      "id": "CM1-PD-074",
+      "topic": "Role Display Metadata Changes",
+      "rule": "roleId and roleCode remain immutable.\nAuthorized product governance may update system role labels, translations and descriptions through a controlled catalog release.\nAuthorized tenant catalog managers may update labels, translations and descriptions of their own custom roles.\nTenants cannot modify global System Role definitions.\nPersian and English display labels may be maintained. Do not infer mandatory language fields or localization storage mechanisms.\nDisplay labels are not unique identifiers.\nDisplay metadata changes must preserve role identity and fundamental business semantics.\nA materially different role requires a new role with a new roleCode.\nExisting relationships must not be replaced, recreated or modified.\nAudit is mandatory; reason is optional for ordinary metadata changes.\nPreserve previous and new values."
+    },
+    {
+      "id": "CM1-PD-075",
+      "topic": "Historical Role Representation",
+      "rule": "Current relationships display the current valid role title, subject to authorization.\nHistorical events and Audit records preserve the role title applicable at the time of the event.\nRenaming a role must not rewrite historical records.\nInactive and hidden roles remain visible in existing relationships and authorized historical records.\nStable roleId and roleCode must be preserved.\nTenant isolation and historical access authorization remain mandatory.\nTemporal storage, versioning, snapshot mechanisms and API representation remain OPEN."
+    },
+    {
+      "id": "CM1-PD-076",
+      "topic": "Role Catalog Management Authority",
+      "rule": "Separate three logical authority categories:\n\n1. System catalog governance authority:\n- Create System Roles.\n- Update system display metadata.\n- Change system role scope.\n- Activate/deactivate System Roles.\n- Publish controlled catalog revisions.\n\n2. Authorized tenant catalog manager:\n- Create tenant-owned custom roles.\n- Update tenant-owned role metadata.\n- Change tenant-owned role scope.\n- Activate/deactivate tenant-owned roles.\n- Hide/unhide System Roles for that tenant.\n\n3. Authorized Customer Master operator:\n- View applicable selectable roles.\n- Assign roles to relationships only when separately authorized to perform relationship operations.\n\nAdditional constraints:\n- Catalog management does not imply relationship assignment authority.\n- Relationship assignment does not imply catalog management authority.\n- Business relationship roles do not grant IAM permissions or administrative authority.\n- No authority may physically delete roles or modify existing roleId/roleCode.\n- Backend authorization enforcement is mandatory.\n- Exact IAM roles, permission identifiers, grants, technical enforcement and actor mapping remain OPEN.\n- Preserve existing approved scope-change safeguards."
+    },
+    {
+      "id": "CM1-PD-077",
+      "topic": "Role Catalog Audit Requirements",
+      "rule": "Mandatory Audit coverage:\n- System Role creation.\n- Tenant Role creation.\n- Label and description changes.\n- Scope changes.\n- Activation and deactivation.\n- Tenant Hide/Unhide.\n- System catalog publication.\n- Unauthorized attempts to modify the catalog.\n\nReason policy:\n- Optional for ordinary creation, metadata changes, compatible scope changes, activation, deactivation, Hide and Unhide.\n- Mandatory for scope changes incompatible with existing relationships.\n- Mandatory for system catalog publication, including the release reference.\n- Preserve previously approved exception reason rules.\n\nLogical Audit information:\n- Event ID.\n- Actor ID or authorized system identity.\n- Tenant ID when applicable.\n- Role ID and roleCode when available.\n- Role origin.\n- Operation.\n- Previous and new values, when applicable.\n- Reason, according to the operation.\n- Timestamp.\n- Outcome.\n- Correlation ID.\n\nAudit constraints:\n- Catalog managers and ordinary users must not be able to modify or delete Audit history.\n- Tenant Audit records must remain isolated.\n- Historical records must survive changes to role titles, status and scope.\n- Do not report a state-changing operation as successful unless durable Audit recording can be guaranteed.\n- Ordinary catalog reads do not independently require product-level Audit under this decision.\n- Security monitoring obligations remain unaffected.\n- Unauthorized attempts must not disclose protected cross-tenant information.\n- Exact Audit schema, transactional guarantees, storage, retention, recovery and access contracts remain OPEN."
     }
   ],
   "openQuestionTraceability": {
-    "PDQ-002-08": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067", "CM1-PD-068", "CM1-PD-069", "CM1-PD-070", "CM1-PD-071", "CM1-PD-072"],
+    "PDQ-002-08": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067", "CM1-PD-068", "CM1-PD-069", "CM1-PD-070", "CM1-PD-071", "CM1-PD-072", "CM1-PD-073", "CM1-PD-074", "CM1-PD-075", "CM1-PD-076", "CM1-PD-077"],
     "PDQ-002-07": [
       "CM1-PD-001",
       "CM1-PD-003",
@@ -499,12 +538,12 @@
     "Approved specific identity fields, data normalization, national/legal identifier validators",
     "Evidence sufficiency, manual verifier permissions, sensitive process catalog and separation-of-duties applicability",
     "Verification expiration/revocation source of truth, notification semantics, recovery and evidence retention",
-    "Role Catalog product policies through CM1-PD-072 are answered, including default selectability, canonical uniqueness, permanent reservation, future collision blocking and basic normalization. Exact schema/configuration, enforcement/concurrency, cross-Tenant detection authority/privacy, publication/rollback/resolution, Unicode/encoding edge cases, operations/IAM/Audit/reason policy, history/reference and temporal/API contracts remain OPEN (PDQ-002-08).",
+    "Role Catalog product policies through CM1-PD-077 answered, including optional Hide/Unhide reason, display governance/current versus event-time history, logical authority categories and mandatory catalog Audit/operation reason/information/integrity policies. OPEN: exact schema/configuration/temporal/reference/API/localization, enforcement/concurrency, cross-Tenant detection/privacy, publication/rollback/resolution, Unicode/encoding, operation/IAM/grant/actor mapping and Audit transactions/storage/retention/recovery/access contracts (PDQ-002-08).",
     "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?",
     "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?",
     "Sensitive-process catalog and SoD actor mapping for manual verification?",
     "Overlap conflict-set token/snapshot/locking/transactional implementation (technical design, not an API contract)?",
-    "Role Catalog product policies through CM1-PD-072 are answered, including default selectability, canonical uniqueness, permanent reservation, future collision blocking and basic normalization. Exact schema/configuration, enforcement/concurrency, cross-Tenant detection authority/privacy, publication/rollback/resolution, Unicode/encoding edge cases, operations/IAM/Audit/reason policy, history/reference and temporal/API contracts remain OPEN (PDQ-002-08).",
+    "Role Catalog product policies through CM1-PD-077 answered, including optional Hide/Unhide reason, display governance/current versus event-time history, logical authority categories and mandatory catalog Audit/operation reason/information/integrity policies. OPEN: exact schema/configuration/temporal/reference/API/localization, enforcement/concurrency, cross-Tenant detection/privacy, publication/rollback/resolution, Unicode/encoding, operation/IAM/grant/actor mapping and Audit transactions/storage/retention/recovery/access contracts (PDQ-002-08).",
     "Branch reparenting coordination workflow and activity-transfer contracts (succession reference semantics)?",
     "Operation-specific Audit contract for proposed Branch/Relationship/Verification operations (owner, failure/recovery, ingestion evidence)?",
     "Sensitive-process catalog and SoD actor mapping for manual verification?",
@@ -539,9 +578,9 @@
       "questionId": "PDQ-002-08",
       "affectedCapability": "FR-BJ-001",
       "category": "PRODUCT",
-      "missingDecision": "Product policies through CM1-PD-072 answered. OPEN: schema/configuration and default materialization; namespace/concurrent uniqueness/reservation enforcement; cross-Tenant detection authority/privacy; publication/rollback/authorized resolution; Unicode/encoding edge cases; operation/IAM/actor mappings; Audit/failure/recovery; hide/unhide reason policy; history/reference/temporal/API and scope/assignment consistency contracts.",
+      "missingDecision": "Product policies through CM1-PD-077 answered. OPEN: exact schema/configuration/default materialization; namespace/concurrent uniqueness/reservation and scope/assignment consistency; cross-Tenant detection/privacy; publication/rollback/authorized resolution; Unicode/encoding/localization; operation/IAM/grants/actor/technical authorization; Audit schema/transactions/storage/retention/recovery/access; temporal/version/snapshot/reference/API mechanisms. No PDQ closure.",
       "disposition": "OPEN / PARTIALLY ANSWERED",
-      "confirmedBy": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067", "CM1-PD-068", "CM1-PD-069", "CM1-PD-070", "CM1-PD-071", "CM1-PD-072"],
+      "confirmedBy": ["CM1-PD-058", "CM1-PD-059", "CM1-PD-060", "CM1-PD-061", "CM1-PD-062", "CM1-PD-063", "CM1-PD-064", "CM1-PD-065", "CM1-PD-066", "CM1-PD-067", "CM1-PD-068", "CM1-PD-069", "CM1-PD-070", "CM1-PD-071", "CM1-PD-072", "CM1-PD-073", "CM1-PD-074", "CM1-PD-075", "CM1-PD-076", "CM1-PD-077"],
       "remainingContractReference": "customer-role-catalog.md#rc-open--remaining-open-contracts"
     },
     {

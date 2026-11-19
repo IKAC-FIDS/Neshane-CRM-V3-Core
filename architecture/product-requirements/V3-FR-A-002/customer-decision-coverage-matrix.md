@@ -1,11 +1,16 @@
-# Customer Master — Decision Coverage Matrix (v1.5.0 proposed package)
+# Customer Master — Decision Coverage Matrix (v1.6.0 proposed package)
 
-Maps all 72 user-confirmed product decisions (CM1-PD-001..072) to requirements, rules, fields, operations, acceptance criteria and OPEN questions. Coverage classification: FULL / PARTIAL / DOCUMENTED_ONLY / BLOCKED_BY_OPEN_DECISION. Coverage is documentation/scenario coverage, never executed software evidence or formal acceptance. CM1-PD-068..072 product policies are answered; five new rows remain PARTIAL with explicit technical/operational gaps and proposed scenarios. No earlier coverage class is promoted. Exact field/operation references and per-decision gaps are in the JSON counterpart; all RC-012..016 rules are in customer-role-catalog.md.
+Maps all 77 user-confirmed product decisions (CM1-PD-001..077) to requirements/rules/fields/logical operations/scenarios/OPEN questions. Coverage is documentation/scenario coverage, never executed software evidence or formal acceptance. Five new CM1-PD-073..077 rows are PARTIAL with explicit remaining technical contracts, not unanswered product policy. No earlier coverage class promoted. Exact references/gaps in JSON; RC-017..021 are in customer-role-catalog.md. No approved field IDs exist for unresolved IAM/setting schemas.
 
-**Coverage counts:** BLOCKED_BY_OPEN_DECISION=2, DOCUMENTED_ONLY=5, FULL=3, PARTIAL=62
+**Coverage counts:** BLOCKED_BY_OPEN_DECISION=2, DOCUMENTED_ONLY=5, FULL=3, PARTIAL=67
 
 | Decision ID | Coverage | Summary | Fields | Acceptance criteria | Related OPEN |
 | --- | --- | --- | --- | --- | --- |
+| CM1-PD-073 | PARTIAL | RC-017/021 own-Tenant Hide/Unhide reason/Audit | FLD-002-15, REL-002-05 | CM1-ROL-46, CM1-ROL-47, CM1-ROL-48, CM1-ROL-63, CM1-ROL-66, CM1-ROL-69 | PDQ-002-08, PDQ-002-10 |
+| CM1-PD-074 | PARTIAL | RC-018/021 metadata governance / old-new values | REL-002-06, REL-002-05, FLD-002-15 | CM1-ROL-49, CM1-ROL-50, CM1-ROL-51, CM1-ROL-52, CM1-ROL-53, CM1-ROL-63, CM1-ROL-65, CM1-ROL-66, CM1-ROL-69 | PDQ-002-08, PDQ-002-10 |
+| CM1-PD-075 | PARTIAL | RC-019 current/event-time title preservation | REL-002-06, REL-002-05 | CM1-ROL-53, CM1-ROL-54, CM1-ROL-55, CM1-ROL-56, CM1-ROL-66, CM1-ROL-68 | PDQ-002-08, PDQ-002-10 |
+| CM1-PD-076 | PARTIAL | RC-020/006 three logical categories / Backend | — | CM1-ROL-48, CM1-ROL-50, CM1-ROL-57, CM1-ROL-58, CM1-ROL-59, CM1-ROL-60, CM1-ROL-61, CM1-ROL-64, CM1-ROL-67, CM1-ROL-68 | PDQ-002-08, PDQ-002-10 |
+| CM1-PD-077 | PARTIAL | RC-021 mandatory coverage/reasons/integrity/durability | FLD-002-15, REL-002-06 | CM1-ROL-46, CM1-ROL-48, CM1-ROL-49, CM1-ROL-50, CM1-ROL-55, CM1-ROL-62, CM1-ROL-63, CM1-ROL-64, CM1-ROL-65, CM1-ROL-66, CM1-ROL-67, CM1-ROL-68, CM1-ROL-69, CM1-ROL-70 | PDQ-002-08, PDQ-002-10 |
 | CM1-PD-068 | PARTIAL | RC-012 defaults and prior setting preservation | — | CM1-ROL-30, CM1-ROL-31, CM1-ROL-32, CM1-ROL-33 | PDQ-002-08 |
 | CM1-PD-069 | PARTIAL | RC-013 canonical namespace uniqueness | REL-002-05 | CM1-ROL-34, CM1-ROL-35, CM1-ROL-36, CM1-ROL-37, CM1-ROL-43, CM1-ROL-45 | PDQ-002-08 |
 | CM1-PD-070 | PARTIAL | RC-014 permanent reservation / identity | REL-002-05 | CM1-ROL-35, CM1-ROL-38, CM1-ROL-39, CM1-ROL-43, CM1-ROL-45 | PDQ-002-08 |

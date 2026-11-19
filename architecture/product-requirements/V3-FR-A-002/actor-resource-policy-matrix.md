@@ -1,6 +1,6 @@
 # Actor–resource policy matrix — V3-FR-A-002
 
-**No permission, role, RBAC policy or IAM mechanism is defined or approved.** Candidate relationships only; Customer Domain retains final authorization.
+**No executable IAM/RBAC role, permission grant or mechanism is approved.** CM1-PD-076 confirms three logical responsibility categories below, not runtime actor appointments or technical permission bindings. Customer Domain retains final authorization.
 
 ## Actor references (accepted V3-FR-A-001)
 
@@ -39,8 +39,18 @@ Organizational Role Definitions are not IAM/RBAC roles or grants (CM1-PD-058). S
 - Appropriately authorized Tenant actor: manage own Tenant's hide/unhide setting with validated Tenant context; CUS-CREATE alone does not grant this authority. Exact management permissions and actor mapping remain OPEN; no runtime role or IAM grant is approved.
 - Relationship actor: separately authorized for assignment; Customer Domain checks effective state and all existing guards, not just a UI list. A selectable Role does not itself grant Relationship authority.
 - Historical viewer: retains otherwise authorized Role/Relationship history regardless of hide/unhide; this confers no new disclosure grant and must not expose other Tenants' settings/Relationships.
-- Initial vocabulary titles (CM1-PD-066), including CEO/BOARD_MEMBER/PRIMARY_CONTACT, provide no IAM/RBAC or verified legal authority. Mandatory reason for ordinary hide/unhide remains OPEN, separate from incompatible scope management.
+- Initial vocabulary titles (CM1-PD-066), including CEO/BOARD_MEMBER/PRIMARY_CONTACT, provide no IAM/RBAC or verified legal authority. Hide/Unhide reason is now OPTIONAL and Audit MANDATORY (CM1-PD-073/077), separate from incompatible scope management.
 
 ## Future catalog collision assessment boundary (v1.5.0)
 
 CM1-PD-071 requires assessment against relevant Tenant current/historical custom codes before publishing a new System Role, but grants no central administrator access to Tenant-private data. Detection authority, privacy/disclosure rules, actor mappings and authorized resolution workflow are OPEN. Publication of the conflicting new Role is blocked pending authorized resolution; no automatic rename/delete/conversion/reassignment or Relationship mutation. Default selectability and canonical uniqueness (CM1-PD-068/069/072) confer no management, IAM/RBAC, legal or cross-Tenant authority; matching custom codes in separate Tenants remain independent. Conceptual responsibility only, not an executable permission grant.
+
+## Three logical authority categories (CM1-PD-076; v1.6.0)
+
+| Category | Responsibilities | Boundaries |
+| --- | --- | --- |
+| System catalog governance authority | Create System Roles; update System display metadata; change System scope; activate/deactivate System Roles; publish controlled revisions | Product governance and controlled release required for System metadata; no implied Tenant-private inspection or Tenant Hide/Unhide authority |
+| Authorized tenant catalog manager | Create own custom Roles; update own metadata/scope; activate/deactivate own Roles; Hide/Unhide System Roles for own Tenant | Cannot modify global System definitions or another Tenant; validated Tenant context and Backend authorization |
+| Authorized Customer Master operator | View applicable selectable Roles; assign only with separately authorized Relationship operations | No implied catalog management; selection alone is not assignment authorization |
+
+Management and assignment do not imply one another; independent authorizations do not require three different people. No category can physically delete Roles or alter existing roleId/code. Business Relationship titles grant no IAM/admin authority. Scope changes retain impact evaluation, disclosure-safe warning, appropriate management authority and mandatory reason when incompatible; ordinary overlap still needs no separate supervisor approval. Catalog managers/ordinary users cannot edit/delete Audit history. Unauthorized catalog modification attempts require mandatory Audit without cross-Tenant disclosure. Exact IAM roles/IDs/grants/technical enforcement/actor mapping and Audit access contracts remain OPEN; no new ACT ID/runtime appointment granted. Full policy: `customer-role-catalog.md` RC-017..021.

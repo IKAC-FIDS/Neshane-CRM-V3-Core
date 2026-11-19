@@ -1,20 +1,85 @@
 {
   "taskId": "V3-FR-A-002",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "coverageClassificationLegend": {
     "FULL": "has directly testable acceptance criterion/coverage",
     "PARTIAL": "some testable criteria; residual OPEN technical/contract gaps remain",
     "DOCUMENTED_ONLY": "recorded but lacks independently testable acceptance coverage",
     "BLOCKED_BY_OPEN_DECISION": "depends on an unresolved technical/contract decision"
   },
-  "decisionCount": 72,
+  "decisionCount": 77,
   "coverageCounts": {
-    "PARTIAL": 62,
+    "PARTIAL": 67,
     "DOCUMENTED_ONLY": 5,
     "FULL": 3,
     "BLOCKED_BY_OPEN_DECISION": 2
   },
   "decisions": [
+    {
+      "decisionId": "CM1-PD-073",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Own-Tenant authorized catalog manager Hide/Unhide: optional reason, mandatory Audit and preservation/effective-state guards.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-017--hideunhide-governance",
+      "relatedBusinessRule": "RC-017 / RC-021",
+      "fieldIds": ["FLD-002-15", "REL-002-05"],
+      "operationConcepts": ["Own-Tenant System Role Hide/Unhide (logical operation; no IAM/operation ID grant)"],
+      "acceptanceCriterionIds": ["CM1-ROL-46", "CM1-ROL-47", "CM1-ROL-48", "CM1-ROL-63", "CM1-ROL-66", "CM1-ROL-69"],
+      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "coverageGap": "Reason/authority/Audit product policy answered; technical setting/operation/IAM/actor mapping, durable Audit and effective-state consistency remain OPEN. No approved setting field IDs; software execution BLOCKED."
+    },
+    {
+      "decisionId": "CM1-PD-074",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Controlled System or own-custom display metadata governance; immutable identity/semantics, new Role for material change, old/new Audit.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-018--display-metadata-governance",
+      "relatedBusinessRule": "RC-018 / RC-021",
+      "fieldIds": ["REL-002-06", "REL-002-05", "FLD-002-15"],
+      "operationConcepts": ["System controlled-release metadata update", "Own-Tenant custom metadata update (logical capabilities)"],
+      "acceptanceCriterionIds": ["CM1-ROL-49", "CM1-ROL-50", "CM1-ROL-51", "CM1-ROL-52", "CM1-ROL-53", "CM1-ROL-63", "CM1-ROL-65", "CM1-ROL-66", "CM1-ROL-69"],
+      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "coverageGap": "Exact metadata/localization schema, semantic-change assessment procedure, release/permission/reference and Audit contracts remain OPEN. No mandatory language fields or original vocabulary rewrite approved."
+    },
+    {
+      "decisionId": "CM1-PD-075",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Current authorized Relationships show current valid title; historical events/Audit preserve event-time title with stable IDs and access isolation.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-019--current-and-historical-role-representation",
+      "relatedBusinessRule": "RC-019",
+      "fieldIds": ["REL-002-06", "REL-002-05"],
+      "operationConcepts": ["Authorized current Relationship title rendering", "Historical event/Audit display (logical capabilities)"],
+      "acceptanceCriterionIds": ["CM1-ROL-53", "CM1-ROL-54", "CM1-ROL-55", "CM1-ROL-56", "CM1-ROL-66", "CM1-ROL-68"],
+      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "coverageGap": "Product display policy answered; temporal storage/version/snapshot/localization/reference/API and historical access mechanisms remain OPEN. No Relationship row migration or event-time title rewriting."
+    },
+    {
+      "decisionId": "CM1-PD-076",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Three logical System/Tenant/operator authority categories with mandatory Backend checks and independent management/assignment authority.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-020--three-logical-authority-categories",
+      "relatedBusinessRule": "RC-020 / RC-006",
+      "fieldIds": [],
+      "operationConcepts": ["System governance", "Own-Tenant catalog management", "Customer Master view / separately authorized Relationship assignment (logical responsibilities)"],
+      "acceptanceCriterionIds": ["CM1-ROL-48", "CM1-ROL-50", "CM1-ROL-57", "CM1-ROL-58", "CM1-ROL-59", "CM1-ROL-60", "CM1-ROL-61", "CM1-ROL-64", "CM1-ROL-67", "CM1-ROL-68"],
+      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "coverageGap": "Exact IAM roles/permission IDs/grants/technical enforcement/actor mapping remain OPEN; no field ID applies to unapproved permission bindings, no runtime appointment or three-person SoD inferred."
+    },
+    {
+      "decisionId": "CM1-PD-077",
+      "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
+      "summary": "Catalog Audit coverage/reasons/logical information, isolated immutable history and durable no-success guard; ordinary reads/security scope distinguished.",
+      "coverageClass": "PARTIAL",
+      "requirementSection": "customer-role-catalog.md#rc-021--catalog-audit-coverage-reasons-and-integrity",
+      "relatedBusinessRule": "RC-021",
+      "fieldIds": ["FLD-002-15", "REL-002-06"],
+      "operationConcepts": ["Mandatory catalog-operation/denial Audit", "Publication/incompatible-scope reason validation", "Authorized history protection (logical requirements)"],
+      "acceptanceCriterionIds": ["CM1-ROL-46", "CM1-ROL-48", "CM1-ROL-49", "CM1-ROL-50", "CM1-ROL-55", "CM1-ROL-62", "CM1-ROL-63", "CM1-ROL-64", "CM1-ROL-65", "CM1-ROL-66", "CM1-ROL-67", "CM1-ROL-68", "CM1-ROL-69", "CM1-ROL-70"],
+      "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10"],
+      "coverageGap": "Exact Audit schema/event names/transactions/storage/retention/recovery/access and failure protocol remain OPEN. Existing durable coordination preserved; no ACK/outbox-as-ingestion or mandatory ordinary read/warning/all-validation event inferred."
+    },
     {
       "decisionId": "CM1-PD-068",
       "decisionStatus": "USER-CONFIRMED PRODUCT DIRECTION; FORMAL ACCEPTANCE PENDING",
@@ -104,7 +169,7 @@
       "operationConcepts": ["Tenant System Role hide/unhide management", "Authoritative effective assignment validation (logical capabilities; no new operation ID)"],
       "acceptanceCriterionIds": ["CM1-ROL-19", "CM1-ROL-20", "CM1-ROL-21", "CM1-ROL-22", "CM1-ROL-23", "CM1-ROL-24", "CM1-ROL-25", "CM1-ROL-26", "CM1-ROL-27", "CM1-ROL-28", "CM1-ROL-29"],
       "relatedOpenPqdIds": ["PDQ-002-08", "PDQ-002-10", "PDQ-002-12"],
-      "coverageGap": "Defaults answered by CM1-PD-068; software scenarios BLOCKED pending configuration/default materialization, management/permission/API, consistency, historical display and Audit failure/recovery design. Ordinary hide/unhide reason policy remains OPEN."
+      "coverageGap": "Defaults answered by CM1-PD-068; optional Hide/Unhide reason, logical manager authority, history policy and mandatory Audit now answered by CM1-PD-073/075..077. Software execution BLOCKED pending configuration/default materialization, exact IAM/operation/API, consistency, temporal/history representation and Audit failure/recovery contracts."
     },
     {
       "decisionId": "CM1-PD-058",
