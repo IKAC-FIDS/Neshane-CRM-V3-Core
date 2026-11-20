@@ -1,5 +1,16 @@
 # Neshane V3 Architecture Decision Records
 
+<a id="v3-arch-od-013-014-registration"></a>
+## P00-007 — Owner-approved persistence ADRs
+
+| ADR | Subject | Status | Decision |
+| --- | --- | --- | --- |
+| [ADR-V3-017](017-postgresql-migration-strategy.md) | PostgreSQL migration strategy | Owner-approved; pending traceable registration | DEC-017; OD-013 |
+| [ADR-V3-018](018-java-persistence-tenant-integration.md) | Java persistence and Tenant transaction integration | Owner-approved; pending traceable registration | DEC-018; OD-014 |
+
+Implementation evidence and independent specialist sign-off remain separate.
+
+
 This directory is the authoritative catalog for formal V3 ADRs. ADR IDs use `ADR-V3-NNN`; Task IDs use `V3-NNN` and never substitute for ADR IDs. Decision-register IDs use `DEC-NNN`, and open-decision IDs use `OD-NNN`.
 
 ## Status vocabulary

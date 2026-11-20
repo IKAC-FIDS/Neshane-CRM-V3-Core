@@ -1,5 +1,33 @@
 # Cross-repository governance synchronization
 
+<a id="v3-arch-od-013-014-registration"></a>
+## V3-ARCH-OD-013-014 — P00-007 registration
+
+- Authority: Product Decision Owner / Technical Architecture Owner.
+- Governance reference: NESHANE-V3-GOV-P00-000A.
+- Architecture revision: NESHANE-V3-ARCH-P00-007.
+- Source baseline: 2df1f496b68b0e91a75591a56c5cb8ac4f3204e0.
+- DEC-017 / ADR-V3-017: OD-013.
+- DEC-018 / ADR-V3-018: OD-014.
+- Owner decision: APPROVED.
+- Independent specialist sign-off: NOT RECORDED.
+- Traceable registration: PENDING.
+- Backend propagation: PENDING — separately authorized.
+- Frontend: no direct architecture propagation required.
+
+The selected architecture preserves all V3-024 requirements,
+negative tests and residual risks.
+
+Raw Hikari SESSION-state leakage remains a recorded failure.
+Existing DB01 and DB13 evidence obligations remain applicable.
+
+Runtime Tenant Isolation, security acceptance, production deployment
+and actual database migrations are not authorized by this recording.
+
+No staging, commit, Main adoption or implementation is authorized
+by the authoring action alone.
+
+
 <a id="v3-024-g-tenant-limited-design-recording"></a>
 ## V3-024 — Limited Tenant Isolation design acceptance and controlled recording
 

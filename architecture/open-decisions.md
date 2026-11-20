@@ -1,6 +1,17 @@
 # Neshane V3 open decisions
 
-Status: OD-001, OD-005 through OD-007, OD-009 through OD-019 and OD-021 through OD-023 remain Open. OD-002 through OD-004 are resolved by DEC-013/ADR-V3-013; OD-008 is closed by DEC-014/ADR-V3-014; OD-020 is closed as approved by DEC-015/ADR-V3-015 and becomes effective upon traceable commit of its decision package. Milestones are latest responsible decision points, not implementation authorization.
+<a id="v3-arch-od-013-014-registration"></a>
+## Persistence decision disposition — P00-007
+
+- OD-013: selected Flyway SQL migrations under [ADR-V3-017](adr/017-postgresql-migration-strategy.md).
+- OD-014: selected Spring JDBC and secured Tenant Unit of Work under [ADR-V3-018](adr/018-java-persistence-tenant-integration.md).
+- Both decisions are owner-approved, pending traceable architecture registration.
+- Historical V3-024 OPEN references below describe their original decision scope.
+- OD-012 and all other unresolved decisions retain their existing status.
+- Implementation and operational verification remain separately gated.
+
+
+Status: OD-001, OD-005 through OD-007, OD-009 through OD-012, OD-015 through OD-019 and OD-021 through OD-023 remain Open. OD-013 and OD-014 are owner-approved architecture resolutions pending traceable registration. OD-002 through OD-004 are resolved by DEC-013/ADR-V3-013; OD-008 is closed by DEC-014/ADR-V3-014; OD-020 is closed as approved by DEC-015/ADR-V3-015 and becomes effective upon traceable commit of its decision package. Milestones are latest responsible decision points, not implementation authorization.
 
 | ID | Decision and alternatives | Trade-offs / affected boundaries | Milestone | Proposed owner | Cost of postponement |
 | --- | --- | --- | --- | --- | --- |
@@ -12,8 +23,8 @@ Status: OD-001, OD-005 through OD-007, OD-009 through OD-019 and OD-021 through 
 | OD-010 | Session lifecycle/revocation: stateless short-lived, stateful sessions, refresh families, hybrid | UX, revocation speed, compromise recovery and Sovereign operation | Before production session implementation | Identity + Security | Blocks safe session semantics and frontend credential design |
 | OD-011 | Workload identity: platform-issued credentials, mTLS PKI, SPIFFE/SPIRE, hybrid | Portability/automation versus operational complexity | Before production service-to-service trust | Security + Platform Operations | Blocks durable trust-domain and rotation design |
 | OD-012 | Secrets/keys: platform-native, Vault-class, cloud KMS/HSM, Sovereign-local mix | Portability, assurance, custody and offline support | Before production credential storage/signing | Security + Operations + Sovereign owner | Blocks key lifecycle and release assurance |
-| OD-013 | PostgreSQL migrations: Flyway, Liquibase, framework-native, other | Control/repeatability versus flexibility and tooling footprint | Before first schema migration | Data Architecture | Blocks migration ownership and recovery convention |
-| OD-014 | Java/RLS integration: transaction interceptor, explicit unit-of-work, connection wrapper | Safety/visibility versus framework coupling | Before first tenant-aware repository | Data + Security + Backend Architecture | Risks unsafe pooled connection context if improvised |
+| OD-013 | PostgreSQL migrations: Flyway, Liquibase, framework-native, other | Control/repeatability versus flexibility and tooling footprint | Before first schema migration | Data Architecture | OWNER-APPROVED: Flyway SQL; DEC-017 / ADR-V3-017; pending traceable registration |
+| OD-014 | Java/RLS integration: transaction interceptor, explicit unit-of-work, connection wrapper | Safety/visibility versus framework coupling | Before first tenant-aware repository | Data + Security + Backend Architecture | OWNER-APPROVED: secured Tenant Unit of Work and Spring JDBC; DEC-018 / ADR-V3-018; pending traceable registration |
 | OD-015 | Runtime orchestration: Compose-equivalent reference, Kubernetes, Nomad, other profile-specific runtime | Portability/operations/Sovereign footprint versus complexity | Before deployment implementation | Platform Operations + Architecture | Blocks deployment, cell and recovery contracts |
 | OD-016 | Managed Plugin Runtime isolation: containers, microVMs, WASM, external workers, hybrid | Language support, density, isolation and operations | Before hosted plugin execution | Plugin Platform + Security + Operations | Cannot offer managed plugin execution safely |
 | OD-017 | Object storage: S3-compatible, cloud-specific, filesystem appliance, hybrid | Portability, sovereignty, lifecycle and authorization | Before file/content capability | Data + Operations + Security | Blocks durable object and retention design |
@@ -72,7 +83,7 @@ V3-022 Stage B2 is authorized; no Open Decision is resolved.
 
 ## Status and dependency map
 
-The map retains resolved entries for dependency and historical traceability. OD-001, OD-005 through OD-007 and OD-009 through OD-023 are **Open**; OD-002 through OD-004 are **Resolved** and OD-008 is **Closed and approved, effective upon traceable commit**.
+The map retains resolved entries for dependency and historical traceability. OD-001, OD-005 through OD-007, OD-009 through OD-012, OD-015 through OD-019 and OD-021 through OD-023 are **Open**; OD-013 and OD-014 are owner-approved pending traceable registration; OD-020 is closed and approved; OD-002 through OD-004 are **Resolved** and OD-008 is **Closed and approved, effective upon traceable commit**.
 
 | ID | Dependencies |
 | --- | --- |

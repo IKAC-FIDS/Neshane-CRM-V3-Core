@@ -1,5 +1,24 @@
 # Neshane V3 decision register
 
+<a id="v3-arch-od-013-014-registration"></a>
+## V3-ARCH-OD-013-014 — Persistence architecture decisions
+
+- Architecture revision: NESHANE-V3-ARCH-P00-007.
+- Status: OWNER-APPROVED — pending traceable registration.
+- Authority: Product Decision Owner / Technical Architecture Owner.
+- Reviewed baseline: 2df1f496b68b0e91a75591a56c5cb8ac4f3204e0.
+
+| Decision | Resolution | Architecture record |
+| --- | --- | --- |
+| DEC-017 | OD-013: Flyway versioned SQL migrations, service ownership, separate migration/runtime roles and controlled recovery | [ADR-V3-017](adr/017-postgresql-migration-strategy.md) |
+| DEC-018 | OD-014: Spring JDBC, PostgreSQL JDBC, privately controlled HikariCP, explicit secured Tenant Unit of Work, RLS, READ COMMITTED and optimistic locking | [ADR-V3-018](adr/018-java-persistence-tenant-integration.md) |
+
+Independent specialist sign-off is not recorded.
+Architecture selection does not establish implementation readiness,
+runtime isolation, security acceptance or production authorization.
+Existing V3-024 conditions and historical decisions remain preserved.
+
+
 <a id="v3-024-g-tenant-limited-design-recording"></a>
 ## V3-024 — Owner limited Tenant Isolation design acceptance
 

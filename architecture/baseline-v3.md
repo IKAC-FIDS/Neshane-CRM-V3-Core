@@ -1,5 +1,21 @@
 # Neshane V3 architecture baseline
 
+<a id="v3-arch-od-013-014-registration"></a>
+## P00-007 — Persistence architecture revision
+
+- Architecture revision: NESHANE-V3-ARCH-P00-007.
+- Governance reference: NESHANE-V3-GOV-P00-000A (unchanged).
+- Status: OWNER-APPROVED — pending traceable registration.
+- Task: V3-ARCH-OD-013-014.
+- Previous effective revision: P00-006, DESIGN_ONLY / REFERENCE_ONLY.
+- [ADR-V3-017](adr/017-postgresql-migration-strategy.md): Flyway SQL migrations.
+- [ADR-V3-018](adr/018-java-persistence-tenant-integration.md): Spring JDBC and secured Tenant Unit of Work.
+
+P00-007 selects persistence architecture, not an accepted runtime
+implementation. Historical P00-005 and P00-006 records below remain
+preserved. V3-024 conditions and evidence obligations are unchanged.
+
+
 <a id="v3-024-g-tenant-limited-design-recording"></a>
 V3-024 Tenant disposition (`V3-024-G-TENANT-LIMITED-DESIGN-ACCEPTANCE-AND-RECORDING`):
 the Product Decision Owner / TAO accepts only documented Tenant Isolation design
@@ -141,7 +157,7 @@ Architecture readiness, implementation readiness, and production readiness are s
 | Area | Binding baseline | Unresolved detail |
 | --- | --- | --- |
 | Backend | Java 21 LTS, Spring Boot 4.1.2, Gradle multi-project with Groovy DSL/Wrapper, independent microservices, DDD/Hexagonal Architecture and independent build/test/version/release boundaries | Exact Gradle Wrapper distribution/checksum and implementation evidence ([ADR-V3-013](adr/013-backend-foundation-toolchain.md)) |
-| Relational data | PostgreSQL; service-owned persistence; RLS for shared tenant-aware tables | Migration tool and Java/RLS integration ([OD-013–OD-014](open-decisions.md)) |
+| Relational data | PostgreSQL; service-owned persistence; RLS; owner-approved Flyway SQL, Spring JDBC and secured Tenant Unit of Work under P00-007 | Traceable registration, repository propagation and engineering verification remain required |
 | Messaging | RabbitMQ; transactional outbox and idempotent inbox where reliable events are required; CloudEvents 1.0-compatible envelope and versioned event contracts per [ADR-V3-014](adr/014-api-event-versioning.md); risk-based Contract Testing gates per [ADR-V3-015](adr/015-contract-testing-strategy.md) | Broker topology and runtime delivery policy; durable scheduling where applicable ([OD-019](open-decisions.md)); testing/CI product selection remains implementation-specific |
 | Cache | Redis is permitted only when justified with tenant-safe keys, authorization, freshness, and safe failure behavior | Per-use-case adoption and numeric policies |
 | Identity | Standards-based independent IdPs; OIDC/OAuth 2.0 where appropriate; Neshane-owned trust/principal mapping | Providers, sessions, workload identity and secrets tooling ([OD-009–OD-012](open-decisions.md)) |
