@@ -1,0 +1,78 @@
+{
+  "algorithm": "SHA-256",
+  "excludes": "sha256-manifest.json",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "40b6f8e48ddc8c676ddc99c2d2ef85d9e9d3aca85a44f25cdfe27893e439ec19"
+    },
+    {
+      "path": "acceptance-criteria.md",
+      "sha256": "4d04bfc52f2a33a689efadeb445e75959a2aa6c59e7050640fa6feda5fc716ec"
+    },
+    {
+      "path": "actor-resource-policy-matrix.md",
+      "sha256": "3f5b5b6a987bb077bcbebfa9d28b866648805d362b19c53ab71a098902ab9ee5"
+    },
+    {
+      "path": "authorization-boundaries.md",
+      "sha256": "04ba77f1280c2f4f8694e540d9810b7c20bded0ac12066387fc615e32de58a07"
+    },
+    {
+      "path": "deployment-profile-scenarios.md",
+      "sha256": "7c92a4c6b26965ffd25a8cfa69f0bfc9386df97f90f207713339fdf484eb2c0d"
+    },
+    {
+      "path": "failure-recovery-policies.md",
+      "sha256": "d11e3b10f15ab5e2f259b09564da2d39f85c0ace5caae265f168b55139857490"
+    },
+    {
+      "path": "identity-tenant-onboarding.md",
+      "sha256": "3767598aa0ae1025abf0c894fe32902f75d339eaaea97fd47135507c8d462b12"
+    },
+    {
+      "path": "open-decisions-and-blockers.md",
+      "sha256": "d36d2312e51ecb3e926bcb49b11cedae30c8c00a840f9bc90a54596020267bc3"
+    },
+    {
+      "path": "principal-actor-model.md",
+      "sha256": "02a08bc02c8b8b512258f1e5065035d418085c4a5cf6de0b03bfafb304ea99e6"
+    },
+    {
+      "path": "product-decision-record.md",
+      "sha256": "72c538813eb3bbf9d6367d55120f731b85fae6fae3b6d296666b9b8e33dcdcff"
+    },
+    {
+      "path": "requirements-traceability-matrix.md",
+      "sha256": "6fcb9ace40563d98e0b332fdfa7166d747b193af04e95a6111aa170296577add"
+    },
+    {
+      "path": "revocation-access-freshness.md",
+      "sha256": "6fc060ec25bde8fbc7415bfa879a0f3bea5cd399eea6183cf8640bdb8e6128ff"
+    },
+    {
+      "path": "session-management.md",
+      "sha256": "b2ac858817a61dd92a432d106e557d48b6944c6ba6346691974336d9dd728a12"
+    },
+    {
+      "path": "tenant-membership-management.md",
+      "sha256": "6435e5d55554d75799302d5729529bf69a59fe2f4616255d0e9d6c26cf07bdc2"
+    },
+    {
+      "path": "tenant-selection-switching.md",
+      "sha256": "9875e10b74b9df1e2fa16bbe36581e3b7f4872c24088bc9fb21b07a3e670d168"
+    },
+    {
+      "path": "trusted-access-operation-catalog.md",
+      "sha256": "5492f73d9da0caa505865e714a8723b2ff5d7d56bf27617b818e3621daa752c3"
+    },
+    {
+      "path": "trusted-tenant-context.md",
+      "sha256": "d96310f7a1e7bc7a40c72e2d6419a72d0413ac428b7215be0e9e0cb4d2404e80"
+    },
+    {
+      "path": "validation-report.md",
+      "sha256": "9fd05639be951fea674b14b8921076d034085a3f70e3cb5cabfc1b00835f01cc"
+    }
+  ]
+}
